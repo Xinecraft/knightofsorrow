@@ -11,11 +11,16 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/', ['as' => 'home', function () {
     return view('index');
+}]);
+
+Route::get('user','UserController@index');
+
+Route::group(['prefix' => 'statistics'],function(){
+    Route::get('round-reports','StatisticsController@getRoundReports');
+    Route::get('top-players','StatisticsController@getTopPlayers');
 });
-
-
 
 /**
  * Server round end Controller

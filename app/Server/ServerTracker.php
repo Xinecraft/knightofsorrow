@@ -11,7 +11,6 @@ use App\Player;
 use App\Profile;
 use App\Weapon;
 use Response;
-use Stevebauman\Location\Facades\Location;
 
 
 class ServerTracker {
@@ -40,7 +39,7 @@ class ServerTracker {
     protected $joinPort;
 
     /**
-     * @var timstamp
+     * @var timestamp
      *
      * array[3]
      * The time when round ended according to server in UTC
@@ -400,7 +399,8 @@ class ServerTracker {
             $player = new Player();
             $player->ingame_id = $p[0];
             $player->ip_address = $p[1];
-            $player->name = $p[5];
+            $player->name = str_replace('(VIEW)','',$p[5]);
+            $player->name = str_replace('(SPEC)','',$player->name);
             $player->team = array_key_exists(6,$p) ? $p[6] : 0;
             $player->is_admin = array_key_exists(3,$p) ? $p[3] : 0;
             $player->is_dropped = array_key_exists(2,$p) ? $p[2] : 0;

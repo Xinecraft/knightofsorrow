@@ -2,7 +2,6 @@
 
 namespace App\Server;
 
-
 abstract class Utils
 {
     protected static $MapClass = [
