@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Alias extends Model
 {
-    protected $fillable =['name'];
+    protected $fillable = ['name'];
 
     /**
      * Returns all players with this Alias
@@ -19,7 +19,7 @@ class Alias extends Model
     }
 
     /**
-     * Returns the Profile this Alias belongs to.
+     * Returns the profile with this alias belongs to.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

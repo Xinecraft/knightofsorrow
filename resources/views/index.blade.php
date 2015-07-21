@@ -1,7 +1,8 @@
 <?php
+
 /**
  * 
- * Copyright (c) 2014 Zishan Ansari <kinnngg786@gmail.com>
+ * Copyright (c) 2014 Zishan Ansari
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,3 +25,14 @@
  * Date: 7/21/2015
  * Time: 10:02 PM
  */
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
