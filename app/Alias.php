@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Alias extends Model
 {
-    $fillable =['name'];
+    protected $fillable =['name'];
 
     /**
      * Returns all players with this Alias
