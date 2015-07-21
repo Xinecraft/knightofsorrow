@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    dd(App\Alias::first());
+    return view('index');
 });
 
 
