@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: Utils
+        psr4_prefix: Utils
+        src_path: Utils
