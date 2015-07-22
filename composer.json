@@ -10,7 +10,15 @@
         "ip2location/ip2location": "dev-master",
         "stevebauman/location": "dev-master",
         "geoip2/geoip2": "~2.0",
-        "laravelcollective/html": "~5.0"
+        "laravelcollective/html": "dev-master",
+        "barryvdh/laravel-debugbar": "~2.0",
+        "doctrine/dbal": "^2.6@dev",
+        "intervention/image": "~2.2",
+        "codeception/codeception": "~2.1",
+        "zizaco/entrust": "dev-laravel-5",
+        "laravel/socialite": "^3.0@dev",
+        "cartalyst/sentinel": "2.0.*",
+        "ircmaxell/password-compat": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

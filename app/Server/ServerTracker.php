@@ -459,7 +459,7 @@ class ServerTracker {
                 }
             }
 
-            $loadout_array = $p[39];
+            $loadout_array = array_key_exists(39, $p) ? $p[39] : [0,0,0,0,0,0,0,0,0,0,0] ;
 
             /**
              * @var Loadout
@@ -547,6 +547,7 @@ class ServerTracker {
              * If Alias already present.
              *
              * So just get the Alias and using that update Profile.
+             * And also update IP Address of Alias.
              */
             else
             {
@@ -557,6 +558,9 @@ class ServerTracker {
                 $profile->ip_address = $player->ip_address;
                 $profile->country_id = $player_country_id;
                 $profile->save();
+
+                $alias->ip_address = $player->ip_address;
+                $alias->save();
             }
 
             $player->alias_id = $alias->id;
@@ -565,21 +569,23 @@ class ServerTracker {
             $player->save();
 
             /**
-             * Iterate over all Weapon of each Player
+             * Iterate over all Weapon of each Player if exists
              */
-            foreach($p[40] as $w):
-                $weapon = new Weapon();
-                $weapon->name = $w[0];
-                $weapon->player_id = $player->id;
-                $weapon->seconds_used = array_key_exists(1,$w) ? $w[1] : 0;
-                $weapon->shots_fired = array_key_exists(2,$w) ? $w[2] : 0;
-                $weapon->shots_hit = array_key_exists(3,$w) ? $w[3] : 0;
-                $weapon->shots_teamhit = array_key_exists(4,$w) ? $w[4] : 0;
-                $weapon->kills = array_key_exists(5,$w) ? $w[5] : 0;
-                $weapon->teamkills = array_key_exists(6,$w) ? $w[6] : 0;
-                $weapon->distance = array_key_exists(7,$w) ? $w[7] : 0;
-                $weapon->save();
-            endforeach;
+            if(array_key_exists(40, $p)) {
+                foreach ($p[40] as $w):
+                    $weapon = new Weapon();
+                    $weapon->name = $w[0];
+                    $weapon->player_id = $player->id;
+                    $weapon->seconds_used = array_key_exists(1, $w) ? $w[1] : 0;
+                    $weapon->shots_fired = array_key_exists(2, $w) ? $w[2] : 0;
+                    $weapon->shots_hit = array_key_exists(3, $w) ? $w[3] : 0;
+                    $weapon->shots_teamhit = array_key_exists(4, $w) ? $w[4] : 0;
+                    $weapon->kills = array_key_exists(5, $w) ? $w[5] : 0;
+                    $weapon->teamkills = array_key_exists(6, $w) ? $w[6] : 0;
+                    $weapon->distance = array_key_exists(7, $w) ? $w[7] : 0;
+                    $weapon->save();
+                endforeach;
+            }
         endforeach;
 
         $response = Response::make("1\\nStats has been successfully tracked.",200);
