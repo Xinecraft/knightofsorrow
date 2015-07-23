@@ -59,33 +59,65 @@ Route::get('/', ['as' => 'home', function () {
     */
 
     $alias = App\Alias::with('players')->first();
+    $playerTotal = new App\PlayerTotal();
+    $playerTotal->name = $alias->name;
+    $playerTotal->alias_id = $alias->id;
+    $playerTotal->profile_id = $alias->profile_id;
+    $playerTotal->last_loadout_id = $alias->profile->loadout_id;
+    $playerTotal->last_team = $alias->profile->team;
+    $playerTotal->first_game_id = $alias->profile->game_first;
+    $playerTotal->last_game_id = $alias->profile->game_last;
+    $playerTotal->country_id = $alias->profile->country_id;
+
+    $playersCollection = $alias->players;
+    $playerTotal->is_admin = $playersCollection->max('is_admin');
+    $playerTotal->total_score = $playersCollection->sum('score');
+    $playerTotal->highest_score = $playersCollection->max('score');
+    $playerTotal->total_time_played = $playersCollection->sum('time_played');
+    $playerTotal->total_kills = $playersCollection->sum('kills');
+    $playerTotal->total_team_kills = $playersCollection->sum('team_kills');
+    $playerTotal->total_deaths = $playersCollection->sum('deaths');
+    $playerTotal->total_suicides = $playersCollection->sum('suicides');
+    $playerTotal->total_arrests = $playersCollection->sum('arrests');
+    $playerTotal->total_arrested = $playersCollection->sum('arrested');
+    $playerTotal->best_killstreak = $playersCollection->max('kill_streak');
+    $playerTotal->best_deathstreak = $playersCollection->max('death_streak');
+    $playerTotal->best_arreststreak = $playersCollection->max('arrest_streak');
+    $playerTotal->total_round_played = $playersCollection->unique('game_id')->count('game_id');
+    $playerTotal->last_ip_address = $alias->ip_address;
+
+
+    dd($totalScore);
+
     $won = 0;
     $lost = 0;
-    $tie = 0;
-
-        //dd($alias->players->groupBy('game_id'));
-        foreach($alias->players->unique('game_id') as $player)
+    $draw = 0;
+    foreach($playersCollection->unique('game_id') as $player)
+    {
+        switch($player->game->isWinner($player->team))
         {
-            /*var_dump($player->game->isWinner($player->team));*/
-            switch($player->game->isWinner($player->team))
-            {
-                case 0:
-                    $lost++;
-                    break;
-                case 1:
-                    $won++;
-                    break;
-                case -1:
-                    $tie++;
-                    break;
-                default:
-                    break;
-            }
+            case 0:
+                $lost++;
+                break;
+            case 1:
+                $won++;
+                break;
+            case -1:
+                $draw++;
+                break;
+            default:
+                break;
         }
-        $wp = $tie/$alias->players->unique('game_id')->count()*100;
-        echo $wp;
-       // dd($d->profile->country_id);
-        /*var_dump($alias->players->unique('game_id')->first()->game->isWinner(1));*/
+    }
+    $playerTotal->game_won = $won;
+    $playerTotal->game_lost = $lost;
+    $playerTotal->game_draw = $draw;
+    $playerTotal->total_points = max(($playerTotal->total_kills * 4) + ($playerTotal->total_arrests * 13) - ($playerTotal->total_deaths) - ($playerTotal->total_arrested * 3) - ($playerTotal->total_team_kills * 2),0);
+
+    //dd($playerTotal->total_time_played/60/60);
+    $rank = App\Rank::where('rank_points','>=',$playerTotal->total_points)->orderBy('rank_points')->first();
+    //dd(App\PlayerTotal::orderBy('player_rating','DESC')->orderBy('total_points','DESC')->orderBy('total_score','DESC')->get());
+
 }]);
 
 Route::get('user','UserController@index');

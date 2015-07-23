@@ -30,14 +30,27 @@ namespace App\Server\Repositories;
 use App\Server\Interfaces\PlayerTotalRepositoryInterface;
 use App\PlayerTotal;
 use App\Alias;
+use App\Rank;
+use App\Player;
 
+/**
+ * Class PlayerTotalRepository
+ * @package App\Server\Repositories
+ */
 class PlayerTotalRepository implements PlayerTotalRepositoryInterface
 {
+    /**
+     * Deletes old player_totals table and reload everything from
+     * scratches into it.
+     *
+     * @return string
+     */
     public function calculate()
     {
         \DB::table('player_totals')->delete();
 
         $aliases = Alias::with('players')->get();
+        $totalServerScore = Player::sum('score');
 
         foreach($aliases as $alias):
             $playerTotal = new PlayerTotal();
@@ -66,6 +79,10 @@ class PlayerTotalRepository implements PlayerTotalRepositoryInterface
             $playerTotal->best_arreststreak = $playersCollection->max('arrest_streak');
             $playerTotal->total_round_played = $playersCollection->unique('game_id')->count('game_id');
             $playerTotal->last_ip_address = $alias->ip_address;
+            $playerTotal->killdeath_ratio = $playerTotal->total_deaths == 0 ? $playerTotal->total_kills : round($playerTotal->total_kills / $playerTotal->total_deaths, 2);
+            $playerTotal->arr_ratio = $playerTotal->total_arrested == 0 ? $playerTotal->total_arrests : round($playerTotal->total_arrests / $playerTotal->total_arrested, 2);
+            $playerTotal->score_per_min = $playerTotal->total_time_played == 0 ? $playerTotal->total_score : round($playerTotal->total_score / $playerTotal->total_time_played * 60, 2);
+            $playerTotal->score_percentile = round($playerTotal->total_score / $totalServerScore * 100, 2);
 
             $won = 0;
             $lost = 0;
@@ -87,11 +104,42 @@ class PlayerTotalRepository implements PlayerTotalRepositoryInterface
                         break;
                 }
             }
-
             $playerTotal->game_won = $won;
             $playerTotal->game_lost = $lost;
             $playerTotal->game_draw = $draw;
+            $playerTotal->total_points = max(($playerTotal->total_kills * 4) + ($playerTotal->total_arrests * 13) - ($playerTotal->total_deaths) - ($playerTotal->total_arrested * 3) - ($playerTotal->total_team_kills * 2),0);
+
+            /**
+             * Calculation of player_rating
+             *
+             * Calculate only if player has played more than 10 hours in server
+             * and also is active and seen in last 7 days
+             */
+            if($playerTotal->total_time_played > 60*60*10 && (\Carbon\Carbon::now()->timestamp - $alias->profile->updated_at->timestamp) <= 60*60*24*7 )
+            {
+                $playerTotal->player_rating = max($playerTotal->killdeath_ratio + $playerTotal->arr_ratio + pow($playerTotal->score_per_min, 2),0);
+                $playerTotal->player_rating = min($playerTotal->player_rating,10);
+            }
+
+            /**
+             * Calculation of rank_id using total_points and Rank table/
+             */
+            $playerTotal->rank_id = Rank::where('rank_points','>=',$playerTotal->total_points)->orderBy('rank_points')->first()->id;
             $playerTotal->save();
+
         endforeach;
+
+        /**
+         * Getting all PlayerTotal and updating its position one by one.
+         */
+        $pTs = PlayerTotal::orderBy('player_rating','DESC')->orderBy('total_points','DESC')->orderBy('total_score','DESC')->get();
+        $position=0;
+        foreach($pTs as $pT)
+        {
+            $pT->position = ++$position;
+            $pT->save();
+        }
+
+        return "Players total has been logged into player_total table successfully!";
     }
 }
