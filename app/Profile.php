@@ -57,4 +57,12 @@ class Profile extends Model
     {
         return $this->belongsTo('App\Game','game_last','id');
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function playerTotals()
+    {
+        return $this->hasMany('App\PlayerTotal');
+    }
 }

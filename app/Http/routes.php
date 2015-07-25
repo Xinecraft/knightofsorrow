@@ -12,6 +12,10 @@
 */
 
 Route::get('/', ['as' => 'home', function () {
+
+    /*$countries = App\Country::paginate(30);
+
+    return view('statistics.countries',['countries' => $countries]);*/
 /*
     $data1 = '{"0":"DUYFu8ao","1":"1.0.0","2":"10480","3":"1437386880","4":"11cc6f19","6":"1.0","7":"[c=FFFF00]WWW.KNIGHTofSORROW.TK (Antics)","11":"3","12":"12","13":"1","14":"5","15":"19371","16":"569","17":"900","19":"1","21":"1","22":"0","27":[{"0":"0","1":"182.185.80.115","2":"1","5":"YUG_X_Gmr","7":"67","38":"2"},{"0":"1","1":"182.185.83.84","2":"1","5":"YUG_X_Gmr","7":"139"},{"0":"2","1":"182.181.216.180","2":"1","5":"||KhaN||Namo(VIEW)","7":"247","11":"1","17":"1","38":"4"},{"0":"3","1":"182.181.184.161","5":"YUG_X_Gmr","7":"86","11":"1","17":"1","38":"4"},{"0":"4","1":"182.185.27.16","5":"RainBoW","6":"1","7":"71","8":"1","9":"1","15":"1","38":"2"},{"0":"5","1":"182.181.216.180","5":"||KhaN||_Namo","7":"66","38":"2"}]}';
 
@@ -58,70 +62,32 @@ Route::get('/', ['as' => 'home', function () {
     $s10->track();
     */
 
-    $alias = App\Alias::with('players')->first();
-    $playerTotal = new App\PlayerTotal();
-    $playerTotal->name = $alias->name;
-    $playerTotal->alias_id = $alias->id;
-    $playerTotal->profile_id = $alias->profile_id;
-    $playerTotal->last_loadout_id = $alias->profile->loadout_id;
-    $playerTotal->last_team = $alias->profile->team;
-    $playerTotal->first_game_id = $alias->profile->game_first;
-    $playerTotal->last_game_id = $alias->profile->game_last;
-    $playerTotal->country_id = $alias->profile->country_id;
-
-    $playersCollection = $alias->players;
-    $playerTotal->is_admin = $playersCollection->max('is_admin');
-    $playerTotal->total_score = $playersCollection->sum('score');
-    $playerTotal->highest_score = $playersCollection->max('score');
-    $playerTotal->total_time_played = $playersCollection->sum('time_played');
-    $playerTotal->total_kills = $playersCollection->sum('kills');
-    $playerTotal->total_team_kills = $playersCollection->sum('team_kills');
-    $playerTotal->total_deaths = $playersCollection->sum('deaths');
-    $playerTotal->total_suicides = $playersCollection->sum('suicides');
-    $playerTotal->total_arrests = $playersCollection->sum('arrests');
-    $playerTotal->total_arrested = $playersCollection->sum('arrested');
-    $playerTotal->best_killstreak = $playersCollection->max('kill_streak');
-    $playerTotal->best_deathstreak = $playersCollection->max('death_streak');
-    $playerTotal->best_arreststreak = $playersCollection->max('arrest_streak');
-    $playerTotal->total_round_played = $playersCollection->unique('game_id')->count('game_id');
-    $playerTotal->last_ip_address = $alias->ip_address;
-
-
-    dd($totalScore);
-
-    $won = 0;
-    $lost = 0;
-    $draw = 0;
-    foreach($playersCollection->unique('game_id') as $player)
-    {
-        switch($player->game->isWinner($player->team))
-        {
-            case 0:
-                $lost++;
-                break;
-            case 1:
-                $won++;
-                break;
-            case -1:
-                $draw++;
-                break;
-            default:
-                break;
-        }
-    }
-    $playerTotal->game_won = $won;
-    $playerTotal->game_lost = $lost;
-    $playerTotal->game_draw = $draw;
-    $playerTotal->total_points = max(($playerTotal->total_kills * 4) + ($playerTotal->total_arrests * 13) - ($playerTotal->total_deaths) - ($playerTotal->total_arrested * 3) - ($playerTotal->total_team_kills * 2),0);
-
-    //dd($playerTotal->total_time_played/60/60);
-    $rank = App\Rank::where('rank_points','>=',$playerTotal->total_points)->orderBy('rank_points')->first();
-    //dd(App\PlayerTotal::orderBy('player_rating','DESC')->orderBy('total_points','DESC')->orderBy('total_score','DESC')->get());
+    $topPlayers = App\PlayerTotal::orderBy('position')->limit(10)->get();
+    $latestGames = App\Game::orderBy('created_at','desc')->limit(5)->get();
+    //return view('home');
+    return view('home')->with('topPlayers',$topPlayers)->with('latestGames',$latestGames);
 
 }]);
 
+
+Route::get('api/server-chats/get',function(){
+    $chats = App\Chat::orderBy('created_at','DESC')->limit(35)->get();
+    foreach($chats as $chat)
+    {
+        print($chat->message)."<br>";
+    }
+});
+Route::get('api/server-query/get',function(){
+    $data = new Kinnngg\Swat4query\Server('127.0.0.1',10481);
+    $data->query();
+    return $data;
+});
+
 Route::get('user','UserController@index');
 
+/**
+ * Statistics Route Controllers
+ */
 Route::group(['prefix' => 'statistics'],function(){
     Route::get('round-reports','StatisticsController@getRoundReports');
     Route::get('top-players','StatisticsController@getTopPlayers');

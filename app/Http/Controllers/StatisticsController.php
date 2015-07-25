@@ -14,13 +14,13 @@ class StatisticsController extends Controller
 
     public function getRoundReports()
     {
-        return Game::orderBy('created_at','DESC')->paginate(10);
+        $rounds = Game::orderBy('created_at','DESC')->paginate(10);
+
+        return view('statistics.round-reports')->with('rounds', $rounds);
     }
 
     public function getTopPlayers()
     {
         return Player::paginate(10);
     }
-
-
 }

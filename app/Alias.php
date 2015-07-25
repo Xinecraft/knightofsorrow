@@ -27,4 +27,14 @@ class Alias extends Model
     {
         return $this->belongsTo('App\Profile');
     }
+
+    /**
+     * Returns all PlayerTotal with this Alias
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function playerTotals()
+    {
+        return $this->hasMany('App\PlayerTotal');
+    }
 }

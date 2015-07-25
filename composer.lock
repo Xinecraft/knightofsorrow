@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "02a2984ed61cc45d106ad4e382629cb6",
+    "hash": "325e9bfcbd043d05c628c18206d9d1cb",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1619,6 +1619,89 @@
             "time": "2015-03-11 20:06:43"
         },
         {
+            "name": "kinnngg/swat4query",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kinnngg/swat4query.git",
+                "reference": "72807c3ee29baeaebb480764e84cd0faa26fc507"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kinnngg/swat4query/zipball/d01ce8595228f2e3e13f63b138611604a483a982",
+                "reference": "72807c3ee29baeaebb480764e84cd0faa26fc507",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Kinnngg\\Swat4query\\": "src/Kinnngg/Swat4query/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Zishan Ansari",
+                    "email": "kinnngg786@gmail.com"
+                }
+            ],
+            "description": "This package can be used to query any SWAT4 Server with ease.",
+            "keywords": [
+                "gameserver",
+                "query",
+                "server",
+                "swat4"
+            ],
+            "time": "2015-07-23 17:04:12"
+        },
+        {
+            "name": "laracasts/utilities",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laracasts/PHP-Vars-To-Js-Transformer.git",
+                "reference": "a110a0f31417d32cfbadd9ed4fd0bc1c92fc975a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laracasts/PHP-Vars-To-Js-Transformer/zipball/a110a0f31417d32cfbadd9ed4fd0bc1c92fc975a",
+                "reference": "a110a0f31417d32cfbadd9ed4fd0bc1c92fc975a",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpspec/phpspec": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Laracasts\\Utilities\\JavaScript\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeffrey Way",
+                    "email": "jeffrey@laracasts.com"
+                }
+            ],
+            "description": "Transform your PHP to JavaScript",
+            "keywords": [
+                "javascript",
+                "laravel"
+            ],
+            "time": "2015-02-22 20:03:54"
+        },
+        {
             "name": "laravel/framework",
             "version": "v5.1.1",
             "source": {
@@ -1810,7 +1893,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/0918dac79ff8d294a92048f2d8b3c0c3078139b0",
+                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/fb7693cf4b582fc5908ff44ea888afea066ac93a",
                 "reference": "0918dac79ff8d294a92048f2d8b3c0c3078139b0",
                 "shasum": ""
             },
@@ -2101,6 +2184,68 @@
                 "maxmind"
             ],
             "time": "2015-03-13 22:35:13"
+        },
+        {
+            "name": "mccool/laravel-auto-presenter",
+            "version": "4.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel-auto-presenter/laravel-auto-presenter.git",
+                "reference": "62078f0779436e3cc9106f84e1c9cf1e02188af9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel-auto-presenter/laravel-auto-presenter/zipball/62078f0779436e3cc9106f84e1c9cf1e02188af9",
+                "reference": "62078f0779436e3cc9106f84e1c9cf1e02188af9",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/container": "5.1.*",
+                "illuminate/contracts": "5.1.*",
+                "illuminate/events": "5.1.*",
+                "illuminate/pagination": "5.1.*",
+                "illuminate/support": "5.1.*",
+                "illuminate/view": "5.1.*",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "graham-campbell/testbench": "~3.0",
+                "mockery/mockery": "^0.9.4",
+                "phpunit/phpunit": "^4.7.6"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "McCool\\LaravelAutoPresenter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Shawn McCool",
+                    "email": "shawn@heybigname.com"
+                },
+                {
+                    "name": "Graham Campbell",
+                    "email": "graham@alt-three.com"
+                }
+            ],
+            "description": "A system for auto-decorating models with presenter objects.",
+            "keywords": [
+                "eloquent",
+                "laravel",
+                "lpm",
+                "presenter"
+            ],
+            "time": "2015-06-26 18:05:45"
         },
         {
             "name": "monolog/monolog",
@@ -4677,7 +4822,9 @@
         "doctrine/dbal": 20,
         "zizaco/entrust": 20,
         "laravel/socialite": 20,
-        "ircmaxell/password-compat": 20
+        "ircmaxell/password-compat": 20,
+        "laracasts/utilities": 20,
+        "kinnngg/swat4query": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

@@ -316,4 +316,14 @@ $StunWeapons_TripleBaton=["HK69GrenadeLauncher"];*/
         else
             return "Unknown";
     }
+
+    /**
+     * Return min and sec in format required(sprintf syntax) for Sec.
+     */
+    public static function getMSbyS($seconds,$syntax='%d:%d')
+    {
+        $min = $seconds / 60;
+        $sec = $seconds % 60;
+        return sprintf($syntax,$min,$sec);
+    }
 }

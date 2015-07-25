@@ -2,10 +2,20 @@
 
 namespace App;
 
+use App\Server\Presenters\GamePresenter;
 use Illuminate\Database\Eloquent\Model;
+use McCool\LaravelAutoPresenter\HasPresenter;
 
-class Game extends Model
+class Game extends Model implements HasPresenter
 {
+    /**
+     * @return GamePresenter
+     */
+    public function getPresenterClass()
+    {
+        return GamePresenter::class;
+    }
+
     /**
      * Returns all players played that game.
      *

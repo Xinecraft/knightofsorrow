@@ -18,7 +18,10 @@
         "zizaco/entrust": "dev-laravel-5",
         "laravel/socialite": "^3.0@dev",
         "cartalyst/sentinel": "2.0.*",
-        "ircmaxell/password-compat": "dev-master"
+        "ircmaxell/password-compat": "dev-master",
+        "laracasts/utilities": "dev-master",
+        "kinnngg/swat4query": "dev-master",
+        "mccool/laravel-auto-presenter": "~4"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

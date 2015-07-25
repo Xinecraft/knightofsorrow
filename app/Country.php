@@ -17,6 +17,16 @@ class Country extends Model
     }
 
     /**
+     * Returns all PlayerTotal with this Country
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function playerTotals()
+    {
+        return $this->hasMany('App\PlayerTotal');
+    }
+
+    /**
      * Returns all profile with given country
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
