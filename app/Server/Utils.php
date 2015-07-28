@@ -202,45 +202,47 @@ abstract class Utils
         "TEC9SMG_FMJ"
     ];
 
-    /*protected $AmmoTitle[0]="None";
-    protected $AmmoTitle[1]="M4Super90SGAmmo";
-    protected $AmmoTitle[2]="M4Super90SGSabotAmmo";
-    protected $AmmoTitle[3]="NovaPumpSGAmmo";
-    protected $AmmoTitle[4]="NovaPumpSGSabotAmmo";
-    protected $AmmoTitle[5]="LessLethalAmmo";
-    protected $AmmoTitle[6]="CSBallLauncherAmmo";
-    protected $AmmoTitle[7]="M4A1MG_JHP";
-    protected $AmmoTitle[8]="M4A1MG_FMJ";
-    protected $AmmoTitle[9]="AK47MG_FMJ";
-    protected $AmmoTitle[10]="AK47MG_JHP";
-    protected $AmmoTitle[11]="G36kMG_FMJ";
-    protected $AmmoTitle[12]="G36kMG_JHP";
-    protected $AmmoTitle[13]="UZISMG_FMJ";
-    protected $AmmoTitle[14]="UZISMG_JHP";
-    protected $AmmoTitle[15]="MP5SMG_JHP";
-    protected $AmmoTitle[16]="MP5SMG_FMJ";
-    protected $AmmoTitle[17]="UMP45SMG_FMJ";
-    protected $AmmoTitle[18]="UMP45SMG_JHP";
-    protected $AmmoTitle[19]="ColtM1911HG_JHP";
-    protected $AmmoTitle[20]="ColtM1911HG_FMJ";
-    protected $AmmoTitle[21]="Glock9mmHG_JHP";
-    protected $AmmoTitle[22]="Glock9mmHG_FMJ";
-    protected $AmmoTitle[23]="PythonRevolverHG_FMJ";
-    protected $AmmoTitle[24]="PythonRevolverHG_JHP";
-    protected $AmmoTitle[25]="TaserAmmo";
-    protected $AmmoTitle[26]="VIPPistolAmmo_FMJ";
-    protected $AmmoTitle[27]="ColtAR_FMJ";
-    protected $AmmoTitle[28]="HK69GL_StingerGrenadeAmmo";
-    protected $AmmoTitle[29]="HK69GL_FlashbangGrenadeAmmo";
-    protected $AmmoTitle[30]="HK69GL_CSGasGrenadeAmmo";
-    protected $AmmoTitle[31]="HK69GL_TripleBatonAmmo";
-    protected $AmmoTitle[32]="SAWMG_JHP";
-    protected $AmmoTitle[33]="SAWMG_FMJ";
-    protected $AmmoTitle[34]="FNP90SMG_FMJ";
-    protected $AmmoTitle[35]="FNP90SMG_JHP";
-    protected $AmmoTitle[36]="DEHG_FMJ";
-    protected $AmmoTitle[37]="DEHG_JHP";
-    protected $AmmoTitle[38]="TEC9SMG_FMJ";*/
+    protected static $AmmoTitle = [
+        "None",
+        "00 Buck",
+        "12 Gauge Slug",
+        "00 Buck",
+        "12 Gauge Slug",
+        "Beanbags",
+        "CS Balls",
+        ".223 JHP",
+        ".223 FMJ",
+        "AK47 FMJ",
+        "AK47 JHP",
+        ".223 FMJ",
+        ".223 JHP",
+        "UZI FMJ",
+        "UZI JHP",
+        "9mm JHP",
+        "9mm FMJ",
+        ".45 FMJ",
+        ".45 JHP",
+        ".45 JHP",
+        ".45 FMJ",
+        "9mm JHP",
+        "9mm FMJ",
+        "357 Magnum FMJ",
+        "357 Magnum FMJ",
+        "Cartridge",
+        "VIP 9mm FMJ",
+        "ColtAR_FMJ",
+        "Stinger",
+        "Flashbang",
+        "CS Gas",
+        "Triple Baton Ammo",
+        "SAWMG_JHP",
+        "SAWMG_FMJ",
+        "FNP90SMG_FMJ",
+        "FNP90SMG_JHP",
+        "DEHG_FMJ",
+        "DEHG_JHP",
+        "TEC9SMG_FMJ"
+    ];
 
 /*$GrenadeClass[0]="stingGrenade";  //lower-case
 $GrenadeClass[1]="CSGasGrenade";
@@ -317,6 +319,15 @@ $StunWeapons_TripleBaton=["HK69GrenadeLauncher"];*/
             return "Unknown";
     }
 
+    public static function getAmmoTitleById($id)
+    {
+        $id = abs($id);
+        if($id < count(self::$AmmoTitle))
+            return self::$AmmoTitle[$id];
+        else
+            return "Unknown";
+    }
+
     /**
      * Return min and sec in format required(sprintf syntax) for Sec.
      */
@@ -325,5 +336,22 @@ $StunWeapons_TripleBaton=["HK69GrenadeLauncher"];*/
         $min = $seconds / 60;
         $sec = $seconds % 60;
         return sprintf($syntax,$min,$sec);
+    }
+
+    /**
+     * Returns equivalent Hours and Mins of given Secs.
+     *
+     * @param $time
+     * @param string $syntax
+     * @return string
+     */
+    public static function getHMbyS($time,$syntax = "%d:%d") {
+        $s = $time % 60;
+        $time= floor($time/60);
+        $mins = $time % 60;
+        $time= floor($time/60);
+        $hours = floor($time);
+        $str = sprintf($syntax,$hours,$mins);
+        return $str;
     }
 }

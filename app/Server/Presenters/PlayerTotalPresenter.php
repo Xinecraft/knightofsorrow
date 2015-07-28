@@ -44,7 +44,7 @@ class PlayerTotalPresenter extends BasePresenter
 
     public function countryImage()
     {
-        return "images/flags/20_shiny/".$this->wrappedObject->country->countryCode.".png";
+        return "/images/flags/20_shiny/".$this->wrappedObject->country->countryCode.".png";
     }
 
     public function countryName()
@@ -54,11 +54,104 @@ class PlayerTotalPresenter extends BasePresenter
 
     public function rankImage()
     {
-        return "images/game/insignia/".$this->wrappedObject->rank->id.".png";
+        return "/images/game/insignia/".$this->wrappedObject->rank->id.".png";
     }
 
     public function rankName()
     {
         return $this->wrappedObject->rank->name;
+    }
+
+    public function timePlayed($format = "%dh %dm")
+    {
+        return \App\Server\Utils::getHMbyS($this->wrappedObject->total_time_played,$format);
+    }
+
+    public function playerRating()
+    {
+        if($this->wrappedObject->player_rating != null)
+            return $this->wrappedObject->player_rating;
+        else
+            return "<span class='text-muted'>None</span>";
+    }
+
+    public function loadoutPw()
+    {
+        return \App\Server\Utils::getEquipmentTitleById($this->wrappedObject->loadout->primary_weapon);
+    }
+
+    public function loadoutPa()
+    {
+        return \App\Server\Utils::getAmmoTitleById($this->wrappedObject->loadout->primary_ammo);
+    }
+
+    public function loadoutSw()
+    {
+        return \App\Server\Utils::getEquipmentTitleById($this->wrappedObject->loadout->secondary_weapon);
+    }
+
+    public function loadoutSa()
+    {
+        return \App\Server\Utils::getAmmoTitleById($this->wrappedObject->loadout->secondary_ammo);
+    }
+
+    public function loadoutEq1()
+    {
+        return \App\Server\Utils::getEquipmentTitleById($this->wrappedObject->loadout->equip_one);
+    }
+
+    public function loadoutEq2()
+    {
+        return \App\Server\Utils::getEquipmentTitleById($this->wrappedObject->loadout->equip_two);
+    }
+
+    public function loadoutEq3()
+    {
+        return \App\Server\Utils::getEquipmentTitleById($this->wrappedObject->loadout->equip_three);
+    }
+
+    public function loadoutEq4()
+    {
+        return \App\Server\Utils::getEquipmentTitleById($this->wrappedObject->loadout->equip_four);
+    }
+
+    public function loadoutEq5()
+    {
+        return \App\Server\Utils::getEquipmentTitleById($this->wrappedObject->loadout->equip_five);
+    }
+
+    public function loadoutBr()
+    {
+        return \App\Server\Utils::getEquipmentTitleById($this->wrappedObject->loadout->breacher);
+    }
+
+    public function loadoutHead()
+    {
+        return \App\Server\Utils::getEquipmentTitleById($this->wrappedObject->loadout->head);
+    }
+
+    public function loadoutBody()
+    {
+        return \App\Server\Utils::getEquipmentTitleById($this->wrappedObject->loadout->body);
+    }
+
+    public function scorePerRound()
+    {
+        return round($this->wrappedObject->total_score/$this->wrappedObject->total_round_played,2);
+    }
+
+    public function winLostRatio()
+    {
+        $ratio = $this->wrappedObject->game_lost == 0 ? $this->wrappedObject->game_won : round($this->wrappedObject->game_won/$this->wrappedObject->game_lost,2);
+        return $ratio;
+    }
+
+    public function weaponAccuracy()
+    {
+        $weapons = ($this->wrappedObject->alias->weapons);
+        $sh = $weapons->sum('shots_hit');
+        $sf = $weapons->sum('shots_fired');
+        $accuracy = round( $sf == 0 ? 0 : $sh / $sf * 100 , 2);
+        return $accuracy;
     }
 }

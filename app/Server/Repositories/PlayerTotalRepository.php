@@ -82,7 +82,7 @@ class PlayerTotalRepository implements PlayerTotalRepositoryInterface
             $playerTotal->killdeath_ratio = $playerTotal->total_deaths == 0 ? $playerTotal->total_kills : round($playerTotal->total_kills / $playerTotal->total_deaths, 2);
             $playerTotal->arr_ratio = $playerTotal->total_arrested == 0 ? $playerTotal->total_arrests : round($playerTotal->total_arrests / $playerTotal->total_arrested, 2);
             $playerTotal->score_per_min = $playerTotal->total_time_played == 0 ? $playerTotal->total_score : round($playerTotal->total_score / $playerTotal->total_time_played * 60, 2);
-            $playerTotal->score_percentile = round($playerTotal->total_score / $totalServerScore * 100, 2);
+            $playerTotal->score_percentile = $playerTotal->total_score == 0 || $totalServerScore == 0 ? 0 : round($playerTotal->total_score / $totalServerScore * 100, 2);
 
             $won = 0;
             $lost = 0;
@@ -122,7 +122,13 @@ class PlayerTotalRepository implements PlayerTotalRepositoryInterface
             }
 
             /**
-             * Calculation of rank_id using total_points and Rank table/
+             * Calculation of rank_id using total_points and Rank table
+             *
+             * Add this if want time played(rank_seconds) also used to calculate ranks
+             * ->where('rank_seconds', '<=' ,$playerTotal->total_time_played)
+             *
+             * Make sure that there are ranks in ranks table if not,
+             * Run php artisan db:seed
              */
             $playerTotal->rank_id = Rank::where('rank_points','>=',$playerTotal->total_points)->orderBy('rank_points')->first()->id;
             $playerTotal->save();

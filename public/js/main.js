@@ -23,6 +23,35 @@
  */
 
 /**
+ * Make Gauge Function
+ * @param {type} target
+ * @param {type} value
+ * @param {type} max
+ * @returns {undefined}
+ */
+var makeGauge = function(target, value, max){
+    var gauge = new Gauge(document.getElementById(target));
+    gauge.setOptions({
+        lines: 12,
+        angle: 0,
+        lineWidth: 0.40,
+        pointer: {
+            length: 0.8,
+            strokeWidth: 0.045,
+            color: '#005681'
+        },
+        limitMax: true,
+        percentColors: [[0.0, "#a9d70b" ], [0.50, "#f9c802"], [1.0, "#ff0000"]],
+        strokeColor: '#EEE',
+        generateGradient: true
+    });
+    gauge.maxValue = Math.max(max, 0.001);
+    gauge.animationSpeed = 24;
+    gauge.set(Math.min(Math.max(value, 0.001), gauge.maxValue));
+
+};
+
+/**
  '0': 'A-Bomb Nightclub',
  '1': 'Brewer County Courthouse',
  '2': 'Children of Taronne Tenement',
@@ -241,134 +270,59 @@ function pad(n) {
 
 $(document).ready(function ()
 {
-    function startInterval() {
 
-        //-----------------------------------------------------------------------
-        // 2) Send a http request with AJAX http://api.jquery.com/jQuery.ajax/
-        //-----------------------------------------------------------------------
-        var refreshId = setInterval(function () {
-            $('.ls-chats').load("api/server-chats/get/");
-
-            $.ajax({
-                url: 'api/server-query/get', //the script to call to get data
-                data: "", //you can insert url argumnets here to pass to api.php for example "id=5&parent=6"
-                dataType: 'json', //data format
-                success: function (data)          //on recieve of reply
-                {
-
-                    var hostname = data['hostname'];
-                    var version = data['patch'];               //get server version
-                    var hostname = data['hostname'];            //get server hostname
-                    var gametype = data['gametype'];             //get server gametype 0-bs
-                    var map = data['map'];             // or data.map         //Map Encoded into MapID
-                    var player_num = data['players_current'];            // Number of Players in Server
-                    var player_max = data['players_max'];           // Max Capacity of Server
-                    var round_num = data['round'];          // Round Index
-                    var round_max = data['numrounds'];          // Round limit per Map
-                    //    var timepassed = data[10]  ;         // Time Escaped since Map Loaded
-                    //    var actualtimepass = data[11];         // Time passed since Game Started
-                    var timeleft = data['timeleft'];       // Round time limit of Round
-                    var vict_swat = data['swatwon'];       // Rounds won by SWAT
-                    var vict_sus = data['suspectswon'];       // Rounds won by Suspects
-                    var swat_score = data['swatscore'];        // Round's SWAT score
-                    var sus_score = data['suspectsscore'];     // Round's Suspect score
-
-                    //    var outcome =   data[17] ;           // Outcome of round
-                    var nextmap = data['nextmap'];
-
-                    //    var mins,secs,time;
-                    //    time = roundtimelimit - timepassed;
-                    var mins = parseInt(timeleft/60);
-                    var secs = timeleft%60;
-                    //    round_num = parseInt(round_num)+1;
-                    //map = getMapFromID(map);
-                    swat_score = parseInt(swat_score);
-                    sus_score = parseInt(sus_score);
-                    if(isNaN(swat_score) || isNaN(sus_score))
-                    {
-                        swat_score='0';
-                        sus_score='0';
-                    }
-                    else (sus_score != swat_score)
-                    {
-                        if (swat_score > sus_score)
-                        {
-                            swat_score = '<font color="green">' + swat_score;
-                            sus_score = '<font color="B50A0A">' + sus_score;
-                        }
-                        else if(swat_score < sus_score)
-                        {
-                            sus_score = '<font color="green">' + sus_score;
-                            swat_score = '<font color="B50A0A">' + swat_score;
-                        }
-                        else
-                        {
-
-                        }
-                    }
-                    $('#ls-swat-score').html(swat_score);
-                    $('#ls-swat-wins').html(vict_swat + " wins");
-                    $('#ls-suspects-score').html(sus_score);
-                    $('#ls-suspects-wins').html(vict_sus + " wins");
-
-                    $('#ls-round').text(round_num + '/' + round_max);
-                    $('#ls-time').text(pad(mins)+":"+pad(secs));
-
-                    $('#ls-map-name').text(map);
-                    $('#ls-next-map').text("Next : " + getMapByClass(nextmap));
-                    $('#ls-player-online').text(player_num);
-                    $('#ls-player-limit').text(player_max);
-
-
-                    var playertable="<thead><tr><th class='col-md-6'>Name</th><th class='col-md-3'>Score</th><th class='text-right col-md-3'>Ping</th></tr></thead><tbody id='ls-player-table-body'></tbody>";
-
-                    var i=0;
-                    $.each(data.players,function(){
-
-                        if(data['players'][i]['team']==0)
-                        {
-                            playertable = playertable + "<tr class=''>";
-                            data['players'][i]['name']="<font color='blue'>"+data['players'][i]['name'];
-                        }
-                        else
-                        {
-                            playertable = playertable + "<tr class=''>";
-                            data['players'][i]['name']="<font color='red'>"+data['players'][i]['name'];
-                        }
-
-                        playertable = playertable  +  "          \
-                    <td>"+data['players'][i]['name']+"</td>                    \
-                    <td>"+data['players'][i]['score']+"</td>                                  \
-                    <td class='text-right'>"+data['players'][i]['ping']+"</td>                                  \
-                    </tr> ";
-                        i++;
-                    })
-                    $('#ls-player-table').html(playertable);
-//                    for(i=0;i<=player_num;i++)
-//                    {
-//                        $('#liveplayerdata').html(data['players'][0]['name']);
-//                    }
-
-                }
-            });
-        }, 10000);
-    }
-    startInterval();
-
-
+    /**
+     * Infinite Scroll
+     *
+     * loading options of infinite scroll.
+     * @type {{selector: string, finishedMsg: string, msgText: string}}
+     */
         var loading_options = {
             selector: "#loading",
-            finishedMsg: "<em>You've reached the end of the round report list.</em>",
-            msgText: "<em>Loading the next set of round reports…</em>"
+            finishedMsg: "<em>You've reached the end of Internet ;)</em>",
+            msgText: "<em>Loading the next set of data…</em>"
         };
 
-        /**
-         * Infinite Scroll for Round Reports
-         */
-        $('#round-items').infinitescroll({
+    /**
+     * Infinite scroll call.
+     */
+        $('#data-items').infinitescroll({
             loading: loading_options,
             navSelector: ".pagination",
             nextSelector: ".pagination li.active + li a",
-            itemSelector: "#round-items .item"
+            itemSelector: "#data-items .item"
         });
+
+    //Getting individual player data of round when clicked on round players
+    $('.getindistats').click(function(){
+        var indi_p_id;
+        indi_p_id = $(this).data('id');
+        $('.getindistats').removeClass('active');
+        $(this).addClass('active');
+        $('#indiplayerstats').load("/statistics/ajax/round-player/"+indi_p_id);
+    });
+
+    //Click and go to round detail even when clicked on <tr> instead of <a>
+    $(".roundstabledata tr").click(function(){
+        var id;
+        id = $(this).data('id');
+        window.location= "/statistics/round-reports/detail/"+id;
+    });
+
+
+    /**
+     * Activate tooltipster on all .tooltip class elements
+     */
+    $('.tooltipster').tooltipster({
+        contentAsHTML: true,
+        animation: 'grow'
+    });
+
+
+    makeGauge('gauge-spm', $('#gauge-spm').data('spm'), 5.00);
+    makeGauge('gauge-wlr', $('#gauge-wlr').data('wlr'), 3.56);
+    makeGauge('gauge-acr', $('#gauge-acr').data('acr'), 100.00);
+    makeGauge('gauge-kdr', $('#gauge-kdr').data('kdr'), 5.00);
+    makeGauge('gauge-aar', $('#gauge-aar').data('aar'), 3.56);
+    makeGauge('gauge-spt', $('#gauge-spt').data('spt'), 25.00);
 });

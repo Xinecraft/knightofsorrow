@@ -11,8 +11,8 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="{{ route('home') }}">Home</a></li>
-                <li><a href="{{ url('statistics') }}">Statistics</a></li>
+                <li class="{{ set_active(['/','home/']) }}"><a href="{{ route('home') }}">Home</a></li>
+                <li class="{{ set_active(['statistics*']) }}">{!! link_to_route('statistics-home','Statistics') !!}</li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div><!--/.nav-collapse -->

@@ -29,12 +29,22 @@ class Alias extends Model
     }
 
     /**
-     * Returns all PlayerTotal with this Alias
+     * Returns one belonging PlayerTotal with this Alias
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function playerTotals()
+    public function playerTotal()
     {
-        return $this->hasMany('App\PlayerTotal');
+        return $this->hasOne('App\PlayerTotal');
+    }
+
+    /**
+     * Returns all weapons stats ever used by the player with this Alias.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
+     */
+    public function weapons()
+    {
+        return $this->hasManyThrough('App\Weapon','App\Player');
     }
 }

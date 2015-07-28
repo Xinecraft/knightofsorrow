@@ -9,6 +9,7 @@
     <title>KnightofSorrow.tk - Swat4 Server and Community</title>
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('components/tooltipster/css/tooltipster.css') }}" />
     <!-- Custom CSS -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- Custom Fonts -->
@@ -35,10 +36,10 @@
 
 {!! Html::script('js/jquery.js') !!}
 {!! Html::script('js/bootstrap.min.js') !!}
+{!! Html::script('components/tooltipster/js/jquery.tooltipster.min.js') !!}
 {!! Html::script('js/jquery.infinitescroll.min.js') !!}
 {!! Html::script('js/main.js') !!}
-
+{!! Html::script('js/gauge.min.js') !!}
 @yield('scripts')
-
 </body>
 </html>

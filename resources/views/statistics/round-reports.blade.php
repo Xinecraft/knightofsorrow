@@ -1,39 +1,40 @@
 @extends('layouts.main')
 
 @section('main-container')
-    <style>
-        td{
-            padding: 15px !important;
-        }
-    </style>
     <div class="col-md-9">
-        <div class="rounds">
-            <table id="" class="table table-striped table-hover">
-                <thead>
-                <tr>
-                    <th class="col-md-1">Round</th>
-                    <th class="col-md-2">Time</th>
-                    <th class="col-md-1">Swat</th>
-                    <th class="col-md-2">Suspects</th>
-                    <th class="col-md-4">Map</th>
-                    <th class="text-right">Date</th>
-                </tr>
-                </thead>
-                <tbody id="round-items">
-                @foreach($rounds as $round)
-                    <tr class="item">
-                        <td>{{ $round->id }}</td>
-                        <td>{{ $round->time }}</td>
-                        <td>{{ $round->swat_score }}</td>
-                        <td>{{ $round->suspects_score }}</td>
-                        <td>{{ $round->mapName }}</td>
-                        <td class="text-right">{{ $round->timeAgo }}</td>
+        @include('partials._statistics-navbar')
+
+        <div class="rounds panel panel-default">
+            <div class="panel-heading"><strong>Total <em>{{ App\Game::count() }}</em> Rounds Reports</strong></div>
+            <div class="panel-body">
+                <table id="" class="table table-striped table-hover no-margin">
+                    <thead>
+                    <tr>
+                        <th class="col-md-1">{!! sort_rounds_by('id','Round') !!}</th>
+                        <th class="col-md-2">{!! sort_rounds_by('round_time','Time') !!}</th>
+                        <th class="col-md-1">{!! sort_rounds_by('swat_score','Swat') !!}</th>
+                        <th class="col-md-2">{!! sort_rounds_by('suspects_score','Suspects') !!}</th>
+                        <th class="">{!! sort_rounds_by('map_id','Map') !!}</th>
+                        <th class="col-md-2 text-right">{!! sort_rounds_by('created_at','Date') !!}</th>
                     </tr>
-                @endforeach
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody id="data-items" class="roundstabledata">
+                    @foreach($rounds as $round)
+                        <tr class="item pointer-cursor" data-id="{{ $round->id }}">
+                            <td class="color-main text-bold">{!! link_to_route('round-detail',$round->id,[$round->id]) !!}</td>
+                            <td class="text-muted">{{ $round->time }}</td>
+                            <td>{!! $round->swatScoreWithColor !!}</td>
+                            <td>{!! $round->suspectsScoreWithColor !!}</td>
+                            <td>{{ $round->mapName }}</td>
+                            <td class="text-right">{{ $round->timeAgo }}</td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
             {!! $rounds->render() !!}
             <div id="loading" class="text-center"></div>
         </div>
+
     </div>
 @endsection

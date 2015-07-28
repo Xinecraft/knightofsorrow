@@ -6,6 +6,18 @@ td,
 th {
   font-size: 0.8em;
 }
+thead {
+  border-bottom: 2px solid #d62c1a;
+}
+.text-bold {
+  font-weight: bold;
+}
+.color-main {
+  color: #d62c1a !important;
+}
+.pagination {
+  display: none !important;
+}
 .no-padding {
   padding: 0 !important;
 }
@@ -42,6 +54,219 @@ th {
 }
 .no-left-padding {
   padding-left: 0;
+}
+.rounds {
+  font-size: 16px !important;
+}
+#loading {
+  font-size: 13px !important;
+}
+.round-team-score {
+  padding: 10px;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+.round-team-scores {
+  margin: 0 auto;
+  padding-top: 48px;
+  width: 460px;
+  color: #ffffff;
+}
+.round-detail-summary {
+  background-color: #2C3E50 !important;
+  font-weight: 800;
+  color: white;
+}
+.round-detail-teamscores {
+  background-size: cover;
+  border: 1px solid;
+  height: 150px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+.round-team-score-value {
+  text-shadow: 1px 1px 2px white;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.round-detail-topper-title {
+  margin-left: 10px;
+  font-size: 13px;
+  font-weight: bold;
+}
+.round-detail-topper-value {
+  margin-left: 10px;
+  color: #6D6D6D;
+  font-size: 14px;
+}
+.round-detail-players {
+  margin-bottom: 10px !important;
+  cursor: pointer;
+}
+#indiplayerstats {
+  font-size: 13px;
+}
+#indiplayerstats .badge {
+  color: #000000 !important;
+  background-color: transparent !important;
+}
+.pointer-cursor {
+  cursor: pointer !important;
+}
+.roundstabledata {
+  font-size: 16px !important;
+}
+.player-records-icon {
+  width: 16px;
+  height: 16px;
+  background: url("/images/css/player-record-sprite.png");
+}
+.player-records-icon.totalscore {
+  background-position: -144px 0;
+}
+.player-records-icon.highscore {
+  background-position: -128px 0;
+}
+.player-records-icon.time {
+  background-position: -112px 0;
+}
+.player-records-icon.ping {
+  background-position: -160px 0;
+}
+.player-records-icon.teamkills {
+  background-position: -80px 0;
+}
+.player-records-icon.arrests {
+  background-position: -96px 0;
+}
+.player-records-icon.arrested {
+  background-position: -64px 0;
+}
+.player-records-icon.arreststreak {
+  background-position: -48px 0;
+}
+.player-records-icon.kills {
+  background-position: 0 0;
+}
+.player-records-icon.deaths {
+  background-position: -32px 0;
+}
+.player-records-icon.killstreak {
+  background-position: -16px 0;
+}
+.player-records {
+  margin-top: 15px;
+}
+.player-records .nav-tabs a {
+  font-size: 13px;
+  text-decoration: none !important;
+}
+.player-records .nav-tabs a:hover {
+  text-decoration: none !important;
+}
+.player-records .nav-tabs a:active {
+  text-decoration: none !important;
+}
+.playerrecordtable tr td a {
+  font-weight: bold;
+}
+.ainorange {
+  font-weight: bold;
+  color: #d62c1a;
+}
+.player-detail-summary {
+  background-color: #2C3E50 !important;
+  font-weight: 700;
+  color: white;
+  padding: 10px !important;
+  margin-bottom: 15px !important;
+}
+.name-as-title {
+  font-size: 25px;
+  font-weight: 900;
+}
+.pad5 {
+  padding: 5px !important;
+}
+.pad10 {
+  padding: 10px !important;
+}
+.player-rank-container {
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 10px !important;
+}
+.colm-1 {
+  width: 7.3% !important;
+  float: left;
+}
+.colm-2 {
+  width: 11% !important;
+  float: left;
+}
+.player-stats-container {
+  padding: 10px !important;
+  margin-bottom: 15px !important;
+  font-size: 16px;
+}
+.player-stats-loadout-container {
+  background-color: #ffffff;
+  margin-top: 5px !important;
+  border: 1px solid #000000 !important;
+  font-size: 13px !important;
+  color: #d62c1a;
+}
+.player-stats-loadout-container div {
+  border-color: #000000 !important;
+}
+.gaugeheading {
+  font-size: 13px;
+  font-weight: 600;
+}
+.font-dsdigital {
+  /* TODO Change this font to some static */
+  font-family: fantasy;
+  font-size: 15px;
+}
+.a-primary {
+  color: #2c3e50 !important;
+}
+.a-primary:hover {
+  color: #2c3e50 !important;
+}
+.a-primary:active {
+  color: #203850 !important;
+}
+a.asc {
+  padding-right: 12px !important;
+  background: no-repeat right center;
+  background-image: url("/images/css/arrow_up.gif");
+}
+a.desc {
+  padding-right: 12px !important;
+  background: no-repeat right center;
+  background-image: url("/images/css/arrow_down.gif");
+}
+.weapontable th,
+.weapontable td {
+  vertical-align: middle !important;
+  text-align: center !important;
+}
+.weapontableimg {
+  border: 1px solid rgba(77, 77, 77, 0.82);
+}
+.player-weapons-detail {
+  background-color: #F1F1F1;
+  border: 1px solid #DCDCDC;
+  margin-bottom: 15px !important;
+}
+.player-weapons-detail a.ainorange {
+  font-size: 12px !important;
+  text-decoration: none !important;
 }
 
 /*# sourceMappingURL=app.css.map */

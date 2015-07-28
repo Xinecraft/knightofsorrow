@@ -15,7 +15,7 @@ class ChatTracker {
 
     public function track()
     {
-        if(!array_key_exists(28, $this->data) && $this->data[28] == NULL)
+        if(!array_key_exists(28, $this->data) || $this->data[28] == NULL)
             return;
 
         $chatMsg = $this->data[28];

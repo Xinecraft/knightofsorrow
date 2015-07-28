@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('/test',function(){
+    dd($accuracy);
+});
+
 Route::get('/', ['as' => 'home', function () {
 
     /*$countries = App\Country::paginate(30);
@@ -64,9 +68,80 @@ Route::get('/', ['as' => 'home', function () {
 
     $topPlayers = App\PlayerTotal::orderBy('position')->limit(10)->get();
     $latestGames = App\Game::orderBy('created_at','desc')->limit(5)->get();
-    //return view('home');
-    return view('home')->with('topPlayers',$topPlayers)->with('latestGames',$latestGames);
 
+    //return (Carbon\Carbon::now()->subYears(100));
+
+    $player = App\Player::first();
+
+    $AllTime = new \Illuminate\Support\Collection();
+    $PastWeek = new \Illuminate\Support\Collection();
+    $PastMonth = new \Illuminate\Support\Collection();
+    $PastYear = new \Illuminate\Support\Collection();
+
+    $AllTime->totalScore = $player->getBestIn('SUM(score) as totalscore','totalscore');
+    $AllTime->highestScore = $player->getBestIn('MAX(score) as highestscore','highestscore');
+    $AllTime->totalArrests = $player->getBestIn('SUM(arrests) as totalarrests','totalarrests');
+    $AllTime->totalArrested = $player->getBestIn('SUM(arrested) as totalarrested','totalarrested');
+    $AllTime->totalKills = $player->getBestIn('SUM(kills) as totalkills','totalkills');
+    $AllTime->totalDeaths = $player->getBestIn('SUM(deaths) as totaldeaths','totaldeaths');
+    $AllTime->bestArrestStreak = $player->getBestIn('MAX(arrest_streak) as best_arrest_streak','best_arrest_streak');
+    $AllTime->bestKillStreak = $player->getBestIn('MAX(kill_streak) as best_kill_streak','best_kill_streak');
+    $AllTime->bestDeathStreak = $player->getBestIn('MAX(death_streak) as best_death_streak','best_death_streak');
+    $AllTime->totalTeamKills = $player->getBestIn('SUM(team_kills) as totalteamkills','totalteamkills');
+    $AllTime->totalTimePlayed = $player->getBestIn('SUM(time_played) as totaltimeplayed','totaltimeplayed');
+    $AllTime->bestScorePerMin = $player->getBestIn('SUM(score)/SUM(time_played)*60 as scorepermin','scorepermin');
+
+    $pastWeekDate = \Carbon\Carbon::now()->subWeek(1);
+    $PastWeek->totalScore = $player->getBestIn('SUM(score) as totalscore','totalscore',$pastWeekDate);
+    $PastWeek->highestScore = $player->getBestIn('MAX(score) as highestscore','highestscore',$pastWeekDate);
+    $PastWeek->totalArrests = $player->getBestIn('SUM(arrests) as totalarrests','totalarrests',$pastWeekDate);
+    $PastWeek->totalArrested = $player->getBestIn('SUM(arrested) as totalarrested','totalarrested',$pastWeekDate);
+    $PastWeek->totalKills = $player->getBestIn('SUM(kills) as totalkills','totalkills',$pastWeekDate);
+    $PastWeek->totalDeaths = $player->getBestIn('SUM(deaths) as totaldeaths','totaldeaths',$pastWeekDate);
+    $PastWeek->bestArrestStreak = $player->getBestIn('MAX(arrest_streak) as best_arrest_streak','best_arrest_streak',$pastWeekDate);
+    $PastWeek->bestKillStreak = $player->getBestIn('MAX(kill_streak) as best_kill_streak','best_kill_streak',$pastWeekDate);
+    $PastWeek->bestDeathStreak = $player->getBestIn('MAX(death_streak) as best_death_streak','best_death_streak',$pastWeekDate);
+    $PastWeek->totalTeamKills = $player->getBestIn('SUM(team_kills) as totalteamkills','totalteamkills',$pastWeekDate);
+    $PastWeek->totalTimePlayed = $player->getBestIn('SUM(time_played) as totaltimeplayed','totaltimeplayed',$pastWeekDate);
+    $PastWeek->bestScorePerMin = $player->getBestIn('SUM(score)/SUM(time_played)*60 as scorepermin','scorepermin',$pastWeekDate);
+
+    $pastMonthDate = \Carbon\Carbon::now()->subMonth(1);
+    $PastMonth->totalScore = $player->getBestIn('SUM(score) as totalscore','totalscore',$pastMonthDate);
+    $PastMonth->highestScore = $player->getBestIn('MAX(score) as highestscore','highestscore',$pastMonthDate);
+    $PastMonth->totalArrests = $player->getBestIn('SUM(arrests) as totalarrests','totalarrests',$pastMonthDate);
+    $PastMonth->totalArrested = $player->getBestIn('SUM(arrested) as totalarrested','totalarrested',$pastMonthDate);
+    $PastMonth->totalKills = $player->getBestIn('SUM(kills) as totalkills','totalkills',$pastMonthDate);
+    $PastMonth->totalDeaths = $player->getBestIn('SUM(deaths) as totaldeaths','totaldeaths',$pastMonthDate);
+    $PastMonth->bestArrestStreak = $player->getBestIn('MAX(arrest_streak) as best_arrest_streak','best_arrest_streak',$pastMonthDate);
+    $PastMonth->bestKillStreak = $player->getBestIn('MAX(kill_streak) as best_kill_streak','best_kill_streak',$pastMonthDate);
+    $PastMonth->bestDeathStreak = $player->getBestIn('MAX(death_streak) as best_death_streak','best_death_streak',$pastMonthDate);
+    $PastMonth->totalTeamKills = $player->getBestIn('SUM(team_kills) as totalteamkills','totalteamkills',$pastMonthDate);
+    $PastMonth->totalTimePlayed = $player->getBestIn('SUM(time_played) as totaltimeplayed','totaltimeplayed',$pastMonthDate);
+    $PastMonth->bestScorePerMin = $player->getBestIn('SUM(score)/SUM(time_played)*60 as scorepermin','scorepermin',$pastMonthDate);
+
+    $pastYearDate = \Carbon\Carbon::now()->subYear(1);
+    $PastYear->totalScore = $player->getBestIn('SUM(score) as totalscore','totalscore',$pastYearDate);
+    $PastYear->highestScore = $player->getBestIn('MAX(score) as highestscore','highestscore',$pastYearDate);
+    $PastYear->totalArrests = $player->getBestIn('SUM(arrests) as totalarrests','totalarrests',$pastYearDate);
+    $PastYear->totalArrested = $player->getBestIn('SUM(arrested) as totalarrested','totalarrested',$pastYearDate);
+    $PastYear->totalKills = $player->getBestIn('SUM(kills) as totalkills','totalkills',$pastYearDate);
+    $PastYear->totalDeaths = $player->getBestIn('SUM(deaths) as totaldeaths','totaldeaths',$pastYearDate);
+    $PastYear->bestArrestStreak = $player->getBestIn('MAX(arrest_streak) as best_arrest_streak','best_arrest_streak',$pastYearDate);
+    $PastYear->bestKillStreak = $player->getBestIn('MAX(kill_streak) as best_kill_streak','best_kill_streak',$pastYearDate);
+    $PastYear->bestDeathStreak = $player->getBestIn('MAX(death_streak) as best_death_streak','best_death_streak',$pastYearDate);
+    $PastYear->totalTeamKills = $player->getBestIn('SUM(team_kills) as totalteamkills','totalteamkills',$pastYearDate);
+    $PastYear->totalTimePlayed = $player->getBestIn('SUM(time_played) as totaltimeplayed','totaltimeplayed',$pastYearDate);
+    $PastYear->bestScorePerMin = $player->getBestIn('SUM(score)/SUM(time_played)*60 as scorepermin','scorepermin',$pastYearDate);
+
+    $array = [
+        'topPlayers' => $topPlayers,
+        'latestGames' => $latestGames,
+        'AllTime' => $AllTime,
+        'PastWeek' => $PastWeek,
+        'PastMonth' => $PastMonth,
+        'PastYear' => $PastYear
+    ];
+    return view('home',$array);
 }]);
 
 
@@ -78,49 +153,55 @@ Route::get('api/server-chats/get',function(){
     }
 });
 Route::get('api/server-query/get',function(){
-    $data = new Kinnngg\Swat4query\Server('127.0.0.1',10481);
+    $data = new Kinnngg\Swat4query\Server('knightofsorrow.tk',10483);
     $data->query();
     return $data;
 });
-
-Route::get('user','UserController@index');
 
 /**
  * Statistics Route Controllers
  */
 Route::group(['prefix' => 'statistics'],function(){
-    Route::get('round-reports','StatisticsController@getRoundReports');
-    Route::get('top-players','StatisticsController@getTopPlayers');
+    Route::get('/',['as' => 'statistics-home', 'uses' => 'StatisticsController@getTopPlayers']);
+    Route::get('round-reports',['as' => 'round-reports', 'uses' => 'StatisticsController@getRoundReports']);
+    Route::get('top-players',['as' => 'top-players', 'uses' => 'StatisticsController@getTopPlayers']);
+    Route::get('player/{id?}/{name}/',['as' => 'player-detail', 'uses' => 'StatisticsController@getPlayerDetails']);
+    Route::get('round-reports/detail/{id}',['as' => 'round-detail', 'uses' => 'StatisticsController@getRoundDetails']);
+
+    Route::get('ajax/round-player/{id}',['as' => 'ajax-round-player', 'uses' => 'StatisticsController@getRoundPlayerWithAjax']);
 });
 
-/**
- * Server round end Controller
- *
- * This route will handle the posting and storage of all data coming from
- * server to the website as a POST request
- */
-Route::post('/tracker/{key}/',['as' => 'tracker', function($key){
-    if($key != env('SERVER_QUERY_KEY')) {
-        Log::error("Error! Server key invalid. Can't save round record to Database.");
-    }
-    else {
-        $game = new App\Server\ServerTracker($_POST);
-        $game->track();
-    }
-}]);
 
-/**
- * Server Chat messages Controller
- *
- * This route will handle the posting and storage of all chats from server
- * to the website db as a GET request
- */
-Route::get('/chattracker/{key}/',['as' => 'chattracker',function($key){
-    if($key != env('SERVER_QUERY_KEY')) {
-        Log::error("Error! Server key invalid. Can't save chat record to Database.");
-    }
-    else {
-        $chat = new App\Server\ChatTracker($_GET);
-        $chat->track();
-    }
-}]);
+Route::group(['prefix' => 'servertracker'], function(){
+    /**
+     * Server round end Controller
+     *
+     * This route will handle the posting and storage of all data coming from
+     * server to the website as a POST request
+     */
+    Route::post('rounds/{key}/',['as' => 'server-tracker', function($key){
+        if($key != env('SERVER_QUERY_KEY')) {
+            Log::error("Error! Server key invalid. Can't save round record to Database.");
+        }
+        else {
+            $game = new App\Server\ServerTracker($_POST);
+            $game->track();
+        }
+    }]);
+
+    /**
+     * Server Chat messages Controller
+     *
+     * This route will handle the posting and storage of all chats from server
+     * to the website db as a GET request
+     */
+    Route::get('chats/{key}/',['as' => 'chat-tracker',function($key){
+        if($key != env('SERVER_QUERY_KEY')) {
+            Log::error("Error! Server key invalid. Can't save chat record to Database.");
+        }
+        else {
+            $chat = new App\Server\ChatTracker($_GET);
+            $chat->track();
+        }
+    }]);
+});

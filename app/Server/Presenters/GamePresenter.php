@@ -56,4 +56,88 @@ class GamePresenter extends BasePresenter
     {
         return \App\Server\Utils::getMSbyS($this->wrappedObject->round_time,$format);
     }
+
+    public function swatScoreWithColor()
+    {
+        if($this->wrappedObject->swat_score > $this->wrappedObject->suspects_score)
+        {
+            return "<font color='#32cd32'><b>".$this->wrappedObject->swat_score."</b></font>";
+        }
+        elseif($this->wrappedObject->swat_score < $this->wrappedObject->suspects_score)
+        {
+            return "<font color='#C60D00'><b>".$this->wrappedObject->swat_score."</b></font>";
+        }
+        else
+        {
+            return $this->wrappedObject->swat_score;
+        }
+    }
+
+    public function suspectsScoreWithColor()
+    {
+        if($this->wrappedObject->swat_score > $this->wrappedObject->suspects_score)
+        {
+            return "<font color='#C60D00'><b>".$this->wrappedObject->suspects_score."</b></font>";
+        }
+        elseif($this->wrappedObject->swat_score < $this->wrappedObject->suspects_score)
+        {
+            return "<font color='#32cd32'><b>".$this->wrappedObject->suspects_score."</b></font>";
+        }
+        else
+        {
+            return $this->wrappedObject->suspects_score;
+        }
+    }
+
+    public function topScorer()
+    {
+
+        return $this->wrappedObject->players()->orderBy('score','DESC')->first();
+    }
+
+    public function massArrester()
+    {
+
+        return $this->wrappedObject->players()->orderBy('arrests','DESC')->first();
+    }
+
+    public function killingMachine()
+    {
+
+        return $this->wrappedObject->players()->orderBy('kills','DESC')->first();
+    }
+
+    public function bestKillStreak()
+    {
+
+        return $this->wrappedObject->players()->orderBy('kill_streak','DESC')->first();
+    }
+
+    public function bestArrestStreak()
+    {
+
+        return $this->wrappedObject->players()->orderBy('arrest_streak','DESC')->first();
+    }
+
+    public function bestDeathStreak()
+    {
+
+        return $this->wrappedObject->players()->orderBy('death_streak','DESC')->first();
+    }
+
+    public function bestScorePerMin()
+    {
+        return $this->wrappedObject->players()->select(DB::raw('*,score/time_played as scoremin'))->orderBy('scoremin','DESC')->first();
+    }
+
+    public function SwatPlayers()
+    {
+        return $this->wrappedObject->players()->where('team',0)->orderBy('score','DESC')->groupBy('name')->get();
+    }
+
+    public function SuspectPlayers()
+    {
+        return $this->wrappedObject->players()->where('team',1)->orderBy('score','DESC')->groupBy('name')->get();
+    }
+
 }
