@@ -548,3 +548,16 @@
 
     </div>
 @endsection
+
+@section('scripts')
+    <script type="text/javascript">
+        $(document).ready(function(){
+            makeGauge('gauge-spm', $('#gauge-spm').data('spm'), 5.00);
+            makeGauge('gauge-wlr', $('#gauge-wlr').data('wlr'), 3.56);
+            makeGauge('gauge-acr', $('#gauge-acr').data('acr'), 100.00);
+            makeGauge('gauge-kdr', $('#gauge-kdr').data('kdr'), 5.00);
+            makeGauge('gauge-aar', $('#gauge-aar').data('aar'), 3.56);
+            makeGauge('gauge-spt', $('#gauge-spt').data('spt'), 25.00);
+        })
+    </script>
+@endsection

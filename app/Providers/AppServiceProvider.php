@@ -25,6 +25,11 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->bind(
             'App\Server\Interfaces\PlayerTotalRepositoryInterface',
-            'App\Server\Repositories\PlayerTotalRepository');
+            'App\Server\Repositories\PlayerTotalRepository'
+        );
+
+        if ($this->app->environment() == 'local') {
+            $this->app->register('Laracasts\Generators\GeneratorsServiceProvider');
+        }
     }
 }

@@ -141,6 +141,7 @@ return [
          * Third Party service providers
          */
         Barryvdh\Debugbar\ServiceProvider::class,
+        Zizaco\Entrust\EntrustServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         McCool\LaravelAutoPresenter\AutoPresenterServiceProvider::class,
@@ -204,6 +205,7 @@ return [
 
 
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
         'Image'     => Intervention\Image\Facades\Image::class,
         'Form' 		=> Collective\Html\FormFacade::class,
         'Html' 		=> Collective\Html\HtmlFacade::class,

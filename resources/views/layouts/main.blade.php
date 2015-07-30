@@ -37,6 +37,7 @@
 {!! Html::script('js/jquery.js') !!}
 {!! Html::script('js/bootstrap.min.js') !!}
 {!! Html::script('components/tooltipster/js/jquery.tooltipster.min.js') !!}
+{!! Html::script('components/typeahead.js/dist/typeahead.bundle.min.js') !!}
 {!! Html::script('js/jquery.infinitescroll.min.js') !!}
 {!! Html::script('js/main.js') !!}
 {!! Html::script('js/gauge.min.js') !!}

@@ -21,13 +21,15 @@
         "ircmaxell/password-compat": "dev-master",
         "laracasts/utilities": "dev-master",
         "kinnngg/swat4query": "dev-master",
-        "mccool/laravel-auto-presenter": "~4"
+        "mccool/laravel-auto-presenter": "~4",
+        "way/generators": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
         "phpunit/phpunit": "~4.0",
-        "phpspec/phpspec": "~2.1"
+        "phpspec/phpspec": "~2.1",
+        "laracasts/generators": "dev-master"
     },
     "autoload": {
         "classmap": [

@@ -24,12 +24,20 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password'];
+    protected $fillable = ['name', 'email', 'password','username'];
 
     /**
      * The attributes excluded from the model's JSON form.
      *
      * @var array
      */
-    protected $hidden = ['password', 'remember_token'];
+    protected $hidden = ['password', 'remember_token','confirmation_token'];
+
+    /**
+     * Returns gravatar ID
+     */
+    public function getGravatarId()
+    {
+        return md5($this->email);
+    }
 }

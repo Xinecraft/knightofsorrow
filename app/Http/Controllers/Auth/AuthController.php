@@ -6,6 +6,8 @@ use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Auth;
+use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
@@ -43,6 +45,7 @@ class AuthController extends Controller
         return Validator::make($data, [
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
+            'username' => 'required|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
         ]);
     }
@@ -56,9 +59,60 @@ class AuthController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
+            'username' => $data['username'],
             'email' => $data['email'],
+            'name' => $data['name'],
             'password' => bcrypt($data['password']),
         ]);
     }
+
+    /**
+     * Handle a login request to the application.
+     * Overrritten version of AuthenticatesAndRegistersUsers trait
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function postLogin(Request $request)
+    {
+        $this->validate($request, [
+            'username' => 'required', 'password' => 'required',
+        ]);
+
+        $credentials = $this->getCredentials($request);
+
+        if (Auth::attempt($credentials, $request->has('remember'))) {
+            return redirect()->intended($this->redirectPath());
+        }
+
+        return redirect($this->loginPath())
+            ->withInput($request->only('username', 'remember'))
+            ->withErrors([
+                'email' => $this->getFailedLoginMessage(),
+            ]);
+    }
+
+    /**
+     * Get the needed authorization credentials from the request.
+     * Overrritten version of AuthenticatesAndRegistersUsers trait
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return array
+     */
+    protected function getCredentials(Request $request)
+    {
+        return $request->only('username', 'password');
+    }
+
+    /**
+     * Get the failed login message.
+     * Overrritten version of AuthenticatesAndRegistersUsers trait
+     *
+     * @return string
+     */
+    protected function getFailedLoginMessage()
+    {
+        return 'These credentials do not match our records.';
+    }
+
 }

@@ -277,21 +277,21 @@ $(document).ready(function ()
      * loading options of infinite scroll.
      * @type {{selector: string, finishedMsg: string, msgText: string}}
      */
-        var loading_options = {
-            selector: "#loading",
-            finishedMsg: "<em>You've reached the end of Internet ;)</em>",
-            msgText: "<em>Loading the next set of data…</em>"
-        };
+    var loading_options = {
+        selector: "#loading",
+        finishedMsg: "<em>You've reached the end of Internet ;)</em>",
+        msgText: "<em>Loading the next set of data…</em>"
+    };
 
     /**
      * Infinite scroll call.
      */
-        $('#data-items').infinitescroll({
-            loading: loading_options,
-            navSelector: ".pagination",
-            nextSelector: ".pagination li.active + li a",
-            itemSelector: "#data-items .item"
-        });
+    $('#data-items').infinitescroll({
+        loading: loading_options,
+        navSelector: ".pagination",
+        nextSelector: ".pagination li.active + li a",
+        itemSelector: "#data-items .item"
+    });
 
     //Getting individual player data of round when clicked on round players
     $('.getindistats').click(function(){
@@ -319,10 +319,61 @@ $(document).ready(function ()
     });
 
 
-    makeGauge('gauge-spm', $('#gauge-spm').data('spm'), 5.00);
-    makeGauge('gauge-wlr', $('#gauge-wlr').data('wlr'), 3.56);
-    makeGauge('gauge-acr', $('#gauge-acr').data('acr'), 100.00);
-    makeGauge('gauge-kdr', $('#gauge-kdr').data('kdr'), 5.00);
-    makeGauge('gauge-aar', $('#gauge-aar').data('aar'), 3.56);
-    makeGauge('gauge-spt', $('#gauge-spt').data('spt'), 25.00);
+    var users = new Bloodhound({
+        datumTokenizer: function (datum) {
+            return Bloodhound.tokenizers.whitespace(datum.value);
+        },
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        remote: {
+            url: "/api/users/%QUERY",
+            wildcard: '%QUERY'
+        }
+    });
+
+    var players = new Bloodhound({
+        datumTokenizer: function (datum) {
+            return Bloodhound.tokenizers.whitespace(datum.value);
+        },
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        remote: {
+            url: "/api/players/%QUERY",
+            wildcard: '%QUERY'
+        }
+    });
+
+    users.initialize();
+    players.initialize();
+
+    $('#navsearch').typeahead({
+            hint: true,
+            highlight: true,
+            minlength: 3
+        },
+        {
+            name: 'users',
+            limit: 5,
+            displayKey: 'username',
+            source: users.ttAdapter(),
+            templates: {
+                header: '<h4 class="">Users</h4>',
+                suggestion: function(data){
+                    return '<p><a href="/user/' +data.id+ '/' +data.username+ '"> <strong>' + data.username + '</strong></a> - ' + data.name + '</p>';
+                }
+            }
+        },
+        {
+            name: 'players',
+            limit: 5,
+            displayKey: 'name',
+            source: players.ttAdapter(),
+            templates: {
+                header: '<h4 class="">Players</h4>',
+                suggestion: function(data){
+                    return '<p><strong><a href="/statistics/player/' +data.id+ '/' +data.name+ '">' + data.name + '</a> - #' + data.position + '</strong></p>';
+                }
+            }
+        }
+    );
+    // TypeAhead Ends
+
 });
