@@ -1,0 +1,19 @@
+{
+  "name": "Knight of Sorrow",
+  "version": "0.0.0",
+  "authors": [
+    "Zishan Ansari <kinnngg786@gmail.com>"
+  ],
+  "description": "SWAT4 Servers and Community",
+  "keywords": [
+    "swat4",
+    "server",
+    "tracker"
+  ],
+  "license": "MIT",
+  "homepage": "knightofsorrow.tk",
+  "dependencies": {
+    "tooltipster": "~3.3.0",
+    "typeahead.js": "~0.11.1"
+  }
+}
