@@ -1,9 +1,10 @@
 @extends('layouts.main')
+@section('meta-desc',"List of all rounds played.")
+@section('title',"Round Reports")
 
 @section('main-container')
     <div class="col-md-9">
         @include('partials._statistics-navbar')
-
         <div class="rounds panel panel-default">
             <div class="panel-heading"><strong>Total <em>{{ App\Game::count() }}</em> Rounds Reports</strong></div>
             <div class="panel-body">

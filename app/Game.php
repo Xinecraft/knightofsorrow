@@ -27,6 +27,16 @@ class Game extends Model implements HasPresenter
     }
 
     /**
+     * Returns all comments of this Game Round.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
+     */
+    public function comments()
+    {
+        return $this->morphMany('App\Comment','commentable');
+    }
+
+    /**
      * Get a team id and returns if that team won that round or not.
      *
      * Returns 0 -> Loss, 1 -> Won, -1 -> Tie -2 -> Other output or error

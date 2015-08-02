@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Event;
+use App\Events\UserRegistered;
 use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
@@ -58,12 +60,73 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+
+        /**
+         * Get the Country of User
+         */
+        $geoip = \App::make('geoip');
+        $user_ip = \Input::getClientIp();
+        try
+        {
+            if($user_geoip = $geoip->city($user_ip))
+            {
+                $user_isoCode = $user_geoip->country->isoCode;
+                $country = \App\Country::where('countryCode', 'LIKE', $user_isoCode)->first();
+
+                /**
+                 * Country returned is not in Countrie table
+                 */
+                if($country == null)
+                {
+                    $user_country_id = 0;
+                }
+                else
+                {
+                    $user_country_id = $country->id;
+                }
+            }
+        }
+        /**
+        * If the GeoIp2 failed to retrieve data
+        */
+        catch(\Exception $e)
+        {
+            switch($e)
+            {
+                case $e instanceof \InvalidArgumentException:
+                    $user_country_id = 0;
+                    break;
+                case $e instanceof \GeoIp2\Exception\AddressNotFoundException:
+                    $user_country_id = 0;
+                    break;
+                default:
+                    $user_country_id = 0;
+                    break;
+            }
+        }
+
+        $confirmation_token = hash_hmac('sha256', str_random(40), $data['username']);
+
+        $user = User::create([
             'username' => $data['username'],
             'email' => $data['email'],
             'name' => $data['name'],
             'password' => bcrypt($data['password']),
+            'country_id' => $user_country_id,
+            'last_ipaddress' => $user_ip,
+            'confirmation_token' => $confirmation_token
         ]);
+
+        /**
+         * Fire event on User Register
+         */
+        Event::fire(new UserRegistered($user));
+
+        /**
+         * Return User to handle auto Login after Registration.
+         */
+        return $user;
+
     }
 
     /**

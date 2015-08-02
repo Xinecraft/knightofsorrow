@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
+    <meta name="description" content="@yield('meta-desc','Swat4 Servers and Community')">
     <meta name="author" content="Zishan Ansari">
-    <title>KnightofSorrow.tk - Swat4 Server and Community</title>
+    <title>KnightofSorrow.tk - @yield('title','Swat4 Servers & Community')</title>
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('components/tooltipster/css/tooltipster.css') }}" />

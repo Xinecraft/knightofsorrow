@@ -11,14 +11,16 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('users')->truncate();
+
         foreach(range(0,30) as $r)
         {
             $user = \Faker\Factory::create();
             App\User::create([
                 'username' => $user->username,
-                'email' => $user->email,
+                'email' => $user->freeEmail,
                 'name' => $user->name,
-                'password' => Hash::make($user->password)
+                'password' => Hash::make('secret')
             ]);
         }
     }

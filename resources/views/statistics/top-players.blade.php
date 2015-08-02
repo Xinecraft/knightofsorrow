@@ -1,4 +1,6 @@
 @extends('layouts.main')
+@section('meta-desc',"List of all players.")
+@section('title',"Top Players")
 
 @section('main-container')
     <div class="col-md-9">

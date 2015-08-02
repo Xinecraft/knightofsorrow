@@ -270,9 +270,10 @@ a.desc {
 }
 .tt-menu {
   width: 100%;
-  border: 1px solid #bbb;
+  border: 1px solid #2C3E50;
   border-top: 0;
   padding: 0;
+  background-color: #ffffff;
 }
 .tt-suggestion {
   padding: 5px 10px;
@@ -284,6 +285,28 @@ a.desc {
 }
 .tt-suggestion:hover {
   background-color: #ddd;
+}
+.status-post {
+  border: 1px solid #e3e3e3;
+  margin-bottom: 3em;
+  padding: 0;
+}
+.status-post textarea {
+  border: none;
+}
+.status-post-input {
+  background-color: #ffffff;
+  margin: 0;
+}
+.status-post-submit {
+  border-top: 1px solid #e9e9e9;
+  padding: .5em 1em;
+  margin-bottom: 0;
+  overflow: hidden;
+}
+.profile-cover-img {
+  width: 100%;
+  height: 350px;
 }
 
 /*# sourceMappingURL=app.css.map */

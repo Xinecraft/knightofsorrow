@@ -1,4 +1,6 @@
 @extends('layouts.main')
+@section('meta-desc',"All Statistics of $player->name")
+@section('title',$player->name)
 
 @section('main-container')
     <div class="col-md-9">
@@ -12,7 +14,7 @@
                     {{ $player->name }}
                 </div>
                 <p class="small pad5">
-                    @forelse($player->alias()->limit(5) as $alias)
+                    @forelse($player->aliases()->limit(5)->get() as $alias)
                         {{ $alias->name }}
                     @empty
                         No Aliases

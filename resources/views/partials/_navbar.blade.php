@@ -13,7 +13,9 @@
             <ul class="nav navbar-nav">
                 <li class="{{ set_active(['/','home']) }}"><a href="{{ route('home') }}">Home</a></li>
                 <li class="{{ set_active(['statistics*']) }}">{!! link_to_route('statistics-home','Statistics') !!}</li>
-                <li><a href="#contact">Contact</a></li>
+                @if(Auth::check())
+                <li class="{{ set_active(['feeds*']) }}">{!! link_to_route('feeds-home','News Feed') !!}</li>
+                @endif
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
@@ -26,8 +28,8 @@
                             <img class="img" src="//gravatar.com/avatar/{{ Auth::user()->getGravatarId() }}?d=mm&s=20" width="20" height="20" />
                             {{ Auth::user()->name }} <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/auth/logout') }}">Profile</a></li>
-                                <li><a href="{{ url('/auth/logout') }}">New Feed</a></li>
+                                <li><a href="{{ url('/profile') }}">Profile</a></li>
+                                <li><a href="{{ route('feeds-home') }}">News Feed</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="{{ url('/auth/logout') }}">Logout</a></li>
                             </ul>

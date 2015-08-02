@@ -293,6 +293,7 @@ $(document).ready(function ()
         itemSelector: "#data-items .item"
     });
 
+
     //Getting individual player data of round when clicked on round players
     $('.getindistats').click(function(){
         var indi_p_id;
@@ -355,9 +356,9 @@ $(document).ready(function ()
             displayKey: 'username',
             source: users.ttAdapter(),
             templates: {
-                header: '<h4 class="">Users</h4>',
+                header: '<h5 class="text-bold text-primary text-center">Users</h5>',
                 suggestion: function(data){
-                    return '<p><a href="/user/' +data.id+ '/' +data.username+ '"> <strong>' + data.username + '</strong></a> - ' + data.name + '</p>';
+                    return '<p><a href="/@' +data.username+ '">' + data.username + '</a> - ' + data.name + '</p>';
                 }
             }
         },
@@ -367,9 +368,9 @@ $(document).ready(function ()
             displayKey: 'name',
             source: players.ttAdapter(),
             templates: {
-                header: '<h4 class="">Players</h4>',
+                header: '<h5 class="text-center text-bold text-primary">Players</h5>',
                 suggestion: function(data){
-                    return '<p><strong><a href="/statistics/player/' +data.id+ '/' +data.name+ '">' + data.name + '</a> - #' + data.position + '</strong></p>';
+                    return '<p><img src="/images/flags_new/flags-iso/shiny/24/'+data.country.countryCode+'.png" /> <a href="/statistics/player/' +data.id+ '/' +data.name+ '">' + data.name + '</a> - <b>#' + data.position + '</b></p>';
                 }
             }
         }

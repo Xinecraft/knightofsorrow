@@ -22,7 +22,8 @@
         "laracasts/utilities": "dev-master",
         "kinnngg/swat4query": "dev-master",
         "mccool/laravel-auto-presenter": "~4",
-        "way/generators": "dev-master"
+        "way/generators": "dev-master",
+        "guzzlehttp/guzzle": "^6.0@dev"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

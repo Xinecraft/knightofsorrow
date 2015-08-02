@@ -1,4 +1,6 @@
 @extends('layouts.main')
+@section('meta-desc',"Round indi Details")
+@section('title',"Round - Map: $round->mapName, $round->timeAgo")
 
 @section('main-container')
     <div class="col-md-9">

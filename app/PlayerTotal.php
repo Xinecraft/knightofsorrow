@@ -27,6 +27,11 @@ class PlayerTotal extends Model implements HasPresenter
         return $this->belongsTo('App\Alias');
     }
 
+    public function aliases()
+    {
+        return $this->profile->aliases();
+    }
+
     /**
      * Returns the Profile instance of the current Player
      *
@@ -202,6 +207,16 @@ class PlayerTotal extends Model implements HasPresenter
     public function lastRounds()
     {
         return $this->alias->players->sortByDesc('game_id')->unique('game_id')->take(5)->pluck('game_id');
+    }
+
+    /**
+     * A scope function for getCountry help.
+     *
+     * @return mixed
+     */
+    public function scopeCountryAggregate()
+    {
+        return $this->with('country')->select(\DB::raw("count(id) as total_players,country_id,sum(total_score) as total_score,sum(total_points) as total_points,sum(total_time_played) as total_time_played"))->groupBy('country_id');
     }
 
 }

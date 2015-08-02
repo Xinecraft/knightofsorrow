@@ -1,0 +1,1 @@
+Welcome to Knight of Sorrow {{ $user->name }}

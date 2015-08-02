@@ -16,16 +16,19 @@
             <ul class="nav navbar-nav">
                 <li class="{{ set_active(['statistics','statistics/top-players*']) }}">{!! link_to_route('top-players','Players') !!}</li>
                 <li class="{{ set_active(['statistics/round-reports*']) }}">{!! link_to_route('round-reports','Rounds') !!}</li>
-                <li class="{{ set_active(['server*']) }}"><a href="./?statistics=server">Server</a></li>
-                <li><a href="./?statistics=country">Country</a></li>
-                <li><a href="./?statistics=weapons">Weapons</a></li>
+                <li class="{{ set_active(['statistics/countries*','statistics/country*']) }}">{!! link_to_route('countries-list','Countries') !!}</li>
+                <li class="{{ set_active(['statistics/charts*']) }}">{!! link_to_route('chart-reports','Charts') !!}</li>
+                {{--<li class="{{ set_active_or_disabled(['statistics/player/*']) }}"><a>Player Details</a></li>--}}
             </ul>
-            <form class="navbar-form navbar-right no-padding" role="search" method="get" name="search">
+            <ul class="navbar-right nav navbar-nav">
+                <li class="{{ set_active_or_disabled(['statistics/player/*']) }}"><a>Player Details</a></li>
+            </ul>
+            <!-- <form class="navbar-form navbar-right no-padding" role="search" method="get" name="search">
                 <div class="form-group">
                     <input type="text" class="form-control" name="search" placeholder="Search Player">
                 </div>
                 <button type="submit" class="btn btn-default">Go</button>
-            </form>
+            </form> -->
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>

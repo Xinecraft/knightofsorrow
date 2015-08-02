@@ -46,13 +46,13 @@ class ApiController extends Controller
 
     public function getQueryUser($query)
     {
-        return (User::where('username','like','%'.$query.'%')->orWhere('name','like','%'.$query.'%')->orWhere('email','like','%'.$query.'%')->get(['id','name','username']));
+        return (User::where('username','like','%'.$query.'%')->orWhere('name','like','%'.$query.'%')->orWhere('email','like','%'.$query.'%')->get(['id','name','username','country_id']));
 
     }
 
     public function getQueryPlayer($query)
     {
-        return (PlayerTotal::where('name','like','%'.$query.'%')->get(['id','name','position']));
+        return (PlayerTotal::with('country')->where('name','like','%'.$query.'%')->get(['id','name','position','country_id']));
 
     }
 }

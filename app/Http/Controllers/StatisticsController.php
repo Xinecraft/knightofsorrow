@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Request;
+use App\Http\Controllers\Controller;
+use App\Country;
 use App\Player;
 use App\PlayerTotal;
-use Request;
-
-use App\Http\Controllers\Controller;
 use App\Game;
 
 class StatisticsController extends Controller
@@ -25,6 +25,7 @@ class StatisticsController extends Controller
         $sortDir = Request::has('direction') ? Request::get('direction') : 'desc';
 
         $rounds = Game::orderBy($orderBy,$sortDir)->paginate(15);
+
         return view('statistics.round-reports')->with('rounds', $rounds);
     }
 
@@ -38,7 +39,7 @@ class StatisticsController extends Controller
         $sortableColumns = ['position','country_id','rank_id','name','player_rating','total_score','total_points','total_time_played','last_game_id'];
 
         $orderBy = Request::has('orderBy') && in_array(Request::get('orderBy'),$sortableColumns) ? Request::get('orderBy')  : 'position';
-        $sortDir = Request::has('direction') ? Request::get('direction') : 'desc';
+        $sortDir = Request::has('direction') ? Request::get('direction') : 'asc';
 
         $players = PlayerTotal::orderBy($orderBy,$sortDir)->paginate(10);
 
@@ -95,4 +96,59 @@ class StatisticsController extends Controller
         return view('statistics.player-details',$array);
     }
 
+
+    /**
+     * Returns a View with Country List for Statistics Page.
+     *
+     * @return View
+     */
+    public function getAllCountries()
+    {
+        $position = 1;
+
+        $sortableColumns = ['total_players','total_score','total_points','total_time_played','country_id'];
+
+        $orderBy = Request::has('orderBy') && in_array(Request::get('orderBy'),$sortableColumns) ? Request::get('orderBy')  : 'total_players';
+        $sortDir = Request::has('direction') ? Request::get('direction') : 'desc';
+
+        $players = PlayerTotal::CountryAggregate()->orderBy($orderBy,$sortDir)->paginate();
+
+        return view('statistics.countries')->with('players',$players)->with('position',$position);
+    }
+
+    /**
+     * Get the Detail Info about individual country
+     */
+    public function getCountryDetails($id,$name)
+    {
+
+
+        $sortableColumns = ['position','rank_id','name','player_rating','total_score','total_points','total_time_played','last_game_id'];
+
+        $orderBy = Request::has('orderBy') && in_array(Request::get('orderBy'),$sortableColumns) ? Request::get('orderBy')  : 'position';
+        $sortDir = Request::has('direction') ? Request::get('direction') : 'asc';
+
+        //$players = PlayerTotal::orderBy($orderBy,$sortDir)->paginate(10);
+        $country = Country::findOrFail($id);
+
+        $players = $country->playerTotals()->orderBy($orderBy,$sortDir)->paginate(10);
+
+        $array = [
+            'players' => $players,
+            'countryName' => $country->countryName,
+            'countryId' => $country->id
+        ];
+
+        return view('statistics.country-players',$array);
+    }
+
+    public function getChartReports()
+    {
+        \JavaScript::put([
+            'foo' => 'bar',
+            'user' => \App\User::first(),
+            'age' => 29
+        ]);
+        return view('statistics.charts');
+    }
 }
