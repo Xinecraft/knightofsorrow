@@ -41,4 +41,9 @@ class UserRepository {
     {
         return User::with('statuses')->whereUsername($username)->first();
     }
+
+    public function findOrFailByUsername($username)
+    {
+        return User::whereUsername($username)->first();
+    }
 }

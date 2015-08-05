@@ -11,7 +11,10 @@
 */
 
 Route::get('test',function(){
-    dd(App\User::lists('id'));
+    $user = Auth::user();
+    $rec = App\User::findOrFail(10);
+    $body = "can register all of the routes for an application.It's a breeze. Simply tell Laravel the URIs it should respond to";
+    return $rec->sendmail($user,"Reply for New Email For you.",$body);
 });
 
 /**
@@ -77,8 +80,20 @@ Route::delete('/feeds',['middleware' => 'auth', 'as' => 'delete-status', 'uses' 
  * User and Follow System Controllers
  */
 Route::get('@{username}',['as' => 'user.show', 'uses' => 'UserController@showProfile']);
+Route::get('profile',['middleware' => 'auth', 'as' => 'user.profile', 'uses' => 'UserController@showOwnProfile']);
+Route::get('profile/edit',['middleware' => 'auth','as' => 'user.setting', 'uses' => 'UserController@editOwnProfile']);
+Route::post('profile/edit',['middleware' => 'auth','as' => 'user.setting.post', 'uses' => 'UserController@updateProfile']);
 Route::post('follow',['middleware' => 'auth', 'as' => 'follow-user', 'uses' => 'UserController@postFollow']);
 Route::delete('follow',['middleware' => 'auth', 'as' => 'unfollow-user', 'uses' => 'UserController@deleteUnfollow']);
+Route::post('feeds/{id}/comments',['middleware' => 'auth', 'as' => 'status-comment', 'uses' => 'CommentController@storeForStatus']);
+
+Route::group(['prefix' => 'mail'],function(){
+    Route::get('inbox',['middleware' => 'auth', 'as' => 'user.inbox', 'uses' => 'UserController@getInbox']);
+    Route::get('outbox',['middleware' => 'auth', 'as' => 'user.outbox', 'uses' => 'UserController@getOutbox']);
+    Route::get('compose',['middleware' => 'auth', 'as' => 'user.compose', 'uses' => 'UserController@getComposeMail']);
+    Route::post('compose',['middleware' => 'auth', 'as' => 'user.compose.post', 'uses' => 'UserController@postComposeMail']);
+    Route::get('{id}',['middleware' => 'auth', 'as' => 'user.inbox.show', 'uses' => 'UserController@getShowMail']);
+});
 
 /**
  * Server Trackers group to respond when a HTTP request arrives from SWAT4 Server.

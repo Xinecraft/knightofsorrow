@@ -8,14 +8,38 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="row">
-                            <div class="">
-                                {!! Html::image('/img/ext/computer-767776_1280.jpg',null,['class' => 'img profile-cover-img']) !!}
+                            <div class="col-md-5">
+                                {!! Html::image('/img/ext/computer-767776_1280.jpg',null,['class' => 'img img-thumbnail profile-cover-img']) !!}
+                            </div>
+                            <div class="col-md-5">
+                                <h3 class="no-margin">{{ $user->name }}</h3>
+                                <h4 class="">{!! link_to_route('user.show',"@".$user->username,$user->username,['class' =>'']) !!}</h4>
+                                <p class="info-title">{{ $user->role }}</p>
+                                <p class="text-muted small no-margin">Joined : {{ $user->joinedOn }}</p>
+                                <p class="text-muted small no-margin">Last Seen : {{ $user->lastSeenOn }}</p>
+
+                            </div>
+                            <div class="col-md-2">
+                            <h4 class="no-margin text-muted">{{ $user->country->countryName }}</h4>
+                                {!! Html::image("/images/flags_new/flags-iso/shiny/64/".$user->country->countryCode.".png",null,['class' => 'img']) !!}
                             </div>
                         </div>
                     </div>
                     <div class="panel-body">
-                        <h3 class="text-center">{{ $user->name }}</h3>
-                        <p class="text-info text-center"><b>{{ $statusCount = $user->statuses()->count() }} {{ str_plural("Status", $statusCount) }}</b></p>
+                        <div class="col-md-6 well pad5">
+                        <h5 class="info-title" style="margin:0 0 10px 0;border-bottom:2px dashed grey">General Info</h5>
+                        <p class="">Age: {!! $user->age !!}</p>
+                            <p class="">Status Count: <b class="">{{ $statusCount = $user->statuses()->count() }} {{ str_plural("Status", $statusCount) }}</b></p>
+                            <p class="">Followers: <b class="">{{ $followersCount = $user->followers->count() }} {{ str_plural("gamer", $followersCount) }}</b></p>
+                            <p class="">Following: <b class="">{{ $followingCount = $user->following->count() }} {{ str_plural("gamer", $followingCount) }}</b></p>
+                        </div>
+                        <div class="col-md-6 well pad5">
+                        <h5 class="info-title" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Stats Tracker</h5>
+                            <p class="">Player Name: {!! $user->linkPlayerNamewithLink !!}</p>
+                            <p class="">Position: {!! $user->linkPlayerPosition !!}</p>
+                            <p class="">Time Played: {!! $user->linkPlayerTimePlayed !!}</p>
+                            <p class="">Last Seen: {!! $user->linkPlayerLastSeen !!}</p>
+                        </div>
                     </div>
                     <div class="panel-footer">
                         <div class="row">
@@ -32,13 +56,7 @@
                                     {!! Form::close() !!}
                                 @endif
                             @endif
-                            <div class="followlinks col-md-3 right">
-                                <ul class="nav nav-pills text-center" role="tablist">
-                                    <p role="presentation">Following <span class="badge">{{ $user->following->count() }}</span></p>
 
-                                    <p role="presentation">Followers <span class="badge">{{ $user->followers->count() }}</span></p>
-                                </ul>
-                            </div>
                         </div>
                     </div>
                 </div>

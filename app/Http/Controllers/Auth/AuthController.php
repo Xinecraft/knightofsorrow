@@ -117,6 +117,11 @@ class AuthController extends Controller
             'confirmation_token' => $confirmation_token
         ]);
 
+        // Attach a role of Member to it.
+        // Make sure your table named roles has Members row with Id of 5
+        // Or use $user->attachRole($member); with $member as a instance of Role
+        $user->roles()->attach(5);
+
         /**
          * Fire event on User Register
          */

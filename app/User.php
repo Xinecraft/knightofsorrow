@@ -2,15 +2,18 @@
 
 namespace App;
 
+use App\Server\Presenters\UserPresenter;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use McCool\LaravelAutoPresenter\HasPresenter;
+use Zizaco\Entrust\Traits\EntrustUserTrait;
 
-class User extends Model implements AuthenticatableContract, CanResetPasswordContract
+class User extends Model implements AuthenticatableContract, CanResetPasswordContract, HasPresenter
 {
-    use Authenticatable, CanResetPassword;
+    use Authenticatable, CanResetPassword, EntrustUserTrait;
 
     /**
      * The database table used by the model.
@@ -33,6 +36,17 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     protected $hidden = ['password', 'remember_token','confirmation_token'];
 
+    protected $dates = ['dob'];
+
+
+    /**
+     * @return GamePresenter
+     */
+    public function getPresenterClass()
+    {
+        return UserPresenter::class;
+    }
+
     /**
      * A User can have many Statuses.
      *
@@ -46,9 +60,17 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     /**
      * Returns gravatar ID
      */
-    public function getGravatarId()
+    public function getGravatarLink($size)
     {
-        return md5($this->email);
+         //gravatar.com/avatar/{id}?d=mm&s=20
+        $id = md5($this->email);
+        $link = "//gravatar.com/avatar/$id/?d=retro&s=$size";
+        return $link;
+    }
+
+    public function country()
+    {
+        return $this->belongsTo('App\Country');
     }
 
     /**
@@ -99,6 +121,46 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     public function unfollow($userId)
     {
         $this->following()->detach($userId);
+    }
+
+    /**
+     * Returns all comments a user has
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
+
+    /**
+     * Returns the playerTotal of this User if any.
+     *
+     * @return PlayerTotal
+     */
+    public function playerTotal()
+    {
+            return PlayerTotal::where('name','LIKE',"$this->player_totals_name")->first();
+    }
+
+    public function outbox()
+    {
+        return $this->hasMany('App\Mail','sender_id')->latest();
+    }
+
+    public function inbox()
+    {
+        return $this->hasMany('App\Mail','reciever_id')->latest();
+    }
+
+    public function sendmail($reciever,$subject,$body)
+    {
+        return $this->outbox()->create([
+                'sender_id' => $this->id,
+                'reciever_id' => $reciever->id,
+                'subject' => $subject,
+                'body' => $body
+                ]);
     }
 
 }

@@ -66,7 +66,9 @@ class StatusController extends Controller
      */
     public function show($id)
     {
-        return $this->status->find($id);
+        $status = $this->status->find($id);
+
+        return view('status.show')->with('status',$status);
     }
 
     /**

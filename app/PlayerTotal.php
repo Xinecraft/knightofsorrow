@@ -93,11 +93,21 @@ class PlayerTotal extends Model implements HasPresenter
     }
 
     /**
+     * User who is owner of this account.
+     *
+     * @return User
+     */
+    public function user()
+    {
+        return User::where('player_totals_name','LIKE',"$this->name")->first();
+    }
+
+    /**
      * Find a PlayerTotal using its name.
      * PlayerTotal::findOrFailByName($name);
      *
      * @param $name
-     * @return mixed
+     * @return Collection
      */
     public static function findOrFailByName($name)
     {
@@ -217,6 +227,17 @@ class PlayerTotal extends Model implements HasPresenter
     public function scopeCountryAggregate()
     {
         return $this->with('country')->select(\DB::raw("count(id) as total_players,country_id,sum(total_score) as total_score,sum(total_points) as total_points,sum(total_time_played) as total_time_played"))->groupBy('country_id');
+    }
+
+    /**
+     * Check if player is already claimed.
+     *
+     * @param $name
+     * @return mixed
+     */
+    public static function isClaimed($name)
+    {
+        return \App\User::where('player_totals_name','LIKE',$name)->first();
     }
 
 }

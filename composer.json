@@ -23,7 +23,8 @@
         "kinnngg/swat4query": "dev-master",
         "mccool/laravel-auto-presenter": "~4",
         "way/generators": "dev-master",
-        "guzzlehttp/guzzle": "^6.0@dev"
+        "guzzlehttp/guzzle": "^6.0@dev",
+        "emojione/emojione": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

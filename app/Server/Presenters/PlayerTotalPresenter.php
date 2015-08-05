@@ -154,4 +154,16 @@ class PlayerTotalPresenter extends BasePresenter
         $accuracy = round( $sf == 0 ? 0 : $sh / $sf * 100 , 2);
         return $accuracy;
     }
+
+    /**
+     * @return string
+     */
+    public function owner()
+    {
+        $owner = $this->wrappedObject->user();
+        if($owner == null)
+            return "<i class='text-muted'>None</i>";
+        else
+            return link_to_route('user.show',"@".$owner->username,[$owner->username]);
+    }
 }

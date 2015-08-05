@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b253aeea79bcfc86747383c86c0a2572",
+    "hash": "a3bb86558b7e0e26f108839e81cca826",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -968,6 +968,50 @@
                 "parser"
             ],
             "time": "2014-09-09 13:34:57"
+        },
+        {
+            "name": "emojione/emojione",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Ranks/emojione.git",
+                "reference": "fd369fd90267552f6b12cf3a347e891dab58f40f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Ranks/emojione/zipball/fd369fd90267552f6b12cf3a347e891dab58f40f",
+                "reference": "fd369fd90267552f6b12cf3a347e891dab58f40f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Emojione\\": "lib/php/src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "(CC-BY-SA-4.0 and MIT)"
+            ],
+            "description": "Emoji One is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG and SVG formats provided for the emoji images.",
+            "homepage": "http://www.emojione.com",
+            "keywords": [
+                "Emoji One",
+                "emoji",
+                "emojione",
+                "emojis",
+                "emoticons",
+                "smileys",
+                "smilies",
+                "unicode"
+            ],
+            "time": "2015-07-29 18:05:10"
         },
         {
             "name": "facebook/webdriver",
@@ -4917,6 +4961,7 @@
         "kinnngg/swat4query": 20,
         "way/generators": 20,
         "guzzlehttp/guzzle": 20,
+        "emojione/emojione": 20,
         "laracasts/generators": 20
     },
     "prefer-stable": true,

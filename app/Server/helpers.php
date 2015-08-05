@@ -124,3 +124,131 @@ function sort_country_players_by($column,$data,$countryId,$countryName)
         else
             return link_to_route('countries-list',$data,['orderBy'=>$column, 'direction' => $sortDir],['class' => 'a-primary']);
     }
+
+
+/**
+ * This function returns after replace Youtube URLs
+ *
+ * Alt: preg_match_all("/^.*(youtu.be\/|v\/|e\/|u\/\w+\/|embed\/|v=)([^#\&\?]*).* /", $youtube,$matches);
+ * @param  [type] $text [description]
+ * @return [type]       [description]
+ */
+function embedYoutube($text)
+{
+    $search = '~
+        # Match non-linked youtube URL in the wild. (Rev:20130823)
+        (?:https?://)?    # Optional scheme.
+        (?:[0-9A-Z-]+\.)? # Optional subdomain.
+        (?:               # Group host alternatives.
+          youtu\.be/      # Either youtu.be,
+        | youtube         # or youtube.com or
+          (?:-nocookie)?  # youtube-nocookie.com
+          \.com           # followed by
+          \S*             # Allow anything up to VIDEO_ID,
+          [^\w\s-]        # but char before ID is non-ID char.
+        )                 # End host alternatives.
+        ([\w-]{11})       # $1: VIDEO_ID is exactly 11 chars.
+        (?=[^\w-]|$)      # Assert next char is non-ID or EOS.
+        (?!               # Assert URL is not pre-linked.
+          [?=&+%\w.-]*    # Allow URL (query) remainder.
+          (?:             # Group pre-linked alternatives.
+            [\'"][^<>]*>  # Either inside a start tag,
+          | </a>          # or inside <a> element text contents.
+          )               # End recognized pre-linked alts.
+        )                 # End negative lookahead assertion.
+        [?=&+%\w.-]*      # Consume any URL (query) remainder.
+        ~ix';
+
+    $replace = '<object width="600" height="344">
+        <param name="movie" value="http://www.youtube.com/v/$1?fs=1"</param>
+        <param name="allowFullScreen" value="true"></param>
+        <param name="allowScriptAccess" value="always"></param>
+        <embed src="http://www.youtube.com/v/$1?fs=1"
+            type="application/x-shockwave-flash" allowscriptaccess="always" width="600" height="344">
+        </embed>
+        </object>';
+
+    return preg_replace($search, $replace, $text);
+}
+
+function embedYoutubeForComment($text)
+{
+    $search = '~
+        # Match non-linked youtube URL in the wild. (Rev:20130823)
+        (?:https?://)?    # Optional scheme.
+        (?:[0-9A-Z-]+\.)? # Optional subdomain.
+        (?:               # Group host alternatives.
+          youtu\.be/      # Either youtu.be,
+        | youtube         # or youtube.com or
+          (?:-nocookie)?  # youtube-nocookie.com
+          \.com           # followed by
+          \S*             # Allow anything up to VIDEO_ID,
+          [^\w\s-]        # but char before ID is non-ID char.
+        )                 # End host alternatives.
+        ([\w-]{11})       # $1: VIDEO_ID is exactly 11 chars.
+        (?=[^\w-]|$)      # Assert next char is non-ID or EOS.
+        (?!               # Assert URL is not pre-linked.
+          [?=&+%\w.-]*    # Allow URL (query) remainder.
+          (?:             # Group pre-linked alternatives.
+            [\'"][^<>]*>  # Either inside a start tag,
+          | </a>          # or inside <a> element text contents.
+          )               # End recognized pre-linked alts.
+        )                 # End negative lookahead assertion.
+        [?=&+%\w.-]*      # Consume any URL (query) remainder.
+        ~ix';
+
+    $replace = '<br><object width="auto" height="auto">
+        <param name="movie" value="http://www.youtube.com/v/$1?fs=1"</param>
+        <param name="allowFullScreen" value="true"></param>
+        <param name="allowScriptAccess" value="always"></param>
+        <embed src="http://www.youtube.com/v/$1?fs=1"
+            type="application/x-shockwave-flash" allowscriptaccess="always" width="auto" height="auto">
+        </embed>
+        </object>';
+
+    return preg_replace($search, $replace, $text);
+}
+
+
+/**
+ * Finds youtube videos links and makes them an embed.
+ * search: http://www.youtube.com/watch?v=xg7aeOx2VKw
+ * search: http://www.youtube.com/embed/vx2u5uUu3DE
+ * search: http://youtu.be/xg7aeOx2VKw
+ * replace: <iframe width="560" height="315" src="http://www.youtube.com/embed/xg7aeOx2VKw" frameborder="0" allowfullscreen></iframe>
+ *
+ * @param string
+ * @return string
+ * @see http://stackoverflow.com/questions/6621809/replace-youtube-link-with-video-player
+ * @see http://stackoverflow.com/questions/5830387/how-to-find-all-youtube-video-ids-in-a-string-using-a-regex
+ */
+function generateVideoEmbeds($text) {
+    // No youtube? Not worth processing the text.
+    if ((stripos($text, 'youtube.') === false) && (stripos($text, 'youtu.be') === false)) {
+        return $text;
+    }
+
+    $search = '@          # Match any youtube URL in the wild.
+        [^"\'](?:https?://)?  # Optional scheme. Either http or https; We want the http thing NOT to be prefixed by a quote -> not embeded yet.
+        (?:www\.)?        # Optional www subdomain
+        (?:               # Group host alternatives
+          youtu\.be/      # Either youtu.be,
+        | youtube\.com    # or youtube.com
+          (?:             # Group path alternatives
+            /embed/       # Either /embed/
+          | /v/           # or /v/
+          | /watch\?v=    # or /watch\?v=
+          )               # End path alternatives.
+        )                 # End host alternatives.
+        ([\w\-]{8,25})    # $1 Allow 8-25 for YouTube id (just in case).
+        (?:               # Group unwanted &feature extension
+            [&\w-=%]*     # Either &feature=related or any other key/value pairs
+        )
+        \b                # Anchor end to word boundary.
+        @xsi';
+
+    $replace = '<iframe width="560" height="315" src="http://www.youtube.com/embed/$1" frameborder="0" allowfullscreen></iframe>';
+    $text = preg_replace($search, $replace, $text);
+
+    return $text;
+}

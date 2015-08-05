@@ -25,12 +25,17 @@
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            <img class="img" src="//gravatar.com/avatar/{{ Auth::user()->getGravatarId() }}?d=mm&s=20" width="20" height="20" />
+                            <img class="img" src="{{ Auth::user()->getGravatarLink(20) }}" width="15" height="15" />
                             {{ Auth::user()->name }} <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/profile') }}">Profile</a></li>
                                 <li><a href="{{ route('feeds-home') }}">News Feed</a></li>
+                                <li><a href="{{ url('/profile') }}">Profile</a></li>
                                 <li role="separator" class="divider"></li>
+                                <li><a href="{{ route('user.compose') }}">Compose Mail</a></li>
+                                <li><a href="{{ route('user.inbox') }}">Inbox</a></li>
+                                <li><a href="{{ route('user.outbox') }}">Outbox</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li>{!! link_to_route('user.setting','Setting') !!}</li>
                                 <li><a href="{{ url('/auth/logout') }}">Logout</a></li>
                             </ul>
                         </li>

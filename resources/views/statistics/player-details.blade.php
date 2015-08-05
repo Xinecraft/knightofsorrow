@@ -329,6 +329,15 @@
                         <td class="col-6 text-right"><strong>{!! link_to_route('round-detail',$player->lastGame->created_at->diffForHumans(),[$player->last_game_id]) !!}</strong>
                         </td>
                     </tr>
+                    <tr>
+                        <td class="col-4">
+                        </td>
+                        <th class="col-5">
+                            Owner
+                        </th>
+                        <td class="col-6 text-right"><strong>{!! $player->owner !!}</strong>
+                        </td>
+                    </tr>
                     </tbody>
                 </table>
 
