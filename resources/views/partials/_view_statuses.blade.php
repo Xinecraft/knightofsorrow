@@ -1,4 +1,4 @@
-<div class="panel panel-default grid-item item">
+<div class="panel panel-default grid-item item status-box">
     <div class="panel-heading media">
         <div class="pull-left">
             {!! Html::image($status->user->getGravatarLink(40),'',array('class'=>'img media-oject inprofile-thumbs','width'=>'40','height'=>'40')) !!}
@@ -8,7 +8,7 @@
                 <b>{!! link_to_route('user.show',$status->user->name,[$status->user->username]) !!}</b>
                 <p class="small user-status-timeago no-margin">{!! link_to_route('show-status',$status->timeSincePublished,[$status->id],['class' => 'status-timeago']) !!}</p>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 ctrl-box">
                 @if(Auth::check() and Auth::user()->id == $status->user->id)
                     {!! Form::open(['name'=>'deleteStatus','method'=>'DELETE','action'=>'StatusController@destroy','class'=>'form-inline pull-right deleteStatus']) !!}
                     {!! Html::link(action('StatusController@edit',['id' => $status->id]),'E',['class'=>'btn btn-warning btn-xs tooltipster', 'title' => 'Edit Status']) !!}

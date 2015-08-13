@@ -16,6 +16,19 @@
                 @if(Auth::check())
                 <li class="{{ set_active(['feeds*']) }}">{!! link_to_route('feeds-home','News Feed') !!}</li>
                 @endif
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        More <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li>{!! link_to_route('servers.list','Servers') !!}</li>
+                        <li><a href="">News</a></li>
+                        <li><a href="">Clans</a></li>
+                        <li><a href="">Forums</a></li>
+                        <li><a href="">Rules</a></li>
+                    </ul>
+                </li>
+
             </ul>
 
             <ul class="nav navbar-nav navbar-right">

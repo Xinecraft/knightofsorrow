@@ -12,9 +12,7 @@
 
 Route::get('test',function(){
     $user = Auth::user();
-    $rec = App\User::findOrFail(10);
-    $body = "can register all of the routes for an application.It's a breeze. Simply tell Laravel the URIs it should respond to";
-    return $rec->sendmail($user,"Reply for New Email For you.",$body);
+    $collection= new \Illuminate\Support\Collection();
 });
 
 /**
@@ -93,6 +91,17 @@ Route::group(['prefix' => 'mail'],function(){
     Route::get('compose',['middleware' => 'auth', 'as' => 'user.compose', 'uses' => 'UserController@getComposeMail']);
     Route::post('compose',['middleware' => 'auth', 'as' => 'user.compose.post', 'uses' => 'UserController@postComposeMail']);
     Route::get('{id}',['middleware' => 'auth', 'as' => 'user.inbox.show', 'uses' => 'UserController@getShowMail']);
+});
+
+/**
+ * Servers Controllers.
+ * This is listing of all servers Servers of SWAT4.
+ */
+Route::group(['prefix' => 'servers'],function(){
+    Route::get('',['as' => 'servers.list', 'uses' => 'ServerController@index']);
+    Route::get('new',['middleware' => 'admin', 'as' => 'servers.new', 'uses' => 'ServerController@create']);
+    Route::post('new',['middleware' => 'admin', 'as' => 'servers.new.post', 'uses' => 'ServerController@store']);
+    Route::get('{id}',['as' => 'servers.show', 'uses' => 'ServerController@show']);
 });
 
 /**

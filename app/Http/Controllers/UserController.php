@@ -206,7 +206,6 @@ class UserController extends Controller
             $mail->save();
         }
         return view('user.showmail')->with('mail',$mail);
-
     }
 
 }

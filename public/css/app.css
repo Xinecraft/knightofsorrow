@@ -430,5 +430,11 @@ a.status-timeago:active {
   color: black !important;
   text-decoration: none !important;
 }
+.status-box .ctrl-box {
+  display: none;
+}
+.status-box.hover .ctrl-box {
+  display: inline;
+}
 
 /*# sourceMappingURL=app.css.map */
