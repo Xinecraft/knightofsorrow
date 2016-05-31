@@ -163,4 +163,12 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
                 ]);
     }
 
+    /**
+     * @return mixed
+     */
+    public function shouts()
+    {
+        return $this->hasMany('App\Shout');
+    }
+
 }

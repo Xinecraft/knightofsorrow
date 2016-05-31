@@ -24,7 +24,8 @@
         "mccool/laravel-auto-presenter": "~4",
         "way/generators": "dev-master",
         "guzzlehttp/guzzle": "^6.0@dev",
-        "emojione/emojione": "dev-master"
+        "emojione/emojione": "dev-master",
+        "pusher/pusher-php-server": "^2.4"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

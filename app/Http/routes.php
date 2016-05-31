@@ -11,8 +11,7 @@
 */
 
 Route::get('test',function(){
-    $user = App\Profile::find(4);
-    dd($user->players);
+
 });
 
 /**
@@ -140,3 +139,10 @@ Route::group(['prefix' => 'servertracker'], function(){
         }
     }]);
 });
+
+
+/**
+ * Shouts Controller
+ */
+Route::post('/shouts/do',['as' => 'shouts.store', 'uses' => 'ShoutsController@store']);
+Route::delete('/shouts/{id}/delete', ['as' => 'shouts.delete', 'uses' => 'ShoutsController@destroy']);

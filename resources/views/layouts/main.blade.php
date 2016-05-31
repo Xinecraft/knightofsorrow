@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="@yield('meta-desc','Swat4 Servers and Community')">
     <meta name="author" content="Zishan Ansari">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>KnightofSorrow.tk - @yield('title','Swat4 Servers & Community')</title>
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
@@ -36,6 +37,7 @@
 </div> {{--Main Container Ends --}}
 
 {!! Html::script('js/jquery.js') !!}
+<script src="//js.pusher.com/2.2/pusher.min.js"></script>
 {!! Html::script('js/bootstrap.min.js') !!}
 {!! Html::script('components/tooltipster/js/jquery.tooltipster.min.js') !!}
 {!! Html::script('components/typeahead.js/dist/typeahead.bundle.min.js') !!}
