@@ -155,6 +155,21 @@ class PlayerTotalPresenter extends BasePresenter
         return $accuracy;
     }
 
+    public function totalAmmoFired()
+    {
+        $weapons = ($this->wrappedObject->alias->weapons);
+        $sf = $weapons->sum('shots_fired');
+        return $sf;
+    }
+
+    public function longestKillDistance()
+    {
+        $weapons = ($this->wrappedObject->alias->weapons);
+        $lk = $weapons->max('distance');
+        return $lk;
+    }
+
+
     /**
      * @return string
      */

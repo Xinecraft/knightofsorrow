@@ -15,7 +15,9 @@
                 </div>
                 <p class="small pad5">
                     @forelse($player->aliases()->limit(5)->get() as $alias)
+                        @unless($player->name == $alias->name)
                         {{ $alias->name }}
+                        @endunless
                     @empty
                         No Aliases
                     @endforelse
@@ -289,7 +291,7 @@
                         <td class="col-5">
                             Ammo Fired
                         </td>
-                        <td class="col-6 text-right"><strong>620</strong>
+                        <td class="col-6 text-right"><strong>{{ $player->totalAmmoFired }}</strong>
                         </td>
                     </tr>
                     <tr>
@@ -298,7 +300,7 @@
                         <td class="col-5">
                             Accuracy
                         </td>
-                        <td class="col-6 text-right"><strong>32.45%</strong>
+                        <td class="col-6 text-right"><strong>{{ $player->weaponAccuracy }}%</strong>
                         </td>
                     </tr>
                     <tr>
@@ -307,7 +309,7 @@
                         <td class="col-5">
                             Longest Kill
                         </td>
-                        <td class="col-6 text-right"><strong>14.24m</strong>
+                        <td class="col-6 text-right"><strong>{{ $player->longestKillDistance }}m</strong>
                         </td>
                     </tr>
 
@@ -395,11 +397,10 @@
                     <li role="presentation"><a class="ainorange" href="#tactical" aria-controls="tactical" role="tab" data-toggle="tab">Tactical</a></li>
                     <li role="presentation"><a class="ainorange" href="#others" aria-controls="others" role="tab" data-toggle="tab">Breaching &amp; Others</a></li>
                 </ul>
-
                 <!-- Tab panes -->
                 <div class="tab-content" style="background-color: #ffffff;border-left: 1px solid #ddd;border-bottom: 1px solid #ddd;border-right: 1px solid #ddd;">
                     @forelse($weaponFamilies as $weaponFamily)
-                        @if($weaponFamily->first()->family == 'Primary')
+                        @if($weaponFamily->first() != null && $weaponFamily->first()->family == 'Primary')
                             <div role="tabpanel" class="tab-pane active" id="primary">
                                 <table class="table table-bordered commontable weapontable">
                                     <thead>
@@ -428,7 +429,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                        @elseif($weaponFamily->first()->family == 'Secondary')
+                        @elseif($weaponFamily->first() != null && $weaponFamily->first()->family == 'Secondary')
                             <div role="tabpanel" class="tab-pane" id="secondary">
                                 <table class="table table-bordered commontable weapontable">
                                     <thead><tr>
@@ -456,7 +457,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                        @elseif($weaponFamily->first()->family == 'Tactical')
+                        @elseif($weaponFamily->first() != null && $weaponFamily->first()->family == 'Tactical')
                             <div role="tabpanel" class="tab-pane" id="tactical">
                                 <table class="table table-bordered commontable weapontable">
                                     <thead><tr>
@@ -484,7 +485,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                        @else
+                        @elseif($weaponFamily->first() != null && $weaponFamily->first()->family == 'Other')
                             <div role="tabpanel" class="tab-pane" id="others">
                                 <table class="table table-bordered commontable weapontable">
                                     <thead>

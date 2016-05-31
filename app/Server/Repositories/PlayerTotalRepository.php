@@ -47,7 +47,7 @@ class PlayerTotalRepository implements PlayerTotalRepositoryInterface
      */
     public function calculate()
     {
-        \DB::table('player_totals')->delete();
+        \DB::table('player_totals')->truncate();
 
         $aliases = Alias::with('players')->get();
         $totalServerScore = Player::sum('score');

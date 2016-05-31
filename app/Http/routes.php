@@ -11,8 +11,8 @@
 */
 
 Route::get('test',function(){
-    $user = Auth::user();
-    $collection= new \Illuminate\Support\Collection();
+    $user = App\Profile::find(4);
+    dd($user->players);
 });
 
 /**

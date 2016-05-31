@@ -65,4 +65,12 @@ class Profile extends Model
     {
         return $this->hasMany('App\PlayerTotal');
     }
+
+    /**
+     * @return mixed
+     */
+    public function players()
+    {
+        return $this->hasManyThrough('App\Player','App\Alias');
+    }
 }

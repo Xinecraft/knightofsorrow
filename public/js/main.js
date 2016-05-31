@@ -518,11 +518,9 @@ $('.composemailusername').typeahead({
      * Show Edit and Delete links only when Hover on a Status.
      */
     $(document).on('mouseover','.status-box',function(){
-        console.log(1);
         $(this).addClass('hover');
     });
     $(document).on('mouseout','.status-box',function(){
-        console.log(1);
         $(this).removeClass('hover');
     });
 

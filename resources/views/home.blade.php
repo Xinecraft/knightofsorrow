@@ -43,14 +43,16 @@
                                 <th class="col-md-1">Rank</th>
                                 <th>Name</th>
                             </tr></thead>
-                            @foreach($topPlayers as $player)
+                            @forelse($topPlayers as $player)
                                 <tr>
                                     <th>{{ $player->position }}</th>
                                     <td>{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster']) !!}</td>
                                     <td>{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '22px']) !!}</td>
                                     <td class="color-main text-bold">{!! link_to_route('player-detail', $player->name, [$player->id,$player->name]) !!}</td>
                                 </tr>
-                            @endforeach
+                            @empty
+                                Empty
+                            @endforelse
                         </table>
                     </div>
                 </div>
