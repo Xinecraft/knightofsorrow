@@ -43,6 +43,7 @@ Route::group(['prefix' => 'api'],function(){
 
     Route::get('players/{query}',['as' => 'api-players-query', 'uses' => 'ApiController@getQueryPlayer']);
 
+    Route::get('whois',['as' => 'api-server-whois', 'uses' => 'ApiController@whois']);
 });
 
 

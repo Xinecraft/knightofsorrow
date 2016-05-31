@@ -573,23 +573,19 @@ $('.composemailusername').typeahead({
 
 
     //Pusher API
-    Pusher.logToConsole = true;
     var pusher = new Pusher('e87ba0671cd6d4ab0137',{
         cluster: 'eu',
         encrypted: true}
     );
-    console.log(pusher);
     var channel = pusher.subscribe('shoutbox');
 
     channel.bind('App\\Events\\ShoutWasFired', function(data){
-
-        console.log(data);
 
         /*spawnNotify(data.shout.name+" shouted!",data.shout.message,"/image/"+data.shout.profile_pic+"/thumbnail/150");*/
 
         if(parseInt(data.shout.id)%2 == 0)
         {
-            $('#shoutbox-chat').append("<li class='left clearfix'><span class='chat-img pull-left'><img src='/image/"+data.shout.profile_pic+"/thumbnail/60' width='40' height='40' alt='User Avatar' class='img-circle'/> \
+            $('#shoutbox-chat').append("<li class='left clearfix'><span class='chat-img pull-left'><img src='"+data.shout.profile_pic+"' width='40' height='40' alt='User Avatar' class='img-circle'/> \
             </span> \
             <div class='chat-body clearfix'> \
             <div class='header'> \
@@ -609,7 +605,7 @@ $('.composemailusername').typeahead({
         else
         {
             $('#shoutbox-chat').append("<li class='right clearfix'><span class='chat-img pull-right'> \
-        <img src='/image/"+data.shout.profile_pic+"/thumbnail/60' width='40' height='40' alt='User Avatar' class='img-circle'/> \
+        <img src='"+data.shout.profile_pic+"' width='40' height='40' alt='User Avatar' class='img-circle'/> \
             </span> \
             <div class='chat-body clearfix'> \
             <div class='header'> \
