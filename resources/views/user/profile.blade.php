@@ -9,7 +9,7 @@
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-md-5">
-                                {!! Html::image('/img/ext/computer-767776_1280.jpg',null,['class' => 'img img-thumbnail profile-cover-img']) !!}
+                                {!! Html::image($user->getGravatarLink(250),null,['class' => 'img img-thumbnail profile-cover-img']) !!}
                             </div>
                             <div class="col-md-5">
                                 <h3 class="no-margin">{{ $user->name }}</h3>

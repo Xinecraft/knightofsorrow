@@ -93,13 +93,13 @@ class ServerController extends Controller
         }
         catch(\Exception $e)
         {
-            return \Redirect::back()->with('error',"Unable to query Server. Ensure it is live.")->withInput();
+            return \Redirect::back()->with('error',"Unable to query Server. Are you sure it is live ?")->withInput();
         }
 
         $server = json_decode($server);
 
         if($server->hostname == "...server is reloading or offline")
-            return \Redirect::back()->with('error',"Unable to query Server. Ensure it is live.")->withInput();
+            return \Redirect::back()->with('error',"Unable to query Server. Are you sure it is live ?")->withInput();
 
         /**
          * Get the Country of Server

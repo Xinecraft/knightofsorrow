@@ -19,7 +19,7 @@ class EntrustRoles
         if(\Auth::guest())
             return \Redirect::home();
 
-        if (Entrust::hasRole('admin') || Entrust::hasRole('super-admin') || Entrust::hasRole('owner')) {
+        if (Entrust::hasRole('admin') || Entrust::hasRole('superadmin') || Entrust::hasRole('leader')) {
             return $next($request);
         }
 
