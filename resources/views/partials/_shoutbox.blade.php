@@ -97,7 +97,7 @@
 
                 {!! Form::close() !!}
                  @else
-                    <div class='panel nomargin padding10 text-muted'><b>Please {!!  link_to('/auth/login','Login') !!}
+                    <div class='panel nomargin padding10 text-muted'><b>{!!  link_to('/auth/login','Login') !!}
                             or {!! link_to('/auth/register', 'Register') !!} to shout.</b></div>
                 @endif
             </div>

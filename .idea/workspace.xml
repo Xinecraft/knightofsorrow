@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e189236c-c3e7-488f-b221-e9fb727e1c1d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/partials/_footer.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/rules.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/favicon.ico" afterPath="$PROJECT_DIR$/public/favicon.ico" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/MainController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/MainController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ServerController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ServerController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Server/ChatTracker.php" afterPath="$PROJECT_DIR$/app/Server/ChatTracker.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/app.css" afterPath="$PROJECT_DIR$/public/css/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/main.js" afterPath="$PROJECT_DIR$/public/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/auth/password.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/password.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/auth/reset.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/reset.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/main.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/main.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/_navbar.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/_navbar.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/_shoutbox.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/_shoutbox.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/_sidebar.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/_sidebar.blade.php" />
     </list>
@@ -63,11 +46,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rules.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="_sidebar.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/partials/_sidebar.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5929919">
+              <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rules.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/rules.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.78436655">
-              <caret line="18" column="139" selection-start-line="18" selection-start-column="139" selection-end-line="18" selection-end-column="139" />
+            <state vertical-scroll-proportion="-11.192307">
+              <caret line="18" column="76" selection-start-line="18" selection-start-column="76" selection-end-line="18" selection-end-column="76" />
               <folding>
                 <element signature="e#132#157#0#HTML" expanded="true" />
                 <element signature="e#987#1014#0#HTML" expanded="true" />
@@ -133,11 +126,9 @@
       <file leaf-file-name="_shoutbox.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/partials/_shoutbox.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.0384614">
-              <caret line="102" column="18" selection-start-line="102" selection-start-column="18" selection-end-line="102" selection-end-column="18" />
-              <folding>
-                <element signature="n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="-12.730769">
+              <caret line="105" column="6" selection-start-line="105" selection-start-column="6" selection-end-line="105" selection-end-column="6" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -155,7 +146,6 @@
         <option value="$PROJECT_DIR$/resources/views/api/whois/notfound.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/api/whois/onefound.blade.php" />
         <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/resources/views/partials/_shoutbox.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/main.blade.php" />
         <option value="$PROJECT_DIR$/vendor/maximebf/debugbar/src/DebugBar/DebugBar.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/_footer.blade.php" />
@@ -163,7 +153,6 @@
         <option value="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/password.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/reset.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/partials/_sidebar.blade.php" />
         <option value="$PROJECT_DIR$/app/Server/ChatTracker.php" />
         <option value="$PROJECT_DIR$/public/css/app.css" />
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
@@ -174,6 +163,8 @@
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/_navbar.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/rules.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/partials/_shoutbox.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/partials/_sidebar.blade.php" />
       </list>
     </option>
   </component>
@@ -336,7 +327,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="_nav&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;Api&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/ApiController.php&#10;Chat&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/ChatTracker.php&#10;main&#9;FILE&#9;file://C:/wamp/www/kos/public/js/main.js&#10;route&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/routes.php&#10;app.cs&#9;FILE&#9;file://C:/wamp/www/kos/public/css/app.css&#10;_&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_shoutbox.blade.php&#10;home&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/home.blade.php&#10;Response&#9;null&#9;null&#10;Symfony Res&#9;null&#9;null&#10;ChatTr&#9;null&#9;null&#10;side&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;password&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/auth/password.blade.php&#10;reg&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/auth/register.blade.php&#10;.blade&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/home.blade.php&#10;login&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/auth/login.blade.php&#10;debug&#9;null&#9;null&#10;debugbar&#9;null&#9;null&#10;_side&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;shou&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_shoutbox.blade.php&#10;mai&#9;FILE&#9;file://C:/wamp/www/kos/public/js/main.js&#10;ter&#9;ACTION&#9;ActivateTerminalToolWindow&#10;many&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/api/whois/manyfound.blade.php&#10;on&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/api/whois/onefound.blade.php&#10;notf&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/api/whois/notfound.blade.php&#10;player-d&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/statistics/player-details.blade.php&#10;ServerTr&#9;null&#9;null&#10;Pla&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Presenters/PlayerTotalPresenter.php&#10;Player&#9;null&#9;null&#10;ApiC&#9;null&#9;null&#10;_sho&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_shoutbox.blade.php" />
+    <property name="SearchEverywhereHistoryKey" value="si&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;_nav&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;Api&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/ApiController.php&#10;Chat&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/ChatTracker.php&#10;main&#9;FILE&#9;file://C:/wamp/www/kos/public/js/main.js&#10;route&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/routes.php&#10;app.cs&#9;FILE&#9;file://C:/wamp/www/kos/public/css/app.css&#10;_&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_shoutbox.blade.php&#10;home&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/home.blade.php&#10;Response&#9;null&#9;null&#10;Symfony Res&#9;null&#9;null&#10;ChatTr&#9;null&#9;null&#10;side&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;password&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/auth/password.blade.php&#10;reg&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/auth/register.blade.php&#10;.blade&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/home.blade.php&#10;login&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/auth/login.blade.php&#10;debug&#9;null&#9;null&#10;debugbar&#9;null&#9;null&#10;_side&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;shou&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_shoutbox.blade.php&#10;mai&#9;FILE&#9;file://C:/wamp/www/kos/public/js/main.js&#10;ter&#9;ACTION&#9;ActivateTerminalToolWindow&#10;many&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/api/whois/manyfound.blade.php&#10;on&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/api/whois/onefound.blade.php&#10;notf&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/api/whois/notfound.blade.php&#10;player-d&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/statistics/player-details.blade.php&#10;ServerTr&#9;null&#9;null&#10;Pla&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Presenters/PlayerTotalPresenter.php&#10;Player&#9;null&#9;null&#10;ApiC&#9;null&#9;null&#10;_sho&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_shoutbox.blade.php" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
   </component>
   <component name="RunManager">
@@ -383,8 +374,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1852123" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -393,7 +384,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -521,9 +512,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="87" column="79" selection-start-line="87" selection-start-column="79" selection-end-line="87" selection-end-column="79" />
-          <folding>
-            <element signature="n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -665,14 +654,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/partials/_sidebar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Router.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8921833">
@@ -706,16 +687,6 @@
         <state vertical-scroll-proportion="0.67654985">
           <caret line="9407" column="47" selection-start-line="9407" selection-start-column="47" selection-end-line="9407" selection-end-column="47" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/partials/_shoutbox.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.0384614">
-          <caret line="102" column="18" selection-start-line="102" selection-start-column="18" selection-end-line="102" selection-end-column="18" />
-          <folding>
-            <element signature="n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -818,12 +789,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/rules.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.78436655">
-          <caret line="18" column="139" selection-start-line="18" selection-start-column="139" selection-end-line="18" selection-end-column="139" />
+        <state vertical-scroll-proportion="-11.192307">
+          <caret line="18" column="76" selection-start-line="18" selection-start-column="76" selection-end-line="18" selection-end-column="76" />
           <folding>
             <element signature="e#132#157#0#HTML" expanded="true" />
             <element signature="e#987#1014#0#HTML" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/partials/_shoutbox.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.730769">
+          <caret line="105" column="6" selection-start-line="105" selection-start-column="6" selection-end-line="105" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/partials/_sidebar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5929919">
+          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
