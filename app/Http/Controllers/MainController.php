@@ -197,4 +197,9 @@ class MainController extends Controller
         return view('home', $array);
     }
 
+
+    public function getRulesOfServer()
+    {
+        return view('rules');
+    }
 }

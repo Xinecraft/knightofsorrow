@@ -524,6 +524,48 @@ $('.composemailusername').typeahead({
         footer: '<a href="http://www.emoji.codes" target="_blank">Browse All<span class="arrow">»</span></a>'
     });
 
+    //Emoji ONE for Non text area
+    $(".textarea").textcomplete([ {
+        match: /\B:([\-+\w]*)$/,
+        search: function (term, callback) {
+            var results = [];
+            var results2 = [];
+            var results3 = [];
+            $.each(emojiStrategy,function(shortname,data) {
+                if(shortname.indexOf(term) > -1) { results.push(shortname); }
+                else {
+                    if((data.aliases !== null) && (data.aliases.indexOf(term) > -1)) {
+                        results2.push(shortname);
+                    }
+                    else if((data.keywords !== null) && (data.keywords.indexOf(term) > -1)) {
+                        results3.push(shortname);
+                    }
+                }
+            });
+
+            if(term.length >= 3) {
+                results.sort(function(a,b) { return (a.length > b.length); });
+                results2.sort(function(a,b) { return (a.length > b.length); });
+                results3.sort();
+            }
+            var newResults = results.concat(results2).concat(results3);
+
+            callback(newResults);
+        },
+        template: function (shortname) {
+            return '<img class="emojione" src="/components/emojione/assets/png/'+emojiStrategy[shortname].unicode+'.png"> :'+shortname+':';
+        },
+        replace: function (shortname) {
+            return ':'+shortname+': ';
+        },
+        index: 1,
+        maxCount: 10
+    }
+    ],{
+        appendTo: $('body'),
+        footer: '<a href="http://www.emoji.codes" target="_blank">Browse All<span class="arrow">»</span></a>'
+    });
+
 /**
  * A Fallback function that will convert emoji to thier Icon if PHP fails to do so
  * @param  {[type]} ) {                       var original [description]
@@ -677,6 +719,43 @@ $('.composemailusername').typeahead({
         event.preventDefault();
     });
 
+    $('#serverchat-form').submit(function(event) {
+
+        $('#serverchat-input-group').removeClass('has-error');
+        $('#serverchat-input-group-error').html('');
+
+        // get the form data
+        // there are many ways to get this data using jQuery (you can use the class or id also)
+        var formData = {
+            'serverchatmsg' : $('input[name=serverchatmsg]').val()
+        };
+
+        // process the form
+        $.ajax({
+            type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+            url         : '/server/chat', // the url where we want to POST
+            data        : $('#serverchat-form').serialize(), // our data object
+            dataType    : 'json', // what type of data do we expect back from the server
+            encode      : true,
+            beforeSend: function() {
+                $('input[name=serverchatmsg]').val('');
+                $("#serverchat-input-group-error").html("<option class='text-center'> Sending plz wait...</option>");
+            },
+            success     : function(data){
+                $('input[name=serverchatmsg]').val('');
+                $('#serverchat-form').prop('disabled', false);
+                $("#serverchat-input-group-error").html("");
+            },
+            error: function(data) {
+                // Error...
+                $('input[name=serverchatmsg]').val('');
+                $('#serverchat-form').prop('disabled', false);
+                $("#serverchat-input-group-error").html("");
+            }
+        });
+        // stop the form from submitting the normal way and refreshing the page
+        event.preventDefault();
+    });
 
     $('.confirm').click(function(){
         return confirm("Are you sure?");

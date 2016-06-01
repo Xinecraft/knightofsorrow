@@ -36,6 +36,8 @@
 
 </div> {{--Main Container Ends --}}
 
+@include('partials._footer')
+
 {!! Html::script('js/jquery.js') !!}
 <script src="//js.pusher.com/2.2/pusher.min.js"></script>
 {!! Html::script('js/bootstrap.min.js') !!}

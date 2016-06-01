@@ -62,9 +62,26 @@
                 <div class="panel-body ls-chats">
                     <div class="loading-pt-info">Loading Server Chat...</div>
                 </div>
-                <div class="panel-footer">
-                    <p class="margin5 padding10 lorchat">Please <a class="ainorange" href="./?login">Login</a> or <a class="ainorange" href="./?register">Register</a> to Chat</p>
-                </div>
+                    <div class="panel-footer">
+                        @if(Auth::check())
+                            {!!  Form::open(['route' => 'server.chat','id' => 'serverchat-form']) !!}
+                            <div id="shout-input-group" class="input-group">
+                                <input name="serverchatmsg" id="btn-input" type="text" class="textarea form-control"
+                                       placeholder="Type your message here..." autocomplete="off" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" id="btn-chat">
+                                Send
+                            </button>
+                        </span>
+                            </div>
+                            <div id="serverchat-input-group-error" class="help-block"></div>
+                            {!! Form::close() !!}
+                        @else
+                            <div class='panel nomargin padding10 text-muted'><b>{!!  link_to('/auth/login','Login') !!}
+                                    or {!! link_to('/auth/register', 'Register') !!} to chat with in-game players.</b></div>
+                        @endif
+                    </div>
+
             </div> {{--Live Server Viewer Ends--}}
         </div> {{--Live Server Players,Top Players and Server Viewer Row Ends--}}
 

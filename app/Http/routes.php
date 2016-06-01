@@ -130,12 +130,12 @@ Route::group(['prefix' => 'servertracker'], function(){
      * This route will handle the posting and storage of all chats from server
      * to the website db as a GET request
      */
-    Route::get('chats/{key}/',['as' => 'chat-tracker',function($key){
+    Route::post('chats/{key}/',['as' => 'chat-tracker',function($key){
         if($key != env('SERVER_QUERY_KEY')) {
             Log::error("Error! Server key invalid. Can't save chat record to Database.");
         }
         else {
-            $chat = new App\Server\ChatTracker($_GET);
+            $chat = new App\Server\ChatTracker($_POST);
             $chat->track();
         }
     }]);
@@ -147,3 +147,7 @@ Route::group(['prefix' => 'servertracker'], function(){
  */
 Route::post('/shouts/do',['as' => 'shouts.store', 'uses' => 'ShoutsController@store']);
 Route::delete('/shouts/{id}/delete', ['as' => 'shouts.delete', 'uses' => 'ShoutsController@destroy']);
+
+Route::post('/server/chat',['as' => 'server.chat', 'uses' => 'ServerController@chatInGameForKOS']);
+
+Route::get('/rules', ['as' => 'rules', 'uses' => 'MainController@getRulesOfServer']);

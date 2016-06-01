@@ -1,5 +1,4 @@
 body {
-  padding-top: 70px;
   background-color: #F9F6F6;
 }
 td,
@@ -436,5 +435,12 @@ a.status-timeago:active {
 .status-box.hover .ctrl-box {
   display: inline;
 }
-
+.padding10
+{
+  padding:10px;
+}
+.nomargin
+{
+  margin: 0 !important;
+}
 /*# sourceMappingURL=app.css.map */

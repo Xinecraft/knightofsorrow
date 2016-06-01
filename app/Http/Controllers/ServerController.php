@@ -24,19 +24,16 @@ class ServerController extends Controller
 
         $collection = new Collection();
 
-        foreach($servers as $server)
-        {
+        foreach ($servers as $server) {
             try {
                 $query = new Swat4Server($server->ip_address, $server->query_port);
                 $query->query();
-            }
-            catch(\Exception $e)
-            {
+            } catch (\Exception $e) {
                 continue;
             }
             $serverquery = json_decode($query);
 
-            if($serverquery->hostname == '...server is reloading or offline')
+            if ($serverquery->hostname == '...server is reloading or offline')
                 continue;
 
             $newserver = new Arr();
@@ -54,7 +51,7 @@ class ServerController extends Controller
         }
         $collection = $collection->sortByDesc('players_current');
 
-        return view('server.list')->with('servers', $collection)->with('page',$servers);
+        return view('server.list')->with('servers', $collection)->with('page', $servers);
     }
 
     /**
@@ -79,60 +76,49 @@ class ServerController extends Controller
                 'join_port' => 'required|numeric|min:0|max:65535',
                 'query_port' => 'required|numeric|min:0|max:65535'
             ]);
-        if($validator->fails())
-            return \Redirect::back()->with('errors',$validator->errors())->withInput();
+        if ($validator->fails())
+            return \Redirect::back()->with('errors', $validator->errors())->withInput();
 
-        if($this->is_server_registered($request))
-        {
-            return \Redirect::back()->with('error',"Server already registered")->withInput();
+        if ($this->is_server_registered($request)) {
+            return \Redirect::back()->with('error', "Server already registered")->withInput();
         }
 
         try {
             $server = new Swat4Server($request->ip_address, $request->query_port);
             $server->query();
-        }
-        catch(\Exception $e)
-        {
-            return \Redirect::back()->with('error',"Unable to query Server. Are you sure it is live ?")->withInput();
+        } catch (\Exception $e) {
+            return \Redirect::back()->with('error', "Unable to query Server. Are you sure it is live ?")->withInput();
         }
 
         $server = json_decode($server);
 
-        if($server->hostname == "...server is reloading or offline")
-            return \Redirect::back()->with('error',"Unable to query Server. Are you sure it is live ?")->withInput();
+        if ($server->hostname == "...server is reloading or offline")
+            return \Redirect::back()->with('error', "Unable to query Server. Are you sure it is live ?")->withInput();
 
         /**
          * Get the Country of Server
          */
         $geoip = \App::make('geoip');
         $server_ip = $request->ip_address;
-        try
-        {
-            if($server_geoip = $geoip->city($server_ip))
-            {
+        try {
+            if ($server_geoip = $geoip->city($server_ip)) {
                 $server_isoCode = $server_geoip->country->isoCode;
                 $country = \App\Country::where('countryCode', 'LIKE', $server_isoCode)->first();
 
                 /**
                  * Country returned is not in Countrie table
                  */
-                if($country == null)
-                {
+                if ($country == null) {
                     $server_country_id = 0;
-                }
-                else
-                {
+                } else {
                     $server_country_id = $country->id;
                 }
             }
-        }
-            /**
-             * If the GeoIp2 failed to retrieve data
-             */
-        catch(\Exception $e)
-        {
-            switch($e)
-            {
+        } /**
+         * If the GeoIp2 failed to retrieve data
+         */
+        catch (\Exception $e) {
+            switch ($e) {
                 case $e instanceof \InvalidArgumentException:
                     $server_country_id = 0;
                     break;
@@ -155,14 +141,14 @@ class ServerController extends Controller
         $newServer->submitter_id = \Auth::user()->id;
         $newServer->save();
 
-        return \Redirect::back()->with('message',"Server has been submitted!");
+        return \Redirect::back()->with('message', "Server has been submitted!");
     }
 
     public function is_server_registered($request)
     {
-        $d1 = Server::where('ip_address',$request->ip_address)->where('join_port',$request->join_port)->first();
-        $d2 = Server::where('ip_address',$request->ip_address)->where('query_port',$request->query_port)->first();
-        if($d1 || $d2)
+        $d1 = Server::where('ip_address', $request->ip_address)->where('join_port', $request->join_port)->first();
+        $d2 = Server::where('ip_address', $request->ip_address)->where('query_port', $request->query_port)->first();
+        if ($d1 || $d2)
             return true;
         else
             return false;
@@ -172,23 +158,23 @@ class ServerController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return Response
      */
     public function show($id)
     {
         $server = Server::findOrFail($id);
 
-        $serverquery = new Swat4Server($server->ip_address,$server->query_port);
+        $serverquery = new Swat4Server($server->ip_address, $server->query_port);
         $serverquery->query();
 
-        return \Response::make($serverquery,200,['Content-Type' => "text/json"]);
+        return \Response::make($serverquery, 200, ['Content-Type' => "text/json"]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return Response
      */
     public function edit($id)
@@ -199,7 +185,7 @@ class ServerController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return Response
      */
     public function update($id)
@@ -210,11 +196,35 @@ class ServerController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return Response
      */
     public function destroy($id)
     {
         //
+    }
+
+    public function chatInGameForKOS(Request $request)
+    {
+        $Username = $request->user()->username;
+        $Msg = $request->serverchatmsg;
+        $Msg = htmlentities($Msg);
+        if ($Msg == '' || empty($Msg)) {
+            return;
+        }
+        $MsgFormated = "[c=ffa500][b]" . $Username . "[\\b] (Server Viewer):[\\c] [c=FFFFFF]" . $Msg;
+        $txtip = "127.0.0.1";
+        $txtportnum = "10481";
+        $sock = fsockopen("udp://" . $txtip, $txtportnum, $errno, $errstr, 2);
+        if (!$sock) {
+            echo "$errstr ($errno)<br/>\n";
+            exit;
+        }
+        fputs($sock, $MsgFormated);
+        $gotfinal = False;
+        $data = "";
+        socket_set_timeout($sock, 0, 1000);
+        fclose($sock);
+        exit();
     }
 }

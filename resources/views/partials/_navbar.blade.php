@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-inverse navbar-static-top">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -25,7 +25,7 @@
                         <li><a href="">News</a></li>
                         <li><a href="">Clans</a></li>
                         <li><a href="">Forums</a></li>
-                        <li><a href="">Rules</a></li>
+                        <li><a href="{{ route('rules') }}">Rules</a></li>
                     </ul>
                 </li>
 

@@ -40,7 +40,7 @@ class ApiController extends Controller
      */
     public function getServerChats()
     {
-        $chats = Chat::orderBy('created_at', 'DESC')->limit(35)->get();
+        $chats = Chat::orderBy('created_at', 'DESC')->limit(25)->get();
         foreach ($chats as $chat) {
             print($chat->message) . "<br>";
         }
@@ -90,7 +90,7 @@ class ApiController extends Controller
          * Stats Query System
          * Like Top 10 Player etc.
          */
-        if($playerName = "top 10")
+        if($playerName == "top 10")
         {
             $players = PlayerTotal::orderBy('position')->limit(10)->get();
             $i = 1;
@@ -291,13 +291,11 @@ class ApiController extends Controller
             else
             {
                 $player = $players->first();
-
                 printf("[c=FFFF00][b][u]%s[\\u][\\b][\\c] is coming from [b][c=EBFFFF]%s[\\c][\\b]\n", $player->name, $playerCountryName);
                 printf("[b][c=FFFF00][u]%s[\\u][\\c][\\b]'s Position: [c=FFFEEB][b][u]#%d[\\u][\\b][\\c] [c=00FF00]-[\\c] Score: [c=FFFEEB][b][u]%d[\\u][\\b][\\c] [c=00FF00]-[\\c] Rank: [c=FFFEEB][b][u]%s[\\u][\\b][\\c]\n", $player->name, $player->position, $player->total_score, $player->rank->name);
                 printf("Score Per Min: [c=FFFEEB][b][u]%.2f points[\\u][\\b][\\c] [c=00FF00]-[\\c] Highest Score: [c=FFFEEB][b][u]%d[\\u][\\b][\\c]\n", round($player->score_per_min,2), $player->highest_score);
                 printf("Time Played: [c=FFFEEB][b][u]%s[\\u][\\b][\\c] [c=00ff00]-[\\c] Last Seen: [c=00FF00][b][u]%s[\\u][\\b][\\c]", gmdate("H\\h i\\m", $player->total_time_played), $player->lastGame->created_at->diffForHumans());
                 exit();
-
                 /*$data = [
                     'player' => $player,
                     'playerAddr' => $playerCountryName,

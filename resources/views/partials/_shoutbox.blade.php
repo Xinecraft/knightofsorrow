@@ -41,7 +41,7 @@
                                             <span class="fa fa-clock-o"></span> {{ $shout->created_at->diffForHumans() }}
                                         </small>
                                     </div>
-                                    <p>
+                                    <p class="convert-emoji">
                                         {!! nl2br(htmlentities($shout->shout)) !!}
                                     </p>
                                 </div>
