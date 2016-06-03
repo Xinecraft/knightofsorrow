@@ -28,6 +28,9 @@ class UserController extends Controller
     {
         $user = $this->user->findByUsername($username);
 
+        if($user == null)
+            abort(404);
+
         return view('user.profile')->with('user', $user);
     }
 

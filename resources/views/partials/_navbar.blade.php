@@ -7,7 +7,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">KnightofSorrow.tk</a>
+            {{--<a class="navbar-brand" href="#"><img src="{{ public_path('images').DIRECTORY_SEPARATOR.'mailogo.png' }}" alt="" height="34" style="height: 34px;"></a>--}}
+            <a class="navbar-brand" href="#"><img src="./images/mainlogo.png" alt="" height="34" style="height: 34px;"></a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
@@ -28,6 +29,10 @@
                         <li><a href="{{ route('rules') }}">Rules</a></li>
                     </ul>
                 </li>
+
+                @if(Auth::check() && Auth::user()->unreadInbox()->count() > 0)
+                    <li class="text-bold {{ set_active(['mail/inbox*']) }}">{!! link_to_route('user.inbox',Auth::user()->unreadInbox()->count()." new mail") !!} </li>
+                @endif
 
             </ul>
 

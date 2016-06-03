@@ -30,7 +30,7 @@ class ApiController extends Controller
      */
     public function getServerQuery()
     {
-        $data = new Swat4Server('127.0.0.1', 10481);
+        $data = new Swat4Server('31.186.250.156', 10482);
         $data->query();
         return htmlspecialchars_decode(html_entity_decode($data));
     }

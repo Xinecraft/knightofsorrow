@@ -153,6 +153,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->hasMany('App\Mail','reciever_id')->latest();
     }
 
+    public function unreadInbox()
+    {
+        return $this->hasMany('App\Mail','reciever_id')->where('seen_at',NULL)->latest();
+    }
+
     public function sendmail($reciever,$subject,$body)
     {
         return $this->outbox()->create([
