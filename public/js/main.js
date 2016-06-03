@@ -511,7 +511,7 @@ $('.composemailusername').typeahead({
             callback(newResults);
         },
         template: function (shortname) {
-            return '<img class="emojione" src="http://'+window.location.hostname+'/components/emojione/assets/png/'+emojiStrategy[shortname].unicode+'.png"> :'+shortname+':';
+            return '<img class="emojione" src="http://'+window.location.hostname+'/components/emojione/assets/png/'+emojiStrategy[shortname].unicode.toLowerCase()+'.png"> :'+shortname+':';
         },
         replace: function (shortname) {
             return ':'+shortname+': ';
@@ -553,7 +553,7 @@ $('.composemailusername').typeahead({
             callback(newResults);
         },
         template: function (shortname) {
-            return '<img class="emojione" src="http://'+window.location.hostname+'/components/emojione/assets/png/'+emojiStrategy[shortname].unicode+'.png"> :'+shortname+':';
+            return '<img class="emojione" src="http://'+window.location.hostname+'/components/emojione/assets/png/'+emojiStrategy[shortname].unicode.toLowerCase()+'.png"> :'+shortname+':';
         },
         replace: function (shortname) {
             return ':'+shortname+': ';
@@ -681,7 +681,7 @@ $('.composemailusername').typeahead({
         // process the form
         $.ajax({
             type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
-            url         : '/shouts/do', // the url where we want to POST
+            url         : "http://"+window.location.hostname+"/shouts/do", // the url where we want to POST
             data        : $('#shoutbox-form').serialize(), // our data object
             dataType    : 'json', // what type of data do we expect back from the server
             encode      : true,
