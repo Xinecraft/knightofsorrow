@@ -11,7 +11,7 @@
 */
 
 Route::get('test',function(){
-
+    dd(url('zishan'));
 });
 
 /**

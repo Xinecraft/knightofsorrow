@@ -511,7 +511,7 @@ $('.composemailusername').typeahead({
             callback(newResults);
         },
         template: function (shortname) {
-            return '<img class="emojione" src="/components/emojione/assets/png/'+emojiStrategy[shortname].unicode+'.png"> :'+shortname+':';
+            return '<img class="emojione" src="http://'+window.location.hostname+'/components/emojione/assets/png/'+emojiStrategy[shortname].unicode+'.png"> :'+shortname+':';
         },
         replace: function (shortname) {
             return ':'+shortname+': ';
@@ -553,7 +553,7 @@ $('.composemailusername').typeahead({
             callback(newResults);
         },
         template: function (shortname) {
-            return '<img class="emojione" src="/components/emojione/assets/png/'+emojiStrategy[shortname].unicode+'.png"> :'+shortname+':';
+            return '<img class="emojione" src="http://'+window.location.hostname+'/components/emojione/assets/png/'+emojiStrategy[shortname].unicode+'.png"> :'+shortname+':';
         },
         replace: function (shortname) {
             return ':'+shortname+': ';
