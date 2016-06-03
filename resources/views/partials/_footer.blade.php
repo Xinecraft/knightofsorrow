@@ -32,7 +32,7 @@
                 </p>
                 </div>
                 <div class="col-md-3 col-md-offset-1">
-                    <small class="muted">Page took {{ round((microtime(true) - LARAVEL_START),5) }} seconds to render</small>
+                    <i><small class="muted">Page took {{ round((microtime(true) - LARAVEL_START),5) }} seconds to render</small></i>
                 </div>
             </div>
         </div>
