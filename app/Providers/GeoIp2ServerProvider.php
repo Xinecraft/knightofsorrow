@@ -26,7 +26,7 @@ class GeoIp2ServerProvider extends ServiceProvider
     {
         $this->app->singleton('geoip',function()
         {
-            return new Reader(storage_path().'\GeoLite2-City.mmdb');
+            return new Reader(storage_path().DIRECTORY_SEPARATOR.'GeoLite2-City.mmdb');
         });
     }
 }

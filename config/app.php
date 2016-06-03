@@ -145,7 +145,7 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         McCool\LaravelAutoPresenter\AutoPresenterServiceProvider::class,
-        Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
+        Laracasts\Utilities\JavaScript\JavascriptServiceProvider::class,
 
 
         /*
