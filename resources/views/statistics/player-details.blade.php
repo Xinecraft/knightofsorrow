@@ -309,7 +309,7 @@
                         <td class="col-5">
                             Longest Kill
                         </td>
-                        <td class="col-6 text-right"><strong>{{ $player->longestKillDistance }}m</strong>
+                        <td class="col-6 text-right"><strong>{{ round($player->longestKillDistance/100) }}m</strong>
                         </td>
                     </tr>
 
@@ -485,7 +485,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                        @elseif($weaponFamily->first() != null && $weaponFamily->first()->family == 'Other')
+                        @elseif($weaponFamily->first() != null && $weaponFamily->first()->family == 'Others')
                             <div role="tabpanel" class="tab-pane" id="others">
                                 <table class="table table-bordered commontable weapontable">
                                     <thead>
