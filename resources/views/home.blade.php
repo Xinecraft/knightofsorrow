@@ -151,8 +151,8 @@
                                                     Arrests
                                                 </td>
                                                 <td class="col-6">
-                                                    {!! link_to_route('player-detail',$PastWeek->totalKills->name,[$PastWeek->totalKills->playerTotal()->id,$PastWeek->totalKills->name]) !!}
-                                                    <span class="small">({{ $PastWeek->totalKills->totalkills }})</span>
+                                                    {!! link_to_route('player-detail',$PastWeek->totalArrests->name,[$PastWeek->totalArrests->playerTotal()->id,$PastWeek->totalArrests->name]) !!}
+                                                    <span class="small">({{ $PastWeek->totalArrests->totalarrests }})</span>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -284,8 +284,8 @@
                                                     Arrests
                                                 </td>
                                                 <td class="col-6">
-                                                    {!! link_to_route('player-detail',$PastMonth->totalKills->name,[$PastMonth->totalKills->playerTotal()->id,$PastMonth->totalKills->name]) !!}
-                                                    <span class="small">({{ $PastMonth->totalKills->totalkills }})</span>
+                                                    {!! link_to_route('player-detail',$PastMonth->totalArrests->name,[$PastMonth->totalArrests->playerTotal()->id,$PastMonth->totalArrests->name]) !!}
+                                                    <span class="small">({{ $PastMonth->totalArrests->totalarrests }})</span>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -417,8 +417,8 @@
                                                     Arrests
                                                 </td>
                                                 <td class="col-6">
-                                                    {!! link_to_route('player-detail',$PastYear->totalKills->name,[$PastYear->totalKills->playerTotal()->id,$PastYear->totalKills->name]) !!}
-                                                    <span class="small">({{ $PastYear->totalKills->totalkills }})</span>
+                                                    {!! link_to_route('player-detail',$PastYear->totalArrests->name,[$PastYear->totalArrests->playerTotal()->id,$PastYear->totalArrests->name]) !!}
+                                                    <span class="small">({{ $PastYear->totalArrests->totalarrests }})</span>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -550,8 +550,8 @@
                                                     Arrests
                                                 </td>
                                                 <td class="col-6">
-                                                    {!! link_to_route('player-detail',$AllTime->totalKills->name,[$AllTime->totalKills->playerTotal()->id,$AllTime->totalKills->name]) !!}
-                                                    <span class="small">({{ $AllTime->totalKills->totalkills }})</span>
+                                                    {!! link_to_route('player-detail',$AllTime->totalArrests->name,[$AllTime->totalArrests->playerTotal()->id,$AllTime->totalArrests->name]) !!}
+                                                    <span class="small">({{ $AllTime->totalArrests->totalarrests }})</span>
                                                 </td>
                                             </tr>
                                             <tr>
