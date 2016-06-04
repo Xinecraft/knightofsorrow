@@ -60,8 +60,8 @@
                 {!! Form::submit('Comment',['class' => 'btn btn-xs btn-default right comment-create-form-submit']) !!}
                 {!! Form::close() !!}
                 </div>
+                @endif
             </div>
-            @endif
         </div>
 
     </div>
