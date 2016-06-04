@@ -48,7 +48,8 @@
                     </div>
                 @endforeach
                 </div>
-                
+
+                @if(Auth::check())
                 <div class="media comment-media">
                 <div class="pull-left">
                     {!! Html::image(Auth::user()->getGravatarLink(40),'',array('class'=>'img media-oject inprofile-thumbs','width'=>'40','height'=>'40')) !!}
@@ -59,8 +60,8 @@
                 {!! Form::submit('Comment',['class' => 'btn btn-xs btn-default right comment-create-form-submit']) !!}
                 {!! Form::close() !!}
                 </div>
-
             </div>
+            @endif
         </div>
 
     </div>
