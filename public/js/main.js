@@ -630,9 +630,9 @@ $('.composemailusername').typeahead({
             $('#shoutbox-chat').append("<li class='left clearfix'><span class='chat-img pull-left'><img src='"+data.shout.profile_pic+"' width='40' height='40' alt='User Avatar' class='img-circle'/> \
             </span> \
             <div class='chat-body clearfix'> \
-            <div class='header'> \
-            <a href='/@"+data.shout.username+"'><strong class='primary-font'>"+data.shout.name+"</strong></a> \
-        <small class='pull-right text-muted'> \
+            <div class='header text-left'> \
+            <a href='/@"+data.shout.username+"'><strong class='primary-font'>"+data.shout.name+"</strong></a><br> \
+        <small class='text-muted'> \
             <span class='fa fa-clock-o'></span> "+data.shout.created_at+" \
         </small> \
         </div> \
@@ -650,10 +650,10 @@ $('.composemailusername').typeahead({
         <img src='"+data.shout.profile_pic+"' width='40' height='40' alt='User Avatar' class='img-circle'/> \
             </span> \
             <div class='chat-body clearfix'> \
-            <div class='header'> \
+            <div class='header text-right'> \
+            <a href='/@"+data.shout.username+"'><strong class='primary-font'>"+data.shout.name+"</strong></a><br> \
             <small class='text-muted'><span class='fa fa-clock-o'></span> "+data.shout.created_at+" \
         </small> \
-        <a href='/@"+data.shout.username+"'><strong class='pull-right primary-font'>"+data.shout.name+"</strong></a> \
         </div> \
         <p class='text-right convert-emoji'> \
             "+convertEmoji(data.shout.message)+" \

@@ -21,10 +21,11 @@
                             <img src="{{ $shout->user->getGravatarLink(40) }}" width="40" height="40" alt="User Avatar" class="img-circle"/>
                                 </span>
                                 <div class="chat-body clearfix">
-                                    <div class="header">
+                                    <div class="header text-left">
                                         <a href="{{ route('user.show',$shout->user->username) }}">
                                             <strong class="primary-font">{{ $shout->user->name }}</strong>
                                         </a>
+                                        <br>
 
                                         <!-- Shout Delete System
 
@@ -37,7 +38,7 @@
                                         @endcan
                                         -->
 
-                                        <small class="pull-right text-muted">
+                                        <small class="text-muted">
                                             <span class="fa fa-clock-o"></span> {{ $shout->created_at->diffForHumans() }}
                                         </small>
                                     </div>
@@ -52,8 +53,12 @@
                             <img src="{{ $shout->user->getGravatarLink(40) }}" width="40" height="40" alt="User Avatar" class="img-circle"/>
                         </span>
                                 <div class="chat-body clearfix">
-                                    <div class="header">
-                                        <small class=" text-muted"><span class="fa fa-clock-o"></span> {{ $shout->created_at->diffForHumans() }}
+                                    <div class="header text-right">
+                                        <a href="{{ route('user.show',$shout->user->username) }}">
+                                            <strong class="primary-font">{{ $shout->user->name }}</strong>
+                                        </a>
+                                        <br>
+                                        <small class="text-muted"><span class="fa fa-clock-o"></span> {{ $shout->created_at->diffForHumans() }}
                                         </small>
 
                                         <!--Shout Delete System
@@ -65,10 +70,6 @@
                                         </div>
                                         @endcan
                                         -->
-
-                                            <a href="{{ route('user.show',$shout->user->username) }}">
-                                        <strong class="pull-right primary-font">{{ $shout->user->name }}</strong>
-                                            </a>
                                     </div>
                                     <p class="text-right convert-emoji">
                                         {!! nl2br(htmlentities($shout->shout)) !!}
