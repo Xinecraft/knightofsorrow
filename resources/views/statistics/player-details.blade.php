@@ -499,6 +499,7 @@
                                     </thead>
                                     <tbody>
                                     @forelse($weaponFamily as $weapon)
+                                        @unless($weapon->id == 32 || $weapon->id == 33)
                                         <tr>
                                             <th class="col-md-2"><img class="weapontableimg" src="/images/game/weapons/64/item{{ $weapon->id }}.jpg">
                                                 <p class="no-margin padding5">{{ $weapon->name }}</p>
@@ -508,6 +509,7 @@
                                             <th class="col-md-1">{{ $weapon->kills_per_min }}</th>
                                             <th class="col-md-1">{{ $weapon->accuracy }}%</th>
                                         </tr>
+                                        @endunless
                                     @empty
                                         <th>Its Lone here.</th>
                                     @endforelse

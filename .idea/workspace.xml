@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e189236c-c3e7-488f-b221-e9fb727e1c1d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/statistics/player-details.blade.php" afterPath="$PROJECT_DIR$/resources/views/statistics/player-details.blade.php" />
     </list>
     <ignored path="kos.iws" />
@@ -113,8 +112,8 @@
       <file leaf-file-name="player-details.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/statistics/player-details.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7088949">
-              <caret line="489" column="92" selection-start-line="489" selection-start-column="92" selection-end-line="489" selection-end-column="92" />
+            <state vertical-scroll-proportion="0.8921833">
+              <caret line="511" column="50" selection-start-line="511" selection-start-column="50" selection-end-line="511" selection-end-column="50" />
               <folding>
                 <element signature="e#20178#20251#0#HTML" expanded="true" />
               </folding>
@@ -921,8 +920,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/statistics/player-details.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7088949">
-          <caret line="489" column="92" selection-start-line="489" selection-start-column="92" selection-end-line="489" selection-end-column="92" />
+        <state vertical-scroll-proportion="0.8921833">
+          <caret line="511" column="50" selection-start-line="511" selection-start-column="50" selection-end-line="511" selection-end-column="50" />
           <folding>
             <element signature="e#20178#20251#0#HTML" expanded="true" />
           </folding>
