@@ -214,7 +214,7 @@ class ServerController extends Controller
         }
         $MsgFormated = "[c=ffa500][b]" . $Username . "[\\b] (Server Viewer):[\\c] [c=FFFFFF]" . $Msg;
         $txtip = "127.0.0.1";
-        $txtportnum = "10481";
+        $txtportnum = "10483";
         $sock = fsockopen("udp://" . $txtip, $txtportnum, $errno, $errstr, 2);
         if (!$sock) {
             echo "$errstr ($errno)<br/>\n";

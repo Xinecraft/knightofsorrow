@@ -673,6 +673,14 @@
             </div>
         </div>
 
+        <div class="panel panel-default">
+            <div class="panel-heading info-title">Latest Bans</div>
+            <div class="panel-body">
+            IPPolicies=DENY,24.188.165.77,newname,|SRV|�DeadlyViPer!,197.33.13.247,[13/2/2014 2:58:19]
+            IPPolicies=DENY,195.225.125.182,RCancer,Hunter<3,123.201.156.135,[21/2/2014 6:36:49]
+            </div>
+        </div>
+
     </div> {{--Main Content Ends--}}
 @endsection
 
