@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Status;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -186,14 +188,20 @@ class MainController extends Controller
             $PastYear->bestScorePerMin = 0;
         }
 
+        //Latest Feeds
+        $feeds  = Status::latest()->limit(10)->get();
+
         $array = [
             'topPlayers' => $topPlayers,
             'latestGames' => $latestGames,
             'AllTime' => $AllTime,
             'PastWeek' => $PastWeek,
             'PastMonth' => $PastMonth,
-            'PastYear' => $PastYear
+            'PastYear' => $PastYear,
+
+            'feeds' => $feeds
         ];
+
         return view('home', $array);
     }
 
@@ -203,3 +211,33 @@ class MainController extends Controller
         return view('rules');
     }
 }
+
+
+/**
+ * // Ban List
+$banlist = "IPPolicies=DENY,24.188.165.77,newname,|SRV|»DeadlyViPer!,197.33.13.247,[13/2/2014 2:58:19]";
+
+$banlist = substr($banlist,11);
+
+$banlistarr = explode(",",$banlist);
+
+if($banlistarr[0] == "DENY")
+{
+$bannedUserName = $banlistarr[2];
+$bannedUserIP = $banlistarr[1];
+$adminName = $banlistarr[3];
+$date = $banlistarr[5];
+$date = trim($date,"[");
+$date = trim($date,"]");
+$date = Carbon::createFromFormat("d/m/Y h:i:s",$date);
+$date = $date->diffForHumans();
+
+}
+
+$banUser = new \StdClass;
+$banUser->name = ($bannedUserName);
+$banUser->ip = $bannedUserIP;
+$banUser->admin = ($adminName);
+$banUser->date = $date;
+dd($banUser);
+ */

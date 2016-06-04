@@ -674,10 +674,19 @@
         </div>
 
         <div class="panel panel-default">
-            <div class="panel-heading info-title">Latest Bans</div>
+            <div class="panel-heading info-title">Notifications</div>
             <div class="panel-body">
-            IPPolicies=DENY,24.188.165.77,newname,|SRV|�DeadlyViPer!,197.33.13.247,[13/2/2014 2:58:19]
-            IPPolicies=DENY,195.225.125.182,RCancer,Hunter<3,123.201.156.135,[21/2/2014 6:36:49]
+                <ul class="list-group">
+                @forelse($feeds as $feed)
+                        <li class="list-group-item">
+                        <a href="{{ route('user.show',$feed->user->username) }}">
+                            <strong class="primary-font">{{ $feed->user->name }}</strong>
+                        </a> updated his status <i class="text-danger">{!! link_to_route('show-status',$feed->timeSincePublished,[$feed->id],['class' => 'status-timeago']) !!}</i>. <small class="text-muted convert-emoji"> {{ str_limit($feed->body,50) }} </small>
+                        </li>
+                @empty
+                    <li class="list-group-item">No New Notifcations</li>
+                @endforelse
+                </ul>
             </div>
         </div>
 
