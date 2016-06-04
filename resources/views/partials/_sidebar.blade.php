@@ -1,7 +1,15 @@
 <aside class="col-md-3">
     <div class="panel pad5" style="padding: 10px !important;">
-        <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Join Server</h4>
-        <a href="xfire:join?game=swat4&amp;server=81.4.127.91:10480" rel="SWAT4 Normal Server" title=""><h5 class="">SWAT4 - 81.4.127.91:10480</h5></a>
+        <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Join Server <small>(using)</small></h4>
+
+        <ul class="list-group">
+            <li class="list-group-item">
+                <span class="small">ip &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  -  <b class="text-danger">81.4.127.91:10480</b></span>
+            </li>
+            <li class="list-group-item">
+                <span class="small">name - <b class="text-danger">knightofsorrow.tk:10480</b></span>
+            </li>
+        </ul>
     </div>
 
     @include('partials._shoutbox',['shouts' => App\Shout::limit(15)->latest()->get()->sortBy('created_at')])

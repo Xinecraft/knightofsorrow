@@ -189,7 +189,7 @@ class MainController extends Controller
         }
 
         //Latest Feeds
-        $feeds  = Status::latest()->limit(10)->get();
+        $feeds  = Status::latest()->limit(5)->get();
 
         $array = [
             'topPlayers' => $topPlayers,
