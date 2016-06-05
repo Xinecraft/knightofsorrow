@@ -60,6 +60,8 @@ Route::group(['prefix' => 'statistics'],function(){
     Route::get('player/{id?}/{name}/',['as' => 'player-detail', 'uses' => 'StatisticsController@getPlayerDetails']);
     Route::get('round-reports/detail/{id}',['as' => 'round-detail', 'uses' => 'StatisticsController@getRoundDetails']);
 
+    Route::get('top-10',['as' => 'top10', 'uses' => 'StatisticsController@getTop10']);
+
     Route::get('ajax/round-player/{id}',['as' => 'ajax-round-player', 'uses' => 'StatisticsController@getRoundPlayerWithAjax']);
 });
 

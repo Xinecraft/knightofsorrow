@@ -17,7 +17,8 @@
                 <li class="{{ set_active(['statistics','statistics/top-players*']) }}">{!! link_to_route('top-players','Players') !!}</li>
                 <li class="{{ set_active(['statistics/round-reports*']) }}">{!! link_to_route('round-reports','Rounds') !!}</li>
                 <li class="{{ set_active(['statistics/countries*','statistics/country*']) }}">{!! link_to_route('countries-list','Countries') !!}</li>
-                <li class="{{ set_active(['statistics/charts*']) }}">{!! link_to_route('chart-reports','Charts') !!}</li>
+                {{--<li class="{{ set_active(['statistics/charts*']) }}">{!! link_to_route('chart-reports','Charts') !!}</li>--}}
+                <li class="{{ set_active(['statistics/top-10*']) }}">{!! link_to_route('top10','Top 10') !!}</li>
                 {{--<li class="{{ set_active_or_disabled(['statistics/player/*']) }}"><a>Player Details</a></li>--}}
             </ul>
             <ul class="navbar-right nav navbar-nav">

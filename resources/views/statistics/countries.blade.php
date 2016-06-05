@@ -7,7 +7,7 @@
         @include('partials._statistics-navbar')
 
         <div class="rounds panel panel-default">
-            <div class="panel-heading"><strong>All Countries ({{ $players->count() }})</strong></div>
+            <div class="panel-heading"><strong>All Countries ({{ $players->total() }})</strong></div>
             <div class="panel-body">
                 <table id="" class="table table-striped table-hover no-margin">
                     <thead>

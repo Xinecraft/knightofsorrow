@@ -151,4 +151,29 @@ class StatisticsController extends Controller
         ]);
         return view('statistics.charts');
     }
+
+    public function getTop10()
+    {
+        $top10KD = PlayerTotal::orderBy('killdeath_ratio','DESC')->limit(10)->get();
+        $top10AAR = PlayerTotal::orderBy('arr_ratio','DESC')->limit(10)->get();
+        $top10Score = PlayerTotal::orderBy('total_score','DESC')->limit(10)->get();
+        $top10Round = PlayerTotal::orderBy('total_round_played','DESC')->limit(10)->get();
+        $top10HighestScore = PlayerTotal::orderBy('highest_score','DESC')->limit(10)->get();
+        $top10Winners = PlayerTotal::orderBy('game_won','DESC')->limit(10)->get();
+        $top10KillStreak = PlayerTotal::orderBy('best_killstreak','DESC')->limit(10)->get();
+        $top10ArrestStreak = PlayerTotal::orderBy('best_arreststreak','DESC')->limit(10)->get();
+
+        $array = [
+            'top10KD' => $top10KD,
+            'top10AAR' => $top10AAR,
+            'top10Score' => $top10Score,
+            'top10Round' =>$top10Round,
+            'top10HighestScore' => $top10HighestScore,
+            'top10Winners' => $top10Winners,
+            'top10KillStreak' => $top10KillStreak,
+            'top10ArrestStreak' => $top10ArrestStreak,
+        ];
+
+        return view('statistics.top10',$array);
+    }
 }
