@@ -33,7 +33,7 @@ class ServerController extends Controller
             }
             $serverquery = json_decode($query);
 
-            if ($serverquery->hostname == '...server is reloading or offline')
+            if ($serverquery->hostname == '...server is reloading or offline' || $serverquery->hostname == null || $serverquery->hostname == "" || empty($serverquery->hostname) )
                 continue;
 
             $newserver = new Arr();

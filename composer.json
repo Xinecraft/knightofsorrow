@@ -25,7 +25,8 @@
         "way/generators": "dev-master",
         "guzzlehttp/guzzle": "^6.0@dev",
         "emojione/emojione": "dev-master",
-        "pusher/pusher-php-server": "^2.4"
+        "pusher/pusher-php-server": "^2.4",
+        "golonka/bbcodeparser": "^2.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

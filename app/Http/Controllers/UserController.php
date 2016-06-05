@@ -211,4 +211,13 @@ class UserController extends Controller
         return view('user.showmail')->with('mail',$mail);
     }
 
+    // Used to check User online or not and list of active users
+    public function sendPing(Request $request)
+    {
+        if(\Auth::check())
+        {
+            $request->user()->touch();
+        }
+    }
+
 }

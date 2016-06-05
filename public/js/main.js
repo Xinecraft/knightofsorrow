@@ -763,6 +763,15 @@ $('.composemailusername').typeahead({
 
 
     $(".messageLog").animate({ scrollTop: $(".messageLog")[0].scrollHeight}, 1000);
+
+
+    // Send Request to check if User online
+    var stillAlive = setInterval(function () {
+        /* XHR back to server
+         Example uses jQuery */
+        $.get("http://"+window.location.hostname+"/user/ping");
+    }, 30000);
+
 });
 
 function convertEmoji(text) {

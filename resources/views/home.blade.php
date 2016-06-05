@@ -690,6 +690,21 @@
             </div>
         </div>
 
+
+        <div class="panel panel-default">
+            <div class="panel-heading info-title">Last Active Users</div>
+            <div class="panel-body">
+                    @forelse($activeUsers as $user)
+                            <a class="{{ $user->hasRole(['leader', 'admin', 'superadmin']) ? "text-green" : "" }}" style="margin-right:1em" href="{{ route('user.show',$user->username) }}">
+                                <strong class="">{{ $user->name }}</strong>
+                            </a>
+                    @empty
+
+                    @endforelse
+            </div>
+        </div>
+
+
     </div> {{--Main Content Ends--}}
 @endsection
 

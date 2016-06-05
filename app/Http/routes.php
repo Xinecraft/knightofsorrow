@@ -89,6 +89,7 @@ Route::post('profile/edit',['middleware' => 'auth','as' => 'user.setting.post', 
 Route::post('follow',['middleware' => 'auth', 'as' => 'follow-user', 'uses' => 'UserController@postFollow']);
 Route::delete('follow',['middleware' => 'auth', 'as' => 'unfollow-user', 'uses' => 'UserController@deleteUnfollow']);
 Route::post('feeds/{id}/comments',['middleware' => 'auth', 'as' => 'status-comment', 'uses' => 'CommentController@storeForStatus']);
+Route::get('/user/ping',['as' => 'user.ping', 'uses' => 'UserController@sendPing']);
 
 Route::group(['prefix' => 'mail'],function(){
     Route::get('inbox',['middleware' => 'auth', 'as' => 'user.inbox', 'uses' => 'UserController@getInbox']);

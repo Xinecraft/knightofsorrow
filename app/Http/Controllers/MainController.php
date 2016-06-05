@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Status;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -191,6 +192,8 @@ class MainController extends Controller
         //Latest Feeds
         $feeds  = Status::latest()->limit(5)->get();
 
+        $activeUsers = User::orderBy('updated_at','DESC')->limit(20)->get();
+
         $array = [
             'topPlayers' => $topPlayers,
             'latestGames' => $latestGames,
@@ -199,7 +202,8 @@ class MainController extends Controller
             'PastMonth' => $PastMonth,
             'PastYear' => $PastYear,
 
-            'feeds' => $feeds
+            'feeds' => $feeds,
+            'activeUsers' => $activeUsers,
         ];
 
         return view('home', $array);

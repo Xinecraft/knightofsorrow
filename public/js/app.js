@@ -37,5 +37,4 @@ $(document).ready(function(){
     columnWidth: 450,
     gutter: 20
   });
-
 });

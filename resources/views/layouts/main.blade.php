@@ -8,14 +8,7 @@
     <meta name="author" content="Zishan Ansari">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>KnightofSorrow.tk - @yield('title','Swat4 Servers & Community')</title>
-    <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
-    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ asset('components/tooltipster/css/tooltipster.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('components/emojione/assets/css/emojione.min.css') }}" />
-    <!-- Custom CSS -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <!-- Custom Fonts -->
-    <link href="{{ asset('font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ elixir('css/all.css') }}">
     {{--<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">--}}
     {{--<link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">--}}
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -38,17 +31,8 @@
 
 @include('partials._footer')
 
-{!! Html::script('js/jquery.js') !!}
 <script src="//js.pusher.com/2.2/pusher.min.js"></script>
-{!! Html::script('js/bootstrap.min.js') !!}
-{!! Html::script('components/tooltipster/js/jquery.tooltipster.min.js') !!}
-{!! Html::script('components/typeahead.js/dist/typeahead.bundle.min.js') !!}
-{!! Html::script('components/autosize/dist/autosize.min.js') !!}
-{!! Html::script('js/jquery.infinitescroll.min.js') !!}
-{!! Html::script('js/jquery.textcomplete.js') !!}
-{!! Html::script('components/emojione/lib/js/emojione.js') !!}
-{!! Html::script('js/main.js') !!}
-{!! Html::script('js/gauge.min.js') !!}
+<script src="{{ elixir('js/all.js') }}"></script>
 @yield('scripts')
 </body>
 </html>
