@@ -56,11 +56,6 @@ class StatusPresenter extends BasePresenter
     {
         $data = nl2br(htmlspecialchars($this->wrappedObject->body));
 
-        \Emojione\Emojione::$ascii = true; 
-        \Emojione\Emojione::$imagePathPNG = '/components/emojione/assets/png/';
-        \Emojione\Emojione::$cacheBustParam = '';
-        $data = \Emojione\Emojione::toImage($data);
-
-        return embedYoutube($data);
+        return (embedYoutube($data));
     }
 }

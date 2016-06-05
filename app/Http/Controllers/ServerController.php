@@ -37,7 +37,7 @@ class ServerController extends Controller
                 continue;
 
             $newserver = new Arr();
-            $newserver->hostname = html_entity_decode($serverquery->hostname);
+            $newserver->hostname = html_entity_decode(fixHostNameForServerList($serverquery->hostname));
             $newserver->map = $serverquery->map;
             $newserver->gametype = $serverquery->gametype;
             $newserver->version = $serverquery->patch;

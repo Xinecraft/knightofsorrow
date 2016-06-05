@@ -11,10 +11,10 @@
 */
 
 Route::get('test',function(){
-    $regex = '/https?\:\/\/[^\" ]+/i';
-    $string = "lorem ipsum http://google.com/stats/ lorem ipusm dolor http://yahoo.com/something";
-    preg_match($regex, $string, $matches);
-    echo $matches[0];
+    $str  = "normal text [c=FFF00FF]HOP Server[\\c] [everythingheregone] after text";
+    $repl = "test";
+    return $res;
+
 });
 
 /**

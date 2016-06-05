@@ -271,3 +271,11 @@ function linkify($string)
     }
     return $new_string;
 }
+
+function fixHostNameForServerList($str)
+{
+    $patt = "/\[[a-zA-Z0-9]=([^\]]+)\]/";
+    $res  = preg_replace($patt, "", $str);
+    $res = preg_replace("/\[\\\\[a-zA-Z0-9]\]/", "",$res);
+    return $res;
+}

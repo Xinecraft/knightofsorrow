@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e189236c-c3e7-488f-b221-e9fb727e1c1d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ServerController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ServerController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Server/Presenters/StatusPresenter.php" afterPath="$PROJECT_DIR$/app/Server/Presenters/StatusPresenter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Server/helpers.php" afterPath="$PROJECT_DIR$/app/Server/helpers.php" />
     </list>
     <ignored path="kos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,8 +31,8 @@
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.8461537">
-              <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
+            <state vertical-scroll-proportion="-4.6153846">
+              <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -37,7 +41,7 @@
       <file leaf-file-name="StatisticsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StatisticsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.115385">
+            <state vertical-scroll-proportion="0.0">
               <caret line="175" column="29" selection-start-line="175" selection-start-column="29" selection-end-line="175" selection-end-column="29" />
               <folding />
             </state>
@@ -47,28 +51,28 @@
       <file leaf-file-name="top10.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/statistics/top10.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.4939759">
+            <state vertical-scroll-proportion="0.0">
               <caret line="205" column="46" selection-start-line="205" selection-start-column="46" selection-end-line="205" selection-end-column="46" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_statistics-navbar.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/partials/_statistics-navbar.blade.php">
+      <file leaf-file-name="ServerController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ServerController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.192307">
-              <caret line="24" column="71" selection-start-line="24" selection-start-column="71" selection-end-line="24" selection-end-column="71" />
+            <state vertical-scroll-proportion="0.27586207">
+              <caret line="39" column="102" selection-start-line="39" selection-start-column="102" selection-end-line="39" selection-end-column="102" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/app.css">
+      <file leaf-file-name="list.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/server/list.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.5384617">
-              <caret line="440" column="1" selection-start-line="440" selection-start-column="1" selection-end-line="440" selection-end-column="1" />
+            <state vertical-scroll-proportion="3.0769231">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -77,26 +81,16 @@
       <file leaf-file-name="helpers.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Server/helpers.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.192307">
-              <caret line="269" column="64" selection-start-line="269" selection-start-column="64" selection-end-line="269" selection-end-column="64" />
+            <state vertical-scroll-proportion="-18.461538">
+              <caret line="278" column="58" selection-start-line="278" selection-start-column="58" selection-end-line="278" selection-end-column="58" />
               <folding>
-                <marker date="1465119133924" expanded="true" signature="6013:6233" placeholder="..." />
-                <marker date="1465119133924" expanded="true" signature="6286:6678" placeholder="..." />
-                <marker date="1465119133924" expanded="true" signature="6542:6660" placeholder="..." />
-                <marker date="1465119133924" expanded="true" signature="7755:7975" placeholder="..." />
-                <marker date="1465119133924" expanded="true" signature="8034:8428" placeholder="..." />
-                <marker date="1465119133924" expanded="true" signature="8290:8410" placeholder="..." />
+                <marker date="1465128613936" expanded="true" signature="6013:6233" placeholder="..." />
+                <marker date="1465128613936" expanded="true" signature="6286:6678" placeholder="..." />
+                <marker date="1465128613936" expanded="true" signature="6542:6660" placeholder="..." />
+                <marker date="1465128613936" expanded="true" signature="7755:7975" placeholder="..." />
+                <marker date="1465128613936" expanded="true" signature="8034:8428" placeholder="..." />
+                <marker date="1465128613936" expanded="true" signature="8290:8410" placeholder="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlayerTotalRepository.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Server/Repositories/PlayerTotalRepository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6226415">
-              <caret line="59" column="55" selection-start-line="59" selection-start-column="55" selection-end-line="59" selection-end-column="55" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -104,7 +98,7 @@
       <file leaf-file-name="PlayerTotal.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/PlayerTotal.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.3461537">
+            <state vertical-scroll-proportion="-15.384615">
               <caret line="240" column="5" selection-start-line="240" selection-start-column="5" selection-end-line="240" selection-end-column="5" />
               <folding />
             </state>
@@ -141,7 +135,6 @@
         <option value="$PROJECT_DIR$/app/Providers/GeoIp2ServerProvider.php" />
         <option value="$PROJECT_DIR$/app/Console/Kernel.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ServerController.php" />
         <option value="$PROJECT_DIR$/public/js/main.js" />
         <option value="$PROJECT_DIR$/resources/views/partials/_navbar.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/status/show.blade.php" />
@@ -156,8 +149,11 @@
         <option value="$PROJECT_DIR$/resources/views/partials/_sidebar.blade.php" />
         <option value="$PROJECT_DIR$/public/css/app.css" />
         <option value="$PROJECT_DIR$/resources/views/partials/_shoutbox.blade.php" />
+        <option value="$PROJECT_DIR$/app/Server/Repositories/PlayerTotalRepository.php" />
+        <option value="$PROJECT_DIR$/app/Server/Presenters/StatusPresenter.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Server/helpers.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ServerController.php" />
       </list>
     </option>
   </component>
@@ -206,8 +202,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -285,6 +279,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="statistics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -406,15 +422,57 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="PlayerT&#9;null&#9;null&#10;term&#9;ACTION&#9;ActivateTerminalToolWindow&#10;route&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/routes.php&#10;shout&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_shoutbox.blade.php&#10;app&#9;FILE&#9;file://C:/wamp/www/kos/public/css/app.css&#10;side&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;coun&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/statistics/countries.blade.php&#10;main&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/layouts/main.blade.php&#10;Len&#9;null&#9;null&#10;count&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/statistics/countries.blade.php&#10;top-pl&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/statistics/top-players.blade.php&#10;Sta&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/StatisticsController.php&#10;home&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/home.blade.php&#10;_s&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;_nav&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;_sh&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_shoutbox.blade.php&#10;StatusC&#9;null&#9;null&#10;MainC&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/MainController.php&#10;Api&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/ApiController.php&#10;_na&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;rout&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/routes.php&#10;_foo&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_footer.blade.php&#10;Server&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/ServerController.php&#10;UserC&#9;null&#9;null&#10;si&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;Chat&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/ChatTracker.php&#10;app.cs&#9;FILE&#9;file://C:/wamp/www/kos/public/css/app.css&#10;_&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_shoutbox.blade.php&#10;Response&#9;null&#9;null&#10;Symfony Res&#9;null&#9;null&#10;ChatTr&#9;null&#9;null&#10;password&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/auth/password.blade.php&#10;reg&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/auth/register.blade.php&#10;.blade&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/home.blade.php&#10;login&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/auth/login.blade.php&#10;debug&#9;null&#9;null&#10;debugbar&#9;null&#9;null&#10;_side&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;shou&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_shoutbox.blade.php&#10;mai&#9;FILE&#9;file://C:/wamp/www/kos/public/js/main.js&#10;ter&#9;ACTION&#9;ActivateTerminalToolWindow&#10;many&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/api/whois/manyfound.blade.php&#10;on&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/api/whois/onefound.blade.php&#10;notf&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/api/whois/notfound.blade.php&#10;player-d&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/statistics/player-details.blade.php&#10;ServerTr&#9;null&#9;null&#10;Pla&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Presenters/PlayerTotalPresenter.php&#10;Player&#9;null&#9;null&#10;ApiC&#9;null&#9;null&#10;_sho&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_shoutbox.blade.php" />
+    <property name="SearchEverywhereHistoryKey" value="help&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/helpers.php&#10;PlayerT&#9;null&#9;null&#10;term&#9;ACTION&#9;ActivateTerminalToolWindow&#10;route&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/routes.php&#10;shout&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_shoutbox.blade.php&#10;app&#9;FILE&#9;file://C:/wamp/www/kos/public/css/app.css&#10;side&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;coun&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/statistics/countries.blade.php&#10;main&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/layouts/main.blade.php&#10;Len&#9;null&#9;null&#10;count&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/statistics/countries.blade.php&#10;top-pl&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/statistics/top-players.blade.php&#10;Sta&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/StatisticsController.php&#10;home&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/home.blade.php&#10;_s&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;_nav&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;_sh&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_shoutbox.blade.php&#10;StatusC&#9;null&#9;null&#10;MainC&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/MainController.php&#10;Api&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/ApiController.php&#10;_na&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;rout&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/routes.php&#10;_foo&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_footer.blade.php&#10;Server&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/ServerController.php&#10;UserC&#9;null&#9;null&#10;si&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;Chat&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/ChatTracker.php&#10;app.cs&#9;FILE&#9;file://C:/wamp/www/kos/public/css/app.css&#10;_&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_shoutbox.blade.php&#10;Response&#9;null&#9;null&#10;Symfony Res&#9;null&#9;null&#10;ChatTr&#9;null&#9;null&#10;password&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/auth/password.blade.php&#10;reg&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/auth/register.blade.php&#10;.blade&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/home.blade.php&#10;login&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/auth/login.blade.php&#10;debug&#9;null&#9;null&#10;debugbar&#9;null&#9;null&#10;_side&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;shou&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_shoutbox.blade.php&#10;mai&#9;FILE&#9;file://C:/wamp/www/kos/public/js/main.js&#10;ter&#9;ACTION&#9;ActivateTerminalToolWindow&#10;many&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/api/whois/manyfound.blade.php&#10;on&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/api/whois/onefound.blade.php&#10;notf&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/api/whois/notfound.blade.php&#10;player-d&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/statistics/player-details.blade.php&#10;ServerTr&#9;null&#9;null&#10;Pla&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Presenters/PlayerTotalPresenter.php&#10;Player&#9;null&#9;null&#10;ApiC&#9;null&#9;null" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
   </component>
   <component name="RunManager">
@@ -465,15 +523,15 @@
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18374817" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18374817" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
@@ -508,20 +566,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/register.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/emails/welcome.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/auth/password.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -656,13 +700,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ServerController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35309973">
-          <caret line="216" column="30" selection-start-line="216" selection-start-column="30" selection-end-line="216" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Providers/GeoIp2ServerProvider.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.46091643">
@@ -709,7 +746,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -724,7 +760,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="48" column="7" selection-start-line="48" selection-start-column="7" selection-end-line="48" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -732,9 +767,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="205" column="5" selection-start-line="205" selection-start-column="5" selection-end-line="205" selection-end-column="5" />
-          <folding>
-            <element signature="e#40#55#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -742,7 +774,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2991914">
           <caret line="101" column="27" selection-start-line="101" selection-start-column="27" selection-end-line="101" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -750,7 +781,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -758,7 +788,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21563342">
           <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -766,14 +795,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.053908356">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="65" />
-          <folding>
-            <marker date="1464168999400" expanded="true" signature="7359:7565" placeholder="..." />
-            <marker date="1464168999400" expanded="true" signature="7372:7563" placeholder="..." />
-            <marker date="1464168999400" expanded="true" signature="9192:9407" placeholder="..." />
-            <marker date="1464168999400" expanded="true" signature="9205:9405" placeholder="..." />
-            <marker date="1464168999400" expanded="true" signature="10450:10655" placeholder="..." />
-            <marker date="1464168999400" expanded="true" signature="10463:10653" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -781,7 +802,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.10781671">
           <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -789,7 +809,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.5336927">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -797,7 +816,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.0026953">
           <caret line="38" column="27" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -805,11 +823,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#2011#3525#0#HTML" expanded="false" />
-            <marker date="1465051269468" expanded="true" signature="61790:61837" placeholder="..." />
-            <marker date="1465051269468" expanded="true" signature="62071:62118" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -817,13 +830,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.4016173">
           <caret line="26" column="72" selection-start-line="26" selection-start-column="72" selection-end-line="26" selection-end-column="72" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StatisticsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.115385">
+        <state vertical-scroll-proportion="0.0">
           <caret line="175" column="29" selection-start-line="175" selection-start-column="29" selection-end-line="175" selection-end-column="29" />
           <folding />
         </state>
@@ -831,7 +843,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/statistics/top10.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.4939759">
+        <state vertical-scroll-proportion="0.0">
           <caret line="205" column="46" selection-start-line="205" selection-start-column="46" selection-end-line="205" selection-end-column="46" />
           <folding />
         </state>
@@ -839,7 +851,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/app.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.5384617">
+        <state vertical-scroll-proportion="0.0">
           <caret line="440" column="1" selection-start-line="440" selection-start-column="1" selection-end-line="440" selection-end-column="1" />
           <folding />
         </state>
@@ -849,7 +861,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
           <caret line="74" column="63" selection-start-line="74" selection-start-column="63" selection-end-line="74" selection-end-column="63" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -857,53 +868,76 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.754717">
           <caret line="14" column="54" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Server/Repositories/PlayerTotalRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8436658">
+          <caret line="74" column="79" selection-start-line="74" selection-start-column="79" selection-end-line="74" selection-end-column="79" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/partials/_statistics-navbar.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.192307">
+        <state vertical-scroll-proportion="-9.230769">
           <caret line="24" column="71" selection-start-line="24" selection-start-column="71" selection-end-line="24" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/PlayerTotal.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.384615">
+          <caret line="240" column="5" selection-start-line="240" selection-start-column="5" selection-end-line="240" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Server/Presenters/StatusPresenter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.153847">
+          <caret line="58" column="37" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/server/list.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.0769231">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.8461537">
-          <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
+        <state vertical-scroll-proportion="-4.6153846">
+          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Server/helpers.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.192307">
-          <caret line="269" column="64" selection-start-line="269" selection-start-column="64" selection-end-line="269" selection-end-column="64" />
+        <state vertical-scroll-proportion="-18.461538">
+          <caret line="278" column="58" selection-start-line="278" selection-start-column="58" selection-end-line="278" selection-end-column="58" />
           <folding>
-            <marker date="1465119133924" expanded="true" signature="6013:6233" placeholder="..." />
-            <marker date="1465119133924" expanded="true" signature="6286:6678" placeholder="..." />
-            <marker date="1465119133924" expanded="true" signature="6542:6660" placeholder="..." />
-            <marker date="1465119133924" expanded="true" signature="7755:7975" placeholder="..." />
-            <marker date="1465119133924" expanded="true" signature="8034:8428" placeholder="..." />
-            <marker date="1465119133924" expanded="true" signature="8290:8410" placeholder="..." />
+            <marker date="1465128613936" expanded="true" signature="6013:6233" placeholder="..." />
+            <marker date="1465128613936" expanded="true" signature="6286:6678" placeholder="..." />
+            <marker date="1465128613936" expanded="true" signature="6542:6660" placeholder="..." />
+            <marker date="1465128613936" expanded="true" signature="7755:7975" placeholder="..." />
+            <marker date="1465128613936" expanded="true" signature="8034:8428" placeholder="..." />
+            <marker date="1465128613936" expanded="true" signature="8290:8410" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/PlayerTotal.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ServerController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.3461537">
-          <caret line="240" column="5" selection-start-line="240" selection-start-column="5" selection-end-line="240" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Server/Repositories/PlayerTotalRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6226415">
-          <caret line="59" column="55" selection-start-line="59" selection-start-column="55" selection-end-line="59" selection-end-column="55" />
+        <state vertical-scroll-proportion="0.27586207">
+          <caret line="39" column="102" selection-start-line="39" selection-start-column="102" selection-end-line="39" selection-end-column="102" />
           <folding />
         </state>
       </provider>
