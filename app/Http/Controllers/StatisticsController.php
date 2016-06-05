@@ -154,8 +154,8 @@ class StatisticsController extends Controller
 
     public function getTop10()
     {
-        $top10KD = PlayerTotal::orderBy('killdeath_ratio','DESC')->limit(10)->get();
-        $top10AAR = PlayerTotal::orderBy('arr_ratio','DESC')->limit(10)->get();
+        $top10KD = PlayerTotal::where('total_kills', '>', '99')->orderBy('killdeath_ratio','DESC')->limit(10)->get();
+        $top10AAR = PlayerTotal::where('total_arrests', '>', '49')->orderBy('arr_ratio','DESC')->limit(10)->get();
         $top10Score = PlayerTotal::orderBy('total_score','DESC')->limit(10)->get();
         $top10Round = PlayerTotal::orderBy('total_round_played','DESC')->limit(10)->get();
         $top10HighestScore = PlayerTotal::orderBy('highest_score','DESC')->limit(10)->get();

@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e189236c-c3e7-488f-b221-e9fb727e1c1d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/statistics/top10.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/StatisticsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/StatisticsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/_sidebar.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/_sidebar.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/_statistics-navbar.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/_statistics-navbar.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/statistics/countries.blade.php" afterPath="$PROJECT_DIR$/resources/views/statistics/countries.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/statistics/top10.blade.php" afterPath="$PROJECT_DIR$/resources/views/statistics/top10.blade.php" />
     </list>
     <ignored path="kos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,8 +39,8 @@
       <file leaf-file-name="StatisticsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StatisticsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.961538">
-              <caret line="176" column="47" selection-start-line="176" selection-start-column="47" selection-end-line="176" selection-end-column="47" />
+            <state vertical-scroll-proportion="-2.3076923">
+              <caret line="157" column="61" selection-start-line="157" selection-start-column="61" selection-end-line="157" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -53,13 +49,12 @@
       <file leaf-file-name="top10.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/statistics/top10.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.30997303">
-              <caret line="8" column="67" selection-start-line="8" selection-start-column="67" selection-end-line="8" selection-end-column="67" />
+            <state vertical-scroll-proportion="0.5643275">
+              <caret line="61" column="87" selection-start-line="61" selection-start-column="87" selection-end-line="61" selection-end-column="87" />
               <folding>
-                <element signature="e#1677#3171#0#HTML" expanded="false" />
-                <element signature="e#3226#4798#0#HTML" expanded="false" />
-                <element signature="e#6460#7930#0#HTML" expanded="false" />
-                <element signature="e#9494#12524#0#HTML" expanded="false" />
+                <element signature="e#1677#3212#0#HTML" expanded="false" />
+                <element signature="e#6526#7996#0#HTML" expanded="false" />
+                <element signature="e#9560#12590#0#HTML" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -118,8 +113,8 @@
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/_sidebar.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/statistics/countries.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/StatisticsController.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/_statistics-navbar.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/StatisticsController.php" />
         <option value="$PROJECT_DIR$/resources/views/statistics/top10.blade.php" />
       </list>
     </option>
@@ -846,14 +841,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StatisticsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.961538">
-          <caret line="176" column="47" selection-start-line="176" selection-start-column="47" selection-end-line="176" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/partials/_statistics-navbar.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.115385">
@@ -862,15 +849,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StatisticsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.3076923">
+          <caret line="157" column="61" selection-start-line="157" selection-start-column="61" selection-end-line="157" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/statistics/top10.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30997303">
-          <caret line="8" column="67" selection-start-line="8" selection-start-column="67" selection-end-line="8" selection-end-column="67" />
+        <state vertical-scroll-proportion="0.5643275">
+          <caret line="61" column="87" selection-start-line="61" selection-start-column="87" selection-end-line="61" selection-end-column="87" />
           <folding>
-            <element signature="e#1677#3171#0#HTML" expanded="false" />
-            <element signature="e#3226#4798#0#HTML" expanded="false" />
-            <element signature="e#6460#7930#0#HTML" expanded="false" />
-            <element signature="e#9494#12524#0#HTML" expanded="false" />
+            <element signature="e#1677#3212#0#HTML" expanded="false" />
+            <element signature="e#6526#7996#0#HTML" expanded="false" />
+            <element signature="e#9560#12590#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -31,7 +31,7 @@
             </div>
         </div>
         <div class="col-md-5 col-lg-offset-1 panel panel-danger no-padding">
-            <div class="panel-heading"><span class="">Top 10 Kill/Death Ratio</span></div>
+            <div class="panel-heading"><span class="">Top 10 Kill/Death Ratio</span> <small><i>( for kills > 99 )</i></small></div>
             <div class="panel-body no-padding">
                 <table class="table table-striped table-hover no-margin">
                     <thead><tr>
@@ -59,7 +59,7 @@
 
         <div class="row">
             <div class="col-md-5 panel panel-info no-padding">
-                <div class="panel-heading"><span class="">Top 10 Arrest/Arrested Ratio</span></div>
+                <div class="panel-heading"><span class="">Top 10 Arrest/Arrested Ratio </span><small><i>( for arrests > 49 )</i></small></div>
                 <div class="panel-body no-padding">
                     <table class="table table-striped table-hover no-margin">
                         <thead><tr>
@@ -137,7 +137,7 @@
             </div>
         </div>
         <div class="col-md-5 col-lg-offset-1 panel panel-danger no-padding">
-            <div class="panel-heading"><span class="">Top 10 Highest Score </span><small><i>(in one round)</i></small></div>
+            <div class="panel-heading"><span class="">Top 10 Highest Score </span><small><i>( in one round )</i></small></div>
             <div class="panel-body no-padding">
                 <table class="table table-striped table-hover no-margin">
                     <thead><tr>
