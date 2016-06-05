@@ -43,7 +43,7 @@
                                         </small>
                                     </div>
                                     <p class="convert-emoji">
-                                        {!! nl2br(htmlentities($shout->shout)) !!}
+                                        {!! nl2br(linkify(htmlentities($shout->shout))) !!}
                                     </p>
                                 </div>
                             </li>
@@ -72,7 +72,7 @@
                                         -->
                                     </div>
                                     <p class="text-right convert-emoji">
-                                        {!! nl2br(htmlentities($shout->shout)) !!}
+                                        {!! nl2br(linkify(htmlentities($shout->shout))) !!}
                                     </p>
                                 </div>
                             </li>

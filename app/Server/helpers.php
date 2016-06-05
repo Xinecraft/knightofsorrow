@@ -252,3 +252,22 @@ function generateVideoEmbeds($text) {
 
     return $text;
 }
+
+/**
+ * Linkify the string URL
+ *
+ * @param $string
+ * @return mixed
+ */
+function linkify($string)
+{
+    $new_string = preg_replace("~[[:alpha:]]+://[^<>[:space:]]+[[:alnum:]/]~","<a target='_blank' href=\"\\0\">\\0</a>", $string);
+
+    $regex = '/https?\:\/\/[^\" ]+/i';
+    if(preg_match($regex, $string, $matches))
+    {
+        $firstURL = $matches[0];
+        $new_string = $new_string."<a href='$firstURL' target='_blank'><img src='http://free.pagepeeker.com/v2/thumbs.php?size=s&url=$firstURL'></a>";
+    }
+    return $new_string;
+}

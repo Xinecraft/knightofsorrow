@@ -11,7 +11,10 @@
 */
 
 Route::get('test',function(){
-    dd(url('zishan'));
+    $regex = '/https?\:\/\/[^\" ]+/i';
+    $string = "lorem ipsum http://google.com/stats/ lorem ipusm dolor http://yahoo.com/something";
+    preg_match($regex, $string, $matches);
+    echo $matches[0];
 });
 
 /**
