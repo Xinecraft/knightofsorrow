@@ -200,7 +200,7 @@
                         <th>Name</th>
                         <th class="text-right">AS</th>
                     </tr></thead>
-                    @forelse($top10Round as $player)
+                    @forelse($top10ArrestStreak as $player)
                         <tr>
                             <th>{{ $position8++ }}</th>
                             <td>{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster']) !!}</td>
