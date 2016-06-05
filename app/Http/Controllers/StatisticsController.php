@@ -172,6 +172,14 @@ class StatisticsController extends Controller
             'top10Winners' => $top10Winners,
             'top10KillStreak' => $top10KillStreak,
             'top10ArrestStreak' => $top10ArrestStreak,
+            'position1' => 1,
+            'position2' => 1,
+            'position3' => 1,
+            'position4' => 1,
+            'position5' => 1,
+            'position6' => 1,
+            'position7' => 1,
+            'position8' => 1,
         ];
 
         return view('statistics.top10',$array);

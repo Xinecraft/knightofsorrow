@@ -18,7 +18,7 @@
                     </tr></thead>
                     @forelse($top10Score as $player)
                         <tr>
-                            <th>{{ $player->position }}</th>
+                            <th>{{ $position1++ }}</th>
                             <td>{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster']) !!}</td>
                             <td>{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '22px']) !!}</td>
                             <td class="color-main text-bold">{!! link_to_route('player-detail', $player->name, [$player->id,$player->name]) !!}</td>
@@ -43,7 +43,7 @@
                     </tr></thead>
                     @forelse($top10KD as $player)
                         <tr>
-                            <th>{{ $player->position }}</th>
+                            <th>{{ $position2++ }}</th>
                             <td>{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster']) !!}</td>
                             <td>{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '22px']) !!}</td>
                             <td class="color-main text-bold">{!! link_to_route('player-detail', $player->name, [$player->id,$player->name]) !!}</td>
@@ -71,7 +71,7 @@
                         </tr></thead>
                         @forelse($top10AAR as $player)
                             <tr>
-                                <th>{{ $player->position }}</th>
+                                <th>{{ $position3++ }}</th>
                                 <td>{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster']) !!}</td>
                                 <td>{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '22px']) !!}</td>
                                 <td class="color-main text-bold">{!! link_to_route('player-detail', $player->name, [$player->id,$player->name]) !!}</td>
@@ -96,7 +96,7 @@
                         </tr></thead>
                         @forelse($top10Round as $player)
                             <tr>
-                                <th>{{ $player->position }}</th>
+                                <th>{{ $position4++ }}</th>
                                 <td>{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster']) !!}</td>
                                 <td>{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '22px']) !!}</td>
                                 <td class="color-main text-bold">{!! link_to_route('player-detail', $player->name, [$player->id,$player->name]) !!}</td>
@@ -124,7 +124,7 @@
                     </tr></thead>
                     @forelse($top10Winners as $player)
                         <tr>
-                            <th>{{ $player->position }}</th>
+                            <th>{{ $position5++ }}</th>
                             <td>{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster']) !!}</td>
                             <td>{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '22px']) !!}</td>
                             <td class="color-main text-bold">{!! link_to_route('player-detail', $player->name, [$player->id,$player->name]) !!}</td>
@@ -149,7 +149,7 @@
                     </tr></thead>
                     @forelse($top10HighestScore as $player)
                         <tr>
-                            <th>{{ $player->position }}</th>
+                            <th>{{ $position6++ }}</th>
                             <td>{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster']) !!}</td>
                             <td>{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '22px']) !!}</td>
                             <td class="color-main text-bold">{!! link_to_route('player-detail', $player->name, [$player->id,$player->name]) !!}</td>
@@ -177,7 +177,7 @@
                     </tr></thead>
                     @forelse($top10KillStreak as $player)
                         <tr>
-                            <th>{{ $player->position }}</th>
+                            <th>{{ $position7++ }}</th>
                             <td>{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster']) !!}</td>
                             <td>{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '22px']) !!}</td>
                             <td class="color-main text-bold">{!! link_to_route('player-detail', $player->name, [$player->id,$player->name]) !!}</td>
@@ -202,7 +202,7 @@
                     </tr></thead>
                     @forelse($top10Round as $player)
                         <tr>
-                            <th>{{ $player->position }}</th>
+                            <th>{{ $position8++ }}</th>
                             <td>{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster']) !!}</td>
                             <td>{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '22px']) !!}</td>
                             <td class="color-main text-bold">{!! link_to_route('player-detail', $player->name, [$player->id,$player->name]) !!}</td>
