@@ -443,4 +443,9 @@ a.status-timeago:active {
 {
   margin: 0 !important;
 }
+.chat-body
+{
+  word-break: break-all;
+  word-wrap: break-word;
+}
 /*# sourceMappingURL=app.css.map */
