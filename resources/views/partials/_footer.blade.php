@@ -26,7 +26,12 @@
     background: #232323;color: #f6f6f6">
     <div class="container">
         <div class="row">
-            <div class="col-md-3 col-md-offset-5">
+
+            <div class="col-md-2">
+            <iframe src="https://www.facebook.com/plugins/like.php?href=https://www.facebook.com/knightofsorrow.tk&width=87&layout=button_count&action=like&show_faces=false&share=false&height=21&appId=102061086801044" width="87" height="21" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+            </div>
+
+            <div class="col-md-3 col-md-offset-3">
                 <p class="copyright">
                     <i class="fa fa-copyright"></i> {{ date('Y') }} Knight of Sorrow
                 </p>
