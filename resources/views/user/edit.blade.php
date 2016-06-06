@@ -60,5 +60,97 @@
             </div>
         </div>
 
+        <div class="row">
+            <div class="col-md-6 panel pad5">
+                <h5 class="info-title" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Edit Profile</h5>
+                    {!! Form::model($user,['route' => 'user.setting2.post','class' => 'form-horizontal']) !!}
+                    <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                        {!! Form::label('name', 'Display Name:', ['class' => 'col-md-4 control-label'])  !!}
+                        <div class="col-md-7">
+                            {!! Form::text('name',null,['class' => 'form-control']) !!}
+                            @if ($errors->has('name'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
+                        {!! Form::label('username', 'Username:', ['class' => 'col-md-4 control-label'])  !!}
+                        <div class="col-md-7">
+                            {!! Form::text('username',null,['class' => 'form-control', 'disabled' => 'true']) !!}
+                        </div>
+                    </div>
+
+                    <div class="form-group{{ $errors->has('dob') ? ' has-error' : '' }}">
+                        {!! Form::label('dob', 'Date of Birth:', ['class' => 'col-md-4 control-label']) !!}
+                        <div class="col-md-7">
+
+                            <div id="datetimepicker1" class="input-group">
+                                {!! Form::text('dob', null, ['class' => 'form-control', 'data-format' => 'yyyy-MM-dd']) !!}
+                                <span class="add-on input-group-btn">
+                                            <button class="btn btn-info">
+                                                <i data-time-icon="fa fa-clock-o" data-date-icon="fa fa-calendar">
+                                                </i>
+                                            </button>
+                                        </span>
+                            </div>
+
+                            @if ($errors->has('dob'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('dob') }}</strong>
+                                    </span>
+                            @endif
+                        </div>
+                    </div>
+
+
+                <div class="form-group{{ $errors->has('gender') ? ' has-error' : '' }}">
+                    {!! Form::label('gender', 'Gender:', ['class' => 'col-md-4 control-label']) !!}
+                    <div class="col-md-7">
+                        {!! Form::select('gender', ['' => 'unspecified','Male' => 'Male','Female' => 'Female','Others' => 'Others'], null, ['placeholder' => 'Select Gender...', 'class' => 'form-control']) !!}
+                        @if ($errors->has('gender'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('gender') }}</strong>
+                                    </span>
+                        @endif
+                    </div>
+                </div>
+
+                    <div class="form-group{{ $errors->has('about') ? ' has-error' : '' }}">
+                        {!! Form::label('about', 'About Me:', ['class' => 'col-md-4 control-label']) !!}
+                        <div class="col-md-7">
+                            {!! Form::textarea('about',null,['class' => 'form-control']) !!}
+                            @if ($errors->has('about'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('about') }}</strong>
+                                    </span>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-6 col-md-offset-4">
+                            {!! Form::submit('Update Profile', ['class' => 'btn btn-primary']) !!}
+                        </div>
+                    </div>
+
+                    {!! Form::close() !!}
+            </div>
+
+        </div>
+
     </div>
+@endsection
+
+@section('scripts')
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker1').datetimepicker({
+                language: 'en',
+                pickTime: false
+            });
+        });
+    </script>
 @endsection

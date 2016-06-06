@@ -90,6 +90,7 @@ Route::post('follow',['middleware' => 'auth', 'as' => 'follow-user', 'uses' => '
 Route::delete('follow',['middleware' => 'auth', 'as' => 'unfollow-user', 'uses' => 'UserController@deleteUnfollow']);
 Route::post('feeds/{id}/comments',['middleware' => 'auth', 'as' => 'status-comment', 'uses' => 'CommentController@storeForStatus']);
 Route::get('/user/ping',['as' => 'user.ping', 'uses' => 'UserController@sendPing']);
+Route::post('profile/edit2', ['middleware' => 'auth', 'as' => 'user.setting2.post', 'uses' => 'UserController@updateProfile2']);
 
 Route::group(['prefix' => 'mail'],function(){
     Route::get('inbox',['middleware' => 'auth', 'as' => 'user.inbox', 'uses' => 'UserController@getInbox']);

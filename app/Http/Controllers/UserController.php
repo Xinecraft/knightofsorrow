@@ -90,8 +90,10 @@ class UserController extends Controller
         $currentIp = \Request::getClientIp();
 
         $playerTotals = \App\PlayerTotal::where('last_ip_address','LIKE',$currentIp)->latest()->get();
+        $user = \Auth::user();
         $array = [
-            'players' => $playerTotals
+            'players' => $playerTotals,
+            'user' => $user
         ];
         return view('user.edit',$array);
     }
@@ -218,6 +220,39 @@ class UserController extends Controller
         {
             $request->user()->touch();
         }
+    }
+
+
+    public function updateProfile2(Request $request)
+    {
+        $user = $request->user();
+
+        $this->validate($request, [
+            'dob' => 'date|before:2016-01-01',
+            'name' => 'required',
+            'about' => 'min:5',
+            'gender' => 'in:Male,Female,unspecified,Others',
+        ], [
+            'dob.required' => 'Please specify your Date of Birth.',
+            'dob.date' => 'Invalid Date of Birth format',
+            'dob.before' => 'You are not enough old :)',
+            'name.required' => 'Please specify your Display name',
+        ]);
+
+        $dob = $request->dob ? $request->dob : null;
+        $about = $request->about ? $request->about : null;
+        $gender = $request->gender ? $request->gender : null;
+        $gender = $gender == 'unspecified' ? null : $gender;
+
+        $user->update([
+            'dob' => $dob,
+            'name' => $request->name,
+            'about' => $about,
+            'gender' => $gender,
+        ]);
+
+        return \Redirect::back()->with('message',"Profile has been updated!)");
+
     }
 
 }

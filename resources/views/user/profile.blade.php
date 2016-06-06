@@ -28,7 +28,17 @@
                     <div class="panel-body">
                         <div class="col-md-6 well pad5">
                         <h5 class="info-title" style="margin:0 0 10px 0;border-bottom:2px dashed grey">General Info</h5>
-                        <p class="">Age: {!! $user->age !!}</p>
+                        <p class="">Age: {!! $user->age !!} &nbsp;
+                        @unless($user->gender == '' || $user->gender == null || empty($user->gender))
+                            @if($user->gender == 'Male')
+                                <i title="Male" class="tooltipster fa fa-male" style="color: cornflowerblue"></i>
+                            @elseif($user->gender == 'Female')
+                                <i title="Female" class="tooltipster fa fa-female" style="color:deeppink;"></i>
+                            @else
+                                <i title="Others" class="tooltipster fa fa-question-circle-o" style="color: #00A000"></i>
+                            @endif
+                        @endunless
+                        </p>
                             <p class="">Status Count: <b class="">{{ $statusCount = $user->statuses()->count() }} {{ str_plural("Status", $statusCount) }}</b></p>
                             <p class="">Followers: <b class="">{{ $followersCount = $user->followers->count() }} {{ str_plural("gamer", $followersCount) }}</b></p>
                             <p class="">Following: <b class="">{{ $followingCount = $user->following->count() }} {{ str_plural("gamer", $followingCount) }}</b></p>
