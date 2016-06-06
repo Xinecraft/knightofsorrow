@@ -20,7 +20,7 @@ class ServerController extends Controller
      */
     public function index()
     {
-        $servers = Server::orderBy('rank','DESC')->paginate();
+        $servers = Server::orderBy('rank')->paginate();
 
         $collection = new Collection();
 
@@ -49,6 +49,7 @@ class ServerController extends Controller
 
             $collection->push($newserver);
         }
+
         $collection = $collection->sortByDesc('players_current');
 
         return view('server.list')->with('servers', $collection)->with('page', $servers);
