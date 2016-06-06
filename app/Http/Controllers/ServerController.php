@@ -20,7 +20,7 @@ class ServerController extends Controller
      */
     public function index()
     {
-        $servers = Server::orderBy('rank','ASC')->paginate();
+        $servers = Server::paginate();
 
         $collection = new Collection();
 
@@ -49,10 +49,34 @@ class ServerController extends Controller
 
             $collection->push($newserver);
         }
-        $collection = $collection->sortByDesc('players_current');
+
+        $makeComparer = function($criteria) {
+            $comparer = function ($first, $second) use ($criteria) {
+                foreach ($criteria as $key => $orderType) {
+                    // normalize sort direction
+                    $orderType = strtolower($orderType);
+                    if ($first[$key] < $second[$key]) {
+                        return $orderType === "asc" ? -1 : 1;
+                    } else if ($first[$key] > $second[$key]) {
+                        return $orderType === "asc" ? 1 : -1;
+                    }
+                }
+                // all elements were equal
+                return 0;
+            };
+            return $comparer;
+        };
+
+        $sort = ["players_current" => "desc", "rank" => "desc"];
+        $comparer = $makeComparer($sort);
+        $collection = $collection->sort($comparer);
+
+        //$collection = $collection->sortByDesc('players_current');
 
         return view('server.list')->with('servers', $collection)->with('page', $servers);
     }
+
+
 
     /**
      * Show the form for creating a new resource.
