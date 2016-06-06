@@ -16,11 +16,11 @@ class ServerController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return /Response
+     * @return Response
      */
     public function index()
     {
-        $servers = Server::orderBy('rank')->paginate();
+        $servers = Server::paginate();
 
         $collection = new Collection();
 
@@ -46,11 +46,15 @@ class ServerController extends Controller
             $newserver->ip_address = $server->ip_address;
             $newserver->join_port = $server->join_port;
             $newserver->id = $server->id;
+            $newserver->rank = $server->rank;
 
             $collection->push($newserver);
         }
+        //$collection = $collection->sortByDesc('players_current');
 
-        $collection = $collection->sortByDesc('players_current');
+        $collection = $collection->sortByDesc(function ($server) {
+            return $server->players_current > 0 ?  $server->players_current :  $server->rank;
+        });
 
         return view('server.list')->with('servers', $collection)->with('page', $servers);
     }
