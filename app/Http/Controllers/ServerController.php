@@ -45,38 +45,16 @@ class ServerController extends Controller
             $newserver->players_max = $serverquery->players_max;
             $newserver->ip_address = $server->ip_address;
             $newserver->join_port = $server->join_port;
+            $newserver->rank = $server->rank;
             $newserver->id = $server->id;
 
             $collection->push($newserver);
         }
-
-        $makeComparer = function($criteria) {
-            $comparer = function ($first, $second) use ($criteria) {
-                foreach ($criteria as $key => $orderType) {
-                    // normalize sort direction
-                    $orderType = strtolower($orderType);
-                    if ($first[$key] < $second[$key]) {
-                        return $orderType === "asc" ? -1 : 1;
-                    } else if ($first[$key] > $second[$key]) {
-                        return $orderType === "asc" ? 1 : -1;
-                    }
-                }
-                // all elements were equal
-                return 0;
-            };
-            return $comparer;
-        };
-
-        $sort = ["players_current" => "desc", "rank" => "desc"];
-        $comparer = $makeComparer($sort);
-        $collection = $collection->sort($comparer);
-
-        //$collection = $collection->sortByDesc('players_current');
+        $collection = $collection->sortBy(function ($item) { return $item->player_current * -1000000 - $item->rank; });
+        $collection = $collection->sortByDesc('players_current');
 
         return view('server.list')->with('servers', $collection)->with('page', $servers);
     }
-
-
 
     /**
      * Show the form for creating a new resource.
