@@ -20,7 +20,7 @@ class ServerController extends Controller
      */
     public function index()
     {
-        $servers = Server::paginate();
+        $servers = Server::orderBy('rank','ASC')->paginate();
 
         $collection = new Collection();
 
