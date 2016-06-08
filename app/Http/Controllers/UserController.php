@@ -255,4 +255,43 @@ class UserController extends Controller
 
     }
 
+    /**
+     * @param Request $request
+     * @param $username
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function toggleBanUser(Request $request, $username)
+    {
+        if(!$request->user()->isAdmin())
+        {
+            return \Redirect::back()->with('error',"Aw! You are not any Admin ;)");
+        }
+
+        if ($request->username != $username) {
+            return \Redirect::back()->with('error',"Aw! Please don't try to mess up the code ;)");
+        }
+
+        $user = User::whereUsername($request->username)->first();
+
+        if (is_null($user)) {
+            return \Redirect::back()->with('error',"User not Found");
+        }
+
+        if ($user->isSuperAdmin()) {
+            return \Redirect::back()->with('error',"You don't have rights to ban this User");
+        }
+
+        if ($user->banned == 1) {
+            $user->banned = 0;
+            $user->save();
+            return \Redirect::back()->with('message',"Success! You have successfully Unbanned this User");
+        } elseif ($user->banned == 0) {
+            $user->banned = 1;
+            $user->save();
+            return \Redirect::back()->with('message',"Success! You have banned this User");
+        }
+
+        return \Redirect::back()->with('error',"Error! Something not well.");
+    }
+
 }

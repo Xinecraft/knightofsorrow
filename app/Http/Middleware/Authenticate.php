@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use Auth;
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
 
@@ -40,6 +41,15 @@ class Authenticate
             } else {
                 return redirect()->guest('auth/login');
             }
+        }
+
+        /**
+         * Restrict Everything if Banned!
+         */
+        if($request->user()->banned)
+        {
+            Auth::logout();
+            return view('banned');
         }
 
         return $next($request);

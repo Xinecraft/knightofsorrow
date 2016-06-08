@@ -176,4 +176,17 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->hasMany('App\Shout');
     }
 
+    /**
+     * @return bool
+     */
+    public function isAdmin()
+    {
+        return $this->hasRole(['admin','leader','superadmin']);
+    }
+
+    public function isSuperAdmin()
+    {
+        return $this->hasRole(['leader','superadmin']);
+    }
+
 }

@@ -24,6 +24,7 @@
                                 {!! Html::image("/images/flags_new/flags-iso/shiny/64/".$user->country->countryCode.".png",null,['class' => 'img']) !!}
                             </div>
                         </div>
+
                     </div>
                     <div class="panel-body">
                         <div class="col-md-6 well pad5">
@@ -66,6 +67,16 @@
                                     {!! Form::close() !!}
                                 @endif
                             @endif
+                                @if(Auth::check() && Auth::user()->isAdmin())
+                                        {!! Form::open(['method' => 'patch', 'route' => ['user.toggleban',$user->username]])  !!}
+                                        {!! Form::hidden('username',$user->username)  !!}
+                                        @if($user->banned == 1)
+                                            {!! Form::submit('Unban @'.$user->username,['class' => 'btn confirm btn-success'])  !!}
+                                        @else
+                                            {!! Form::submit('Ban @'.$user->username,['class' => 'btn confirm btn-danger'])  !!}
+                                        @endif
+                                        {!! Form::close()  !!}
+                                @endif
 
                         </div>
                     </div>

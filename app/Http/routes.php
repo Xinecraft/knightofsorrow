@@ -91,6 +91,7 @@ Route::delete('follow',['middleware' => 'auth', 'as' => 'unfollow-user', 'uses' 
 Route::post('feeds/{id}/comments',['middleware' => 'auth', 'as' => 'status-comment', 'uses' => 'CommentController@storeForStatus']);
 Route::get('/user/ping',['as' => 'user.ping', 'uses' => 'UserController@sendPing']);
 Route::post('profile/edit2', ['middleware' => 'auth', 'as' => 'user.setting2.post', 'uses' => 'UserController@updateProfile2']);
+Route::patch('/toggleban/@{username}',['middleware' => 'auth', 'as' => 'user.toggleban', 'uses' => 'UserController@toggleBanUser']);
 
 Route::group(['prefix' => 'mail'],function(){
     Route::get('inbox',['middleware' => 'auth', 'as' => 'user.inbox', 'uses' => 'UserController@getInbox']);
