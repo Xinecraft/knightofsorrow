@@ -52,6 +52,12 @@
                                 <li><a href="{{ route('user.compose') }}">Compose Mail</a></li>
                                 <li><a href="{{ route('user.inbox') }}">Inbox</a></li>
                                 <li><a href="{{ route('user.outbox') }}">Outbox</a></li>
+
+                                @if(Auth::check() && Auth::user()->isAdmin())
+                                <li role="separator" class="divider"></li>
+                                <li><a href="{{ route('servers.new') }}">Add Server</a></li>
+                                @endif
+
                                 <li role="separator" class="divider"></li>
                                 <li>{!! link_to_route('user.setting','Setting') !!}</li>
                                 <li><a href="{{ url('/auth/logout') }}">Logout</a></li>
