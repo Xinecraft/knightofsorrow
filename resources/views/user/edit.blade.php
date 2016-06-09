@@ -65,7 +65,7 @@
                 <h5 class="info-title" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Edit Profile</h5>
                     {!! Form::model($user,['route' => 'user.setting2.post','class' => 'form-horizontal']) !!}
                     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                        {!! Form::label('name', 'Display Name:', ['class' => 'col-md-4 control-label'])  !!}
+                        {!! Form::label('name', 'Full Name:', ['class' => 'col-md-4 control-label'])  !!}
                         <div class="col-md-7">
                             {!! Form::text('name',null,['class' => 'form-control']) !!}
                             @if ($errors->has('name'))

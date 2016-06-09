@@ -11,13 +11,12 @@
         </div>
         <div class="" id="collapseOne">
             <div class="panel-body messageLog">
-                <ul class="chat" id="shoutbox-chat">
 
+                <ul class="chat" id="shoutbox-chat">
                     @foreach($shouts as $shout)
 
                         @if($shout->user_id % 2 == 0)
-
-                            <li class="left clearfix"><span class="chat-img pull-left">
+                            <li class="clearfix left"><span class="chat-img pull-left">
                             <img src="{{ $shout->user->getGravatarLink(40) }}" width="40" height="40" alt="User Avatar" class="img-circle"/>
                                 </span>
                                 <div class="chat-body clearfix">

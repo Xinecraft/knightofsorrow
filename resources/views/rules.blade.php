@@ -14,6 +14,7 @@
                     <li>Do not kill or steal arrests.</li>
                     <li>Do not spam/flood/attack the server.</li>
                     <li>Do not use another player's name. Impersonation will get you banned.</li>
+                    <li>If you find any admin/superadmin misusing his powers, plz shout at shoutbox.</li>
                     <li>Respect KnightofSorrow ;)</li>
                 </ul>
                 <p style="padding-bottom:20px">Respect these rules so everyone can have a fun gameplay experience or <span class="text-bold">risk getting kicked/banned</span>.</p>	</div>
