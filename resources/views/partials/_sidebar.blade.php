@@ -12,7 +12,7 @@
         </ul>
     </div>
 
-    @include('partials._shoutbox',['shouts' => App\Shout::limit(15)->latest()->get()->sortBy('created_at')])
+    @include('partials._shoutbox',['shouts' => App\Shout::limit(25)->latest()->get()->sortBy('created_at')])
 
     <script type="text/javascript" src="http://www.easypolls.net/ext/scripts/emPoll.js?p=5753d3d5e4b073540521b847"></script><a class="OPP-powered-by" href="https://www.murvey.com" style="text-decoration:none;"><div style="font: 9px arial; color: gray;">survey software</div></a>
       <!-- <div class="panel pad5" style="padding: 10px !important;">
