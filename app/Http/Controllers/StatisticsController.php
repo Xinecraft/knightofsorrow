@@ -104,14 +104,15 @@ class StatisticsController extends Controller
      */
     public function getAllCountries()
     {
-        $position = 1;
 
         $sortableColumns = ['total_players','total_score','total_points','total_time_played','country_id'];
 
         $orderBy = Request::has('orderBy') && in_array(Request::get('orderBy'),$sortableColumns) ? Request::get('orderBy')  : 'total_players';
         $sortDir = Request::has('direction') ? Request::get('direction') : 'desc';
 
-        $players = PlayerTotal::CountryAggregate()->orderBy($orderBy,$sortDir)->paginate();
+        $players = PlayerTotal::CountryAggregate()->orderBy($orderBy,$sortDir)->paginate(10);
+
+        $position = $players->currentPage() * 10 - 9;
 
         return view('statistics.countries')->with('players',$players)->with('position',$position);
     }
