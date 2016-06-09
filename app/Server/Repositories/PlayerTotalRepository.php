@@ -64,7 +64,17 @@ class PlayerTotalRepository implements PlayerTotalRepositoryInterface
             $playerTotal->country_id = $alias->profile->country_id;
 
             $playersCollection = $alias->players;
-            $playerTotal->last_loadout_id = $playersCollection->max('loadout_id');
+
+            //Permanent Solution
+            if($alias->profile->loadout->kyaKhali())
+            {
+                $playerTotal->last_loadout_id = $playersCollection->max('loadout_id');
+            }
+            else
+            {
+                $playerTotal->last_loadout_id = $alias->profile->loadout_id;
+            }
+
             $playerTotal->is_admin = $playersCollection->max('is_admin');
             $playerTotal->total_score = $playersCollection->sum('score');
             $playerTotal->highest_score = $playersCollection->max('score');

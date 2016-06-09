@@ -27,4 +27,14 @@ class Loadout extends Model
     {
         return $this->hasMany('App\Profile');
     }
+
+    /**
+     * Check if its already empty
+     *
+     * @return bool
+     */
+    public function kyaKhali()
+    {
+        return ($this->primary_weapon == 0 && $this->secondary_weapon == 0);
+    }
 }
