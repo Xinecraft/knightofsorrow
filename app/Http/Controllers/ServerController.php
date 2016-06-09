@@ -222,6 +222,10 @@ class ServerController extends Controller
         {
             $userLvl = "SuperAdmin";
         }
+        elseif ($userLvl == "Administrator")
+        {
+            $userLvl = "Admin";
+        }
         $MsgFormated = "[c=ffa500][b]" . $Username . "[\\b] ($userLvl):[\\c] [c=FFFFFF]" . $Msg;
         $txtip = "127.0.0.1";
         $txtportnum = "10483";
