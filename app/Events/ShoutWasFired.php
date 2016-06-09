@@ -50,7 +50,7 @@ class ShoutWasFired extends Event implements ShouldBroadcast
                 'message' => htmlentities($this->shout->shout),
                 'username' => $this->user->username,
                 'id' => $this->user->id,
-                'name' => $this->user->name,
+                'name' => $this->user->displayName(),
                 'profile_pic' => $this->user->getGravatarLink(40),
                 'created_at' => $this->shout->created_at->diffForHumans(),
             ]

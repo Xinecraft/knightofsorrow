@@ -44,7 +44,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             <img class="img" src="{{ Auth::user()->getGravatarLink(20) }}" width="15" height="15" />
-                            {{ Auth::user()->name }} <span class="caret"></span></a>
+                            {{ Auth::user()->displayName() }} <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="{{ route('feeds-home') }}">News Feed</a></li>
                                 <li><a href="{{ url('/profile') }}">Profile</a></li>

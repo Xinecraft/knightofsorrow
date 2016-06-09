@@ -189,4 +189,22 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->hasRole(['leader','superadmin']);
     }
 
+    /**
+     * Function returns playertotal name or username which avail first.
+     *
+     * @return mixed
+     */
+    public function displayName()
+    {
+        $playerTotal = $this->playerTotal();
+        if($playerTotal == NULL)
+        {
+            return $this->username;
+        }
+        else
+        {
+            return $playerTotal->name;
+        }
+    }
+
 }

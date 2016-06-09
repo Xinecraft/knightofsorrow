@@ -23,7 +23,7 @@
                                 <div class="chat-body clearfix">
                                     <div class="header text-left">
                                         <a href="{{ route('user.show',$shout->user->username) }}">
-                                            <strong class="primary-font">{{ $shout->user->name }}</strong>
+                                            <strong class="primary-font">{{ $shout->user->displayName() }}</strong>
                                         </a>
                                         <br>
 
@@ -55,7 +55,7 @@
                                 <div class="chat-body clearfix">
                                     <div class="header text-right">
                                         <a href="{{ route('user.show',$shout->user->username) }}">
-                                            <strong class="primary-font">{{ $shout->user->name }}</strong>
+                                            <strong class="primary-font">{{ $shout->user->displayName() }}</strong>
                                         </a>
                                         <br>
                                         <small class="text-muted"><span class="fa fa-clock-o"></span> {{ $shout->created_at->diffForHumans() }}

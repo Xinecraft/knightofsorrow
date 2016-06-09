@@ -117,4 +117,9 @@ class UserPresenter extends BasePresenter
         return $this->wrappedObject->updated_at->diffForHumans();
     }
 
+    public function dname()
+    {
+        return $this->wrappedObject->displayName();
+    }
+
 }

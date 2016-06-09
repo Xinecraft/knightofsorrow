@@ -10,7 +10,7 @@
                 </div>
                 <div class="media-body row">
                     <div class="col-md-9 no-padding">
-                        <b>{!! link_to_route('user.show',$status->user->name,[$status->user->username]) !!}</b>
+                        <b>{!! link_to_route('user.show',$status->user->displayName(),[$status->user->username]) !!}</b>
                         <p class="small user-status-timeago no-margin">{!! link_to_route('show-status',$status->timeSincePublished,[$status->id],['class' => 'status-timeago']) !!}</p>
                     </div>
                     <div class="col-md-3">
@@ -40,7 +40,7 @@
                         </div>
                         <div class="media-body small">
                             <p class="no-margin convert-emoji">
-                                <b>{!! link_to_route('user.show',$comment->user->name,[$comment->user->username]) !!}</b>
+                                <b>{!! link_to_route('user.show',$comment->user->displayName(),[$comment->user->username]) !!}</b>
                                 {!! $comment->showBody() !!}
                          </p>
                             <p class="no-margin text-muted small">{{ $comment->created_at->diffForHumans() }}</p>

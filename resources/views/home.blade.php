@@ -696,7 +696,7 @@
             <div class="panel-body">
                     @forelse($activeUsers as $user)
                             <a class="{{ $user->hasRole(['leader', 'admin', 'superadmin']) ? "text-green" : "" }}" style="margin-right:1em" href="{{ route('user.show',$user->username) }}">
-                                <strong class="">{{ $user->name }}</strong>
+                                <strong class="">{{ $user->displayName() }}</strong>
                             </a>
                     @empty
 

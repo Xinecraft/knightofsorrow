@@ -17,7 +17,7 @@
                     <tbody id="data-items">
                     @foreach($inbox as $mail)
                         <tr class="item">
-                            <td class="color-main text-bold">{!! link_to_route('user.show', $mail->sender->username, [$mail->sender->username]) !!}</td>
+                            <td class="color-main text-bold">{!! link_to_route('user.show', $mail->sender->displayName(), [$mail->sender->username]) !!}</td>
                             
                             <td>
                             @if($mail->seen_at == null)
