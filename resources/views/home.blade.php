@@ -680,7 +680,7 @@
                 @forelse($feeds as $feed)
                         <li class="list-group-item">
                         <a href="{{ route('user.show',$feed->user->username) }}">
-                            <strong class="primary-font">{{ $feed->user->name }}</strong>
+                            <strong class="primary-font">{{ $feed->user->displayName() }}</strong>
                         </a> updated his status <i class="text-danger">{!! link_to_route('show-status',$feed->timeSincePublished,[$feed->id],['class' => 'status-timeago']) !!}</i>. <small class="text-muted convert-emoji"> {{ str_limit($feed->body,50) }} </small>
                         </li>
                 @empty
