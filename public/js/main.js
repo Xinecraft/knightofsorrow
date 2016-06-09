@@ -320,7 +320,7 @@ $(document).ready(function ()
     });
 
     // Setup Chat Audio
-    $('<audio id="chatAudio"><source src="http://'+window.location+'"/sounds/notify.ogg" type="audio/ogg"><source src="http://'+window.location+'"/sounds/notify.mp3" type="audio/mpeg"><source src="http://'+window.location+'"/sounds/notify.wav" type="audio/wav"></audio>').appendTo('body');
+    $('<audio id="chatAudio"><source src="http://knightofsorrow.tk/sounds/notify.ogg" type="audio/ogg"><source src="http://knightofsorrow.tk/sounds/notify.mp3" type="audio/mpeg"><source src="http://knightofsorrow.tk/sounds/notify.wav" type="audio/wav"></audio>').appendTo('body');
 
     /**
      * Infinite Scroll
