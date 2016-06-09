@@ -22,8 +22,8 @@
                                 </span>
                                 <div class="chat-body clearfix">
                                     <div class="header text-left">
-                                        <a href="{{ route('user.show',$shout->user->username) }}">
-                                            <strong class="primary-font">{{ $shout->user->displayName() }}</strong>
+                                        <a class="{{ $shout->user->isAdmin() ? "text-green" : "" }}" href="{{ route('user.show',$shout->user->username) }}">
+                                            <strong class="">{{ $shout->user->displayName() }}</strong>
                                         </a>
                                         <br>
 
@@ -54,8 +54,8 @@
                         </span>
                                 <div class="chat-body clearfix">
                                     <div class="header text-right">
-                                        <a href="{{ route('user.show',$shout->user->username) }}">
-                                            <strong class="primary-font">{{ $shout->user->displayName() }}</strong>
+                                        <a class="{{ $shout->user->isAdmin() ? "text-green" : "" }}" href="{{ route('user.show',$shout->user->username) }}">
+                                            <strong class="">{{ $shout->user->displayName() }}</strong>
                                         </a>
                                         <br>
                                         <small class="text-muted"><span class="fa fa-clock-o"></span> {{ $shout->created_at->diffForHumans() }}

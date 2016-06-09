@@ -217,7 +217,12 @@ class ServerController extends Controller
         if ($Msg == '' || empty($Msg)) {
             return;
         }
-        $MsgFormated = "[c=ffa500][b]" . $Username . "[\\b] (Server Viewer):[\\c] [c=FFFFFF]" . $Msg;
+        $userLvl = $request->user()->role;
+        if($userLvl == "Super Administrator")
+        {
+            $userLvl = "SuperAdmin";
+        }
+        $MsgFormated = "[c=ffa500][b]" . $Username . "[\\b] ($userLvl):[\\c] [c=FFFFFF]" . $Msg;
         $txtip = "127.0.0.1";
         $txtportnum = "10483";
         $sock = fsockopen("udp://" . $txtip, $txtportnum, $errno, $errstr, 2);

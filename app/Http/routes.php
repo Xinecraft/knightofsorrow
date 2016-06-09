@@ -11,9 +11,13 @@
 */
 
 Route::get('test',function(){
-    $str  = "normal text [c=FFF00FF]HOP Server[\\c] [everythingheregone] after text";
-    $repl = "test";
-    return $res;
+    $user  = App\User::first();
+    $data =  [
+        'user' => $user->name,
+        'admin' => $user->isAdmin(),
+    ];
+
+    return $data;
 
 });
 
