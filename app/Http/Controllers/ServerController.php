@@ -217,7 +217,7 @@ class ServerController extends Controller
         if ($Msg == '' || empty($Msg)) {
             return;
         }
-        $userLvl = $request->user()->role;
+        $userLvl = $request->user()->roles()->first()->display_name;
         if($userLvl == "Super Administrator")
         {
             $userLvl = "SuperAdmin";

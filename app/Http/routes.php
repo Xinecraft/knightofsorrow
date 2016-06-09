@@ -11,13 +11,6 @@
 */
 
 Route::get('test',function(){
-    $user  = App\User::first();
-    $data =  [
-        'user' => $user->name,
-        'admin' => $user->isAdmin(),
-    ];
-
-    return $data;
 
 });
 
