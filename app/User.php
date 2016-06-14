@@ -60,7 +60,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     /**
      * Returns gravatar ID
      */
-    public function getGravatarLink($size)
+    public function getGravatarLink($size=40)
     {
          //gravatar.com/avatar/{id}?d=mm&s=20
         $id = md5($this->email);
@@ -143,30 +143,73 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
             return PlayerTotal::where('name','LIKE',"$this->player_totals_name")->first();
     }
 
-    public function outbox()
+    /**
+     * Messages Sent
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function messages()
     {
-        return $this->hasMany('App\Mail','sender_id')->latest();
+        return $this->hasMany('App\Mail', 'sender_id', 'id');
     }
 
-    public function inbox()
+    /**
+     * Messages Received
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function receivedMessages()
     {
-        return $this->hasMany('App\Mail','reciever_id')->latest();
+        return $this->hasMany('App\Mail', 'reciever_id', 'id');
     }
 
-    public function unreadInbox()
+    /**
+     * Returns all messages of this user sent by provided username
+     *
+     * @param $username
+     * @return mixed
+     */
+    public function messagesBy($username)
     {
-        return $this->hasMany('App\Mail','reciever_id')->where('seen_at',NULL)->latest();
+        $by = static::whereUsername($username)->firstOrFail();
+        $messages = $this->receivedMessages()->where('sender_id',$by->id);
+        return $messages;
     }
 
-    public function sendmail($reciever,$subject,$body)
+
+    /**
+     * Returns all messages of this user sent by provided username and also Unseen
+     *
+     * @param $username
+     * @return mixed
+     */
+    public function messagesUnseenBy($username)
     {
-        return $this->outbox()->create([
-                'sender_id' => $this->id,
-                'reciever_id' => $reciever->id,
-                'subject' => $subject,
-                'body' => $body
-                ]);
+        $by = static::whereUsername($username)->firstOrFail();
+        $messages = $this->receivedMessages()->where('sender_id',$by->id)->whereSeenAt(null);
+        return $messages;
     }
+
+    /**
+     * All messages that are received and also not seen
+     *
+     * @return mixed
+     */
+    public function receivedMessagesUnseen()
+    {
+        return $this->receivedMessages()->whereSeenAt(null);
+    }
+
+    /**
+     * Collection of all message either send or received by this user
+     *
+     * @return mixed
+     */
+    public function allMessages()
+    {
+        return Mail::where('sender_id',$this->id)->orWhere('receiver_id',$this->id);
+    }
+
 
     /**
      * @return mixed

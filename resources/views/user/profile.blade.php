@@ -77,7 +77,11 @@
                                         @endif
                                         {!! Form::close()  !!}
                                 @endif
-                                <a class="btn btn-success" href="{{ route('user.compose',['user' => $user->username]) }}">Send Message</a>
+                                @if(Auth::check() && $user->id != Auth::user()->id)
+                                    <div class="col-md-3">
+                                        {!! link_to_route('messages.show',"Send Message",$user->username,['class' => 'btn btn-info']) !!}
+                                    </div>
+                                @endif
                         </div>
                     </div>
                 </div>

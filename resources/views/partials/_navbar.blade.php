@@ -31,8 +31,8 @@
                     </ul>
                 </li>
 
-                @if(Auth::check() && Auth::user()->unreadInbox()->count() > 0)
-                    <li class="text-bold {{ set_active(['mail/inbox*']) }}">{!! link_to_route('user.inbox',Auth::user()->unreadInbox()->count()." new mail") !!} </li>
+                @if(Auth::check() && Auth::user()->receivedMessagesUnseen()->count() > 0)
+                    <li class="text-bold {{ set_active(['messages*']) }}">{!! link_to_route('messages.index',Auth::user()->receivedMessagesUnseen()->count()." new messages") !!} </li>
                 @endif
 
             </ul>
@@ -48,11 +48,9 @@
                             {{ Auth::user()->displayName() }} <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="{{ route('feeds-home') }}">My Feedline</a></li>
-                                <li><a href="{{ url('/profile') }}">Profile</a></li>
+                                <li><a href="{{ url('/profile') }}">My Profile</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="{{ route('user.compose') }}">Compose Mail</a></li>
-                                <li><a href="{{ route('user.inbox') }}">Inbox</a></li>
-                                <li><a href="{{ route('user.outbox') }}">Outbox</a></li>
+                                <li><a href="{{ route('messages.index') }}">Messages</a></li>
 
                                 @if(Auth::check() && Auth::user()->isAdmin())
                                 <li role="separator" class="divider"></li>

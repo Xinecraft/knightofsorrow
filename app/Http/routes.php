@@ -11,7 +11,7 @@
 */
 
 Route::get('test',function(){
-
+    dd(App\Mail::conversation(36,32));
 });
 
 /**
@@ -90,6 +90,9 @@ Route::get('/user/ping',['as' => 'user.ping', 'uses' => 'UserController@sendPing
 Route::post('profile/edit2', ['middleware' => 'auth', 'as' => 'user.setting2.post', 'uses' => 'UserController@updateProfile2']);
 Route::patch('/toggleban/@{username}',['middleware' => 'auth', 'as' => 'user.toggleban', 'uses' => 'UserController@toggleBanUser']);
 
+/*
+ * Removed because new messaging system has be developed!
+ *
 Route::group(['prefix' => 'mail'],function(){
     Route::get('inbox',['middleware' => 'auth', 'as' => 'user.inbox', 'uses' => 'UserController@getInbox']);
     Route::get('outbox',['middleware' => 'auth', 'as' => 'user.outbox', 'uses' => 'UserController@getOutbox']);
@@ -97,6 +100,7 @@ Route::group(['prefix' => 'mail'],function(){
     Route::post('compose',['middleware' => 'auth', 'as' => 'user.compose.post', 'uses' => 'UserController@postComposeMail']);
     Route::get('{id}',['middleware' => 'auth', 'as' => 'user.inbox.show', 'uses' => 'UserController@getShowMail']);
 });
+*/
 
 /**
  * Servers Controllers.
@@ -173,3 +177,13 @@ Route::post('/news/{id}/edit', ['middleware' => 'admin', 'as' => 'news.update', 
  * Server Chat View Log for Admins
  */
 Route::get('/chat-history', ['as' => 'chat.index', 'uses' => 'ChatController@index']);
+
+/**
+ * Messages/Mail Controller
+ */
+Route::get('/conversation/new', ['as' => 'messages.new', 'uses' => 'MailController@start']);
+Route::get('/messages/@{username}', ['as' => 'messages.show', 'uses' => 'MailController@show']);
+Route::post('/messages/@{username}', ['as' => 'messages.store', 'uses' => 'MailController@store']);
+Route::get('/administrator/messages/@{username1}/@{username2}', ['middleware' => 'admin', 'as' => 'messages.showadmin', 'uses' => 'MailController@showadmin']);
+Route::delete('/messages/{id}', ['as' => 'messages.delete', 'uses' => 'MailController@destroy']);
+Route::get('messages/',['as' => 'messages.index', 'uses' => 'MailController@index']);

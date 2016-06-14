@@ -6,24 +6,31 @@
 
         <div class="col-md-12 panel panel-default" style="padding: 15px">
             @if(Request::has('search'))
-            <h4 class="well well-sm">Search for "<b>{{ Request::get('search') }}</b>" matched {{ $chats->total() }} chats</h4>
+                <h4 class="well well-sm">Search for "<b>{{ Request::get('search') }}</b>" matched {{ $chats->total() }}
+                    chats</h4>
             @endif
             <div class="panel-heading">
                 <a href="{{ route('chat.index') }}" class="btn btn-warning pull-right btn-xs">Reset</a>
 
-                {!! Form::open(['method' => 'get', 'name' => 'search', 'class' => 'form form-inline']) !!}
+                {!! Form::open(['method' => 'get', 'name' => 'search', 'class' => 'form']) !!}
+                <div class="input-group col-md-7">
                     {!! Form::text('search',null,['class' => 'form-control col-md-5', 'placeholder' => 'Search within chat...']) !!}
-                <button type="submit" class="btn btn-info">Search</button>
+                    <span class="add-on input-group-btn">
+                    <button type="submit" class="btn btn-info">Search</button>
+                    </span>
+
+                </div>
                 {!! Form::close() !!}
+
 
             </div>
             <div class="panel-body ls-chats" id="data-items">
-                    @foreach($chats as $chat)
-                        <p class="no-margin item">
+                @foreach($chats as $chat)
+                    <p class="no-margin item">
                         {!! $chat->message !!}
                         <small class=""><i>{{ $chat->created_at->toDayDateTimeString() }}</i></small>
-                        </p>
-                    @endforeach
+                    </p>
+                @endforeach
             </div>
             <div class="panel-footer">
                 <b>{{ $chats->total() }}</b> matching chats found.
