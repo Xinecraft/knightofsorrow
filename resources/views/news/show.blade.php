@@ -1,4 +1,5 @@
 @extends('layouts.main')
+@section('title',$news->title)
 @section('main-container')
     <div class="content col-md-8">
         @include('partials._errors')
@@ -10,6 +11,14 @@
                  -
                 <small class="text-muted">{{ $news->created_at->toDayDateTimeString() }}</small>
                 </i>
+
+                @if(Auth::check() && Auth::user()->isAdmin())
+                    <br>
+                    <small class="text-muted">Last updated: <i>{{ $news->updated_at->toDayDateTimeString() }}
+                     -
+                    <a href="{{ route('news.edit',$news->id) }}">Edit News</a></i></small>
+                @endif
+
             </p>
             <hr>
             <p class="convert-emoji">{!! BBCode::parseCaseInsensitive((htmlentities($news->text))) !!}</p>

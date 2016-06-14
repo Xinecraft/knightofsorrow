@@ -86,6 +86,45 @@ class NewsController extends Controller
     }
 
     /**
+     * @param $id
+     * @return mixed
+     */
+    public function edit($id)
+    {
+        $news = $this->news->findOrFail($id);
+        return view('news.edit')->withNews($news);
+    }
+
+    /**
+     * @param $id
+     * @param NewsRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function update($id,NewsRequest $request)
+    {
+        $getNews = $this->news->findOrFail($id);
+
+        $slug = str_limit(str_slug($request->title),50)."--author-{$request->user()->username}";
+
+        $news  = News::where('summary',$slug)->first();
+
+        if($news)
+        {
+            $slug = str_limit(str_slug($request->title),50)."-".time()."--author-{$request->user()->username}";
+        }
+
+
+        $news = $getNews->update([
+            'title' => $request->title,
+            'text' => $request->text,
+            'summary' => $slug,
+            'is_published' => true,
+        ]);
+
+        return redirect()->route('news.show',$slug)->with('message','News Updated');
+    }
+
+    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id

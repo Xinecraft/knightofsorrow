@@ -1,13 +1,13 @@
 @extends('layouts.main')
-@section('title', 'Create News')
+@section('title', 'Edit News')
 @section('main-container')
     <div class="content col-md-9">
         {{--@include('partials._errors')--}}
 
         <div class="col-md-10 panel composemail" style="padding:10px">
-            <h5 class="info-title" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Create News</h5>
+            <h5 class="info-title" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Edit News</h5>
 
-            {!! Form::open(['class' => 'form-horizontal']) !!}
+            {!! Form::model($news,['class' => 'form-horizontal']) !!}
 
             <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
                 {!! Form::label('title', 'Title', ['class' => 'col-md-3 control-label']) !!}
@@ -37,7 +37,7 @@
 
             <div class="form-group">
                 <div class="col-sm-offset-3 col-sm-3">
-                    <button type="submit" class="btn btn-info confirm">Submit News</button>
+                    <button type="submit" class="btn btn-info confirm">Update News</button>
                 </div>
             </div>
             {!! Form::close() !!}

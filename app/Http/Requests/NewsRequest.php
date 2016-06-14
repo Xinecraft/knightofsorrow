@@ -29,4 +29,14 @@ class NewsRequest extends Request
             'text' => 'required|min:25|max:1000',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'title.required' => 'Please provide a title for news',
+            'text.required' => 'Please enter news body',
+            'text.min' => 'Body must be atleast :min characters in length',
+            'text.max' => 'Body must be atmost :max characters in length',
+        ];
+    }
 }
