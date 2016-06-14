@@ -168,3 +168,8 @@ Route::post('/news/new', ['middleware' => 'admin', 'as' => 'news.store', 'uses' 
 Route::get('/news/{slug}', ['as' => 'news.show', 'uses' => 'NewsController@show']);
 Route::get('/news/{id}/edit', ['middleware' => 'admin', 'as' => 'news.edit', 'uses' => 'NewsController@edit']);
 Route::post('/news/{id}/edit', ['middleware' => 'admin', 'as' => 'news.update', 'uses' => 'NewsController@update']);
+
+/**
+ * Server Chat View Log for Admins
+ */
+Route::get('/chat-history', ['as' => 'chat.index', 'uses' => 'ChatController@index']);

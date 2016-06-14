@@ -58,7 +58,10 @@
                 </div>
             </div> {{--Server Players and Top Players Wrapper Ends--}}
             <div class="col-md-7 panel panel-default no-padding">
-                <div class="panel-heading"><span class="info-title">Server Viewer</span></div>
+                <div class="panel-heading">
+                    <small class="pull-right"><i><b><a href="{{ route('chat.index') }}">» view all</a></b></i></small>
+                    <span class="info-title">Server Viewer</span>
+                </div>
                 <div class="panel-body ls-chats">
                     <div class="loading-pt-info">Loading Server Chat...</div>
                 </div>

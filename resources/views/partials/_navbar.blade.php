@@ -15,7 +15,7 @@
                 <li class="{{ set_active(['/','home']) }}"><a href="{{ route('home') }}">Home</a></li>
                 <li class="{{ set_active(['statistics*']) }}">{!! link_to_route('statistics-home','Statistics') !!}</li>
                 @if(Auth::check())
-                <li class="{{ set_active(['feeds*']) }}">{!! link_to_route('feeds-home','News Feed') !!}</li>
+                <li class="{{ set_active(['feeds*']) }}">{!! link_to_route('feeds-home','Feedline') !!}</li>
                 @endif
 
                 <li class="dropdown">
@@ -24,6 +24,7 @@
                     <ul class="dropdown-menu" role="menu">
                         <li>{!! link_to_route('servers.list','Servers') !!}</li>
                         <li><a href="{{ route('news.index') }}">News</a></li>
+                        <li><a href="{{ route('chat.index') }}">Chat History</a></li>
                         <li><a href="">Clans</a></li>
                         <li><a href="">Forums</a></li>
                         <li><a href="{{ route('rules') }}">Rules</a></li>
@@ -46,7 +47,7 @@
                             <img class="img" src="{{ Auth::user()->getGravatarLink(20) }}" width="15" height="15" />
                             {{ Auth::user()->displayName() }} <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ route('feeds-home') }}">News Feed</a></li>
+                                <li><a href="{{ route('feeds-home') }}">My Feedline</a></li>
                                 <li><a href="{{ url('/profile') }}">Profile</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="{{ route('user.compose') }}">Compose Mail</a></li>
