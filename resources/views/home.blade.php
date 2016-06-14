@@ -119,7 +119,7 @@
         </div>
 
         <div class="row player-records">
-            <div class="panel panel-primary">
+            <div class="panel panel-default">
                 <div class="panel-heading info-title">Player Records</div>
                 <div class="panel-body">
                     <div class="col-articles articles">
@@ -676,7 +676,7 @@
             </div>
         </div>
 
-        <div class="panel panel-default">
+        <div class="panel panel-default row">
             <div class="panel-heading info-title">Notifications</div>
             <div class="panel-body">
                 <ul class="list-group">
@@ -694,7 +694,7 @@
         </div>
 
 
-        <div class="panel panel-default">
+        <div class="panel panel-default row">
             <div class="panel-heading info-title">Last Active Users</div>
             <div class="panel-body">
                     @forelse($activeUsers as $user)

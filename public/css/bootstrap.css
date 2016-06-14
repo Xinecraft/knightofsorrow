@@ -5533,22 +5533,22 @@ a.list-group-item-danger.active:focus {
   border-bottom: 1px solid #ecf0f1;
 }
 .panel-default {
-  border-color: #ecf0f1;
+  border-color: #d7d8d9;
 }
 .panel-default > .panel-heading {
   color: #2c3e50;
-  background-color: #ecf0f1;
-  border-color: #ecf0f1;
+  background-color: #f4f9fa;
+  border-color: #d7d8d9;
 }
 .panel-default > .panel-heading + .panel-collapse > .panel-body {
-  border-top-color: #ecf0f1;
+  border-top-color: #f4f9fa;
 }
 .panel-default > .panel-heading .badge {
-  color: #ecf0f1;
+  color: #f4f9fa;
   background-color: #2c3e50;
 }
 .panel-default > .panel-footer + .panel-collapse > .panel-body {
-  border-bottom-color: #ecf0f1;
+  border-bottom-color: #f4f9fa;
 }
 .panel-primary {
   border-color: #2c3e50;

@@ -33,8 +33,9 @@
 
             <div class="col-md-3 col-md-offset-3">
                 <p class="copyright">
-                    <i class="fa fa-copyright"></i> {{ date('Y') }} Knight of Sorrow
+                    <i class="fa fa-copyright"></i> {{ date('Y') }} KnightofSorrow Team
                 </p>
+                <i><small class="text-muted">Server Time: {{ \Carbon\Carbon::now()->toDayDateTimeString() }}</small></i>
                 </div>
                 <div class="col-md-3 col-md-offset-1">
                     <i><small class="muted">Page took {{ round((microtime(true) - LARAVEL_START),5) }} seconds to render</small></i>

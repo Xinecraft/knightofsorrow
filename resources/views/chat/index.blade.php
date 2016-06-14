@@ -5,12 +5,15 @@
         @include('partials._errors')
 
         <div class="col-md-12 panel panel-default" style="padding: 15px">
+            @if(Request::has('search'))
+            <h4 class="well well-sm">Search for "<b>{{ Request::get('search') }}</b>" matched {{ $chats->total() }} chats</h4>
+            @endif
             <div class="panel-heading">
-                <a href="{{ route('chat.index') }}" class="btn btn-info pull-right">Refresh</a>
+                <a href="{{ route('chat.index') }}" class="btn btn-warning pull-right btn-xs">Reset</a>
 
                 {!! Form::open(['method' => 'get', 'name' => 'search', 'class' => 'form form-inline']) !!}
                     {!! Form::text('search',null,['class' => 'form-control col-md-5', 'placeholder' => 'Search within chat...']) !!}
-                <button type="submit" class="btn btn-default">Search</button>
+                <button type="submit" class="btn btn-info">Search</button>
                 {!! Form::close() !!}
 
             </div>
