@@ -1,4 +1,5 @@
 @extends('layouts.main')
+@section('title','Setting')
 @section('main-container')
     <div class="content col-md-9">
     @include('partials._errors')

@@ -1,4 +1,5 @@
 @extends('layouts.main')
+@section('title','Your Feedline')
 @section('main-container')
     <div class="content col-md-7">
         @include('partials._errors')

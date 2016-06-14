@@ -79,7 +79,9 @@ class MailController extends Controller
      */
     public function start(Request $request)
     {
-        $with = User::whereUsername($request->with)->orWhere('email', $request->with)->firstOrFail();
+        $with = User::whereUsername($request->with)->orWhere('email', $request->with)->first();
+        if(is_null($with))
+            abort(404,"User not found");
         return redirect()->route('messages.show',$with->username);
     }
 
