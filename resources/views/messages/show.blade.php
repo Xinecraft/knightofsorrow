@@ -48,7 +48,7 @@
     <div class="row">
         <div class="panel text-center">
             <h4>Your Conversation
-                with {!! link_to_route('user.show',$recuser->displayName(),$recuser->username,['class' => 'text-info']) !!}</h4>
+                with {!! link_to_route('user.show',$recuser->displayName(),$recuser->username,['class' => '']) !!}</h4>
         </div>
         <div class="">
             <br style="clear:both">
@@ -134,7 +134,7 @@
                     </div>
                 @endif
             @empty
-                <div class="well col-md-8 col-md-offset-2">
+                <div class="panel col-md-8 col-md-offset-2">
                     <h4 class="text-danger text-center"><i>Its lonely here! Send a message now to start
                             conversation with {{ $recuser->displayName() }}</i></h4>
                 </div>

@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'Conversation btw '.$recuser1->displayName().' and '.$recuser2->displayName())
+@section('title', 'Conversation between '.$recuser1->displayName().' and '.$recuser2->displayName())
 @section('styles')
     <style>
         .red {
@@ -47,7 +47,7 @@
     <div class="content col-md-9">
         <div class="row">
             <div class="panel text-center">
-                <h4>Conversation btw {!! link_to_route('user.show',$recuser1->displayName(),$recuser1->username,['class' => 'text-info']) !!} &amp; {!! link_to_route('user.show',$recuser2->displayName(),$recuser2->username,['class' => 'text-info']) !!}
+                <h4>Conversation between {!! link_to_route('user.show',$recuser1->displayName(),$recuser1->username,['class' => '']) !!} &amp; {!! link_to_route('user.show',$recuser2->displayName(),$recuser2->username,['class' => '']) !!}
                 </h4>
             </div>
 
@@ -114,9 +114,8 @@
                         </div>
                     @endif
                 @empty
-                    <div class="well col-md-8 col-md-offset-2">
-                        <h4 class="text-danger text-center"><i>Its lonely here! Send a message now to start
-                                conversation with {{ $recuser->displayName() }}</i></h4>
+                    <div class="panel col-md-8 col-md-offset-2">
+                        <h4 class="text-danger text-center"><i>Its lonely here!</i></h4>
                     </div>
                 @endforelse
             </div>
