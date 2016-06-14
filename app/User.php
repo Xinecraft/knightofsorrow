@@ -207,4 +207,14 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         }
     }
 
+    /**
+     * Returns all news of this user
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function news()
+    {
+        return $this->hasMany('App\News');
+    }
+
 }

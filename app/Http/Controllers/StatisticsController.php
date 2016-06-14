@@ -123,7 +123,6 @@ class StatisticsController extends Controller
     public function getCountryDetails($id,$name)
     {
 
-
         $sortableColumns = ['position','rank_id','name','player_rating','total_score','total_points','total_time_played','last_game_id'];
 
         $orderBy = Request::has('orderBy') && in_array(Request::get('orderBy'),$sortableColumns) ? Request::get('orderBy')  : 'position';

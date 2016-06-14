@@ -9,6 +9,13 @@
           </mappings>
         </serverdata>
       </paths>
+      <paths name="Techimax">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="acerc.dev">
         <serverdata>
           <mappings>

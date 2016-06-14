@@ -23,7 +23,7 @@
                         More <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li>{!! link_to_route('servers.list','Servers') !!}</li>
-                        <li><a href="">News</a></li>
+                        <li><a href="{{ route('news.index') }}">News</a></li>
                         <li><a href="">Clans</a></li>
                         <li><a href="">Forums</a></li>
                         <li><a href="{{ route('rules') }}">Rules</a></li>
@@ -55,6 +55,7 @@
 
                                 @if(Auth::check() && Auth::user()->isAdmin())
                                 <li role="separator" class="divider"></li>
+                                <li><a href="{{ route('news.create') }}">Create News</a></li>
                                 <li><a href="{{ route('servers.new') }}">Add Server</a></li>
                                 @endif
 

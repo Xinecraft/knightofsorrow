@@ -146,6 +146,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         McCool\LaravelAutoPresenter\AutoPresenterServiceProvider::class,
         Laracasts\Utilities\JavaScript\JavascriptServiceProvider::class,
+        Golonka\BBCode\BBCodeParserServiceProvider::class,
 
 
         /*
@@ -211,6 +212,7 @@ return [
         'Form' 		=> Collective\Html\FormFacade::class,
         'Html' 		=> Collective\Html\HtmlFacade::class,
         'Javascript'  => Laracasts\Utilities\JavaScript\JavaScriptFacade::class,
+        'BBCode'    => Golonka\BBCode\Facades\BBCodeParser::class,
 
     ],
 

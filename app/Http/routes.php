@@ -153,6 +153,16 @@ Route::group(['prefix' => 'servertracker'], function(){
 Route::post('/shouts/do',['as' => 'shouts.store', 'uses' => 'ShoutsController@store']);
 Route::delete('/shouts/{id}/delete', ['as' => 'shouts.delete', 'uses' => 'ShoutsController@destroy']);
 
+// For Ingame Chatting
 Route::post('/server/chat',['as' => 'server.chat', 'uses' => 'ServerController@chatInGameForKOS']);
 
+// Rules Page
 Route::get('/rules', ['as' => 'rules', 'uses' => 'MainController@getRulesOfServer']);
+
+/**
+ * News Controller
+ */
+Route::get('/news', ['as' => 'news.index', 'uses' => 'NewsController@index']);
+Route::get('/news/new', ['middleware' => 'admin', 'as' => 'news.create', 'uses' => 'NewsController@create']);
+Route::post('/news/new', ['middleware' => 'admin', 'as' => 'news.store', 'uses' => 'NewsController@store']);
+Route::get('/news/{slug}', ['as' => 'news.show', 'uses' => 'NewsController@show']);
