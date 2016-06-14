@@ -175,6 +175,10 @@ class UserController extends Controller
 
     public function getComposeMail()
     {
+        if(\Request::has('user'))
+        {
+            \Session::flash('_old_input.to_username',\Request::get('user'));
+        }
         return view('user.composemail');
     }
 

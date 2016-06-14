@@ -8,7 +8,7 @@
                 {!! Form::open(['class' => 'form-horizontal']) !!}
                     <div class="form-group"><label for="to_username" class="col-sm-4 control-label">To:<small> (username without @)</small></label>
                         <div class="col-sm-7">
-                            <input type="text" class="form-control composemailusername" id="to_username" name="to_username" placeholder="Username" maxlength="255" required>
+                            <input type="text" class="form-control composemailusername" id="to_username" name="to_username" placeholder="Username" maxlength="255" value="{{ old('to_username') }}" required>
                         </div>
                     </div>
                     <div class="form-group"><label for="to_subject" class="col-sm-4 control-label">Subject:</label>

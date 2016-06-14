@@ -56,19 +56,19 @@
                         <div class="row">
                             @if(Auth::check())
                                 @if(Auth::user()->isFollowing($user))
-                                    {!! Form::open(['name'=>'unfollow','method'=>'DELETE','action'=>'UserController@deleteUnfollow','class'=>'form col-md-3']) !!}
+                                    {!! Form::open(['name'=>'unfollow','method'=>'DELETE','action'=>'UserController@deleteUnfollow','class'=>'form col-md-4']) !!}
                                     {!! Form::hidden('user_id',$user->id) !!}
                                     {!! Form::submit("unfollow @$user->username",['class'=>'btn btn-danger']) !!}
                                     {!! Form::close() !!}
                                 @else
-                                    {!! Form::open(['name'=>'follow','method'=>'POST','action'=>'UserController@postFollow','class'=>'form col-md-3']) !!}
+                                    {!! Form::open(['name'=>'follow','method'=>'POST','action'=>'UserController@postFollow','class'=>'form col-md-4']) !!}
                                     {!! Form::hidden('user_id',$user->id) !!}
                                     {!! Form::submit("follow @$user->username",['class'=>'btn btn-info']) !!}
                                     {!! Form::close() !!}
                                 @endif
                             @endif
                                 @if(Auth::check() && Auth::user()->isAdmin())
-                                        {!! Form::open(['method' => 'patch', 'route' => ['user.toggleban',$user->username]])  !!}
+                                        {!! Form::open(['method' => 'patch', 'route' => ['user.toggleban',$user->username], 'class' => 'form col-md-3'])  !!}
                                         {!! Form::hidden('username',$user->username)  !!}
                                         @if($user->banned == 1)
                                             {!! Form::submit('Unban @'.$user->username,['class' => 'btn confirm btn-success'])  !!}
@@ -77,7 +77,7 @@
                                         @endif
                                         {!! Form::close()  !!}
                                 @endif
-
+                                <a class="btn btn-success" href="{{ route('user.compose',['user' => $user->username]) }}">Send Message</a>
                         </div>
                     </div>
                 </div>

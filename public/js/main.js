@@ -363,11 +363,23 @@ $(document).ready(function ()
 
 
     /**
-     * Activate tooltipster on all .tooltip class elements
-     */
+     * Activate tooltipster on all .tooltipster class elements
+
     $('.tooltipster').tooltipster({
         contentAsHTML: true,
         animation: 'grow'
+    });
+     */
+
+    $('.tooltipster').poshytip({
+        className: 'tip-twitter',
+        showTimeout: 1,
+        alignTo: 'target',
+        alignX: 'center',
+        offsetY: 5,
+        allowTipHover: false,
+        slide: true,
+        liveEvents: true
     });
 
 
