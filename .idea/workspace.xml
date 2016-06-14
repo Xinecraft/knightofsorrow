@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e189236c-c3e7-488f-b221-e9fb727e1c1d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/news/edit.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/travis.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/NewsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/NewsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Requests/NewsRequest.php" afterPath="$PROJECT_DIR$/app/Http/Requests/NewsRequest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/news/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/news/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/news/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/news/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/news/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/news/show.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/statistics/round-reports.blade.php" afterPath="$PROJECT_DIR$/resources/views/statistics/round-reports.blade.php" />
     </list>
     <ignored path="kos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,7 +29,7 @@
       <file leaf-file-name="NewsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/NewsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.846154">
+            <state vertical-scroll-proportion="-76.92308">
               <caret line="100" column="48" selection-start-line="100" selection-start-column="48" selection-end-line="100" selection-end-column="48" />
               <folding>
                 <element signature="e#40#74#0#PHP" expanded="true" />
@@ -46,18 +41,72 @@
       <file leaf-file-name="News.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/News.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.3846154">
+            <state vertical-scroll-proportion="0.0">
               <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="create.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/news/create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7176471">
-              <caret line="50" column="11" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="48" column="19" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BBCodeParser.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/golonka/bbcodeparser/src/BBCodeParser.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="74" column="10" selection-start-line="74" selection-start-column="10" selection-end-line="74" selection-end-column="10" />
+              <folding>
+                <marker date="1465138440724" expanded="true" signature="1269:1287" placeholder="..." />
+                <marker date="1465138440724" expanded="true" signature="1454:1470" placeholder="..." />
+                <marker date="1465138440724" expanded="true" signature="1640:1657" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="travis.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/travis.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="composer.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/composer.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.461538">
+              <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="top-players.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/statistics/top-players.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.076923">
+              <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="round-reports.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/statistics/round-reports.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7586207">
+              <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -66,7 +115,7 @@
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.5">
+            <state vertical-scroll-proportion="0.0">
               <caret line="169" column="46" selection-start-line="169" selection-start-column="46" selection-end-line="169" selection-end-column="46" />
               <folding />
             </state>
@@ -88,8 +137,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Providers/GeoIp2ServerProvider.php" />
-        <option value="$PROJECT_DIR$/app/Console/Kernel.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" />
         <option value="$PROJECT_DIR$/resources/views/statistics/player-details.blade.php" />
         <option value="$PROJECT_DIR$/config/mail.php" />
@@ -139,6 +186,8 @@
         <option value="$PROJECT_DIR$/resources/views/news/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/news/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/news/create.blade.php" />
+        <option value="$PROJECT_DIR$/travis.yml" />
+        <option value="$PROJECT_DIR$/resources/views/statistics/round-reports.blade.php" />
       </list>
     </option>
   </component>
@@ -187,7 +236,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -216,42 +264,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="golonka" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bbcodeparser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -278,7 +290,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
+              <option name="myItemId" value="statistics" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -293,39 +305,12 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -333,7 +318,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="create&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/news/create.blade.php&#10;ind&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/news/index.blade.php&#10;rou&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/routes.php&#10;NewsR&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Requests/NewsRequest.php&#10;_na&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;BB&#9;null&#9;null&#10;Collec&#9;null&#9;null&#10;News&#9;FILE&#9;file://C:/wamp/www/kos/app/News.php&#10;app.&#9;FILE&#9;file://C:/wamp/www/kos/resources/assets/less/app.less&#10;side&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;_nav&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;main&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/layouts/main.blade.php&#10;cre&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/news/create.blade.php&#10;BBCo&#9;FILE&#9;file://C:/wamp/www/kos/vendor/golonka/bbcodeparser/src/Facades/BBCodeParser.php&#10;BBC&#9;null&#9;null&#10;Status&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/StatusController.php&#10;term&#9;ACTION&#9;ActivateTerminalToolWindow&#10;News.p&#9;FILE&#9;file://C:/wamp/www/kos/app/News.php&#10;user&#9;FILE&#9;file://C:/wamp/www/kos/app/User.php&#10;rout&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/routes.php&#10;shout&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_shoutbox.blade.php&#10;route&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/routes.php&#10;User&#9;FILE&#9;file://C:/wamp/www/kos/app/User.php&#10;nav&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;list&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/server/list.blade.php&#10;foo&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_footer.blade.php&#10;top&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/statistics/top10.blade.php&#10;UserRe&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Repositories/UserRepository.php&#10;MainC&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/MainController.php&#10;home&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/home.blade.php&#10;app.css&#9;FILE&#9;file://C:/wamp/www/kos/public/css/app.css&#10;app.le&#9;FILE&#9;file://C:/wamp/www/kos/resources/assets/less/app.less&#10;ter&#9;ACTION&#9;ActivateTerminalToolWindow&#10;help&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/helpers.php&#10;PlayerT&#9;null&#9;null&#10;app&#9;FILE&#9;file://C:/wamp/www/kos/public/css/app.css&#10;coun&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/statistics/countries.blade.php&#10;Len&#9;null&#9;null&#10;count&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/statistics/countries.blade.php&#10;top-pl&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/statistics/top-players.blade.php&#10;Sta&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/StatisticsController.php&#10;_s&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;_sh&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_shoutbox.blade.php&#10;StatusC&#9;null&#9;null&#10;Api&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/ApiController.php&#10;_foo&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_footer.blade.php&#10;Server&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/ServerController.php&#10;UserC&#9;null&#9;null&#10;si&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;Chat&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/ChatTracker.php" />
+    <property name="SearchEverywhereHistoryKey" value="BBC&#9;FILE&#9;file://C:/wamp/www/kos/vendor/golonka/bbcodeparser/src/BBCodeParser.php&#10;create&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/news/create.blade.php&#10;ind&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/news/index.blade.php&#10;rou&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/routes.php&#10;NewsR&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Requests/NewsRequest.php&#10;_na&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;BB&#9;null&#9;null&#10;Collec&#9;null&#9;null&#10;News&#9;FILE&#9;file://C:/wamp/www/kos/app/News.php&#10;app.&#9;FILE&#9;file://C:/wamp/www/kos/resources/assets/less/app.less&#10;side&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;_nav&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;main&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/layouts/main.blade.php&#10;cre&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/news/create.blade.php&#10;BBCo&#9;FILE&#9;file://C:/wamp/www/kos/vendor/golonka/bbcodeparser/src/Facades/BBCodeParser.php&#10;Status&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/StatusController.php&#10;term&#9;ACTION&#9;ActivateTerminalToolWindow&#10;News.p&#9;FILE&#9;file://C:/wamp/www/kos/app/News.php&#10;user&#9;FILE&#9;file://C:/wamp/www/kos/app/User.php&#10;rout&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/routes.php&#10;shout&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_shoutbox.blade.php&#10;route&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/routes.php&#10;User&#9;FILE&#9;file://C:/wamp/www/kos/app/User.php&#10;nav&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;list&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/server/list.blade.php&#10;foo&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_footer.blade.php&#10;top&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/statistics/top10.blade.php&#10;UserRe&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Repositories/UserRepository.php&#10;MainC&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/MainController.php&#10;home&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/home.blade.php&#10;app.css&#9;FILE&#9;file://C:/wamp/www/kos/public/css/app.css&#10;app.le&#9;FILE&#9;file://C:/wamp/www/kos/resources/assets/less/app.less&#10;ter&#9;ACTION&#9;ActivateTerminalToolWindow&#10;help&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/helpers.php&#10;PlayerT&#9;null&#9;null&#10;app&#9;FILE&#9;file://C:/wamp/www/kos/public/css/app.css&#10;coun&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/statistics/countries.blade.php&#10;Len&#9;null&#9;null&#10;count&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/statistics/countries.blade.php&#10;top-pl&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/statistics/top-players.blade.php&#10;Sta&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/StatisticsController.php&#10;_s&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;_sh&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_shoutbox.blade.php&#10;StatusC&#9;null&#9;null&#10;Api&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/ApiController.php&#10;_foo&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_footer.blade.php&#10;Server&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/ServerController.php&#10;UserC&#9;null&#9;null&#10;si&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;Chat&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/ChatTracker.php" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
   </component>
   <component name="RunManager">
@@ -381,7 +366,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1830161" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -390,7 +375,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24447949" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24447949" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -427,34 +412,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/banned.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26121372">
-          <caret line="42" column="12" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="284" column="30" selection-start-line="284" selection-start-column="30" selection-end-line="284" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Server/ServerTracker.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3192612">
-          <caret line="527" column="43" selection-start-line="527" selection-start-column="43" selection-end-line="527" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Profile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.84168863">
-          <caret line="35" column="27" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Loadout.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -550,7 +507,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.096618354">
           <caret line="147" column="5" selection-start-line="147" selection-start-column="5" selection-end-line="147" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -558,7 +514,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -566,7 +521,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.230769">
           <caret line="204" column="9" selection-start-line="204" selection-start-column="9" selection-end-line="204" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -574,7 +528,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.44827586">
           <caret line="49" column="30" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -582,7 +535,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.20689656">
           <caret line="6" column="105" selection-start-line="6" selection-start-column="105" selection-end-line="6" selection-end-column="105" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -590,7 +542,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7241379">
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -598,7 +549,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6551724">
           <caret line="26" column="7" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -606,7 +556,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.42352942">
           <caret line="103" column="92" selection-start-line="103" selection-start-column="47" selection-end-line="103" selection-end-column="92" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -614,7 +563,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7176471">
           <caret line="214" column="66" selection-start-line="214" selection-start-column="66" selection-end-line="214" selection-end-column="66" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -622,15 +570,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="26" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24705882">
-          <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -638,7 +577,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3764706">
           <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -646,7 +584,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5647059">
           <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -654,7 +591,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.65882355">
           <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -665,7 +601,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.9052133">
           <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -673,7 +608,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5176471">
           <caret line="19" column="152" selection-start-line="19" selection-start-column="61" selection-end-line="19" selection-end-column="152" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -681,20 +615,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.37915742">
           <caret line="774" column="40" selection-start-line="774" selection-start-column="40" selection-end-line="774" selection-end-column="40" />
-          <folding>
-            <marker date="1465471538415" expanded="true" signature="162389:163053" placeholder="..." />
-            <marker date="1465471538415" expanded="true" signature="162422:162543" placeholder="..." />
-            <marker date="1465471538415" expanded="true" signature="162590:163037" placeholder="..." />
-            <marker date="1465471538415" expanded="true" signature="162635:162922" placeholder="..." />
-            <marker date="1465471538415" expanded="true" signature="162810:162905" placeholder="..." />
-            <marker date="1465471538415" expanded="true" signature="162958:163020" placeholder="..." />
-            <marker date="1465471538415" expanded="true" signature="163259:163940" placeholder="..." />
-            <marker date="1465471538415" expanded="true" signature="163293:163425" placeholder="..." />
-            <marker date="1465471538415" expanded="true" signature="163472:163924" placeholder="..." />
-            <marker date="1465471538415" expanded="true" signature="163518:163794" placeholder="..." />
-            <marker date="1465471538415" expanded="true" signature="163697:163777" placeholder="..." />
-            <marker date="1465471538415" expanded="true" signature="163841:163907" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -702,7 +622,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5647059">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -710,7 +629,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-14.807693">
           <caret line="471" column="23" selection-start-line="471" selection-start-column="23" selection-end-line="471" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -718,7 +636,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.90588236">
           <caret line="144" column="23" selection-start-line="144" selection-start-column="23" selection-end-line="144" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -726,7 +643,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.90588236">
           <caret line="81" column="9" selection-start-line="81" selection-start-column="9" selection-end-line="81" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -734,19 +650,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.1538463">
           <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/golonka/bbcodeparser/src/BBCodeParser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3317647">
-          <caret line="144" column="44" selection-start-line="144" selection-start-column="44" selection-end-line="144" selection-end-column="44" />
-          <folding>
-            <marker date="1465138440724" expanded="true" signature="1269:1287" placeholder="..." />
-            <marker date="1465138440724" expanded="true" signature="1454:1470" placeholder="..." />
-            <marker date="1465138440724" expanded="true" signature="1640:1657" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -754,7 +657,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.1153846">
           <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -762,7 +664,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8117647">
           <caret line="213" column="18" selection-start-line="213" selection-start-column="18" selection-end-line="213" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -770,7 +671,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.42352942">
           <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -778,16 +678,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.461538">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#aside#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h4#0;n#div#1;n#aside#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/NewsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.846154">
+        <state vertical-scroll-proportion="-76.92308">
           <caret line="100" column="48" selection-start-line="100" selection-start-column="48" selection-end-line="100" selection-end-column="48" />
           <folding>
             <element signature="e#40#74#0#PHP" expanded="true" />
@@ -797,7 +693,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.5">
+        <state vertical-scroll-proportion="0.0">
           <caret line="169" column="46" selection-start-line="169" selection-start-column="46" selection-end-line="169" selection-end-column="46" />
           <folding />
         </state>
@@ -807,7 +703,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.047058824">
           <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -815,7 +710,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.047058824">
           <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -823,15 +717,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6117647">
           <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
-          <folding>
-            <element signature="e#396#436#0#HTML" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/News.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.3846154">
+        <state vertical-scroll-proportion="0.0">
           <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
           <folding />
         </state>
@@ -839,8 +730,60 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/news/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7176471">
-          <caret line="50" column="11" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="48" column="19" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/golonka/bbcodeparser/src/BBCodeParser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="74" column="10" selection-start-line="74" selection-start-column="10" selection-end-line="74" selection-end-column="10" />
+          <folding>
+            <marker date="1465138440724" expanded="true" signature="1269:1287" placeholder="..." />
+            <marker date="1465138440724" expanded="true" signature="1454:1470" placeholder="..." />
+            <marker date="1465138440724" expanded="true" signature="1640:1657" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/statistics/player-details.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.715517">
+          <caret line="16" column="75" selection-start-line="16" selection-start-column="75" selection-end-line="16" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.461538">
+          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/statistics/top-players.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.076923">
+          <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/statistics/round-reports.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7586207">
+          <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
           <folding />
         </state>
       </provider>

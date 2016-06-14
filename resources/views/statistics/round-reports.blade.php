@@ -33,7 +33,7 @@
                     </tbody>
                 </table>
             </div>
-            {!! $rounds->render() !!}
+            {!! $rounds->appends(Request::except('page'))->render() !!}
             <div id="loading" class="text-center"></div>
         </div>
 

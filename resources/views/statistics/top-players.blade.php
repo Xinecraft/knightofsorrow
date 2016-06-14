@@ -40,7 +40,7 @@
                     </tbody>
                 </table>
             </div>
-            {!! $players->render() !!}
+            {!! $players->appends(Request::except('page'))->render() !!}
             <div id="loading" class="text-center"></div>
         </div>
 
