@@ -224,7 +224,7 @@
                                             </tr>
                                             <tr>
                                                 <td class="col-1">
-                                                    <div class="player-records-icon ping"></div>
+                                                    <div class="player-records-icon deaths"></div>
                                                 </td>
                                                 <td class="col-2">
                                                     Death Streak
@@ -357,7 +357,7 @@
                                             </tr>
                                             <tr>
                                                 <td class="col-1">
-                                                    <div class="player-records-icon ping"></div>
+                                                    <div class="player-records-icon deaths"></div>
                                                 </td>
                                                 <td class="col-2">
                                                     Death Streak
@@ -490,7 +490,7 @@
                                             </tr>
                                             <tr>
                                                 <td class="col-1">
-                                                    <div class="player-records-icon ping"></div>
+                                                    <div class="player-records-icon deaths"></div>
                                                 </td>
                                                 <td class="col-2">
                                                     Death Streak
@@ -623,7 +623,7 @@
                                             </tr>
                                             <tr>
                                                 <td class="col-1">
-                                                    <div class="player-records-icon ping"></div>
+                                                    <div class="player-records-icon deaths"></div>
                                                 </td>
                                                 <td class="col-2">
                                                     Death Streak

@@ -2,10 +2,11 @@
 @section('main-container')
     <div class="content col-md-9">
 
-        <div class="well">
+        <div class="panel" style="padding: 20px;">
             <div style="padding-left:10px">
-                <h2 class="text">Rules:</h2>
-                <ul class="ruleslist">
+                <h3 class="text"><b>Rules of </b>&nbsp;<i title="thumb" class="tooltipster fa fa-thumbs-up fa-2x"></i> </h3>
+                <hr style="margin-top: 10px;margin-bottom: 10px">
+                <ul class="ruleslist" style="list-style-type: square">
                     <li>Using hacks is not allowed.</li>
                     <li>Be polite. Insulting others will not be tolerated.</li>
                     <li>Using bugs/glitches of any kind is not allowed.</li>

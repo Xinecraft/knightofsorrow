@@ -10,10 +10,6 @@
 |
 */
 
-Route::get('test',function(){
-    dd(App\Mail::conversation(36,32));
-});
-
 /**
  * Auth Controllers.
  */
@@ -187,3 +183,7 @@ Route::post('/messages/@{username}', ['as' => 'messages.store', 'uses' => 'MailC
 Route::get('/administrator/messages/@{username1}/@{username2}', ['middleware' => 'admin', 'as' => 'messages.showadmin', 'uses' => 'MailController@showadmin']);
 Route::delete('/messages/{id}', ['as' => 'messages.delete', 'uses' => 'MailController@destroy']);
 Route::get('messages/',['as' => 'messages.index', 'uses' => 'MailController@index']);
+
+Route::get('/test',function(){
+
+});

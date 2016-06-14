@@ -260,4 +260,12 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->hasMany('App\News');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function didyouknows()
+    {
+        return $this->hasMany('App\Didyouknow');
+    }
+
 }

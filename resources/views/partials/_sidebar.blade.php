@@ -33,6 +33,17 @@
         </ul>
     </div>
 
+    {{--Only display this section on homepage--}}
+    @if(Request::getRequestUri() == "/" || Request::getRequestUri() == "/home")
+
+        @if(\App\Didyouknow::count() > 0)
+        <div class="panel pad5" style="padding: 10px !important;">
+            <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Did You Know</h4>
+            <p class="small convert-emoji" style="color:rgb({{ rand(0,200) }},{{ rand(0,200) }},{{ rand(0,200) }});font-family: serif">{!!  BBCode::parseCaseInsensitive((htmlentities(\App\Didyouknow::get()->random()->body))) !!}</p>
+        </div>
+        @endif
+
     <script type="text/javascript" src="http://www.easypolls.net/ext/scripts/emPoll.js?p=5753d3d5e4b073540521b847"></script><a class="OPP-powered-by" href="https://www.murvey.com" style="text-decoration:none;"><div style="font: 9px arial; color: gray;">survey software</div></a>
 
+    @endif
 </aside>
