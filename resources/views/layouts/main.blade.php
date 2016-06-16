@@ -23,6 +23,8 @@
 <body>
 @include('partials._navbar')
 
+@include('partials._quickerrors')
+
 <div class="main container">
 @include('partials._sidebar')
 

@@ -12,8 +12,8 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="{{ set_active(['/','home']) }}"><a href="{{ route('home') }}">Home</a></li>
                 <li class="{{ set_active(['statistics*']) }}">{!! link_to_route('statistics-home','Statistics') !!}</li>
+                <li class="{{ set_active(['rules*']) }}"><a href="{{ route('rules') }}">Rules</a></li>
                 @if(Auth::check())
                 <li class="{{ set_active(['feeds*']) }}">{!! link_to_route('feeds-home','Feedline') !!}</li>
                 @endif
@@ -27,7 +27,7 @@
                         <li><a href="{{ route('chat.index') }}">Chat History</a></li>
                         <li><a href="">Clans</a></li>
                         <li><a href="">Forums</a></li>
-                        <li><a href="{{ route('rules') }}">Rules</a></li>
+                        {{--<li><a href="{{ route('rules') }}">Rules</a></li>--}}
                     </ul>
                 </li>
 

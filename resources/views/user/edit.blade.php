@@ -123,7 +123,11 @@
                         {!! Form::label('about', 'About Me:', ['class' => 'col-md-4 control-label']) !!}
                         <div class="col-md-7">
                             {!! Form::textarea('about',null,['class' => 'form-control']) !!}
+                            <span class="help-block text-info small">
+                                        BBCode supported.
+                                    </span>
                             @if ($errors->has('about'))
+                                <br>
                                 <span class="help-block">
                                         <strong>{{ $errors->first('about') }}</strong>
                                     </span>

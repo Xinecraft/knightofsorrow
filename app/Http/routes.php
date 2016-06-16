@@ -172,7 +172,7 @@ Route::post('/news/{id}/edit', ['middleware' => 'admin', 'as' => 'news.update', 
 /**
  * Server Chat View Log for Admins
  */
-Route::get('/chat-history', ['as' => 'chat.index', 'uses' => 'ChatController@index']);
+Route::get('/serverchat-history', ['as' => 'chat.index', 'uses' => 'ChatController@index']);
 
 /**
  * Messages/Mail Controller

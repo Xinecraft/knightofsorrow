@@ -8,6 +8,7 @@
         <div class="row well player-detail-summary no-margin">
             <div class="col-md-3">
                 <img class="left img-thumbnail" src="/images/game/chars/50/{{ $player->last_team."_".$player->loadout->body."_".$player->loadout->head }}.jpg">
+                {!! $player->ownerWithPicture !!}
             </div>
             <div class="col-md-6 text-center player-detail-summary-name">
                 <div class="name-as-title">
@@ -19,7 +20,7 @@
                         {{ $alias->name }}
                         @endunless
                     @empty
-                        No Aliases
+
                     @endforelse
                 </p>
             </div>
@@ -45,36 +46,36 @@
 
         <div class="row no-margin panel player-stats-container">
             {{-- Loadout Starts --}}
-            <div class="col-md-5 pad10 player-stats-loadout-container">
+            <div class="col-md-5 col-xs-12 pad10 player-stats-loadout-container">
 
                 <!-- LoadOut -->
                 <h5 class="no-margin" style="border-bottom: 2px dashed gray;margin-bottom: 10px !important;color: #2D2D2D;font-weight: bold;">
                     Latest Loadout</h5>
 
                 <div class="col-md-12 no-padding" style="border: 1px solid;margin-bottom: 10px !important;">
-                    <img title="{{ $player->loadoutPa }}" class="tooltipster" src="/images/game/weapons/128/item{{ $player->loadout->primary_weapon }}.jpg" style="width: 100%;height: auto">
+                    <img title="{{ $player->loadoutPa }}" class="tooltipster" src="/images/game/weapons/128/item{{ $player->loadout->primary_weapon }}.jpg" style="width: 100%;height: auto;max-height: 156px">
                     <p class="text-center" style="margin-top: 5px;"><strong>{{ $player->loadoutPw }}</strong></p>
                 </div>
                 <div class="col-md-12 no-padding" style="border: 1px solid;margin-bottom: 10px !important;">
-                    <img class="tooltipster" title="{{ $player->loadoutSa }}" src="/images/game/weapons/128/item{{ $player->loadout->secondary_weapon }}.jpg" style="width: 100%;height: auto">
+                    <img class="tooltipster" title="{{ $player->loadoutSa }}" src="/images/game/weapons/128/item{{ $player->loadout->secondary_weapon }}.jpg" style="width: 100%;height: auto;max-height: 156px">
                     <p class="text-center" style="margin-top: 5px;"><strong>{{ $player->loadoutSw }}</strong></p>
                 </div>
 
                 <div class="col-md-12 no-padding" style="border: 1px solid;margin-bottom: 10px !important;">
-                    <div class="col-md-4 no-padding"><img class="tooltipster" title="{{ $player->loadoutEq1 }}" src="/images/game/weapons/64/item{{ $player->loadout->equip_one }}.jpg" style="width: 100%;"></div>
-                    <div class="col-md-4 no-padding"><img class="tooltipster" title="{{ $player->loadoutEq2 }}" src="/images/game/weapons/64/item{{ $player->loadout->equip_two }}.jpg" style="width: 100%;"></div>
-                    <div class="col-md-4 no-padding"><img class="tooltipster" title="{{ $player->loadoutEq3 }}" src="/images/game/weapons/64/item{{ $player->loadout->equip_three }}.jpg" style="width: 100%;"></div>
-                    <div class="col-md-4 no-padding"><img class="tooltipster" title="{{ $player->loadoutEq4 }}" src="/images/game/weapons/64/item{{ $player->loadout->equip_four }}.jpg" style="width: 100%;"></div>
-                    <div class="col-md-4 no-padding"><img class="tooltipster" title="{{ $player->loadoutEq5 }}" src="/images/game/weapons/64/item{{ $player->loadout->equip_five }}.jpg" style="width: 100%;"></div>
-                    <div class="col-md-4 no-padding"><img class="tooltipster" title="{{ $player->loadoutBr }}" src="/images/game/weapons/64/item{{ $player->loadout->breacher }}.jpg" style="width: 100%;"></div>
+                    <div class="col-md-4 col-xs-4 no-padding"><img class="tooltipster" title="{{ $player->loadoutEq1 }}" src="/images/game/weapons/64/item{{ $player->loadout->equip_one }}.jpg" style="width: 100%;"></div>
+                    <div class="col-md-4 col-xs-4 no-padding"><img class="tooltipster" title="{{ $player->loadoutEq2 }}" src="/images/game/weapons/64/item{{ $player->loadout->equip_two }}.jpg" style="width: 100%;"></div>
+                    <div class="col-md-4 col-xs-4 no-padding"><img class="tooltipster" title="{{ $player->loadoutEq3 }}" src="/images/game/weapons/64/item{{ $player->loadout->equip_three }}.jpg" style="width: 100%;"></div>
+                    <div class="col-md-4 col-xs-4 no-padding"><img class="tooltipster" title="{{ $player->loadoutEq4 }}" src="/images/game/weapons/64/item{{ $player->loadout->equip_four }}.jpg" style="width: 100%;"></div>
+                    <div class="col-md-4 col-xs-4 no-padding"><img class="tooltipster" title="{{ $player->loadoutEq5 }}" src="/images/game/weapons/64/item{{ $player->loadout->equip_five }}.jpg" style="width: 100%;"></div>
+                    <div class="col-md-4 col-xs-4 no-padding"><img class="tooltipster" title="{{ $player->loadoutBr }}" src="/images/game/weapons/64/item{{ $player->loadout->breacher }}.jpg" style="width: 100%;"></div>
                     <p class="text-center" style="margin-top: 5px;width: 100%;float: left;text-align: center;"><strong>Equipments</strong>
                     </p>
                 </div>
 
-                <div class="col-md-12 no-padding" style="margin-bottom: 8px !important">
-                    <div class="col-md-5 no-padding" style="border: 1px solid;"><img class="tooltipster" title="{{ $player->loadoutHead }}" src="/images/game/weapons/128/item{{ $player->loadout->head }}.jpg" style="width: 100%;">
+                <div class="col-md-12 col-xs-12 no-padding" style="margin-bottom: 8px !important">
+                    <div class="col-md-5 col-xs-5 no-padding" style="border: 1px solid;"><img class="tooltipster" title="{{ $player->loadoutHead }}" src="/images/game/weapons/128/item{{ $player->loadout->head }}.jpg" style="width: 100%;">
                         <p class="text-center" style="margin-top: 5px;"><strong>{{ $player->loadoutHead }}</strong></p></div>
-                    <div class="col-md-5 right no-padding" style="border: 1px solid"><img class="tooltipster" title="{{ $player->loadoutBody }}" src="/images/game/weapons/128/item{{ $player->loadout->body }}.jpg" style="width: 100%;">
+                    <div class="col-md-5 col-xs-5 right no-padding" style="border: 1px solid"><img class="tooltipster" title="{{ $player->loadoutBody }}" src="/images/game/weapons/128/item{{ $player->loadout->body }}.jpg" style="width: 100%;">
                         <p class="text-center" style="margin-top: 5px;"><strong>{{ $player->loadoutBody }}</strong></p>
                     </div>
                 </div>
@@ -82,7 +83,7 @@
             {{-- / Loadout Ends --}}
 
             {{-- General Statistics --}}
-            <div class="col-md-7 pad10" style="width: 57% !important;background-color: #ffffff;margin-top: 5px;border: 1px solid;margin-left: 10px">
+            <div class="col-md-7 col-xs-12 general-statistics pad10" style="background-color: #ffffff;margin-top: 5px;border: 1px solid;">
                 <h5 class="no-margin" style="border-bottom: 2px dashed gray;margin-bottom: 10px !important;color: #2D2D2D;font-weight: bold;">
                     General Statistics</h5>
 
@@ -347,7 +348,7 @@
             <!-- / General Stats Ends -->
 
             <!-- Gauge Statistics -->
-            <div class="col-md-12 pad10" style="background-color: #ffffff;margin-top: 5px;border: 1px solid;">
+            <div class="col-md-12 col-xs-12 pad10" style="background-color: #ffffff;margin-top: 5px;border: 1px solid;">
                 <div class="col-md-2 no-margin no-padding">
                     <p class="no-margin text-center gaugeheading">Score / Min</p>
                     <canvas id="gauge-spm" style="width: 8em" data-spm="{{ $player->score_per_min }}"></canvas>

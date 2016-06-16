@@ -100,7 +100,7 @@
                         <div class="panel-body">
                             <h4>We have currently:</h4>
                             <p><kbd>{{ \App\User::count() }}</kbd> registered members.</p>
-                            <p><kbd>{{ \App\PlayerTotal::count() }}</kbd> players played at server.</p>
+                            <p><kbd>{{ \App\PlayerTotal::count() }}</kbd> players served.</p>
                             <p><kbd>{{ \App\Game::count() }}</kbd> round played.</p>
                             <p><kbd>{{ \App\Chat::count() }}</kbd> server chat logs.</p>
                             <p><kbd>{{ \App\Shout::count() }}</kbd> shouts.</p>

@@ -255,7 +255,7 @@ class UserController extends Controller
             'gender' => $gender,
         ]);
 
-        return \Redirect::back()->with('message',"Profile has been updated!)");
+        return \Redirect::back()->with('message',"Profile has been updated!");
 
     }
 

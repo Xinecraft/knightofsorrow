@@ -653,7 +653,7 @@ $('.composemailusername').typeahead({
 
         if(parseInt(data.shout.id)%2 == 0)
         {
-            $('#shoutbox-chat').append("<li class='left clearfix'><span class='chat-img pull-left'><img src='"+data.shout.profile_pic+"' width='40' height='40' alt='User Avatar' class='img-circle'/> \
+            $('#shoutbox-chat').append("<li class='left clearfix col-md-12 no-padding'><span class='chat-img pull-left'><img src='"+data.shout.profile_pic+"' width='40' height='40' alt='User Avatar' class='img-circle'/> \
             </span> \
             <div class='chat-body clearfix'> \
             <div class='header text-left'> \
@@ -672,7 +672,7 @@ $('.composemailusername').typeahead({
         }
         else
         {
-            $('#shoutbox-chat').append("<li class='right clearfix'><span class='chat-img pull-right'> \
+            $('#shoutbox-chat').append("<li class='right clearfix col-md-12 no-padding'><span class='chat-img pull-right'> \
         <img src='"+data.shout.profile_pic+"' width='40' height='40' alt='User Avatar' class='img-circle'/> \
             </span> \
             <div class='chat-body clearfix'> \
@@ -797,6 +797,12 @@ $('.composemailusername').typeahead({
          Example uses jQuery */
         $.get("http://"+window.location.hostname+"/user/ping");
     }, 30000);
+
+    /**
+     * Function to autohide Notification Box
+     *
+     */
+    $('.autohide').delay(5000).slideToggle();
 
 });
 

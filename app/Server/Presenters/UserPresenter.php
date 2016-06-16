@@ -83,6 +83,18 @@ class UserPresenter extends BasePresenter
         return "<b>".link_to_route('round-detail',$playerTotal->lastGame->created_at->diffForHumans(),[$playerTotal->last_game_id])."</b>";
     }
 
+    /**
+     * <img class="tooltipster" title="{{ $player->rank->name }}" src="{{ $player->rankImage }}" alt="" height="22px"/>
+     */
+    public function linkPlayerRank()
+    {
+        $playerTotal = $this->wrappedObject->PlayerTotal();
+        if($playerTotal == null || empty($playerTotal) || $playerTotal == "")
+            return "";
+
+        return "<img class='tooltipster' title='".$playerTotal->rank->name."' src='".url('/images/game/insignia/')."/{$playerTotal->rank->id}".".png' alt='' height='22px'/>";
+    }
+
     public function age()
     {
         $age = $this->wrappedObject->dob;
@@ -105,6 +117,22 @@ class UserPresenter extends BasePresenter
         {
             return "Member";
         }
+    }
+
+    public function roleImageLink()
+    {
+        try
+        {
+            $role = $this->wrappedObject->roles()->first()->name;
+            $r = $role;
+        }
+        catch(\Exception $e)
+        {
+            $r = "guest";
+        }
+
+        return url('/images/user_ranks')."/".$r.".png";
+
     }
 
     public function joinedOn()

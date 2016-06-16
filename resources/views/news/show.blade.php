@@ -2,7 +2,6 @@
 @section('title',$news->title)
 @section('main-container')
     <div class="content col-md-8">
-        @include('partials._errors')
 
         <div class="col-md-12 panel" style="padding: 15px">
             <h3>{{ $news->title }}</h3>

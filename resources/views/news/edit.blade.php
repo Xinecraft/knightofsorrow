@@ -2,7 +2,7 @@
 @section('title', 'Edit News')
 @section('main-container')
     <div class="content col-md-9">
-        {{--@include('partials._errors')--}}
+        @include('partials._errors')
 
         <div class="col-md-10 panel composemail" style="padding:10px">
             <h5 class="info-title" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Edit News</h5>

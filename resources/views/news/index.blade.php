@@ -2,8 +2,6 @@
 @section('title', 'News Archive')
 @section('main-container')
     <div class="content col-md-8">
-        @include('partials._errors')
-
         <div class="col-md-12 panel" style="padding: 15px">
             <h3>News Archive</h3>
             <hr>

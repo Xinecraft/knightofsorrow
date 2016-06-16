@@ -88,7 +88,7 @@
             </div> {{--Live Server Viewer Ends--}}
         </div> {{--Live Server Players,Top Players and Server Viewer Row Ends--}}
 
-        <div class="row round-reports">
+        <div class="row round-reports hidden-xs">
             <div class="col-md-12 panel panel-default no-padding no-margin no-left-padding">
                 <div class="panel-heading"><span class="info-title">Round Reports</span></div>
                 <div class="panel-body">
@@ -118,7 +118,7 @@
             </div>
         </div>
 
-        <div class="row player-records">
+        <div class="row player-records hidden-xs">
             <div class="panel panel-default">
                 <div class="panel-heading info-title">Player Records</div>
                 <div class="panel-body">

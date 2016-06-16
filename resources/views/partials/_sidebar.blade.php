@@ -39,7 +39,7 @@
         @if(\App\Didyouknow::count() > 0)
         <div class="panel pad5" style="padding: 10px !important;">
             <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Did You Know</h4>
-            <p class="small convert-emoji" style="color:rgb({{ rand(0,200) }},{{ rand(0,200) }},{{ rand(0,200) }});font-family: serif">{!!  BBCode::parseCaseInsensitive((htmlentities(\App\Didyouknow::get()->random()->body))) !!}</p>
+            <p class="small convert-emoji" style="color:rgb({{ rand(0,200) }},{{ rand(0,200) }},{{ rand(0,200) }});">{!!  BBCode::parseCaseInsensitive((htmlentities(\App\Didyouknow::get()->random()->body))) !!}</p>
         </div>
         @endif
 

@@ -1,7 +1,6 @@
 @extends('layouts.main')
 @section('main-container')
     <div class="content col-md-9">
-        @include('partials._errors')
 
         <div class="rounds panel panel-default">
             <div class="panel-heading"><strong>All SWAT4 Servers</strong></div>

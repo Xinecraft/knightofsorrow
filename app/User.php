@@ -62,6 +62,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     public function getGravatarLink($size=40)
     {
+        //return url('img/profile.png');
          //gravatar.com/avatar/{id}?d=mm&s=20
         $id = md5($this->email);
         $link = "//gravatar.com/avatar/$id/?d=monsterid&s=$size";
