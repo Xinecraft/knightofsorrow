@@ -136,5 +136,10 @@ class NewsController extends Controller
         {
             return redirect()->back()->with('error','Not enough permissions');
         }
+
+        $news = News::findOrFail($id);
+        $news->delete();
+
+        return redirect()->back()->with('message','News deleted!');
     }
 }

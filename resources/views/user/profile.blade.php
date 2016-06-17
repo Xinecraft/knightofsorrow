@@ -101,17 +101,42 @@
                             <div class="col-md-5">
                                 <h3 class="no-margin hero-name {{ $user->banned ? 'linethru' : '' }}">{{ $user->name }}</h3>
                                 <h4 class="">{!! link_to_route('user.show',"@".$user->username,$user->username,['class' =>'username']) !!}</h4>
+
+
                                 <img class="tooltipster image" src="{{ $user->roleImageLink }}" alt="{{ $user->role }}" title="{{ $user->role }}">
 
-                                @unless($user->about == null || $user->about == '')
+                            @unless($user->about == null || $user->about == '')
                                 <p class="convert-emoji small text-muted well well-sm about-well">{!! BBCode::parseCaseInsensitive((htmlentities($user->about))) !!}</p>
                                 @endunless
-                                <div class="timeago-content">
+                                <div class="timeago-content" style="margin-bottom: 5px">
                                     <kbd class="text-muted small no-margin">Joined : {{ $user->joinedOn }}</kbd>
                                     <br>
                                     <kbd class="text-muted small no-margin">Last Seen : {{ $user->lastSeenOn }}</kbd>
                                 </div>
+
+                                @if(Auth::check() && Auth::user()->isAdmin())
+                                <div class="col-md-12 well well-sm about-well">
+                                    {!! Form::open(['route'=> ['user.changerole',$user->username],'class' => 'form form-inline col-md-3']) !!}
+                                    {!! Form::hidden('user_id',$user->id) !!}
+                                    {!! Form::hidden('job','demote') !!}
+                                    <button title="Demote {{ $user->displayName() }} to previous rank" type="submit" class="tooltipster btn btn-danger btn-xs confirm">
+                                        <i class="fa fa-btn fa-step-backward"></i>
+                                    </button>
+                                    {!! Form::close() !!}
+                                    <div class="col-md-6 text-center">
+                                        {{ $user->role }}
+                                    </div>
+                                    {!! Form::open(['route'=> ['user.changerole',$user->username],'class' => 'form form-inline col-md-3']) !!}
+                                    {!! Form::hidden('user_id',$user->id) !!}
+                                    {!! Form::hidden('job','promote') !!}
+                                    <button title="Promote {{ $user->displayName() }} to next rank" type="submit" class="tooltipster btn btn-info btn-xs confirm">
+                                        <i class="fa fa-btn fa-step-forward"></i>
+                                    </button>
+                                    {!! Form::close() !!}
+                                </div>
+                                @endif
                             </div>
+
                             <div class="col-md-2">
                                 {!! Html::image("/images/flags_new/flags-iso/shiny/64/".$user->country->countryCode.".png",null,['class' => 'img user-flag tooltipster', 'title' => $user->country->countryName]) !!}
                             </div>

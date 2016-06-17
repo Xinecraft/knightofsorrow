@@ -298,4 +298,72 @@ class UserController extends Controller
         return \Redirect::back()->with('error',"Error! Something not well.");
     }
 
+
+    /**
+     * Change role of user
+     *
+     * @param Request $request
+     * @param $username
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function changeRole(Request $request,$username)
+    {
+        if(!$request->user()->isAdmin())
+        {
+            return \Redirect::back()->with('error',"Aw! You are not any Admin ;)");
+        }
+
+        if ($request->username != $username) {
+            return \Redirect::back()->with('error',"Aw! Please don't try to mess up the code ;)");
+        }
+
+        $user = User::findOrFail($request->user_id);
+
+        if ($request->username != $user->username) {
+            return \Redirect::back()->with('error',"Aw! Please don't try to mess up the code ;)");
+        }
+
+        if($request->job == 'promote') {
+            if ($request->user()->roles()->first()->id == ($user->roles()->first()->id) - 1) {
+                return \Redirect::back()->with('error', "Sorry! Not enough permissions");
+            }
+
+            // Cannot promote if already a SA
+            if ($user->roles()->first()->id <= 2)
+                return \Redirect::back()->with('error', "Sorry! No more higher rank.");
+
+            $role = $user->roles()->first();
+            $prevRoleID = $role->id;
+            $nextRoleID = $prevRoleID - 1;
+            $user->detachRole($role);
+            $user->attachRole($nextRoleID);
+
+            return \Redirect::back()->with('message', "User promoted!");
+
+        }
+
+        elseif($request->job == 'demote') {
+            if ($request->user()->roles()->first()->id >= $user->roles()->first()->id) {
+                return \Redirect::back()->with('error', "Sorry! Not enough permissions");
+            }
+
+            // Cannot demote if already a member
+            if ($user->roles()->first()->id >= 5)
+                return \Redirect::back()->with('error', "Sorry! No more lower rank.");
+
+            $role = $user->roles()->first();
+            $prevRoleID = $role->id;
+            $nextRoleID = $prevRoleID + 1;
+            $user->detachRole($role);
+            $user->attachRole($nextRoleID);
+
+            return \Redirect::back()->with('message', "User demoted!");
+        }
+        else
+        {
+            return \Redirect::back()->with('error', "Whoops! Unknown error");
+        }
+
+    }
+
 }
