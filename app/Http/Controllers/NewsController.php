@@ -130,8 +130,11 @@ class NewsController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+        if(!$request->url()->isSuperAdmin())
+        {
+            return redirect()->back()->with('error','Not enough permissions');
+        }
     }
 }

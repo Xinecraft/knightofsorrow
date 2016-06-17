@@ -529,7 +529,7 @@
         </div>
 
 
-        <div class="row no-margin player-round-reports">
+        <div class="row no-margin player-round-reports" style="margin-bottom: 10px !important;">
             <div class="col-md-12 panel panel-default no-padding no-margin no-left-padding">
                 <div class="panel-heading"><span class="info-title">Last Rounds Played</span></div>
                 <div class="panel-body">

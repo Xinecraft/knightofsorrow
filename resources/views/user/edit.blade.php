@@ -42,7 +42,7 @@
                         <select class="form-control" name="ingameplayer" id="ingameplayer">
                             <option value="">Choose one</option>
                             @foreach($players as $player)
-                                <option value="{{ $player->name }}">{{ $player->name }}</option>
+                                <option value="{{ $player->name }}" {{ $player->name == $user->player_totals_name ? "selected" : "" }}>{{ $player->name }}</option>
                             @endforeach
                         </select>
                     </div>
