@@ -88,6 +88,7 @@ Route::patch('/toggleban/@{username}',['middleware' => 'auth', 'as' => 'user.tog
 Route::post('/changerole/@{username}',['middleware' => ['auth','admin'], 'as' => 'user.changerole', 'uses' => 'UserController@changeRole']);
 Route::get('/viewserverkeys',['middleware' => 'auth','as' => 'user.viewkeys', 'uses' => 'UserController@viewServerCredentials']);
 Route::post('/viewserverkeys',['middleware' => 'auth','as' => 'user.viewkeys.post', 'uses' => 'UserController@postServerCredentials']);
+Route::get('/admins-list',['as' => 'admin.list', 'uses' => 'UserController@adminList']);
 
 /*
  * Removed because new messaging system has be developed!
@@ -186,6 +187,7 @@ Route::post('/messages/@{username}', ['as' => 'messages.store', 'uses' => 'MailC
 Route::get('/administrator/messages/@{username1}/@{username2}', ['middleware' => 'admin', 'as' => 'messages.showadmin', 'uses' => 'MailController@showadmin']);
 Route::delete('/messages/{id}', ['as' => 'messages.delete', 'uses' => 'MailController@destroy']);
 Route::get('messages/',['as' => 'messages.index', 'uses' => 'MailController@index']);
+
 
 Route::get('/test',function(){
 

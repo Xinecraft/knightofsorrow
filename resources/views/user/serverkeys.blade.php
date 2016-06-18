@@ -1,5 +1,5 @@
 @extends('layouts.main')
-
+@section('title', 'Server Credentials')
 @section('main-container')
     <div class="content col-md-9">
         <div class="row">

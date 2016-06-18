@@ -79,6 +79,8 @@
                                 @if($message->seen_at == null && $message->reciever_id == Auth::user()->id)
                                     <p><span class="label label-info">New</span></p>
                                     {{ $message->hasBeenSeen() }}
+                                @elseif($message->seen_at == null)
+                                    <p><span class="label label-info">Not seen</span></p>
                                 @endif
                                 <p class="convert-emoji">{!! nl2br(htmlentities($message->message)) !!}</p>
                             </div>
@@ -103,6 +105,8 @@
                                 @if($message->seen_at == null && $message->reciever_id == Auth::user()->id)
                                     <p><span class="label label-info">New</span></p>
                                     {{ $message->hasBeenSeen() }}
+                                @elseif($message->seen_at == null)
+                                    <p><span class="label label-info">Not seen</span></p>
                                 @endif
                                 <p class="convert-emoji">{!! nl2br(htmlentities($message->message)) !!}</p>
                             </div>

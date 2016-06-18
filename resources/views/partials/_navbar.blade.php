@@ -27,8 +27,9 @@
                         <li>{!! link_to_route('servers.list','Servers') !!}</li>
                         <li><a href="{{ route('news.index') }}">News</a></li>
                         <li><a href="{{ route('chat.index') }}">Chat History</a></li>
-                        <li><a href="">Clans</a></li>
-                        <li><a href="">Forums</a></li>
+                        <li><a href="{{ route('admin.list') }}">Admins List</a></li>
+                        {{--<li><a href="">Clans</a></li>--}}
+                        {{--<li><a href="">Forums</a></li>--}}
                         {{--<li><a href="{{ route('rules') }}">Rules</a></li>--}}
                     </ul>
                 </li>

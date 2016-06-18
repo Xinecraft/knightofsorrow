@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Role;
 use App\User;
 use Auth;
 use Illuminate\Http\Request;
@@ -436,6 +437,13 @@ class UserController extends Controller
         {
             return \Redirect::back()->with('error', "Whoops! Password Incorrect.");
         }
+    }
+
+    public function adminList()
+    {
+        $role = Role::where('id','<','4')->where('id','>','1')->with('users')->get();
+
+        return view('user.adminlist')->withRoles($role);
     }
 
 }
