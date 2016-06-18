@@ -20,7 +20,7 @@
     </div>
     -->
     <div class="panel pad5" style="padding: 10px !important;">
-        <small class="pull-right"><i><b><a href="http://kos.dev/news">» view all</a></b></i></small>
+        <small class="pull-right"><i><b><a href="{{ url('news.index') }}">» view all</a></b></i></small>
         <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Latest News</h4>
 
         <ul class="no-padding">
