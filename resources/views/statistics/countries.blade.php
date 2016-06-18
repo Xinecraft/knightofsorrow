@@ -18,7 +18,7 @@
                         <th class="col-md-2">{!! sort_countries_by('total_players','Total Players') !!}</th>
                         <th class="col-md-2">{!! sort_countries_by('total_score','Total Score') !!}</th>
                         <th class="col-md-2">{!! sort_countries_by('total_points','Total Points') !!}</th>
-                        <th class="col-md-2 text-right">{!! sort_countries_by('total_time_played','Time') !!}</th>
+                        <th class="col-md-2 text-right">{!! sort_countries_by('total_time_played','TimePlayed') !!}</th>
                     </tr>
                     </thead>
                     <tbody id="data-items">

@@ -19,7 +19,7 @@
                         <th class="col-md-1">{!! sort_country_players_by('player_rating','Rating',$countryId,$countryName) !!}</th>
                         <th class="col-md-1">{!! sort_country_players_by('total_score','Score',$countryId,$countryName) !!}</th>
                         <th class="col-md-1">{!! sort_country_players_by('total_points','Points',$countryId,$countryName) !!}</th>
-                        <th class="col-md-1">{!! sort_country_players_by('total_time_played','Time',$countryId,$countryName) !!}</th>
+                        <th class="col-md-1">{!! sort_country_players_by('total_time_played','Time(h:m)',$countryId,$countryName) !!}</th>
                         <th class="col-md-2 text-right">{!! sort_country_players_by('last_game_id','Last Seen',$countryId,$countryName) !!}</th>
                     </tr>
                     </thead>
