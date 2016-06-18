@@ -328,8 +328,8 @@ class UserController extends Controller
 
             // If User role is equal to the one other person role - 1
             // If user admin 3 other also admin 3
-            // 3 >= 3 -> True
-            if ($request->user()->roles()->first()->id >= ($user->roles()->first()->id)) {
+            // 3 >= 4 -> True
+            if ($request->user()->roles()->first()->id >= ($user->roles()->first()->id)-1) {
                 return \Redirect::back()->with('error', "Sorry! Not enough permissions");
             }
 
