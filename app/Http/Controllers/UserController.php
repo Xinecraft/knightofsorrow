@@ -287,6 +287,11 @@ class UserController extends Controller
             return \Redirect::back()->with('error',"You don't have rights to ban this User");
         }
 
+        if($request->user()->roles()->first()->id == >$user->roles()->first()->id)
+        {
+            return \Redirect::back()->with('error',"You don't have rights to ban this User");
+        }
+
         if ($user->banned == 1) {
             $user->banned = 0;
             $user->save();
