@@ -19,7 +19,7 @@
                         <th class="col-md-1">{!! sort_players_by('player_rating','Rating') !!}</th>
                         <th class="col-md-1">{!! sort_players_by('total_score','Score') !!}</th>
                         <th class="col-md-1">{!! sort_players_by('total_points','Points') !!}</th>
-                        <th class="col-md-1">{!! sort_players_by('total_time_played','Time') !!}</th>
+                        <th class="col-md-1">{!! sort_players_by('total_time_played','Time(h:m)') !!}</th>
                         <th class="col-md-2 text-right">{!! sort_players_by('last_game_id','Last Seen') !!}</th>
                     </tr>
                     </thead>
