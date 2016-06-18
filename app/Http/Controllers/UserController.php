@@ -325,7 +325,11 @@ class UserController extends Controller
         }
 
         if($request->job == 'promote') {
-            if ($request->user()->roles()->first()->id == ($user->roles()->first()->id) - 1) {
+
+            // If User role is equal to the one other person role - 1
+            // If user admin 3 other also admin 3
+            // 3 >= 3-1 = 2 -> False
+            if ($request->user()->roles()->first()->id >= ($user->roles()->first()->id) - 1) {
                 return \Redirect::back()->with('error', "Sorry! Not enough permissions");
             }
 
