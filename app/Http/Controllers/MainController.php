@@ -192,7 +192,7 @@ class MainController extends Controller
         //Latest Feeds
         $feeds  = Status::latest()->limit(5)->get();
 
-        $activeUsers = User::orderBy('updated_at','DESC')->limit(20)->get();
+        $activeUsers = User::orderBy('updated_at','DESC')->limit(30)->get();
 
         $array = [
             'topPlayers' => $topPlayers,
