@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e189236c-c3e7-488f-b221-e9fb727e1c1d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/messages/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/messages/show.blade.php" />
     </list>
     <ignored path="kos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -65,11 +64,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/messages/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7692308">
-              <caret line="128" column="85" selection-start-line="128" selection-start-column="85" selection-end-line="128" selection-end-column="85" />
+            <state vertical-scroll-proportion="-9.230769">
+              <caret line="124" column="34" selection-start-line="124" selection-start-column="34" selection-end-line="124" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -85,11 +84,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_navbar.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="_navbar.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/partials/_navbar.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.769231">
-              <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.33333334">
+              <caret line="36" column="166" selection-start-line="36" selection-start-column="159" selection-end-line="36" selection-end-column="166" />
               <folding />
             </state>
           </provider>
@@ -436,7 +435,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="Mail&#9;null&#9;null&#10;Messa&#9;null&#9;null&#10;User&#9;FILE&#9;file://C:/wamp/www/kos/app/User.php&#10;nav&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;.env&#9;FILE&#9;file://C:/wamp/www/kos/.env&#10;AuthC&#9;null&#9;null&#10;term&#9;ACTION&#9;ActivateTerminalToolWindow&#10;routes&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/routes.php&#10;boo&#9;FILE&#9;file://C:/wamp/www/kos/public/css/bootstrap.css&#10;fo&#9;FILE&#9;file://C:/wamp/www/kos/public/font-awesome/css/font-awesome.css&#10;profile&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/user/profile.blade.php&#10;app.less&#9;FILE&#9;file://C:/wamp/www/kos/resources/assets/less/app.less&#10;NewsC&#9;null&#9;null&#10;gulpf&#9;FILE&#9;file://C:/wamp/www/kos/gulpfile.js&#10;boot&#9;FILE&#9;file://C:/wamp/www/kos/public/css/bootstrap.css&#10;player&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/statistics/player-details.blade.php&#10;edit.blade&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/user/edit.blade.php&#10;main&#9;FILE&#9;file://C:/wamp/www/kos/public/js/main.js&#10;_shout&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_shoutbox.blade.php&#10;main.js&#9;FILE&#9;file://C:/wamp/www/kos/public/js/main.js&#10;font&#9;FILE&#9;file://C:/wamp/www/kos/public/font-awesome/css/font-awesome.css&#10;pro&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/user/profile.blade.php&#10;_sid&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;home&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/home.blade.php&#10;Play&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Presenters/PlayerTotalPresenter.php&#10;app&#9;FILE&#9;file://C:/wamp/www/kos/resources/assets/less/app.less&#10;bootstrap.c&#9;FILE&#9;file://C:/wamp/www/kos/public/css/bootstrap.css&#10;Player&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Presenters/PlayerTotalPresenter.php&#10;app.l&#9;FILE&#9;file://C:/wamp/www/kos/resources/assets/less/app.less&#10;ter&#9;ACTION&#9;ActivateTerminalToolWindow&#10;prof&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/user/profile.blade.php&#10;_nav&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;PlayerTot&#9;null&#9;null&#10;PlayerT&#9;null&#9;null&#10;UserPre&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Presenters/UserPresenter.php&#10;players&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/statistics/top-players.blade.php&#10;font-a&#9;FILE&#9;file://C:/wamp/www/kos/public/font-awesome/css/font-awesome.css&#10;UserPr&#9;null&#9;null&#10;UserRepo&#9;null&#9;null&#10;index&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/messages/index.blade.php&#10;route&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/routes.php&#10;qui&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_quickerrors.blade.php&#10;Mai&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/MailController.php&#10;rout&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/routes.php&#10;welc&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/welcome.blade.php&#10;UserC&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/UserController.php&#10;showa&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/messages/showadmin.blade.php&#10;show&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/messages/show.blade.php&#10;profil&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/user/profile.blade.php&#10;ServerC&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/ServerController.php" />
+    <property name="SearchEverywhereHistoryKey" value="nav&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;Mail&#9;null&#9;null&#10;Messa&#9;null&#9;null&#10;User&#9;FILE&#9;file://C:/wamp/www/kos/app/User.php&#10;.env&#9;FILE&#9;file://C:/wamp/www/kos/.env&#10;AuthC&#9;null&#9;null&#10;term&#9;ACTION&#9;ActivateTerminalToolWindow&#10;routes&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/routes.php&#10;boo&#9;FILE&#9;file://C:/wamp/www/kos/public/css/bootstrap.css&#10;fo&#9;FILE&#9;file://C:/wamp/www/kos/public/font-awesome/css/font-awesome.css&#10;profile&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/user/profile.blade.php&#10;app.less&#9;FILE&#9;file://C:/wamp/www/kos/resources/assets/less/app.less&#10;NewsC&#9;null&#9;null&#10;gulpf&#9;FILE&#9;file://C:/wamp/www/kos/gulpfile.js&#10;boot&#9;FILE&#9;file://C:/wamp/www/kos/public/css/bootstrap.css&#10;player&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/statistics/player-details.blade.php&#10;edit.blade&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/user/edit.blade.php&#10;main&#9;FILE&#9;file://C:/wamp/www/kos/public/js/main.js&#10;_shout&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_shoutbox.blade.php&#10;main.js&#9;FILE&#9;file://C:/wamp/www/kos/public/js/main.js&#10;font&#9;FILE&#9;file://C:/wamp/www/kos/public/font-awesome/css/font-awesome.css&#10;pro&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/user/profile.blade.php&#10;_sid&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;home&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/home.blade.php&#10;Play&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Presenters/PlayerTotalPresenter.php&#10;app&#9;FILE&#9;file://C:/wamp/www/kos/resources/assets/less/app.less&#10;bootstrap.c&#9;FILE&#9;file://C:/wamp/www/kos/public/css/bootstrap.css&#10;Player&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Presenters/PlayerTotalPresenter.php&#10;app.l&#9;FILE&#9;file://C:/wamp/www/kos/resources/assets/less/app.less&#10;ter&#9;ACTION&#9;ActivateTerminalToolWindow&#10;prof&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/user/profile.blade.php&#10;_nav&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;PlayerTot&#9;null&#9;null&#10;PlayerT&#9;null&#9;null&#10;UserPre&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Presenters/UserPresenter.php&#10;players&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/statistics/top-players.blade.php&#10;font-a&#9;FILE&#9;file://C:/wamp/www/kos/public/font-awesome/css/font-awesome.css&#10;UserPr&#9;null&#9;null&#10;UserRepo&#9;null&#9;null&#10;index&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/messages/index.blade.php&#10;route&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/routes.php&#10;qui&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_quickerrors.blade.php&#10;Mai&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/MailController.php&#10;rout&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/routes.php&#10;welc&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/welcome.blade.php&#10;UserC&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/UserController.php&#10;showa&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/messages/showadmin.blade.php&#10;show&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/messages/show.blade.php&#10;profil&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/user/profile.blade.php&#10;ServerC&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/ServerController.php" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
   </component>
   <component name="RunManager">
@@ -852,14 +851,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/partials/_navbar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.769231">
-          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.0">
@@ -902,8 +893,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/messages/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7692308">
-          <caret line="128" column="85" selection-start-line="128" selection-start-column="85" selection-end-line="128" selection-end-column="85" />
+        <state vertical-scroll-proportion="-9.230769">
+          <caret line="124" column="34" selection-start-line="124" selection-start-column="34" selection-end-line="124" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/partials/_navbar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="36" column="166" selection-start-line="36" selection-start-column="159" selection-end-line="36" selection-end-column="166" />
           <folding />
         </state>
       </provider>

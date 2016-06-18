@@ -34,7 +34,7 @@
                 </li>
 
                 @if(Auth::check() && Auth::user()->receivedMessagesUnseen()->count() > 0)
-                    <li class="text-bold {{ set_active(['messages*']) }}">{!! link_to_route('messages.index',Auth::user()->receivedMessagesUnseen()->count()." new messages") !!} </li>
+                    <li style="text-decoration: overline;" class="text-bold {{ set_active(['messages*']) }}">{!! link_to_route('messages.index',Auth::user()->receivedMessagesUnseen()->count()." new messages") !!} </li>
                 @endif
 
             </ul>
