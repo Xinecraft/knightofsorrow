@@ -233,6 +233,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->hasRole(['leader','superadmin']);
     }
 
+    public function isSubAdmin()
+    {
+        return $this->hasRole(['elder','admin','leader','superadmin']);
+    }
+
     /**
      * Function returns playertotal name or username which avail first.
      *

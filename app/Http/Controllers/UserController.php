@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Auth;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -41,14 +42,14 @@ class UserController extends Controller
      */
     public function showOwnProfile()
     {
-        $user = \Auth::user();
+        $user = Auth::user();
 
         return view('user.profile')->with('user', $user);
     }
 
     public function postFollow()
     {
-        $user = \Auth::user();
+        $user = Auth::user();
         $followee = \Input::get('user_id');
         $followee = User::findOrFail($followee);
 
@@ -67,7 +68,7 @@ class UserController extends Controller
 
     public function deleteUnfollow()
     {
-        $user = \Auth::user();
+        $user = Auth::user();
         $followee = \Input::get('user_id');
         $followee = User::findOrFail($followee);
         
@@ -90,7 +91,7 @@ class UserController extends Controller
         $currentIp = \Request::getClientIp();
 
         $playerTotals = \App\PlayerTotal::where('last_ip_address','LIKE',$currentIp)->latest()->get();
-        $user = \Auth::user();
+        $user = Auth::user();
         $array = [
             'players' => $playerTotals,
             'user' => $user
@@ -116,12 +117,12 @@ class UserController extends Controller
                 if($validator->fails())
                     return \Redirect::back()->with('errors',$validator->errors())->withInput();
 
-                if($request->email != \Auth::user()->getEmailForPasswordReset())
+                if($request->email != Auth::user()->getEmailForPasswordReset())
                 {
                     return \Redirect::back()->with('error', 'Email doesnot match current users.');
                 }
 
-                $user = \Auth::user();
+                $user = Auth::user();
                 $user->password = bcrypt($request->password);
                 $user->save();
                 return \Redirect::back()->with('message', 'Password has been updated successfully! :)');
@@ -136,7 +137,7 @@ class UserController extends Controller
 
                 if($playerTotal->isEmpty())
                 {
-                    $user = \Auth::user();
+                    $user = Auth::user();
                     $user->player_totals_name = null;
                     $user->save();
                     return \Redirect::back()->with('message', 'You have successfully unlinked player from your profile.');
@@ -147,7 +148,7 @@ class UserController extends Controller
                 }
                 else
                 {
-                    $user = \Auth::user();
+                    $user = Auth::user();
                     $user->player_totals_name = $inGamePlayerName;
                     $user->save();
                     return \Redirect::back()->with('message', "You have successfully linked $inGamePlayerName to your profile.");
@@ -163,13 +164,13 @@ class UserController extends Controller
 
     public function getInbox()
     {
-        $inbox = \Auth::user()->inbox()->paginate();
+        $inbox = Auth::user()->inbox()->paginate();
         return view('user.inbox')->with('inbox',$inbox);
     }
 
     public function getOutbox()
     {
-        $outbox = \Auth::user()->outbox()->paginate();
+        $outbox = Auth::user()->outbox()->paginate();
         return view('user.outbox')->with('outbox',$outbox);
     }
 
@@ -195,7 +196,7 @@ class UserController extends Controller
         if($reciever == null)
              return \Redirect::back()->with('error',"Username not found in out Database :(")->withInput();
 
-        \Auth::user()->sendmail($reciever,$request->to_subject,$request->to_body);
+        Auth::user()->sendmail($reciever,$request->to_subject,$request->to_body);
         return \Redirect::back()->with('message',"Message has been sent! :)");
     }
 
@@ -203,13 +204,13 @@ class UserController extends Controller
     {
         $mail = \App\Mail::findOrFail($id);
 
-        if(\Auth::user()->id != $mail->sender_id && \Auth::user()->id != $mail->reciever_id)
+        if(Auth::user()->id != $mail->sender_id && Auth::user()->id != $mail->reciever_id)
         {
             throw new \Exception("Not Authorised");
         }
 
         // If the current viewer is reciever and he is viewing it for first time
-        if($mail->reciever->id == \Auth::user()->id && $mail->seen_at == null)
+        if($mail->reciever->id == Auth::user()->id && $mail->seen_at == null)
         {
             $mail->seen_at = \Carbon\Carbon::now();
             $mail->save();
@@ -220,7 +221,7 @@ class UserController extends Controller
     // Used to check User online or not and list of active users
     public function sendPing(Request $request)
     {
-        if(\Auth::check())
+        if(Auth::check())
         {
             $request->user()->touch();
         }
@@ -363,7 +364,74 @@ class UserController extends Controller
         {
             return \Redirect::back()->with('error', "Whoops! Unknown error");
         }
+    }
 
+    /**
+     * Send view
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     */
+    public function viewServerCredentials(Request $request)
+    {
+        if($request->user()->isSubAdmin())
+            return view('user.serverkeys');
+        return \Redirect::home()->with('error', "Whoops! Not Authorized");
+    }
+
+    /**
+     * Handle Viewer
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function postServerCredentials(Request $request)
+    {
+        $this->validate($request, [
+            'password' => 'required'
+        ]);
+
+        $user = $request->user();
+
+        $cred = [
+            'username' => $user->username,
+            'password' => $request->password,
+        ];
+
+        if(Auth::attempt($cred))
+        {
+            // Get user Role
+            $userRole = $user->roles()->first()->id;
+
+            //SA
+            if($userRole <= 2)
+            {
+                $credentials = [
+                    'maxjoinpassword' => env('MAX_JOIN_PASSWORD'),
+                    'adminpassword' => env('ADMIN_PASSWORD'),
+                    'sapassword' => env('SA_PASSWORD')
+                ];
+            }
+            elseif($userRole == 3)
+            {
+                $credentials = [
+                    'maxjoinpassword' => env('MAX_JOIN_PASSWORD'),
+                    'adminpassword' => env('ADMIN_PASSWORD'),
+                ];
+            }
+            elseif($userRole == 4)
+            {
+                $credentials = [
+                    'maxjoinpassword' => env('MAX_JOIN_PASSWORD'),
+                ];
+            }
+            \Session::flash('post-back','yes');
+            return back()->with('credentials',$credentials)->withMessage('Plz view credentials and close the page ASAP.');
+        }
+        else
+        {
+            return \Redirect::back()->with('error', "Whoops! Password Incorrect.");
+        }
     }
 
 }

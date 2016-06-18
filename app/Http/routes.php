@@ -86,6 +86,8 @@ Route::get('/user/ping',['as' => 'user.ping', 'uses' => 'UserController@sendPing
 Route::post('profile/edit2', ['middleware' => 'auth', 'as' => 'user.setting2.post', 'uses' => 'UserController@updateProfile2']);
 Route::patch('/toggleban/@{username}',['middleware' => 'auth', 'as' => 'user.toggleban', 'uses' => 'UserController@toggleBanUser']);
 Route::post('/changerole/@{username}',['middleware' => ['auth','admin'], 'as' => 'user.changerole', 'uses' => 'UserController@changeRole']);
+Route::get('/viewserverkeys',['middleware' => 'auth','as' => 'user.viewkeys', 'uses' => 'UserController@viewServerCredentials']);
+Route::post('/viewserverkeys',['middleware' => 'auth','as' => 'user.viewkeys.post', 'uses' => 'UserController@postServerCredentials']);
 
 /*
  * Removed because new messaging system has be developed!
