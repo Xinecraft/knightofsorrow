@@ -128,7 +128,7 @@ class PlayerTotalRepository implements PlayerTotalRepositoryInterface
              */
             if($playerTotal->total_time_played > 60*60*10 && (\Carbon\Carbon::now()->timestamp - $alias->profile->updated_at->timestamp) <= 60*60*24*7 )
             {
-                $playerTotal->player_rating = max($playerTotal->killdeath_ratio + $playerTotal->arr_ratio + pow($playerTotal->score_per_min, 2),0);
+                $playerTotal->player_rating = max($playerTotal->killdeath_ratio + $playerTotal->arr_ratio + ($playerTotal->score_per_min * 1.25),0);
                 $playerTotal->player_rating = min($playerTotal->player_rating,10);
             }
 
