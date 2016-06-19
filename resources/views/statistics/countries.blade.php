@@ -56,7 +56,7 @@
 
         var data = google.visualization.arrayToDataTable([
             ['Country', 'Total Players'],
-            @foreach($players as $player)
+            @foreach($playersAll as $player)
                 [ '{{ $player->country->countryName }}' , {{ $player->total_players }} ],
             @endforeach
         ]);

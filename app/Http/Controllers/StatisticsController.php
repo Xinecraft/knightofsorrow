@@ -112,6 +112,8 @@ class StatisticsController extends Controller
 
         $players = PlayerTotal::CountryAggregate()->orderBy($orderBy,$sortDir)->paginate(10);
 
+        $playersAll = PlayerTotal::CountryAggregate()->orderBy($orderBy,$sortDir)->get();
+
         $position = $players->currentPage() * 10 - 9;
 
         return view('statistics.countries')->with('players',$players)->with('position',$position);
