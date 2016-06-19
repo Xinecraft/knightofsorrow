@@ -6,6 +6,8 @@
     <div class="col-md-9">
         @include('partials._statistics-navbar')
 
+        <div id="regions_div" style="" class="hidden-xs"></div>
+        <br>
         <div class="rounds panel panel-default">
             <div class="panel-heading"><strong>All Countries ({{ $players->total() }})</strong></div>
             <div class="panel-body">
@@ -41,4 +43,31 @@
         </div>
 
     </div>
+@endsection
+
+@section('scripts')
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['geochart']});
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+
+        var data = google.visualization.arrayToDataTable([
+            ['Country', 'Total Players'],
+            @foreach($players as $player)
+                [ '{{ $player->country->countryName }}' , {{ $player->total_players }} ],
+            @endforeach
+        ]);
+
+        var options = {
+            colorAxis: {colors: ['#e31b23', '#ffff00', '#00853f']},
+        };
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
 @endsection
