@@ -116,7 +116,7 @@ class StatisticsController extends Controller
 
         $position = $players->currentPage() * 10 - 9;
 
-        return view('statistics.countries')->with('players',$players)->with('position',$position);
+        return view('statistics.countries')->with('players',$players)->with('playersAll',$playersAll)->with('position',$position);
     }
 
     /**
