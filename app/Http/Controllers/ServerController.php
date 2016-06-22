@@ -211,7 +211,7 @@ class ServerController extends Controller
 
     public function chatInGameForKOS(Request $request)
     {
-        $Username = $request->user()->username;
+        $Username = $request->user()->displayName();
         $Msg = $request->serverchatmsg;
         $Msg = htmlentities($Msg);
         if ($Msg == '' || empty($Msg)) {
@@ -220,13 +220,17 @@ class ServerController extends Controller
         $userLvl = $request->user()->roles()->first()->display_name;
         if($userLvl == "Super Administrator")
         {
-            $userLvl = "SuperAdmin";
+            $userLvl = "[c=00ff00]<SuperAdmin>[\\c]";
         }
         elseif ($userLvl == "Administrator")
         {
-            $userLvl = "Admin";
+            $userLvl = "[c=00ff00]<Admin>[\\c]";
         }
-        $MsgFormated = "[c=ffa500][b]" . $Username . "[\\b] ($userLvl):[\\c] [c=FFFFFF]" . $Msg;
+        else
+        {
+            $userLvl = "[c=ffa500]<{$userLvl}>[\\c]";
+        }
+        $MsgFormated = "[c=ffff00][u][b]" . $Username . "[\\b][\\u][\\c] $userLvl: [c=FFFFFF]" . $Msg;
         $txtip = "127.0.0.1";
         $txtportnum = "10483";
         $sock = fsockopen("udp://" . $txtip, $txtportnum, $errno, $errstr, 2);
