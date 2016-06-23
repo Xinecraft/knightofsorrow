@@ -1,6 +1,6 @@
 <?php
 /**
- * 
+ *
  * Copyright (c) 2014 Zishan Ansari
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -123,10 +123,10 @@ class PlayerTotalRepository implements PlayerTotalRepositoryInterface
             /**
              * Calculation of player_rating
              *
-             * Calculate only if player has played more than 10 hours in server
+             * Calculate only if player with this alias has played more than 10 hours in server
              * and also is active and seen in last 7 days
              */
-            if($playerTotal->total_time_played > 60*60*10 && (\Carbon\Carbon::now()->timestamp - $alias->profile->updated_at->timestamp) <= 60*60*24*7 )
+            if($playerTotal->total_time_played > 60*60*10 && (\Carbon\Carbon::now()->timestamp - $alias->updated_at->timestamp) <= 60*60*24*7 )
             {
                 $playerTotal->player_rating = max($playerTotal->killdeath_ratio + $playerTotal->arr_ratio + ($playerTotal->score_per_min * 1.25),0);
                 $playerTotal->player_rating = min($playerTotal->player_rating,10);
