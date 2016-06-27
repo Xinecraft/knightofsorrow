@@ -7,7 +7,7 @@
     <meta name="description" content="@yield('meta-desc','Swat4 Servers and Community')">
     <meta name="author" content="Zishan Ansari">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <title>KnightofSorrow.tk - @yield('title','Swat4 Servers & Community')</title>
+    <title>KNIGHT of SORROW - @yield('title','SWAT 4 Servers & Community')</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ elixir('css/all.css') }}">
     @yield('styles')

@@ -38,6 +38,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     protected $dates = ['dob'];
 
+    protected $with = ['roles'];
+
 
     /**
      * @return GamePresenter

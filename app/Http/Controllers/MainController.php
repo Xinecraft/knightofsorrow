@@ -63,7 +63,7 @@ class MainController extends Controller
             $s10->track();
             */
 
-        $topPlayers = \App\PlayerTotal::orderBy('position')->limit(10)->get();
+        $topPlayers = \App\PlayerTotal::with(['country','rank'])->orderBy('position')->limit(10)->get();
         $latestGames = \App\Game::orderBy('created_at', 'desc')->limit(5)->get();
 
         //return (Carbon\Carbon::now()->subYears(100));
@@ -190,7 +190,7 @@ class MainController extends Controller
         }
 
         //Latest Feeds
-        $feeds  = Status::latest()->limit(5)->get();
+        $feeds  = Status::with('user')->latest()->limit(5)->get();
 
         $activeUsers = User::orderBy('updated_at','DESC')->limit(30)->get();
 

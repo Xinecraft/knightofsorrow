@@ -39,7 +39,7 @@ class Player extends Model
     public function getBestIn($fields,$orderBy,$timeAgo='1915-07-26 16:19:44')
     {
         //SELECT name,SUM(kills) as killss,SUM(deaths),SUM(arrests) FROM `players` GROUP BY name ORDER BY killss DESC
-        return $this->select(\DB::raw('*,'.$fields))->where('created_at','>=', '"'.$timeAgo.'"')->groupBy('name')->orderBy($orderBy,'DESC')->first();
+        return $this->select(\DB::raw('*,'.$fields))->where('created_at','>=', $timeAgo)->groupBy('name')->orderBy($orderBy,'DESC')->first();
     }
 
     /**
