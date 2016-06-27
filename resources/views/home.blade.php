@@ -279,7 +279,7 @@
                                                     Total Score
                                                 </td>
                                                 <td class="col-3">
-                                                    {!! link_to_route('player-detail',$PastWeek->totalScore->name,[$PastMonth->totalScore->playerTotal()->id,$PastMonth->totalScore->name]) !!}
+                                                    {!! link_to_route('player-detail',$PastMonth->totalScore->name,[$PastMonth->totalScore->playerTotal()->id,$PastMonth->totalScore->name]) !!}
                                                     <span class="small">({{ $PastMonth->totalScore->totalscore }})</span>
                                                 </td>
                                                 <td class="col-4">
