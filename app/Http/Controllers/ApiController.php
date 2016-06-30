@@ -20,7 +20,7 @@ class ApiController extends Controller
      */
     public function index()
     {
-        return ('Not Allowed');
+        return ('Whois Server 1.0');
     }
 
 
@@ -193,7 +193,7 @@ class ApiController extends Controller
             $players = PlayerTotal::where('name', 'LIKE', "$playerName")->get();
 
             $geoip = \App::make('geoip');
-            $playerCountryName = "[c=d3d3d3]Terra Incognita[\\c]";
+            $playerCountryName = "[c=d3d3d3]Unknown Territory[\\c]";
             try {
                 if ($player_geoip = $geoip->city($playerIp)) {
                     $playerCountryName = $player_geoip->country->names['en'];
@@ -204,13 +204,13 @@ class ApiController extends Controller
                 switch($e)
                 {
                     case $e instanceof \InvalidArgumentException:
-                        $playerCountryName = "[c=d3d3d3]Terra Incognita[\\c]";
+                        $playerCountryName = "[c=d3d3d3]Unknown Territory[\\c]";
                         break;
                     case $e instanceof \GeoIp2\Exception\AddressNotFoundException:
-                        $playerCountryName = "[c=d3d3d3]Terra Incognita[\\c]";
+                        $playerCountryName = "[c=d3d3d3]Unknown Territory[\\c]";
                         break;
                     default:
-                        $playerCountryName = "[c=d3d3d3]Terra Incognita[\\c]";
+                        $playerCountryName = "[c=d3d3d3]Unknown Territory[\\c]";
                         break;
                 }
             }
@@ -253,7 +253,7 @@ class ApiController extends Controller
             $players = PlayerTotal::where('name', 'LIKE', "$playerName")->get();
 
             $geoip = \App::make('geoip');
-            $playerCountryName = "[c=d3d3d3]Terra Incognita[\\c]";
+            $playerCountryName = "[c=d3d3d3]Unknown Territory[\\c]";
             try {
                 if ($player_geoip = $geoip->city($playerIp)) {
                     $playerCountryName = $player_geoip->country->names['en'];
@@ -264,13 +264,13 @@ class ApiController extends Controller
                 switch($e)
                 {
                     case $e instanceof \InvalidArgumentException:
-                        $playerCountryName = "[c=d3d3d3]Terra Incognita[\\c]";
+                        $playerCountryName = "[c=d3d3d3]Unknown Territory[\\c]";
                         break;
                     case $e instanceof \GeoIp2\Exception\AddressNotFoundException:
-                        $playerCountryName = "[c=d3d3d3]Terra Incognita[\\c]";
+                        $playerCountryName = "[c=d3d3d3]Unknown Territory[\\c]";
                         break;
                     default:
-                        $playerCountryName = "[c=d3d3d3]Terra Incognita[\\c]";
+                        $playerCountryName = "[c=d3d3d3]Unknown Territory[\\c]";
                         break;
                 }
             }

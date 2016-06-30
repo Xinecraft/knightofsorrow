@@ -150,7 +150,6 @@ Route::group(['prefix' => 'servertracker'], function(){
     }]);
 });
 
-
 /**
  * Shouts Controller
  */
