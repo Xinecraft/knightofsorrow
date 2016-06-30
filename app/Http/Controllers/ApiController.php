@@ -136,22 +136,10 @@ class ApiController extends Controller
                     'playerAddr' => $player->country->countryName,
                 ];*/
 
-                $aliases = $player->aliases()->latest()->limit(4)->get();
-                $alsoKnownAs = '';
-                foreach($aliases as $alias)
-                {
-                    if($player->name != $alias->name)
-                        $alsoKnownAs .= "[c=FFFF00][b]".$alias->name.'[\\b][\\c] [c=00ff00]-[\\c] ';
-                }
-                $alsoKnownAs = rtrim($alsoKnownAs);
-                $alsoKnownAs = rtrim($alsoKnownAs,'[c=00ff00]-[\\c]');
-                $alsoKnownAs = rtrim($alsoKnownAs);
-
                 printf("[c=FFFF00][b][u]%s[\\u][\\b][\\c] is from [b][c=EBFFFF]%s[\\c][\\b]\n", $player->name, $player->country->countryName);
                 printf("[b][c=FFFF00][u]%s[\\u][\\c][\\b]'s Position: [c=FFFEEB][b][u]#%d[\\u][\\b][\\c] [c=00FF00]-[\\c] Score: [c=FFFEEB][b][u]%d[\\u][\\b][\\c] [c=00FF00]-[\\c] Rank: [c=FFFEEB][b][u]%s[\\u][\\b][\\c]\n", $player->name, $player->position, $player->total_score, $player->rank->name);
                 printf("Score Per Min: [c=FFFEEB][b][u]%.2f points[\\u][\\b][\\c] [c=00FF00]-[\\c] Highest Score: [c=FFFEEB][b][u]%d[\\u][\\b][\\c]\n", round($player->score_per_min,2), $player->highest_score);
-                printf("Time Played: [c=FFFEEB][b][u]%s[\\u][\\b][\\c] [c=00ff00]-[\\c] Last Seen: [c=00FF00][b][u]%s[\\u][\\b][\\c]\n", gmdate("H\\h i\\m", $player->total_time_played), $player->lastGame->created_at->diffForHumans());
-                printf("Also Known as: [c=FFFFFF]%s[\\c]", $alsoKnownAs);
+                printf("Time Played: [c=FFFEEB][b][u]%s[\\u][\\b][\\c] [c=00ff00]-[\\c] Last Seen: [c=00FF00][b][u]%s[\\u][\\b][\\c]", gmdate("H\\h i\\m", $player->total_time_played), $player->lastGame->created_at->diffForHumans());
                 exit();
 
                 //return view('api.whois.onefound', $data);
@@ -167,22 +155,10 @@ class ApiController extends Controller
                 if ($playerss->count() == 1) {
                     $player = $playerss->first();
 
-                    $aliases = $player->aliases()->latest()->limit(4)->get();
-                    $alsoKnownAs = '';
-                    foreach($aliases as $alias)
-                    {
-                        if($player->name != $alias->name)
-                            $alsoKnownAs .= "[c=FFFF00][b]".$alias->name.'[\\b][\\c] [c=00ff00]-[\\c] ';
-                    }
-                    $alsoKnownAs = rtrim($alsoKnownAs);
-                    $alsoKnownAs = rtrim($alsoKnownAs,'[c=00ff00]-[\\c]');
-                    $alsoKnownAs = rtrim($alsoKnownAs);
-
                     printf("[c=FFFF00][b][u]%s[\\u][\\b][\\c] is from [b][c=EBFFFF]%s[\\c][\\b]\n", $player->name, $player->country->countryName);
                     printf("[b][c=FFFF00][u]%s[\\u][\\c][\\b]'s Position: [c=FFFEEB][b][u]#%d[\\u][\\b][\\c] [c=00FF00]-[\\c] Score: [c=FFFEEB][b][u]%d[\\u][\\b][\\c] [c=00FF00]-[\\c] Rank: [c=FFFEEB][b][u]%s[\\u][\\b][\\c]\n", $player->name, $player->position, $player->total_score, $player->rank->name);
                     printf("Score Per Min: [c=FFFEEB][b][u]%.2f points[\\u][\\b][\\c] [c=00FF00]-[\\c] Highest Score: [c=FFFEEB][b][u]%d[\\u][\\b][\\c]\n", round($player->score_per_min,2), $player->highest_score);
-                    printf("Time Played: [c=FFFEEB][b][u]%s[\\u][\\b][\\c] [c=00ff00]-[\\c] Last Seen: [c=00FF00][b][u]%s[\\u][\\b][\\c]\n", gmdate("H\\h i\\m", $player->total_time_played), $player->lastGame->created_at->diffForHumans());
-                    printf("Also Known as: [c=FFFFFF]%s[\\c]", $alsoKnownAs);
+                    printf("Time Played: [c=FFFEEB][b][u]%s[\\u][\\b][\\c] [c=00ff00]-[\\c] Last Seen: [c=00FF00][b][u]%s[\\u][\\b][\\c]", gmdate("H\\h i\\m", $player->total_time_played), $player->lastGame->created_at->diffForHumans());
                     exit();
 
                     /*$data = [
@@ -256,22 +232,10 @@ class ApiController extends Controller
             {
                 $player = $players->first();
 
-                $aliases = $player->aliases()->latest()->limit(4)->get();
-                $alsoKnownAs = '';
-                foreach($aliases as $alias)
-                {
-                    if($player->name != $alias->name)
-                        $alsoKnownAs .= "[c=FFFF00][b]".$alias->name.'[\\b][\\c] [c=00ff00]-[\\c] ';
-                }
-                $alsoKnownAs = rtrim($alsoKnownAs);
-                $alsoKnownAs = rtrim($alsoKnownAs,'[c=00ff00]-[\\c]');
-                $alsoKnownAs = rtrim($alsoKnownAs);
-
                 printf("[c=FFFF00][b][u]%s[\\u][\\b][\\c] is from [b][c=EBFFFF]%s[\\c][\\b]\n", $player->name, $playerCountryName);
                 printf("[b][c=FFFF00][u]%s[\\u][\\c][\\b]'s Position: [c=FFFEEB][b][u]#%d[\\u][\\b][\\c] [c=00FF00]-[\\c] Score: [c=FFFEEB][b][u]%d[\\u][\\b][\\c] [c=00FF00]-[\\c] Rank: [c=FFFEEB][b][u]%s[\\u][\\b][\\c]\n", $player->name, $player->position, $player->total_score, $player->rank->name);
                 printf("Score Per Min: [c=FFFEEB][b][u]%.2f points[\\u][\\b][\\c] [c=00FF00]-[\\c] Highest Score: [c=FFFEEB][b][u]%d[\\u][\\b][\\c]\n", round($player->score_per_min,2), $player->highest_score);
-                printf("Time Played: [c=FFFEEB][b][u]%s[\\u][\\b][\\c] [c=00ff00]-[\\c] Last Seen: [c=00FF00][b][u]%s[\\u][\\b][\\c]\n", gmdate("H\\h i\\m", $player->total_time_played), $player->lastGame->created_at->diffForHumans());
-                printf("Also Known as: [c=FFFFFF]%s[\\c]", $alsoKnownAs);
+                printf("Time Played: [c=FFFEEB][b][u]%s[\\u][\\b][\\c] [c=00ff00]-[\\c] Last Seen: [c=00FF00][b][u]%s[\\u][\\b][\\c]", gmdate("H\\h i\\m", $player->total_time_played), $player->lastGame->created_at->diffForHumans());
                 exit();
 
                 /*$data = [
@@ -328,23 +292,10 @@ class ApiController extends Controller
             else
             {
                 $player = $players->first();
-
-                $aliases = $player->aliases()->latest()->limit(4)->get();
-                $alsoKnownAs = '';
-                foreach($aliases as $alias)
-                {
-                    if($player->name != $alias->name)
-                        $alsoKnownAs .= "[c=FFFF00][b]".$alias->name.'[\\b][\\c] [c=00ff00]-[\\c] ';
-                }
-                $alsoKnownAs = rtrim($alsoKnownAs);
-                $alsoKnownAs = rtrim($alsoKnownAs,'[c=00ff00]-[\\c]');
-                $alsoKnownAs = rtrim($alsoKnownAs);
-
                 printf("[c=FFFF00][b][u]%s[\\u][\\b][\\c] is coming from [b][c=EBFFFF]%s[\\c][\\b]\n", $player->name, $playerCountryName);
                 printf("[b][c=FFFF00][u]%s[\\u][\\c][\\b]'s Position: [c=FFFEEB][b][u]#%d[\\u][\\b][\\c] [c=00FF00]-[\\c] Score: [c=FFFEEB][b][u]%d[\\u][\\b][\\c] [c=00FF00]-[\\c] Rank: [c=FFFEEB][b][u]%s[\\u][\\b][\\c]\n", $player->name, $player->position, $player->total_score, $player->rank->name);
                 printf("Score Per Min: [c=FFFEEB][b][u]%.2f points[\\u][\\b][\\c] [c=00FF00]-[\\c] Highest Score: [c=FFFEEB][b][u]%d[\\u][\\b][\\c]\n", round($player->score_per_min,2), $player->highest_score);
-                printf("Time Played: [c=FFFEEB][b][u]%s[\\u][\\b][\\c] [c=00ff00]-[\\c] Last Seen: [c=00FF00][b][u]%s[\\u][\\b][\\c]\n", gmdate("H\\h i\\m", $player->total_time_played), $player->lastGame->created_at->diffForHumans());
-                printf("Also Known as: [c=FFFFFF]%s[\\c]", $alsoKnownAs);
+                printf("Time Played: [c=FFFEEB][b][u]%s[\\u][\\b][\\c] [c=00ff00]-[\\c] Last Seen: [c=00FF00][b][u]%s[\\u][\\b][\\c]", gmdate("H\\h i\\m", $player->total_time_played), $player->lastGame->created_at->diffForHumans());
                 exit();
                 /*$data = [
                     'player' => $player,
