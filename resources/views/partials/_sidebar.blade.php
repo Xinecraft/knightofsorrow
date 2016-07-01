@@ -52,7 +52,7 @@
                             {{ $pollo->option }}<br>
                             <div class="progress">
                                 <div class="progress-bar progress-bar-striped active" role="progressbar"
-                                     aria-valuenow="{{ $percent = $poll->users()->count() == 0 ? 0 : ( $pollo->users()->count() / $poll->users()->count())*100 }}"
+                                     aria-valuenow="{{ $percent = round($poll->users()->count() == 0 ? 0 : ( $pollo->users()->count() / $poll->users()->count())*100) }}"
                                      aria-valuemin="0" aria-valuemax="100" style="width: {{ $percent }}%;">
                                     {{ $percent }}% ({{ $pollo->users()->count() }})
                                 </div>
