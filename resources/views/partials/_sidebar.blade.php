@@ -28,6 +28,7 @@
         <div class="poll-cont">
             @if(!$poll->isExpired() && !$poll->isVoted())
                 <div class="panel pad10">
+                    <small class="pull-right"><i><b><a href="{{ route('poll.index') }}">» view all</a></b></i></small>
                     <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Poll</h4>
                     {!! Form::open(['route' => ['poll.vote',$poll->id]]) !!}
                     <h5 class=""><b>{{ $poll->question }}</b></h5>
@@ -43,6 +44,7 @@
 
             @else
                 <div class="panel pad10">
+                    <small class="pull-right"><i><b><a href="{{ route('poll.index') }}">» view all</a></b></i></small>
                     <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Poll</h4>
                     <h5 class=""><b>{{ $poll->question }}</b></h5>
                     <div class="panel pad10 no-margin">
