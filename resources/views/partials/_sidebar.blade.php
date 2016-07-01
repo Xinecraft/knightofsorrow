@@ -24,6 +24,46 @@
     </div>
     -->
 
+    @if($poll = App\Pollq::latest()->limit(1)->first())
+        <div class="poll-cont">
+            @if(!$poll->isExpired() && !$poll->isVoted())
+                <div class="panel pad10">
+                    <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Poll</h4>
+                    {!! Form::open(['route' => ['poll.vote',$poll->id]]) !!}
+                    <h5 class=""><b>{{ $poll->question }}</b></h5>
+                    <div class="panel pad10 no-margin">
+                        @foreach($poll->pollos as $pollo)
+                            <input type="radio" name="option" value="{{ $pollo->id }}"> {{ $pollo->option }}<br>
+                        @endforeach
+                        <input type="submit" value="Vote" class="btn btn-primary btn-xs">
+                        {!! Form::close() !!}
+                    </div>
+                    <span class="small">Total Votes: <b>{{ $poll->users()->count() }}</b></span>
+                </div>
+
+            @else
+                <div class="panel pad10">
+                    <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Poll</h4>
+                    <h5 class=""><b>{{ $poll->question }}</b></h5>
+                    <div class="panel pad10 no-margin">
+                        @foreach($poll->pollos as $pollo)
+                            {{ $pollo->option }}<br>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar"
+                                     aria-valuenow="{{ $percent = $poll->users()->count() == 0 ? 0 : ( $pollo->users()->count() / $poll->users()->count())*100 }}"
+                                     aria-valuemin="0" aria-valuemax="100" style="width: {{ $percent }}%;">
+                                    {{ $percent }}% ({{ $pollo->users()->count() }})
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+
+                    <span class="small">Total Votes: <b>{{ $poll->users()->count() }}</b></span>
+                </div>
+            @endif
+        </div>
+    @endif
+
     {{--Only display this section on homepage--}}
     @if(Request::getRequestUri() == "/" || Request::getRequestUri() == "/home")
 
@@ -49,46 +89,6 @@
                    style="color:rgb({{ rand(0,200) }},{{ rand(0,200) }},{{ rand(0,200) }});">{!!  BBCode::parseCaseInsensitive((htmlentities(\App\Didyouknow::get()->random()->body))) !!}</p>
             </div>
         @endif
-    @endif
-
-    @if($poll = App\Pollq::latest()->limit(1)->first())
-        <div class="poll-cont">
-        @if(!$poll->isExpired() && !$poll->isVoted())
-            <div class="panel pad10">
-                <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Poll</h4>
-                {!! Form::open(['route' => ['poll.vote',$poll->id]]) !!}
-                <h5 class=""><b>{{ $poll->question }}</b></h5>
-                <div class="panel pad10 no-margin">
-                    @foreach($poll->pollos as $pollo)
-                        <input type="radio" name="option" value="{{ $pollo->id }}"> {{ $pollo->option }}<br>
-                    @endforeach
-                    <input type="submit" value="Vote" class="btn btn-primary btn-xs">
-                    {!! Form::close() !!}
-                </div>
-                <span class="small">Total Votes: <b>{{ $poll->users()->count() }}</b></span>
-            </div>
-
-        @else
-            <div class="panel pad10">
-                <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Poll</h4>
-                <h5 class=""><b>{{ $poll->question }}</b></h5>
-                <div class="panel pad10 no-margin">
-                    @foreach($poll->pollos as $pollo)
-                        {{ $pollo->option }}<br>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-striped active" role="progressbar"
-                                 aria-valuenow="{{ $percent = $poll->users()->count() == 0 ? 0 : ( $pollo->users()->count() / $poll->users()->count())*100 }}"
-                                 aria-valuemin="0" aria-valuemax="100" style="width: {{ $percent }}%;">
-                                {{ $percent }}% ({{ $pollo->users()->count() }})
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-
-                <span class="small">Total Votes: <b>{{ $poll->users()->count() }}</b></span>
-            </div>
-        @endif
-        </div>
     @endif
 
 </aside>
