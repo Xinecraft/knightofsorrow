@@ -173,6 +173,14 @@ Route::get('/news/{id}/edit', ['middleware' => 'admin', 'as' => 'news.edit', 'us
 Route::post('/news/{id}/edit', ['middleware' => 'admin', 'as' => 'news.update', 'uses' => 'NewsController@update']);
 
 /**
+ * Poll Controller
+ */
+Route::get('polls/new',['middleware' => 'admin', 'as' => 'poll.create', 'uses' => 'PollController@create']);
+Route::post('polls/new',['middleware' => 'admin', 'as' => 'poll.store', 'uses' => 'PollController@store']);
+Route::get('polls',[ 'as' => 'poll.index', 'uses' => 'PollController@index']);
+Route::post('polls/{id}/vote',['middleware' => 'auth', 'as' => 'poll.vote', 'uses' => 'PollController@vote']);
+
+/**
  * Server Chat View Log for Admins
  */
 Route::get('/serverchat-history', ['as' => 'chat.index', 'uses' => 'ChatController@index']);
@@ -189,5 +197,8 @@ Route::get('messages/',['as' => 'messages.index', 'uses' => 'MailController@inde
 
 
 Route::get('/test',function(){
+    $poll = App\Pollq::find(3);
 
+
+    dd($poll->users());
 });

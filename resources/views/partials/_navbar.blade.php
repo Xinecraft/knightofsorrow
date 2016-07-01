@@ -27,6 +27,7 @@
                         <li>{!! link_to_route('servers.list','Servers') !!}</li>
                         <li><a href="{{ route('news.index') }}">News</a></li>
                         <li><a href="{{ route('chat.index') }}">Chat History</a></li>
+                        <li><a href="{{ route('poll.index') }}">Polls</a></li>
                         <li><a href="{{ route('admin.list') }}">Admins List</a></li>
                         {{--<li><a href="">Clans</a></li>--}}
                         {{--<li><a href="">Forums</a></li>--}}
@@ -63,6 +64,7 @@
                                 @if(Auth::user()->isAdmin())
                                     <li><a href="{{ route('news.create') }}">Create News</a></li>
                                     <li><a href="{{ route('servers.new') }}">Add Server</a></li>
+                                    <li><a href="{{ route('poll.create') }}">Create Poll</a></li>
                                 @endif
                             @endif
 
