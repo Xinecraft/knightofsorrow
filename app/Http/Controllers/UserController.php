@@ -447,8 +447,9 @@ class UserController extends Controller
     public function adminList()
     {
         $role = Role::where('id','<','4')->where('id','>','1')->with('users')->get();
+        $roleM = Role::where('id','4')->with('users')->get();
 
-        return view('user.adminlist')->withRoles($role);
+        return view('user.adminlist')->withRoles($role)->withRoless($roleM);
     }
 
 }

@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-md-10">
                 <div class="panel panel-default">
-                    <div class="panel-heading">List of Admin</div>
+                    <div class="panel-heading">Server Administrators</div>
                     <div class="panel-body">
                         <table class="table table-hover table-striped">
                             <thead>
@@ -40,6 +40,41 @@
                                         </td>
                                         <td>
                                             {{ $user->roles()->first()->display_name }}
+                                        </td>
+                                        <td>
+                                            {{ $user->updated_at->diffForHumans() }}
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            @endforeach
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-10">
+                <div class="panel panel-default">
+                    <div class="panel-heading">|KoS| Official Members <small><i>(excluding admins)</i></small></div>
+                    <div class="panel-body">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                            <tr>
+                                <td class="col-md-4 col-xs-4">Name</td>
+                                <td class="col-md-4 col-xs-4">Rank</td>
+                                <td class="col-md-3 col-xs-3">Last Seen</td>
+                            </tr>
+                            </thead>
+                            @foreach($roless as $role)
+                                @foreach($role->users as $user)
+                                    <tr>
+
+                                        <td class="color-main text-bold">
+                                            <a class="" style="margin-right:1em" href="{{ route('user.show',$user->username) }}">
+                                                <strong class="">{{ $user->displayName() }}</strong>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            |KoS| Member <small><i>({{ $user->roles()->first()->display_name }})</i></small>
                                         </td>
                                         <td>
                                             {{ $user->updated_at->diffForHumans() }}
