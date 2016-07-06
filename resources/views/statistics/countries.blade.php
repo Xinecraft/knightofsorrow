@@ -3,7 +3,7 @@
 @section('title','Countries')
 
 @section('main-container')
-    <div class="col-md-9">
+    <div class="col-xs-9">
         @include('partials._statistics-navbar')
 
         <div id="regions_div" style="" class="hidden-xs"></div>
@@ -14,13 +14,13 @@
                 <table id="" class="table table-striped table-hover no-margin">
                     <thead>
                     <tr>
-                        <th class="col-md-1">#</th>
-                        <th class="col-md-1">Flag</th>
-                        <th class="col-md-3">{!! sort_countries_by('country_id','Name') !!}</th>
-                        <th class="col-md-2">{!! sort_countries_by('total_players','Total Players') !!}</th>
-                        <th class="col-md-2">{!! sort_countries_by('total_score','Total Score') !!}</th>
-                        <th class="col-md-2">{!! sort_countries_by('total_points','Total Points') !!}</th>
-                        <th class="col-md-2 text-right">{!! sort_countries_by('total_time_played','TimePlayed') !!}</th>
+                        <th class="col-xs-1">#</th>
+                        <th class="col-xs-1">Flag</th>
+                        <th class="col-xs-3">{!! sort_countries_by('country_id','Name') !!}</th>
+                        <th class="col-xs-2">{!! sort_countries_by('total_players','Total Players') !!}</th>
+                        <th class="col-xs-2">{!! sort_countries_by('total_score','Total Score') !!}</th>
+                        <th class="col-xs-2">{!! sort_countries_by('total_points','Total Points') !!}</th>
+                        <th class="col-xs-2 text-right">{!! sort_countries_by('total_time_played','TimePlayed') !!}</th>
                     </tr>
                     </thead>
                     <tbody id="data-items">

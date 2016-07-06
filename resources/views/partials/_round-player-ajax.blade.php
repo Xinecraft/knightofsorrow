@@ -1,9 +1,9 @@
 <!-- Player Individual Data Starts -->
-<div class="panel panel-default col-md-12 no-padding">
+<div class="panel panel-default col-xs-12 no-padding">
     <!-- Default panel contents -->
     <div class="panel-heading"><b>{!! link_to_route('player-detail',$player->name,[$player->alias->playerTotal->id,$player->alias->playerTotal->name]) !!}</b>{!! Html::image('/images/flags/20/'.$player->country->countryCode.".png",$player->country->countryCode,['title' => $player->country->countryName,'class' => 'right tooltipster']) !!}</div>
     <!-- list -->
-    <ul class="list-group col-md-4">
+    <ul class="list-group col-xs-4">
         <li class="list-group-item">
             <span class="badge">{{ $player->kills }}</span>
             Kills
@@ -26,7 +26,7 @@
         </li>
     </ul>
 
-    <ul class="list-group col-md-4">
+    <ul class="list-group col-xs-4">
         <li class="list-group-item">
             <span class="badge">{{ $player->arrests }}</span>
             Arrests
@@ -49,7 +49,7 @@
         </li>
     </ul>
 
-    <ul class="list-group col-md-4">
+    <ul class="list-group col-xs-4">
         <li class="list-group-item">
             <span class="badge">{{ App\Server\Utils::getMSbyS($player->time_played,"%dm %ds") }}</span>
             Time Played

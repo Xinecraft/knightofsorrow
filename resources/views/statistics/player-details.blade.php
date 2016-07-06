@@ -17,14 +17,14 @@
     </style>
     @endsection
 @section('main-container')
-    <div class="col-md-9">
+    <div class="col-xs-9">
         @include('partials._statistics-navbar')
         <div class="row well player-detail-summary no-margin">
-            <div class="col-md-3">
+            <div class="col-xs-3">
                 <img class="left img-thumbnail" src="/images/game/chars/50/{{ $player->last_team."_".$player->loadout->body."_".$player->loadout->head }}.jpg">
                 {!! $player->ownerWithPicture !!}
             </div>
-            <div class="col-md-6 text-center player-detail-summary-name">
+            <div class="col-xs-6 text-center player-detail-summary-name">
                 <div class="name-as-title">
                     {{ $player->name }}
                 </div>
@@ -38,7 +38,7 @@
                     @endforelse
                 </p>
             </div>
-            <div class="col-md-3 text-right">
+            <div class="col-xs-3 text-right">
                 {!! Html::image('/images/flags_new/flags-iso/shiny/64/'.$player->country->countryCode.".png",$player->country->countryCode,['title' => $player->country->countryName, 'class'=> 'tooltipster']) !!}
             </div>
         </div>
@@ -66,36 +66,36 @@
 
         <div class="row no-margin panel player-stats-container">
             {{-- Loadout Starts --}}
-            <div class="col-md-5 col-xs-12 pad10 player-stats-loadout-container">
+            <div class="col-xs-5 col-xs-12 pad10 player-stats-loadout-container">
 
                 <!-- LoadOut -->
                 <h5 class="no-margin" style="border-bottom: 2px dashed gray;margin-bottom: 10px !important;color: #2D2D2D;font-weight: bold;">
                     Latest Loadout</h5>
 
-                <div class="col-md-12 no-padding" style="border: 1px solid;margin-bottom: 10px !important;">
+                <div class="col-xs-12 no-padding" style="border: 1px solid;margin-bottom: 10px !important;">
                     <img title="{{ $player->loadoutPa }}" class="tooltipster" src="/images/game/weapons/128/item{{ $player->loadout->primary_weapon }}.jpg" style="width: 100%;height: auto;max-height: 156px">
                     <p class="text-center" style="margin-top: 5px;"><strong>{{ $player->loadoutPw }}</strong></p>
                 </div>
-                <div class="col-md-12 no-padding" style="border: 1px solid;margin-bottom: 10px !important;">
+                <div class="col-xs-12 no-padding" style="border: 1px solid;margin-bottom: 10px !important;">
                     <img class="tooltipster" title="{{ $player->loadoutSa }}" src="/images/game/weapons/128/item{{ $player->loadout->secondary_weapon }}.jpg" style="width: 100%;height: auto;max-height: 156px">
                     <p class="text-center" style="margin-top: 5px;"><strong>{{ $player->loadoutSw }}</strong></p>
                 </div>
 
-                <div class="col-md-12 no-padding" style="border: 1px solid;margin-bottom: 10px !important;">
-                    <div class="col-md-4 col-xs-4 no-padding"><img class="tooltipster" title="{{ $player->loadoutEq1 }}" src="/images/game/weapons/64/item{{ $player->loadout->equip_one }}.jpg" style="width: 100%;"></div>
-                    <div class="col-md-4 col-xs-4 no-padding"><img class="tooltipster" title="{{ $player->loadoutEq2 }}" src="/images/game/weapons/64/item{{ $player->loadout->equip_two }}.jpg" style="width: 100%;"></div>
-                    <div class="col-md-4 col-xs-4 no-padding"><img class="tooltipster" title="{{ $player->loadoutEq3 }}" src="/images/game/weapons/64/item{{ $player->loadout->equip_three }}.jpg" style="width: 100%;"></div>
-                    <div class="col-md-4 col-xs-4 no-padding"><img class="tooltipster" title="{{ $player->loadoutEq4 }}" src="/images/game/weapons/64/item{{ $player->loadout->equip_four }}.jpg" style="width: 100%;"></div>
-                    <div class="col-md-4 col-xs-4 no-padding"><img class="tooltipster" title="{{ $player->loadoutEq5 }}" src="/images/game/weapons/64/item{{ $player->loadout->equip_five }}.jpg" style="width: 100%;"></div>
-                    <div class="col-md-4 col-xs-4 no-padding"><img class="tooltipster" title="{{ $player->loadoutBr }}" src="/images/game/weapons/64/item{{ $player->loadout->breacher }}.jpg" style="width: 100%;"></div>
+                <div class="col-xs-12 no-padding" style="border: 1px solid;margin-bottom: 10px !important;">
+                    <div class="col-xs-4 col-xs-4 no-padding"><img class="tooltipster" title="{{ $player->loadoutEq1 }}" src="/images/game/weapons/64/item{{ $player->loadout->equip_one }}.jpg" style="width: 100%;"></div>
+                    <div class="col-xs-4 col-xs-4 no-padding"><img class="tooltipster" title="{{ $player->loadoutEq2 }}" src="/images/game/weapons/64/item{{ $player->loadout->equip_two }}.jpg" style="width: 100%;"></div>
+                    <div class="col-xs-4 col-xs-4 no-padding"><img class="tooltipster" title="{{ $player->loadoutEq3 }}" src="/images/game/weapons/64/item{{ $player->loadout->equip_three }}.jpg" style="width: 100%;"></div>
+                    <div class="col-xs-4 col-xs-4 no-padding"><img class="tooltipster" title="{{ $player->loadoutEq4 }}" src="/images/game/weapons/64/item{{ $player->loadout->equip_four }}.jpg" style="width: 100%;"></div>
+                    <div class="col-xs-4 col-xs-4 no-padding"><img class="tooltipster" title="{{ $player->loadoutEq5 }}" src="/images/game/weapons/64/item{{ $player->loadout->equip_five }}.jpg" style="width: 100%;"></div>
+                    <div class="col-xs-4 col-xs-4 no-padding"><img class="tooltipster" title="{{ $player->loadoutBr }}" src="/images/game/weapons/64/item{{ $player->loadout->breacher }}.jpg" style="width: 100%;"></div>
                     <p class="text-center" style="margin-top: 5px;width: 100%;float: left;text-align: center;"><strong>Equipments</strong>
                     </p>
                 </div>
 
-                <div class="col-md-12 col-xs-12 no-padding" style="margin-bottom: 8px !important">
-                    <div class="col-md-5 col-xs-5 no-padding" style="border: 1px solid;"><img class="tooltipster" title="{{ $player->loadoutHead }}" src="/images/game/weapons/128/item{{ $player->loadout->head }}.jpg" style="width: 100%;">
+                <div class="col-xs-12 col-xs-12 no-padding" style="margin-bottom: 8px !important">
+                    <div class="col-xs-5 col-xs-5 no-padding" style="border: 1px solid;"><img class="tooltipster" title="{{ $player->loadoutHead }}" src="/images/game/weapons/128/item{{ $player->loadout->head }}.jpg" style="width: 100%;">
                         <p class="text-center" style="margin-top: 5px;"><strong>{{ $player->loadoutHead }}</strong></p></div>
-                    <div class="col-md-5 col-xs-5 right no-padding" style="border: 1px solid"><img class="tooltipster" title="{{ $player->loadoutBody }}" src="/images/game/weapons/128/item{{ $player->loadout->body }}.jpg" style="width: 100%;">
+                    <div class="col-xs-5 col-xs-5 right no-padding" style="border: 1px solid"><img class="tooltipster" title="{{ $player->loadoutBody }}" src="/images/game/weapons/128/item{{ $player->loadout->body }}.jpg" style="width: 100%;">
                         <p class="text-center" style="margin-top: 5px;"><strong>{{ $player->loadoutBody }}</strong></p>
                     </div>
                 </div>
@@ -103,7 +103,7 @@
             {{-- / Loadout Ends --}}
 
             {{-- General Statistics --}}
-            <div class="col-md-7 col-xs-12 general-statistics pad10" style="background-color: #ffffff;margin-top: 5px;border: 1px solid;">
+            <div class="col-xs-7 col-xs-12 general-statistics pad10" style="background-color: #ffffff;margin-top: 5px;border: 1px solid;">
                 <h5 class="no-margin" style="border-bottom: 2px dashed gray;margin-bottom: 10px !important;color: #2D2D2D;font-weight: bold;">
                     General Statistics</h5>
 
@@ -368,35 +368,35 @@
             <!-- / General Stats Ends -->
 
             <!-- Gauge Statistics -->
-            <div class="col-md-12 col-xs-12 pad10" style="background-color: #ffffff;margin-top: 5px;border: 1px solid;">
-                <div class="col-md-2 no-margin no-padding">
+            <div class="col-xs-12 col-xs-12 pad10" style="background-color: #ffffff;margin-top: 5px;border: 1px solid;">
+                <div class="col-xs-2 no-margin no-padding">
                     <p class="no-margin text-center gaugeheading">Score / Min</p>
                     <canvas id="gauge-spm" style="width: 8em" data-spm="{{ $player->score_per_min }}"></canvas>
                     <h4 class="font-dsdigital no-margin text-center">{{ $player->score_per_min }}</h4>
                 </div>
-                <div class="col-md-2 no-margin no-padding">
+                <div class="col-xs-2 no-margin no-padding">
                     <p class="no-margin text-center gaugeheading tooltipster" title="<b>Win / Lost Ratio</b>">W/L Ratio</p>
                     <canvas id="gauge-wlr" style="width: 8em" data-wlr="{{ $player->winLostRatio }}"></canvas>
                     <h4 class="font-dsdigital no-margin text-center">{{ $player->winLostRatio }}</h4>
                 </div>
 
-                <div class="col-md-2 no-margin no-padding">
+                <div class="col-xs-2 no-margin no-padding">
                     <p class="no-margin text-center gaugeheading">Accuracy</p>
                     <canvas id="gauge-acr" style="width: 8em" data-acr="{{ $player->weaponAccuracy }}"></canvas>
                     <h4 class="font-dsdigital no-margin text-center">{{ $player->weaponAccuracy }}%</h4>
                 </div>
-                <div class="col-md-2 no-margin no-padding">
+                <div class="col-xs-2 no-margin no-padding">
                     <p class="no-margin text-center gaugeheading tooltipster" title="<b>Kill / Death Ratio</b>">K/D Ratio</p>
                     <canvas id="gauge-kdr" style="width: 8em" data-kdr="{{ $player->killdeath_ratio }}"></canvas>
                     <h4 class="font-dsdigital no-margin text-center">{{ $player->killdeath_ratio }}</h4>
                 </div>
-                <div class="col-md-2 no-margin no-padding">
+                <div class="col-xs-2 no-margin no-padding">
                     <p class="no-margin text-center gaugeheading tooltipster" title="<b>Arrest / Arrested Ratio</b>">A/A Ratio</p>
                     <canvas id="gauge-aar" style="width: 8em" data-aar="{{ $player->arr_ratio }}"></canvas>
                     <h4 class="font-dsdigital no-margin text-center">{{ $player->arr_ratio }}</h4>
                 </div>
 
-                <div class="col-md-2 no-margin no-padding">
+                <div class="col-xs-2 no-margin no-padding">
                     <p class="no-margin text-center gaugeheading">Score percentile</p>
                     <canvas id="gauge-spt" style="width: 8em" data-spt="{{ $player->score_percentile }}"></canvas>
                     <h4 class="font-dsdigital no-margin text-center">{{ $player->score_percentile }}</h4>
@@ -436,13 +436,13 @@
                                     <tbody>
                                     @forelse($weaponFamily as $weapon)
                                     <tr>
-                                        <th class="col-md-2"><img class="weapontableimg" src="/images/game/weapons/64/item{{ $weapon->id }}.jpg">
+                                        <th class="col-xs-2"><img class="weapontableimg" src="/images/game/weapons/64/item{{ $weapon->id }}.jpg">
                                         <p class="no-margin padding5">{{ $weapon->name }}</p>
                                         </th>
-                                        <th class="col-md-1">{{ $weapon->kills }}</th>
-                                        <th class="col-md-1">{{ $weapon->time_used }}</th>
-                                        <th class="col-md-1">{{ $weapon->kills_per_min }}</th>
-                                        <th class="col-md-1">{{ $weapon->accuracy }}%</th>
+                                        <th class="col-xs-1">{{ $weapon->kills }}</th>
+                                        <th class="col-xs-1">{{ $weapon->time_used }}</th>
+                                        <th class="col-xs-1">{{ $weapon->kills_per_min }}</th>
+                                        <th class="col-xs-1">{{ $weapon->accuracy }}%</th>
                                     </tr>
                                     @empty
                                         <th>Its Lone here.</th>
@@ -464,13 +464,13 @@
                                     <tbody>
                                     @forelse($weaponFamily as $weapon)
                                         <tr>
-                                            <th class="col-md-2"><img class="weapontableimg" src="/images/game/weapons/64/item{{ $weapon->id }}.jpg">
+                                            <th class="col-xs-2"><img class="weapontableimg" src="/images/game/weapons/64/item{{ $weapon->id }}.jpg">
                                                 <p class="no-margin padding5">{{ $weapon->name }}</p>
                                             </th>
-                                            <th class="col-md-1">{{ $weapon->kills }}</th>
-                                            <th class="col-md-1">{{ $weapon->time_used }}</th>
-                                            <th class="col-md-1">{{ $weapon->kills_per_min }}</th>
-                                            <th class="col-md-1">{{ $weapon->accuracy }}%</th>
+                                            <th class="col-xs-1">{{ $weapon->kills }}</th>
+                                            <th class="col-xs-1">{{ $weapon->time_used }}</th>
+                                            <th class="col-xs-1">{{ $weapon->kills_per_min }}</th>
+                                            <th class="col-xs-1">{{ $weapon->accuracy }}%</th>
                                         </tr>
                                     @empty
                                         <th>Its Lone here.</th>
@@ -492,13 +492,13 @@
                                     <tbody>
                                     @forelse($weaponFamily as $weapon)
                                         <tr>
-                                            <th class="col-md-2"><img class="weapontableimg" src="/images/game/weapons/64/item{{ $weapon->id }}.jpg">
+                                            <th class="col-xs-2"><img class="weapontableimg" src="/images/game/weapons/64/item{{ $weapon->id }}.jpg">
                                                 <p class="no-margin padding5">{{ $weapon->name }}</p>
                                             </th>
-                                            <th class="col-md-1">{{ $weapon->shots_fired }}</th>
-                                            <th class="col-md-1">{{ $weapon->time_used }}</th>
-                                            <th class="col-md-1">{{ $weapon->stuns_per_min }}</th>
-                                            <th class="col-md-1">{{ $weapon->accuracy }}%</th>
+                                            <th class="col-xs-1">{{ $weapon->shots_fired }}</th>
+                                            <th class="col-xs-1">{{ $weapon->time_used }}</th>
+                                            <th class="col-xs-1">{{ $weapon->stuns_per_min }}</th>
+                                            <th class="col-xs-1">{{ $weapon->accuracy }}%</th>
                                         </tr>
                                     @empty
                                         <th>Its Lone here.</th>
@@ -522,13 +522,13 @@
                                     @forelse($weaponFamily as $weapon)
                                         @unless($weapon->id == 32 || $weapon->id == 33)
                                         <tr>
-                                            <th class="col-md-2"><img class="weapontableimg" src="/images/game/weapons/64/item{{ $weapon->id }}.jpg">
+                                            <th class="col-xs-2"><img class="weapontableimg" src="/images/game/weapons/64/item{{ $weapon->id }}.jpg">
                                                 <p class="no-margin padding5">{{ $weapon->name }}</p>
                                             </th>
-                                            <th class="col-md-1">{{ $weapon->kills }}</th>
-                                            <th class="col-md-1">{{ $weapon->time_used }}</th>
-                                            <th class="col-md-1">{{ $weapon->kills_per_min }}</th>
-                                            <th class="col-md-1">{{ $weapon->accuracy }}%</th>
+                                            <th class="col-xs-1">{{ $weapon->kills }}</th>
+                                            <th class="col-xs-1">{{ $weapon->time_used }}</th>
+                                            <th class="col-xs-1">{{ $weapon->kills_per_min }}</th>
+                                            <th class="col-xs-1">{{ $weapon->accuracy }}%</th>
                                         </tr>
                                         @endunless
                                     @empty
@@ -550,22 +550,22 @@
 
 
         <div class="row no-margin player-round-reports" style="margin-bottom: 10px !important;">
-            <div class="col-md-12 panel panel-default no-padding no-margin no-left-padding">
+            <div class="col-xs-12 panel panel-default no-padding no-margin no-left-padding">
                 <div class="panel-heading"><span class="info-title">Last Rounds Played</span></div>
                 <div class="panel-body">
                     <table class="table table-striped table-hover no-margin">
                         <thead><tr>
-                            <th class="col-md-1">Round</th>
-                            <th class="col-md-2">Time</th>
-                            <th class="col-md-1">Swat</th>
-                            <th class="col-md-2">Suspects</th>
+                            <th class="col-xs-1">Round</th>
+                            <th class="col-xs-2">Time</th>
+                            <th class="col-xs-1">Swat</th>
+                            <th class="col-xs-2">Suspects</th>
                             <th>Map</th>
-                            <th class="col-md-2 text-right">Date</th>
+                            <th class="col-xs-2 text-right">Date</th>
                         </tr></thead>
                         <tbody id="data-items" class="roundstabledata">
                         @forelse($latestGames as $round)
                             <tr class="item pointer-cursor" data-id="{{ $round->id }}">
-                                <td class="color-main text-bold">{!! link_to_route('round-detail',$round->id,[$round->id]) !!}</td>
+                                <td class="color-main text-bold">{!! link_to_route('round-detail',$round->index,[$round->id]) !!}</td>
                                 <td class="text-muted">{{ $round->time }}</td>
                                 <td>{!! $round->swatScoreWithColor !!}</td>
                                 <td>{!! $round->suspectsScoreWithColor !!}</td>

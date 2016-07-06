@@ -70,4 +70,11 @@ class Game extends Model implements HasPresenter
         }
         return -2;
     }
+
+    public function getIndexAttribute()
+    {
+        if(is_null($this->round_index))
+            return $this->id;
+        return $this->round_index;
+    }
 }

@@ -1,31 +1,31 @@
 @extends('layouts.main')
 @section('main-container')
-    <div class="content col-md-9">
+    <div class="content col-xs-9">
         <div class="row panel text-center live-server-summary">
-            <div class="col-md-2 ls-swat4-summary">
+            <div class="col-xs-2 ls-swat4-summary">
                 <span class="info-title">SWAT</span>
                 <span class="info-value" id="ls-swat-score">0</span>
                 <span class="info-base" id="ls-swat-wins">0 Wins</span>
             </div>
-            <div class="col-md-2 ls-suspects-summary">
+            <div class="col-xs-2 ls-suspects-summary">
                 <span class="info-title">SUSPECTS</span>
                 <span class="info-value" id="ls-suspects-score">0</span>
                 <span class="info-base" id="ls-suspects-wins">0 Wins</span>
             </div>
-            <div class="col-md-3 ls-round-summary">
+            <div class="col-xs-3 ls-round-summary">
                 <span class="info-title">ROUND</span>
                 <span class="info-value" id="ls-round">0/0</span>
                 <span class="info-base" id="ls-time">00:00</span>
             </div>
-            <div class="col-md-5 ls-map-summary">
+            <div class="col-xs-5 ls-map-summary">
                 <span class="info-title">MAP</span>
                 <span class="info-value" id="ls-map-name">None</span>
                 <span class="info-base" id="ls-next-map">Next: None</span>
             </div>
         </div> {{--Live Server Summary Ends --}}
         <div class="row">
-            <div class="ls-players-and-top-player no-left-padding col-md-5">
-                <div class="col-md-12 panel panel-default no-padding">
+            <div class="ls-players-and-top-player no-left-padding col-xs-5">
+                <div class="col-xs-12 panel panel-default no-padding">
                     <div class="panel-heading"><span class="info-title">Online Players (<span id="ls-player-online">0</span>/<span id="ls-player-limit">0</span>)</span></div>
                     <div class="panel-body no-padding">
                         <table class="table table-striped table-hover no-margin" id="ls-player-table">
@@ -33,14 +33,15 @@
                         </table>
                     </div>
                 </div>
-                <div class="col-md-12 panel panel-default no-padding">
+                <div class="col-xs-12 panel panel-default no-padding">
                     <div class="panel-heading"><span class="info-title">Top Players</span></div>
                     <div class="panel-body no-padding">
+
                         <table class="table table-striped table-hover no-margin">
-                            <thead><tr>
-                                <th class="col-md-1">#</th>
-                                <th class="col-md-1">Flag</th>
-                                <th class="col-md-1">Rank</th>
+                            <thead style="font-size: 80%"><tr>
+                                <th class="col-xs-1">#</th>
+                                <th class="col-xs-1">Flag</th>
+                                <th class="col-xs-1">Rank</th>
                                 <th>Name</th>
                                 <th class="text-right">Rating</th>
                             </tr></thead>
@@ -59,7 +60,7 @@
                     </div>
                 </div>
             </div> {{--Server Players and Top Players Wrapper Ends--}}
-            <div class="col-md-7 panel panel-default no-padding">
+            <div class="col-xs-7 panel panel-default no-padding">
                 <div class="panel-heading">
                     <small class="pull-right"><i><b><a href="{{ route('chat.index') }}">» view all</a></b></i></small>
                     <span class="info-title">Server Viewer</span>
@@ -91,22 +92,22 @@
         </div> {{--Live Server Players,Top Players and Server Viewer Row Ends--}}
 
         <div class="row round-reports hidden-xs">
-            <div class="col-md-12 panel panel-default no-padding no-margin no-left-padding">
+            <div class="col-xs-12 panel panel-default no-padding no-margin no-left-padding">
                 <div class="panel-heading"><span class="info-title">Round Reports</span></div>
                 <div class="panel-body">
                     <table class="table table-striped table-hover no-margin">
                         <thead><tr>
-                            <th class="col-md-1">Round</th>
-                            <th class="col-md-2">Time</th>
-                            <th class="col-md-1">Swat</th>
-                            <th class="col-md-2">Suspects</th>
+                            <th class="col-xs-1">Round</th>
+                            <th class="col-xs-2">Time</th>
+                            <th class="col-xs-1">Swat</th>
+                            <th class="col-xs-2">Suspects</th>
                             <th>Map</th>
-                            <th class="col-md-2 text-right">Date</th>
+                            <th class="col-xs-2 text-right">Date</th>
                         </tr></thead>
                         <tbody id="data-items" class="roundstabledata">
                         @foreach($latestGames as $round)
                             <tr class="item pointer-cursor" data-id="{{ $round->id }}">
-                                <td class="color-main text-bold">{!! link_to_route('round-detail',$round->id,[$round->id]) !!}</td>
+                                <td class="color-main text-bold">{!! link_to_route('round-detail',$round->index,[$round->id]) !!}</td>
                                 <td class="text-muted">{{ $round->time }}</td>
                                 <td>{!! $round->swatScoreWithColor !!}</td>
                                 <td>{!! $round->suspectsScoreWithColor !!}</td>
@@ -815,7 +816,7 @@
                             $('#ls-player-limit').text(player_max);
 
 
-                            var playertable = "<thead><tr><th class='col-md-7'>Name</th><th class='col-md-2'>Score</th><th class='text-right col-md-3'>Ping</th></tr></thead><tbody id='ls-player-table-body'></tbody>";
+                            var playertable = "<thead><tr><th class='col-xs-7'>Name</th><th class='col-xs-2'>Score</th><th class='text-right col-xs-3'>Ping</th></tr></thead><tbody id='ls-player-table-body'></tbody>";
 
                             var i = 0;
                             $.each(data.players, function () {

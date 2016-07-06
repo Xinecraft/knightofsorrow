@@ -44,7 +44,7 @@
     </style>
 @endsection
 @section('main-container')
-    <div class="content col-md-9">
+    <div class="content col-xs-9">
         <div class="row">
             <div class="panel text-center">
                 <h4>Conversation between {!! link_to_route('user.show',$recuser1->displayName(),$recuser1->username,['class' => '']) !!} &amp; {!! link_to_route('user.show',$recuser2->displayName(),$recuser2->username,['class' => '']) !!}
@@ -55,7 +55,7 @@
             <div class="row" id="data-items" style="margin-bottom:30px;margin-top:20px;">
                 @forelse($messages as $message)
                     @if($message->sender_id > $message->reciever_id)
-                        <div class="item media col-md-8 col-md-offset-2">
+                        <div class="item media col-xs-8 col-xs-offset-2">
                             <div class="media-left">
                                 <a class="tooltipster" data-placement="right" title="{{ $message->sender->displayName() }}" href="{{ route('user.show',$message->sender->username) }}"><img
                                             src="{{ $message->sender->getGravatarLink() }}" alt=""
@@ -86,7 +86,7 @@
                             </div>
                         </div>
                     @else
-                        <div class="item media col-md-8 col-md-offset-2">
+                        <div class="item media col-xs-8 col-xs-offset-2">
                             <div class="media-body panel padding10 chatbox1 text-right">
 
                                 {{-- Delete Form --}}
@@ -118,7 +118,7 @@
                         </div>
                     @endif
                 @empty
-                    <div class="panel col-md-8 col-md-offset-2">
+                    <div class="panel col-xs-8 col-xs-offset-2">
                         <h4 class="text-danger text-center"><i>Its lonely here!</i></h4>
                     </div>
                 @endforelse

@@ -9,18 +9,18 @@
     </style>
     @endsection
 @section('main-container')
-    <div class="content col-md-9">
+    <div class="content col-xs-9">
         <div class="row">
-            <div class="col-md-10">
+            <div class="col-xs-10">
                 <div class="panel panel-default">
                     <div class="panel-heading">Server Administrators</div>
                     <div class="panel-body">
                         <table class="table table-hover table-striped">
                             <thead>
                             <tr>
-                                <td class="col-md-4 col-xs-4">Name</td>
-                                <td class="col-md-4 col-xs-4">Rank</td>
-                                <td class="col-md-3 col-xs-3">Last Seen</td>
+                                <td class="col-xs-4 col-xs-4">Name</td>
+                                <td class="col-xs-4 col-xs-4">Rank</td>
+                                <td class="col-xs-3 col-xs-3">Last Seen</td>
                             </tr>
                             </thead>
                             @foreach($roles as $role)
@@ -52,16 +52,16 @@
                 </div>
             </div>
 
-            <div class="col-md-10">
+            <div class="col-xs-10">
                 <div class="panel panel-default">
                     <div class="panel-heading">|KoS| Official Members <small><i>(excluding admins)</i></small></div>
                     <div class="panel-body">
                         <table class="table table-hover table-striped">
                             <thead>
                             <tr>
-                                <td class="col-md-4 col-xs-4">Name</td>
-                                <td class="col-md-4 col-xs-4">Rank</td>
-                                <td class="col-md-3 col-xs-3">Last Seen</td>
+                                <td class="col-xs-4 col-xs-4">Name</td>
+                                <td class="col-xs-4 col-xs-4">Rank</td>
+                                <td class="col-xs-3 col-xs-3">Last Seen</td>
                             </tr>
                             </thead>
                             @foreach($roless as $role)

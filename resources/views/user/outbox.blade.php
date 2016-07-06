@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('main-container')
-    <div class="content col-md-9">
+    <div class="content col-xs-9">
         @include('partials._errors')
 
         <div class="rounds panel panel-default">
@@ -9,9 +9,9 @@
                 <table id="" class="table table-striped table-hover no-margin">
                     <thead>
                     <tr>
-                        <th class="col-md-2">Reciever</th>
-                        <th class="col-md-8">Subject</th>
-                        <th class="col-md-2 text-right">Time</th>
+                        <th class="col-xs-2">Reciever</th>
+                        <th class="col-xs-8">Subject</th>
+                        <th class="col-xs-2 text-right">Time</th>
                     </tr>
                     </thead>
                     <tbody id="data-items">

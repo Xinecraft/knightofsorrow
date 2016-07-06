@@ -17,7 +17,7 @@
     </style>
 @endsection
 @section('main-container')
-    <div class="content col-md-9" id="app" xmlns:v-on="http://www.w3.org/1999/xhtml">
+    <div class="content col-xs-9" id="app" xmlns:v-on="http://www.w3.org/1999/xhtml">
         @include('partials._errors')
 
         @forelse($polls as $poll)

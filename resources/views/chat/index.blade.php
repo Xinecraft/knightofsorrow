@@ -1,10 +1,10 @@
 @extends('layouts.main')
 @section('title', 'Server Chat Archive')
 @section('main-container')
-    <div class="content col-md-8">
+    <div class="content col-xs-8">
         @include('partials._errors')
 
-        <div class="col-md-12 panel panel-default" style="padding: 15px">
+        <div class="col-xs-12 panel panel-default" style="padding: 15px">
             @if(Request::has('search'))
                 <h4 class="well well-sm">Search for "<b>{{ Request::get('search') }}</b>" matched {{ $chats->total() }}
                     chats</h4>
@@ -13,8 +13,8 @@
                 <a href="{{ route('chat.index') }}" class="btn btn-warning pull-right btn-xs">Reset</a>
 
                 {!! Form::open(['method' => 'get', 'name' => 'search', 'class' => 'form']) !!}
-                <div class="input-group col-md-7">
-                    {!! Form::text('search',null,['class' => 'form-control col-md-5', 'placeholder' => 'Search within chat...']) !!}
+                <div class="input-group col-xs-7">
+                    {!! Form::text('search',null,['class' => 'form-control col-xs-5', 'placeholder' => 'Search within chat...']) !!}
                     <span class="add-on input-group-btn">
                     <button type="submit" class="btn btn-info">Search</button>
                     </span>

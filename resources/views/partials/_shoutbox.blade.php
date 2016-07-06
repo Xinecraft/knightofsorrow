@@ -16,7 +16,7 @@
                     @foreach($shouts as $shout)
 
                         @if($shout->user_id % 2 == 0)
-                            <li class="clearfix left col-md-12 no-padding"><span class="chat-img pull-left">
+                            <li class="clearfix left col-xs-12 no-padding"><span class="chat-img pull-left">
                             <img src="{{ $shout->user->getGravatarLink(40) }}" width="40" height="40" alt="User Avatar" class="img-circle"/>
                                 </span>
                                 <div class="chat-body clearfix">
@@ -48,7 +48,7 @@
                             </li>
                         @else
 
-                            <li class="right clearfix col-md-12 no-padding"><span class="chat-img pull-right">
+                            <li class="right clearfix col-xs-12 no-padding"><span class="chat-img pull-right">
                             <img src="{{ $shout->user->getGravatarLink(40) }}" width="40" height="40" alt="User Avatar" class="img-circle"/>
                         </span>
                                 <div class="chat-body clearfix">

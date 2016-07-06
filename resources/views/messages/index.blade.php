@@ -47,7 +47,7 @@
     </style>
 @endsection
 @section('main-container')
-    <div class="content col-md-9">
+    <div class="content col-xs-9">
         <div class="row">
             <div class="panel text-center">
                 <h4> Your Messages Archive</h4>
@@ -62,7 +62,7 @@
 
                     @forelse($messages as $message)
                         <a href="{{ route('messages.show',$message->sender->username) }}">
-                            <div class="col-md-4" style="">
+                            <div class="col-xs-4" style="">
                                 <p class="padding10" style="border: 1px solid #bababa">
                                     <kbd>{{ $message->reciever->messagesUnseenBy($message->sender->username)->count() }}</kbd>
                                     new {{ str_plural("message",$message->reciever->messagesUnseenBy($message->sender->username)->count()) }}
@@ -77,7 +77,7 @@
                     <div class="panel-heading"><b> <i class="fa fa-mail-forward"></i> Start New Conversation</b></div>
                     <div class="panel-body">
                         <form method="get" action="/conversation/new" class="start-con-form form-horizontal">
-                            <div class="input-group col-md-7 col-md-offset-2">
+                            <div class="input-group col-xs-7 col-xs-offset-2">
                                 {!! Form::text('with',null,['class' => 'composemailusername form-control', 'placeholder' => 'Username or Email']) !!}
                                 <span class="add-on input-group-btn">
                                         <button class="btn btn-info" type="submit">
@@ -94,7 +94,7 @@
 
         <div class="row">
             @if(Auth::user()->isSuperAdmin())
-                <div class="col-md-6 no-padding">
+                <div class="col-xs-6 no-padding">
                     <div class="panel panel-default">
                         <div class="panel-heading"><b>Website Statistics</b></div>
                         <div class="panel-body">

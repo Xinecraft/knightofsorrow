@@ -3,7 +3,7 @@
 @section('title','Charts')
 
 @section('main-container')
-    <div class="col-md-9">
+    <div class="col-xs-9">
         @include('partials._statistics-navbar')
 
         <body>

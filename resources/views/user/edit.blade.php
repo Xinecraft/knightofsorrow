@@ -1,10 +1,10 @@
 @extends('layouts.main')
 @section('title','Setting')
 @section('main-container')
-    <div class="content col-md-9">
+    <div class="content col-xs-9">
     @include('partials._errors')
         <div class="row">
-            <div class="col-md-6 panel pad5">
+            <div class="col-xs-6 panel pad5">
                 <h5 class="info-title" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Change Password</h5>
                 {!! Form::open(['class' => 'form-horizontal']) !!}
                 {!! Form::hidden('type','UpdatePassword') !!}
@@ -31,7 +31,7 @@
                 {!! Form::close() !!}
             </div>
 
-            <div class="col-md-5 col-md-offset-1 panel pad5">
+            <div class="col-xs-5 col-xs-offset-1 panel pad5">
                 <h5 class="info-title" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Link to Stats Tracker</h5>
                 <p class="small"><b>Select which player from Stats Tracker is linked to your account.</b></p>
                 @if($players->count())
@@ -62,12 +62,12 @@
         </div>
 
         <div class="row">
-            <div class="col-md-6 panel pad5">
+            <div class="col-xs-6 panel pad5">
                 <h5 class="info-title" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Edit Profile</h5>
                     {!! Form::model($user,['route' => 'user.setting2.post','class' => 'form-horizontal']) !!}
                     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                        {!! Form::label('name', 'Full Name:', ['class' => 'col-md-4 control-label'])  !!}
-                        <div class="col-md-7">
+                        {!! Form::label('name', 'Full Name:', ['class' => 'col-xs-4 control-label'])  !!}
+                        <div class="col-xs-7">
                             {!! Form::text('name',null,['class' => 'form-control']) !!}
                             @if ($errors->has('name'))
                                 <span class="help-block">
@@ -78,15 +78,15 @@
                     </div>
 
                     <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
-                        {!! Form::label('username', 'Username:', ['class' => 'col-md-4 control-label'])  !!}
-                        <div class="col-md-7">
+                        {!! Form::label('username', 'Username:', ['class' => 'col-xs-4 control-label'])  !!}
+                        <div class="col-xs-7">
                             {!! Form::text('username',null,['class' => 'form-control', 'disabled' => 'true']) !!}
                         </div>
                     </div>
 
                     <div class="form-group{{ $errors->has('dob') ? ' has-error' : '' }}">
-                        {!! Form::label('dob', 'Date of Birth:', ['class' => 'col-md-4 control-label']) !!}
-                        <div class="col-md-7">
+                        {!! Form::label('dob', 'Date of Birth:', ['class' => 'col-xs-4 control-label']) !!}
+                        <div class="col-xs-7">
 
                             <div id="datetimepicker1" class="input-group">
                                 {!! Form::text('dob', null, ['class' => 'form-control', 'data-format' => 'yyyy-MM-dd']) !!}
@@ -108,8 +108,8 @@
 
 
                 <div class="form-group{{ $errors->has('gender') ? ' has-error' : '' }}">
-                    {!! Form::label('gender', 'Gender:', ['class' => 'col-md-4 control-label']) !!}
-                    <div class="col-md-7">
+                    {!! Form::label('gender', 'Gender:', ['class' => 'col-xs-4 control-label']) !!}
+                    <div class="col-xs-7">
                         {!! Form::select('gender', ['' => 'unspecified','Male' => 'Male','Female' => 'Female','Others' => 'Others'], null, ['placeholder' => 'Select Gender...', 'class' => 'form-control']) !!}
                         @if ($errors->has('gender'))
                             <span class="help-block">
@@ -120,8 +120,8 @@
                 </div>
 
                     <div class="form-group{{ $errors->has('about') ? ' has-error' : '' }}">
-                        {!! Form::label('about', 'About Me:', ['class' => 'col-md-4 control-label']) !!}
-                        <div class="col-md-7">
+                        {!! Form::label('about', 'About Me:', ['class' => 'col-xs-4 control-label']) !!}
+                        <div class="col-xs-7">
                             {!! Form::textarea('about',null,['class' => 'form-control']) !!}
                             <span class="help-block text-info small">
                                         BBCode supported.
@@ -136,7 +136,7 @@
                     </div>
 
                     <div class="form-group">
-                        <div class="col-md-6 col-md-offset-4">
+                        <div class="col-xs-6 col-xs-offset-4">
                             {!! Form::submit('Update Profile', ['class' => 'btn btn-primary']) !!}
                         </div>
                     </div>
@@ -144,7 +144,7 @@
                     {!! Form::close() !!}
             </div>
 
-            <div class="col-md-5 col-md-offset-1 panel pad5">
+            <div class="col-xs-5 col-xs-offset-1 panel pad5">
                 <h5 class="info-title" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Profile Picture</h5>
                 <p>To update your profile picture you need to register/login at <a target="_blank" href="http://gravatar.com">gravatar</a> and setup a profile picture there.</p>
 

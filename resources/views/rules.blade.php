@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('title','Rules all should respect')
 @section('main-container')
-    <div class="content col-md-9">
+    <div class="content col-xs-9">
 
         <div class="panel" style="padding: 20px;">
             <div style="padding-left:10px">

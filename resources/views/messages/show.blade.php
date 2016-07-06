@@ -44,7 +44,7 @@
     </style>
 @endsection
 @section('main-container')
-<div class="content col-md-9">
+<div class="content col-xs-9">
     <div class="row">
         <div class="panel text-center">
             <h4>Your Conversation
@@ -53,7 +53,7 @@
         <div class="">
             <br style="clear:both">
             {!! Form::open() !!}
-            <div class="col-md-8 col-md-offset-2 form-group{{ $errors->has('message') ? ' has-error' : '' }}">
+            <div class="col-xs-8 col-xs-offset-2 form-group{{ $errors->has('message') ? ' has-error' : '' }}">
 
                 {!! Form::textarea('message',null,['id' => 'message', 'class' => 'form-control no-resize', 'rows' => '2', 'placeholder' => 'Your message here']) !!}
                 <span class="help-block tiny pull-left"><p id="" class="nomargin help-block text-info">Type colon ":" for emoji popup</p></span>
@@ -67,7 +67,7 @@
                 @endif
                 {!! Form::submit('Send Message',['class' => 'form-control btn btn-info disabled', 'id' => 'btnSubmit']) !!}
             </div>
-            <div class="form-group col-md-3 col-md-offset-2">
+            <div class="form-group col-xs-3 col-xs-offset-2">
             </div>
             {!! Form::close() !!}
         </div>
@@ -75,7 +75,7 @@
         <div class="row" id="data-items" style="margin-bottom:30px;margin-top:20px;">
             @forelse($messages as $message)
                 @if($message->sender_id > $message->reciever_id)
-                    <div class="item media col-md-8 col-md-offset-2">
+                    <div class="item media col-xs-8 col-xs-offset-2">
                         <div class="media-left">
                             <a class="tooltipster" data-placement="right" title="{{ $message->sender->displayName() }}" href="{{ route('user.show',$message->sender->username) }}"><img
                                         src="{{ $message->sender->getGravatarLink() }}" alt=""
@@ -106,7 +106,7 @@
                         </div>
                     </div>
                 @else
-                    <div class="item media col-md-8 col-md-offset-2">
+                    <div class="item media col-xs-8 col-xs-offset-2">
                         <div class="media-body panel padding10 chatbox1 text-right">
 
                             {{-- Delete Form --}}
@@ -138,7 +138,7 @@
                     </div>
                 @endif
             @empty
-                <div class="panel col-md-8 col-md-offset-2">
+                <div class="panel col-xs-8 col-xs-offset-2">
                     <h4 class="text-danger text-center"><i>Its lonely here! Send a message now to start
                             conversation with {{ $recuser->displayName() }}</i></h4>
                 </div>

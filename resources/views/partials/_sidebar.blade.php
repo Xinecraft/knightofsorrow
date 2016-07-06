@@ -1,4 +1,4 @@
-<aside class="col-md-3">
+<aside class="col-xs-3">
     <div class="panel pad5" style="padding: 10px !important;">
         <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Join Server
             <small>(using)</small>

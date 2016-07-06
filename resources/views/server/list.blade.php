@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('main-container')
-    <div class="content col-md-9">
+    <div class="content col-xs-9">
 
         <div class="rounds panel panel-default">
             <div class="panel-heading"><strong>All SWAT4 Servers</strong></div>
@@ -8,12 +8,12 @@
                 <table id="" class="table table-striped table-hover no-margin">
                     <thead>
                     <tr>
-                        <th class="col-md-3">Name</th>
-                        <th class="col-md-1">Players</th>
-                        <th class="col-md-3">Gametype</th>
-                        <th class="col-md-3">Map</th>
-                        <th class="col-md-2">IP</th>
-                        <th class="col-md-1 text-right">Ver</th>
+                        <th class="col-xs-3">Name</th>
+                        <th class="col-xs-1">Players</th>
+                        <th class="col-xs-3">Gametype</th>
+                        <th class="col-xs-3">Map</th>
+                        <th class="col-xs-2">IP</th>
+                        <th class="col-xs-1 text-right">Ver</th>
                     </tr>
                     </thead>
                     <tbody id="data-items">

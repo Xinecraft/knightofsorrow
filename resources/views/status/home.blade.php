@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('title','Your Feedline')
 @section('main-container')
-    <div class="content col-md-7">
+    <div class="content col-xs-7">
         @include('partials._errors')
         @include('partials._status_update_form')
 

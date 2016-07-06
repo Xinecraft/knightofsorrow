@@ -378,6 +378,7 @@ class ServerTracker {
         $game->tag = $this->roundTag;
         $game->server_time = $this->serverTime;
         $game->round_time = $this->timePlayed;
+        $game->round_index = $this->roundIndex." / ".$this->roundLimit;
         $game->gametype = $this->gameType;
         $game->outcome = $this->roundOutcome;
         $game->map_id = $this->gameMap;

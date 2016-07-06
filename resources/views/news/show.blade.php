@@ -1,9 +1,9 @@
 @extends('layouts.main')
 @section('title',$news->title)
 @section('main-container')
-    <div class="content col-md-8">
+    <div class="content col-xs-8">
 
-        <div class="col-md-12 panel" style="padding: 15px">
+        <div class="col-xs-12 panel" style="padding: 15px">
             <h3>{{ $news->title }}</h3>
             <p class=""><i>
                 <small>{!! link_to_route('user.show', $news->user->displayName(), [$news->user->username]) !!}</small>

@@ -3,7 +3,7 @@
 @section('title',$countryName)
 
 @section('main-container')
-    <div class="col-md-9">
+    <div class="col-xs-9">
         @include('partials._statistics-navbar')
 
         <div class="rounds panel panel-default">
@@ -12,15 +12,15 @@
                 <table id="" class="table table-striped table-hover no-margin">
                     <thead>
                     <tr>
-                        <th class="col-md-1">{!! sort_country_players_by('position','#',$countryId,$countryName) !!}</th>
-                        <th class="col-md-1">Flag</th>
-                        <th class="col-md-1">{!! sort_country_players_by('rank_id','Rank',$countryId,$countryName) !!}</th>
-                        <th class="col-md-3">{!! sort_country_players_by('name','Name',$countryId,$countryName) !!}</th>
-                        <th class="col-md-1">{!! sort_country_players_by('player_rating','Rating',$countryId,$countryName) !!}</th>
-                        <th class="col-md-1">{!! sort_country_players_by('total_score','Score',$countryId,$countryName) !!}</th>
-                        <th class="col-md-1">{!! sort_country_players_by('total_points','Points',$countryId,$countryName) !!}</th>
-                        <th class="col-md-1">{!! sort_country_players_by('total_time_played','Time(h:m)',$countryId,$countryName) !!}</th>
-                        <th class="col-md-2 text-right">{!! sort_country_players_by('last_game_id','Last Seen',$countryId,$countryName) !!}</th>
+                        <th class="col-xs-1">{!! sort_country_players_by('position','#',$countryId,$countryName) !!}</th>
+                        <th class="col-xs-1">Flag</th>
+                        <th class="col-xs-1">{!! sort_country_players_by('rank_id','Rank',$countryId,$countryName) !!}</th>
+                        <th class="col-xs-3">{!! sort_country_players_by('name','Name',$countryId,$countryName) !!}</th>
+                        <th class="col-xs-1">{!! sort_country_players_by('player_rating','Rating',$countryId,$countryName) !!}</th>
+                        <th class="col-xs-1">{!! sort_country_players_by('total_score','Score',$countryId,$countryName) !!}</th>
+                        <th class="col-xs-1">{!! sort_country_players_by('total_points','Points',$countryId,$countryName) !!}</th>
+                        <th class="col-xs-1">{!! sort_country_players_by('total_time_played','Time(h:m)',$countryId,$countryName) !!}</th>
+                        <th class="col-xs-2 text-right">{!! sort_country_players_by('last_game_id','Last Seen',$countryId,$countryName) !!}</th>
                     </tr>
                     </thead>
                     <tbody id="data-items">

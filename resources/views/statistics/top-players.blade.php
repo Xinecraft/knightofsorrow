@@ -3,7 +3,7 @@
 @section('title',"Top Players")
 
 @section('main-container')
-    <div class="col-md-9">
+    <div class="col-xs-9">
         @include('partials._statistics-navbar')
 
         <div class="rounds panel panel-default">
@@ -12,15 +12,15 @@
                 <table id="" class="table table-striped table-hover no-margin">
                     <thead>
                     <tr>
-                        <th class="col-md-1">{!! sort_players_by('position','#') !!}</th>
-                        <th class="col-md-1">{!! sort_players_by('country_id','Flag') !!}</th>
-                        <th class="col-md-1">{!! sort_players_by('rank_id','Rank') !!}</th>
-                        <th class="col-md-3">{!! sort_players_by('name','Name') !!}</th>
-                        <th class="col-md-1">{!! sort_players_by('player_rating','Rating') !!}</th>
-                        <th class="col-md-1">{!! sort_players_by('total_score','Score') !!}</th>
-                        <th class="col-md-1">{!! sort_players_by('total_points','Points') !!}</th>
-                        <th class="col-md-1">{!! sort_players_by('total_time_played','Time(h:m)') !!}</th>
-                        <th class="col-md-2 text-right">{!! sort_players_by('last_game_id','Last Seen') !!}</th>
+                        <th class="col-xs-1">{!! sort_players_by('position','#') !!}</th>
+                        <th class="col-xs-1">{!! sort_players_by('country_id','Flag') !!}</th>
+                        <th class="col-xs-1">{!! sort_players_by('rank_id','Rank') !!}</th>
+                        <th class="col-xs-3">{!! sort_players_by('name','Name') !!}</th>
+                        <th class="col-xs-1">{!! sort_players_by('player_rating','Rating') !!}</th>
+                        <th class="col-xs-1">{!! sort_players_by('total_score','Score') !!}</th>
+                        <th class="col-xs-1">{!! sort_players_by('total_points','Points') !!}</th>
+                        <th class="col-xs-1">{!! sort_players_by('total_time_played','Time(h:m)') !!}</th>
+                        <th class="col-xs-2 text-right">{!! sort_players_by('last_game_id','Last Seen') !!}</th>
                     </tr>
                     </thead>
                     <tbody id="data-items">

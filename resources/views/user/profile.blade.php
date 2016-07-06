@@ -77,7 +77,7 @@
 @endsection
 @section('title', $user->displayName()."'s profile")
 @section('main-container')
-    <div class="content col-md-7">
+    <div class="content col-xs-7">
         @include('partials._errors')
 
         <div class="row">
@@ -85,7 +85,7 @@
                 <div class="panel panel-primary profile-panel">
                     <div class="panel-heading">
                         <div class="row">
-                            <div class="col-md-5">
+                            <div class="col-xs-5">
                                 {!! Html::image($user->getGravatarLink(250),null,['class' => 'img img-thumbnail profile-cover-img']) !!}
 
                                 @if($user->confirmed && !$user->banned)
@@ -98,7 +98,7 @@
                                     </p>
                                 @endif
                             </div>
-                            <div class="col-md-5">
+                            <div class="col-xs-5">
                                 <h3 class="no-margin hero-name {{ $user->banned ? 'linethru' : '' }}">{{ $user->name }}</h3>
                                 <h4 class="">{!! link_to_route('user.show',"@".$user->username,$user->username,['class' =>'username']) !!}</h4>
 
@@ -115,18 +115,18 @@
                                 </div>
 
                                 @if(Auth::check() && Auth::user()->isAdmin())
-                                <div class="col-md-12 well well-sm about-well">
-                                    {!! Form::open(['route'=> ['user.changerole',$user->username],'class' => 'form form-inline col-md-3']) !!}
+                                <div class="col-xs-12 well well-sm about-well">
+                                    {!! Form::open(['route'=> ['user.changerole',$user->username],'class' => 'form form-inline col-xs-3']) !!}
                                     {!! Form::hidden('user_id',$user->id) !!}
                                     {!! Form::hidden('job','demote') !!}
                                     <button title="Demote {{ $user->displayName() }} to previous rank" type="submit" class="tooltipster btn btn-danger btn-xs confirm">
                                         <i class="fa fa-btn fa-step-backward"></i>
                                     </button>
                                     {!! Form::close() !!}
-                                    <div class="col-md-6 text-center">
+                                    <div class="col-xs-6 text-center">
                                         {{ $user->role }}
                                     </div>
-                                    {!! Form::open(['route'=> ['user.changerole',$user->username],'class' => 'form form-inline col-md-3']) !!}
+                                    {!! Form::open(['route'=> ['user.changerole',$user->username],'class' => 'form form-inline col-xs-3']) !!}
                                     {!! Form::hidden('user_id',$user->id) !!}
                                     {!! Form::hidden('job','promote') !!}
                                     <button title="Promote {{ $user->displayName() }} to next rank" type="submit" class="tooltipster btn btn-info btn-xs confirm">
@@ -137,14 +137,14 @@
                                 @endif
                             </div>
 
-                            <div class="col-md-2">
+                            <div class="col-xs-2">
                                 {!! Html::image("/images/flags_new/flags-iso/shiny/64/".$user->country->countryCode.".png",null,['class' => 'img user-flag tooltipster', 'title' => $user->country->countryName]) !!}
                             </div>
                         </div>
 
                     </div>
                     <div class="panel-body">
-                        <div class="col-md-6 panel general-info pad5">
+                        <div class="col-xs-6 panel general-info pad5">
                             <h5 class="info-title" style="margin:0 0 10px 0;border-bottom:2px dashed grey">General
                                 Info</h5>
                             <table style="font-size: large" class="table table-striped table-hover table-bordered">
@@ -188,7 +188,7 @@
                             </table>
                         </div>
 
-                        <div class="col-md-6 panel stats-tracker pad5">
+                        <div class="col-xs-6 panel stats-tracker pad5">
                             <h5 class="info-title" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Stats
                                 Tracker</h5>
                             <table style="font-size: large" class="table table-striped table-hover table-bordered">
@@ -217,14 +217,14 @@
                         <div class="row">
                             @if(Auth::check())
                                 @if(Auth::user()->isFollowing($user))
-                                    {!! Form::open(['name'=>'unfollow','method'=>'DELETE','action'=>'UserController@deleteUnfollow','class'=>'form col-md-2 col-xs-4']) !!}
+                                    {!! Form::open(['name'=>'unfollow','method'=>'DELETE','action'=>'UserController@deleteUnfollow','class'=>'form col-xs-2 col-xs-4']) !!}
                                     {!! Form::hidden('user_id',$user->id) !!}
                                     <button title="Stop following {{ $user->displayName() }}" type="submit" class="tooltipster btn btn-warning btn-sm">
                                         <i class="fa fa-btn fa-user"></i> Unfollow
                                     </button>
                                     {!! Form::close() !!}
                                 @else
-                                    {!! Form::open(['name'=>'follow','method'=>'POST','action'=>'UserController@postFollow','class'=>'form col-md-2 col-xs-4']) !!}
+                                    {!! Form::open(['name'=>'follow','method'=>'POST','action'=>'UserController@postFollow','class'=>'form col-xs-2 col-xs-4']) !!}
                                     {!! Form::hidden('user_id',$user->id) !!}
                                     <button title="Start following {{ $user->displayName() }}" type="submit" class="tooltipster btn btn-info btn-sm">
                                         <i class="fa fa-btn fa-users"></i> Follow
@@ -233,7 +233,7 @@
                                 @endif
                             @endif
                             @if(Auth::check() && Auth::user()->isAdmin())
-                                {!! Form::open(['method' => 'patch', 'route' => ['user.toggleban',$user->username], 'class' => 'form col-md-2 col-xs-4'])  !!}
+                                {!! Form::open(['method' => 'patch', 'route' => ['user.toggleban',$user->username], 'class' => 'form col-xs-2 col-xs-4'])  !!}
                                 {!! Form::hidden('username',$user->username)  !!}
                                 @if($user->banned == 1)
                                         <button type="submit" class="btn btn-success btn-sm tooltipster" title="Remove Ban on {{ $user->displayname() }}">
@@ -247,7 +247,7 @@
                                 {!! Form::close()  !!}
                             @endif
                             @if(Auth::check() && $user->id != Auth::user()->id)
-                                <div class="col-md-2 absrz">
+                                <div class="col-xs-2 absrz">
                                     <a title="Start chatting with {{ $user->displayName() }}" class="btn btn-primary btn-sm tooltipster" href="{{ route('messages.show',$user->username) }}"><i class="fa fa-btn fa-comment-o"></i> Chat</a>
                                 </div>
                             @endif

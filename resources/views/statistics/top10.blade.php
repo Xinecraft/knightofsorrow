@@ -3,17 +3,17 @@
 @section('title',"Top 10 of Server")
 
 @section('main-container')
-    <div class="content col-md-9">
+    <div class="content col-xs-9">
+        @include('partials._statistics-navbar')
         <div class="row">
-            @include('partials._statistics-navbar')
-        <div class="col-md-5 panel panel-primary no-padding">
+        <div class="col-xs-5 panel panel-primary no-padding">
             <div class="panel-heading"><span class="">Top 10 Scorer</span></div>
             <div class="panel-body no-padding">
                 <table class="table table-striped table-hover no-margin">
                     <thead><tr>
-                        <th class="col-md-1">#</th>
-                        <th class="col-md-1">Flag</th>
-                        <th class="col-md-1">Rank</th>
+                        <th class="col-xs-1">#</th>
+                        <th class="col-xs-1">Flag</th>
+                        <th class="col-xs-1">Rank</th>
                         <th>Name</th>
                         <th class="text-right">Score</th>
                     </tr></thead>
@@ -31,14 +31,14 @@
                 </table>
             </div>
         </div>
-        <div class="col-md-5 col-lg-offset-1 panel panel-danger no-padding">
+        <div class="col-xs-5 col-xs-offset-2 panel panel-danger no-padding">
             <div class="panel-heading"><span class="">Top 10 Kill/Death Ratio</span> <small><i>( for kills > 99 )</i></small></div>
             <div class="panel-body no-padding">
                 <table class="table table-striped table-hover no-margin">
                     <thead><tr>
-                        <th class="col-md-1">#</th>
-                        <th class="col-md-1">Flag</th>
-                        <th class="col-md-1">Rank</th>
+                        <th class="col-xs-1">#</th>
+                        <th class="col-xs-1">Flag</th>
+                        <th class="col-xs-1">Rank</th>
                         <th>Name</th>
                         <th class="text-right">K/D</th>
                     </tr></thead>
@@ -59,14 +59,14 @@
         </div>
 
         <div class="row">
-            <div class="col-md-5 panel panel-info no-padding">
+            <div class="col-xs-5 panel panel-info no-padding">
                 <div class="panel-heading"><span class="">Top 10 Arrest/Arrested Ratio </span><small><i>( for arrests > 49 )</i></small></div>
                 <div class="panel-body no-padding">
                     <table class="table table-striped table-hover no-margin">
                         <thead><tr>
-                            <th class="col-md-1">#</th>
-                            <th class="col-md-1">Flag</th>
-                            <th class="col-md-1">Rank</th>
+                            <th class="col-xs-1">#</th>
+                            <th class="col-xs-1">Flag</th>
+                            <th class="col-xs-1">Rank</th>
                             <th>Name</th>
                             <th class="text-right">A/A</th>
                         </tr></thead>
@@ -84,14 +84,14 @@
                     </table>
                 </div>
             </div>
-            <div class="col-md-5 col-lg-offset-1 panel panel-success no-padding">
+            <div class="col-xs-5 col-xs-offset-2 panel panel-success no-padding">
                 <div class="panel-heading"><span class="">Top 10 Most Rounds Played</span></div>
                 <div class="panel-body no-padding">
                     <table class="table table-striped table-hover no-margin">
                         <thead><tr>
-                            <th class="col-md-1">#</th>
-                            <th class="col-md-1">Flag</th>
-                            <th class="col-md-1">Rank</th>
+                            <th class="col-xs-1">#</th>
+                            <th class="col-xs-1">Flag</th>
+                            <th class="col-xs-1">Rank</th>
                             <th>Name</th>
                             <th class="text-right">Rounds</th>
                         </tr></thead>
@@ -112,14 +112,14 @@
         </div>
 
     <div class="row">
-        <div class="col-md-5 panel panel-primary no-padding">
+        <div class="col-xs-5 panel panel-primary no-padding">
             <div class="panel-heading"><span class="">Top 10 Most Win</span></div>
             <div class="panel-body no-padding">
                 <table class="table table-striped table-hover no-margin">
                     <thead><tr>
-                        <th class="col-md-1">#</th>
-                        <th class="col-md-1">Flag</th>
-                        <th class="col-md-1">Rank</th>
+                        <th class="col-xs-1">#</th>
+                        <th class="col-xs-1">Flag</th>
+                        <th class="col-xs-1">Rank</th>
                         <th>Name</th>
                         <th class="text-right">Wins</th>
                     </tr></thead>
@@ -137,14 +137,14 @@
                 </table>
             </div>
         </div>
-        <div class="col-md-5 col-lg-offset-1 panel panel-danger no-padding">
+        <div class="col-xs-5 col-xs-offset-2 panel panel-danger no-padding">
             <div class="panel-heading"><span class="">Top 10 Highest Score </span><small><i>( in one round )</i></small></div>
             <div class="panel-body no-padding">
                 <table class="table table-striped table-hover no-margin">
                     <thead><tr>
-                        <th class="col-md-1">#</th>
-                        <th class="col-md-1">Flag</th>
-                        <th class="col-md-1">Rank</th>
+                        <th class="col-xs-1">#</th>
+                        <th class="col-xs-1">Flag</th>
+                        <th class="col-xs-1">Rank</th>
                         <th>Name</th>
                         <th class="text-right">Score</th>
                     </tr></thead>
@@ -165,14 +165,14 @@
     </div>
 
     <div class="row">
-        <div class="col-md-5 panel panel-info no-padding">
+        <div class="col-xs-5 panel panel-info no-padding">
             <div class="panel-heading"><span class="">Top 10 Best Kill Streak</span></div>
             <div class="panel-body no-padding">
                 <table class="table table-striped table-hover no-margin">
                     <thead><tr>
-                        <th class="col-md-1">#</th>
-                        <th class="col-md-1">Flag</th>
-                        <th class="col-md-1">Rank</th>
+                        <th class="col-xs-1">#</th>
+                        <th class="col-xs-1">Flag</th>
+                        <th class="col-xs-1">Rank</th>
                         <th>Name</th>
                         <th class="text-right">KS</th>
                     </tr></thead>
@@ -190,14 +190,14 @@
                 </table>
             </div>
         </div>
-        <div class="col-md-5 col-lg-offset-1 panel panel-success no-padding">
+        <div class="col-xs-5 col-xs-offset-2 panel panel-success no-padding">
             <div class="panel-heading"><span class="">Top 10 Best Arrest Streak</span></div>
             <div class="panel-body no-padding">
                 <table class="table table-striped table-hover no-margin">
                     <thead><tr>
-                        <th class="col-md-1">#</th>
-                        <th class="col-md-1">Flag</th>
-                        <th class="col-md-1">Rank</th>
+                        <th class="col-xs-1">#</th>
+                        <th class="col-xs-1">Flag</th>
+                        <th class="col-xs-1">Rank</th>
                         <th>Name</th>
                         <th class="text-right">AS</th>
                     </tr></thead>
