@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>KNIGHT of SORROW - @yield('title','SWAT 4 Servers & Community')</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo">
+    <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ elixir('css/all.css') }}">
     @yield('styles')
     <style>

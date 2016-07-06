@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e189236c-c3e7-488f-b221-e9fb727e1c1d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Console/Kernel.php" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Server/ServerTracker.php" afterPath="$PROJECT_DIR$/app/Server/ServerTracker.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/less/app.less" afterPath="$PROJECT_DIR$/resources/assets/less/app.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/main.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/main.blade.php" />
     </list>
     <ignored path="kos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,102 +27,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="player-details.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/statistics/player-details.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.6363637">
-              <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
-              <folding>
-                <element signature="e#18602#18620#0#HTML" expanded="true" />
-                <element signature="e#19041#19059#0#HTML" expanded="true" />
-                <element signature="e#19434#19452#0#HTML" expanded="true" />
-                <element signature="e#19878#19896#0#HTML" expanded="true" />
-                <element signature="e#20328#20346#0#HTML" expanded="true" />
-                <element signature="e#20723#20741#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CalculatePlayerTotalCommand.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Console/Commands/CalculatePlayerTotalCommand.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="26.76923">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Kernel.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Console/Kernel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5754717">
-              <caret line="28" column="24" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StatisticsController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StatisticsController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.230769">
-              <caret line="167" column="18" selection-start-line="167" selection-start-column="18" selection-end-line="167" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="top10.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/statistics/top10.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.615385">
-              <caret line="216" column="14" selection-start-line="216" selection-start-column="14" selection-end-line="216" selection-end-column="14" />
-              <folding>
-                <element signature="e#246#1711#0#HTML" expanded="false" />
-                <element signature="e#1720#3250#0#HTML" expanded="false" />
-                <element signature="e#3305#4915#0#HTML" expanded="false" />
-                <element signature="e#4928#6525#0#HTML" expanded="false" />
-                <element signature="e#6572#8037#0#HTML" expanded="false" />
-                <element signature="e#8046#9581#0#HTML" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="main.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/main.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-8.461538">
-              <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+              <caret line="11" column="102" selection-start-line="11" selection-start-column="102" selection-end-line="11" selection-end-column="102" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/messages/index.blade.php">
+      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.79518">
-              <caret line="96" column="35" selection-start-line="96" selection-start-column="35" selection-end-line="96" selection-end-column="35" />
+            <state vertical-scroll-proportion="-7.6923075">
+              <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
               <folding>
-                <element signature="e#2250#2283#0#HTML" expanded="true" />
-                <element signature="e#2833#2852#0#HTML" expanded="true" />
+                <marker date="1467835610735" expanded="true" signature="62800:62847" placeholder="..." />
+                <marker date="1467835610735" expanded="true" signature="63081:63128" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/messages/show.blade.php">
+      <file leaf-file-name="app.less" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/assets/less/app.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-24.120481">
-              <caret line="140" column="50" selection-start-line="140" selection-start-column="50" selection-end-line="140" selection-end-column="50" />
-              <folding>
-                <element signature="e#1343#1361#0#HTML" expanded="true" />
-                <element signature="e#2535#2578#0#HTML" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.6084906">
+              <caret line="36" column="38" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -153,7 +88,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/Game.php" />
-        <option value="$PROJECT_DIR$/app/Server/ServerTracker.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/_sidebar.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/rules.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/_shoutbox.blade.php" />
@@ -193,16 +127,17 @@
         <option value="$PROJECT_DIR$/resources/views/banned.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/test.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/statistics/top10.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/messages/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/messages/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/messages/showadmin.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/StatisticsController.php" />
         <option value="$PROJECT_DIR$/resources/views/statistics/player-details.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/main.blade.php" />
-        <option value="$PROJECT_DIR$/resources/assets/less/app.less" />
         <option value="$PROJECT_DIR$/app/Console/Kernel.php" />
+        <option value="$PROJECT_DIR$/app/Server/ServerTracker.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/main.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
+        <option value="$PROJECT_DIR$/resources/assets/less/app.less" />
       </list>
     </option>
   </component>
@@ -741,7 +676,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="app.less&#9;FILE&#9;file://C:/wamp/www/kos/resources/assets/less/app.less&#10;boot&#9;FILE&#9;file://C:/wamp/www/kos/public/css/bootstrap.css&#10;bootstrap.&#9;FILE&#9;file://C:/wamp/www/kos/public/css/bootstrap.css&#10;boots&#9;null&#9;null&#10;PlayerTot&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Repositories/PlayerTotalRepository.php&#10;app.le&#9;FILE&#9;file://C:/wamp/www/kos/resources/assets/less/app.less&#10;nab&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;User&#9;FILE&#9;file://C:/wamp/www/kos/app/User.php&#10;Po&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Requests/PollRequest.php&#10;News&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/NewsController.php&#10;PollC&#9;null&#9;null&#10;route&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/routes.php&#10;side&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;Builder&#9;null&#9;null&#10;main&#9;FILE&#9;file://C:/wamp/www/kos/public/js/main.js&#10;home.bl&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/home.blade.php&#10;_s&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;home&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/home.blade.php&#10;_nav&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;UserP&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Presenters/UserPresenter.php&#10;UserPre&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Presenters/UserPresenter.php&#10;routes&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/routes.php&#10;_side&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;country-&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/statistics/country-players.blade.php&#10;player&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/statistics/top-players.blade.php&#10;nav&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;Mail&#9;null&#9;null&#10;Messa&#9;null&#9;null&#10;.env&#9;FILE&#9;file://C:/wamp/www/kos/.env&#10;AuthC&#9;null&#9;null&#10;term&#9;ACTION&#9;ActivateTerminalToolWindow&#10;boo&#9;FILE&#9;file://C:/wamp/www/kos/public/css/bootstrap.css&#10;fo&#9;FILE&#9;file://C:/wamp/www/kos/public/font-awesome/css/font-awesome.css&#10;profile&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/user/profile.blade.php&#10;NewsC&#9;null&#9;null&#10;gulpf&#9;FILE&#9;file://C:/wamp/www/kos/gulpfile.js&#10;edit.blade&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/user/edit.blade.php&#10;_shout&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_shoutbox.blade.php&#10;main.js&#9;FILE&#9;file://C:/wamp/www/kos/public/js/main.js&#10;font&#9;FILE&#9;file://C:/wamp/www/kos/public/font-awesome/css/font-awesome.css&#10;pro&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/user/profile.blade.php&#10;_sid&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;Play&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Presenters/PlayerTotalPresenter.php&#10;app&#9;FILE&#9;file://C:/wamp/www/kos/resources/assets/less/app.less&#10;bootstrap.c&#9;FILE&#9;file://C:/wamp/www/kos/public/css/bootstrap.css&#10;Player&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Presenters/PlayerTotalPresenter.php&#10;app.l&#9;FILE&#9;file://C:/wamp/www/kos/resources/assets/less/app.less&#10;ter&#9;ACTION&#9;ActivateTerminalToolWindow&#10;prof&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/user/profile.blade.php&#10;PlayerT&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="app&#9;FILE&#9;file://C:/wamp/www/kos/resources/assets/less/app.less&#10;app.less&#9;FILE&#9;file://C:/wamp/www/kos/resources/assets/less/app.less&#10;boot&#9;FILE&#9;file://C:/wamp/www/kos/public/css/bootstrap.css&#10;bootstrap.&#9;FILE&#9;file://C:/wamp/www/kos/public/css/bootstrap.css&#10;boots&#9;null&#9;null&#10;PlayerTot&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Repositories/PlayerTotalRepository.php&#10;app.le&#9;FILE&#9;file://C:/wamp/www/kos/resources/assets/less/app.less&#10;nab&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;User&#9;FILE&#9;file://C:/wamp/www/kos/app/User.php&#10;Po&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Requests/PollRequest.php&#10;News&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/NewsController.php&#10;PollC&#9;null&#9;null&#10;route&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/routes.php&#10;side&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;Builder&#9;null&#9;null&#10;main&#9;FILE&#9;file://C:/wamp/www/kos/public/js/main.js&#10;home.bl&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/home.blade.php&#10;_s&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;home&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/home.blade.php&#10;_nav&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;UserP&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Presenters/UserPresenter.php&#10;UserPre&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Presenters/UserPresenter.php&#10;routes&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/routes.php&#10;_side&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;country-&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/statistics/country-players.blade.php&#10;player&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/statistics/top-players.blade.php&#10;nav&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;Mail&#9;null&#9;null&#10;Messa&#9;null&#9;null&#10;.env&#9;FILE&#9;file://C:/wamp/www/kos/.env&#10;AuthC&#9;null&#9;null&#10;term&#9;ACTION&#9;ActivateTerminalToolWindow&#10;boo&#9;FILE&#9;file://C:/wamp/www/kos/public/css/bootstrap.css&#10;fo&#9;FILE&#9;file://C:/wamp/www/kos/public/font-awesome/css/font-awesome.css&#10;profile&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/user/profile.blade.php&#10;NewsC&#9;null&#9;null&#10;gulpf&#9;FILE&#9;file://C:/wamp/www/kos/gulpfile.js&#10;edit.blade&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/user/edit.blade.php&#10;_shout&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_shoutbox.blade.php&#10;main.js&#9;FILE&#9;file://C:/wamp/www/kos/public/js/main.js&#10;font&#9;FILE&#9;file://C:/wamp/www/kos/public/font-awesome/css/font-awesome.css&#10;pro&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/user/profile.blade.php&#10;_sid&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;Play&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Presenters/PlayerTotalPresenter.php&#10;bootstrap.c&#9;FILE&#9;file://C:/wamp/www/kos/public/css/bootstrap.css&#10;Player&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Presenters/PlayerTotalPresenter.php&#10;app.l&#9;FILE&#9;file://C:/wamp/www/kos/resources/assets/less/app.less&#10;ter&#9;ACTION&#9;ActivateTerminalToolWindow&#10;prof&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/user/profile.blade.php&#10;PlayerT&#9;null&#9;null" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../twitter" />
   </component>
@@ -822,17 +757,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/news/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.884615">
-          <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
-          <folding>
-            <element signature="e#207#227#0#HTML" expanded="false" />
-            <element signature="e#264#319#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/news/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.60241">
@@ -1187,43 +1111,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/statistics/top10.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.615385">
-          <caret line="216" column="14" selection-start-line="216" selection-start-column="14" selection-end-line="216" selection-end-column="14" />
-          <folding>
-            <element signature="e#246#1711#0#HTML" expanded="false" />
-            <element signature="e#1720#3250#0#HTML" expanded="false" />
-            <element signature="e#3305#4915#0#HTML" expanded="false" />
-            <element signature="e#4928#6525#0#HTML" expanded="false" />
-            <element signature="e#6572#8037#0#HTML" expanded="false" />
-            <element signature="e#8046#9581#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/messages/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.79518">
-          <caret line="96" column="35" selection-start-line="96" selection-start-column="35" selection-end-line="96" selection-end-column="35" />
-          <folding>
-            <element signature="e#2250#2283#0#HTML" expanded="true" />
-            <element signature="e#2833#2852#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/messages/show.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.120481">
-          <caret line="140" column="50" selection-start-line="140" selection-start-column="50" selection-end-line="140" selection-end-column="50" />
-          <folding>
-            <element signature="e#1343#1361#0#HTML" expanded="true" />
-            <element signature="e#2535#2578#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/messages/showadmin.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.4698795">
@@ -1234,45 +1121,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StatisticsController.php">
+    <entry file="file://$PROJECT_DIR$/app/Console/Commands/CalculatePlayerTotalCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.230769">
-          <caret line="167" column="18" selection-start-line="167" selection-start-column="18" selection-end-line="167" selection-end-column="18" />
+        <state vertical-scroll-proportion="-1.6415094">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/main.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Server/ServerTracker.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.461538">
-          <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.4716981">
+          <caret line="378" column="41" selection-start-line="378" selection-start-column="41" selection-end-line="378" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/less/app.less">
+    <entry file="file://$PROJECT_DIR$/app/Console/Kernel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.83797467">
-          <caret line="42" column="22" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.4481132">
+          <caret line="24" column="7" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32697546">
-          <caret line="6" column="68" selection-start-line="6" selection-start-column="68" selection-end-line="6" selection-end-column="68" />
-          <folding>
-            <element signature="e#2337#2359#0#HTML" expanded="true" />
-            <marker date="1467830336381" expanded="true" signature="62800:62847" placeholder="..." />
-            <marker date="1467830336381" expanded="true" signature="63081:63128" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/statistics/player-details.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.6363637">
+        <state vertical-scroll-proportion="0.5063291">
           <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
           <folding>
             <element signature="e#18602#18620#0#HTML" expanded="true" />
@@ -1285,18 +1160,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Console/Commands/CalculatePlayerTotalCommand.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StatisticsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="26.76923">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.5660377">
+          <caret line="167" column="18" selection-start-line="167" selection-start-column="18" selection-end-line="167" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Console/Kernel.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/statistics/top10.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5754717">
-          <caret line="28" column="24" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.5283019">
+          <caret line="216" column="14" selection-start-line="216" selection-start-column="14" selection-end-line="216" selection-end-column="14" />
+          <folding>
+            <element signature="e#246#1711#0#HTML" expanded="false" />
+            <element signature="e#1720#3250#0#HTML" expanded="false" />
+            <element signature="e#3305#4915#0#HTML" expanded="false" />
+            <element signature="e#4928#6525#0#HTML" expanded="false" />
+            <element signature="e#6572#8037#0#HTML" expanded="false" />
+            <element signature="e#8046#9581#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/messages/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="5.455041">
+          <caret line="140" column="50" selection-start-line="140" selection-start-column="50" selection-end-line="140" selection-end-column="50" />
+          <folding>
+            <element signature="e#1343#1361#0#HTML" expanded="true" />
+            <element signature="e#2535#2578#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/messages/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.893733">
+          <caret line="96" column="35" selection-start-line="96" selection-start-column="35" selection-end-line="96" selection-end-column="35" />
+          <folding>
+            <element signature="e#2250#2283#0#HTML" expanded="true" />
+            <element signature="e#2833#2852#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/main.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.461538">
+          <caret line="11" column="102" selection-start-line="11" selection-start-column="102" selection-end-line="11" selection-end-column="102" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.6923075">
+          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+          <folding>
+            <marker date="1467835610735" expanded="true" signature="62800:62847" placeholder="..." />
+            <marker date="1467835610735" expanded="true" signature="63081:63128" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/less/app.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6084906">
+          <caret line="36" column="38" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
           <folding />
         </state>
       </provider>
