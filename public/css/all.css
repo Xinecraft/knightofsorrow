@@ -7414,7 +7414,8 @@ thead {
 .info-value {
   font-size: 25px;
   display: block;
-  font-family: fantasy;
+  text-transform: uppercase !important;
+  font-family: "Baloo", fantasy;
 }
 .info-base {
   font-size: 12px;
