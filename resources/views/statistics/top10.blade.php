@@ -5,6 +5,7 @@
 @section('main-container')
     <div class="content col-md-9">
         <div class="row">
+            @include('partials._statistics-navbar')
         <div class="col-md-5 panel panel-primary no-padding">
             <div class="panel-heading"><span class="">Top 10 Scorer</span></div>
             <div class="panel-body no-padding">

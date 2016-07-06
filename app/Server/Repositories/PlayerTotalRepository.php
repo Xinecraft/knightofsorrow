@@ -59,8 +59,9 @@ class PlayerTotalRepository implements PlayerTotalRepositoryInterface
             $playerTotal->profile_id = $alias->profile_id;
             /*$playerTotal->last_loadout_id = $alias->profile->loadout_id;*/
             $playerTotal->last_team = $alias->profile->team;
-            $playerTotal->first_game_id = $alias->profile->game_first;
-            $playerTotal->last_game_id = $alias->profile->game_last;
+            //$playerTotal->first_game_id = $alias->profile->game_first;
+            //$playerTotal->last_game_id = $alias->profile->game_last;
+
             $playerTotal->country_id = $alias->profile->country_id;
 
             $playersCollection = $alias->players;
@@ -74,6 +75,9 @@ class PlayerTotalRepository implements PlayerTotalRepositoryInterface
             {
                 $playerTotal->last_loadout_id = $alias->profile->loadout_id;
             }
+
+            $playerTotal->first_game_id =  $playersCollection->min('game_id');
+            $playerTotal->last_game_id = $playersCollection->max('game_id');
 
             $playerTotal->is_admin = $playersCollection->max('is_admin');
             $playerTotal->total_score = $playersCollection->sum('score');

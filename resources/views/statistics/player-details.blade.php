@@ -1,7 +1,21 @@
 @extends('layouts.main')
 @section('meta-desc',"All Statistics of $player->name")
 @section('title',$player->name)
-
+@section('styles')
+    <style>
+        .alert-inactive
+        {
+            padding: 5px;
+            margin-bottom: 15px;
+            border: 1px solid rgb(255, 0, 0);
+             border-radius: 0px !important;
+            background: rgba(255, 97, 97, 0.17);
+            color: #a70000;
+            text-align: center;
+        }
+        }
+    </style>
+    @endsection
 @section('main-container')
     <div class="col-md-9">
         @include('partials._statistics-navbar')
@@ -28,6 +42,12 @@
                 {!! Html::image('/images/flags_new/flags-iso/shiny/64/'.$player->country->countryCode.".png",$player->country->countryCode,['title' => $player->country->countryName, 'class'=> 'tooltipster']) !!}
             </div>
         </div>
+
+        @unless((\Carbon\Carbon::now()->timestamp - $player->alias->updated_at->timestamp) <= 60*60*24*7)
+            <p class="alert alert-danger alert-inactive">
+                <b>{{ $player->name }}</b> is not seen playing this week!
+            </p>
+        @endunless
 
         <div class="row panel no-margin player-rank-container">
             @foreach(App\Rank::where('id','>',1)->get() as $rank)
