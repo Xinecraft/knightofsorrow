@@ -24,7 +24,7 @@ class StatisticsController extends Controller
         $orderBy = Request::has('orderBy') && in_array(Request::get('orderBy'),$sortableColumns) ? Request::get('orderBy')  : 'created_at';
         $sortDir = Request::has('direction') ? Request::get('direction') : 'desc';
 
-        $rounds = Game::orderBy($orderBy,$sortDir)->paginate(15);
+        $rounds = Game::orderBy($orderBy,$sortDir)->paginate(30);
 
         return view('statistics.round-reports')->with('rounds', $rounds);
     }
@@ -41,7 +41,7 @@ class StatisticsController extends Controller
         $orderBy = Request::has('orderBy') && in_array(Request::get('orderBy'),$sortableColumns) ? Request::get('orderBy')  : 'position';
         $sortDir = Request::has('direction') ? Request::get('direction') : 'asc';
 
-        $players = PlayerTotal::orderBy($orderBy,$sortDir)->paginate(10);
+        $players = PlayerTotal::orderBy($orderBy,$sortDir)->paginate(30);
 
         return view('statistics.top-players')->with('players',$players);
     }
@@ -133,7 +133,7 @@ class StatisticsController extends Controller
         //$players = PlayerTotal::orderBy($orderBy,$sortDir)->paginate(10);
         $country = Country::findOrFail($id);
 
-        $players = $country->playerTotals()->orderBy($orderBy,$sortDir)->paginate(10);
+        $players = $country->playerTotals()->orderBy($orderBy,$sortDir)->paginate(30);
 
         $array = [
             'players' => $players,

@@ -3,52 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e189236c-c3e7-488f-b221-e9fb727e1c1d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Game.php" afterPath="$PROJECT_DIR$/app/Game.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Server/ServerTracker.php" afterPath="$PROJECT_DIR$/app/Server/ServerTracker.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/auth/password.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/password.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/auth/reset.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/reset.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/chat/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/chat/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/main.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/main.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/messages/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/messages/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/messages/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/messages/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/messages/showadmin.blade.php" afterPath="$PROJECT_DIR$/resources/views/messages/showadmin.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/news/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/news/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/news/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/news/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/news/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/news/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/news/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/news/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/_footer.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/_footer.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/_round-player-ajax.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/_round-player-ajax.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/_shoutbox.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/_shoutbox.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/_sidebar.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/_sidebar.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/_view_statuses.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/_view_statuses.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/polls/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/polls/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/polls/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/polls/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/rules.blade.php" afterPath="$PROJECT_DIR$/resources/views/rules.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/server/list.blade.php" afterPath="$PROJECT_DIR$/resources/views/server/list.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/server/submit.blade.php" afterPath="$PROJECT_DIR$/resources/views/server/submit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/statistics/charts.blade.php" afterPath="$PROJECT_DIR$/resources/views/statistics/charts.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/statistics/countries.blade.php" afterPath="$PROJECT_DIR$/resources/views/statistics/countries.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/statistics/country-players.blade.php" afterPath="$PROJECT_DIR$/resources/views/statistics/country-players.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/StatisticsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/StatisticsController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/statistics/player-details.blade.php" afterPath="$PROJECT_DIR$/resources/views/statistics/player-details.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/statistics/round-details.blade.php" afterPath="$PROJECT_DIR$/resources/views/statistics/round-details.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/statistics/round-reports.blade.php" afterPath="$PROJECT_DIR$/resources/views/statistics/round-reports.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/statistics/top-players.blade.php" afterPath="$PROJECT_DIR$/resources/views/statistics/top-players.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/statistics/top10.blade.php" afterPath="$PROJECT_DIR$/resources/views/statistics/top10.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/status/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/status/home.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/status/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/status/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/test.blade.php" afterPath="$PROJECT_DIR$/resources/views/test.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/user/adminlist.blade.php" afterPath="$PROJECT_DIR$/resources/views/user/adminlist.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/user/composemail.blade.php" afterPath="$PROJECT_DIR$/resources/views/user/composemail.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/user/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/user/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/user/inbox.blade.php" afterPath="$PROJECT_DIR$/resources/views/user/inbox.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/user/outbox.blade.php" afterPath="$PROJECT_DIR$/resources/views/user/outbox.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/user/profile.blade.php" afterPath="$PROJECT_DIR$/resources/views/user/profile.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/user/serverkeys.blade.php" afterPath="$PROJECT_DIR$/resources/views/user/serverkeys.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/user/showmail.blade.php" afterPath="$PROJECT_DIR$/resources/views/user/showmail.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" />
     </list>
     <ignored path="kos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -70,6 +26,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="player-details.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/statistics/player-details.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.8607595">
+              <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+              <folding>
+                <element signature="e#18602#18620#0#HTML" expanded="true" />
+                <element signature="e#19041#19059#0#HTML" expanded="true" />
+                <element signature="e#19434#19452#0#HTML" expanded="true" />
+                <element signature="e#19878#19896#0#HTML" expanded="true" />
+                <element signature="e#20328#20346#0#HTML" expanded="true" />
+                <element signature="e#20723#20741#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -80,6 +53,16 @@
                 <marker date="1467830336381" expanded="true" signature="62800:62847" placeholder="..." />
                 <marker date="1467830336381" expanded="true" signature="63081:63128" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StatisticsController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StatisticsController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.230769">
+              <caret line="167" column="18" selection-start-line="167" selection-start-column="18" selection-end-line="167" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -101,11 +84,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/main.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8962264">
-              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+            <state vertical-scroll-proportion="-10.769231">
+              <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -164,7 +147,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Server/Repositories/PlayerTotalRepository.php" />
         <option value="$PROJECT_DIR$/public/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/database/migrations/2016_07_06_132835_add_round_index_to_games_table.php" />
         <option value="$PROJECT_DIR$/app/Game.php" />
@@ -192,7 +174,6 @@
         <option value="$PROJECT_DIR$/resources/views/statistics/charts.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/statistics/countries.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/statistics/country-players.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/statistics/player-details.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/statistics/round-details.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/statistics/round-reports.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/statistics/top-players.blade.php" />
@@ -215,6 +196,8 @@
         <option value="$PROJECT_DIR$/resources/views/messages/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/messages/showadmin.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/main.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/StatisticsController.php" />
+        <option value="$PROJECT_DIR$/resources/views/statistics/player-details.blade.php" />
       </list>
     </option>
   </component>
@@ -664,6 +647,46 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -754,14 +777,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/reset.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5301204">
-          <caret line="46" column="56" selection-start-line="46" selection-start-column="56" selection-end-line="46" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/chat/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.2289157">
@@ -793,8 +808,8 @@
         <state vertical-scroll-proportion="-16.884615">
           <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
           <folding>
-            <element signature="e#207#227#0#HTML" expanded="true" />
-            <element signature="e#264#319#0#HTML" expanded="true" />
+            <element signature="e#207#227#0#HTML" expanded="false" />
+            <element signature="e#264#319#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -804,8 +819,8 @@
         <state vertical-scroll-proportion="-4.60241">
           <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
           <folding>
-            <element signature="e#205#225#0#HTML" expanded="true" />
-            <element signature="e#262#317#0#HTML" expanded="true" />
+            <element signature="e#205#225#0#HTML" expanded="false" />
+            <element signature="e#262#317#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -839,8 +854,8 @@
         <state vertical-scroll-proportion="-3.879518">
           <caret line="39" column="44" selection-start-line="39" selection-start-column="44" selection-end-line="39" selection-end-column="44" />
           <folding>
-            <element signature="n#style#0;n#footer#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#iframe#0;n#div#0;n#div#0;n#div#0;n#footer#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#footer#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#iframe#0;n#div#0;n#div#0;n#div#0;n#footer#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -978,55 +993,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/statistics/player-details.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.24096386">
-          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-          <folding>
-            <element signature="e#2502#2548#0#HTML" expanded="true" />
-            <element signature="e#2597#2636#0#HTML" expanded="true" />
-            <element signature="e#3026#3047#0#HTML" expanded="true" />
-            <element signature="e#3395#3498#0#HTML" expanded="true" />
-            <element signature="e#3591#3648#0#HTML" expanded="true" />
-            <element signature="e#3806#3856#0#HTML" expanded="true" />
-            <element signature="e#3901#3925#0#HTML" expanded="true" />
-            <element signature="e#4045#4102#0#HTML" expanded="true" />
-            <element signature="e#4262#4312#0#HTML" expanded="true" />
-            <element signature="e#4357#4381#0#HTML" expanded="true" />
-            <element signature="e#4502#4559#0#HTML" expanded="true" />
-            <element signature="e#4754#4774#0#HTML" expanded="true" />
-            <element signature="e#4975#4995#0#HTML" expanded="true" />
-            <element signature="e#5198#5218#0#HTML" expanded="true" />
-            <element signature="e#5420#5440#0#HTML" expanded="true" />
-            <element signature="e#5642#5662#0#HTML" expanded="true" />
-            <element signature="e#5861#5881#0#HTML" expanded="true" />
-            <element signature="e#5932#5999#0#HTML" expanded="true" />
-            <element signature="e#6137#6174#0#HTML" expanded="true" />
-            <element signature="e#6238#6264#0#HTML" expanded="true" />
-            <element signature="e#6393#6413#0#HTML" expanded="true" />
-            <element signature="e#6462#6486#0#HTML" expanded="true" />
-            <element signature="e#6609#6634#0#HTML" expanded="true" />
-            <element signature="e#6763#6783#0#HTML" expanded="true" />
-            <element signature="e#6832#6856#0#HTML" expanded="true" />
-            <element signature="e#7122#7190#0#HTML" expanded="true" />
-            <element signature="e#7230#7333#0#HTML" expanded="true" />
-            <element signature="e#7758#7779#0#HTML" expanded="true" />
-            <element signature="e#9030#9073#0#HTML" expanded="true" />
-            <element signature="e#18321#18389#0#HTML" expanded="true" />
-            <element signature="e#18576#18594#0#HTML" expanded="true" />
-            <element signature="e#18998#19016#0#HTML" expanded="true" />
-            <element signature="e#19374#19392#0#HTML" expanded="true" />
-            <element signature="e#19801#19819#0#HTML" expanded="true" />
-            <element signature="e#20234#20252#0#HTML" expanded="true" />
-            <element signature="e#20612#20630#0#HTML" expanded="true" />
-            <element signature="e#20968#21041#0#HTML" expanded="true" />
-            <element signature="e#21152#21176#0#HTML" expanded="true" />
-            <element signature="e#22023#22144#0#HTML" expanded="true" />
-            <element signature="e#30229#30268#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/statistics/round-details.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-46.289158">
@@ -1116,9 +1082,8 @@
         <state vertical-scroll-proportion="-28.698795">
           <caret line="146" column="40" selection-start-line="146" selection-start-column="40" selection-end-line="146" selection-end-column="40" />
           <folding>
-            <element signature="e#259#314#0#HTML" expanded="true" />
-            <element signature="e#2012#2067#0#HTML" expanded="true" />
-            <element signature="e#3819#3874#0#HTML" expanded="true" />
+            <element signature="e#259#314#0#HTML" expanded="false" />
+            <element signature="e#2012#2067#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1144,14 +1109,13 @@
         <state vertical-scroll-proportion="-42.433735">
           <caret line="249" column="51" selection-start-line="249" selection-start-column="51" selection-end-line="249" selection-end-column="51" />
           <folding>
-            <element signature="e#4012#4038#0#HTML" expanded="true" />
-            <element signature="e#6615#6670#0#HTML" expanded="true" />
-            <element signature="e#6756#6780#0#HTML" expanded="true" />
-            <element signature="e#7367#7396#0#HTML" expanded="true" />
-            <element signature="e#7580#7603#0#HTML" expanded="true" />
-            <element signature="e#7820#7842#0#HTML" expanded="true" />
-            <element signature="e#9352#9407#0#HTML" expanded="true" />
-            <element signature="e#9494#9518#0#HTML" expanded="true" />
+            <element signature="e#4012#4038#0#HTML" expanded="false" />
+            <element signature="e#6756#6780#0#HTML" expanded="false" />
+            <element signature="e#7367#7396#0#HTML" expanded="false" />
+            <element signature="e#7580#7603#0#HTML" expanded="false" />
+            <element signature="e#7820#7842#0#HTML" expanded="false" />
+            <element signature="e#9352#9407#0#HTML" expanded="false" />
+            <element signature="e#9494#9518#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1263,11 +1227,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StatisticsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.230769">
+          <caret line="167" column="18" selection-start-line="167" selection-start-column="18" selection-end-line="167" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/main.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8962264">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        <state vertical-scroll-proportion="-10.769231">
+          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/statistics/player-details.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8607595">
+          <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+          <folding>
+            <element signature="e#18602#18620#0#HTML" expanded="true" />
+            <element signature="e#19041#19059#0#HTML" expanded="true" />
+            <element signature="e#19434#19452#0#HTML" expanded="true" />
+            <element signature="e#19878#19896#0#HTML" expanded="true" />
+            <element signature="e#20328#20346#0#HTML" expanded="true" />
+            <element signature="e#20723#20741#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -13,6 +13,9 @@
             color: #a70000;
             text-align: center;
         }
+        .guagecan{
+            width: 8em !important;
+            height: auto !important;
         }
     </style>
     @endsection
@@ -66,7 +69,7 @@
 
         <div class="row no-margin panel player-stats-container">
             {{-- Loadout Starts --}}
-            <div class="col-xs-5 col-xs-12 pad10 player-stats-loadout-container">
+            <div class="col-xs-5 pad10 player-stats-loadout-container">
 
                 <!-- LoadOut -->
                 <h5 class="no-margin" style="border-bottom: 2px dashed gray;margin-bottom: 10px !important;color: #2D2D2D;font-weight: bold;">
@@ -82,28 +85,28 @@
                 </div>
 
                 <div class="col-xs-12 no-padding" style="border: 1px solid;margin-bottom: 10px !important;">
-                    <div class="col-xs-4 col-xs-4 no-padding"><img class="tooltipster" title="{{ $player->loadoutEq1 }}" src="/images/game/weapons/64/item{{ $player->loadout->equip_one }}.jpg" style="width: 100%;"></div>
-                    <div class="col-xs-4 col-xs-4 no-padding"><img class="tooltipster" title="{{ $player->loadoutEq2 }}" src="/images/game/weapons/64/item{{ $player->loadout->equip_two }}.jpg" style="width: 100%;"></div>
-                    <div class="col-xs-4 col-xs-4 no-padding"><img class="tooltipster" title="{{ $player->loadoutEq3 }}" src="/images/game/weapons/64/item{{ $player->loadout->equip_three }}.jpg" style="width: 100%;"></div>
-                    <div class="col-xs-4 col-xs-4 no-padding"><img class="tooltipster" title="{{ $player->loadoutEq4 }}" src="/images/game/weapons/64/item{{ $player->loadout->equip_four }}.jpg" style="width: 100%;"></div>
-                    <div class="col-xs-4 col-xs-4 no-padding"><img class="tooltipster" title="{{ $player->loadoutEq5 }}" src="/images/game/weapons/64/item{{ $player->loadout->equip_five }}.jpg" style="width: 100%;"></div>
-                    <div class="col-xs-4 col-xs-4 no-padding"><img class="tooltipster" title="{{ $player->loadoutBr }}" src="/images/game/weapons/64/item{{ $player->loadout->breacher }}.jpg" style="width: 100%;"></div>
+                    <div class="col-xs-4 no-padding"><img class="tooltipster" title="{{ $player->loadoutEq1 }}" src="/images/game/weapons/64/item{{ $player->loadout->equip_one }}.jpg" style="width: 100%;"></div>
+                    <div class="col-xs-4 no-padding"><img class="tooltipster" title="{{ $player->loadoutEq2 }}" src="/images/game/weapons/64/item{{ $player->loadout->equip_two }}.jpg" style="width: 100%;"></div>
+                    <div class="col-xs-4 no-padding"><img class="tooltipster" title="{{ $player->loadoutEq3 }}" src="/images/game/weapons/64/item{{ $player->loadout->equip_three }}.jpg" style="width: 100%;"></div>
+                    <div class="col-xs-4 no-padding"><img class="tooltipster" title="{{ $player->loadoutEq4 }}" src="/images/game/weapons/64/item{{ $player->loadout->equip_four }}.jpg" style="width: 100%;"></div>
+                    <div class="col-xs-4 no-padding"><img class="tooltipster" title="{{ $player->loadoutEq5 }}" src="/images/game/weapons/64/item{{ $player->loadout->equip_five }}.jpg" style="width: 100%;"></div>
+                    <div class="col-xs-4 no-padding"><img class="tooltipster" title="{{ $player->loadoutBr }}" src="/images/game/weapons/64/item{{ $player->loadout->breacher }}.jpg" style="width: 100%;"></div>
                     <p class="text-center" style="margin-top: 5px;width: 100%;float: left;text-align: center;"><strong>Equipments</strong>
                     </p>
                 </div>
 
-                <div class="col-xs-12 col-xs-12 no-padding" style="margin-bottom: 8px !important">
-                    <div class="col-xs-5 col-xs-5 no-padding" style="border: 1px solid;"><img class="tooltipster" title="{{ $player->loadoutHead }}" src="/images/game/weapons/128/item{{ $player->loadout->head }}.jpg" style="width: 100%;">
+                <div class="col-xs-12 no-padding" style="margin-bottom: 8px !important">
+                    <div class="col-xs-5 no-padding" style="border: 1px solid;"><img class="tooltipster" title="{{ $player->loadoutHead }}" src="/images/game/weapons/128/item{{ $player->loadout->head }}.jpg" style="width: 100%;">
                         <p class="text-center" style="margin-top: 5px;"><strong>{{ $player->loadoutHead }}</strong></p></div>
-                    <div class="col-xs-5 col-xs-5 right no-padding" style="border: 1px solid"><img class="tooltipster" title="{{ $player->loadoutBody }}" src="/images/game/weapons/128/item{{ $player->loadout->body }}.jpg" style="width: 100%;">
+                    <div class="col-xs-5 right no-padding" style="border: 1px solid"><img class="tooltipster" title="{{ $player->loadoutBody }}" src="/images/game/weapons/128/item{{ $player->loadout->body }}.jpg" style="width: 100%;">
                         <p class="text-center" style="margin-top: 5px;"><strong>{{ $player->loadoutBody }}</strong></p>
                     </div>
                 </div>
             </div>
             {{-- / Loadout Ends --}}
 
-            {{-- General Statistics --}}
-            <div class="col-xs-7 col-xs-12 general-statistics pad10" style="background-color: #ffffff;margin-top: 5px;border: 1px solid;">
+            {{-- General Statistics @TODO: add class general-statistics and fix bugs --}}
+            <div class="col-xs-7 pad10" style="background-color: #ffffff;margin-top: 5px;border: 1px solid;">
                 <h5 class="no-margin" style="border-bottom: 2px dashed gray;margin-bottom: 10px !important;color: #2D2D2D;font-weight: bold;">
                     General Statistics</h5>
 
@@ -368,37 +371,37 @@
             <!-- / General Stats Ends -->
 
             <!-- Gauge Statistics -->
-            <div class="col-xs-12 col-xs-12 pad10" style="background-color: #ffffff;margin-top: 5px;border: 1px solid;">
+            <div class="col-xs-12 pad10" style="background-color: #ffffff;margin-top: 5px;border: 1px solid;">
                 <div class="col-xs-2 no-margin no-padding">
                     <p class="no-margin text-center gaugeheading">Score / Min</p>
-                    <canvas id="gauge-spm" style="width: 8em" data-spm="{{ $player->score_per_min }}"></canvas>
+                    <canvas class="guagecan" id="gauge-spm" style="width: 8em" data-spm="{{ $player->score_per_min }}"></canvas>
                     <h4 class="font-dsdigital no-margin text-center">{{ $player->score_per_min }}</h4>
                 </div>
                 <div class="col-xs-2 no-margin no-padding">
                     <p class="no-margin text-center gaugeheading tooltipster" title="<b>Win / Lost Ratio</b>">W/L Ratio</p>
-                    <canvas id="gauge-wlr" style="width: 8em" data-wlr="{{ $player->winLostRatio }}"></canvas>
+                    <canvas class="guagecan" id="gauge-wlr" style="width: 8em" data-wlr="{{ $player->winLostRatio }}"></canvas>
                     <h4 class="font-dsdigital no-margin text-center">{{ $player->winLostRatio }}</h4>
                 </div>
 
                 <div class="col-xs-2 no-margin no-padding">
                     <p class="no-margin text-center gaugeheading">Accuracy</p>
-                    <canvas id="gauge-acr" style="width: 8em" data-acr="{{ $player->weaponAccuracy }}"></canvas>
+                    <canvas class="guagecan" id="gauge-acr" style="width: 8em" data-acr="{{ $player->weaponAccuracy }}"></canvas>
                     <h4 class="font-dsdigital no-margin text-center">{{ $player->weaponAccuracy }}%</h4>
                 </div>
                 <div class="col-xs-2 no-margin no-padding">
                     <p class="no-margin text-center gaugeheading tooltipster" title="<b>Kill / Death Ratio</b>">K/D Ratio</p>
-                    <canvas id="gauge-kdr" style="width: 8em" data-kdr="{{ $player->killdeath_ratio }}"></canvas>
+                    <canvas class="guagecan" id="gauge-kdr" style="width: 8em" data-kdr="{{ $player->killdeath_ratio }}"></canvas>
                     <h4 class="font-dsdigital no-margin text-center">{{ $player->killdeath_ratio }}</h4>
                 </div>
                 <div class="col-xs-2 no-margin no-padding">
                     <p class="no-margin text-center gaugeheading tooltipster" title="<b>Arrest / Arrested Ratio</b>">A/A Ratio</p>
-                    <canvas id="gauge-aar" style="width: 8em" data-aar="{{ $player->arr_ratio }}"></canvas>
+                    <canvas class="guagecan" id="gauge-aar" style="width: 8em" data-aar="{{ $player->arr_ratio }}"></canvas>
                     <h4 class="font-dsdigital no-margin text-center">{{ $player->arr_ratio }}</h4>
                 </div>
 
                 <div class="col-xs-2 no-margin no-padding">
                     <p class="no-margin text-center gaugeheading">Score percentile</p>
-                    <canvas id="gauge-spt" style="width: 8em" data-spt="{{ $player->score_percentile }}"></canvas>
+                    <canvas class="guagecan" id="gauge-spt" style="width: 8em" data-spt="{{ $player->score_percentile }}"></canvas>
                     <h4 class="font-dsdigital no-margin text-center">{{ $player->score_percentile }}</h4>
                 </div>
             </div>
