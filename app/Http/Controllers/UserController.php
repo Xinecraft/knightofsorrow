@@ -452,4 +452,9 @@ class UserController extends Controller
         return view('user.adminlist')->withRoles($role)->withRoless($roleM);
     }
 
+    public function getWebAdmin()
+    {
+        return view('user.webadmin');
+    }
+
 }

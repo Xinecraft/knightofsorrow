@@ -9,17 +9,17 @@
                 {!! Form::open(['class' => 'form-horizontal']) !!}
                 {!! Form::hidden('type','UpdatePassword') !!}
                     <div class="form-group"><label for="email" class="col-sm-4 control-label">Current Email</label>
-                        <div class="col-sm-8">
+                        <div class="col-xs-7">
                             <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}" placeholder="Email address">
                         </div>
                     </div>
                     <div class="form-group"><label for="password" class="col-sm-4 control-label">New Password</label>
-                        <div class="col-sm-8">
+                        <div class="col-xs-7">
                             <input type="password" class="form-control" id="password" name="password" placeholder="New password">
                         </div>
                     </div>
                     <div class="form-group"><label for="password_confirmation" class="col-sm-4 control-label">Password Again</label>
-                        <div class="col-sm-8">
+                        <div class="col-xs-7">
                             <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="New password again">
                         </div>
                     </div>

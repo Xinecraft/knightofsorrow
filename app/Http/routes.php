@@ -40,6 +40,8 @@ Route::group(['prefix' => 'api'],function(){
     Route::get('players/{query}',['as' => 'api-players-query', 'uses' => 'ApiController@getQueryPlayer']);
 
     Route::get('whois',['as' => 'api-server-whois', 'uses' => 'ApiController@whois']);
+
+    Route::get('ip2cc/{IP}', ['as' => 'api-ip-country', 'uses' => 'ApiController@getCountryCodeFromIP']);
 });
 
 
@@ -89,7 +91,7 @@ Route::post('/changerole/@{username}',['middleware' => ['auth','admin'], 'as' =>
 Route::get('/viewserverkeys',['middleware' => 'auth','as' => 'user.viewkeys', 'uses' => 'UserController@viewServerCredentials']);
 Route::post('/viewserverkeys',['middleware' => 'auth','as' => 'user.viewkeys.post', 'uses' => 'UserController@postServerCredentials']);
 Route::get('/admins-list',['as' => 'admin.list', 'uses' => 'UserController@adminList']);
-
+Route::get('/webadmin',['as' => 'webadmin', 'middleware' => ['auth','admin'], 'uses' => 'UserController@getWebAdmin']);
 /*
  * Removed because new messaging system has be developed!
  *
@@ -196,9 +198,6 @@ Route::delete('/messages/{id}', ['as' => 'messages.delete', 'uses' => 'MailContr
 Route::get('messages/',['as' => 'messages.index', 'uses' => 'MailController@index']);
 
 
-Route::get('/test',function(){
-    $poll = App\Pollq::find(3);
-
-
-    dd($poll->users());
+Route::get('/download/adminmoddata/version.txt',function(){
+    printf("%s","v22");
 });

@@ -21,10 +21,10 @@ class ChatController extends Controller
         if(Input::has('search'))
         {
             $query = Input::get('search');
-            $chats = Chat::where('message','LIKE',"%$query%")->orderBy('created_at', 'DESC')->paginate(25);
+            $chats = Chat::where('message','LIKE',"%$query%")->orderBy('created_at', 'DESC')->paginate(50);
         }
         else
-            $chats = Chat::orderBy('created_at', 'DESC')->paginate(25);
+            $chats = Chat::orderBy('created_at', 'DESC')->paginate(50);
 
         return view('chat.index')->withChats($chats);
     }

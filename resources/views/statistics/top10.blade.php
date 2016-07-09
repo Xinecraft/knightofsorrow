@@ -5,7 +5,7 @@
 @section('main-container')
     <div class="content col-xs-9">
         @include('partials._statistics-navbar')
-        <div class="row">
+        <div class="row padding10">
         <div class="col-xs-5 panel panel-primary no-padding">
             <div class="panel-heading"><span class="">Top 10 Scorer</span></div>
             <div class="panel-body no-padding">
@@ -58,7 +58,7 @@
         </div>
         </div>
 
-        <div class="row">
+        <div class="row padding10">
             <div class="col-xs-5 panel panel-info no-padding">
                 <div class="panel-heading"><span class="">Top 10 Arrest/Arrested Ratio </span><small><i>( for arrests > 49 )</i></small></div>
                 <div class="panel-body no-padding">
@@ -111,7 +111,7 @@
             </div>
         </div>
 
-    <div class="row">
+    <div class="row padding10">
         <div class="col-xs-5 panel panel-primary no-padding">
             <div class="panel-heading"><span class="">Top 10 Most Win</span></div>
             <div class="panel-body no-padding">
@@ -164,7 +164,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row padding10">
         <div class="col-xs-5 panel panel-info no-padding">
             <div class="panel-heading"><span class="">Top 10 Best Kill Streak</span></div>
             <div class="panel-body no-padding">

@@ -19,7 +19,7 @@ class PollController extends Controller
      */
     public function index()
     {
-        $polls = Pollq::with('pollos')->latest()->get();
+        $polls = Pollq::with('pollos')->where('disabled','!=','1')->latest()->get();
         return view('polls.index')->with('polls',$polls);
     }
 
@@ -113,6 +113,12 @@ class PollController extends Controller
             return back()->with('error','Choose one option');
         }
         $pollq = Pollq::findOrFail($id);
+
+        // Not allow to vote when Poll is disabled
+        if($pollq->disabled == 1)
+        {
+            return;
+        }
 
         if($pollq->hasVoted($request->user()))
         {

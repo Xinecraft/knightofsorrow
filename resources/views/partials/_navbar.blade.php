@@ -63,8 +63,9 @@
                                 <li><a href="{{ route('user.viewkeys') }}">Server Passwords</a></li>
                                 @if(Auth::user()->isAdmin())
                                     <li><a href="{{ route('news.create') }}">Create News</a></li>
-                                    <li><a href="{{ route('servers.new') }}">Add Server</a></li>
+                                    {{--<li><a href="{{ route('servers.new') }}">Add Server</a></li>--}}
                                     <li><a href="{{ route('poll.create') }}">Create Poll</a></li>
+                                    <li><a href="{{ route('webadmin') }}">Web Admin</a></li>
                                 @endif
                             @endif
 

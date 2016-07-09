@@ -1,4 +1,4 @@
-<aside class="col-xs-3">
+<aside class="col-xs-3 main-sidebar">
     <div class="panel pad5" style="padding: 10px !important;">
         <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Join Server
             <small>(using)</small>
@@ -24,7 +24,7 @@
     </div>
     -->
 
-    @if($poll = App\Pollq::latest()->limit(1)->first())
+    @if($poll = App\Pollq::where('disabled','!=','1')->latest()->limit(1)->first())
         <div class="poll-cont">
             @if(!$poll->isExpired() && !$poll->isVoted())
                 <div class="panel pad10">
@@ -32,7 +32,7 @@
                     <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Poll</h4>
                     {!! Form::open(['route' => ['poll.vote',$poll->id]]) !!}
                     <h5 class=""><b>{{ $poll->question }}</b></h5>
-                    <div class="panel pad10 no-margin">
+                    <div class="panel pad10 no-margin" style="font-size: small !important;">
                         @foreach($poll->pollos as $pollo)
                             <input type="radio" name="option" value="{{ $pollo->id }}"> {{ $pollo->option }}<br>
                         @endforeach
@@ -47,7 +47,7 @@
                     <small class="pull-right"><i><b><a href="{{ route('poll.index') }}">» view all</a></b></i></small>
                     <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Poll</h4>
                     <h5 class=""><b>{{ $poll->question }}</b></h5>
-                    <div class="panel pad10 no-margin">
+                    <div class="panel pad10 no-margin" style="font-size: small !important;">
                         @foreach($poll->pollos as $pollo)
                             {{ $pollo->option }}<br>
                             <div class="progress">
@@ -84,13 +84,14 @@
             </ul>
         </div>
 
-        @if(\App\Didyouknow::count() > 0)
+        @if(\App\Didyouknow::count() > 99)
             <div class="panel pad5" style="padding: 10px !important;">
                 <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Did You Know</h4>
                 <p class="small convert-emoji"
                    style="color:rgb({{ rand(0,200) }},{{ rand(0,200) }},{{ rand(0,200) }});">{!!  BBCode::parseCaseInsensitive((htmlentities(\App\Didyouknow::get()->random()->body))) !!}</p>
             </div>
         @endif
+
     @endif
 
 </aside>

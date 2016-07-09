@@ -91,8 +91,8 @@
             </div> {{--Live Server Viewer Ends--}}
         </div> {{--Live Server Players,Top Players and Server Viewer Row Ends--}}
 
-        <div class="row round-reports hidden-xs">
-            <div class="col-xs-12 panel panel-default no-padding no-margin no-left-padding">
+        <div class="row hidden-xs round-reports">
+            <div style="" class="col-xs-12 panel panel-default no-padding no-margin no-left-padding">
                 <div class="panel-heading"><span class="info-title">Round Reports</span></div>
                 <div class="panel-body">
                     <table class="table table-striped table-hover no-margin">
@@ -122,8 +122,12 @@
         </div>
 
         <div class="row player-records hidden-xs">
-            <div class="panel panel-default">
-                <div class="panel-heading info-title">Player Records</div>
+            <div style="" class="col-xs-12 panel panel-default no-padding no-margin no-left-padding">
+                <div class="panel-heading">
+                    <span class="info-title">
+                    Player Records
+                    </span>
+                </div>
                 <div class="panel-body">
                     <div class="col-articles articles">
                         <div>
@@ -679,34 +683,23 @@
             </div>
         </div>
 
-        <div class="panel panel-default row">
-            <div class="panel-heading info-title">Notifications</div>
-            <div class="panel-body">
-                <ul class="list-group">
-                @forelse($feeds as $feed)
-                        <li class="list-group-item">
-                        <a href="{{ route('user.show',$feed->user->username) }}">
-                            <strong class="primary-font">{{ $feed->user->displayName() }}</strong>
-                        </a> updated his status <i class="text-danger">{!! link_to_route('show-status',$feed->timeSincePublished,[$feed->id],['class' => 'status-timeago']) !!}</i>. <small class="text-muted convert-emoji"> {{ str_limit($feed->body,50) }} </small>
-                        </li>
-                @empty
-                    <li class="list-group-item">No New Notifcations</li>
-                @endforelse
-                </ul>
-            </div>
-        </div>
+        <div style="margin-bottom: 15px;" class="row player-records">
+            <div style="" class="col-xs-12 panel panel-default no-padding no-margin no-left-padding">
+                <div class="panel-heading">
+                <span class="info-title">
+                    Last Active Users
+                </span>
+                </div>
 
-
-        <div class="panel panel-default row">
-            <div class="panel-heading info-title">Last Active Users</div>
-            <div class="panel-body">
+                <div class="panel-body">
                     @forelse($activeUsers as $user)
-                            <a class="{{ $user->isAdmin() ? "text-green" : "" }}" style="margin-right:1em" href="{{ route('user.show',$user->username) }}">
-                                <strong class="">{{ $user->displayName() }}</strong>
-                            </a>
+                        <a class="{{ $user->isAdmin() ? "text-green" : "" }}" style="margin-right:1em" href="{{ route('user.show',$user->username) }}">
+                            <strong class="">{{ $user->displayName() }}</strong>
+                        </a>
                     @empty
 
                     @endforelse
+                </div>
             </div>
         </div>
 
@@ -821,8 +814,7 @@
                             var i = 0;
                             $.each(data.players, function () {
 
-                                //TODO: Check why team colors not working.
-                                console.log(data['players'][i]['team']);
+                                //console.log(data['players'][i]['team']);
                                 if (data['players'][i]['team'] == 0) {
                                     playertable = playertable + "<tr class='text-bold'>";
                                     data['players'][i]['name'] = "<font color='blue'>" + data['players'][i]['name'];

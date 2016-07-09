@@ -190,7 +190,7 @@ class MainController extends Controller
         }
 
         //Latest Feeds
-        $feeds  = Status::with('user')->latest()->limit(5)->get();
+        //$feeds  = Status::with('user')->latest()->limit(5)->get();
 
         $activeUsers = User::orderBy('updated_at','DESC')->limit(30)->get();
 
@@ -202,7 +202,7 @@ class MainController extends Controller
             'PastMonth' => $PastMonth,
             'PastYear' => $PastYear,
 
-            'feeds' => $feeds,
+            //'feeds' => $feeds,
             'activeUsers' => $activeUsers,
         ];
 

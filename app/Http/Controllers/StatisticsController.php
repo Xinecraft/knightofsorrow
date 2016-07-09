@@ -24,7 +24,7 @@ class StatisticsController extends Controller
         $orderBy = Request::has('orderBy') && in_array(Request::get('orderBy'),$sortableColumns) ? Request::get('orderBy')  : 'created_at';
         $sortDir = Request::has('direction') ? Request::get('direction') : 'desc';
 
-        $rounds = Game::orderBy($orderBy,$sortDir)->paginate(30);
+        $rounds = Game::orderBy($orderBy,$sortDir)->paginate(35);
 
         return view('statistics.round-reports')->with('rounds', $rounds);
     }
@@ -41,7 +41,7 @@ class StatisticsController extends Controller
         $orderBy = Request::has('orderBy') && in_array(Request::get('orderBy'),$sortableColumns) ? Request::get('orderBy')  : 'position';
         $sortDir = Request::has('direction') ? Request::get('direction') : 'asc';
 
-        $players = PlayerTotal::orderBy($orderBy,$sortDir)->paginate(30);
+        $players = PlayerTotal::orderBy($orderBy,$sortDir)->paginate(35);
 
         return view('statistics.top-players')->with('players',$players);
     }
@@ -110,11 +110,11 @@ class StatisticsController extends Controller
         $orderBy = Request::has('orderBy') && in_array(Request::get('orderBy'),$sortableColumns) ? Request::get('orderBy')  : 'total_players';
         $sortDir = Request::has('direction') ? Request::get('direction') : 'desc';
 
-        $players = PlayerTotal::CountryAggregate()->orderBy($orderBy,$sortDir)->paginate(10);
+        $players = PlayerTotal::CountryAggregate()->orderBy($orderBy,$sortDir)->paginate(35);
 
         $playersAll = PlayerTotal::CountryAggregate()->orderBy($orderBy,$sortDir)->get();
 
-        $position = $players->currentPage() * 10 - 9;
+        $position = ($players->currentPage()-1) * 35 + 1;
 
         return view('statistics.countries')->with('players',$players)->with('playersAll',$playersAll)->with('position',$position);
     }
@@ -133,7 +133,7 @@ class StatisticsController extends Controller
         //$players = PlayerTotal::orderBy($orderBy,$sortDir)->paginate(10);
         $country = Country::findOrFail($id);
 
-        $players = $country->playerTotals()->orderBy($orderBy,$sortDir)->paginate(30);
+        $players = $country->playerTotals()->orderBy($orderBy,$sortDir)->paginate(35);
 
         $array = [
             'players' => $players,

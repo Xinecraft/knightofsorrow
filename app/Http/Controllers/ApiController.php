@@ -305,4 +305,31 @@ class ApiController extends Controller
             }
         }
     }
+
+    public function getCountryCodeFromIP($IP)
+    {
+        $geoip = \App::make('geoip');
+        $playerCountryCode = "_unknown";
+        try {
+            if ($player_geoip = $geoip->city($IP)) {
+                $playerCountryCode = $player_geoip->country->isoCode;
+            }
+        }
+        catch(\Exception $e)
+        {
+            switch($e)
+            {
+                case $e instanceof \InvalidArgumentException:
+                    $playerCountryCode = "_unknown";
+                    break;
+                case $e instanceof \GeoIp2\Exception\AddressNotFoundException:
+                    $playerCountryCode = "_unknown";
+                    break;
+                default:
+                    $playerCountryCode = "_unknown";
+                    break;
+            }
+        }
+        printf("%s",$playerCountryCode);
+    }
 }
