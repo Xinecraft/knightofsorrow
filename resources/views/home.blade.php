@@ -809,22 +809,21 @@
                             $('#ls-player-limit').text(player_max);
 
 
-                            var playertable = "<thead><tr><th class='col-xs-7'>Name</th><th class='col-xs-2'>Score</th><th class='text-right col-xs-3'>Ping</th></tr></thead><tbody id='ls-player-table-body'></tbody>";
+                            var playertable = "<thead><tr><th class='col-xs-1'>Flag</th><th class='col-xs-7'>Name</th><th class='col-xs-2'>Score</th><th class='text-right col-xs-2'>Ping</th></tr></thead><tbody id='ls-player-table-body'></tbody>";
 
                             var i = 0;
                             $.each(data.players, function () {
 
                                 //console.log(data['players'][i]['team']);
+                                playertable = playertable + "<tr class='text-bold'><td><img src='http://kos.dev/images/flags/20/"+data['players'][i]['countryCode']+".png' title='"+data['players'][i]['countryName']+"' class='tooltipster' alt='"+data['players'][i]['countryCode']+"'></td>";
+
                                 if (data['players'][i]['team'] == 0) {
-                                    playertable = playertable + "<tr class='text-bold'>";
                                     data['players'][i]['name'] = "<font color='blue'>" + data['players'][i]['name'];
                                 }
                                 else if (data['players'][i]['team'] == 1) {
-                                    playertable = playertable + "<tr class='text-bold'>";
                                     data['players'][i]['name'] = "<font color='red'>" + data['players'][i]['name'];
                                 }
                                 else {
-                                    playertable = playertable + "<tr class='text-bold'>";
                                     data['players'][i]['name'] = "<font color=''>" + data['players'][i]['name'];
                                 }
 

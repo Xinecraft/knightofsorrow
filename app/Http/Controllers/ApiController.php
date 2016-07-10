@@ -35,6 +35,69 @@ class ApiController extends Controller
         return htmlspecialchars_decode(html_entity_decode($data));
     }
 
+    public function getServerQueryv2()
+    {
+        $data = new Swat4Server('127.0.0.1', 10483);
+        $data->query();
+
+        $sv = [];
+
+        $sv['map'] = $data->option['map'];
+        $sv['players_current'] = $data->option['players_current'];
+        $sv['players_max'] = $data->option['players_max'];
+        $sv['swatwon'] = $data->option['swatwon'];
+        $sv['suspectswon'] = $data->option['suspectswon'];
+        $sv['round'] = $data->option['round'];
+        $sv['numrounds'] = $data->option['numrounds'];
+        $sv['suspectsscore'] = $data->option['suspectsscore'];
+        $sv['swatscore'] = $data->option['swatscore'];
+        $sv['timeleft'] = $data->option['timeleft'];
+        $sv['nextmap'] = $data->option['nextmap'];
+
+
+        array_walk($data->option['players'],function(&$item1, $key){
+            $item1['ip'] = explode(":",$item1['ip'])[0];
+
+            // Country Fetch with IP
+            $IP = $item1['ip'];
+
+            $geoip = \App::make('geoip');
+            $playerCountryCode = "_unknown";
+            $playerCountryName = "Unknown Territory";
+            try {
+                if ($player_geoip = $geoip->city($IP)) {
+                    $playerCountryName = $player_geoip->country->name;
+                    $playerCountryCode = $player_geoip->country->isoCode;
+                }
+            }
+            catch(\Exception $e)
+            {
+                switch($e)
+                {
+                    case $e instanceof \InvalidArgumentException:
+                        $playerCountryCode = "_unknown";
+                        $playerCountryName = "Unknown Territory";
+                        break;
+                    case $e instanceof \GeoIp2\Exception\AddressNotFoundException:
+                        $playerCountryCode = "_unknown";
+                        $playerCountryName = "Unknown Territory";
+                        break;
+                    default:
+                        $playerCountryCode = "_unknown";
+                        $playerCountryName = "Unknown Territory";
+                        break;
+                }
+            }
+
+            $item1['ip'] = "...";
+            $item1['countryCode'] = $playerCountryCode;
+            $item1['countryName'] = $playerCountryName;
+        });
+
+        return htmlspecialchars_decode(html_entity_decode($data));
+
+    }
+
     /**
      * Return Server chats
      */
