@@ -815,7 +815,7 @@
                             $.each(data.players, function () {
 
                                 //console.log(data['players'][i]['team']);
-                                playertable = playertable + "<tr class='text-bold'><td><img src='http://kos.dev/images/flags/20/"+data['players'][i]['countryCode']+".png' title='"+data['players'][i]['countryName']+"' class='tooltipster' alt='"+data['players'][i]['countryCode']+"'></td>";
+                                playertable = playertable + "<tr class='text-bold'><td><img src='http://kos.dev/images/flags/20/"+data['players'][i]['countryCode']+".png' title='"+data['players'][i]['countryName']+"' class='' alt='"+data['players'][i]['countryCode']+"'></td>";
 
                                 if (data['players'][i]['team'] == 0) {
                                     data['players'][i]['name'] = "<font color='blue'>" + data['players'][i]['name'];
