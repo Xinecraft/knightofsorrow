@@ -493,8 +493,10 @@ class ServerTracker {
             if($alias->id == null)
             {
                 //$profile = Profile::firstOrNew(['ip_address' => $player_ip_trim.'%']);
+
                 $profile = Profile::where('ip_address','LIKE',$player_ip_trim.'%')->first();
 
+                // If no profile present create new else ignore.
                 if(!$profile)
                 {
                     $profile = new Profile();
@@ -589,7 +591,7 @@ class ServerTracker {
             }
         endforeach;
 
-        $response = Response::make("1\\nStats has been successfully tracked.",200);
+        $response = Response::make("0\\nStats has been successfully tracked.\\n",200);
         $response->send();
     }
 }

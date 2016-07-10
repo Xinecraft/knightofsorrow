@@ -189,6 +189,13 @@ class MainController extends Controller
             $PastYear->bestScorePerMin = 0;
         }
 
+        if($PastYear->totalScore == null)
+            $PastYear = $AllTime;
+        if($PastMonth->totalScore == null)
+            $PastMonth = $PastYear;
+        if($PastWeek->totalScore == null)
+            $PastWeek = $PastMonth;
+
         //Latest Feeds
         //$feeds  = Status::with('user')->latest()->limit(5)->get();
 
@@ -201,8 +208,6 @@ class MainController extends Controller
             'PastWeek' => $PastWeek,
             'PastMonth' => $PastMonth,
             'PastYear' => $PastYear,
-
-            //'feeds' => $feeds,
             'activeUsers' => $activeUsers,
         ];
 
