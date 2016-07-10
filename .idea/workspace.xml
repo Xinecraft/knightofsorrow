@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e189236c-c3e7-488f-b221-e9fb727e1c1d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" />
     </list>
     <ignored path="kos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ApiController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ApiController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8962264">
-              <caret line="42" column="17" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
+            <state vertical-scroll-proportion="-12.307693">
+              <caret line="39" column="50" selection-start-line="39" selection-start-column="50" selection-end-line="39" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -44,15 +46,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.3846154">
-              <caret line="817" column="281" selection-start-line="817" selection-start-column="281" selection-end-line="817" selection-end-column="281" />
+            <state vertical-scroll-proportion="0.3301887">
+              <caret line="817" column="133" selection-start-line="817" selection-start-column="133" selection-end-line="817" selection-end-column="133" />
               <folding>
                 <element signature="e#1844#1881#0#HTML" expanded="true" />
-                <marker date="1468170923534" expanded="true" signature="62238:62285" placeholder="..." />
-                <marker date="1468170923534" expanded="true" signature="62519:62566" placeholder="..." />
+                <marker date="1468171356834" expanded="true" signature="62233:62280" placeholder="..." />
+                <marker date="1468171356834" expanded="true" signature="62514:62561" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -122,8 +124,8 @@
         <option value="$PROJECT_DIR$/public/js/jquery.dotimeout.min.js" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" />
+        <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
       </list>
     </option>
   </component>
@@ -1167,18 +1169,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.3846154">
-          <caret line="817" column="281" selection-start-line="817" selection-start-column="281" selection-end-line="817" selection-end-column="281" />
-          <folding>
-            <element signature="e#1844#1881#0#HTML" expanded="true" />
-            <marker date="1468170923534" expanded="true" signature="62238:62285" placeholder="..." />
-            <marker date="1468170923534" expanded="true" signature="62519:62566" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.6153846">
@@ -1189,9 +1179,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8962264">
-          <caret line="42" column="17" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
+        <state vertical-scroll-proportion="-12.307693">
+          <caret line="39" column="50" selection-start-line="39" selection-start-column="50" selection-end-line="39" selection-end-column="50" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3301887">
+          <caret line="817" column="133" selection-start-line="817" selection-start-column="133" selection-end-line="817" selection-end-column="133" />
+          <folding>
+            <element signature="e#1844#1881#0#HTML" expanded="true" />
+            <marker date="1468171356834" expanded="true" signature="62233:62280" placeholder="..." />
+            <marker date="1468171356834" expanded="true" signature="62514:62561" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
