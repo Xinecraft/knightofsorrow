@@ -29,7 +29,7 @@
                             <td class="color-main text-bold">{{ $player->position }}</td>
                             <td class="text-muted"><img class="tooltipster" title="{{ $player->country->countryName }}" src="{{ $player->countryImage }}" alt="" height="22px"/></td>
                             <td><img class="tooltipster" title="{{ $player->rank->name }}" src="{{ $player->rankImage }}" alt="" height="22px"/></td>
-                            <td class="color-main text-bold">{!! link_to_route('player-detail', $player->name, [$player->id,$player->name]) !!}</td>
+                            <td class="color-main text-bold">{!! link_to_route('player-detail', $player->name, [$player->name]) !!}</td>
                             <td>{!! $player->playerRating !!}</td>
                             <td>{{ $player->total_score }}</td>
                             <td>{{ $player->total_points }}</td>

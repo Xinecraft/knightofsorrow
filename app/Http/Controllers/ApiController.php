@@ -95,7 +95,6 @@ class ApiController extends Controller
         });
 
         return htmlspecialchars_decode(html_entity_decode($data));
-
     }
 
     /**
@@ -125,6 +124,9 @@ class ApiController extends Controller
      */
     public function getQueryPlayer($query)
     {
+        $player = PlayerTotal::with('country')->where('name', 'like',  $query )->get(['id', 'name', 'position', 'country_id']);
+        if(!$player->isEmpty())
+            return $player;
         return (PlayerTotal::with('country')->where('name', 'like', '%' . $query . '%')->get(['id', 'name', 'position', 'country_id']));
 
     }

@@ -50,7 +50,7 @@
                                     <th>{{ $player->position }}</th>
                                     <td>{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster']) !!}</td>
                                     <td>{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '22px']) !!}</td>
-                                    <td class="color-main text-bold">{!! link_to_route('player-detail', $player->name, [$player->id,$player->name]) !!}</td>
+                                    <td class="color-main text-bold">{!! link_to_route('player-detail', $player->name, [$player->name]) !!}</td>
                                     <td class="text-right">{!! $player->player_rating or "<span class='text-muted'>none</span>" !!}</td>
                                 </tr>
                             @empty
@@ -151,7 +151,7 @@
                                                     Total Score
                                                 </td>
                                                 <td class="col-3">
-                                                    {!! link_to_route('player-detail',$PastWeek->totalScore->name,[$PastWeek->totalScore->playerTotal()->id ,$PastWeek->totalScore->name]) !!}
+                                                    {!! link_to_route('player-detail',$PastWeek->totalScore->name,[$PastWeek->totalScore->name]) !!}
                                                     <span class="small">({{ $PastWeek->totalScore->totalscore }})</span>
                                                 </td>
                                                 <td class="col-4">
@@ -161,7 +161,7 @@
                                                     Arrests
                                                 </td>
                                                 <td class="col-6">
-                                                    {!! link_to_route('player-detail',$PastWeek->totalArrests->name,[$PastWeek->totalArrests->playerTotal()->id,$PastWeek->totalArrests->name]) !!}
+                                                    {!! link_to_route('player-detail',$PastWeek->totalArrests->name,[$PastWeek->totalArrests->name]) !!}
                                                     <span class="small">({{ $PastWeek->totalArrests->totalarrests }})</span>
                                                 </td>
                                             </tr>
@@ -173,7 +173,7 @@
                                                     High Score
                                                 </td>
                                                 <td class="col-3">
-                                                    {!! link_to_route('player-detail',$PastWeek->highestScore->name,[$PastWeek->highestScore->playerTotal()->id,$PastWeek->highestScore->name]) !!}
+                                                    {!! link_to_route('player-detail',$PastWeek->highestScore->name,[$PastWeek->highestScore->name]) !!}
                                                     <span class="small">({{ $PastWeek->highestScore->highestscore }})</span>
                                                 </td>
                                                 <td class="col-4">
@@ -183,7 +183,7 @@
                                                     Arrested
                                                 </td>
                                                 <td class="col-6">
-                                                    {!! link_to_route('player-detail',$PastWeek->totalArrested->name,[$PastWeek->totalArrested->playerTotal()->id,$PastWeek->totalArrested->name]) !!}
+                                                    {!! link_to_route('player-detail',$PastWeek->totalArrested->name,[$PastWeek->totalArrested->name]) !!}
                                                     <span class="small">({{ $PastWeek->totalArrested->totalarrested }})</span>
                                                 </td>
                                             </tr>
@@ -195,7 +195,7 @@
                                                     Score/Min
                                                 </td>
                                                 <td class="col-3">
-                                                    {!! link_to_route('player-detail',$PastWeek->bestScorePerMin->name,[$PastWeek->bestScorePerMin->playerTotal()->id,$PastWeek->bestScorePerMin->name]) !!}
+                                                    {!! link_to_route('player-detail',$PastWeek->bestScorePerMin->name,[$PastWeek->bestScorePerMin->name]) !!}
                                                     <span class="small">({{ round($PastWeek->bestScorePerMin->toArray()['scorepermin'],2) }})</span>
                                                 </td>
                                                 <td class="col-4">
@@ -205,7 +205,7 @@
                                                     Arrest Streak
                                                 </td>
                                                 <td class="col-6">
-                                                    {!! link_to_route('player-detail',$PastWeek->bestArrestStreak->name,[$PastWeek->bestArrestStreak->playerTotal()->id,$PastWeek->bestArrestStreak->name]) !!}
+                                                    {!! link_to_route('player-detail',$PastWeek->bestArrestStreak->name,[$PastWeek->bestArrestStreak->name]) !!}
                                                     <span class="small">({{ $PastWeek->bestArrestStreak->best_arrest_streak }})</span>
                                                 </td>
                                             </tr>
@@ -217,7 +217,7 @@
                                                     Time Played
                                                 </td>
                                                 <td class="col-3">
-                                                    {!! link_to_route('player-detail',$PastWeek->totalTimePlayed->name,[$PastWeek->totalTimePlayed->playerTotal()->id,$PastWeek->totalTimePlayed->name]) !!}
+                                                    {!! link_to_route('player-detail',$PastWeek->totalTimePlayed->name,[$PastWeek->totalTimePlayed->name]) !!}
                                                     <span class="small">({{ App\Server\Utils::getHMbyS($PastWeek->totalTimePlayed->totaltimeplayed,"%dh %dm") }})</span>
                                                 </td>
                                                 <td class="col-4">
@@ -225,7 +225,7 @@
                                                 </td>
                                                 <td class="col-5">Kills</td>
                                                 <td class="col-6">
-                                                    {!! link_to_route('player-detail',$PastWeek->totalKills->name,[$PastWeek->totalKills->playerTotal()->id,$PastWeek->totalKills->name]) !!}
+                                                    {!! link_to_route('player-detail',$PastWeek->totalKills->name,[$PastWeek->totalKills->name]) !!}
                                                     <span class="small">({{ $PastWeek->totalKills->totalkills }})</span>
                                                 </td>
                                             </tr>
@@ -237,7 +237,7 @@
                                                     Death Streak
                                                 </td>
                                                 <td class="col-3">
-                                                    {!! link_to_route('player-detail',$PastWeek->bestDeathStreak->name,[$PastWeek->bestDeathStreak->playerTotal()->id,$PastWeek->bestDeathStreak->name]) !!}
+                                                    {!! link_to_route('player-detail',$PastWeek->bestDeathStreak->name,[$PastWeek->bestDeathStreak->name]) !!}
                                                     <span class="small">({{ $PastWeek->bestDeathStreak->best_death_streak }})</span>
                                                 </td>
                                                 <td class="col-4">
@@ -247,7 +247,7 @@
                                                     Deaths
                                                 </td>
                                                 <td class="col-6">
-                                                    {!! link_to_route('player-detail',$PastWeek->totalDeaths->name,[$PastWeek->totalDeaths->playerTotal()->id,$PastWeek->totalDeaths->name]) !!}
+                                                    {!! link_to_route('player-detail',$PastWeek->totalDeaths->name,[$PastWeek->totalDeaths->name]) !!}
                                                     <span class="small">({{ $PastWeek->totalDeaths->totaldeaths }})</span>
                                                 </td>
                                             </tr>
@@ -259,7 +259,7 @@
                                                     Team Kills
                                                 </td>
                                                 <td class="col-3">
-                                                    {!! link_to_route('player-detail',$PastWeek->totalTeamKills->name,[$PastWeek->totalTeamKills->playerTotal()->id,$PastWeek->totalTeamKills->name]) !!}
+                                                    {!! link_to_route('player-detail',$PastWeek->totalTeamKills->name,[$PastWeek->totalTeamKills->name]) !!}
                                                     <span class="small">({{ $PastWeek->totalTeamKills->totalteamkills }})</span>
                                                 </td>
                                                 <td class="col-4">
@@ -269,7 +269,7 @@
                                                     Kill Streak
                                                 </td>
                                                 <td class="col-6">
-                                                    {!! link_to_route('player-detail',$PastWeek->bestKillStreak->name,[$PastWeek->bestKillStreak->playerTotal()->id,$PastWeek->bestKillStreak->name]) !!}
+                                                    {!! link_to_route('player-detail',$PastWeek->bestKillStreak->name,[$PastWeek->bestKillStreak->name]) !!}
                                                     <span class="small">({{ $PastWeek->bestKillStreak->best_kill_streak }})</span>
                                                 </td>
                                             </tr>
@@ -284,7 +284,7 @@
                                                     Total Score
                                                 </td>
                                                 <td class="col-3">
-                                                    {!! link_to_route('player-detail',$PastMonth->totalScore->name,[$PastMonth->totalScore->playerTotal()->id,$PastMonth->totalScore->name]) !!}
+                                                    {!! link_to_route('player-detail',$PastMonth->totalScore->name,[$PastMonth->totalScore->name]) !!}
                                                     <span class="small">({{ $PastMonth->totalScore->totalscore }})</span>
                                                 </td>
                                                 <td class="col-4">
@@ -294,7 +294,7 @@
                                                     Arrests
                                                 </td>
                                                 <td class="col-6">
-                                                    {!! link_to_route('player-detail',$PastMonth->totalArrests->name,[$PastMonth->totalArrests->playerTotal()->id,$PastMonth->totalArrests->name]) !!}
+                                                    {!! link_to_route('player-detail',$PastMonth->totalArrests->name,[$PastMonth->totalArrests->name]) !!}
                                                     <span class="small">({{ $PastMonth->totalArrests->totalarrests }})</span>
                                                 </td>
                                             </tr>
@@ -306,7 +306,7 @@
                                                     High Score
                                                 </td>
                                                 <td class="col-3">
-                                                    {!! link_to_route('player-detail',$PastMonth->highestScore->name,[$PastMonth->highestScore->playerTotal()->id,$PastMonth->highestScore->name]) !!}
+                                                    {!! link_to_route('player-detail',$PastMonth->highestScore->name,[$PastMonth->highestScore->name]) !!}
                                                     <span class="small">({{ $PastMonth->highestScore->highestscore }})</span>
                                                 </td>
                                                 <td class="col-4">
@@ -316,7 +316,7 @@
                                                     Arrested
                                                 </td>
                                                 <td class="col-6">
-                                                    {!! link_to_route('player-detail',$PastMonth->totalArrested->name,[$PastMonth->totalArrested->playerTotal()->id,$PastMonth->totalArrested->name]) !!}
+                                                    {!! link_to_route('player-detail',$PastMonth->totalArrested->name,[$PastMonth->totalArrested->name]) !!}
                                                     <span class="small">({{ $PastMonth->totalArrested->totalarrested }})</span>
                                                 </td>
                                             </tr>
@@ -328,7 +328,7 @@
                                                     Score/Min
                                                 </td>
                                                 <td class="col-3">
-                                                    {!! link_to_route('player-detail',$PastMonth->bestScorePerMin->name,[$PastMonth->bestScorePerMin->playerTotal()->id,$PastMonth->bestScorePerMin->name]) !!}
+                                                    {!! link_to_route('player-detail',$PastMonth->bestScorePerMin->name,[$PastMonth->bestScorePerMin->name]) !!}
                                                     <span class="small">({{ round($PastMonth->bestScorePerMin->toArray()['scorepermin'],2) }})</span>
                                                 </td>
                                                 <td class="col-4">
@@ -338,7 +338,7 @@
                                                     Arrest Streak
                                                 </td>
                                                 <td class="col-6">
-                                                    {!! link_to_route('player-detail',$PastMonth->bestArrestStreak->name,[$PastMonth->bestArrestStreak->playerTotal()->id,$PastMonth->bestArrestStreak->name]) !!}
+                                                    {!! link_to_route('player-detail',$PastMonth->bestArrestStreak->name,[$PastMonth->bestArrestStreak->name]) !!}
                                                     <span class="small">({{ $PastMonth->bestArrestStreak->best_arrest_streak }})</span>
                                                 </td>
                                             </tr>
@@ -350,7 +350,7 @@
                                                     Time Played
                                                 </td>
                                                 <td class="col-3">
-                                                    {!! link_to_route('player-detail',$PastMonth->totalTimePlayed->name,[$PastMonth->totalTimePlayed->playerTotal()->id,$PastMonth->totalTimePlayed->name]) !!}
+                                                    {!! link_to_route('player-detail',$PastMonth->totalTimePlayed->name,[$PastMonth->totalTimePlayed->name]) !!}
                                                     <span class="small">({{ App\Server\Utils::getHMbyS($PastMonth->totalTimePlayed->totaltimeplayed,"%dh %dm") }})</span>
                                                 </td>
                                                 <td class="col-4">
@@ -358,7 +358,7 @@
                                                 </td>
                                                 <td class="col-5">Kills</td>
                                                 <td class="col-6">
-                                                    {!! link_to_route('player-detail',$PastMonth->totalKills->name,[$PastMonth->totalKills->playerTotal()->id,$PastMonth->totalKills->name]) !!}
+                                                    {!! link_to_route('player-detail',$PastMonth->totalKills->name,[$PastMonth->totalKills->name]) !!}
                                                     <span class="small">({{ $PastMonth->totalKills->totalkills }})</span>
                                                 </td>
                                             </tr>
@@ -370,7 +370,7 @@
                                                     Death Streak
                                                 </td>
                                                 <td class="col-3">
-                                                    {!! link_to_route('player-detail',$PastMonth->bestDeathStreak->name,[$PastMonth->bestDeathStreak->playerTotal()->id,$PastMonth->bestDeathStreak->name]) !!}
+                                                    {!! link_to_route('player-detail',$PastMonth->bestDeathStreak->name,[$PastMonth->bestDeathStreak->name]) !!}
                                                     <span class="small">({{ $PastMonth->bestDeathStreak->best_death_streak }})</span>
                                                 </td>
                                                 <td class="col-4">
@@ -380,7 +380,7 @@
                                                     Deaths
                                                 </td>
                                                 <td class="col-6">
-                                                    {!! link_to_route('player-detail',$PastMonth->totalDeaths->name,[$PastMonth->totalDeaths->playerTotal()->id,$PastMonth->totalDeaths->name]) !!}
+                                                    {!! link_to_route('player-detail',$PastMonth->totalDeaths->name,[$PastMonth->totalDeaths->name]) !!}
                                                     <span class="small">({{ $PastMonth->totalDeaths->totaldeaths }})</span>
                                                 </td>
                                             </tr>
@@ -392,7 +392,7 @@
                                                     Team Kills
                                                 </td>
                                                 <td class="col-3">
-                                                    {!! link_to_route('player-detail',$PastMonth->totalTeamKills->name,[$PastMonth->totalTeamKills->playerTotal()->id,$PastMonth->totalTeamKills->name]) !!}
+                                                    {!! link_to_route('player-detail',$PastMonth->totalTeamKills->name,[$PastMonth->totalTeamKills->name]) !!}
                                                     <span class="small">({{ $PastMonth->totalTeamKills->totalteamkills }})</span>
                                                 </td>
                                                 <td class="col-4">
@@ -402,7 +402,7 @@
                                                     Kill Streak
                                                 </td>
                                                 <td class="col-6">
-                                                    {!! link_to_route('player-detail',$PastMonth->bestKillStreak->name,[$PastMonth->bestKillStreak->playerTotal()->id,$PastMonth->bestKillStreak->name]) !!}
+                                                    {!! link_to_route('player-detail',$PastMonth->bestKillStreak->name,[$PastMonth->bestKillStreak->name]) !!}
                                                     <span class="small">({{ $PastMonth->bestKillStreak->best_kill_streak }})</span>
                                                 </td>
                                             </tr>
@@ -417,7 +417,7 @@
                                                     Total Score
                                                 </td>
                                                 <td class="col-3">
-                                                    {!! link_to_route('player-detail',$PastYear->totalScore->name,[$PastYear->totalScore->playerTotal()->id,$PastYear->totalScore->name]) !!}
+                                                    {!! link_to_route('player-detail',$PastYear->totalScore->name,[$PastYear->totalScore->name]) !!}
                                                     <span class="small">({{ $PastYear->totalScore->totalscore }})</span>
                                                 </td>
                                                 <td class="col-4">
@@ -427,7 +427,7 @@
                                                     Arrests
                                                 </td>
                                                 <td class="col-6">
-                                                    {!! link_to_route('player-detail',$PastYear->totalArrests->name,[$PastYear->totalArrests->playerTotal()->id,$PastYear->totalArrests->name]) !!}
+                                                    {!! link_to_route('player-detail',$PastYear->totalArrests->name,[$PastYear->totalArrests->name]) !!}
                                                     <span class="small">({{ $PastYear->totalArrests->totalarrests }})</span>
                                                 </td>
                                             </tr>
@@ -439,7 +439,7 @@
                                                     High Score
                                                 </td>
                                                 <td class="col-3">
-                                                    {!! link_to_route('player-detail',$PastYear->highestScore->name,[$PastYear->highestScore->playerTotal()->id,$PastYear->highestScore->name]) !!}
+                                                    {!! link_to_route('player-detail',$PastYear->highestScore->name,[$PastYear->highestScore->name]) !!}
                                                     <span class="small">({{ $PastYear->highestScore->highestscore }})</span>
                                                 </td>
                                                 <td class="col-4">
@@ -449,7 +449,7 @@
                                                     Arrested
                                                 </td>
                                                 <td class="col-6">
-                                                    {!! link_to_route('player-detail',$PastYear->totalArrested->name,[$PastYear->totalArrested->playerTotal()->id,$PastYear->totalArrested->name]) !!}
+                                                    {!! link_to_route('player-detail',$PastYear->totalArrested->name,[$PastYear->totalArrested->name]) !!}
                                                     <span class="small">({{ $PastYear->totalArrested->totalarrested }})</span>
                                                 </td>
                                             </tr>
@@ -461,7 +461,7 @@
                                                     Score/Min
                                                 </td>
                                                 <td class="col-3">
-                                                    {!! link_to_route('player-detail',$PastYear->bestScorePerMin->name,[$PastYear->bestScorePerMin->playerTotal()->id,$PastYear->bestScorePerMin->name]) !!}
+                                                    {!! link_to_route('player-detail',$PastYear->bestScorePerMin->name,[$PastYear->bestScorePerMin->name]) !!}
                                                     <span class="small">({{ round($PastYear->bestScorePerMin->toArray()['scorepermin'],2) }})</span>
                                                 </td>
                                                 <td class="col-4">
@@ -471,7 +471,7 @@
                                                     Arrest Streak
                                                 </td>
                                                 <td class="col-6">
-                                                    {!! link_to_route('player-detail',$PastYear->bestArrestStreak->name,[$PastYear->bestArrestStreak->playerTotal()->id,$PastYear->bestArrestStreak->name]) !!}
+                                                    {!! link_to_route('player-detail',$PastYear->bestArrestStreak->name,[$PastYear->bestArrestStreak->name]) !!}
                                                     <span class="small">({{ $PastYear->bestArrestStreak->best_arrest_streak }})</span>
                                                 </td>
                                             </tr>
@@ -483,7 +483,7 @@
                                                     Time Played
                                                 </td>
                                                 <td class="col-3">
-                                                    {!! link_to_route('player-detail',$PastYear->totalTimePlayed->name,[$PastYear->totalTimePlayed->playerTotal()->id,$PastYear->totalTimePlayed->name]) !!}
+                                                    {!! link_to_route('player-detail',$PastYear->totalTimePlayed->name,[$PastYear->totalTimePlayed->name]) !!}
                                                     <span class="small">({{ App\Server\Utils::getHMbyS($PastYear->totalTimePlayed->totaltimeplayed,"%dh %dm") }})</span>
                                                 </td>
                                                 <td class="col-4">
@@ -491,7 +491,7 @@
                                                 </td>
                                                 <td class="col-5">Kills</td>
                                                 <td class="col-6">
-                                                    {!! link_to_route('player-detail',$PastYear->totalKills->name,[$PastYear->totalKills->playerTotal()->id,$PastYear->totalKills->name]) !!}
+                                                    {!! link_to_route('player-detail',$PastYear->totalKills->name,[$PastYear->totalKills->name]) !!}
                                                     <span class="small">({{ $PastYear->totalKills->totalkills }})</span>
                                                 </td>
                                             </tr>
@@ -503,7 +503,7 @@
                                                     Death Streak
                                                 </td>
                                                 <td class="col-3">
-                                                    {!! link_to_route('player-detail',$PastYear->bestDeathStreak->name,[$PastYear->bestDeathStreak->playerTotal()->id,$PastYear->bestDeathStreak->name]) !!}
+                                                    {!! link_to_route('player-detail',$PastYear->bestDeathStreak->name,[$PastYear->bestDeathStreak->name]) !!}
                                                     <span class="small">({{ $PastYear->bestDeathStreak->best_death_streak }})</span>
                                                 </td>
                                                 <td class="col-4">
@@ -513,7 +513,7 @@
                                                     Deaths
                                                 </td>
                                                 <td class="col-6">
-                                                    {!! link_to_route('player-detail',$PastYear->totalDeaths->name,[$PastYear->totalDeaths->playerTotal()->id,$PastYear->totalDeaths->name]) !!}
+                                                    {!! link_to_route('player-detail',$PastYear->totalDeaths->name,[$PastYear->totalDeaths->name]) !!}
                                                     <span class="small">({{ $PastYear->totalDeaths->totaldeaths }})</span>
                                                 </td>
                                             </tr>
@@ -525,7 +525,7 @@
                                                     Team Kills
                                                 </td>
                                                 <td class="col-3">
-                                                    {!! link_to_route('player-detail',$PastYear->totalTeamKills->name,[$PastYear->totalTeamKills->playerTotal()->id,$PastYear->totalTeamKills->name]) !!}
+                                                    {!! link_to_route('player-detail',$PastYear->totalTeamKills->name,[$PastYear->totalTeamKills->name]) !!}
                                                     <span class="small">({{ $PastYear->totalTeamKills->totalteamkills }})</span>
                                                 </td>
                                                 <td class="col-4">
@@ -535,7 +535,7 @@
                                                     Kill Streak
                                                 </td>
                                                 <td class="col-6">
-                                                    {!! link_to_route('player-detail',$PastYear->bestKillStreak->name,[$PastYear->bestKillStreak->playerTotal()->id,$PastYear->bestKillStreak->name]) !!}
+                                                    {!! link_to_route('player-detail',$PastYear->bestKillStreak->name,[$PastYear->bestKillStreak->name]) !!}
                                                     <span class="small">({{ $PastYear->bestKillStreak->best_kill_streak }})</span>
                                                 </td>
                                             </tr>
@@ -550,7 +550,7 @@
                                                     Total Score
                                                 </td>
                                                 <td class="col-3">
-                                                    {!! link_to_route('player-detail',$AllTime->totalScore->name,[$AllTime->totalScore->playerTotal()->id,$AllTime->totalScore->name]) !!}
+                                                    {!! link_to_route('player-detail',$AllTime->totalScore->name,[$AllTime->totalScore->name]) !!}
                                                     <span class="small">({{ $AllTime->totalScore->totalscore }})</span>
                                                 </td>
                                                 <td class="col-4">
@@ -560,7 +560,7 @@
                                                     Arrests
                                                 </td>
                                                 <td class="col-6">
-                                                    {!! link_to_route('player-detail',$AllTime->totalArrests->name,[$AllTime->totalArrests->playerTotal()->id,$AllTime->totalArrests->name]) !!}
+                                                    {!! link_to_route('player-detail',$AllTime->totalArrests->name,[$AllTime->totalArrests->name]) !!}
                                                     <span class="small">({{ $AllTime->totalArrests->totalarrests }})</span>
                                                 </td>
                                             </tr>
@@ -572,7 +572,7 @@
                                                     High Score
                                                 </td>
                                                 <td class="col-3">
-                                                    {!! link_to_route('player-detail',$AllTime->highestScore->name,[$AllTime->highestScore->playerTotal()->id,$AllTime->highestScore->name]) !!}
+                                                    {!! link_to_route('player-detail',$AllTime->highestScore->name,[$AllTime->highestScore->name]) !!}
                                                     <span class="small">({{ $AllTime->highestScore->highestscore }})</span>
                                                 </td>
                                                 <td class="col-4">
@@ -582,7 +582,7 @@
                                                     Arrested
                                                 </td>
                                                 <td class="col-6">
-                                                    {!! link_to_route('player-detail',$AllTime->totalArrested->name,[$AllTime->totalArrested->playerTotal()->id,$AllTime->totalArrested->name]) !!}
+                                                    {!! link_to_route('player-detail',$AllTime->totalArrested->name,[$AllTime->totalArrested->name]) !!}
                                                     <span class="small">({{ $AllTime->totalArrested->totalarrested }})</span>
                                                 </td>
                                             </tr>
@@ -594,7 +594,7 @@
                                                     Score/Min
                                                 </td>
                                                 <td class="col-3">
-                                                    {!! link_to_route('player-detail',$AllTime->bestScorePerMin->name,[$AllTime->bestScorePerMin->playerTotal()->id,$AllTime->bestScorePerMin->name]) !!}
+                                                    {!! link_to_route('player-detail',$AllTime->bestScorePerMin->name,[$AllTime->bestScorePerMin->name]) !!}
                                                     <span class="small">({{ round($AllTime->bestScorePerMin->toArray()['scorepermin'],2) }})</span>
                                                 </td>
                                                 <td class="col-4">
@@ -604,7 +604,7 @@
                                                     Arrest Streak
                                                 </td>
                                                 <td class="col-6">
-                                                    {!! link_to_route('player-detail',$AllTime->bestArrestStreak->name,[$AllTime->bestArrestStreak->playerTotal()->id,$AllTime->bestArrestStreak->name]) !!}
+                                                    {!! link_to_route('player-detail',$AllTime->bestArrestStreak->name,[$AllTime->bestArrestStreak->name]) !!}
                                                     <span class="small">({{ $AllTime->bestArrestStreak->best_arrest_streak }})</span>
                                                 </td>
                                             </tr>
@@ -616,7 +616,7 @@
                                                     Time Played
                                                 </td>
                                                 <td class="col-3">
-                                                    {!! link_to_route('player-detail',$AllTime->totalTimePlayed->name,[$AllTime->totalTimePlayed->playerTotal()->id,$AllTime->totalTimePlayed->name]) !!}
+                                                    {!! link_to_route('player-detail',$AllTime->totalTimePlayed->name,[$AllTime->totalTimePlayed->name]) !!}
                                                     <span class="small">({{ App\Server\Utils::getHMbyS($AllTime->totalTimePlayed->totaltimeplayed,"%dh %dm") }})</span>
                                                 </td>
                                                 <td class="col-4">
@@ -624,7 +624,7 @@
                                                 </td>
                                                 <td class="col-5">Kills</td>
                                                 <td class="col-6">
-                                                    {!! link_to_route('player-detail',$AllTime->totalKills->name,[$AllTime->totalKills->playerTotal()->id,$AllTime->totalKills->name]) !!}
+                                                    {!! link_to_route('player-detail',$AllTime->totalKills->name,[$AllTime->totalKills->name]) !!}
                                                     <span class="small">({{ $AllTime->totalKills->totalkills }})</span>
                                                 </td>
                                             </tr>
@@ -636,7 +636,7 @@
                                                     Death Streak
                                                 </td>
                                                 <td class="col-3">
-                                                    {!! link_to_route('player-detail',$AllTime->bestDeathStreak->name,[$AllTime->bestDeathStreak->playerTotal()->id,$AllTime->bestDeathStreak->name]) !!}
+                                                    {!! link_to_route('player-detail',$AllTime->bestDeathStreak->name,[$AllTime->bestDeathStreak->name]) !!}
                                                     <span class="small">({{ $AllTime->bestDeathStreak->best_death_streak }})</span>
                                                 </td>
                                                 <td class="col-4">
@@ -646,7 +646,7 @@
                                                     Deaths
                                                 </td>
                                                 <td class="col-6">
-                                                    {!! link_to_route('player-detail',$AllTime->totalDeaths->name,[$AllTime->totalDeaths->playerTotal()->id,$AllTime->totalDeaths->name]) !!}
+                                                    {!! link_to_route('player-detail',$AllTime->totalDeaths->name,[$AllTime->totalDeaths->name]) !!}
                                                     <span class="small">({{ $AllTime->totalDeaths->totaldeaths }})</span>
                                                 </td>
                                             </tr>
@@ -658,7 +658,7 @@
                                                     Team Kills
                                                 </td>
                                                 <td class="col-3">
-                                                    {!! link_to_route('player-detail',$AllTime->totalTeamKills->name,[$AllTime->totalTeamKills->playerTotal()->id,$AllTime->totalTeamKills->name]) !!}
+                                                    {!! link_to_route('player-detail',$AllTime->totalTeamKills->name,[$AllTime->totalTeamKills->name]) !!}
                                                     <span class="small">({{ $AllTime->totalTeamKills->totalteamkills }})</span>
                                                 </td>
                                                 <td class="col-4">
@@ -668,7 +668,7 @@
                                                     Kill Streak
                                                 </td>
                                                 <td class="col-6">
-                                                    {!! link_to_route('player-detail',$AllTime->bestKillStreak->name,[$AllTime->bestKillStreak->playerTotal()->id,$AllTime->bestKillStreak->name]) !!}
+                                                    {!! link_to_route('player-detail',$AllTime->bestKillStreak->name,[$AllTime->bestKillStreak->name]) !!}
                                                     <span class="small">({{ $AllTime->bestKillStreak->best_kill_streak }})</span>
                                                 </td>
                                             </tr>
@@ -815,7 +815,7 @@
                             $.each(data.players, function () {
 
                                 //console.log(data['players'][i]['team']);
-                                playertable = playertable + "<tr class='text-bold'><td><img src='http://kos.dev/images/flags/20_shiny/"+data['players'][i]['countryCode']+".png' title='"+data['players'][i]['countryName']+"' class='' alt='"+data['players'][i]['countryCode']+"'></td>";
+                                playertable = playertable + "<tr class='text-bold'><td><img src='http://"+window.location.hostname+"/images/flags/20/"+data['players'][i]['countryCode']+".png' title='"+data['players'][i]['countryName']+"' class='' alt='"+data['players'][i]['countryCode']+"'></td>";
 
                                 if (data['players'][i]['team'] == 0) {
                                     data['players'][i]['name'] = "<font color='blue'>" + data['players'][i]['name'];
@@ -833,7 +833,7 @@
                     <td class='text-right'>" + data['players'][i]['ping'] + "</td>                                  \
                     </tr> ";
                                 i++;
-                            })
+                            });
                             if (player_num != '0' && player_max != '0') {
                                 $('#ls-player-table').html(playertable);
                             }

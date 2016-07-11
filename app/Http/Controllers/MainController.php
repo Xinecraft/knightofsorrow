@@ -6,6 +6,7 @@ use App\Status;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Cache;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -63,7 +64,15 @@ class MainController extends Controller
             $s10->track();
             */
 
-        $topPlayers = \App\PlayerTotal::with(['country','rank'])->orderBy('position')->limit(10)->get();
+        if(Cache::has('top_players'))
+        {
+            $topPlayers = Cache::get('top_players');
+        }
+        else
+        {
+            $topPlayers = \App\PlayerTotal::with(['country','rank'])->orderBy('position')->limit(10)->get();
+        }
+
         $latestGames = \App\Game::orderBy('created_at', 'desc')->limit(5)->get();
 
         //return (Carbon\Carbon::now()->subYears(100));
@@ -76,18 +85,115 @@ class MainController extends Controller
         $PastYear = new \Illuminate\Support\Collection();
 
         if ($player != null) {
-            $AllTime->totalScore = $player->getBestIn('SUM(score) as totalscore', 'totalscore');
-            $AllTime->highestScore = $player->getBestIn('MAX(score) as highestscore', 'highestscore');
-            $AllTime->totalArrests = $player->getBestIn('SUM(arrests) as totalarrests', 'totalarrests');
-            $AllTime->totalArrested = $player->getBestIn('SUM(arrested) as totalarrested', 'totalarrested');
-            $AllTime->totalKills = $player->getBestIn('SUM(kills) as totalkills', 'totalkills');
-            $AllTime->totalDeaths = $player->getBestIn('SUM(deaths) as totaldeaths', 'totaldeaths');
-            $AllTime->bestArrestStreak = $player->getBestIn('MAX(arrest_streak) as best_arrest_streak', 'best_arrest_streak');
-            $AllTime->bestKillStreak = $player->getBestIn('MAX(kill_streak) as best_kill_streak', 'best_kill_streak');
-            $AllTime->bestDeathStreak = $player->getBestIn('MAX(death_streak) as best_death_streak', 'best_death_streak');
-            $AllTime->totalTeamKills = $player->getBestIn('SUM(team_kills) as totalteamkills', 'totalteamkills');
-            $AllTime->totalTimePlayed = $player->getBestIn('SUM(time_played) as totaltimeplayed', 'totaltimeplayed');
-            $AllTime->bestScorePerMin = $player->getBestIn('SUM(score)/SUM(time_played)*60 as scorepermin', 'scorepermin');
+            //All Time Total Score
+            if(Cache::has('alltime_totalScore')) {
+                $AllTime->totalScore = Cache::get('alltime_totalScore');
+            }
+            else {
+                $AllTime->totalScore = $player->getBestIn('SUM(score) as totalscore', 'totalscore');
+                Cache::put('alltime_totalScore',$AllTime->totalScore,10);
+            }
+
+            //All Time Highest Score
+            if(Cache::has('alltime_highestScore')) {
+                $AllTime->highestScore = Cache::get('alltime_highestScore');
+            }
+            else {
+                $AllTime->highestScore = $player->getBestIn('MAX(score) as highestscore', 'highestscore');
+                Cache::put('alltime_highestScore',$AllTime->highestScore,10);
+            }
+
+            //All Time Total Arrests
+            if(Cache::has('alltime_totalArrests')) {
+                $AllTime->totalArrests = Cache::get('alltime_totalArrests');
+            }
+            else {
+                $AllTime->totalArrests = $player->getBestIn('SUM(arrests) as totalarrests', 'totalarrests');
+                Cache::put('alltime_totalArrests',$AllTime->totalArrests,10);
+            }
+
+            //All Time Total Arrested
+            if(Cache::has('alltime_totalArrested')) {
+                $AllTime->totalArrested = Cache::get('alltime_totalArrested');
+            }
+            else {
+                $AllTime->totalArrested = $player->getBestIn('SUM(arrested) as totalarrested', 'totalarrested');
+                Cache::put('alltime_totalArrested',$AllTime->totalArrested,10);
+            }
+
+            //All Time Total Kills
+            if(Cache::has('alltime_totalKills')) {
+                $AllTime->totalKills = Cache::get('alltime_totalKills');
+            }
+            else {
+                $AllTime->totalKills = $player->getBestIn('SUM(kills) as totalkills', 'totalkills');
+                Cache::put('alltime_totalKills',$AllTime->totalKills,10);
+            }
+
+            //All Time Total Deaths
+            if(Cache::has('alltime_totalDeaths')) {
+                $AllTime->totalDeaths = Cache::get('alltime_totalDeaths');
+            }
+            else {
+                $AllTime->totalDeaths = $player->getBestIn('SUM(deaths) as totaldeaths', 'totaldeaths');
+                Cache::put('alltime_totalDeaths',$AllTime->totalDeaths,10);
+            }
+
+            //All Time Best Arrest Steak
+            if(Cache::has('alltime_bestArrestStreak')) {
+                $AllTime->bestArrestStreak = Cache::get('alltime_bestArrestStreak');
+            }
+            else {
+                $AllTime->bestArrestStreak = $player->getBestIn('MAX(arrest_streak) as best_arrest_streak', 'best_arrest_streak');
+                Cache::put('alltime_bestArrestStreak',$AllTime->bestArrestStreak,10);
+            }
+
+            //All Time best Kill Streak
+            if(Cache::has('alltime_bestKillStreak')) {
+                $AllTime->bestKillStreak = Cache::get('alltime_bestKillStreak');
+            }
+            else {
+                $AllTime->bestKillStreak = $player->getBestIn('MAX(kill_streak) as best_kill_streak', 'best_kill_streak');
+                Cache::put('alltime_bestKillStreak',$AllTime->bestKillStreak,10);
+            }
+
+            //All Time best Death Streak
+            if(Cache::has('alltime_bestDeathStreak')) {
+                $AllTime->bestDeathStreak = Cache::get('alltime_bestDeathStreak');
+            }
+            else {
+                $AllTime->bestDeathStreak = $player->getBestIn('MAX(death_streak) as best_death_streak', 'best_death_streak');
+                Cache::put('alltime_bestDeathStreak',$AllTime->bestDeathStreak,10);
+            }
+
+            //All Time Total Team Kills
+            if(Cache::has('alltime_totalTeamKills')) {
+                $AllTime->totalTeamKills = Cache::get('alltime_totalTeamKills');
+            }
+            else {
+                $AllTime->totalTeamKills = $player->getBestIn('SUM(team_kills) as totalteamkills', 'totalteamkills');
+                Cache::put('alltime_totalTeamKills',$AllTime->totalTeamKills,10);
+            }
+
+            //All Time Total Time Played
+            if(Cache::has('alltime_totalTimePlayed')) {
+                $AllTime->totalTimePlayed = Cache::get('alltime_totalTimePlayed');
+            }
+            else {
+                $AllTime->totalTimePlayed = $player->getBestIn('SUM(time_played) as totaltimeplayed', 'totaltimeplayed');
+                Cache::put('alltime_totalTimePlayed',$AllTime->totalTimePlayed,10);
+            }
+
+            //All Time bestScorePerMin
+            if(Cache::has('alltime_bestScorePerMin')) {
+                $AllTime->bestScorePerMin = Cache::get('alltime_bestScorePerMin');
+            }
+            else {
+                $AllTime->bestScorePerMin = $player->getBestIn('SUM(score)/SUM(time_played)*60 as scorepermin', 'scorepermin');
+                Cache::put('alltime_bestScorePerMin',$AllTime->bestScorePerMin,10);
+            }
+
+            //dd($AllTime);
 
             $pastWeekDate = \Carbon\Carbon::now()->subWeek(1);
             $PastWeek->totalScore = $player->getBestIn('SUM(score) as totalscore', 'totalscore', $pastWeekDate);

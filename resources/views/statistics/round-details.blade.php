@@ -34,7 +34,7 @@
                         <h5><b>Top Scorer</b></h5>
                         <img class="left img-thumbnail" src="/images/game/chars/50/{{ $round->topScorer->team."_".$round->topScorer->loadout->body."_".$round->topScorer->loadout->head }}.jpg">
                         <div class="col-xs-8" style="padding-left: 0px">
-                            <p class="round-detail-topper-title">{!! link_to_route('player-detail',$round->topScorer->name,[$round->topScorer->playerTotal()->id,$round->topScorer->name]) !!}</p>
+                            <p class="round-detail-topper-title">{!! link_to_route('player-detail',$round->topScorer->name,[$round->topScorer->name]) !!}</p>
                             <p class="left round-detail-topper-value">Score: <b>{{ $round->topScorer->score }}</b></p>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
                         <h5><b>Mass Arrester</b></h5>
                         <img class="left img-thumbnail" src="/images/game/chars/50/{{ $round->massArrester->team."_".$round->massArrester->loadout->body."_".$round->massArrester->loadout->head }}.jpg">
                         <div class="col-xs-8" style="padding-left: 0px">
-                            <p class="round-detail-topper-title">{!! link_to_route('player-detail',$round->massArrester->name,[$round->massArrester->playerTotal()->id,$round->massArrester->name]) !!}</p>
+                            <p class="round-detail-topper-title">{!! link_to_route('player-detail',$round->massArrester->name,[$round->massArrester->name]) !!}</p>
                             <p class="left round-detail-topper-value">Arrests: <b>{{ $round->massArrester->arrests }}</b></p>
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                         <h5><b>Killing Machine</b></h5>
                         <img class="left img-thumbnail" src="/images/game/chars/50/{{ $round->killingMachine->team."_".$round->killingMachine->loadout->body."_".$round->killingMachine->loadout->head }}.jpg">
                         <div class="col-xs-8" style="padding-left: 0px">
-                            <p class="round-detail-topper-title">{!! link_to_route('player-detail',$round->killingMachine->name,[$round->killingMachine->playerTotal()->id,$round->killingMachine->name]) !!}</p>
+                            <p class="round-detail-topper-title">{!! link_to_route('player-detail',$round->killingMachine->name,[$round->killingMachine->name]) !!}</p>
                             <p class="left round-detail-topper-value">Kills: <b>{{ $round->killingMachine->kills }}</b></p>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
                         <h5><b>Best Deathstreak</b></h5>
                         <img class="left img-thumbnail" src="/images/game/chars/50/{{ $round->bestDeathStreak->team."_".$round->bestDeathStreak->loadout->body."_".$round->bestDeathStreak->loadout->head }}.jpg">
                         <div class="col-xs-8" style="padding-left: 0px">
-                            <p class="round-detail-topper-title">{!! link_to_route('player-detail',$round->bestDeathStreak->name,[$round->bestDeathStreak->playerTotal()->id,$round->bestDeathStreak->name]) !!}</p>
+                            <p class="round-detail-topper-title">{!! link_to_route('player-detail',$round->bestDeathStreak->name,[$round->bestDeathStreak->name]) !!}</p>
                             <p class="left round-detail-topper-value">Deaths: <b>{{ $round->bestDeathStreak->death_streak }}</b></p>
                         </div>
                     </div>
@@ -69,7 +69,7 @@
                         <h5><b>Best Arreststreak</b></h5>
                         <img class="left img-thumbnail" src="/images/game/chars/50/{{ $round->bestArrestStreak->team."_".$round->bestArrestStreak->loadout->body."_".$round->bestArrestStreak->loadout->head }}.jpg">
                         <div class="col-xs-8" style="padding-left: 0px">
-                            <p class="round-detail-topper-title">{!! link_to_route('player-detail',$round->bestArrestStreak->name,[$round->bestArrestStreak->playerTotal()->id,$round->bestArrestStreak->name]) !!}</p>
+                            <p class="round-detail-topper-title">{!! link_to_route('player-detail',$round->bestArrestStreak->name,[$round->bestArrestStreak->name]) !!}</p>
                             <p class="left round-detail-topper-value">Arrests: <b>{{ $round->bestArrestStreak->arrest_streak }}</b></p>
                         </div>
                     </div>
@@ -77,7 +77,7 @@
                         <h5><b>Best Killstreak</b></h5>
                         <img class="left img-thumbnail" src="/images/game/chars/50/{{ $round->bestKillStreak->team."_".$round->bestKillStreak->loadout->body."_".$round->bestKillStreak->loadout->head }}.jpg">
                         <div class="col-xs-8" style="padding-left: 0px">
-                            <p class="round-detail-topper-title">{!! link_to_route('player-detail',$round->bestKillStreak->name,[$round->bestKillStreak->playerTotal()->id,$round->bestKillStreak->name]) !!}</p>
+                            <p class="round-detail-topper-title">{!! link_to_route('player-detail',$round->bestKillStreak->name,[$round->bestKillStreak->name]) !!}</p>
                             <p class="left round-detail-topper-value">Kills: <b>{{ $round->bestKillStreak->kill_streak }}</b></p>
                         </div>
                     </div>
@@ -150,7 +150,7 @@
             <!-- Player Individual Data Starts -->
             <div class="panel panel-default col-xs-12 no-padding">
                 <!-- Default panel contents -->
-                <div class="panel-heading"><b>{!! link_to_route('player-detail',$round->topScorer->name,[$round->topScorer->playerTotal()->id,$round->topScorer->name]) !!}</b>{!! Html::image('/images/flags/20/'.$round->topScorer->country->countryCode.".png",$round->topScorer->country->countryCode,['title' => $round->topScorer->country->countryName,'class' => 'right tooltipster']) !!}</div>
+                <div class="panel-heading"><b>{!! link_to_route('player-detail',$round->topScorer->name,[$round->topScorer->name]) !!}</b>{!! Html::image('/images/flags/20/'.$round->topScorer->country->countryCode.".png",$round->topScorer->country->countryCode,['title' => $round->topScorer->country->countryName,'class' => 'right tooltipster']) !!}</div>
                 <!-- list -->
                 <ul class="list-group col-xs-4">
                     <li class="list-group-item">

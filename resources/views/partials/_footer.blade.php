@@ -35,10 +35,10 @@
                 <p class="copyright">
                     <i class="fa fa-copyright"></i> {{ date('Y') }} KnightofSorrow Team
                 </p>
-                <i><small class="text-muted">Server Time: {{ \Carbon\Carbon::now()->toDayDateTimeString() }}</small></i>
+                <i><small class="text-muted">Time: {{ \Carbon\Carbon::now()->toDayDateTimeString() }}</small></i>
                 </div>
                 <div class="col-xs-3 col-xs-offset-1">
-                    <i><small class="muted">Page took {{ round((microtime(true) - LARAVEL_START),5) }} seconds to render</small></i>
+                    <i><small class="muted">Generated in {{ round((microtime(true) - LARAVEL_START),3) }} seconds with {{Session::get('query_no')}} queries</small></i>
                 </div>
             </div>
         </div>

@@ -53,7 +53,7 @@ class UserPresenter extends BasePresenter
                 return "<i class='small'>Unknown</i>";
         }
 
-        return "<b><a href=".route('player-detail',[$playerTotal->id,htmlentities($playerTotal->name)]).">".htmlentities($playerTotal->name)."</a></b>";
+        return "<b><a href=".route('player-detail',[htmlentities($playerTotal->name)]).">".htmlentities($playerTotal->name)."</a></b>";
     }
 
     public function linkPlayerPosition()

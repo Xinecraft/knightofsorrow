@@ -26,7 +26,7 @@ class NewsRequest extends Request
     {
         return [
             'title' => 'required|min:10|max:255',
-            'text' => 'required|min:25|max:1000',
+            'text' => 'required|min:25|max:5000',
         ];
     }
 

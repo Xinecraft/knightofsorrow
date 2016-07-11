@@ -411,7 +411,7 @@ $(document).ready(function ()
     $('#navsearch').typeahead({
             hint: true,
             highlight: true,
-            minlength: 3
+            minlength: 1
         },
         {
             name: 'users',
@@ -433,7 +433,7 @@ $(document).ready(function ()
             templates: {
                 header: '<h5 class="text-center text-bold text-primary">Players</h5>',
                 suggestion: function(data){
-                    return '<p><img src="/images/flags_new/flags-iso/shiny/24/'+data.country.countryCode+'.png" /> <a href="/statistics/player/' +data.id+ '/' +data.name+ '">' + data.name + '</a> - <b>#' + data.position + '</b></p>';
+                    return '<p><img src="/images/flags_new/flags-iso/shiny/24/'+data.country.countryCode+'.png" /> <a href="/statistics/player/' +data.name+ '">' + data.name + '</a> - <b>#' + data.position + '</b></p>';
                 }
             }
         }

@@ -34,7 +34,8 @@
                 <p class="small pad5">
                     @forelse($player->aliases()->limit(5)->get() as $alias)
                         @unless($player->name == $alias->name)
-                        {{ $alias->name }}
+                            <a href="{{  route('player-detail',$alias->name) }}">{{ $alias->name }}</a>
+
                         @endunless
                     @empty
 

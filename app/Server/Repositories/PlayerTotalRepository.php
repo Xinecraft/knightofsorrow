@@ -32,6 +32,7 @@ use App\PlayerTotal;
 use App\Alias;
 use App\Rank;
 use App\Player;
+use Cache;
 
 /**
  * Class PlayerTotalRepository
@@ -160,6 +161,10 @@ class PlayerTotalRepository implements PlayerTotalRepositoryInterface
             $pT->position = ++$position;
             $pT->save();
         }
+
+        // Put to Top Player so that some bugs are fixed.
+        $topPlayers = PlayerTotal::with(['country','rank'])->orderBy('position')->limit(10)->get();
+        Cache::put('top_players',$topPlayers,11);
 
         return "Players total has been logged into player_total table successfully!";
     }

@@ -31,7 +31,7 @@ class CalculatePlayerTotalCommand extends Command
     /**
      * Create a new command instance.
      *
-     * @return void
+     * @param PlayerTotalRepositoryInterface $playerTotal
      */
     public function __construct(PlayerTotalRepositoryInterface $playerTotal)
     {

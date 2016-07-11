@@ -79,7 +79,7 @@ class StatisticsController extends Controller
      * @param $name
      * @return \Illuminate\View\View
      */
-    public function getPlayerDetails($id = null, $name)
+    public function getPlayerDetails($name)
     {
         $player = PlayerTotal::findOrFailByName($name);
         $weapons = $player->AllWeapons();

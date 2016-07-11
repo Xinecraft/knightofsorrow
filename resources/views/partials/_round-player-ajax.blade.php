@@ -1,7 +1,7 @@
 <!-- Player Individual Data Starts -->
 <div class="panel panel-default col-xs-12 no-padding">
     <!-- Default panel contents -->
-    <div class="panel-heading"><b>{!! link_to_route('player-detail',$player->name,[$player->alias->playerTotal->id,$player->alias->playerTotal->name]) !!}</b>{!! Html::image('/images/flags/20/'.$player->country->countryCode.".png",$player->country->countryCode,['title' => $player->country->countryName,'class' => 'right tooltipster']) !!}</div>
+    <div class="panel-heading"><b>{!! link_to_route('player-detail',$player->name,[$player->name]) !!}</b>{!! Html::image('/images/flags/20/'.$player->country->countryCode.".png",$player->country->countryCode,['title' => $player->country->countryName,'class' => 'right tooltipster']) !!}</div>
     <!-- list -->
     <ul class="list-group col-xs-4">
         <li class="list-group-item">

@@ -10,6 +10,15 @@
 |
 */
 
+Event::listen('router.before',function(){
+    Session::put('query_no',0);
+});
+Event::listen('illuminate.query', function($query){
+    $q = Session::get('query_no');
+    ++$q;
+    Session::put('query_no',$q);
+});
+
 /**
  * Auth Controllers.
  */
@@ -55,7 +64,7 @@ Route::group(['prefix' => 'statistics'],function(){
     Route::get('countries',['as' => 'countries-list', 'uses' => 'StatisticsController@getAllCountries']);
     Route::get('country/{id}/{name}/players',['as' => 'country-detail', 'uses' => 'StatisticsController@getCountryDetails']);
     Route::get('charts',['as' => 'chart-reports', 'uses' => 'StatisticsController@getChartReports']);
-    Route::get('player/{id?}/{name}/',['as' => 'player-detail', 'uses' => 'StatisticsController@getPlayerDetails']);
+    Route::get('player/{name}/',['as' => 'player-detail', 'uses' => 'StatisticsController@getPlayerDetails']);
     Route::get('round-reports/detail/{id}',['as' => 'round-detail', 'uses' => 'StatisticsController@getRoundDetails']);
 
     Route::get('top-10',['as' => 'top10', 'uses' => 'StatisticsController@getTop10']);
@@ -198,6 +207,4 @@ Route::delete('/messages/{id}', ['as' => 'messages.delete', 'uses' => 'MailContr
 Route::get('messages/',['as' => 'messages.index', 'uses' => 'MailController@index']);
 
 
-Route::get('/download/adminmoddata/version.txt',function(){
-    printf("%s","v22");
-});
+Route::get('/downloads/{name}', ['as' => 'downloads', 'uses' => 'DownloadController@download']);
