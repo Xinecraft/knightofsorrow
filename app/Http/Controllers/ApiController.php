@@ -35,9 +35,14 @@ class ApiController extends Controller
         return htmlspecialchars_decode(html_entity_decode($data));
     }
 
+    /**
+     * @return string
+     *
+     * {"hostname":"<span style='color: #00ff00'>WWW.KNIGHTofSORROW.TK (Antics)<\/span>","password":"No","patch":"1.0","mods":"None","map":"Food Wall Restaurant","gametype":"Barricaded Suspects","players_current":"4","players_max":"12","statsenabled":"No","swatwon":"1","suspectswon":"2","round":"4","numrounds":"5","suspectsscore":"20","swatscore":"55","timeleft":"483","nextmap":"MP-ABomb","players":[{"name":"Hi_all","score":"15","ping":"84","ip":"...","team":"1","kills":"-","tkills":"-","deaths":"-","arrests":"3","arrested":"4","vipe":"-","vipkv":"-","vipki":"-","vipa":"-","vipua":"-","bombsd":"-","rdobjective":"-","sgobjective":"-","sge":"-","sgk":"-","countryCode":"MA","countryName":"Morocco"},{"name":"\u00abRick\u00bb","score":"5","ping":"176","ip":"...","team":"0","kills":"-","tkills":"-","deaths":"-","arrests":"-","arrested":"-","vipe":"-","vipkv":"-","vipki":"-","vipa":"-","vipua":"-","bombsd":"-","rdobjective":"-","sgobjective":"-","sge":"-","sgk":"-","countryCode":"MX","countryName":"Mexico"},{"name":"-","score":"-","ping":"-","ip":"...","team":"-","kills":"-","tkills":"-","deaths":"-","arrests":"-","arrested":"-","vipe":"-","vipkv":"-","vipki":"-","vipa":"-","vipua":"-","bombsd":"-","rdobjective":"-","sgobjective":"-","sge":"-","sgk":"-","countryCode":"_unknown","countryName":"Unknown Territory"},{"name":"-","score":"-","ping":"-","ip":"...","team":"-","kills":"-","tkills":"-","deaths":"-","arrests":"-","arrested":"-","vipe":"-","vipkv":"-","vipki":"-","vipa":"-","vipua":"-","bombsd":"-","rdobjective":"-","sgobjective":"-","sge":"-","sgk":"-","countryCode":"_unknown","countryName":"Unknown Territory"}]}
+     */
     public function getServerQueryv2()
     {
-        $data = new Swat4Server('127.0.0.1', 10483);
+        $data = new Swat4Server('knightofsorrow.tk', 10483);
         $data->query();
 
         $sv = [];

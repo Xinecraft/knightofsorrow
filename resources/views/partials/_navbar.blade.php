@@ -16,9 +16,6 @@
             <ul class="nav navbar-nav">
                 <li class="{{ set_active(['statistics*']) }}">{!! link_to_route('statistics-home','Statistics') !!}</li>
                 <li class="{{ set_active(['rules*']) }}"><a href="{{ route('rules') }}">Rules</a></li>
-                @if(Auth::check())
-                    <li class="{{ set_active(['feeds*']) }}">{!! link_to_route('feeds-home','Feedline') !!}</li>
-                @endif
 
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
