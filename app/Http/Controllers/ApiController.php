@@ -111,6 +111,7 @@ class ApiController extends Controller
 
                 $playerNameStripped = str_replace('(VIEW)','',$player['name']);
                 $playerNameStripped = str_replace('(SPEC)','',$playerNameStripped);
+                $playerNameStripped = htmlspecialchars_decode(html_entity_decode(html_entity_decode($playerNameStripped)));
 
                 if($playerTotal = PlayerTotal::findOrFailByNameWithNull($playerNameStripped))
                 {
@@ -128,7 +129,9 @@ class ApiController extends Controller
 
         $sv['onlinePlayersContent'] = $playerTableData;
 
-        return json_encode($sv);
+        $data = json_encode($sv);
+
+        return htmlspecialchars_decode(html_entity_decode($data));
 
     }
 
