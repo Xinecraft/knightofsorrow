@@ -1,4 +1,13 @@
 @extends('layouts.main')
+@section('styles')
+    <style>
+        .no-player-online
+        {
+            padding:10px;
+            text-align: center;
+        }
+    </style>
+@endsection
 @section('main-container')
     <div class="content col-xs-9">
         <div style="display: none" id="server-viewer">

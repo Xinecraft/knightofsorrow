@@ -42,7 +42,7 @@ class ApiController extends Controller
      */
     public function getServerQueryv3()
     {
-        $data = new Swat4Server('knightofsorrow.tk', 10483);
+        $data = new Swat4Server('127.0.0.1', 10483);
         $data->query();
 
         $chats = Chat::orderBy('created_at', 'DESC')->limit(25)->get();
@@ -69,7 +69,7 @@ class ApiController extends Controller
 
         if($data->option['players_current'] <= 0)
         {
-            $playerTableData = "<div>There are no players online.</div>";
+            $playerTableData = "<div class='no-player-online'>There are no players online.</div>";
         }
         else
         {
@@ -127,11 +127,10 @@ class ApiController extends Controller
             }
         }
 
-        $sv['onlinePlayersContent'] = $playerTableData;
+        $sv['onlinePlayersContent'] = htmlspecialchars_decode(html_entity_decode($playerTableData));
 
         $data = json_encode($sv);
-
-        return htmlspecialchars_decode(html_entity_decode($data));
+        return ($data);
 
     }
 

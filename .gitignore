@@ -2,7 +2,7 @@
 /node_modules
 .env
 _ide_helper.php
-/.idea
+/.idea/
 /public/components/
 /public/build/*
 tests/_output/*
