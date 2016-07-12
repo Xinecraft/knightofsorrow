@@ -16,7 +16,7 @@ class ApiController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @return \Response
      */
     public function index()
     {
@@ -40,9 +40,101 @@ class ApiController extends Controller
      *
      * {"hostname":"<span style='color: #00ff00'>WWW.KNIGHTofSORROW.TK (Antics)<\/span>","password":"No","patch":"1.0","mods":"None","map":"Food Wall Restaurant","gametype":"Barricaded Suspects","players_current":"4","players_max":"12","statsenabled":"No","swatwon":"1","suspectswon":"2","round":"4","numrounds":"5","suspectsscore":"20","swatscore":"55","timeleft":"483","nextmap":"MP-ABomb","players":[{"name":"Hi_all","score":"15","ping":"84","ip":"...","team":"1","kills":"-","tkills":"-","deaths":"-","arrests":"3","arrested":"4","vipe":"-","vipkv":"-","vipki":"-","vipa":"-","vipua":"-","bombsd":"-","rdobjective":"-","sgobjective":"-","sge":"-","sgk":"-","countryCode":"MA","countryName":"Morocco"},{"name":"\u00abRick\u00bb","score":"5","ping":"176","ip":"...","team":"0","kills":"-","tkills":"-","deaths":"-","arrests":"-","arrested":"-","vipe":"-","vipkv":"-","vipki":"-","vipa":"-","vipua":"-","bombsd":"-","rdobjective":"-","sgobjective":"-","sge":"-","sgk":"-","countryCode":"MX","countryName":"Mexico"},{"name":"-","score":"-","ping":"-","ip":"...","team":"-","kills":"-","tkills":"-","deaths":"-","arrests":"-","arrested":"-","vipe":"-","vipkv":"-","vipki":"-","vipa":"-","vipua":"-","bombsd":"-","rdobjective":"-","sgobjective":"-","sge":"-","sgk":"-","countryCode":"_unknown","countryName":"Unknown Territory"},{"name":"-","score":"-","ping":"-","ip":"...","team":"-","kills":"-","tkills":"-","deaths":"-","arrests":"-","arrested":"-","vipe":"-","vipkv":"-","vipki":"-","vipa":"-","vipua":"-","bombsd":"-","rdobjective":"-","sgobjective":"-","sge":"-","sgk":"-","countryCode":"_unknown","countryName":"Unknown Territory"}]}
      */
-    public function getServerQueryv2()
+    public function getServerQueryv3()
     {
         $data = new Swat4Server('knightofsorrow.tk', 10483);
+        $data->query();
+
+        $chats = Chat::orderBy('created_at', 'DESC')->limit(25)->get();
+        $chatList = "";
+        foreach ($chats as $chat) {
+            $chatList = $chatList.($chat->message) . "<br>";
+        }
+
+        $sv = [];
+        $sv['isOnline'] = $data->option['hostname'] != "...server is reloading or offline";
+        $sv['title'] = $data->option['map'];
+        $sv['numPlayers'] = $data->option['players_current'];
+        $sv['maxPlayers'] = $data->option['players_max'];
+        $sv['swatWon'] = $data->option['swatwon'];
+        $sv['susWon'] = $data->option['suspectswon'];
+        $sv['roundNumber'] = $data->option['round'];
+        $sv['numRounds'] = $data->option['numrounds'];
+        $sv['scoreSuspects'] = $data->option['suspectsscore'];
+        $sv['scoreSwat'] = $data->option['swatscore'];
+        $sv['roundTime'] = $data->option['timeleft'];
+        $sv['nextMap'] = $data->option['nextmap'];
+        $sv['created'] = \Carbon\Carbon::now()->timestamp;
+        $sv['chatContent'] = ($chatList);
+
+        if($data->option['players_current'] <= 0)
+        {
+            $playerTableData = "<div>There are no players online.</div>";
+        }
+        else
+        {
+            $playerTableData = "<table class='table table-striped table-hover no-margin' id='ls-player-table'>";
+            $playerTableData .= "<thead><tr><th class='col-xs-1'>Flag</th><th class='col-xs-7'>Name</th><th class='col-xs-2'>Score</th><th class='text-right col-xs-2'>Ping</th></tr></thead><tbody id='ls-player-table-body'></tbody>";
+
+            foreach($data->option['players'] as $player)
+            {
+                $IP = explode(":",$player['ip'])[0];
+                $geoip = \App::make('geoip');
+                $playerCountryCode = "_unknown";
+                $playerCountryName = "Unknown Territory";
+                try {
+                    if ($player_geoip = $geoip->city($IP)) {
+                        $playerCountryName = $player_geoip->country->name;
+                        $playerCountryCode = $player_geoip->country->isoCode;
+                    }
+                }
+                catch(\Exception $e)
+                {
+                    switch($e)
+                    {
+                        case $e instanceof \InvalidArgumentException:
+                            $playerCountryCode = "_unknown";
+                            $playerCountryName = "Unknown Territory";
+                            break;
+                        case $e instanceof \GeoIp2\Exception\AddressNotFoundException:
+                            $playerCountryCode = "_unknown";
+                            $playerCountryName = "Unknown Territory";
+                            break;
+                        default:
+                            $playerCountryCode = "_unknown";
+                            $playerCountryName = "Unknown Territory";
+                            break;
+                    }
+                }
+
+                $playerTableData .= "<tr class=''><td><img src='/images/flags/20_shiny/{$playerCountryCode}.png' title='{$playerCountryName}' class='tooltipster' alt='$playerCountryCode'></td>";
+
+                $playerNameStripped = str_replace('(VIEW)','',$player['name']);
+                $playerNameStripped = str_replace('(SPEC)','',$playerNameStripped);
+
+                if($playerTotal = PlayerTotal::findOrFailByNameWithNull($playerNameStripped))
+                {
+                    $playerTableData .= "<td><b><a class='team-{$player['team']}' href='".route('player-detail',$playerNameStripped)."'>{$player['name']}</b></a></td>";
+                }
+                else
+                {
+                    $playerTableData .= "<td><span class='team-{$player['team']}'>".$player['name']."</span></td>";
+                }
+
+                $playerTableData .= "<td class='text-bold'>{$player['score']}</td>";
+                $playerTableData .= "<td class='text-right text-bold'>{$player['ping']}</td>";
+            }
+        }
+
+        $sv['onlinePlayersContent'] = $playerTableData;
+
+        return json_encode($sv);
+
+    }
+
+    public function getServerQueryv2()
+    {
+        $data = new Swat4Server('127.0.0.1', 10483);
         $data->query();
 
         $sv = [];

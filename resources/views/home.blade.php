@@ -1,6 +1,7 @@
 @extends('layouts.main')
 @section('main-container')
     <div class="content col-xs-9">
+        <div style="display: none" id="server-viewer">
         <div class="row panel text-center live-server-summary">
             <div class="col-xs-2 ls-swat4-summary">
                 <span class="info-title">SWAT</span>
@@ -26,8 +27,8 @@
         <div class="row">
             <div class="ls-players-and-top-player no-left-padding col-xs-5">
                 <div class="col-xs-12 panel panel-default no-padding">
-                    <div class="panel-heading"><span class="info-title">Online Players (<span id="ls-player-online">0</span>/<span id="ls-player-limit">0</span>)</span></div>
-                    <div class="panel-body no-padding">
+                    <div class="panel-heading"><span class="info-title">Online Players <span id="ls-player-online"></span></span></div>
+                    <div class="panel-body no-padding" id="ls-player-total-div">
                         <table class="table table-striped table-hover no-margin" id="ls-player-table">
                             <th class="loading-pt-info text-center" style="padding: 15px;font-size: 15px">Loading Players table...</th>
                         </table>
@@ -90,6 +91,10 @@
 
             </div> {{--Live Server Viewer Ends--}}
         </div> {{--Live Server Players,Top Players and Server Viewer Row Ends--}}
+        </div>
+        <div class="server-viewer-loader row">
+            <div id="sv-loading">Loading Server Viewer…</div>
+        </div>
 
         <div class="row hidden-xs round-reports">
             <div style="" class="col-xs-12 panel panel-default no-padding no-margin no-left-padding">
@@ -710,8 +715,128 @@
 {{--Scripts section for Home Page--}}
 @section('scripts')
     <script type="text/javascript">
+
+        var sv = {
+            url: '',
+            elems: {},
+            roundTime: 0,
+
+            init: function(obj) {
+                sv.url = obj.url;
+
+                //$('#ls-player-limit').text(player_max);
+
+                sv.elems = {
+                    $container: $('#server-viewer'),
+                    $scoreSwat: $('#ls-swat-score'),
+                    $scoreSuspects: $('#ls-suspects-score'),
+                    $swatWon: $('#ls-swat-wins'),
+                    $susWon: $('#ls-suspects-wins'),
+                    $onlinePlayers: $('#ls-player-total-div'),
+                    $numPlayers: $('#ls-player-online'),
+                    $chat: $('.ls-chats'),
+                    $map: $('#ls-map-name'),
+                    $nextMap: $('#ls-next-map'),
+                    $roundNum: $('#ls-round'),
+                    $roundTime: $('#ls-time')
+                };
+
+                $.doTimeout('svUpdate', 4000, sv.update);
+                $.doTimeout('svUpdate', true);
+
+                $.doTimeout('roundTime', 1000, sv.updateRoundTime);
+                $.doTimeout('roundTime', true);
+
+            },
+
+            update: function() {
+                $.getJSON(sv.url + '/get3', function(obj) {
+                    if (!obj.isOnline) {
+                        sv.elems.$container.fadeOut(300).next().show();
+                        return;
+                    }
+
+                    console.log(obj);
+
+                    var colors = sv.getScoreColors(obj.scoreSwat, obj.scoreSuspects);
+
+                    sv.elems.$scoreSwat.html(obj.scoreSwat).css('color', colors[0]);
+                    sv.elems.$scoreSuspects.html(obj.scoreSuspects).css('color', colors[1]);
+                    sv.elems.$swatWon.html(obj.swatWon + ' win' + (obj.swatWon == 1 ? '' : 's'));
+                    sv.elems.$susWon.html(obj.susWon + ' win' + (obj.susWon == 1 ? '' : 's'));
+                    sv.elems.$roundNum.html(obj.roundNumber + '/' + obj.numRounds);
+                    sv.updateRoundTime(obj.roundTime);
+                    sv.elems.$map.html(obj.title).attr('title', obj.title);
+                    sv.elems.$nextMap.html("Next: "+getMapByClass(obj.nextMap));
+                    sv.elems.$numPlayers.html('(' + obj.numPlayers + '/' + obj.maxPlayers + ')');
+                    sv.elems.$chat.html(obj.chatContent);
+
+                    $('.tooltipster', sv.elems.$onlinePlayers).poshytip('destroy');
+                    sv.elems.$onlinePlayers.html(obj.onlinePlayersContent);
+
+                    sv.playerCountries = obj.playerCountries;
+
+                    sv.elems.$container.delay(1000).fadeIn(300).next().delay(700).fadeOut(300);
+                });
+                return true; // loop
+            },
+
+            getScoreColors: function(swat, suspects) {
+                var tied = '#000', win = '#17AF17', loose = '#BB2F0E';
+
+                if (swat == suspects) {
+                    return [tied, tied];
+                }
+                if (swat > suspects) {
+                    return [win, loose];
+                }
+                return [loose, win];
+            },
+
+            updateRoundTime: function(roundTime) {
+                var mins, secs, formatted = '∞';
+
+                if (typeof roundTime != 'undefined') {
+                    sv.roundTime = roundTime;
+                }
+                else if (sv.roundTime > 0) {
+                    sv.roundTime--;
+                }
+
+                if (sv.roundTime > 0) {
+                    mins = Math.floor(sv.roundTime/60);
+                    secs = sv.roundTime % 60;
+                    formatted = mins + ':' + (secs < 10 ? '0' : '') + secs;
+                }
+
+                sv.elems.$roundTime.html(formatted);
+                return true; // loop
+            },
+
+
+            getCountries: function() {
+                var countries = [];
+                $.each(sv.playerCountries, function(country, players) {
+                    countries.push(country.toUpperCase());
+                });
+                return countries;
+            },
+
+            getMapDataValues: function() {
+                var values = {};
+                $.each(sv.playerCountries, function(country, players) {
+                    values[country.toUpperCase()] = players.length;
+                });
+                return values;
+            }
+        };
+
         $(document).ready(function() {
-            function startInterval() {
+
+
+            sv.init({url: '/api/server-query'});
+
+            /*function startInterval() {
 
                 //-----------------------------------------------------------------------
                 // Sending AJAX request to SWAT4 Server to display it live
@@ -853,7 +978,7 @@
                 }, 2000);
             }
 
-            startInterval();
+            startInterval();*/
         });
     </script>
     @endsection

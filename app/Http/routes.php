@@ -43,6 +43,7 @@ Route::group(['prefix' => 'api'],function(){
     Route::get('server-chats/get',['as' => 'api-server-chats', 'uses' => 'ApiController@getServerChats']);
 
     Route::get('server-query/get',['as' => 'api-server-query', 'uses' => 'ApiController@getServerQueryv2']);
+    Route::get('server-query/get3',['as' => 'api-server-query', 'uses' => 'ApiController@getServerQueryv3']);
 
     Route::get('users/{query}',['as' => 'api-user-query', 'uses' => 'ApiController@getQueryUser']);
 

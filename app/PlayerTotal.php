@@ -103,12 +103,12 @@ class PlayerTotal extends Model implements HasPresenter
     }
 
     /**
-     * Find a PlayerTotal using its name.
-     * PlayerTotal::findOrFailByName($name);
-     *
-     * @param $name
-     * @return Collection
-     */
+ * Find a PlayerTotal using its name.
+ * PlayerTotal::findOrFailByName($name);
+ *
+ * @param $name
+ * @return Collection
+ */
     public static function findOrFailByName($name)
     {
         $player = self::whereName($name)->first();
@@ -116,6 +116,19 @@ class PlayerTotal extends Model implements HasPresenter
             throw new ModelNotFoundException;
         else
             return $player;
+    }
+
+    /**
+     * Find a PlayerTotal using its name.
+     * PlayerTotal::findOrFailByName($name);
+     *
+     * @param $name
+     * @return Collection
+     */
+    public static function findOrFailByNameWithNull($name)
+    {
+        $player = self::whereName($name)->first();
+        return $player;
     }
 
 
