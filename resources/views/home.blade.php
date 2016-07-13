@@ -765,8 +765,6 @@
                         return;
                     }
 
-                    console.log(obj);
-
                     var colors = sv.getScoreColors(obj.scoreSwat, obj.scoreSuspects);
 
                     sv.elems.$scoreSwat.html(obj.scoreSwat).css('color', colors[0]);

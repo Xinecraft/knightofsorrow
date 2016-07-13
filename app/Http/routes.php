@@ -51,6 +51,8 @@ Route::group(['prefix' => 'api'],function(){
 
     Route::get('whois',['as' => 'api-server-whois', 'uses' => 'ApiController@whois']);
 
+    Route::get('whoisforserver',['as' => 'api-server-whoisforserver', 'uses' => 'ApiController@whoisforserver']);
+
     Route::get('ip2cc/{IP}', ['as' => 'api-ip-country', 'uses' => 'ApiController@getCountryCodeFromIP']);
 });
 

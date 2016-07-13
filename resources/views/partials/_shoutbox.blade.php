@@ -157,6 +157,8 @@
         background-color: #555;
     }
 </style>
+
+
 <!--
 <script>
     $('.deleteShout').submit(function(){

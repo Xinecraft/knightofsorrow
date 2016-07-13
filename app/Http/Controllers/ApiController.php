@@ -245,7 +245,7 @@ class ApiController extends Controller
         $bOffline = $data[2];
         $key = $data[3];
 
-        if ($data == NULL || empty($data || env('SERVER_QUERY_KEY') != $key)) {
+        if ($data == NULL || empty($data) || env('SERVER_QUERY_KEY') != $key) {
             return;
         }
 
@@ -467,6 +467,161 @@ class ApiController extends Controller
                 ];
                 return view('api.whois.justjoined', $data);*/
             }
+        }
+    }
+
+    public function whoisforserver(Request $request)
+    {
+        $data = $request->data;
+        $data = explode("$$", $data);
+        $playerName = $data[0];
+        $playerIp = $data[1];
+        $bOffline = $data[2];
+        $key = $data[3];
+
+        if ($data == NULL || empty($data) || "koswhois1337" != $key) {
+            printf("%s","Query key Invalid!");
+            exit;
+        }
+
+        /**
+         * Player Query System
+         */
+
+        /**
+         * If the Searched Name is Not Present in Server
+         *
+         */
+        if ($bOffline == "yes") {
+            $players = PlayerTotal::where('name', 'LIKE', "%$playerName%")->get();
+
+            /**
+             * If Not Found
+             */
+            if ($players->isEmpty() || is_null($players)) {
+                return view('api.whois.notfound')->with('playerName', $playerName);
+            } /**
+             * Else if only one found
+             */
+            elseif ($players->count() == 1) {
+                $player = $players->first();
+
+                /*$data = [
+                    'player' => $player,
+                    'playerAddr' => $player->country->countryName,
+                ];*/
+
+                printf("[c=FFFF00][b][u]%s[\\u][\\b][\\c] is from [b][c=EBFFFF]%s[\\c][\\b]", $player->name, $player->country->countryName);
+                exit();
+
+                //return view('api.whois.onefound', $data);
+
+            } /**
+             * More than one player matched that search string.
+             * But Still the name provided matches the Exact one amoung many so display the Exact matching Playername
+             */
+            else {
+                $playerss = PlayerTotal::where('name', 'LIKE', "$playerName")->get();
+
+                // Display single one
+                if ($playerss->count() == 1) {
+                    $player = $playerss->first();
+
+                    printf("[c=FFFF00][b][u]%s[\\u][\\b][\\c] is from [b][c=EBFFFF]%s[\\c][\\b]", $player->name, $player->country->countryName);
+                    exit();
+
+                    /*$data = [
+                        'player' => $player,
+                        'playerAddr' => $player->country->countryName,
+                    ];
+                    return view('api.whois.onefound', $data);*/
+
+                } // Display list of all players matching
+                else {
+                    $playerlist = "";
+                    $i = 1;
+                    foreach($players->take(2) as $player){
+                        // If the limit exceed 4 players then only show 2
+                        $playerlist = $playerlist ."[c=FFFF00]". $player->name . "[\\c][c=00ff00] - [\\c]";
+                    }
+
+                    $playerlist = substr($playerlist, 0, -17);
+                    printf("Found [b]%s[\\b] players matching [b]%s[\\b]:\\n [b]%s[\\b]", $players->count(), $playerName, $playerlist);
+                    exit();
+                    /*$data = [
+                        'players' => $players,
+                        'searchQuery' => $playerName
+                    ];
+                    return view('api.whois.manyfound', $data);*/
+                }
+            }
+        } /**
+         * If player name queried for is already present in Server
+         * i.e, the player name queried for is Live in server....
+         */
+        else if ($bOffline == "no") {
+
+            $geoip = \App::make('geoip');
+            $playerCountryName = "[c=d3d3d3]Unknown Territory[\\c]";
+            try {
+                if ($player_geoip = $geoip->city($playerIp)) {
+                    $playerCountryName = $player_geoip->country->names['en'];
+                }
+            }
+            catch(\Exception $e)
+            {
+                switch($e)
+                {
+                    case $e instanceof \InvalidArgumentException:
+                        $playerCountryName = "[c=d3d3d3]Unknown Territory[\\c]";
+                        break;
+                    case $e instanceof \GeoIp2\Exception\AddressNotFoundException:
+                        $playerCountryName = "[c=d3d3d3]Unknown Territory[\\c]";
+                        break;
+                    default:
+                        $playerCountryName = "[c=d3d3d3]Unknown Territory[\\c]";
+                        break;
+                }
+            }
+
+            /**
+             * Player has never played in this server before
+             */
+
+            printf("[c=FFFF00][b][u]%s[\\u][\\b][\\c] is from [b][c=EBFFFF]%s[\\c][\\b]", $playerName, $playerCountryName);
+            exit();
+        }
+
+        /**
+         * Send this for the Player Joining the server if whois on join is enabled in Server
+         */
+        elseif ($bOffline == "justjoined")
+        {
+            $geoip = \App::make('geoip');
+            $playerCountryName = "[c=d3d3d3]Unknown Territory[\\c]";
+            try {
+                if ($player_geoip = $geoip->city($playerIp)) {
+                    $playerCountryName = $player_geoip->country->names['en'];
+                }
+            }
+            catch(\Exception $e)
+            {
+                switch($e)
+                {
+                    case $e instanceof \InvalidArgumentException:
+                        $playerCountryName = "[c=d3d3d3]Unknown Territory[\\c]";
+                        break;
+                    case $e instanceof \GeoIp2\Exception\AddressNotFoundException:
+                        $playerCountryName = "[c=d3d3d3]Unknown Territory[\\c]";
+                        break;
+                    default:
+                        $playerCountryName = "[c=d3d3d3]Unknown Territory[\\c]";
+                        break;
+                }
+            }
+
+                printf("[c=FFFF00][b][u]%s[\\u][\\b][\\c] is coming from [b][c=EBFFFF]%s[\\c][\\b]", $playerName, $playerCountryName);
+                exit();
         }
     }
 
