@@ -6,6 +6,10 @@
             padding:10px;
             text-align: center;
         }
+        .font-13
+        {
+            font-size: 13px;
+        }
     </style>
 @endsection
 @section('main-container')
@@ -705,7 +709,7 @@
                 </span>
                 </div>
 
-                <div class="panel-body">
+                <div class="panel-body font-13">
                     @forelse($activeUsers as $user)
                         <a class="{{ $user->isAdmin() ? "text-green" : "" }}" style="margin-right:1em" href="{{ route('user.show',$user->username) }}">
                             <strong class="">{{ $user->displayName() }}</strong>

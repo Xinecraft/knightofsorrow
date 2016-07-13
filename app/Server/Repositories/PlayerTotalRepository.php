@@ -70,7 +70,19 @@ class PlayerTotalRepository implements PlayerTotalRepositoryInterface
             //Permanent Solution
             if($alias->profile->loadout->kyaKhali())
             {
-                $playerTotal->last_loadout_id = $playersCollection->max('loadout_id');
+
+                foreach($playersCollection->reverse() as $item)
+                {
+                    if(!$item->loadout->kyaKhali())
+                    {
+                        $playerTotal->last_loadout_id = $item->loadout_id;
+                        break;
+                    }
+                    else
+                    {
+                        $playerTotal->last_loadout_id = $item->loadout_id;
+                    }
+                }
             }
             else
             {
