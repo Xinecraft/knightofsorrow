@@ -26,6 +26,7 @@
                         <li><a href="{{ route('chat.index') }}">Chat History</a></li>
                         <li><a href="{{ route('poll.index') }}">Polls</a></li>
                         <li><a href="{{ route('admin.list') }}">Admins List</a></li>
+                        <li><a href="{{ route('download') }}">Downloads</a></li>
                         {{--<li><a href="">Clans</a></li>--}}
                         {{--<li><a href="">Forums</a></li>--}}
                         {{--<li><a href="{{ route('rules') }}">Rules</a></li>--}}

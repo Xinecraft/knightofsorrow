@@ -19,6 +19,7 @@ class CreateBansTable extends Migration
             $table->string('location')->nullable();
             $table->timestamp('ban_time')->nullable();
             $table->integer('server_id')->unsigned();
+            $table->integer('country_id')->unsigned()->nullable();
             //$table->foreign('server_id')->refrences('id')->on('servers');
             $table->string('reason')->nullable();
             $table->string('admin_name');

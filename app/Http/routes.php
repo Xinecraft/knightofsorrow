@@ -210,5 +210,5 @@ Route::get('/administrator/messages/@{username1}/@{username2}', ['middleware' =>
 Route::delete('/messages/{id}', ['as' => 'messages.delete', 'uses' => 'MailController@destroy']);
 Route::get('messages/',['as' => 'messages.index', 'uses' => 'MailController@index']);
 
-
+Route::get('downloads',['as' => 'download', 'uses' => 'DownloadController@index']);
 Route::get('/downloads/{name}', ['as' => 'downloads', 'uses' => 'DownloadController@download']);

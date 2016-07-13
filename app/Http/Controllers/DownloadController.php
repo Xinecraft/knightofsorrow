@@ -18,7 +18,7 @@ class DownloadController extends Controller
      */
     public function index()
     {
-        //
+        return view('downloads');
     }
 
     public function download($name)
