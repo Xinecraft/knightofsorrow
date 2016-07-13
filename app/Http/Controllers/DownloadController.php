@@ -31,6 +31,9 @@ class DownloadController extends Controller
             case 2:
                 $name = "antics_v1.u";
                 break;
+            case 3:
+                $name = "KMod.u";
+                    break;
             default:
                 $name = "";
         }
