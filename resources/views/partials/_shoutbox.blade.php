@@ -12,9 +12,10 @@
         <div class="" id="collapseOne">
             <div class="panel-body messageLog">
 
+                <button class="btn btn-default btn-block btn-sm btn-info" id="shouts-loader">Load More</button>
+
                 <ul class="chat" id="shoutbox-chat">
                     @foreach($shouts as $shout)
-
                         @if($shout->user_id % 2 == 0)
                             <li class="clearfix left col-xs-12 no-padding"><span class="chat-img pull-left">
                             <img src="{{ $shout->user->getGravatarLink(40) }}" width="40" height="40" alt="User Avatar" class="img-circle"/>
@@ -155,6 +156,11 @@
     .shoutbox-cont ::-webkit-scrollbar-thumb {
         -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
         background-color: #555;
+    }
+
+    #shouts-loader
+    {
+        margin-bottom: 15px;
     }
 </style>
 

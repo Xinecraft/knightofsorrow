@@ -102,7 +102,7 @@
                             @elseif($message->seen_at == null)
                                 <p><span class="label label-info">Not seen</span></p>
                             @endif
-                            <p class="convert-emoji">{!! nl2br(htmlentities($message->message)) !!}</p>
+                            <p class="convert-emoji">{!! Emojione\Emojione::toImage(nl2br(htmlentities($message->message))) !!}</p>
                         </div>
                     </div>
                 @else
@@ -128,7 +128,7 @@
                             @elseif($message->seen_at == null)
                                 <p><span class="label label-info">Not seen</span></p>
                             @endif
-                            <p class="convert-emoji">{!! nl2br(htmlentities($message->message)) !!}</p>
+                            <p class="convert-emoji">{!! Emojione\Emojione::toImage(nl2br(htmlentities($message->message))) !!}</p>
                         </div>
                         <div class="media-right">
                             <a class="tooltipster" data-placement="left" title="{{ $message->sender->displayName() }}" href="{{ route('user.show',$message->sender->username) }}"><img

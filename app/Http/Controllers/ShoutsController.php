@@ -60,4 +60,18 @@ class ShoutsController extends Controller
         return response($shout, 201);
     }
 
+    public function getShouts(Request $request)
+    {
+        $offset = (int)$request->offset;
+
+        if($offset == null || $offset == "" || !is_numeric($offset))
+        {
+            $offset = 0;
+        }
+
+        $shouts = Shout::latest()->skip($offset)->take(20)->get()->sortBy('created_at');
+
+        return view('partials._getshouts')->with('shouts',$shouts);
+    }
+
 }

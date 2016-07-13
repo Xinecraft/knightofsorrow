@@ -1222,9 +1222,13 @@ $('.composemailusername').typeahead({
 
 
 
-
+    var key = "e87ba0671cd6d4ab0137";
+    if(window.location.hostname == "kos.dev")
+    {
+        key = "e37f94b13300f31c19f5";
+    }
     //Pusher API
-    var pusher = new Pusher('e87ba0671cd6d4ab0137',{
+    var pusher = new Pusher(key,{
         cluster: 'eu',
         encrypted: true}
     );
@@ -1397,6 +1401,30 @@ $('.composemailusername').typeahead({
      *
      */
     $('.autohide').delay(5000).slideToggle();
+
+
+    var scrollThreshold = ($(".messageLog")[0].scrollHeight);
+    $('#shouts-loader').click(function(){
+        $('#shouts-loader').hide();
+        $container = $('#shoutbox-chat');
+        var offset = document.getElementById('shoutbox-chat').childElementCount;
+        $.ajax({
+            type: 'GET',
+            url: "http://"+window.location.hostname + '/getShouts',
+            data: 'offset=' + offset,
+            success: function(data) {
+                if (data.length > 0) {
+                    $container.prepend(data);
+                    $('#shouts-loader').show();
+                    $(".messageLog").scrollTop(scrollThreshold);
+                }
+            },
+            error: function()
+            {
+                $('#shouts-loader').show();
+            }
+        });
+    });
 
 });
 

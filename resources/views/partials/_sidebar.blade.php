@@ -16,7 +16,7 @@
         </ul>
     </div>
 
-    @include('partials._shoutbox',['shouts' => App\Shout::limit(25)->latest()->get()->sortBy('created_at')])
+    @include('partials._shoutbox',['shouts' => App\Shout::limit(20)->latest()->get()->sortBy('created_at')])
 
             <!-- <div class="panel pad5" style="padding: 10px !important;">
         <h5 class="info-title" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Donate</h5>

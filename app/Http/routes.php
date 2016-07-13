@@ -168,6 +168,7 @@ Route::group(['prefix' => 'servertracker'], function(){
  * Shouts Controller
  */
 Route::post('/shouts/do',['as' => 'shouts.store', 'uses' => 'ShoutsController@store']);
+Route::get('/getShouts',['as' => 'shouts.get', 'uses' => 'ShoutsController@getShouts']);
 Route::delete('/shouts/{id}/delete', ['as' => 'shouts.delete', 'uses' => 'ShoutsController@destroy']);
 
 // For Ingame Chatting
