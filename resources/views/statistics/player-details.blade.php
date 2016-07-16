@@ -365,6 +365,19 @@
                         <td class="col-6 text-right"><strong>{!! $player->owner !!}</strong>
                         </td>
                     </tr>
+
+                    @if(Auth::check() && Auth::user()->isAdmin())
+                    <tr>
+                        <td class="col-4">
+                        </td>
+                        <th class="col-5">
+                            Last IP Address
+                        </th>
+                        <td class="col-6 text-right">{!! $player->last_ip_address !!}
+                        </td>
+                    </tr>
+                    @endif
+
                     </tbody>
                 </table>
 

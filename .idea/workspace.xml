@@ -2,26 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e189236c-c3e7-488f-b221-e9fb727e1c1d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Server/Presenters/BanPresenter.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/ban/create.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/ban/edit.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/ban/index.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/ban/show.blade.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/download/adminmoddata/masterbanlist.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Ban.php" afterPath="$PROJECT_DIR$/app/Ban.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/MainController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/MainController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Server/helpers.php" afterPath="$PROJECT_DIR$/app/Server/helpers.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/debugbar.php" afterPath="$PROJECT_DIR$/config/debugbar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_07_09_210829_create_bans_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_07_09_210829_create_bans_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/download/adminmoddata/webadminfooter1.html" afterPath="$PROJECT_DIR$/public/download/adminmoddata/webadminfooter1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/download/adminmoddata/webadminheader1.html" afterPath="$PROJECT_DIR$/public/download/adminmoddata/webadminheader1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/_navbar.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/_navbar.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/_quickerrors.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/_quickerrors.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/statistics/player-details.blade.php" afterPath="$PROJECT_DIR$/resources/views/statistics/player-details.blade.php" />
     </list>
     <ignored path="kos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,18 +36,28 @@
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.692308">
+            <state vertical-scroll-proportion="-172.3077">
               <caret line="233" column="116" selection-start-line="233" selection-start-column="116" selection-end-line="233" selection-end-column="116" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="view.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.79310346">
-              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state vertical-scroll-proportion="-14.615385">
+              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="player-details.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/statistics/player-details.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.37931034">
+              <caret line="364" column="92" selection-start-line="364" selection-start-column="92" selection-end-line="364" selection-end-column="92" />
               <folding />
             </state>
           </provider>
@@ -73,7 +66,7 @@
       <file leaf-file-name="BanController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BanController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.8461537">
+            <state vertical-scroll-proportion="0.0">
               <caret line="238" column="31" selection-start-line="238" selection-start-column="31" selection-end-line="238" selection-end-column="31" />
               <folding>
                 <element signature="e#2539#3009#0#PHP" expanded="false" />
@@ -116,7 +109,6 @@
         <option value="$PROJECT_DIR$/resources/views/statistics/top-players.blade.php" />
         <option value="$PROJECT_DIR$/app/Server/Presenters/UserPresenter.php" />
         <option value="$PROJECT_DIR$/app/Console/Commands/CalculatePlayerTotalCommand.php" />
-        <option value="$PROJECT_DIR$/resources/views/statistics/player-details.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/_footer.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/app/PlayerTotal.php" />
@@ -145,7 +137,6 @@
         <option value="$PROJECT_DIR$/app/Http/Requests/BanRequest.php" />
         <option value="$PROJECT_DIR$/app/Ban.php" />
         <option value="$PROJECT_DIR$/app/Server/Presenters/BanPresenter.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" />
         <option value="$PROJECT_DIR$/resources/views/ban/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/ban/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/_quickerrors.blade.php" />
@@ -158,6 +149,8 @@
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/bootstrap/app.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" />
+        <option value="$PROJECT_DIR$/resources/views/statistics/player-details.blade.php" />
       </list>
     </option>
   </component>
@@ -206,7 +199,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -222,6 +214,60 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="kos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="statistics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -299,6 +345,46 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Console" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -306,6 +392,7 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -398,13 +485,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Server/Repositories/UserRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7169811">
-          <caret line="48" column="1" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2016_07_09_210829_create_bans_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6768868">
@@ -468,13 +548,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6603774">
-          <caret line="121" column="90" selection-start-line="121" selection-start-column="90" selection-end-line="121" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/ban/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4811321">
@@ -535,7 +608,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.6206896">
           <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -543,7 +615,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5862069">
           <caret line="48" column="45" selection-start-line="48" selection-start-column="45" selection-end-line="48" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -551,7 +622,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.62068963">
           <caret line="48" column="25" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -559,7 +629,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.82758623">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -567,7 +636,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.82758623">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -575,7 +643,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.37931034">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -583,7 +650,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.769231">
           <caret line="129" column="37" selection-start-line="129" selection-start-column="37" selection-end-line="129" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -591,7 +657,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.448276">
           <caret line="67" column="30" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -599,7 +664,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.5172414">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -607,7 +671,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.51724136">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -615,7 +678,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.3448276">
           <caret line="46" column="56" selection-start-line="46" selection-start-column="56" selection-end-line="46" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -623,7 +685,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.13793103">
           <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -631,7 +692,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.5517242">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -639,7 +699,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.79310346">
           <caret line="86" column="31" selection-start-line="86" selection-start-column="31" selection-end-line="86" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -647,7 +706,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.1724138">
           <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -655,7 +713,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.137931">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -663,7 +720,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6896552">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -671,7 +727,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.73448277">
           <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -679,7 +734,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7241379">
           <caret line="26" column="52" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -687,7 +741,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.4827585">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -695,7 +748,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.2758621">
           <caret line="18" column="45" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -703,7 +755,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.51724136">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -711,13 +762,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.55172414">
           <caret line="146" column="71" selection-start-line="146" selection-start-column="71" selection-end-line="146" selection-end-column="71" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.692308">
+        <state vertical-scroll-proportion="-172.3077">
           <caret line="233" column="116" selection-start-line="233" selection-start-column="116" selection-end-line="233" selection-end-column="116" />
           <folding />
         </state>
@@ -727,7 +777,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.5172415">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -735,7 +784,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.4827585">
           <caret line="11" column="60" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -749,7 +797,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BanController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.8461537">
+        <state vertical-scroll-proportion="0.0">
           <caret line="238" column="31" selection-start-line="238" selection-start-column="31" selection-end-line="238" selection-end-column="31" />
           <folding>
             <element signature="e#2539#3009#0#PHP" expanded="false" />
@@ -761,7 +809,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.6896552">
           <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -769,7 +816,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.44827586">
           <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -777,14 +823,29 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6896552">
           <caret line="52" column="2" selection-start-line="52" selection-start-column="2" selection-end-line="52" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6551724">
+          <caret line="121" column="29" selection-start-line="121" selection-start-column="29" selection-end-line="121" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.79310346">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        <state vertical-scroll-proportion="-14.615385">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/statistics/player-details.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37931034">
+          <caret line="364" column="92" selection-start-line="364" selection-start-column="92" selection-end-line="364" selection-end-column="92" />
           <folding />
         </state>
       </provider>
