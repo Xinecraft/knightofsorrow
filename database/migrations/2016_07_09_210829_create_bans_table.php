@@ -16,15 +16,18 @@ class CreateBansTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('ip_address');
-            $table->string('location')->nullable();
-            $table->timestamp('ban_time')->nullable();
-            $table->integer('server_id')->unsigned();
+            //$table->string('location')->nullable();
+            $table->timestamp('banned_till')->nullable();
+            $table->integer('server_id')->unsigned()->nullable();
             $table->integer('country_id')->unsigned()->nullable();
             //$table->foreign('server_id')->refrences('id')->on('servers');
             $table->string('reason')->nullable();
             $table->string('admin_name');
             $table->string('admin_ip');
             $table->boolean('status');
+            $table->string('updated_by')->nullable();
+            $table->boolean('created_by_site')->default(0);
+            $table->boolean('updated_by_site')->default(0);
             $table->timestamps();
         });
     }

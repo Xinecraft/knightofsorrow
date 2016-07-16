@@ -105,6 +105,19 @@ function sort_country_players_by($column,$data,$countryId,$countryName)
         return link_to_route('country-detail',$data,[$countryId,$countryName,'orderBy'=>$column, 'direction' => $sortDir],['class' => 'a-primary']);
 }
 
+function sort_bans_by($column,$data)
+{
+    $sortDirCurrent = Request::get('direction') ? Request::get('direction') : 'desc';
+    $getOrderBy = Request::has('orderBy') ? Request::get('orderBy') : 'updated_at';
+
+    $sortDir = Request::get('direction') == 'desc' ? 'asc' : 'desc' ;
+
+    if($getOrderBy == $column)
+        return link_to_route('bans.index',$data,['orderBy'=>$column, 'direction' => $sortDir],['class' => 'a-primary '.$sortDirCurrent]);
+    else
+        return link_to_route('bans.index',$data,['orderBy'=>$column, 'direction' => $sortDir],['class' => 'a-primary']);
+}
+
 /**
  * Function creates a link to sort Countries by specific column
  *

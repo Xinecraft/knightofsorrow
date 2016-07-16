@@ -212,3 +212,23 @@ Route::get('messages/',['as' => 'messages.index', 'uses' => 'MailController@inde
 
 Route::get('downloads',['as' => 'download', 'uses' => 'DownloadController@index']);
 Route::get('/downloads/{name}', ['as' => 'downloads', 'uses' => 'DownloadController@download']);
+
+/**
+ * Bans Controller
+ */
+
+Route::group(['middleware' => ['auth','admin']],function(){
+    Route::get('/banlist/create',['as' => 'bans.create', 'uses' => 'BanController@create']);
+    Route::post('/banlist/create',['as' => 'bans.store', 'uses' => 'BanController@store']);
+    Route::get('/banlist/{id}/edit',['as' => 'bans.edit', 'uses' => 'BanController@edit']);
+    Route::post('/banlist/{id}/edit',['as' => 'bans.update', 'uses' => 'BanController@update']);
+});
+Route::post('/servertracker/handlebans/', ['as' => 'bans.handleban', 'uses' => 'BanController@handlebans']);
+Route::get('/banlist',['as' => 'bans.index', 'uses' => 'BanController@index']);
+Route::get('/banlist/{id}',['as' => 'bans.show', 'uses' => 'BanController@show']);
+
+
+/**
+ * Master ban List in txt
+ */
+Route::get('/download/adminmoddata/masterbanlist.txt',['as' => 'bans.txt', 'uses' => 'BanController@masterbantxt']);

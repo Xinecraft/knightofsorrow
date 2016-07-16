@@ -111,7 +111,10 @@
 
         <div class="row hidden-xs round-reports">
             <div style="" class="col-xs-12 panel panel-default no-padding no-margin no-left-padding">
-                <div class="panel-heading"><span class="info-title">Round Reports</span></div>
+                <div class="panel-heading">
+                    <small class="pull-right"><i><b><a href="{{ route('round-reports') }}">» view all</a></b></i></small>
+                    <span class="info-title">Round Reports</span>
+                </div>
                 <div class="panel-body">
                     <table class="table table-striped table-hover no-margin">
                         <thead><tr>
@@ -697,6 +700,41 @@
                             <!--/Tab Ends-->
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row player-records">
+            <div class="col-xs-12 panel panel-default no-padding no-margin no-left-padding">
+                <div class="panel-heading">
+                    <small class="pull-right"><i><b><a href="{{ route('bans.index') }}">» view all</a></b></i></small>
+                    <span class="info-title">Latest Bans</span>
+                </div>
+                <div class="panel-body">
+                    <table id="" class="table table-striped table-hover no-margin">
+                        <thead>
+                        <tr>
+                            <th class="col-xs-1">Flag</th>
+                            <th class="col-xs-3">Name</th>
+                            <th class="col-xs-2">IP Address</th>
+                            <th class="col-xs-3">Banned By</th>
+                            <th class="col-xs-1">Status</th>
+                            <th class="col-xs-2 text-right">Updated</th>
+                        </tr>
+                        </thead>
+                        <tbody id="">
+                        @foreach($bans as $ban)
+                            <tr class="item">
+                                <td class="text-muted"><img class="tooltipster" title="{{ $ban->countryName }}" src="{{ $ban->countryImage }}" alt="" height="22px"/></td>
+                                <td class="color-main text-bold">{!! link_to_route('bans.show',$ban->name,[$ban->id]) !!}</td>
+                                <td>{!! $ban->ipAddrWithMask !!}</td>
+                                <td>{!! $ban->bannedByAdminURL !!}</td>
+                                <td><b>{!! $ban->statusWithColor !!}</b></td>
+                                <td class="text-right">{!! $ban->updated_at->diffForHumans() !!}</td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

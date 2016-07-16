@@ -21,12 +21,13 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                         More <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li>{!! link_to_route('servers.list','Servers') !!}</li>
+                        <li><a href="{{ route('bans.index') }}">Banlist</a></li>
                         <li><a href="{{ route('news.index') }}">News</a></li>
                         <li><a href="{{ route('chat.index') }}">Chat History</a></li>
                         <li><a href="{{ route('poll.index') }}">Polls</a></li>
                         <li><a href="{{ route('admin.list') }}">Admins List</a></li>
                         <li><a href="{{ route('download') }}">Downloads</a></li>
+                        <li>{!! link_to_route('servers.list','Servers') !!}</li>
                         {{--<li><a href="">Clans</a></li>--}}
                         {{--<li><a href="">Forums</a></li>--}}
                         {{--<li><a href="{{ route('rules') }}">Rules</a></li>--}}
@@ -60,6 +61,7 @@
                                 <li role="separator" class="divider"></li>
                                 <li><a href="{{ route('user.viewkeys') }}">Server Passwords</a></li>
                                 @if(Auth::user()->isAdmin())
+                                    <li><a href="{{ route('bans.create') }}">Add Ban</a></li>
                                     <li><a href="{{ route('news.create') }}">Create News</a></li>
                                     {{--<li><a href="{{ route('servers.new') }}">Add Server</a></li>--}}
                                     <li><a href="{{ route('poll.create') }}">Create Poll</a></li>

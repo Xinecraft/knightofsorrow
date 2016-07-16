@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Ban;
 use App\Status;
 use App\User;
 use Carbon\Carbon;
@@ -306,6 +307,7 @@ class MainController extends Controller
         //$feeds  = Status::with('user')->latest()->limit(5)->get();
 
         $activeUsers = User::orderBy('updated_at','DESC')->limit(30)->get();
+        $bans = Ban::orderBy('updated_at','desc')->limit(5)->get();
 
         $array = [
             'topPlayers' => $topPlayers,
@@ -314,6 +316,7 @@ class MainController extends Controller
             'PastWeek' => $PastWeek,
             'PastMonth' => $PastMonth,
             'PastYear' => $PastYear,
+            'bans' => $bans,
             'activeUsers' => $activeUsers,
         ];
 
