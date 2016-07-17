@@ -115,11 +115,11 @@ class ApiController extends Controller
 
                 if($playerTotal = PlayerTotal::findOrFailByNameWithNull($playerNameStripped))
                 {
-                    $playerTableData .= "<td><b><a class='team-{$player['team']}' href='".route('player-detail',$playerNameStripped)."'>".str_limit($player['name'],30)."</b></a></td>";
+                    $playerTableData .= "<td><b><a class='team-{$player['team']}' href='".route('player-detail',$playerNameStripped)."'>".$player['name']."</b></a></td>";
                 }
                 else
                 {
-                    $playerTableData .= "<td><span class='team-{$player['team']}'>".str_limit($player['name'],30)."</span></td>";
+                    $playerTableData .= "<td><span class='team-{$player['team']}'>".$player['name']."</span></td>";
                 }
 
                 $playerTableData .= "<td class='text-bold'>{$player['score']}</td>";
