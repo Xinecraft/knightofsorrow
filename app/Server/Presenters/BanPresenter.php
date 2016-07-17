@@ -76,11 +76,12 @@ class BanPresenter extends BasePresenter
                 return link_to_route('user.show',$user->displayName(),[$user->username],['class' => 'ainorange']);
         }
 
-        if(str_contains(" (WebAdmin)",$admin))
+        if(str_contains($admin," (WebAdmin)"))
         {
             $webadmin = explode(" ",$admin);
             $admin = $webadmin[0];
         }
+
 
         $pt = PlayerTotal::findOrFailByNameWithNull($admin);
 
@@ -116,7 +117,7 @@ class BanPresenter extends BasePresenter
                 return link_to_route('user.show',$user->displayName(),[$user->username],['class' => 'ainorange']);
         }
 
-        if(str_contains(" (WebAdmin)",$admin))
+        if(str_contains($admin," (WebAdmin)"))
         {
             $webadmin = explode(" ",$admin);
             $admin = $webadmin[0];
