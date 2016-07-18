@@ -826,7 +826,7 @@
                     $roundTime: $('#ls-time')
                 };
 
-                $.doTimeout('svUpdate', 4000, sv.update);
+                $.doTimeout('svUpdate', 3000, sv.update);
                 $.doTimeout('svUpdate', true);
 
                 $.doTimeout('roundTime', 1000, sv.updateRoundTime);
