@@ -113,13 +113,17 @@ class ApiController extends Controller
                 $playerNameStripped = str_replace('(SPEC)','',$playerNameStripped);
                 $playerNameStripped = htmlspecialchars_decode(html_entity_decode(html_entity_decode($playerNameStripped)));
 
+                $showRadioIfAdmin="";
+                if(\Auth::check() && \Auth::user()->isAdmin())
+                    $showRadioIfAdmin = "<input class='pull-left' type='radio' name='selected_player' value='$playerNameStripped'> &nbsp;";
+
                 if($playerTotal = PlayerTotal::findOrFailByNameWithNull($playerNameStripped))
                 {
-                    $playerTableData .= "<td><b><a class='team-{$player['team']}' href='".route('player-detail',$playerNameStripped)."'>".$player['name']."</b></a></td>";
+                    $playerTableData .= "<td>{$showRadioIfAdmin}<b><a class='team-{$player['team']}' href='".route('player-detail',$playerNameStripped)."'>".$player['name']."</b></a></td>";
                 }
                 else
                 {
-                    $playerTableData .= "<td><span class='team-{$player['team']}'>".$player['name']."</span></td>";
+                    $playerTableData .= "<td>{$showRadioIfAdmin}<span class='team-{$player['team']}'>".$player['name']."</span></td>";
                 }
 
                 $playerTableData .= "<td class='text-bold'>{$player['score']}</td>";

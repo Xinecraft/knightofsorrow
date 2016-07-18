@@ -217,20 +217,53 @@ class ServerController extends Controller
         if ($Msg == '' || empty($Msg)) {
             return;
         }
-        $userLvl = $request->user()->roles()->first()->display_name;
-        if($userLvl == "Super Administrator")
+
+        if($request->user()->isAdmin())
         {
-            $userLvl = "[c=00ff00]<SuperAdmin>[\\c]";
-        }
-        elseif ($userLvl == "Administrator")
-        {
-            $userLvl = "[c=00ff00]<Admin>[\\c]";
+            $explode = explode(" ",$Msg);
+            // If server command then run it
+            if($explode[0] == "kosc")
+            {
+                array_forget($explode,["0"]);
+                $msg = implode(" ",$explode);
+                $MsgFormated = env("ADMIN_COMMAND_SECRET")." ".$Username." ".$msg;
+            }
+            else
+            {
+                $userLvl = $request->user()->roles()->first()->display_name;
+                if($userLvl == "Super Administrator")
+                {
+                    $userLvl = "[c=00ff00]<SuperAdmin>[\\c]";
+                }
+                elseif ($userLvl == "Administrator")
+                {
+                    $userLvl = "[c=00ff00]<Admin>[\\c]";
+                }
+                else
+                {
+                    $userLvl = "[c=ffa500]<{$userLvl}>[\\c]";
+                }
+                $MsgFormated = "[c=ffff00][u][b]" . $Username . "[\\b][\\u][\\c] $userLvl: [c=FFFFFF]" . $Msg;
+            }
         }
         else
         {
-            $userLvl = "[c=ffa500]<{$userLvl}>[\\c]";
+            $userLvl = $request->user()->roles()->first()->display_name;
+            if($userLvl == "Super Administrator")
+            {
+                $userLvl = "[c=00ff00]<SuperAdmin>[\\c]";
+            }
+            elseif ($userLvl == "Administrator")
+            {
+                $userLvl = "[c=00ff00]<Admin>[\\c]";
+            }
+            else
+            {
+                $userLvl = "[c=ffa500]<{$userLvl}>[\\c]";
+            }
+            $MsgFormated = "[c=ffff00][u][b]" . $Username . "[\\b][\\u][\\c] $userLvl: [c=FFFFFF]" . $Msg;
         }
-        $MsgFormated = "[c=ffff00][u][b]" . $Username . "[\\b][\\u][\\c] $userLvl: [c=FFFFFF]" . $Msg;
+
         $txtip = "127.0.0.1";
         $txtportnum = "10483";
         $sock = fsockopen("udp://" . $txtip, $txtportnum, $errno, $errstr, 2);
@@ -238,11 +271,52 @@ class ServerController extends Controller
             echo "$errstr ($errno)<br/>\n";
             exit;
         }
+        $MsgFormated = htmlspecialchars_decode(html_entity_decode($MsgFormated));
         fputs($sock, $MsgFormated);
         $gotfinal = False;
         $data = "";
         socket_set_timeout($sock, 0, 1000);
         fclose($sock);
         exit();
+    }
+
+    /**
+     * Perform admin command from website
+     *
+     * @format secretkey adminame command optional-name
+     * @param Request $request
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
+     */
+    public function adminCommand(Request $request)
+    {
+        if(!$request->has('selected_player') || !$request->has('action'))
+        {
+            $data = ['error' => '<option class="text-center small text-danger">Error! No Player Selected.</option>'];
+            return response($data,422);
+        }
+
+        $admin = $request->user()->displayName();
+        $player = $request->get('selected_player');
+        $action = $request->get('action');
+
+        $command = env("ADMIN_COMMAND_SECRET")." ".$admin." ".$action." ".$player;
+
+        //dd($command);
+
+        $txtip = "127.0.0.1";
+        $txtportnum = "10483";
+        $sock = fsockopen("udp://" . $txtip, $txtportnum, $errno, $errstr, 2);
+        if (!$sock) {
+            echo "$errstr ($errno)<br/>\n";
+            exit;
+        }
+        fputs($sock, $command);
+        $gotfinal = False;
+        $data = "";
+        socket_set_timeout($sock, 0, 1000);
+        fclose($sock);
+
+        $data = ['success' => '<option class="text-center small text-danger">Success! Command executed.</option>'];
+        return response($data,200);
     }
 }

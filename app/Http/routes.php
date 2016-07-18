@@ -171,8 +171,8 @@ Route::post('/shouts/do',['as' => 'shouts.store', 'uses' => 'ShoutsController@st
 Route::get('/getShouts',['as' => 'shouts.get', 'uses' => 'ShoutsController@getShouts']);
 Route::delete('/shouts/{id}/delete', ['as' => 'shouts.delete', 'uses' => 'ShoutsController@destroy']);
 
-// For Ingame Chatting
-Route::post('/server/chat',['as' => 'server.chat', 'uses' => 'ServerController@chatInGameForKOS']);
+// For In game Chatting
+Route::post('/server/chat',['middleware' => 'auth', 'as' => 'server.chat', 'uses' => 'ServerController@chatInGameForKOS']);
 
 // Rules Page
 Route::get('/rules', ['as' => 'rules', 'uses' => 'MainController@getRulesOfServer']);
@@ -232,3 +232,5 @@ Route::get('/banlist/{id}',['as' => 'bans.show', 'uses' => 'BanController@show']
  * Master ban List in txt
  */
 Route::get('/download/adminmoddata/masterbanlist.txt',['as' => 'bans.txt', 'uses' => 'BanController@masterbantxt']);
+
+Route::post('/kosadmin',['middleware' => ['auth', 'admin'],'as' => 'kosadmin.commands', 'uses' => 'ServerController@adminCommand']);

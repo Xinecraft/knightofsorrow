@@ -10,6 +10,12 @@
         {
             font-size: 13px;
         }
+        .admincommandbtn
+        {
+            border-radius: 0px;
+            margin-bottom: 10px;
+            margin-right: 5px;
+        }
     </style>
 @endsection
 @section('main-container')
@@ -39,6 +45,9 @@
         </div> {{--Live Server Summary Ends --}}
         <div class="row">
             <div class="ls-players-and-top-player no-left-padding col-xs-5">
+                @if(Auth::check() && Auth::user()->isAdmin())
+                    {!! Form::open(['route' => 'kosadmin.commands','id' => 'admincommandform']) !!}
+                @endif
                 <div class="col-xs-12 panel panel-default no-padding">
                     <div class="panel-heading"><span class="info-title">Online Players <span id="ls-player-online"></span></span></div>
                     <div class="panel-body no-padding" id="ls-player-total-div">
@@ -46,6 +55,22 @@
                             <th class="loading-pt-info text-center" style="padding: 15px;font-size: 15px">Loading Players table...</th>
                         </table>
                     </div>
+                    @if(Auth::check() && Auth::user()->isAdmin())
+                    <div class="panel-footer">
+                        <button id="playerMutebtn" data-type="forcemute" class="admincommandbtn btn btn-default btn-xs">Mute</button>
+                        <button id="playerKickbtn" data-type="kick" class="admincommandbtn btn btn-warning btn-xs">Kick</button>
+                        <button id="playerBanbtn" data-type="kickban" class="admincommandbtn btn btn-danger btn-xs">Ban</button>
+                        <button id="playerViewbtn" data-type="forceview" class="admincommandbtn btn btn-info btn-xs">View</button>
+                        <button id="playerSpecbtn" data-type="forcespec" class="admincommandbtn btn btn-info btn-xs">Spec</button>
+                        <button id="playerJoinbtn" data-type="forcejoin" class="admincommandbtn btn btn-info btn-xs">Join</button>
+                        <button id="playerSTbtn" data-type="switchteam" class="admincommandbtn btn btn-primary btn-xs">Switch Team</button>
+                        <button id="playerLLbtn" data-type="forcelesslethal" class="admincommandbtn btn btn-primary btn-xs">Less Lethal</button>
+                        <button id="playerNWbtn" data-type="forcenoweapons" class="admincommandbtn btn btn-primary btn-xs">No Weapons</button>
+
+                        <div id="admincommand-input-group-error" class="help-block"></div>
+                    </div>
+                    {!! Form::close() !!}
+                    @endif
                 </div>
                 <div class="col-xs-12 panel panel-default no-padding">
                     <div class="panel-heading"><span class="info-title">Top Players</span></div>
@@ -94,7 +119,16 @@
                             </button>
                         </span>
                             </div>
+
+                            @if(Auth::user()->isAdmin())
                             <div id="serverchat-input-group-error" class="help-block"></div>
+                            <div class="admin-info small">
+                                <b>Note: You can run any commands using this chat too.</b> <br>
+                                Type <code>kosc</code> preceding with command you want to run. <br>
+                                Example: <code>kosc kick Name</code>, <code>kosc restart</code>, <code>kosc setmap 0</code>
+                            </div>
+                            @endif
+
                             {!! Form::close() !!}
                         @else
                             <div class='panel nomargin padding10 text-muted'><b>{!!  link_to('/auth/login','Login') !!}
@@ -865,6 +899,50 @@
 
         $(document).ready(function() {
             sv.init({url: '/api/server-query'});
+
+            //Admin commands ajax
+            $('.admincommandbtn').click(function(e){
+
+                $('#admincommand-input-group-error').html('');
+
+                $.ajax({
+                    type        : 'POST',
+                    url         : '/kosadmin',
+                    data        : $('#admincommandform').serialize()+"&action="+$(this).data('type'),
+                    dataType    : 'json',
+                    encode      : true,
+                    beforeSend: function() {
+                        $(this).hide();
+                        $("#admincommand-input-group-error").html("<option class='text-center small'>Executing Command!  Plz wait...</option>");
+                    },
+                    success     : function(data){
+                        $(this).show();
+                        $('#admincommand-input-group-error').html('');
+                    },
+                    error: function(data) {
+
+                        var errors = data.responseJSON;
+                        var message = "Unknown error! reload page.";
+                        switch(data.status)
+                        {
+                            case 422:
+                                message = errors.error;
+                                break;
+                            case 500:
+                                message = "Server error! please reload the page.";
+                                break;
+                            default:
+                                message = data.statusText;
+                                break;
+                        }
+
+                        $(this).show();
+                        $('#admincommand-input-group-error').html("");
+                        $('#admincommand-input-group-error').html(message);
+                    }
+                });
+                e.preventDefault();
+            });
         });
     </script>
     @endsection
