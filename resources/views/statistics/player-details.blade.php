@@ -47,7 +47,7 @@
             </div>
         </div>
 
-        @unless((\Carbon\Carbon::now()->timestamp - $player->alias->updated_at->timestamp) <= 60*60*24*7)
+        @unless((\Carbon\Carbon::now()->timestamp - $player->lastGame->updated_at->timestamp) <= 60*60*24*7)
             <p class="alert alert-danger alert-inactive">
                 <b>{{ $player->name }}</b> is not seen playing this week!
             </p>

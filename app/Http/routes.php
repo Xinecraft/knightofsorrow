@@ -234,3 +234,8 @@ Route::get('/banlist/{id}',['as' => 'bans.show', 'uses' => 'BanController@show']
 Route::get('/download/adminmoddata/masterbanlist.txt',['as' => 'bans.txt', 'uses' => 'BanController@masterbantxt']);
 
 Route::post('/kosadmin',['middleware' => ['auth', 'admin'],'as' => 'kosadmin.commands', 'uses' => 'ServerController@adminCommand']);
+
+Route::any('/xxx',function(){
+    $x = new \App\Server\Repositories\PlayerTotalRepository();
+    $x->calculate();
+});

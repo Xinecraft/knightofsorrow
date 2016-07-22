@@ -27,6 +27,7 @@
 
 namespace App\Server\Repositories;
 
+use App\Game;
 use App\Server\Interfaces\PlayerTotalRepositoryInterface;
 use App\PlayerTotal;
 use App\Alias;
@@ -143,7 +144,9 @@ class PlayerTotalRepository implements PlayerTotalRepositoryInterface
              * Calculate only if player with this alias has played more than 10 hours in server
              * and also is active and seen in last 7 days
              */
-            if($playerTotal->total_time_played > 60*60*10 && (\Carbon\Carbon::now()->timestamp - $alias->updated_at->timestamp) <= 60*60*24*7 )
+
+            $last_seen_game = Game::find($playerTotal->last_game_id);
+            if($playerTotal->total_time_played > 60*60*10 && (\Carbon\Carbon::now()->timestamp - $last_seen_game->updated_at->timestamp) <= 60*60*24*7 )
             {
                 $playerTotal->player_rating = max($playerTotal->killdeath_ratio + $playerTotal->arr_ratio + ($playerTotal->score_per_min * 1.25),0);
                 $playerTotal->player_rating = min($playerTotal->player_rating,10);
