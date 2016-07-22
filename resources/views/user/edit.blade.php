@@ -119,7 +119,55 @@
                     </div>
                 </div>
 
-                    <div class="form-group{{ $errors->has('about') ? ' has-error' : '' }}">
+                <div class="form-group{{ $errors->has('gr_id') ? ' has-error' : '' }}">
+                    {!! Form::label('gr_id', 'GameRanger Id:', ['class' => 'col-xs-4 control-label'])  !!}
+                    <div class="col-xs-7">
+                        {!! Form::text('gr_id',null,['class' => 'form-control']) !!}
+                        @if ($errors->has('gr_id'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('gr_id') }}</strong>
+                                    </span>
+                        @endif
+                    </div>
+                </div>
+
+                <div class="form-group{{ $errors->has('evolve_id') ? ' has-error' : '' }}">
+                    {!! Form::label('evolve_id', 'Evolve:', ['class' => 'col-xs-4 control-label'])  !!}
+                    <div class="col-xs-7">
+                        {!! Form::text('evolve_id',null,['class' => 'form-control']) !!}
+                        @if ($errors->has('evolve_id'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('evolve_id') }}</strong>
+                                    </span>
+                        @endif
+                    </div>
+                </div>
+
+                <div class="form-group{{ $errors->has('facebook_url') ? ' has-error' : '' }}">
+                    {!! Form::label('facebook_url', 'FB profile Url:', ['class' => 'col-xs-4 control-label'])  !!}
+                    <div class="col-xs-7">
+                        {!! Form::text('facebook_url',null,['class' => 'form-control']) !!}
+                        @if ($errors->has('facebook_url'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('facebook_url') }}</strong>
+                                    </span>
+                        @endif
+                    </div>
+                </div>
+
+                <div class="form-group{{ $errors->has('website_url') ? ' has-error' : '' }}">
+                    {!! Form::label('website_url', 'Website:', ['class' => 'col-xs-4 control-label'])  !!}
+                    <div class="col-xs-7">
+                        {!! Form::text('website_url',null,['class' => 'form-control']) !!}
+                        @if ($errors->has('website_url'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('website_url') }}</strong>
+                                    </span>
+                        @endif
+                    </div>
+                </div>
+
+                <div class="form-group{{ $errors->has('about') ? ' has-error' : '' }}">
                         {!! Form::label('about', 'About Me:', ['class' => 'col-xs-4 control-label']) !!}
                         <div class="col-xs-7">
                             {!! Form::textarea('about',null,['class' => 'form-control']) !!}

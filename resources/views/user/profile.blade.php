@@ -3,6 +3,7 @@
     <style>
         .general-info
         {
+            height: 189px !important;
             border-right: 1px solid #d7d8d9;
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
@@ -12,6 +13,7 @@
         }
         .stats-tracker
         {
+            height:189px !important;
             border-left: 0;
             border-bottom-left-radius: 0;
             border-top-left-radius: 0;
@@ -111,7 +113,7 @@
                                 <div class="timeago-content" style="margin-bottom: 5px">
                                     <kbd class="text-muted small no-margin">Joined : {{ $user->joinedOn }}</kbd>
                                     <br>
-                                    <kbd class="text-muted small no-margin">Last Seen : {{ $user->lastSeenOn }}</kbd>
+                                    <kbd class="text-muted small no-margin">Last Seen : {!! $user->lastSeenOn !!}</kbd>
                                 </div>
 
                                 @if(Auth::check() && Auth::user()->isAdmin())
@@ -174,7 +176,7 @@
                                 <tr>
                                     <td>Followers</td>
                                     <td>
-                                        <b>{{ $followersCount = $user->followers->count() }} {{ str_plural("gamer", $followersCount) }}</b>
+                                        <b class="tooltipster" title="{{ $user->followersAsTitle }}">{{ $followersCount = $user->followers->count() }} {{ str_plural("gamer", $followersCount) }}</b>
                                     </td>
                                 </tr>
                                 <tr>
@@ -182,7 +184,7 @@
                                         Following
                                     </td>
                                     <td>
-                                        <b>{{ $followingCount = $user->following->count() }} {{ str_plural("gamer", $followingCount) }}</b>
+                                        <b class="tooltipster" title="{{ $user->followingsAsTitle }}">{{ $followingCount = $user->following->count() }} {{ str_plural("gamer", $followingCount) }}</b>
                                     </td>
                                 </tr>
                             </table>
@@ -211,6 +213,47 @@
                                     <td>{!! $user->linkPlayerLastSeen !!}</td>
                                 </tr>
                             </table>
+                        </div>
+
+                        <div class="col-xs-6 panel general-info pad5">
+                            <h5 class="info-title" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Other
+                                Info</h5>
+                            <table style="font-size: large" class="table table-striped table-hover table-bordered">
+                                <tr>
+                                    <td class="tooltipster" title="EvolveHQ Username">Evolve username</td>
+                                    <td>
+                                        {!! $user->evolveId !!}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tooltipster" title="GameRanger Account Id">GR Account Id</td>
+                                    <td>
+                                        {!! $user->grId !!}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tooltipster" title="Facebook Profile URL">Facebook</td>
+                                    <td>
+                                        {!! $user->fbURL !!}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Website
+                                    </td>
+                                    <td>
+                                        {!! $user->websiteURL !!}
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="col-xs-6 panel stats-tracker pad5" style="height: 187px">
+                            <h5 class="info-title" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Trophies & Achievements</h5>
+                            <h3 class="text-center text-green" style="font-family: 'Passion One',cursive">
+                                <i class="fa fa-trophy fa-3x" style="color:#FF9800"></i><br>
+                                Coming Soon
+                            </h3>
                         </div>
                     </div>
                     <div class="panel-footer">

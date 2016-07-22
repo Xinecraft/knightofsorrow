@@ -238,14 +238,24 @@ class UserController extends Controller
             'name' => 'required',
             'about' => 'min:5',
             'gender' => 'in:Male,Female,unspecified,Others',
+            'gr_id' => 'numeric',
+            'facebook_url' => 'url',
+            'website_url' => 'url',
         ], [
             'dob.required' => 'Please specify your Date of Birth.',
             'dob.date' => 'Invalid Date of Birth format',
             'dob.before' => 'You are not enough old :)',
             'name.required' => 'Please specify your Display name',
+            'gr_id.numeric' => 'Please enter a valid GameRanger account Id',
+            'faccebook_url.url' => 'Facebook URL is not valid. Please prefix "http://"',
+            'website_url.url' => 'Website URL is not valid. Please prefix "http://"',
         ]);
 
         $dob = $request->dob ? $request->dob : null;
+        $grid = $request->gr_id ? $request->gr_id : null;
+        $fburl = $request->facebook_url ? $request->facebook_url : null;
+        $weburl = $request->website_url ? $request->website_url : null;
+        $evolveid = $request->evolve_id ? $request->evolve_id : null;
         $about = $request->about ? $request->about : null;
         $gender = $request->gender ? $request->gender : null;
         $gender = $gender == 'unspecified' ? null : $gender;
@@ -255,6 +265,10 @@ class UserController extends Controller
             'name' => $request->name,
             'about' => $about,
             'gender' => $gender,
+            'gr_id' => $grid,
+            'evolve_id' => $evolveid,
+            'facebook_url' => $fburl,
+            'website_url' => $weburl,
         ]);
 
         return \Redirect::back()->with('message',"Profile has been updated!");

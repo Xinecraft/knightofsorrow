@@ -28,6 +28,7 @@
 namespace App\Server\Presenters;
 
 use App\User;
+use Carbon\Carbon;
 use McCool\LaravelAutoPresenter\BasePresenter;
 
 class UserPresenter extends BasePresenter
@@ -142,12 +143,77 @@ class UserPresenter extends BasePresenter
 
     public function lastSeenOn()
     {
+        if($this->isOnline())
+            return "<span class='text-green'>&#x25cf; Online &#x25cf;</span>";
         return $this->wrappedObject->updated_at->diffForHumans();
+    }
+
+    public function isOnline()
+    {
+        return Carbon::now()->timestamp - $this->wrappedObject->updated_at->timestamp <= 180; //3 mins
     }
 
     public function dname()
     {
         return $this->wrappedObject->displayName();
+    }
+
+    public function followersAsTitle()
+    {
+        $data = "";
+        //title="&lt;div class='text-center text-bold' &gt; {{ $rank->name }} &lt;/div&gt; &lt;br&gt;Points: {{ $rank->description }}
+        foreach($this->wrappedObject->followers()->get() as $follower)
+        {
+            $data .= $follower->displayName()."<br>";
+        }
+        return $data;
+    }
+
+    public function followingsAsTitle()
+    {
+        $data = "";
+        //title="&lt;div class='text-center text-bold' &gt; {{ $rank->name }} &lt;/div&gt; &lt;br&gt;Points: {{ $rank->description }}
+        foreach($this->wrappedObject->following()->get() as $following)
+        {
+            $data .= $following->displayName()."<br>";
+        }
+        return $data;
+    }
+
+    public function evolveId()
+    {
+        if($this->wrappedObject->evolve_id == null || $this->wrappedObject->evolve_id == "")
+        {
+            return "<i class='small'>Unknown</i>";
+        }
+        return "<b>".htmlentities($this->wrappedObject->evolve_id)."</b>";
+    }
+
+    public function grId()
+    {
+        if($this->wrappedObject->gr_id == null || $this->wrappedObject->gr_id == "")
+        {
+            return "<i class='small'>Unknown</i>";
+        }
+        return "<b>".htmlentities($this->wrappedObject->gr_id)."</b>";
+    }
+
+    public function fbURL()
+    {
+        if($this->wrappedObject->facebook_url == null || $this->wrappedObject->facebook_url == "")
+        {
+            return "<i class='small'>Unknown</i>";
+        }
+        return "<b>".link_to($this->wrappedObject->facebook_url,"Click here", ['target' => '_blank'])."</b>";
+    }
+
+    public function websiteURL()
+    {
+        if($this->wrappedObject->website_url == null || $this->wrappedObject->website_url == "")
+        {
+            return "<i class='small'>Unknown</i>";
+        }
+        return "<b>".link_to($this->wrappedObject->website_url,"Click here", ['target' => '_blank'])."</b>";
     }
 
 }
