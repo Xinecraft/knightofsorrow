@@ -591,7 +591,10 @@ class ServerTracker {
             }
         endforeach;
 
-        $response = Response::make("0\\nStats has been successfully tracked.\\n",200);
-        $response->send();
+        $pt = new App\Server\Repositories\PlayerTotalRepository();
+        $pt->calculate();
+        //$response = Response::make("0\\nStats has been successfully tracked",200);
+        printf("%s","0\nRound report tracked.");
+        exit(0);
     }
 }
