@@ -419,6 +419,7 @@ class ServerTracker {
             $player->game_id = $game->id;
             $player_ip_trim = substr($p[1], 0, strrpos($p[1], "."));
 
+            $player_country_id = 0;
             $geoip = App::make('geoip');
             try
             {
@@ -591,8 +592,8 @@ class ServerTracker {
             }
         endforeach;
 
-        $pt = new App\Server\Repositories\PlayerTotalRepository();
-        $pt->calculate();
+        //$pt = new App\Server\Repositories\PlayerTotalRepository();
+        //$pt->calculate();
         //$response = Response::make("0\\nStats has been successfully tracked",200);
         printf("%s","0\nRound report tracked.");
         exit(0);

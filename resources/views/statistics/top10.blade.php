@@ -1,7 +1,14 @@
 @extends('layouts.main')
 @section('meta-desc',"Top 10 Section")
 @section('title',"Top 10 of Server")
-
+@section('styles')
+    <style>
+        .col-xs-5
+        {
+            width: 45.666667% !important;
+        }
+    </style>
+@endsection
 @section('main-container')
     <div class="content col-xs-9">
         @include('partials._statistics-navbar')
@@ -31,7 +38,7 @@
                 </table>
             </div>
         </div>
-        <div class="col-xs-5 col-xs-offset-2 panel panel-danger no-padding">
+        <div class="col-xs-5 col-xs-offset-1 panel panel-danger no-padding">
             <div class="panel-heading"><span class="">Top 10 Kill/Death Ratio</span> <small><i>( for kills > 99 )</i></small></div>
             <div class="panel-body no-padding">
                 <table class="table table-striped table-hover no-margin">
@@ -84,7 +91,7 @@
                     </table>
                 </div>
             </div>
-            <div class="col-xs-5 col-xs-offset-2 panel panel-success no-padding">
+            <div class="col-xs-5 col-xs-offset-1 panel panel-success no-padding">
                 <div class="panel-heading"><span class="">Top 10 Most Rounds Played</span></div>
                 <div class="panel-body no-padding">
                     <table class="table table-striped table-hover no-margin">
@@ -137,7 +144,7 @@
                 </table>
             </div>
         </div>
-        <div class="col-xs-5 col-xs-offset-2 panel panel-danger no-padding">
+        <div class="col-xs-5 col-xs-offset-1 panel panel-danger no-padding">
             <div class="panel-heading"><span class="">Top 10 Highest Score </span><small><i>( in one round )</i></small></div>
             <div class="panel-body no-padding">
                 <table class="table table-striped table-hover no-margin">
@@ -190,7 +197,7 @@
                 </table>
             </div>
         </div>
-        <div class="col-xs-5 col-xs-offset-2 panel panel-success no-padding">
+        <div class="col-xs-5 col-xs-offset-1 panel panel-success no-padding">
             <div class="panel-heading"><span class="">Top 10 Best Arrest Streak</span></div>
             <div class="panel-body no-padding">
                 <table class="table table-striped table-hover no-margin">
