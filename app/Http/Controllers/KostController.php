@@ -107,7 +107,7 @@ class KostController extends Controller
         $playertwo_ip = $request->has('playertwo') && $request->has('playertwoip') ? $request->get('playertwoip') : null;
         $extra = $request->has('extra') ? $request->get('extra') : null;
 
-        $numberformatter = new \NumberFormatter('en',\NumberFormatter::ORDINAL);
+        //$numberformatter = new \NumberFormatter('en',\NumberFormatter::ORDINAL);
 
         // Bake the response
         $response = "";
@@ -117,7 +117,8 @@ class KostController extends Controller
         {
             case 'PlayerSuicide':
                 $times = Kost::where('type',$type)->where('server_uid',$server_uid)->where('playerone',$playerone)->count();
-                $response .= "[b][c=ff5722]Stats[\\c][\\b]: You committed suicide for the [b][c=ff0000]{$numberformatter->format(++$times)}[\\c][\\b] time!";
+                ++$times;
+                $response .= "[b][c=ff5722]Stats[\\c][\\b]: You committed suicide [b][c=ff0000]{$times}[\\c][\\b] time!";
                 break;
             case 'PlayerArrest':
             case 'PlayerTeamKill':
