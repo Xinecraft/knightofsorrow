@@ -484,7 +484,7 @@ class ApiController extends Controller
         $key = $data[3];
 
         if ($data == NULL || empty($data) || "koswhois1337" != $key) {
-            printf("%s","Query key Invalid!");
+            printf("%s","[b]([c=00ff00]KNIGHTofSORROW.TK[\\c]): [c=ff0000]Unable to Query Server");
             exit;
         }
 

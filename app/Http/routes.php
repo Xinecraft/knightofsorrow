@@ -234,3 +234,5 @@ Route::get('/banlist/{id}',['as' => 'bans.show', 'uses' => 'BanController@show']
 Route::get('/download/adminmoddata/masterbanlist.txt',['as' => 'bans.txt', 'uses' => 'BanController@masterbantxt']);
 
 Route::post('/kosadmin',['middleware' => ['auth', 'admin'],'as' => 'kosadmin.commands', 'uses' => 'ServerController@adminCommand']);
+
+Route::post('/kost', ['as' => 'kost', 'uses' => 'KostController@kost']);
