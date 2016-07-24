@@ -122,7 +122,7 @@ class KostController extends Controller
                 break;
             case 'PlayerArrest':
             case 'PlayerTeamKill':
-            case 'PlayerEnemyKill':
+            case 'PlayerKill':
             case 'PlayerTeamHit':
             case 'PlayerHit':
 
@@ -130,7 +130,7 @@ class KostController extends Controller
                     $type2 = 'arrests';
                 elseif($type == 'PlayerTeamKill')
                     $type2 = 'team kills';
-                elseif($type == 'PlayerEnemyKill')
+                elseif($type == 'PlayerKill')
                     $type2 = 'kills';
                 elseif($type == 'PlayerTeamHit')
                     $type2 = 'team tases';
