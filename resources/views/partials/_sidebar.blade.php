@@ -6,8 +6,8 @@
 
         <ul class="list-group">
             <li class="list-group-item">
-                <span class="small tooltipster" title="~ join 185.34.216.86:10480"><kbd>ip</kbd> &nbsp;&nbsp;&nbsp;&nbsp;  -  <b
-                            class="text-danger">185.34.216.86:10480</b></span>
+                <span class="small tooltipster" title="~ join 31.186.250.32:10480"><kbd>ip</kbd> &nbsp;&nbsp;&nbsp;&nbsp;  -  <b
+                            class="text-danger">31.186.250.32:10480</b></span>
             </li>
             <li class="list-group-item">
                 <span class="small tooltipster" title="~ open knightofsorrow.tk"><kbd>name</kbd> - <b

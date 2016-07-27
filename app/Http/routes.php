@@ -236,3 +236,21 @@ Route::get('/download/adminmoddata/masterbanlist.txt',['as' => 'bans.txt', 'uses
 Route::post('/kosadmin',['middleware' => ['auth', 'admin'],'as' => 'kosadmin.commands', 'uses' => 'ServerController@adminCommand']);
 
 Route::post('/kost', ['as' => 'kost', 'uses' => 'KostController@kost']);
+
+Route::get('push',function(){
+    $options = array(
+        'cluster' => 'eu',
+        'encrypted' => false
+    );
+    $pusher = new Pusher(
+        'e87ba0671cd6d4ab0137',
+        '7ce5082a81d53b485a3c',
+        '211823',
+        $options
+    );
+
+    $data['message'] = 'hello world';
+    $dd = $pusher->trigger('test_channel', 'my_event', $data);
+
+    dd($dd);
+});
