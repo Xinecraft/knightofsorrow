@@ -265,7 +265,7 @@ class ServerController extends Controller
         }
 
         $txtip = "127.0.0.1";
-        $txtportnum = "10483";
+        $txtportnum = "10485";
         $sock = fsockopen("udp://" . $txtip, $txtportnum, $errno, $errstr, 2);
         if (!$sock) {
             echo "$errstr ($errno)<br/>\n";
@@ -304,7 +304,7 @@ class ServerController extends Controller
         //dd($command);
 
         $txtip = "127.0.0.1";
-        $txtportnum = "10483";
+        $txtportnum = "10485";
         $sock = fsockopen("udp://" . $txtip, $txtportnum, $errno, $errstr, 2);
         if (!$sock) {
             echo "$errstr ($errno)<br/>\n";
