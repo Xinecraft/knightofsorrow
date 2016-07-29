@@ -84,6 +84,16 @@
             </ul>
         </div>
 
+        @if(rand(0,2) == 1)
+        <div class="panel pad5 text-center" style="padding: 10px !important;">
+            <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Donate</h4>
+            <p>If you are capable then please contribute in development of server.</p>
+            <a target="_blank" class="btn btn-sm btn-primary" href="https://www.nfoservers.com/donate.pl?force_recipient=1&recipient=kinnngg786%40gmail.com">
+                <i class="fa fa-cc"></i>
+                Donate</a>
+        </div>
+        @endif
+
         @if(\App\Didyouknow::count() > 99)
             <div class="panel pad5" style="padding: 10px !important;">
                 <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Did You Know</h4>
