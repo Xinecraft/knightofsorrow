@@ -14,12 +14,12 @@
                     <li>Do not start kick/map/ask/taser votes without reason.</li>
                     <li>Do not team -kill, -nade, -tase, etc. on purpose.</li>
                     <li>Do not kill or steal arrests.</li>
-                    <li>Hard <b>camping</b> is strictly <b>prohibited</b>. <i>( tactical camping  allowed )</i> <small><span class="label label-info">New</span></small></li>
-                    <li>Tactical camping is only a short wait of 15-20 seconds. <small><span class="label label-info">New</span></small></li>
+                    <li>Hard <b>camping</b> is strictly <b>prohibited</b>. <i>( tactical camping  allowed )</i></li>
+                    <li>Tactical camping is only a short wait of 15-20 seconds.</li>
                     <li>Do not spam/flood/attack the server.</li>
                     <li>Do not use another player's name. <b>Impersonation</b> will get you banned.</li>
-                    <li>No <b>admin</b> should change map or lock/unlock teams without <b>majority</b> support. <small><span class="label label-info">New</span></small></li>
-                    <li>If you find any admin/superadmin <b>misusing his powers</b>, plz <b>shout</b> at shoutbox. <small><span class="label label-info">New</span></small></li>
+                    <li>No <b>admin</b> should change map or lock/unlock teams without <b>majority</b> support.</li>
+                    <li>If you find any admin/superadmin <b>misusing his powers</b>, plz <b>shout</b> at shoutbox.</li>
                     <li>Respect KnightofSorrow ;)</li>
                 </ul>
                 <p style="padding-bottom:20px">Respect these rules so everyone can have a fun gameplay experience or <span class="text-bold">risk getting kicked/banned</span>.</p>	</div>

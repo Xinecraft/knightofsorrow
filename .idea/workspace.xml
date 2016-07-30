@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e189236c-c3e7-488f-b221-e9fb727e1c1d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/_sidebar.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/_sidebar.blade.php" />
     </list>
     <ignored path="kos.iws" />
@@ -35,7 +34,7 @@
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.0">
+            <state vertical-scroll-proportion="0.0">
               <caret line="227" column="23" selection-start-line="227" selection-start-column="23" selection-end-line="227" selection-end-column="23" />
               <folding />
             </state>
@@ -45,14 +44,9 @@
       <file leaf-file-name="_sidebar.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/partials/_sidebar.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4693396">
-              <caret line="90" column="55" selection-start-line="90" selection-start-column="55" selection-end-line="90" selection-end-column="55" />
-              <folding>
-                <element signature="n#style#0;n#div#2;n#aside#0;n#!!top" expanded="true" />
-                <element signature="n#div#2;n#aside#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#div#3;n#aside#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#4;n#aside#0;n#!!top" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.7853774">
+              <caret line="92" column="14" selection-start-line="92" selection-start-column="14" selection-end-line="92" selection-end-column="14" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -253,6 +247,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -381,8 +377,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -830,7 +824,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="227" column="23" selection-start-line="227" selection-start-column="23" selection-end-line="227" selection-end-column="23" />
           <folding />
         </state>
@@ -838,14 +832,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/partials/_sidebar.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4693396">
-          <caret line="90" column="55" selection-start-line="90" selection-start-column="55" selection-end-line="90" selection-end-column="55" />
-          <folding>
-            <element signature="n#style#0;n#div#2;n#aside#0;n#!!top" expanded="true" />
-            <element signature="n#div#2;n#aside#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#3;n#aside#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#4;n#aside#0;n#!!top" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.7853774">
+          <caret line="92" column="14" selection-start-line="92" selection-start-column="14" selection-end-line="92" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
