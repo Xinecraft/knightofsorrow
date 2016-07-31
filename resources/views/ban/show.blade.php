@@ -73,5 +73,36 @@
                 @endif
                 </tbody></table>
         </div>
+
+        @if(Auth::check())
+            <div class="media comment-media panel padding10">
+                <div class="pull-left">
+                    {!! Html::image(Auth::user()->getGravatarLink(40),'',array('class'=>'img media-oject inprofile-thumbs','width'=>'40','height'=>'40')) !!}
+                </div>
+
+                {!! Form::open(['route' => ['ban-comment',$ban->id], 'class'=>'comment-create-form media-body']) !!}
+                {!! Form::textarea('body', null, ['placeholder' => 'Your comment here', 'class' => 'form-control comment-textarea no-margin', 'rows' => 2, 'cols' => 5]) !!}
+                {!! Form::submit('Comment',['class' => 'btn btn-xs btn-default right comment-create-form-submit']) !!}
+                {!! Form::close() !!}
+            </div>
+        @endif
+
+        <div class="comments-container">
+            @foreach($ban->comments->reverse() as $comment)
+                <div class="media comment-media panel padding10">
+                    <div class="pull-left">
+                        {!! Html::image($comment->user->getGravatarLink(50),'',array('class'=>'img media-oject inprofile-thumbs','width'=>'50','height'=>'50')) !!}
+                    </div>
+                    <div class="media-body" style="font-size: 14px;word-break: break-all;">
+                        <p class="no-margin convert-emoji">
+                            <b>{!! link_to_route('user.show',$comment->user->displayName(),[$comment->user->username]) !!}</b>
+                        </p>
+                        <p class="no-margin text-muted small">{{ $comment->created_at->diffForHumans() }}</p>
+                        <p>{!! $comment->showBody() !!}</p>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+
     </div>
 @endsection

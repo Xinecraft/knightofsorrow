@@ -32,4 +32,14 @@ class Ban extends Model implements HasPresenter
     {
         return static::where('ip_address','LIKE',$ip)->first();
     }
+
+    /**
+     * Returns all comments of this Status.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
+     */
+    public function comments()
+    {
+        return $this->morphMany('App\Comment','commentable');
+    }
 }

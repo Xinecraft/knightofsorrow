@@ -226,7 +226,7 @@ Route::group(['middleware' => ['auth','admin']],function(){
 Route::post('/servertracker/handlebans/', ['as' => 'bans.handleban', 'uses' => 'BanController@handlebans']);
 Route::get('/banlist',['as' => 'bans.index', 'uses' => 'BanController@index']);
 Route::get('/banlist/{id}',['as' => 'bans.show', 'uses' => 'BanController@show']);
-
+Route::post('banlist/{id}/comments',['middleware' => 'auth', 'as' => 'ban-comment', 'uses' => 'CommentController@storeForBan']);
 
 /**
  * Master ban List in txt
