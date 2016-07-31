@@ -1381,8 +1381,9 @@ $('.composemailusername').typeahead({
         event.preventDefault();
     });
 
-    $('.confirm').click(function(){
-        return confirm("Are you sure?");
+
+    $('body').on('click', '.confirm', function(){
+        return confirm("Are you sure to perform this action?");
     });
 
 

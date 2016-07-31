@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
 
 use App\Events\ShoutWasFired;
@@ -11,6 +12,7 @@ use App\Http\Controllers\Controller;
 
 class ShoutsController extends Controller
 {
+    use SoftDeletes;
     /**
      * ShoutsController constructor.
      */
@@ -74,4 +76,22 @@ class ShoutsController extends Controller
         return view('partials._getshouts')->with('shouts',$shouts);
     }
 
+    /**
+     * @param $id
+     * @param Request $request
+     * @return mixed
+     */
+    public function destroy($id,Request $request)
+    {
+        $shout = Shout::findOrFail($id);
+        if($request->user()->isAdmin())
+        {
+            $shout->delete();
+            return back()->with('success',"Success! Shout deleted");
+        }
+        else
+        {
+            return back()->with('error',"Sorry! You are not authorized for that action");
+        }
+    }
 }

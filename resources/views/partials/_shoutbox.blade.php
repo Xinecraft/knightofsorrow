@@ -27,16 +27,14 @@
                                         </a>
                                         <br>
 
-                                        <!-- Shout Delete System
 
-                                        @can('delete',$shout)
+                                        @if(Auth::check() && Auth::user()->isAdmin())
                                         <div class="pull-right">
-                                            {{ Form::open(['method' => 'delete', 'route' => ['shouts.delete',$shout->id], 'class' => 'deleteShout']) }}
-                                            <button data-toggle="tooltip" title="Delete" class="btn btn-link btn-xs"><i class="fa fa-trash"></i></button>
-                                            {{ Form::close() }}
+                                            {!! Form::open(['method' => 'delete', 'route' => ['shouts.delete',$shout->id], 'class' => 'deleteShout'])  !!}
+                                            <button data-toggle="tooltip" title="Delete" class="tooltipster confirm btn btn-link btn-xs"><i class="fa fa-trash"></i></button>
+                                            {!! Form::close()  !!}
                                         </div>
-                                        @endcan
-                                        -->
+                                        @endif
 
                                         <small class="text-muted">
                                             <span class="fa fa-clock-o"></span> {{ $shout->created_at->diffForHumans() }}
@@ -61,15 +59,14 @@
                                         <small class="text-muted"><span class="fa fa-clock-o"></span> {{ $shout->created_at->diffForHumans() }}
                                         </small>
 
-                                        <!--Shout Delete System
-                                        @can('delete',$shout)
+                                        @if(Auth::check() && Auth::user()->isAdmin())
                                         <div class="pull-left">
-                                            {{ Form::open(['method' => 'delete', 'route' => ['shouts.delete',$shout->id],'class' => 'deleteShout']) }}
-                                            <button data-toggle="tooltip" title="Delete" class="btn btn-link btn-xs"><i class="fa fa-trash"></i></button>
-                                            {{ Form::close() }}
+                                            {!! Form::open(['method' => 'delete', 'route' => ['shouts.delete',$shout->id],'class' => 'deleteShout'])  !!}
+                                            <button data-toggle="tooltip" title="Delete" class="tooltipster confirm btn btn-link btn-xs"><i class="fa fa-trash"></i></button>
+                                            {!! Form::close()  !!}
                                         </div>
-                                        @endcan
-                                        -->
+                                        @endif
+
                                     </div>
                                     <p class="text-right convert-emoji">
                                         {!! nl2br(linkify(htmlentities($shout->shout))) !!}
