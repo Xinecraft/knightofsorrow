@@ -192,4 +192,9 @@ class PlayerTotalPresenter extends BasePresenter
             return "<a href='".route('user.show',$owner->username)."'><img title='{$owner->username}' class='tooltipster col-md-offset-1 col-sm-offset-1 col-xs-offset-1 img-thumbnail' width='60px' style='width: 60px' src='{$owner->getGravatarLink(60)}'></a>";
             //return link_to_route('user.show',"@".$owner->username,[$owner->username]);
     }
+
+    public function nameTrimmed()
+    {
+        return str_limit($this->wrappedObject->name,15);
+    }
 }

@@ -29,7 +29,7 @@
                             <th>{{ $position1++ }}</th>
                             <td>{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster']) !!}</td>
                             <td>{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '22px']) !!}</td>
-                            <td class="color-main text-bold">{!! link_to_route('player-detail', $player->name, [$player->name]) !!}</td>
+                            <td class="color-main text-bold">{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
                             <td class="text-right">{{ $player->total_score }}</td>
                         </tr>
                     @empty
@@ -54,7 +54,7 @@
                             <th>{{ $position2++ }}</th>
                             <td>{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster']) !!}</td>
                             <td>{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '22px']) !!}</td>
-                            <td class="color-main text-bold">{!! link_to_route('player-detail', $player->name, [$player->name]) !!}</td>
+                            <td class="color-main text-bold">{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
                             <td class="text-right">{{ $player->killdeath_ratio }}</td>
                         </tr>
                     @empty
@@ -82,7 +82,7 @@
                                 <th>{{ $position3++ }}</th>
                                 <td>{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster']) !!}</td>
                                 <td>{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '22px']) !!}</td>
-                                <td class="color-main text-bold">{!! link_to_route('player-detail', $player->name, [$player->name]) !!}</td>
+                                <td class="color-main text-bold">{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
                                 <td class="text-right">{{ $player->arr_ratio }}</td>
                             </tr>
                         @empty
@@ -107,7 +107,7 @@
                                 <th>{{ $position4++ }}</th>
                                 <td>{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster']) !!}</td>
                                 <td>{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '22px']) !!}</td>
-                                <td class="color-main text-bold">{!! link_to_route('player-detail', $player->name, [$player->name]) !!}</td>
+                                <td class="color-main text-bold">{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
                                 <td class="text-right">{{ $player->total_round_played }}</td>
                             </tr>
                         @empty
@@ -135,7 +135,7 @@
                             <th>{{ $position5++ }}</th>
                             <td>{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster']) !!}</td>
                             <td>{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '22px']) !!}</td>
-                            <td class="color-main text-bold">{!! link_to_route('player-detail', $player->name, [$player->name]) !!}</td>
+                            <td class="color-main text-bold">{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
                             <td class="text-right">{{ $player->game_won }}</td>
                         </tr>
                     @empty
@@ -160,7 +160,7 @@
                             <th>{{ $position6++ }}</th>
                             <td>{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster']) !!}</td>
                             <td>{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '22px']) !!}</td>
-                            <td class="color-main text-bold">{!! link_to_route('player-detail', $player->name, [$player->name]) !!}</td>
+                            <td class="color-main text-bold">{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
                             <td class="text-right">{{ $player->highest_score }}</td>
                         </tr>
                     @empty
@@ -188,7 +188,7 @@
                             <th>{{ $position7++ }}</th>
                             <td>{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster']) !!}</td>
                             <td>{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '22px']) !!}</td>
-                            <td class="color-main text-bold">{!! link_to_route('player-detail', $player->name, [$player->name]) !!}</td>
+                            <td class="color-main text-bold">{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
                             <td class="text-right">{{ $player->best_killstreak }}</td>
                         </tr>
                     @empty
@@ -213,7 +213,7 @@
                             <th>{{ $position8++ }}</th>
                             <td>{!! Html::image($player->countryImage,$player->country->countryCode,['title' => $player->country->countryName, 'class' => 'tooltipster']) !!}</td>
                             <td>{!! Html::image($player->rankImage,'',['title' => $player->rank->name,'class' => 'tooltipster' ,'height' => '22px']) !!}</td>
-                            <td class="color-main text-bold">{!! link_to_route('player-detail', $player->name, [$player->name]) !!}</td>
+                            <td class="color-main text-bold">{!! link_to_route('player-detail', $player->nameTrimmed, [$player->name]) !!}</td>
                             <td class="text-right">{{ $player->best_arreststreak }}</td>
                         </tr>
                     @empty
