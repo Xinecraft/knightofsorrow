@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Notification;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -54,7 +55,18 @@ class StatusController extends Controller
             'body' => $request->body
         ];
 
-        $this->status->publish($status);
+        $st = $this->status->publish($status);
+
+        // Create notification with Stream
+        $not = new Notification();
+        $not->from($request->user())
+            ->withType('UserStatusUpdate')
+            ->withSubject('A status is posted')
+            ->withBody(link_to_route('user.show',$request->user()->displayName(),$request->user()->username)." published a post in his feedline")
+            ->withStream(true)
+            ->regarding($st)
+            ->deliver();
+
         return \Redirect::back()->with('message', 'Status updated successfully');
     }
 

@@ -15,6 +15,7 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         \App\Console\Commands\Inspire::class,
         \App\Console\Commands\CalculatePlayerTotalCommand::class,
+        \App\Console\Commands\BakeBracketCommand::class,
     ];
 
     /**
@@ -26,5 +27,6 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('calculate:player-total')->everyTenMinutes();
+        $schedule->command('bake:roundrobin')->everyMinute();
     }
 }

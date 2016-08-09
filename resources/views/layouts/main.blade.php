@@ -40,12 +40,17 @@
 </head>
 <body>
 @include('partials._navbar')
+@yield('before-container')
 
 @include('partials._quickerrors')
 
 <div class="main container">
-@include('partials._sidebar')
 
+    @if(!Request::is('tournament*'))
+        @include('partials._sidebar')
+    @else
+        <span class="messageLog"></span>
+    @endif
 
 @yield('main-container')
 

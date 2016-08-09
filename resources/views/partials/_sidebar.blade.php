@@ -1,17 +1,26 @@
 <aside class="col-xs-3 main-sidebar">
     <div class="panel pad5" style="padding: 10px !important;">
         <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Join Server
-            <small>(using)</small>
         </h4>
 
         <ul class="list-group">
-            <li class="list-group-item">
-                <span class="small tooltipster" title="~ join 31.186.250.32:10480"><kbd>ip</kbd> &nbsp;&nbsp;&nbsp;&nbsp;  -  <b
-                            class="text-danger">31.186.250.32:10480</b></span>
+            <li class="list-group-item" style="padding: 5px 15px;">
+                <span class="small tooltipster" title="SWAT4 Normal Server">
+                    <img class="img img20" src="/images/swat.png" alt=""> -
+                    <span class="text-danger text-bold">31.186.250.32:10480</span>
+                </span>
             </li>
-            <li class="list-group-item">
-                <span class="small tooltipster" title="~ open knightofsorrow.tk"><kbd>name</kbd> - <b
-                            class="text-danger">knightofsorrow.tk:10480</b></span>
+            <li class="list-group-item" style="padding: 5px 15px;">
+                <span class="small tooltipster" title="SWAT4 War Server">
+                    <img class="img img20" src="/images/swat.png" alt=""> -
+                    <span class="text-danger text-bold">31.186.250.32:11180</span>
+                </span>
+            </li>
+            <li class="list-group-item" style="padding: 5px 15px;">
+                <span class="small tooltipster" title="Teamspeak 3 Server">
+                    <img class="img img20" src="/images/Logo_ts3.png" alt=""> -
+                    <span class="text-danger text-bold">knightofsorrow.tk:9987</span>
+                </span>
             </li>
         </ul>
     </div>

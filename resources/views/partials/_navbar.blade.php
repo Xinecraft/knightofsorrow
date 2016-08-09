@@ -15,28 +15,31 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="{{ set_active(['statistics*']) }}">{!! link_to_route('statistics-home','Statistics') !!}</li>
-                <li class="{{ set_active(['rules*']) }}"><a href="{{ route('rules') }}">Rules</a></li>
+                <li class="{{ set_active(['tournament*']) }}"><a href="{{ route('tournament.index') }}">Tournaments</a></li>
 
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                         More <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="{{ route('bans.index') }}">Banlist</a></li>
-                        <li><a href="{{ route('news.index') }}">News</a></li>
-                        <li><a href="{{ route('chat.index') }}">Chat History</a></li>
-                        <li><a href="{{ route('poll.index') }}">Polls</a></li>
-                        <li><a href="{{ route('admin.list') }}">Admins List</a></li>
-                        <li><a href="{{ route('download') }}">Downloads</a></li>
-                        <li>{!! link_to_route('servers.list','Servers') !!}</li>
-                        {{--<li><a href="">Clans</a></li>--}}
-                        {{--<li><a href="">Forums</a></li>--}}
-                        {{--<li><a href="{{ route('rules') }}">Rules</a></li>--}}
+                        <li class="{{ set_active(['banlist*']) }}"><a href="{{ route('bans.index') }}">Banlist</a></li>
+                        <li class="{{ set_active(['news*']) }}"><a href="{{ route('news.index') }}">News</a></li>
+                        <li class="{{ set_active(['serverchat-history*']) }}"><a href="{{ route('chat.index') }}">Chat History</a></li>
+                        <li class="{{ set_active(['polls*']) }}"><a href="{{ route('poll.index') }}">Polls</a></li>
+                        <li class="{{ set_active(['admins-list*']) }}"><a href="{{ route('admin.list') }}">Admins List</a></li>
+                        <li class="{{ set_active(['downloads*']) }}"><a href="{{ route('download') }}">Downloads</a></li>
+                        <li class="{{ set_active(['servers*']) }}">{!! link_to_route('servers.list','Servers') !!}</li>
+                        <li><a href="">Clans</a></li>
+                        <li><a target="_blank" href="http://forums.knightofsorrow.tk">Forums</a></li>
+                        <li class="{{ set_active(['global-notifications*']) }}"><a href="{{ route('notifications.index') }}">G Notifications</a></li>
+                        <li class="{{ set_active(['rules*']) }}"><a href="{{ route('rules') }}">Rules</a></li>
                     </ul>
                 </li>
 
-                @if(Auth::check() && Auth::user()->receivedMessagesUnseen()->count() > 0)
+
+
+                {{--@if(Auth::check() && Auth::user()->receivedMessagesUnseen()->count() > 0)
                     <li style="text-decoration: overline;" class="text-bold {{ set_active(['messages*']) }}">{!! link_to_route('messages.index',Auth::user()->receivedMessagesUnseen()->count()." new messages") !!} </li>
-                @endif
+                @endif--}}
 
             </ul>
 
@@ -47,30 +50,56 @@
                     <li class="{{ set_active(['auth/register']) }}"><a href="{{ url('/auth/register') }}">Register</a>
                     </li>
                 @else
+                    <li class="dropdown dropdown-notifications">
+                        <a title="Your Notifications" href="#notifications-panel" class="dropdown-toggle notification-openbtn" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <i data-count="{{ Auth::user()->notifications()->unread()->count() }}" class="fa fa-bell notification-icon"></i>
+                        </a>
+
+                        <div class="dropdown-container dropdown-menu dropdown-menu-right" role="menu">
+
+                            <div class="dropdown-toolbar">
+                                <div class="dropdown-toolbar-actions">
+                                    {{--<a href="#">Mark all as read</a>--}}
+                                </div>
+                                <h3 class="dropdown-toolbar-title text-bold">Notifications ({{ Auth::user()->notifications()->count() < 15 ? Auth::user()->notifications()->count() : "15" }}/{{ Auth::user()->notifications()->count() }})</h3>
+                            </div><!-- /dropdown-toolbar -->
+
+                            <ul class="dropdown-menu notification-dropmenu">
+                                <p class="ajax-loader text-center"><img src="/images/loading.gif" alt=""></p>
+                            </ul>
+
+                            <div class="dropdown-footer text-center">
+                                <a class="small text-bold" href="{{ route('notifications.userindex') }}">» View All</a>
+                            </div><!-- /dropdown-footer -->
+
+                        </div><!-- /dropdown-container -->
+                    </li><!-- /dropdown -->
+
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             <img class="img" src="{{ Auth::user()->getGravatarLink(20) }}" width="15" height="15"/>
                             {{ Auth::user()->displayName() }} <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ route('feeds-home') }}">My Feedline</a></li>
-                            <li><a href="{{ url('/profile') }}">My Profile</a></li>
+                            <li class="{{ set_active(['feeds*']) }}"><a href="{{ route('feeds-home') }}">My Feedline</a></li>
+                            <li class="{{ set_active(['profile']) }}"><a href="{{ url('/profile') }}">My Profile</a></li>
+                            <li class="{{ set_active(['notifications*']) }}"><a href="{{ url('/notifications') }}">Notifications</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="{{ route('messages.index') }}">Messages</a></li>
+                            <li class="{{ set_active(['messages*']) }}"><a href="{{ route('messages.index') }}">Messages</a></li>
 
                             @if(Auth::check() && Auth::user()->isSubAdmin())
                                 <li role="separator" class="divider"></li>
-                                <li><a href="{{ route('user.viewkeys') }}">Server Passwords</a></li>
+                                <li class="{{ set_active(['viewserverkeys*']) }}"><a href="{{ route('user.viewkeys') }}">Server Passwords</a></li>
                                 @if(Auth::user()->isAdmin())
                                     <li><a href="{{ route('bans.create') }}">Add Ban</a></li>
                                     <li><a href="{{ route('news.create') }}">Create News</a></li>
                                     {{--<li><a href="{{ route('servers.new') }}">Add Server</a></li>--}}
                                     <li><a href="{{ route('poll.create') }}">Create Poll</a></li>
-                                    <li><a href="{{ route('webadmin') }}">Web Admin</a></li>
+                                    <li class="{{ set_active(['webadmin*']) }}"><a href="{{ route('webadmin') }}">Web Admin</a></li>
                                 @endif
                             @endif
 
                             <li role="separator" class="divider"></li>
-                            <li>{!! link_to_route('user.setting','Setting') !!}</li>
+                            <li class="{{ set_active(['profile/edit']) }}">{!! link_to_route('user.setting','Setting') !!}</li>
                             <li><a href="{{ url('/auth/logout') }}">Logout</a></li>
                         </ul>
                     </li>

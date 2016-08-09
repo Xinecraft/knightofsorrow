@@ -236,3 +236,37 @@ Route::get('/download/adminmoddata/masterbanlist.txt',['as' => 'bans.txt', 'uses
 Route::post('/kosadmin',['middleware' => ['auth', 'admin'],'as' => 'kosadmin.commands', 'uses' => 'ServerController@adminCommand']);
 
 Route::post('/kost', ['as' => 'kost', 'uses' => 'KostController@kost']);
+
+/**
+ * Tournament System Controllers
+ */
+Route::get('/tournament/calendar', [ 'as' => 'tournament.calendar', 'uses' => 'TournamentController@getCalendar']);
+Route::get('/tournament/guidelines', [ 'as' => 'tournament.guidelines', 'uses' => 'TournamentController@getGuideline']);
+Route::get('/tournament/create', ['middleware' => ['auth','admin'], 'as' => 'tournament.create', 'uses' => 'TournamentController@create']);
+Route::post('/tournament/create', ['middleware' => ['auth','admin'], 'as' => 'tournament.store', 'uses' => 'TournamentController@store']);
+Route::get('/tournament/{slug}', ['as' => 'tournament.show', 'uses' => 'TournamentController@show']);
+Route::get('/tournament/{slug}/bracket', ['as' => 'tournament.bracket.show', 'uses' => 'TournamentController@getBracket']);
+Route::get('/tournament/{slug}/apply', ['middleware' => 'auth', 'as' => 'tournament.apply', 'uses' => 'TournamentController@applyForUser']);
+Route::post('/tournament/{id}/apply/new', ['middleware' => 'auth', 'as' => 'tournament.apply.new', 'uses' => 'TournamentController@applyForUserNewTeam']);
+Route::post('/tournament/{id}/apply/existing', ['middleware' => 'auth', 'as' => 'tournament.apply.existing', 'uses' => 'TournamentController@applyForUserExistingTeam']);
+Route::get('/tournament/{id}/leave', ['middleware' => 'auth', 'as' => 'tournament.leave', 'uses' => 'TournamentController@leaveTournamentForUser']);
+Route::get('/tournament/{slug}/team/{id}', [ 'as' => 'tournament.team.show', 'uses' => 'TournamentController@showTeam']);
+Route::post('/tournament/{slug}/team/{id}/user/{userid}/approve', ['middleware' => 'auth', 'as' => 'tournament.team.player.approve', 'uses' => 'TournamentController@approvePlayerToTeam']);
+Route::post('/tournament/{slug}/team/{id}/user/{userid}/pending', ['middleware' => 'auth', 'as' => 'tournament.team.player.pending', 'uses' => 'TournamentController@pendingPlayerToTeam']);
+Route::delete('/tournament/{slug}/team/{id}/user/{userid}/reject', ['middleware' => 'auth', 'as' => 'tournament.team.player.reject', 'uses' => 'TournamentController@rejectPlayerToTeam']);
+Route::post('/tournament/{slug}/team/{id}/close', ['middleware' => 'auth', 'as' => 'tournament.team.makeclose', 'uses' => 'TournamentController@closeTeamForJoining']);
+Route::post('/tournament/{slug}/team/{id}/open', ['middleware' => 'auth', 'as' => 'tournament.team.makeopen', 'uses' => 'TournamentController@openTeamForJoining']);
+Route::post('/tournament/{slug}/team/{id}/handleteams', ['middleware' => 'auth', 'as' => 'tournament.team.handleteams', 'uses' => 'TournamentController@handleTeamsForManager']);
+Route::get('/tournament', [ 'as' => 'tournament.index', 'uses' => 'TournamentController@index']);
+Route::get('/tournament/{slug}/match/{id}/', [ 'as' => 'tournament.match.show', 'uses' => 'TournamentController@getTournamentMatch']);
+
+Route::get('/tournament/{slug}/match/{id}/calculate', ['middleware' => 'auth', 'as' => 'tournament.match.getcalculate', 'uses' => 'TManagerController@getCalculateMatch']);
+Route::any('/tournament/{slug}/match/{id}/calculatex', ['middleware' => 'auth', 'as' => 'tournament.match.postcalculate', 'uses' => 'TManagerController@postCalculateMatch']);
+Route::post('/tournament/{slug}/match/{id}/calculatefinal', ['middleware' => 'auth', 'as' => 'tournament.match.postcalculatefinal', 'uses' => 'TManagerController@postCalculateMatchFinal']);
+
+Route::post('tournament/{id}/comments',['middleware' => 'auth', 'as' => 'tournament.comment', 'uses' => 'CommentController@storeForTournament']);
+
+Route::get('global-notifications',['as' => 'notifications.index', 'uses' => 'NotificationController@indexGlobal']);
+Route::get('notifications',['middleware' => 'auth', 'as' => 'notifications.userindex', 'uses' => 'NotificationController@indexUser']);
+Route::get('getlatestnotifications',['middleware' => 'auth', 'as' => 'notifications.getlatest', 'uses' => 'NotificationController@getLatest']);
+

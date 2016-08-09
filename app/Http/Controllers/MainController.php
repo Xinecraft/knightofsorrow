@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Ban;
+use App\Notification;
 use App\Status;
 use App\User;
 use Carbon\Carbon;
@@ -305,6 +306,7 @@ class MainController extends Controller
 
         //Latest Feeds
         //$feeds  = Status::with('user')->latest()->limit(5)->get();
+        $notifications = Notification::stream()->latest()->limit(5)->get();
 
         $activeUsers = User::orderBy('updated_at','DESC')->limit(50)->get();
         $bans = Ban::orderBy('updated_at','desc')->limit(5)->get();
@@ -317,6 +319,7 @@ class MainController extends Controller
             'PastMonth' => $PastMonth,
             'PastYear' => $PastYear,
             'bans' => $bans,
+            'notifications' => $notifications,
             'activeUsers' => $activeUsers,
         ];
 

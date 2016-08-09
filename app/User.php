@@ -295,4 +295,175 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->belongsToMany('App\Pollo')->withTimestamps();
     }
 
+
+    /**
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function notifications()
+    {
+        return $this->hasMany('App\Notification');
+    }
+
+    /**
+     * @return Notification
+     */
+    public function newNotification()
+    {
+        $notification = new Notification;
+        $notification->user()->associate($this);
+
+        return $notification;
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function createdtournaments()
+    {
+        return $this->hasMany('App\KTournament');
+    }
+
+    /**
+     * List of tournament this user is manager or referee of.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function managingtournaments()
+    {
+        return $this->belongsToMany('App\KTournament','k_tournament_managers');
+    }
+
+    /**
+     * All teams that this user created
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function createdteams()
+    {
+        return $this->hasMany('App\KTeam');
+    }
+
+    /**
+     * Return all tournaments this user applied for.
+     *
+     * @return $this
+     */
+    public function appliedtournaments()
+    {
+        return $this->belongsToMany('App\KTournament','k_tournament_user','user_id','k_tournament_id')->withTimestamps()->withPivot('user_status','k_team_id','total_score','id','user_position');
+    }
+
+    /**
+     * Get applied status
+     *
+     * @param $tournament
+     * @param $team
+     * @return mixed
+     */
+    public function getAppliedTeamStatus($tournament,$team)
+    {
+        return $this->appliedtournaments()->where('k_team_id',$team->id)->where('k_tournament_id',$tournament->id)->first()->pivot->user_status;
+    }
+
+    public function getAppliedTeamStatusWithColor($tournament,$team)
+    {
+        switch($this->getAppliedTeamStatus($tournament,$team))
+        {
+            case 0:
+                return "<span class='text-warning'>Pending Approval</span>";
+                break;
+            case 1:
+                return "<span class='text-danger'>Not Eligible</span>";
+                break;
+            case 2:
+                return "<span class='text-danger'>Disqualified</span>";
+                break;
+            case 3:
+                return "<span class='text-green'>Team Member</span>";
+                break;
+            case 4:
+                return "<span class='text-success'>Team Leader</span>";
+                break;
+            default:
+                return "<span class='text-info'>Unknown</span>";
+                break;
+        }
+    }
+
+    public function getTeamOfUserForTournament($tournament)
+    {
+        $team = $tournament->teamspivot()->wherePivot('user_id',$this->id)->first();
+
+        if($team)
+        {
+            return $team;
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public function isAppliedForTournament($tournament)
+    {
+        $team = $this->getTeamOfUserForTournament($tournament);
+        if($team)
+            return true;
+        else
+            return false;
+    }
+
+    /**
+     * @param KTeam $team
+     * @return bool
+     */
+    public function canHandleTeam(KTeam $team)
+    {
+        $user = \Auth::user();
+
+        if($team->tournament->isRegistrationOpen() == 6 || $team->tournament->isRegistrationOpen() == 5)
+        {
+            return false;
+        }
+
+        /**
+         * If Manager
+         */
+        if($user->canManageTournament($team->tournament))
+            return true;
+
+        // Donot allow if team is not approved
+        if(!$team->isApproved())
+        {
+            return false;
+        }
+
+        if($team->playerspivot()->where('user_id',$user->id)->where('user_status','>',3)->first())
+        {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Is this user authenticated to manage tournament
+     *
+     * @param KTournament $tour
+     * @return bool
+     */
+    public function canManageTournament(KTournament $tour)
+    {
+        if(\Auth::user()->isSuperAdmin())
+            return true;
+
+        foreach ($this->managingtournaments as $tournament) {
+            if ($tournament->id == $tour->id) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
 }

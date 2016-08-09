@@ -340,7 +340,7 @@ a.status-timeago:active {
   padding: 5px;
 }
 /* AutoComplete styles for Emoji One */
-.dropdown-menu {
+.textcomplete-dropdown.dropdown-menu {
   list-style: none;
   padding: .3em 0 0;
   margin: 0;
@@ -352,10 +352,10 @@ a.status-timeago:active {
   letter-spacing: .025em;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
 }
-.dropdown-menu a:hover {
+.textcomplete-dropdown.dropdown-menu a:hover {
   cursor: pointer;
 }
-.dropdown-menu li {
+.textcomplete-dropdown.dropdown-menu li {
   letter-spacing: 0;
   display: block;
   float: none;
@@ -363,14 +363,14 @@ a.status-timeago:active {
   padding: 0;
   border: none;
 }
-.dropdown-menu li:before {
+.textcomplete-dropdown.dropdown-menu li:before {
   display: none;
 }
-.dropdown-menu .textcomplete-footer {
+.textcomplete-dropdown.dropdown-menu .textcomplete-footer {
   margin-top: .3em;
   background: #e6e6e6;
 }
-.dropdown-menu .textcomplete-footer a {
+.textcomplete-dropdown.dropdown-menu .textcomplete-footer a {
   color: #999999;
   text-decoration: none;
   text-transform: uppercase;
@@ -379,11 +379,11 @@ a.status-timeago:active {
   padding-left: 1.8181em;
   font-size: .84em;
 }
-.dropdown-menu .textcomplete-footer .arrow {
+.textcomplete-dropdown.dropdown-menu .textcomplete-footer .arrow {
   margin-left: .8em;
   font-size: 1.3em;
 }
-.dropdown-menu li .emojione {
+.textcomplete-dropdown.dropdown-menu li .emojione {
   vertical-align: middle;
   font-size: 1.23em;
   width: 1em;
@@ -391,20 +391,20 @@ a.status-timeago:active {
   top: -1px;
   margin: 0 .3em 0 0;
 }
-.dropdown-menu li a {
+.textcomplete-dropdown.dropdown-menu li a {
   display: block;
   height: 100%;
   line-height: 1.8em;
   padding: 0 1.54em 0 .615em;
   color: #4f4f4f;
 }
-.dropdown-menu .active,
-.dropdown-menu li:hover {
+.textcomplete-dropdown.dropdown-menu .active,
+.textcomplete-dropdown.dropdown-menu li:hover {
   background: #6E6E6E;
   color: white;
 }
-.dropdown-menu .active a,
-.dropdown-menu li:hover a {
+.textcomplete-dropdown.dropdown-menu .active a,
+.textcomplete-dropdown.dropdown-menu li:hover a {
   color: inherit;
 }
 .comment-create-form {
@@ -503,6 +503,72 @@ a.status-timeago:active {
   background: #f4f9fa;
   border: 1px solid #d3d3d3;
   margin-bottom: 15px;
+}
+.wg-primary {
+  background-image: url("/images/primary.jpg");
+  background-size: contain;
+  color: #fff;
+  margin: -21px 0 30px;
+  min-height: 150px;
+  padding: 20px;
+  width: 100%;
+}
+.wizard ul li {
+  background: #fff;
+  border: 2px solid #d9d9d9;
+  font-size: 1.5rem;
+  padding: 3px 3px 3px 10px;
+  position: relative;
+}
+.wizard ul li:not(:last-child):before {
+  content: '';
+  position: absolute;
+  right: -13px;
+  top: -1px;
+  border-bottom: 25px solid transparent;
+  border-left: 10px solid #d9d9d9;
+  border-top: 25px solid transparent;
+  height: 0;
+  width: 0;
+  z-index: 1;
+}
+.wizard ul li:not(:last-child):after {
+  content: '';
+  position: absolute;
+  right: -10px;
+  top: 0;
+  border-bottom: 24px solid transparent;
+  border-left: 10px solid #f0f0f0;
+  border-top: 24px solid transparent;
+  border-left-color: #fff;
+  height: 0;
+  width: 0;
+  z-index: 1;
+}
+.wizard ul li:nth-child(n+2) {
+  padding-left: 20px;
+}
+.wizard ul {
+  list-style-type: none;
+  margin-bottom: 0;
+  padding: 0;
+}
+.wizard ul li span:first-child {
+  font-weight: 500;
+}
+.wizard ul li span {
+  display: block;
+}
+.wizard {
+  margin-bottom: 20px;
+}
+#tabs-id {
+  padding: 10px;
+  border: 2px solid #d9d9d9;
+}
+.img20 {
+  width: 20px !important;
+  height: 20px !important;
 }
 
 /*# sourceMappingURL=app.css.map */

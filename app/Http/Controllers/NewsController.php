@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\NewsRequest;
 use App\News;
+use App\Notification;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -69,6 +70,16 @@ class NewsController extends Controller
             'summary' => $slug,
             'is_published' => true,
         ]);
+
+        // Create notification
+        $not = new Notification();
+        $not->from($request->user())
+            ->withType('NewsCreated')
+            ->withSubject('A news is created')
+            ->withBody(link_to_route('user.show',$request->user()->displayName(),$request->user()->username)." has created a news ".link_to_route('news.show',str_limit($news->title,20),$news->summary))
+            ->withStream(true)
+            ->regarding($news)
+            ->deliver();
 
         return redirect()->route('news.show',$news->summary)->with('message','News Created');
     }

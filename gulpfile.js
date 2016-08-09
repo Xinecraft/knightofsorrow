@@ -14,9 +14,19 @@ var elixir = require('laravel-elixir');
 elixir(function(mix) {
     mix.less('app.less');
 
-    mix.styles(['css/bootstrap.css', 'css/bootstrap-datetimepicker.min.css','css/select2.css', 'css/tip-twitter.css', 'components/emojione/assets/css/emojione.min.css', 'css/app.css'],null,'public');
+    mix.styles(['css/bootstrap.css', 'css/bootstrap-notifications.css', 'css/bootstrap-datetimepicker.min.css','css/select2.css', 'css/tip-twitter.css', 'components/emojione/assets/css/emojione.min.css', 'css/app.css'],null,'public');
 
     mix.scripts(['js/jquery.js', 'js/bootstrap.min.js', 'js/bootstrap-datetimepicker.min.js', 'js/jquery.poshytip.min.js', 'components/typeahead.js/dist/typeahead.bundle.min.js', 'components/autosize/dist/autosize.min.js', 'js/jquery.infinitescroll.min.js', 'js/jquery.textcomplete.js', 'components/emojione/lib/js/emojione.js', 'js/jquery.dotimeout.min.js', 'js/main.js', 'js/select2.full.min.js', 'js/gauge.min.js'],null,'public');
 
     mix.version(['css/all.css','js/all.js']);
+
+
+    mix.src('./storage/framework/views/*')
+        .pipe(htmlmin({
+            collapseWhitespace:    true,
+            removeAttributeQuotes: true,
+            removeComments:        true,
+            minifyJS:              true,
+        }))
+        .pipe(gulp.dest('./storage/framework/views/'));
 });

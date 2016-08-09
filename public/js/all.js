@@ -913,8 +913,14 @@ $(document).ready(function ()
         }
     });
 
+
     // Setup Chat Audio
     $('<audio id="chatAudio"><source src="http://knightofsorrow.tk/sounds/notify.ogg" type="audio/ogg"><source src="http://knightofsorrow.tk/sounds/notify.mp3" type="audio/mpeg"><source src="http://knightofsorrow.tk/sounds/notify.wav" type="audio/wav"></audio>').appendTo('body');
+
+
+    // Setup Select2 Instance
+    $("select").select2();
+
 
     /**
      * Infinite Scroll
@@ -1427,6 +1433,18 @@ $('.composemailusername').typeahead({
         });
     });
 
+    // Notifications
+    $('.notification-openbtn').click(function(){
+        var x = $.ajax({
+            type: 'GET',
+            url: '/getlatestnotifications',
+            success: function(data) {
+                console.log(data);
+                $('.notification-dropmenu').html(data);
+                $('.ajax-loader').hide();
+            }
+        });
+    });
 });
 
 function convertEmoji(text) {

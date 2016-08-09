@@ -77,4 +77,9 @@ class Game extends Model implements HasPresenter
             return $this->id;
         return $this->round_index;
     }
+
+    public function getIdgoAttribue()
+    {
+        return $this->id." ".$this->created_at->diffForHumans();
+    }
 }

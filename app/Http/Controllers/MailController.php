@@ -67,6 +67,15 @@ class MailController extends Controller
 
         if($m)
         {
+            // Create notification and dispatch it
+            $receiver->newNotification()
+                ->from($request->user())
+                ->withType('UserMessageSent')
+                ->withSubject('New message!')
+                ->withBody(link_to_route('user.show',$request->user()->displayName(),$request->user()->username)." has sent you ".link_to_route('messages.show',"new message",$request->user()->username))
+                ->regarding($m)
+                ->deliver();
+
             return redirect()->route('messages.show',$receiver->username)->with('message', "Message Sent!");
         }
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Notification;
 use App\Role;
 use App\User;
 use Auth;
@@ -64,9 +65,22 @@ class UserController extends Controller
         }
 
         $user->follow($followee->id);
+
+        // Create notification and send it
+        $followee->newNotification()
+            ->from($user)
+            ->withType('UserFollow')
+            ->withSubject('You got +1 follow count.')
+            ->withBody(link_to_route('user.show',$user->displayName(),$user->username)." has <span class='text-green notify-bold'>started</span> following you")
+            ->regarding($user)
+            ->deliver();
+
         return \Redirect::back()->with('message','Now you are following '.$followee->name);
     }
 
+    /**
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function deleteUnfollow()
     {
         $user = Auth::user();
@@ -76,10 +90,20 @@ class UserController extends Controller
         if($user->isFollowing($followee))
         {
             $user->unfollow($followee->id);
+
+            // Create notification and send
+            $followee->newNotification()
+                ->from($user)
+                ->withType('UserUnfollow')
+                ->withSubject('You got -1 follow count.')
+                ->withBody(link_to_route('user.show',$user->displayName(),$user->username)." has <span class='text-danger notify-bold'>stopped</span> following you")
+                ->regarding($user)
+                ->deliver();
+
             return \Redirect::back()->with('message','You are not following '.$followee->name.' anymore :(');
         }
 
-        return \Redirect::back()->with('message','You are not following '.$followee->name); 
+        return \Redirect::back()->with('error','You are not following '.$followee->name);
     }
 
 
@@ -309,10 +333,44 @@ class UserController extends Controller
         if ($user->banned == 1) {
             $user->banned = 0;
             $user->save();
+
+            // Create notification with Stream
+            $not = new Notification();
+            $not->from($request->user())
+                ->withType('UserUnban')
+                ->withSubject('An unban is performed')
+                ->withBody(link_to_route('user.show',$request->user()->displayName(),$request->user()->username)." has <span class='text-green notify-bold'>unbanned</span> ".link_to_route('user.show',$user->displayName(),$user->username))
+                ->withStream(true)
+                ->regarding($user)
+                ->deliver();
+            /*$request->user()->newNotification()
+                ->from($request->user())
+                ->withType('UserUnban')
+                ->withSubject('An unban is performed')
+                ->withBody(" You have <span class='text-green notify-bold'>unbanned</span> ".link_to_route('user.show',$user->displayName(),$user->username))
+                ->regarding($user)
+                ->deliver();*/
             return \Redirect::back()->with('message',"Success! You have successfully Unbanned this User");
         } elseif ($user->banned == 0) {
             $user->banned = 1;
             $user->save();
+
+            // Create notification
+            $not = new Notification();
+            $not->from($request->user())
+                ->withType('UserBan')
+                ->withSubject('A ban is performed.')
+                ->withBody(link_to_route('user.show',$request->user()->displayName(),$request->user()->username)." has <span class='text-danger notify-bold'>banned</span> ".link_to_route('user.show',$user->displayName(),$user->username))
+                ->withStream(true)
+                ->regarding($user)
+                ->deliver();
+            /*$request->user()->newNotification()
+                ->from($request->user())
+                ->withType('UserBan')
+                ->withSubject('A ban is performed')
+                ->withBody(" You have <span class='text-danger notify-bold'>banned</span> ".link_to_route('user.show',$user->displayName(),$user->username))
+                ->regarding($user)
+                ->deliver();*/
             return \Redirect::back()->with('message',"Success! You have banned this User");
         }
 
@@ -363,6 +421,17 @@ class UserController extends Controller
             $user->detachRole($role);
             $user->attachRole($nextRoleID);
 
+            $nextrank = Role::find($nextRoleID);
+            // Create notification
+            $not = new Notification();
+            $not->from($request->user())
+                ->withType('UserRolePromote')
+                ->withSubject('A User has promoted.')
+                ->withBody(link_to_route('user.show',$request->user()->displayName(),$request->user()->username)." has <span class='text-green notify-bold'>promoted</span> ".link_to_route('user.show',$user->displayName(),$user->username)." to ".$nextrank->display_name)
+                ->withStream(true)
+                ->regarding($user)
+                ->deliver();
+
             return \Redirect::back()->with('message', "User promoted!");
 
         }
@@ -381,6 +450,17 @@ class UserController extends Controller
             $nextRoleID = $prevRoleID + 1;
             $user->detachRole($role);
             $user->attachRole($nextRoleID);
+
+            $nextrank = Role::find($nextRoleID);
+            // Create notification
+            $not = new Notification();
+            $not->from($request->user())
+                ->withType('UserRoleDemote')
+                ->withSubject('A User has demoted.')
+                ->withBody(link_to_route('user.show',$request->user()->displayName(),$request->user()->username)." has <span class='text-danger notify-bold'>demoted</span> ".link_to_route('user.show',$user->displayName(),$user->username)." to ".$nextrank->display_name)
+                ->withStream(true)
+                ->regarding($user)
+                ->deliver();
 
             return \Redirect::back()->with('message', "User demoted!");
         }

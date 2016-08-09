@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Ban;
 use App\Country;
 use App\Http\Requests\BanRequest;
+use App\Notification;
 use Illuminate\Http\Request as InputRequest;
 use Request;
 
@@ -117,6 +118,18 @@ class BanController extends Controller
 
         if($newBan)
         {
+            // Create notification
+            $not = new Notification();
+            $not->from($request->user())
+                ->withType('BanCreated')
+                ->withSubject('A ban is created')
+                ->withBody(link_to_route('user.show',$request->user()->displayName(),$request->user()->username)." has added a new ban rule ".link_to_route('bans.show','#'.$newBan->id,$newBan->id)." for <b>".$newBan->ipAddrWithMask()."</b> <img src='".$newBan->countryImage()."' class='tooltipster img' title='".$newBan->countryName()."'>")
+                ->withStream(true)
+                ->regarding($newBan)
+                ->deliver();
+
+            $newBan->tellServerToAdd();
+
             return redirect()->route('bans.show',$newBan->id)->with('success','Ban has been added!');
         }
     }
@@ -168,6 +181,8 @@ class BanController extends Controller
 
         $ban = Ban::findOrFail($id);
 
+        $prev_status = $ban->status;
+
         $status = $request->status;
         $reason = $request->reason == "" ? null : $request->reason;
 
@@ -176,6 +191,25 @@ class BanController extends Controller
         $ban->updated_by = $request->user()->username;
         $ban->updated_by_site = true;
         $ban->save();
+
+        // Create notification
+        $not = new Notification();
+        $not->from($request->user())
+            ->withType('BanUpdated')
+            ->withSubject('A ban is updated')
+            ->withBody(link_to_route('user.show',$request->user()->displayName(),$request->user()->username)." has updated the ban ".link_to_route('bans.show','#'.$ban->id,$ban->id)." with IP <b>".$ban->ipAddrWithMask()."</b> <img src='".$ban->countryImage()."' class='tooltipster img' title='".$ban->countryName()."'>")
+            ->withStream(true)
+            ->regarding($ban)
+            ->deliver();
+
+        if($status == 0 && $prev_status == 1)
+        {
+            $ban->tellServerToRemove();
+        }
+        else if($status == 1 && $prev_status == 0)
+        {
+            $ban->tellServerToAdd();
+        }
 
         return redirect()->route('bans.show',$ban->id)->with('success','Ban has need updated!');
     }
