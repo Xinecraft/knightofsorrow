@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Game;
 use App\KMatch;
 use App\KTournament;
+use App\Notification;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -15,7 +16,7 @@ class TManagerController extends Controller
 {
     public function getCalculateMatch($slug,$id,Request $request)
     {
-        $tournament = KTournament::whereDisabled(0)->whereSlug($slug)->first();
+        $tournament = KTournament::enabled()->whereSlug($slug)->first();
         $match = KMatch::find($id);
 
         if(!$tournament || !$match)
@@ -37,7 +38,7 @@ class TManagerController extends Controller
 
     public function postCalculateMatch($slug,$id,Request $request)
     {
-        $tournament = KTournament::whereDisabled(0)->whereSlug($slug)->first();
+        $tournament = KTournament::enabled()->whereSlug($slug)->first();
         $match = KMatch::find($id);
 
         if(!$tournament || !$match)
@@ -89,7 +90,7 @@ class TManagerController extends Controller
      */
     public function postCalculateMatchFinal($slug,$id,Request $request)
     {
-        $tournament = KTournament::whereDisabled(0)->whereSlug($slug)->first();
+        $tournament = KTournament::enabled()->whereSlug($slug)->first();
         $match = KMatch::find($id);
 
         if (!$tournament || !$match)
@@ -229,9 +230,11 @@ class TManagerController extends Controller
 
         $match->k_team1_total_score = $team1_total_score;
         $match->k_team2_total_score = $team2_total_score;
-        /**
-         * @TODO: Validate this
-         */
+
+        if($request->overall_winner_id != "-1" && $request->overall_winner_id != "0" && $request->overall_winner_id != $match->team1->id && $request->overall_winner_id != $match->team2->id)
+        {
+            return redirect()->home()->with("error","Error! Don't mess up with codes.");
+        }
         $match->winner_team_id = $request->overall_winner_id;
         $match->has_been_played = true;
 
@@ -272,6 +275,7 @@ class TManagerController extends Controller
         // nothing
         else
         {
+
         }
 
         //SAVE TEAMS
@@ -284,12 +288,47 @@ class TManagerController extends Controller
         $team2_p1 = $match->team2->playerselected->first();
         $team2_p2 = $match->team2->playerselected->last();
 
-        //@TODO: FIX IT THIS IS NOT ADDING PREVIOUS ROUND SCORES
         $match->team1->givescoretouser($team1_p1,$team1_p1_score_sum);
         $match->team1->givescoretouser($team1_p2,$team1_p2_score_sum);
         $match->team2->givescoretouser($team2_p1,$team2_p1_score_sum);
         $match->team2->givescoretouser($team2_p2,$team2_p2_score_sum);
 
+        //Dispatch Notifications
+        //If match is cancelled
+        if($request->winner_team_id == "-1")
+        {
+            // Create notification with Stream
+            $not = new Notification();
+            $not->from($request->user())
+                ->withType('TournamentMatchCancelled')
+                ->withSubject('Match is cancelled in a tournament')
+                ->withBody(link_to_route('tournament.show',$tournament->name,$tournament->slug)." : Match between ".link_to_route('tournament.team.show',$match->team1->name,[$tournament->slug,$match->team1->id])." and ".link_to_route('tournament.team.show',$match->team2->name,[$tournament->slug,$match->team2->id])." was <span class='text-danger notify-bold'>cancelled</span>")
+                ->withStream(true)
+                ->regarding($tournament)
+                ->deliver();
+        }
+        else if($request->winner_team_id == "0")
+        {
+            $not = new Notification();
+            $not->from($request->user())
+                ->withType('TournamentMatchTie')
+                ->withSubject('Match is tie in a tournament')
+                ->withBody(link_to_route('tournament.show',$tournament->name,$tournament->slug)." : Match between ".link_to_route('tournament.team.show',$match->team1->name,[$tournament->slug,$match->team1->id])." and ".link_to_route('tournament.team.show',$match->team2->name,[$tournament->slug,$match->team2->id])." <span class='text-danger notify-bold'>tied</span> by ".$request->winner_team_won_by)
+                ->withStream(true)
+                ->regarding($tournament)
+                ->deliver();
+        }
+        else
+        {
+            $not = new Notification();
+            $not->from($request->user())
+                ->withType('TournamentMatchPlayed')
+                ->withSubject('Match is played in a tournament')
+                ->withBody(link_to_route('tournament.show',$tournament->name,$tournament->slug)." : ".$match->getWinningTextForNotifications())
+                ->withStream(true)
+                ->regarding($tournament)
+                ->deliver();
+        }
         return redirect()->route('tournament.show',[$tournament->slug])->with('message',"Success! Match data has been recorded.");
     }
 }

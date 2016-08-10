@@ -147,6 +147,7 @@ return [
         McCool\LaravelAutoPresenter\AutoPresenterServiceProvider::class,
         Laracasts\Utilities\JavaScript\JavascriptServiceProvider::class,
         Golonka\BBCode\BBCodeParserServiceProvider::class,
+        GrahamCampbell\HTMLMin\HTMLMinServiceProvider::class,
 
 
         /*

@@ -211,7 +211,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-xs-3" style="border-left: 5px solid dodgerblue">
+                                    <div class="col-xs-3" style="border-left: 5px solid dodgerblue;border-right: 5px solid dodgerblue">
                                         <div class="">
                                             <p>Venue: <b>KoS War Server</b><br>
                                                 {{ $match->starts_at->toDayDateTimeString() }}<br>
@@ -221,14 +221,22 @@
                                     </div>
 
                                     @if(Auth::check() && Auth::user()->canManageTournament($tournament) && !$match->has_been_played)
-                                        <div class="col-xs-3" style="border-left: 5px solid dodgerblue">
+                                        <div class="col-xs-3">
                                             <a class="btn btn-warning confirm" href="{{ route('tournament.match.getcalculate',[$tournament->slug,$match->id]) }}">Calculate</a>
                                         </div>
                                     @endif
 
+                                    @if($match->has_been_played)
+                                        <div class="col-xs-3">
+                                            {!! $match->getWinningTextForHumans() !!}
+                                            <br>
+                                            <a class="btn btn-xs btn-info" href="{{ route('tournament.match.show',[$tournament->slug,$match->id]) }}">View Details</a>
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>
+                        <hr class="no-margin">
                     @endforeach
 
                 @endforeach

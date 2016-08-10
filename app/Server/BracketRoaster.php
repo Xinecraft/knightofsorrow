@@ -31,13 +31,13 @@ class BracketRoaster
         //If tournament can show brackets
         if(!$tour->canShowBrackets())
         {
-            return "Tournament {$tour->id} cannot show bracket";
+            return "Tournament {$tour->id} cannot show bracket\n";
         }
 
         // if already roasted
         if($tour->rounds()->first() && $forced == false)
         {
-            return "Tournament {$tour->id} already roasted";
+            return "Tournament {$tour->id} already roasted\n";
         }
 
         if($forced == true)
@@ -101,12 +101,12 @@ class BracketRoaster
             $starts_at_localx = $starts_at_localx->subHour($no_of_match_per_round);
             $starts_at = $starts_at->addDay();
         }
-        return "New tournaments roasted!";
+        return "New tournaments roasted!\n";
     }
 
     public function checkRoastRobinAll()
     {
-        $tournaments = KTournament::all();
+        $tournaments = KTournament::enabled()->get();
         $info = "";
         foreach($tournaments as $tournament)
         {

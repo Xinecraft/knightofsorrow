@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('meta-desc',"Round indi Details")
-@section('title',"Round - Map: $round->mapName, $round->timeAgo")
+@section('title',"Round ".$round->index." - Map: $round->mapName, $round->timeAgo")
 
 @section('main-container')
     <div class="col-xs-9">
@@ -12,15 +12,15 @@
 
         <div class="round-detail-teamscores" style="background-image: url('/images/game/maps/background-small/{{ $round->map_id }}.jpg')">
             <div class="round-team-scores row">
-                <div class="round-team-score col-xs-5" style="background-color: rgba(0, 15, 198, 0.35);border: 1px solid #090575;">
+                <div class="round-team-score col-xs-5" style="background-color: rgba(0,0,0,0.8);border: 1px solid #000000;">
                     SWAT
-                    <div class="round-team-score-value" style="float:right;">
+                    <div class="" style="float:right;">
                         {!! $round->swatScoreWithColor !!}
                     </div>
                 </div>
-                <div class="round-team-score col-xs-5 col-xs-offset-1 text-right" style="background-color: rgba(198, 13, 0, 0.35);border: 1px solid #750C05;">
+                <div class="round-team-score col-xs-5 col-xs-offset-1 text-right" style="background-color: rgba(255, 255, 255, 0.9);border: 1px solid #ffffff;color: #000;">
                     SUSPECTS
-                    <div class="round-team-score-value" style="float:left;">
+                    <div class="" style="float:left;">
                         {!! $round->suspectsScoreWithColor !!}
                     </div>
                 </div>
@@ -86,8 +86,8 @@
         </div>
 
         <div class="round-detail-players row no-padding no-margin">
-            <div class="round-detail-players-swat panel panel-info col-xs-6 no-margin no-padding">
-                <div class="panel-heading"><strong>SWAT</strong></div>
+            <div class="round-detail-players-swat panel panel-default col-xs-6 no-margin no-padding">
+                <div class="panel-heading"><strong style="color: blue;">SWAT</strong></div>
                 <div class="panel-body">
                     @if($round->SwatPlayers->isEmpty())
                         <h5>Its lone here.</h5>
@@ -115,8 +115,8 @@
                     @endif
                 </div>
             </div>
-            <div class="round-detail-players-suspects panel panel-danger col-xs-6 no-margin no-padding">
-                <div class="panel-heading"><strong>SUSPECTS</strong></div>
+            <div class="round-detail-players-suspects panel panel-default col-xs-6 no-margin no-padding">
+                <div class="panel-heading"><strong style="color: red">SUSPECTS</strong></div>
                 <div class="panel-body">
                     @if($round->SuspectPlayers->isEmpty())
                         <h5>Its lone here.</h5>

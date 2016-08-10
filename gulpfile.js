@@ -19,14 +19,4 @@ elixir(function(mix) {
     mix.scripts(['js/jquery.js', 'js/bootstrap.min.js', 'js/bootstrap-datetimepicker.min.js', 'js/jquery.poshytip.min.js', 'components/typeahead.js/dist/typeahead.bundle.min.js', 'components/autosize/dist/autosize.min.js', 'js/jquery.infinitescroll.min.js', 'js/jquery.textcomplete.js', 'components/emojione/lib/js/emojione.js', 'js/jquery.dotimeout.min.js', 'js/main.js', 'js/select2.full.min.js', 'js/gauge.min.js'],null,'public');
 
     mix.version(['css/all.css','js/all.js']);
-
-
-    mix.src('./storage/framework/views/*')
-        .pipe(htmlmin({
-            collapseWhitespace:    true,
-            removeAttributeQuotes: true,
-            removeComments:        true,
-            minifyJS:              true,
-        }))
-        .pipe(gulp.dest('./storage/framework/views/'));
 });

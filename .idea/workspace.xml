@@ -2,51 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e189236c-c3e7-488f-b221-e9fb727e1c1d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Server/BracketRoaster.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/notifications/global.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/notifications/navbar.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/tournament/apply.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/tournament/bracket.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/tournament/calendar.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/tournament/create.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/tournament/guidelines.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/tournament/index.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/tournament/manage/getcalculate.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/tournament/manage/getcalculate2.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/tournament/show.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/tournament/showteam.blade.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/npm-debug.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/notifications.blade.php" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/htmlmin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Ban.php" afterPath="$PROJECT_DIR$/app/Ban.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Console/Kernel.php" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Game.php" afterPath="$PROJECT_DIR$/app/Game.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BanController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BanController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CommentController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CommentController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/MailController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/MailController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/MainController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/MainController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/NewsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/NewsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/StatusController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/StatusController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/User.php" afterPath="$PROJECT_DIR$/app/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TManagerController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TManagerController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TournamentController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TournamentController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/KMatch.php" afterPath="$PROJECT_DIR$/app/KMatch.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/KTournament.php" afterPath="$PROJECT_DIR$/app/KTournament.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Listeners/UserRegisterListener.php" afterPath="$PROJECT_DIR$/app/Listeners/UserRegisterListener.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Server/BracketRoaster.php" afterPath="$PROJECT_DIR$/app/Server/BracketRoaster.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/build/css/all.css.map" afterPath="$PROJECT_DIR$/public/build/css/all.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/.htaccess" afterPath="$PROJECT_DIR$/public/.htaccess" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/build/js/all.js.map" afterPath="$PROJECT_DIR$/public/build/js/all.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/build/rev-manifest.json" afterPath="$PROJECT_DIR$/public/build/rev-manifest.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/all.css" afterPath="$PROJECT_DIR$/public/css/all.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/all.css.map" afterPath="$PROJECT_DIR$/public/css/all.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/app.css" afterPath="$PROJECT_DIR$/public/css/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/app.css.map" afterPath="$PROJECT_DIR$/public/css/app.css.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/all.js" afterPath="$PROJECT_DIR$/public/js/all.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/all.js.map" afterPath="$PROJECT_DIR$/public/js/all.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/main.js" afterPath="$PROJECT_DIR$/public/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/less/app.less" afterPath="$PROJECT_DIR$/resources/assets/less/app.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/main.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/main.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/_navbar.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/_navbar.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/_footer.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/_footer.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/_sidebar.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/_sidebar.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/rules.blade.php" afterPath="$PROJECT_DIR$/resources/views/rules.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/statistics/round-details.blade.php" afterPath="$PROJECT_DIR$/resources/views/statistics/round-details.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tournament/bracket.blade.php" afterPath="$PROJECT_DIR$/resources/views/tournament/bracket.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tournament/guidelines.blade.php" afterPath="$PROJECT_DIR$/resources/views/tournament/guidelines.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tournament/manage/getcalculate2.blade.php" afterPath="$PROJECT_DIR$/resources/views/tournament/manage/getcalculate2.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tournament/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/tournament/show.blade.php" />
     </list>
     <ignored path="kos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -78,18 +59,28 @@
       <file leaf-file-name="guidelines.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/tournament/guidelines.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="132" column="16" selection-start-line="132" selection-start-column="16" selection-end-line="132" selection-end-column="16" />
+            <state vertical-scroll-proportion="-5.0">
+              <caret line="59" column="39" selection-start-line="59" selection-start-column="39" selection-end-line="59" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_navbar.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/partials/_navbar.blade.php">
+      <file leaf-file-name="TournamentController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TournamentController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="101" column="67" selection-start-line="101" selection-start-column="67" selection-end-line="101" selection-end-column="67" />
+            <state vertical-scroll-proportion="0.48453608">
+              <caret line="281" column="35" selection-start-line="281" selection-start-column="35" selection-end-line="281" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.1538463">
+              <caret line="252" column="54" selection-start-line="252" selection-start-column="54" selection-end-line="252" selection-end-column="74" />
               <folding />
             </state>
           </provider>
@@ -98,94 +89,13 @@
       <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/tournament/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="380" column="0" selection-start-line="380" selection-start-column="0" selection-end-line="380" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TManagerController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TManagerController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="287" column="45" selection-start-line="287" selection-start-column="45" selection-end-line="287" selection-end-column="45" />
+            <state vertical-scroll-proportion="-5.818182">
+              <caret line="264" column="68" selection-start-line="264" selection-start-column="68" selection-end-line="264" selection-end-column="68" />
               <folding>
-                <element signature="e#40#53#0#PHP" expanded="true" />
+                <element signature="e#7377#7399#0#HTML" expanded="true" />
+                <element signature="e#8233#8275#0#HTML" expanded="true" />
+                <element signature="e#28083#28129#0#HTML" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="getcalculate.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/tournament/manage/getcalculate.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="57" column="23" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KTeam.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/KTeam.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.6923075">
-              <caret line="208" column="9" selection-start-line="208" selection-start-column="9" selection-end-line="208" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.448276">
-              <caret line="376" column="7" selection-start-line="376" selection-start-column="7" selection-end-line="376" selection-end-column="7" />
-              <folding>
-                <marker date="1470780865941" expanded="true" signature="163000:163664" placeholder="..." />
-                <marker date="1470780865941" expanded="true" signature="163033:163154" placeholder="..." />
-                <marker date="1470780865941" expanded="true" signature="163201:163648" placeholder="..." />
-                <marker date="1470780865941" expanded="true" signature="163246:163533" placeholder="..." />
-                <marker date="1470780865941" expanded="true" signature="163421:163516" placeholder="..." />
-                <marker date="1470780865941" expanded="true" signature="163569:163631" placeholder="..." />
-                <marker date="1470780865941" expanded="true" signature="163891:164572" placeholder="..." />
-                <marker date="1470780865941" expanded="true" signature="163925:164057" placeholder="..." />
-                <marker date="1470780865941" expanded="true" signature="164104:164556" placeholder="..." />
-                <marker date="1470780865941" expanded="true" signature="164150:164426" placeholder="..." />
-                <marker date="1470780865941" expanded="true" signature="164329:164409" placeholder="..." />
-                <marker date="1470780865941" expanded="true" signature="164473:164539" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gulpfile.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5940594">
-              <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bracket.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/tournament/bracket.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="225" column="46" selection-start-line="225" selection-start-column="46" selection-end-line="225" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="481" column="37" selection-start-line="481" selection-start-column="30" selection-end-line="481" selection-end-column="37" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -205,14 +115,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/database/migrations/2016_08_03_122119_k_tournament_managers_table.php" />
-        <option value="$PROJECT_DIR$/resources/views/tournament/create.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/tournament/apply.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/KTeamRequest.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_08_02_221917_k_tournament_user_table.php" />
-        <option value="$PROJECT_DIR$/resources/views/tournament/showteam.blade.php" />
-        <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_08_06_212812_create_notifications_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/StatusController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
@@ -220,7 +122,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/MailController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/NewsController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/MainController.php" />
-        <option value="$PROJECT_DIR$/resources/views/rules.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/notifications/navbar.blade.php" />
         <option value="$PROJECT_DIR$/public/css/bootstrap-notifications.css" />
         <option value="$PROJECT_DIR$/app/Notification.php" />
@@ -228,34 +129,43 @@
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/main.blade.php" />
         <option value="$PROJECT_DIR$/resources/assets/less/app.less" />
-        <option value="$PROJECT_DIR$/resources/views/partials/_sidebar.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_08_07_181735_create_k_rounds_table.php" />
         <option value="$PROJECT_DIR$/resources/views/tournament/calendar.blade.php" />
-        <option value="$PROJECT_DIR$/app/KMatch.php" />
         <option value="$PROJECT_DIR$/app/KRound.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_08_02_213228_create_k_teams_table.php" />
-        <option value="$PROJECT_DIR$/app/KTournament.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/BanController.php" />
         <option value="$PROJECT_DIR$/resources/views/notifications/global.blade.php" />
         <option value="$PROJECT_DIR$/app/Console/Commands/BakeBracketCommand.php" />
         <option value="$PROJECT_DIR$/app/Console/Kernel.php" />
         <option value="$PROJECT_DIR$/app/Ban.php" />
-        <option value="$PROJECT_DIR$/app/Server/BracketRoaster.php" />
-        <option value="$PROJECT_DIR$/resources/views/tournament/bracket.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/tournament/manage/getcalculate2.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_08_02_222349_create_k_matches_table.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/TournamentController.php" />
         <option value="$PROJECT_DIR$/resources/views/tournament/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/tournament/show.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/TManagerController.php" />
         <option value="$PROJECT_DIR$/app/Game.php" />
         <option value="$PROJECT_DIR$/resources/views/tournament/manage/getcalculate.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/tournament/guidelines.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/_navbar.blade.php" />
         <option value="$PROJECT_DIR$/app/KTeam.php" />
         <option value="$PROJECT_DIR$/public/js/main.js" />
+        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
+        <option value="$PROJECT_DIR$/config/app.php" />
+        <option value="$PROJECT_DIR$/config/htmlmin.php" />
+        <option value="$PROJECT_DIR$/public/.htaccess" />
+        <option value="$PROJECT_DIR$/resources/views/partials/_footer.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/partials/_sidebar.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/tournament/manage/getcalculate2.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/tournament/bracket.blade.php" />
+        <option value="$PROJECT_DIR$/public/css/app.css" />
+        <option value="$PROJECT_DIR$/resources/views/statistics/round-details.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/tournament/guidelines.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/rules.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/tournament/show.blade.php" />
+        <option value="$PROJECT_DIR$/app/KMatch.php" />
+        <option value="$PROJECT_DIR$/app/Listeners/UserRegisterListener.php" />
+        <option value="$PROJECT_DIR$/app/KTournament.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/TManagerController.php" />
+        <option value="$PROJECT_DIR$/app/Server/BracketRoaster.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/TournamentController.php" />
       </list>
     </option>
   </component>
@@ -304,8 +214,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -498,6 +406,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="database" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -517,6 +439,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="migrations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -588,7 +524,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
+              <option name="myItemId" value="Listeners" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -606,23 +542,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controllers" />
+              <option name="myItemId" value="Console" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="term&#9;ACTION&#9;ActivateTerminalToolWindow&#10;main.js&#9;FILE&#9;file://C:/wamp/www/kos/public/js/main.js&#10;KTeam&#9;FILE&#9;file://C:/wamp/www/kos/app/KTeam.php&#10;nab&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;Game&#9;null&#9;null&#10;calc&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/manage/getcalculate.blade.php&#10;show&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/show.blade.php&#10;rou&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/statistics/round-details.blade.php&#10;Tourn&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/TournamentController.php&#10;inde&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/index.blade.php&#10;rules&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/rules.blade.php&#10;ter&#9;ACTION&#9;ActivateTerminalToolWindow&#10;bra&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/bracket.blade.php&#10;KTE&#9;FILE&#9;file://C:/wamp/www/kos/app/KTeam.php&#10;Tournament&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/TournamentController.php&#10;User&#9;null&#9;null&#10;getc&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/manage/getcalculate.blade.php&#10;getca&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/manage/getcalculate.blade.php&#10;edit&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/user/edit.blade.php&#10;KMa&#9;FILE&#9;file://C:/wamp/www/kos/app/KMatch.php&#10;StatisticsC&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/StatisticsController.php&#10;edit.blade.php&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/user/edit.blade.php&#10;user&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/UserController.php&#10;UserC&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/UserController.php&#10;Roa&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/BracketRoaster.php&#10;showteam.&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/showteam.blade.php&#10;Tour&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/TournamentController.php&#10;Ban&#9;null&#9;null&#10;cal&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/calendar.blade.php&#10;ca&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/calendar.blade.php&#10;Round&#9;FILE&#9;file://C:/wamp/www/kos/app/KRound.php&#10;index&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/index.blade.php&#10;app&#9;FILE&#9;file://C:/wamp/www/kos/resources/assets/less/app.less&#10;main&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/layouts/main.blade.php&#10;na&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;home&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/home.blade.php&#10;boot&#9;FILE&#9;file://C:/wamp/www/kos/public/css/bootstrap-notifications.css&#10;Not&#9;FILE&#9;file://C:/wamp/www/kos/app/Notification.php&#10;mai&#9;FILE&#9;file://C:/wamp/www/kos/public/js/main.js&#10;nav&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/notifications/navbar.blade.php&#10;_na&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;Main&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/MainController.php&#10;Notif&#9;FILE&#9;file://C:/wamp/www/kos/app/Notification.php&#10;MainC&#9;null&#9;null&#10;notification&#9;FILE&#9;file://C:/wamp/www/kos/public/css/bootstrap-notifications.css&#10;notifica&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/notifications.blade.php&#10;KTO&#9;FILE&#9;file://C:/wamp/www/kos/app/KTournament.php&#10;showt&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/showteam.blade.php&#10;Team&#9;FILE&#9;file://C:/wamp/www/kos/app/KTeam.php&#10;KTEa&#9;FILE&#9;file://C:/wamp/www/kos/app/KTeam.php" />
+    <property name="SearchEverywhereHistoryKey" value="Tour&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/TournamentController.php&#10;KTe&#9;FILE&#9;file://C:/wamp/www/kos/app/KTeam.php&#10;KTour&#9;FILE&#9;file://C:/wamp/www/kos/app/KTournament.php&#10;AuthC&#9;null&#9;null&#10;rules&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/rules.blade.php&#10;gamepr&#9;null&#9;null&#10;Game&#9;FILE&#9;file://C:/wamp/www/kos/app/Game.php&#10;round&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/statistics/round-details.blade.php&#10;ter&#9;ACTION&#9;ActivateTerminalToolWindow&#10;show&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/show.blade.php&#10;app.c&#9;FILE&#9;file://C:/wamp/www/kos/public/css/app.css&#10;route&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/routes.php&#10;User&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/UserController.php&#10;getc&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/manage/getcalculate2.blade.php&#10;KMa&#9;FILE&#9;file://C:/wamp/www/kos/app/KMatch.php&#10;KT&#9;FILE&#9;file://C:/wamp/www/kos/app/KTeam.php&#10;sidebar&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;footer.bl&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_footer.blade.php&#10;term&#9;ACTION&#9;ActivateTerminalToolWindow&#10;main.js&#9;FILE&#9;file://C:/wamp/www/kos/public/js/main.js&#10;KTeam&#9;FILE&#9;file://C:/wamp/www/kos/app/KTeam.php&#10;nab&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;calc&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/manage/getcalculate.blade.php&#10;rou&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/statistics/round-details.blade.php&#10;Tourn&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/TournamentController.php&#10;inde&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/index.blade.php&#10;bra&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/bracket.blade.php&#10;KTE&#9;FILE&#9;file://C:/wamp/www/kos/app/KTeam.php&#10;Tournament&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/TournamentController.php&#10;getca&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/manage/getcalculate.blade.php&#10;edit&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/user/edit.blade.php&#10;StatisticsC&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/StatisticsController.php&#10;edit.blade.php&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/user/edit.blade.php&#10;user&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/UserController.php&#10;UserC&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/UserController.php&#10;Roa&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/BracketRoaster.php&#10;showteam.&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/showteam.blade.php&#10;Ban&#9;null&#9;null&#10;cal&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/calendar.blade.php&#10;ca&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/calendar.blade.php&#10;Round&#9;FILE&#9;file://C:/wamp/www/kos/app/KRound.php&#10;index&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/index.blade.php&#10;app&#9;FILE&#9;file://C:/wamp/www/kos/resources/assets/less/app.less&#10;main&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/layouts/main.blade.php&#10;na&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;home&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/home.blade.php&#10;boot&#9;FILE&#9;file://C:/wamp/www/kos/public/css/bootstrap-notifications.css&#10;Not&#9;FILE&#9;file://C:/wamp/www/kos/app/Notification.php&#10;mai&#9;FILE&#9;file://C:/wamp/www/kos/public/js/main.js&#10;nav&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/notifications/navbar.blade.php" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../twitter" />
   </component>
@@ -685,7 +619,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29968455" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30283913" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -708,90 +642,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/assets/less/app.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.91902834">
-          <caret line="600" column="25" selection-start-line="600" selection-start-column="25" selection-end-line="600" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/partials/_sidebar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.60728747">
-          <caret line="15" column="71" selection-start-line="15" selection-start-column="71" selection-end-line="15" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/NotificationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="57" selection-start-line="39" selection-start-column="57" selection-end-line="39" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_08_06_212812_create_notifications_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48582995">
-          <caret line="21" column="65" selection-start-line="21" selection-start-column="65" selection-end-line="21" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_08_02_210830_create_photos_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Notification.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27327934">
-          <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_08_07_181735_create_k_rounds_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6882591">
-          <caret line="18" column="57" selection-start-line="18" selection-start-column="57" selection-end-line="18" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/main.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.4696357">
-          <caret line="61" column="49" selection-start-line="61" selection-start-column="49" selection-end-line="61" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/KRound.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5263158">
-          <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/tournament/calendar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34008098">
-          <caret line="107" column="104" selection-start-line="107" selection-start-column="104" selection-end-line="107" selection-end-column="104" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Server/Presenters/BanPresenter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51417005">
-          <caret line="189" column="0" selection-start-line="189" selection-start-column="0" selection-end-line="189" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/KTournament.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54451346">
-          <caret line="210" column="13" selection-start-line="210" selection-start-column="13" selection-end-line="210" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BanController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3374741">
@@ -820,13 +670,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Console/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6666667">
-          <caret line="29" column="61" selection-start-line="29" selection-start-column="61" selection-end-line="29" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Ban.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.9743589">
@@ -852,20 +695,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.71794873">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Console/Commands/BakeBracketCommand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8487179">
-          <caret line="45" column="55" selection-start-line="45" selection-start-column="55" selection-end-line="45" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Server/BracketRoaster.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7076923">
-          <caret line="114" column="21" selection-start-line="114" selection-start-column="21" selection-end-line="114" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -911,13 +740,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/KMatch.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51282054">
-          <caret line="86" column="58" selection-start-line="86" selection-start-column="58" selection-end-line="86" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2016_08_02_221917_k_tournament_user_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.55641025">
@@ -946,35 +768,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/tournament/manage/getcalculate2.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16897507">
-          <caret line="208" column="51" selection-start-line="208" selection-start-column="51" selection-end-line="208" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/rules.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="20" selection-start-line="9" selection-start-column="16" selection-end-line="14" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.108892925">
-          <caret line="243" column="116" selection-start-line="243" selection-start-column="104" selection-end-line="243" selection-end-column="116" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TournamentController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44827586">
-          <caret line="39" column="32" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/tournament/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5862069">
@@ -982,111 +775,290 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/statistics/round-details.blade.php">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3321234">
-          <caret line="94" column="77" selection-start-line="94" selection-start-column="77" selection-end-line="94" selection-end-column="77" />
+        <state vertical-scroll-proportion="0.25641027">
+          <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/tournament/show.blade.php">
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="380" column="0" selection-start-line="380" selection-start-column="0" selection-end-line="380" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.23076923">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28940567">
+          <caret line="24" column="36824" selection-start-line="24" selection-start-column="36824" selection-end-line="24" selection-end-column="36824" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8076923">
+          <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TManagerController.php">
+    <entry file="file://$PROJECT_DIR$/config/htmlmin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="287" column="45" selection-start-line="287" selection-start-column="45" selection-end-line="287" selection-end-column="45" />
-          <folding>
-            <element signature="e#40#53#0#PHP" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.8717949">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Game.php">
+    <entry file="file://$PROJECT_DIR$/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7241379">
-          <caret line="77" column="34" selection-start-line="77" selection-start-column="34" selection-end-line="77" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.64102566">
+          <caret line="176" column="65" selection-start-line="176" selection-start-column="65" selection-end-line="176" selection-end-column="65" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/tournament/manage/getcalculate.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.051282052">
           <caret line="57" column="23" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/tournament/guidelines.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="132" column="16" selection-start-line="132" selection-start-column="16" selection-end-line="132" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/partials/_navbar.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.051282052">
           <caret line="101" column="67" selection-start-line="101" selection-start-column="67" selection-end-line="101" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/partials/_footer.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.74358976">
+          <caret line="35" column="82" selection-start-line="35" selection-start-column="82" selection-end-line="35" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/partials/_sidebar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7692308">
+          <caret line="15" column="82" selection-start-line="15" selection-start-column="82" selection-end-line="15" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/tournament/manage/getcalculate2.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5862069">
+          <caret line="244" column="41" selection-start-line="244" selection-start-column="41" selection-end-line="244" selection-end-column="41" />
+          <folding>
+            <marker date="1470813686173" expanded="true" signature="6662:6968" placeholder="..." />
+            <marker date="1470813686173" expanded="true" signature="6676:6966" placeholder="..." />
+            <marker date="1470813686173" expanded="true" signature="6688:6932" placeholder="..." />
+            <marker date="1470813686173" expanded="true" signature="12367:12713" placeholder="..." />
+            <marker date="1470813686173" expanded="true" signature="12381:12711" placeholder="..." />
+            <marker date="1470813686173" expanded="true" signature="12393:12677" placeholder="..." />
+            <marker date="1470813686173" expanded="true" signature="13995:14289" placeholder="..." />
+            <marker date="1470813686173" expanded="true" signature="14009:14287" placeholder="..." />
+            <marker date="1470813686173" expanded="true" signature="14030:14253" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.3465518">
+          <caret line="344" column="28" selection-start-line="344" selection-start-column="28" selection-end-line="344" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.54990923">
+          <caret line="184" column="1" selection-start-line="184" selection-start-column="1" selection-end-line="184" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Game.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33147633">
+          <caret line="48" column="13" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Server/Presenters/GamePresenter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.9329897">
+          <caret line="67" column="38" selection-start-line="67" selection-start-column="38" selection-end-line="67" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/statistics/round-details.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8356546">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+          <folding>
+            <element signature="e#555#647#0#HTML" expanded="true" />
+            <element signature="e#752#820#0#HTML" expanded="true" />
+            <element signature="e#1094#1183#0#HTML" expanded="true" />
+            <element signature="e#6147#7969#0#HTML" expanded="false" />
+            <element signature="e#6288#6308#0#HTML" expanded="true" />
+            <element signature="e#8127#8145#0#HTML" expanded="true" />
+            <marker date="1470818471270" expanded="true" signature="7164:7370" placeholder="..." />
+            <marker date="1470818471270" expanded="true" signature="7177:7368" placeholder="..." />
+            <marker date="1470818471270" expanded="true" signature="9017:9232" placeholder="..." />
+            <marker date="1470818471270" expanded="true" signature="9030:9230" placeholder="..." />
+            <marker date="1470818471270" expanded="true" signature="10238:10443" placeholder="..." />
+            <marker date="1470818471270" expanded="true" signature="10251:10441" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/rules.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.742268">
+          <caret line="41" column="21" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="21" />
+          <folding>
+            <element signature="e#1956#1978#0#HTML" expanded="true" />
+            <element signature="e#1997#2022#0#HTML" expanded="true" />
+            <element signature="e#2180#2224#0#HTML" expanded="true" />
+            <element signature="e#2264#2348#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/tournament/bracket.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1597939">
+          <caret line="234" column="42" selection-start-line="234" selection-start-column="42" selection-end-line="234" selection-end-column="42" />
+          <folding>
+            <element signature="e#12615#12691#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.1538463">
+          <caret line="252" column="54" selection-start-line="252" selection-start-column="54" selection-end-line="252" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/KMatch.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="111" column="5" selection-start-line="111" selection-start-column="5" selection-end-line="111" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/tournament/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.818182">
+          <caret line="264" column="68" selection-start-line="264" selection-start-column="68" selection-end-line="264" selection-end-column="68" />
+          <folding>
+            <element signature="e#7377#7399#0#HTML" expanded="true" />
+            <element signature="e#8233#8275#0#HTML" expanded="true" />
+            <element signature="e#28083#28129#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Events/UserRegistered.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0309278">
+          <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Listeners/UserRegisterListener.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.742268">
+          <caret line="63" column="30" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30927834">
+          <caret line="118" column="11" selection-start-line="118" selection-start-column="11" selection-end-line="118" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/KTeam.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.6923075">
-          <caret line="208" column="9" selection-start-line="208" selection-start-column="9" selection-end-line="208" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.49860725">
+          <caret line="68" column="5" selection-start-line="61" selection-start-column="4" selection-end-line="68" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/tournament/bracket.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/KTournament.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="225" column="46" selection-start-line="225" selection-start-column="46" selection-end-line="225" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.7214485">
+          <caret line="271" column="29" selection-start-line="271" selection-start-column="29" selection-end-line="271" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
+    <entry file="file://$PROJECT_DIR$/app/Console/Kernel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="481" column="37" selection-start-line="481" selection-start-column="30" selection-end-line="481" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.7113402">
+          <caret line="29" column="61" selection-start-line="29" selection-start-column="61" selection-end-line="29" selection-end-column="61" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/main.js">
+    <entry file="file://$PROJECT_DIR$/app/Server/BracketRoaster.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.448276">
-          <caret line="376" column="7" selection-start-line="376" selection-start-column="7" selection-end-line="376" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.53608245">
+          <caret line="109" column="19" selection-start-line="109" selection-start-column="19" selection-end-line="109" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Console/Commands/BakeBracketCommand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.53608245">
+          <caret line="45" column="31" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TManagerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33147633">
+          <caret line="92" column="46" selection-start-line="92" selection-start-column="35" selection-end-line="92" selection-end-column="46" />
           <folding>
-            <marker date="1470780865941" expanded="true" signature="163000:163664" placeholder="..." />
-            <marker date="1470780865941" expanded="true" signature="163033:163154" placeholder="..." />
-            <marker date="1470780865941" expanded="true" signature="163201:163648" placeholder="..." />
-            <marker date="1470780865941" expanded="true" signature="163246:163533" placeholder="..." />
-            <marker date="1470780865941" expanded="true" signature="163421:163516" placeholder="..." />
-            <marker date="1470780865941" expanded="true" signature="163569:163631" placeholder="..." />
-            <marker date="1470780865941" expanded="true" signature="163891:164572" placeholder="..." />
-            <marker date="1470780865941" expanded="true" signature="163925:164057" placeholder="..." />
-            <marker date="1470780865941" expanded="true" signature="164104:164556" placeholder="..." />
-            <marker date="1470780865941" expanded="true" signature="164150:164426" placeholder="..." />
-            <marker date="1470780865941" expanded="true" signature="164329:164409" placeholder="..." />
-            <marker date="1470780865941" expanded="true" signature="164473:164539" placeholder="..." />
+            <element signature="e#40#53#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+    <entry file="file://$PROJECT_DIR$/resources/views/tournament/guidelines.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5940594">
-          <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+        <state vertical-scroll-proportion="-5.0">
+          <caret line="59" column="39" selection-start-line="59" selection-start-column="39" selection-end-line="59" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TournamentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48453608">
+          <caret line="281" column="35" selection-start-line="281" selection-start-column="35" selection-end-line="281" selection-end-column="35" />
           <folding />
         </state>
       </provider>

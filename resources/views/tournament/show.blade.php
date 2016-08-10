@@ -150,27 +150,33 @@
 
                             @foreach($round->matches as $match)
                                 <div class="media">
-                                    <div class="media-body">
+                                    <div class="media-body" style="font-size: 80%">
                                         {{--<h4 class="">
                                             <a href="{{ route('tournament.show',$tournament->slug) }}">{{ $tournament->name }}</a>
                                         </h4>--}}
                                         <div class="col-xs-12 no-padding media-heading text-center">
-                                            <div class="col-xs-4 no-padding vs">
+                                            <div class="col-xs-3 no-padding vs">
                                                 <div class="team-name text-bold">
                                                     {!! link_to_route('tournament.team.show',$match->team1->name,[$tournament->slug,$match->team1->id])  !!}
                                                 </div>
                                             </div>
-                                            <div class="col-xs-4" style="border-right: 5px solid dodgerblue">
+                                            <div class="col-xs-3" style="border-right: 5px solid dodgerblue">
                                                 <div class="team-name text-bold">
                                                     {!! link_to_route('tournament.team.show',$match->team2->name,[$tournament->slug,$match->team2->id])  !!}
                                                 </div>
                                             </div>
-                                            <div class="col-xs-4">
+                                            <div class="col-xs-2">
                                                 <img src="/images/flags/20_shiny/{{ $match->team1->country->countryCode.".png" }}" alt="" class="img tooltipster" title="{{ $match->team1->country->countryName }}">
                                                 <img src="/images/flags/20_shiny/{{ $match->team2->country->countryCode.".png" }}" alt="" class="img tooltipster" title="{{ $match->team2->country->countryName }}">
 
                                                 <div class="team-name small">{{ $match->starts_at->toDayDateTimeString() }}</div>
                                             </div>
+                                            @if($match->has_been_played)
+                                                <div class="col-xs-4">
+                                                    {!! $match->getWinningTextForHumans() !!}
+                                                    <br>
+                                                </div>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
@@ -238,7 +244,7 @@
                             </tbody>
                         </table>
                         @else
-                            <i>No Participants yet! Be the first to join this tournament.</i>
+                            <div class="text-center alert alert-danger text-bold">No Participants yet! Be the first to join this tournament.</div>
                         @endif
 
 

@@ -955,10 +955,16 @@ $(document).ready(function ()
     });
 
     //Click and go to round detail even when clicked on <tr> instead of <a>
-    $(".roundstabledata tr").click(function(){
+    /*$(".roundstabledata tr").click(function(){
         var id;
         id = $(this).data('id');
         window.location= "/statistics/round-reports/detail/"+id;
+    });*/
+
+    $("body").on("click",".roundstabledata tr", function(){
+    var id;
+    id = $(this).data('id');
+    window.location= "/statistics/round-reports/detail/"+id;
     });
 
 

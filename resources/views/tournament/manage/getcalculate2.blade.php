@@ -242,6 +242,7 @@
                     "0" => "A Tie",
                     $match->team1->id => $match->team1->name,
                     $match->team2->id => $match->team2->name,
+                     "-1" => "Cancelled",
                     ],null,['class' => 'form-control']) !!}
                     @if ($errors->has('overall_winner_id'))
                         <span class="help-block">

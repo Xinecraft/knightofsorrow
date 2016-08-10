@@ -28,7 +28,7 @@ class KMatch extends Model
      */
     public function tournament()
     {
-        return $this->belongsTo('App\KTournament');
+        return $this->belongsTo('App\KTournament','k_tournament_id');
     }
 
     /**
@@ -109,5 +109,59 @@ class KMatch extends Model
     public function round()
     {
         return $this->belongsTo('App\KRound','k_round_id');
+    }
+
+    /**
+     * @return string
+     */
+   public function getWinningTextForHumans()
+   {
+       if($this->winner_team_id == -1)
+       {
+           return "<i class='text-danger text-bold'>Match Cancelled</i>";
+       }
+       else if($this->winner_team_id == 0)
+       {
+           return "<span class=''>Match tied by <b>{$this->winner_team_won_by}</b></span>";
+       }
+       else if($this->team1->id == $this->winner_team_id)
+       {
+           $winner = $this->team1;
+           $loser = $this->team2;
+           return "<span class=''><span class='text-bold text-green'>".link_to_route('tournament.team.show',$winner->name,[$this->tournament->slug,$winner->id],['class' => 'aingreen text-green'])."</span> beats <span class='text-bold text-danger'>".link_to_route('tournament.team.show',$loser->name,[$this->tournament->slug,$loser->id])."</span> by <br><b>{$this->winner_team_won_by}</b></span>";
+       }
+       else if($this->team2->id == $this->winner_team_id)
+       {
+           $winner = $this->team2;
+           $loser = $this->team1;
+           return "<span class=''><span class='text-bold text-green'>".link_to_route('tournament.team.show',$winner->name,[$this->tournament->slug,$winner->id],['class' => 'aingreen text-green'])."</span> beats <span class='text-bold text-danger'>".link_to_route('tournament.team.show',$loser->name,[$this->tournament->slug,$loser->id])."</span> by <br><b>{$this->winner_team_won_by}</b></span>";
+       }
+   }
+
+    /**
+     * @return string
+     */
+    public function getWinningTextForNotifications()
+    {
+        if($this->winner_team_id == -1)
+        {
+            return "<i class='text-danger text-bold'>Match Cancelled</i>";
+        }
+        else if($this->winner_team_id == 0)
+        {
+            return "<span class=''>Match tied by <b>{$this->winner_team_won_by}</b></span>";
+        }
+        else if($this->team1->id == $this->winner_team_id)
+        {
+            $winner = $this->team1;
+            $loser = $this->team2;
+            return "<span class=''><span class='text-bold text-green'>".link_to_route('tournament.team.show',$winner->name,[$this->tournament->slug,$winner->id],['class' => 'aingreen text-green'])."</span> beats <span class='text-bold text-danger'>".link_to_route('tournament.team.show',$loser->name,[$this->tournament->slug,$loser->id])."</span> by <b>{$this->winner_team_won_by}</b></span>";
+        }
+        else if($this->team2->id == $this->winner_team_id)
+        {
+            $winner = $this->team2;
+            $loser = $this->team1;
+            return "<span class=''><span class='text-bold text-green'>".link_to_route('tournament.team.show',$winner->name,[$this->tournament->slug,$winner->id],['class' => 'aingreen text-green'])."</span> beats <span class='text-bold text-danger'>".link_to_route('tournament.team.show',$loser->name,[$this->tournament->slug,$loser->id])."</span> by <b>{$this->winner_team_won_by}</b></span>";
+        }
     }
 }

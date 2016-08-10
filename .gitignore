@@ -7,3 +7,4 @@ _ide_helper.php
 /public/build/*
 tests/_output/*
 npm-debug.log
+/public/uploaded_images/*

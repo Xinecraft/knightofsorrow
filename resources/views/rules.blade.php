@@ -25,6 +25,25 @@
                 <p style="padding-bottom:20px">Respect these rules so everyone can have a fun gameplay experience or <span class="text-bold">risk getting kicked/banned</span>.</p>	</div>
         </div>
 
+        @if(Auth::check() && Auth::user()->isAdmin())
+        <div class="panel" style="padding: 20px;">
+            <div style="padding-left:10px">
+                <h3 class="text"><b>Rules for </b>&nbsp;<i title="Administrator" class="tooltipster fa fa-user-secret fa-2x"></i> </h3>
+                <hr style="margin-top: 10px;margin-bottom: 10px">
+                <ul class="ruleslist" style="list-style-type: square;font-family: 'Ubuntu', Helvetica, Arial, sans-serif;">
+                    <li>Don't kick/ban without reason.</li>
+                    <li>Be <b>polite</b> with players.</li>
+                    <li>Warn <b>3 times</b> before kick/ban.</li>
+                    <li>Don't <b>unban</b> the bans added by other admins without their permission.</li>
+                    <li>Don't <b>switch</b> player/teams without reason. Use balance team instead.</li>
+                    <li>Don't change <b>Server settings</b> without senior permission.</li>
+                    <li>Don't change map or lock/unlock teams without <b>majority</b> support.</li>
+                    <li>Don't <b>misuse</b> your powers.</li>
+                </ul>
+            </div>
+        </div>
+        @endif
+
 
     </div>
 @endsection

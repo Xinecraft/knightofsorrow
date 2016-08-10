@@ -64,6 +64,7 @@
             <li>A player can't leave/change team once registration time expires, and also no team can be created.</li>
             <li>Team will not be included in tournament even qualified if minimum required players is not met.</li>
             <li>Teams & Players will be Ranked separately when tournament ends.</li>
+            <li>All <b>Time</b> provided are according to ServerTime <i class="small">(UTC)</i>. You can see current ServerTime at footer of website.</li>
             <li>If you need any support, Please contact any manager or super administrator.</li>
         </ul>
     </div>

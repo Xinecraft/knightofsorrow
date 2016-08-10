@@ -129,7 +129,7 @@ class TournamentController extends Controller
     public function show($slug)
     {
 
-        $tournament = KTournament::whereSlug($slug)->first();
+        $tournament = KTournament::enabled()->whereSlug($slug)->first();
 
         if(!$tournament)
             abort(404);
@@ -143,7 +143,7 @@ class TournamentController extends Controller
      */
     public function getBracket($slug)
     {
-        $tournament = KTournament::whereSlug($slug)->first();
+        $tournament = KTournament::enabled()->whereSlug($slug)->first();
         if(!$tournament)
             abort(404);
         //dd($tournament->managers->isEmpty());
@@ -157,7 +157,7 @@ class TournamentController extends Controller
      */
     public function applyForUser($slug)
     {
-        $tournament = KTournament::whereSlug($slug)->first();
+        $tournament = KTournament::enabled()->whereSlug($slug)->first();
         if(!$tournament)
             abort(404);
 
@@ -211,7 +211,7 @@ class TournamentController extends Controller
      */
     public function applyForUserNewTeam($id, KTeamRequest $request)
     {
-        $tournament = KTournament::findOrFail($id);
+        $tournament = KTournament::enabled()->findOrFail($id);
 
         $name = $request->name;
 
@@ -277,7 +277,7 @@ class TournamentController extends Controller
      */
     public function applyForUserExistingTeam($id,Request $request)
     {
-        $tournament = KTournament::findOrFail($id);
+        $tournament = KTournament::enabled()->findOrFail($id);
         $team = $request->team;
         $team = KTeam::find($team);
 
@@ -337,7 +337,7 @@ class TournamentController extends Controller
      */
     public function leaveTournamentForUser($id,Request $request)
     {
-        $tournament = KTournament::findOrFail($id);
+        $tournament = KTournament::enabled()->findOrFail($id);
         $team = $request->user()->getTeamOfUserForTournament($tournament);
         if(!$team)
             abort(404);
@@ -410,6 +410,8 @@ class TournamentController extends Controller
 
         $user = User::findOrFail($request->user_id);
         $team = KTeam::findOrFail($request->team_id);
+
+        //@TODO Maybe validate this for is enabled()
         $tournament = KTournament::whereSlug($slug)->first();
 
         // Only if user has enough power
@@ -462,6 +464,8 @@ class TournamentController extends Controller
 
         $user = User::findOrFail($request->user_id);
         $team = KTeam::findOrFail($request->team_id);
+
+        //@TODO Maybe validate for enabled()
         $tournament = KTournament::whereSlug($slug)->first();
 
         // Only if user has enough power

@@ -256,4 +256,22 @@ class KTournament extends Model
         return false;
     }
 
+    /**
+     * @param $query
+     * @return mixed
+     */
+    public function scopeDisabled($query)
+    {
+        return $query->where('disabled', true);
+    }
+
+    /**
+     * @param $query
+     * @return mixed
+     */
+    public function scopeEnabled($query)
+    {
+        return $query->where('disabled', false);
+    }
+
 }
