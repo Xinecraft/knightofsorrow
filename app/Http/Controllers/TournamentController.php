@@ -24,8 +24,16 @@ class TournamentController extends Controller
      */
     public function index()
     {
-        $tournaments = KTournament::where('disabled','false')->latest()->get();
-        return view('tournament.index')->with('tournaments',$tournaments);
+        $lasttourny = KTournament::enabled()->orderBy('tournament_ends_at','DESC')->where('tournament_ends_at','!=','null')->first();
+        $upcomingtourny = KTournament::enabled()->orderBy('registration_starts_at','ASC')->where('tournament_starts_at','>',Carbon::now())->where('tournament_ends_at',null)->first();
+        $ongoingtourny = KTournament::enabled()->orderBy('tournament_starts_at','DESC')->where('tournament_starts_at','<',Carbon::now())->where('tournament_ends_at',null)->first();
+        $array = [
+            'last' => $lasttourny,
+            'upcoming' => $upcomingtourny,
+            'ongoing' => $ongoingtourny,
+        ];
+
+        return view('tournament.index')->with($array);
     }
 
 

@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e189236c-c3e7-488f-b221-e9fb727e1c1d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/partials/_tournavbar.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/tournament/rankingsingle.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/tournament/rankingteams.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/NewsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/NewsController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TournamentController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TournamentController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/KTeam.php" afterPath="$PROJECT_DIR$/app/KTeam.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Server/Presenters/UserPresenter.php" afterPath="$PROJECT_DIR$/app/Server/Presenters/UserPresenter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/User.php" afterPath="$PROJECT_DIR$/app/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tournament/calendar.blade.php" afterPath="$PROJECT_DIR$/resources/views/tournament/calendar.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tournament/guidelines.blade.php" afterPath="$PROJECT_DIR$/resources/views/tournament/guidelines.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tournament/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/tournament/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tournament/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/tournament/show.blade.php" />
     </list>
     <ignored path="kos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,51 +34,60 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="guidelines.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/tournament/guidelines.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.1538461">
-              <caret line="39" column="35" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="rankingsingle.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/tournament/rankingsingle.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.9818182">
-              <caret line="26" column="56" selection-start-line="26" selection-start-column="56" selection-end-line="26" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="TournamentController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TournamentController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.1636364">
-              <caret line="42" column="61" selection-start-line="42" selection-start-column="55" selection-end-line="42" selection-end-column="61" />
+            <state vertical-scroll-proportion="-12.307693">
+              <caret line="27" column="71" selection-start-line="27" selection-start-column="71" selection-end-line="27" selection-end-column="71" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rankingteams.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/tournament/rankingteams.blade.php">
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/tournament/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.0">
-              <caret line="50" column="24" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
+            <state vertical-scroll-proportion="-3.2545455">
+              <caret line="202" column="47" selection-start-line="202" selection-start-column="47" selection-end-line="202" selection-end-column="47" />
+              <folding>
+                <element signature="e#2612#2645#0#HTML" expanded="true" />
+                <element signature="e#2680#2735#0#HTML" expanded="true" />
+                <element signature="e#3010#3126#0#HTML" expanded="true" />
+                <element signature="e#3530#3554#0#HTML" expanded="true" />
+                <element signature="e#5553#5586#0#HTML" expanded="true" />
+                <element signature="e#5621#5676#0#HTML" expanded="true" />
+                <element signature="e#5910#5943#0#HTML" expanded="true" />
+                <element signature="e#5978#6033#0#HTML" expanded="true" />
+                <element signature="e#6142#6175#0#HTML" expanded="true" />
+                <element signature="e#6210#6265#0#HTML" expanded="true" />
+                <element signature="e#6446#6479#0#HTML" expanded="true" />
+                <element signature="e#6514#6569#0#HTML" expanded="true" />
+                <element signature="e#6838#6955#0#HTML" expanded="true" />
+                <element signature="e#7332#7356#0#HTML" expanded="true" />
+                <element signature="e#9195#9228#0#HTML" expanded="true" />
+                <element signature="e#9263#9318#0#HTML" expanded="true" />
+                <element signature="e#9579#9692#0#HTML" expanded="true" />
+                <element signature="e#10093#10117#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewsController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/NewsController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7938144">
+              <caret line="147" column="78" selection-start-line="147" selection-start-column="78" selection-end-line="147" selection-end-column="78" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_tournavbar.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/partials/_tournavbar.blade.php">
+      <file leaf-file-name="KTournament.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/KTournament.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33247423">
-              <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+            <state vertical-scroll-proportion="-5.0384617">
+              <caret line="134" column="68" selection-start-line="134" selection-start-column="68" selection-end-line="134" selection-end-column="68" />
               <folding />
             </state>
           </provider>
@@ -108,7 +108,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Controllers/NewsController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/MainController.php" />
         <option value="$PROJECT_DIR$/resources/views/notifications/navbar.blade.php" />
         <option value="$PROJECT_DIR$/public/css/bootstrap-notifications.css" />
@@ -149,16 +148,17 @@
         <option value="$PROJECT_DIR$/resources/views/partials/_navbar.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/tournament/guidelines.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/tournament/calendar.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/tournament/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/tournament/show.blade.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/app/Server/Presenters/UserPresenter.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/TournamentController.php" />
         <option value="$PROJECT_DIR$/resources/views/tournament/rankingsingle.blade.php" />
         <option value="$PROJECT_DIR$/app/KTeam.php" />
         <option value="$PROJECT_DIR$/resources/views/tournament/rankingteams.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/_tournavbar.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/TournamentController.php" />
+        <option value="$PROJECT_DIR$/resources/views/tournament/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/NewsController.php" />
       </list>
     </option>
   </component>
@@ -207,6 +207,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -541,15 +543,13 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="_&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_tournavbar.blade.php&#10;Team&#9;FILE&#9;file://C:/wamp/www/kos/app/KTeam.php&#10;route&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/routes.php&#10;show&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/show.blade.php&#10;UserPre&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Presenters/UserPresenter.php&#10;Tour&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/TournamentController.php&#10;User&#9;FILE&#9;file://C:/wamp/www/kos/app/User.php&#10;_tour&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_tournavbar.blade.php&#10;index&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/index.blade.php&#10;_statis&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_statistics-navbar.blade.php&#10;nav&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;KTe&#9;FILE&#9;file://C:/wamp/www/kos/app/KTeam.php&#10;KTour&#9;FILE&#9;file://C:/wamp/www/kos/app/KTournament.php&#10;AuthC&#9;null&#9;null&#10;rules&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/rules.blade.php&#10;gamepr&#9;null&#9;null&#10;Game&#9;FILE&#9;file://C:/wamp/www/kos/app/Game.php&#10;round&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/statistics/round-details.blade.php&#10;ter&#9;ACTION&#9;ActivateTerminalToolWindow&#10;app.c&#9;FILE&#9;file://C:/wamp/www/kos/public/css/app.css&#10;getc&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/manage/getcalculate2.blade.php&#10;KMa&#9;FILE&#9;file://C:/wamp/www/kos/app/KMatch.php&#10;KT&#9;FILE&#9;file://C:/wamp/www/kos/app/KTeam.php&#10;sidebar&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;footer.bl&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_footer.blade.php&#10;term&#9;ACTION&#9;ActivateTerminalToolWindow&#10;main.js&#9;FILE&#9;file://C:/wamp/www/kos/public/js/main.js&#10;KTeam&#9;FILE&#9;file://C:/wamp/www/kos/app/KTeam.php&#10;nab&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;calc&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/manage/getcalculate.blade.php&#10;rou&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/statistics/round-details.blade.php&#10;Tourn&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/TournamentController.php&#10;inde&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/index.blade.php&#10;bra&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/bracket.blade.php&#10;KTE&#9;FILE&#9;file://C:/wamp/www/kos/app/KTeam.php&#10;Tournament&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/TournamentController.php&#10;getca&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/manage/getcalculate.blade.php&#10;edit&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/user/edit.blade.php&#10;StatisticsC&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/StatisticsController.php&#10;edit.blade.php&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/user/edit.blade.php&#10;user&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/UserController.php&#10;UserC&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/UserController.php&#10;Roa&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/BracketRoaster.php&#10;showteam.&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/showteam.blade.php&#10;Ban&#9;null&#9;null&#10;cal&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/calendar.blade.php&#10;ca&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/calendar.blade.php&#10;Round&#9;FILE&#9;file://C:/wamp/www/kos/app/KRound.php&#10;app&#9;FILE&#9;file://C:/wamp/www/kos/resources/assets/less/app.less&#10;main&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/layouts/main.blade.php" />
+    <property name="SearchEverywhereHistoryKey" value="NewsC&#9;null&#9;null&#10;inde&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/index.blade.php&#10;KTou&#9;FILE&#9;file://C:/wamp/www/kos/app/KTournament.php&#10;_&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_tournavbar.blade.php&#10;Team&#9;FILE&#9;file://C:/wamp/www/kos/app/KTeam.php&#10;route&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/routes.php&#10;show&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/show.blade.php&#10;UserPre&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Presenters/UserPresenter.php&#10;Tour&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/TournamentController.php&#10;User&#9;FILE&#9;file://C:/wamp/www/kos/app/User.php&#10;_tour&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_tournavbar.blade.php&#10;index&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/index.blade.php&#10;_statis&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_statistics-navbar.blade.php&#10;nav&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;KTe&#9;FILE&#9;file://C:/wamp/www/kos/app/KTeam.php&#10;KTour&#9;FILE&#9;file://C:/wamp/www/kos/app/KTournament.php&#10;AuthC&#9;null&#9;null&#10;rules&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/rules.blade.php&#10;gamepr&#9;null&#9;null&#10;Game&#9;FILE&#9;file://C:/wamp/www/kos/app/Game.php&#10;round&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/statistics/round-details.blade.php&#10;ter&#9;ACTION&#9;ActivateTerminalToolWindow&#10;app.c&#9;FILE&#9;file://C:/wamp/www/kos/public/css/app.css&#10;getc&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/manage/getcalculate2.blade.php&#10;KMa&#9;FILE&#9;file://C:/wamp/www/kos/app/KMatch.php&#10;KT&#9;FILE&#9;file://C:/wamp/www/kos/app/KTeam.php&#10;sidebar&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;footer.bl&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_footer.blade.php&#10;term&#9;ACTION&#9;ActivateTerminalToolWindow&#10;main.js&#9;FILE&#9;file://C:/wamp/www/kos/public/js/main.js&#10;KTeam&#9;FILE&#9;file://C:/wamp/www/kos/app/KTeam.php&#10;nab&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;calc&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/manage/getcalculate.blade.php&#10;rou&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/statistics/round-details.blade.php&#10;Tourn&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/TournamentController.php&#10;bra&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/bracket.blade.php&#10;KTE&#9;FILE&#9;file://C:/wamp/www/kos/app/KTeam.php&#10;Tournament&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/TournamentController.php&#10;getca&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/manage/getcalculate.blade.php&#10;edit&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/user/edit.blade.php&#10;StatisticsC&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/StatisticsController.php&#10;edit.blade.php&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/user/edit.blade.php&#10;user&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/UserController.php&#10;UserC&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/UserController.php&#10;Roa&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/BracketRoaster.php&#10;showteam.&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/showteam.blade.php&#10;Ban&#9;null&#9;null&#10;cal&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/calendar.blade.php&#10;ca&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/calendar.blade.php&#10;Round&#9;FILE&#9;file://C:/wamp/www/kos/app/KRound.php" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../twitter" />
   </component>
@@ -603,7 +603,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24011713" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -612,7 +612,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30283913" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30283913" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -635,13 +635,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/tournament/apply.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71794873">
-          <caret line="49" column="18" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/ban/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4871795">
@@ -709,7 +702,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.64102566">
           <caret line="176" column="65" selection-start-line="176" selection-start-column="65" selection-end-line="176" selection-end-column="65" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -717,7 +709,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.051282052">
           <caret line="57" column="23" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -725,7 +716,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.74358976">
           <caret line="35" column="82" selection-start-line="35" selection-start-column="82" selection-end-line="35" selection-end-column="82" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -733,7 +723,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7692308">
           <caret line="15" column="82" selection-start-line="15" selection-start-column="82" selection-end-line="15" selection-end-column="82" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -741,17 +730,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5862069">
           <caret line="244" column="41" selection-start-line="244" selection-start-column="41" selection-end-line="244" selection-end-column="41" />
-          <folding>
-            <marker date="1470813686173" expanded="true" signature="6662:6968" placeholder="..." />
-            <marker date="1470813686173" expanded="true" signature="6676:6966" placeholder="..." />
-            <marker date="1470813686173" expanded="true" signature="6688:6932" placeholder="..." />
-            <marker date="1470813686173" expanded="true" signature="12367:12713" placeholder="..." />
-            <marker date="1470813686173" expanded="true" signature="12381:12711" placeholder="..." />
-            <marker date="1470813686173" expanded="true" signature="12393:12677" placeholder="..." />
-            <marker date="1470813686173" expanded="true" signature="13995:14289" placeholder="..." />
-            <marker date="1470813686173" expanded="true" signature="14009:14287" placeholder="..." />
-            <marker date="1470813686173" expanded="true" signature="14030:14253" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -759,7 +737,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.3465518">
           <caret line="344" column="28" selection-start-line="344" selection-start-column="28" selection-end-line="344" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -767,7 +744,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.54990923">
           <caret line="184" column="1" selection-start-line="184" selection-start-column="1" selection-end-line="184" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -775,7 +751,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33147633">
           <caret line="48" column="13" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -783,7 +758,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.9329897">
           <caret line="67" column="38" selection-start-line="67" selection-start-column="38" selection-end-line="67" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -791,20 +765,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8356546">
           <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-          <folding>
-            <element signature="e#555#647#0#HTML" expanded="true" />
-            <element signature="e#752#820#0#HTML" expanded="true" />
-            <element signature="e#1094#1183#0#HTML" expanded="true" />
-            <element signature="e#6147#7969#0#HTML" expanded="false" />
-            <element signature="e#6288#6308#0#HTML" expanded="true" />
-            <element signature="e#8127#8145#0#HTML" expanded="true" />
-            <marker date="1470818471270" expanded="true" signature="7164:7370" placeholder="..." />
-            <marker date="1470818471270" expanded="true" signature="7177:7368" placeholder="..." />
-            <marker date="1470818471270" expanded="true" signature="9017:9232" placeholder="..." />
-            <marker date="1470818471270" expanded="true" signature="9030:9230" placeholder="..." />
-            <marker date="1470818471270" expanded="true" signature="10238:10443" placeholder="..." />
-            <marker date="1470818471270" expanded="true" signature="10251:10441" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -812,12 +772,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.742268">
           <caret line="41" column="21" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="21" />
-          <folding>
-            <element signature="e#1956#1978#0#HTML" expanded="true" />
-            <element signature="e#1997#2022#0#HTML" expanded="true" />
-            <element signature="e#2180#2224#0#HTML" expanded="true" />
-            <element signature="e#2264#2348#0#HTML" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -825,9 +779,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.1597939">
           <caret line="234" column="42" selection-start-line="234" selection-start-column="42" selection-end-line="234" selection-end-column="42" />
-          <folding>
-            <element signature="e#12615#12691#0#HTML" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -835,7 +786,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="111" column="5" selection-start-line="111" selection-start-column="5" selection-end-line="111" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -843,7 +793,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.0309278">
           <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -851,7 +800,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.742268">
           <caret line="63" column="30" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -859,15 +807,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.30927834">
           <caret line="118" column="11" selection-start-line="118" selection-start-column="11" selection-end-line="118" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/KTournament.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7214485">
-          <caret line="271" column="29" selection-start-line="271" selection-start-column="29" selection-end-line="271" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -875,7 +814,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7113402">
           <caret line="29" column="61" selection-start-line="29" selection-start-column="61" selection-end-line="29" selection-end-column="61" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -883,7 +821,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.53608245">
           <caret line="45" column="31" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -891,9 +828,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33147633">
           <caret line="92" column="46" selection-start-line="92" selection-start-column="35" selection-end-line="92" selection-end-column="46" />
-          <folding>
-            <element signature="e#40#53#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -901,7 +835,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -909,7 +842,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.41237113">
           <caret line="23" column="47" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -917,7 +849,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.57216495">
           <caret line="109" column="19" selection-start-line="109" selection-start-column="19" selection-end-line="109" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -925,15 +856,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.41237113">
           <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/tournament/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.6538463">
-          <caret line="94" column="40" selection-start-line="94" selection-start-column="40" selection-end-line="94" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -941,7 +863,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.46391752">
           <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -949,13 +870,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.05154639">
           <caret line="1" column="40" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/tournament/guidelines.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.1538461">
+        <state vertical-scroll-proportion="0.0">
           <caret line="39" column="35" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
           <folding />
         </state>
@@ -965,9 +885,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.41237113">
           <caret line="44" column="14" selection-start-line="44" selection-start-column="14" selection-end-line="44" selection-end-column="14" />
-          <folding>
-            <element signature="e#214#2867#0#HTML" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -975,7 +892,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5438144">
           <caret line="25" column="59" selection-start-line="25" selection-start-column="59" selection-end-line="25" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -991,9 +907,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33147633">
           <caret line="65" column="98" selection-start-line="65" selection-start-column="94" selection-end-line="65" selection-end-column="98" />
-          <folding>
-            <element signature="e#6#1166#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1001,7 +914,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.8659794">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1009,7 +921,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.55431753">
           <caret line="404" column="180" selection-start-line="404" selection-start-column="114" selection-end-line="404" selection-end-column="180" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1017,7 +928,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36082473">
           <caret line="244" column="116" selection-start-line="244" selection-start-column="116" selection-end-line="244" selection-end-column="116" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1025,13 +935,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.71014494">
           <caret line="55" column="11" selection-start-line="55" selection-start-column="11" selection-end-line="55" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/tournament/rankingsingle.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9818182">
+        <state vertical-scroll-proportion="0.0">
           <caret line="26" column="56" selection-start-line="26" selection-start-column="56" selection-end-line="26" selection-end-column="56" />
           <folding />
         </state>
@@ -1045,26 +954,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TournamentController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/partials/_tournavbar.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.1636364">
-          <caret line="42" column="61" selection-start-line="42" selection-start-column="55" selection-end-line="42" selection-end-column="61" />
+        <state vertical-scroll-proportion="0.5489691">
+          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/tournament/rankingteams.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.0">
-          <caret line="50" column="24" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
+        <state vertical-scroll-proportion="2.7835052">
+          <caret line="54" column="23" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/partials/_tournavbar.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/KTournament.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33247423">
-          <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+        <state vertical-scroll-proportion="-5.0384617">
+          <caret line="134" column="68" selection-start-line="134" selection-start-column="68" selection-end-line="134" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TournamentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.307693">
+          <caret line="27" column="71" selection-start-line="27" selection-start-column="71" selection-end-line="27" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/tournament/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.2545455">
+          <caret line="202" column="47" selection-start-line="202" selection-start-column="47" selection-end-line="202" selection-end-column="47" />
+          <folding>
+            <element signature="e#2612#2645#0#HTML" expanded="true" />
+            <element signature="e#2680#2735#0#HTML" expanded="true" />
+            <element signature="e#3010#3126#0#HTML" expanded="true" />
+            <element signature="e#3530#3554#0#HTML" expanded="true" />
+            <element signature="e#5553#5586#0#HTML" expanded="true" />
+            <element signature="e#5621#5676#0#HTML" expanded="true" />
+            <element signature="e#5910#5943#0#HTML" expanded="true" />
+            <element signature="e#5978#6033#0#HTML" expanded="true" />
+            <element signature="e#6142#6175#0#HTML" expanded="true" />
+            <element signature="e#6210#6265#0#HTML" expanded="true" />
+            <element signature="e#6446#6479#0#HTML" expanded="true" />
+            <element signature="e#6514#6569#0#HTML" expanded="true" />
+            <element signature="e#6838#6955#0#HTML" expanded="true" />
+            <element signature="e#7332#7356#0#HTML" expanded="true" />
+            <element signature="e#9195#9228#0#HTML" expanded="true" />
+            <element signature="e#9263#9318#0#HTML" expanded="true" />
+            <element signature="e#9579#9692#0#HTML" expanded="true" />
+            <element signature="e#10093#10117#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/NewsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7938144">
+          <caret line="147" column="78" selection-start-line="147" selection-start-column="78" selection-end-line="147" selection-end-column="78" />
           <folding />
         </state>
       </provider>

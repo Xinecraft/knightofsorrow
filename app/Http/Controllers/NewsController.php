@@ -57,12 +57,12 @@ class NewsController extends Controller
     {
         $slug = str_limit(str_slug($request->title),50)."--author-{$request->user()->username}";
 
-        $news  = News::where('summary',$slug)->first();
+        /*$news  = News::where('summary',$slug)->first();
 
         if($news)
         {
             $slug = str_limit(str_slug($request->title),50)."-".time()."--author-{$request->user()->username}";
-        }
+        }*/
 
         $news = $request->user()->news()->create([
             'title' => $request->title,
@@ -117,12 +117,12 @@ class NewsController extends Controller
 
         $slug = str_limit(str_slug($request->title),50)."--author-{$request->user()->username}";
 
-        $news  = News::where('summary',$slug)->first();
+        /*$news  = News::where('summary',$slug)->first();
 
         if($news)
         {
             $slug = str_limit(str_slug($request->title),50)."-".time()."--author-{$request->user()->username}";
-        }
+        }*/
 
 
         $news = $getNews->update([

@@ -37,7 +37,7 @@
             padding: 16px;
         }
         .card .card-content {
-            padding: 16px;
+            padding: 5px;
             border-radius: 0 0 2px 2px;
             background-clip: padding-box;
             box-sizing: border-box;
@@ -51,7 +51,7 @@
         }
         .card .card-action {
             border-top: 1px solid rgba(160, 160, 160, 0.2);
-            padding: 16px;
+            padding: 5px;
         }
         .card .card-action a {
             color: #fff;
@@ -94,64 +94,177 @@
     <div class="col-xs-12 padding10">
         @include('partials._tournavbar')
 
+        <div class="row">
+            <div class="col-xs-4">
+                <div class="panel pad5" style="padding: 10px !important;">
+                    <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">On Going Tourny</h4>
+                    @if($ongoing == null)
+                        <p class=""><i>No Ongoing Tournament</i></p>
+                    @else
+                        <div class="card no-padding no-margin">
+                            <div class="card-image" style="min-height:250px; background-image: url('uploaded_images/{{ $ongoing->photo->url }}');background-size: cover">
+                                <span class="card-title">{{ $ongoing->name }}</span>
+                            </div>
+                            <div class="card-user">
+                                {{--<img class="img-responsive userpic" src="/images/swat4.png">--}}
+                            </div>
+                            <div class="card-content">
+                                <table style="font-size: large" class="no-margin table table-striped table-hover table-bordered">
+                                    <tbody><tr>
+                                        <td>Game Name</td>
+                                        <td>
+                                            <b>{{ $ongoing->game_name }}</b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Game Type</td>
+                                        <td>
+                                            <b>{{ $ongoing->game_type }}</b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tournament Type</td>
+                                        <td>
+                                            <b>{{ $ongoing->getHumanReadableType() }}</b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Participants
+                                        </td>
+                                        <td>
+                                            <b>{!! $ongoing->teams()->where('team_status','1')->count() . " / " . $ongoing->maximum_participants  !!}</b>
+                                        </td>
+                                    </tr>
+                                    </tbody></table>
+                            </div>
 
-        @foreach(array_chunk($tournaments->all(),2) as $tours)
-            <div class="row">
-            @forelse($tours as $tournament)
-            <div class="card col-xs-5 panel no-padding">
-                <div class="card-image" style="min-height:250px; background-image: url('uploaded_images/{{ $tournament->photo->url }}');background-size: cover">
-                    <span class="card-title">{{ $tournament->name }}</span>
-                </div>
-                <div class="card-user">
-                    <img class="img-responsive userpic" src="/images/swat4.png">
-                </div>
-                <div class="card-content">
-                    <table style="font-size: large" class="table table-striped table-hover table-bordered">
-                        <tbody><tr>
-                            <td>Game Name</td>
-                            <td>
-                                <b>{{ $tournament->game_name }}</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Game Type</td>
-                            <td>
-                                <b>{{ $tournament->game_type }}</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Tournament Type</td>
-                            <td>
-                                <b>{{ $tournament->getHumanReadableType() }}</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Tournament Status
-                            </td>
-                            <td>
-                                <b>{!! $tournament->getHumanReadableStatus()  !!}</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Participants
-                            </td>
-                            <td>
-                                <b>{!! $tournament->teams()->where('team_status','1')->count() . " / " . $tournament->maximum_participants  !!}</b>
-                            </td>
-                        </tr>
-                        </tbody></table>
-                </div>
-
-                <div class="card-action">
-                    <a class="btn btn-primary btn-block btn-sm" href="{{ route('tournament.show',$tournament->slug) }}">View Details</a>
+                            <div class="card-action">
+                                <a class="btn btn-primary btn-block btn-sm" href="{{ route('tournament.show',$ongoing->slug) }}">View Details</a>
+                            </div>
+                        </div>
+                    @endif
                 </div>
             </div>
-        @empty
-        @endforelse
+
+            <div class="col-xs-4">
+                <div class="panel pad5" style="padding: 10px !important;">
+                    <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Videos</h4>
+                    <iframe id="kosTourVideo" width="100%" height="100%" src="http://youtube.com/embed/7lDxjRfKjVM" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="panel pad5" style="padding: 10px !important;">
+                    <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">News</h4>
+                    <i>No News</i>
+                </div>
+                <div class="panel pad5" style="padding: 10px !important;">
+                    <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Player of the Month</h4>
+                    <i>No Player</i>
+                </div>
+            </div>
+
+            <div class="col-xs-4">
+                <div class="panel pad5" style="padding: 10px !important;">
+                    <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Upcoming Tourny</h4>
+                    @if($upcoming == null)
+                        <p class=""><i>No Upcoming Tournament</i></p>
+                    @else
+                    <div class="card no-padding no-margin">
+                        <div class="card-image" style="min-height:250px; background-image: url('uploaded_images/{{ $upcoming->photo->url }}');background-size: cover">
+                            <span class="card-title">{{ $upcoming->name }}</span>
+                        </div>
+                        <div class="card-user">
+                            {{--<img class="img-responsive userpic" src="/images/swat4.png">--}}
+                        </div>
+                        <div class="card-content">
+                            <table style="font-size: large" class="table no-margin table-striped table-hover table-bordered">
+                                <tbody><tr>
+                                    <td>Game Name</td>
+                                    <td>
+                                        <b>{{ $upcoming->game_name }}</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Game Type</td>
+                                    <td>
+                                        <b>{{ $upcoming->game_type }}</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Tournament Type</td>
+                                    <td>
+                                        <b>{{ $upcoming->getHumanReadableType() }}</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Participants
+                                    </td>
+                                    <td>
+                                        <b>{!! $upcoming->teams()->where('team_status','1')->count() . " / " . $upcoming->maximum_participants  !!}</b>
+                                    </td>
+                                </tr>
+                                </tbody></table>
+                        </div>
+
+                        <div class="card-action">
+                            <a class="btn btn-primary btn-block btn-sm" href="{{ route('tournament.show',$upcoming->slug) }}">View Details</a>
+                        </div>
+                    </div>
+                    @endif
+                </div>
+                
+                <div class="panel pad5" style="padding: 10px !important;">
+                    <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Last Tourny</h4>
+                    @if($last == null)
+                    <p class=""><i>No Past Tournament</i></p>
+                    @else
+                        <div class="card no-padding no-margin">
+                            <div class="card-image" style="min-height:250px; background-image: url('uploaded_images/{{ $last->photo->url }}');background-size: cover">
+                                <span class="card-title">{{ $last->name }}</span>
+                            </div>
+                            <div class="card-user">
+                                {{--<img class="img-responsive userpic" src="/images/swat4.png">--}}
+                            </div>
+                            <div class="card-content">
+                                <table style="font-size: large" class="table no-margin table-striped table-hover table-bordered">
+                                    <tbody><tr>
+                                        <td>Game Name</td>
+                                        <td>
+                                            <b>{{ $last->game_name }}</b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Game Type</td>
+                                        <td>
+                                            <b>{{ $last->game_type }}</b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tournament Type</td>
+                                        <td>
+                                            <b>{{ $last->getHumanReadableType() }}</b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Participants
+                                        </td>
+                                        <td>
+                                            <b>{!! $last->teams()->where('team_status','1')->count() . " / " . $last->maximum_participants  !!}</b>
+                                        </td>
+                                    </tr>
+                                    </tbody></table>
+                            </div>
+
+                            <div class="card-action">
+                                <a class="btn btn-primary btn-block btn-sm" href="{{ route('tournament.show',$last->slug) }}">View Details</a>
+                            </div>
+                        </div>
+                    @endif
+                </div>
+            </div>
+
         </div>
-     @endforeach
 
 
     </div>
