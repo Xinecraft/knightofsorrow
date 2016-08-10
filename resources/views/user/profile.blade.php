@@ -3,11 +3,11 @@
     <style>
         .about-well img
         {
-            width: 100% !important;
+            max-width: 100% !important;
         }
         .about-well iframe
         {
-            width:100% !important;
+            max-width: 100% !important;
         }
         .general-info
         {
