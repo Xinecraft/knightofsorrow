@@ -38,6 +38,8 @@
 @endsection
 
 @section('main-container')
+    @include('partials._tournavbar')
+
     <div class="col-xs-12 panel padding10">
 
 

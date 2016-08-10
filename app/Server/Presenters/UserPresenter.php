@@ -216,4 +216,24 @@ class UserPresenter extends BasePresenter
         return "<b>".link_to($this->wrappedObject->website_url,"Click here", ['target' => '_blank'])."</b>";
     }
 
+    public function ranking()
+    {
+        return 0;
+    }
+
+    public function points()
+    {
+        return 0;
+    }
+
+    public function rating()
+    {
+        return 0.0;
+    }
+
+    public function tourplayed()
+    {
+        return 0;
+    }
+
 }

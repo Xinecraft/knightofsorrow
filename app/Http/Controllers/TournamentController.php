@@ -37,6 +37,18 @@ class TournamentController extends Controller
         return view('tournament.calendar')->with('months',$months);
     }
 
+    public function getRatingSingle()
+    {
+        $user = User::paginate();
+        return view('tournament.rankingsingle')->with('players',$user);
+    }
+
+    public function getRatingTeams()
+    {
+        $teams = KTeam::groupBy('name')->paginate();
+        return view('tournament.rankingteams')->with('teams',$teams);
+    }
+
     public function getGuideline()
     {
         return view('tournament.guidelines');

@@ -47,6 +47,7 @@
 @endsection
 
 @section('main-container')
+    @include('partials._tournavbar')
     <div class="col-xs-12 panel">
         <h3 class="text-center">Tournament HowTo</h3>
         <hr style="margin-top: 10px;margin-bottom: 10px">

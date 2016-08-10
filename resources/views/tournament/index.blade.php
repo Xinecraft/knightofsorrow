@@ -85,17 +85,16 @@
     <div class="header wg-primary">
         <div class="container">
             <h1 class="ng-binding text-center">Tournaments</h1>
-            <a href="{{ route('tournament.calendar') }}" class="pull-right btn btn-info">Open Calendar</a>
             <!-- ngIf: ctrl.tournament.twitch --><!--end .tournament-twitch-->
         </div><!--end .container-->
     </div>
 @endsection
 
 @section('main-container')
-    <div class="col-xs-12 container padding10">
-        <div class="alert alert-info text-center">
-            Please read the <a class="text-bold" href="{{ route('tournament.guidelines') }}">Guidelines</a> before joining any tournament
-        </div>
+    <div class="col-xs-12 padding10">
+        @include('partials._tournavbar')
+
+
         @foreach(array_chunk($tournaments->all(),2) as $tours)
             <div class="row">
             @forelse($tours as $tournament)

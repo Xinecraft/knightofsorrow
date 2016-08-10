@@ -91,7 +91,8 @@
 @endsection
 
 @section('main-container')
-    <div class="col-xs-12 container padding10 panel">
+    @include('partials._tournavbar')
+    <div class="col-xs-12 padding10 panel">
 
         @foreach($months as $month)
             <h3 style="padding: 10px;background-color: #e2e2e2;">{{ $month->first()->tournament_starts_at->format("F Y") }}</h3>

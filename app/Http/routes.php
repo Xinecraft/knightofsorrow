@@ -241,6 +241,8 @@ Route::post('/kost', ['as' => 'kost', 'uses' => 'KostController@kost']);
  * Tournament System Controllers
  */
 Route::get('/tournament/calendar', [ 'as' => 'tournament.calendar', 'uses' => 'TournamentController@getCalendar']);
+Route::get('/tournament/ranking/single', [ 'as' => 'tournament.ranking.single', 'uses' => 'TournamentController@getRatingSingle']);
+Route::get('/tournament/ranking/teams', [ 'as' => 'tournament.ranking.teams', 'uses' => 'TournamentController@getRatingTeams']);
 Route::get('/tournament/guidelines', [ 'as' => 'tournament.guidelines', 'uses' => 'TournamentController@getGuideline']);
 Route::get('/tournament/create', ['middleware' => ['auth','admin'], 'as' => 'tournament.create', 'uses' => 'TournamentController@create']);
 Route::post('/tournament/create', ['middleware' => ['auth','admin'], 'as' => 'tournament.store', 'uses' => 'TournamentController@store']);

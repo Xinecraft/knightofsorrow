@@ -312,4 +312,14 @@ class KTeam extends Model
         }
     }
 
+    public function getRankingAttribute()
+    {
+        return 0;
+    }
+
+    public function getTourplayedAttribute()
+    {
+        return 0;
+    }
+
 }
