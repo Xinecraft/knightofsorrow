@@ -162,6 +162,8 @@
                 <div class="panel pad5" style="padding: 10px !important;">
                     <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Videos</h4>
                     <iframe id="kosTourVideo" width="100%" height="100%" src="http://youtube.com/embed/7lDxjRfKjVM" frameborder="0" allowfullscreen></iframe>
+                    <hr>
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/G8b6W8m5Jck" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
 

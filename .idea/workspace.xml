@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e189236c-c3e7-488f-b221-e9fb727e1c1d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tournament/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/tournament/index.blade.php" />
     </list>
     <ignored path="kos.iws" />
@@ -45,8 +44,8 @@
       <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/tournament/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.66573817">
-              <caret line="150" column="43" selection-start-line="150" selection-start-column="43" selection-end-line="150" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.44289693">
+              <caret line="164" column="24" selection-start-line="164" selection-start-column="24" selection-end-line="164" selection-end-column="24" />
               <folding>
                 <element signature="e#2612#2645#0#HTML" expanded="true" />
                 <element signature="e#2680#2735#0#HTML" expanded="true" />
@@ -58,15 +57,25 @@
                 <element signature="e#6444#6499#0#HTML" expanded="true" />
                 <element signature="e#6680#6713#0#HTML" expanded="true" />
                 <element signature="e#6748#6803#0#HTML" expanded="true" />
-                <element signature="e#7092#7125#0#HTML" expanded="true" />
-                <element signature="e#7160#7215#0#HTML" expanded="true" />
-                <element signature="e#7484#7601#0#HTML" expanded="true" />
-                <element signature="e#7978#8002#0#HTML" expanded="true" />
-                <element signature="e#9841#9874#0#HTML" expanded="true" />
-                <element signature="e#9909#9964#0#HTML" expanded="true" />
-                <element signature="e#10225#10338#0#HTML" expanded="true" />
-                <element signature="e#10739#10763#0#HTML" expanded="true" />
+                <element signature="e#7262#7295#0#HTML" expanded="true" />
+                <element signature="e#7330#7385#0#HTML" expanded="true" />
+                <element signature="e#7654#7771#0#HTML" expanded="true" />
+                <element signature="e#8148#8172#0#HTML" expanded="true" />
+                <element signature="e#10011#10044#0#HTML" expanded="true" />
+                <element signature="e#10079#10134#0#HTML" expanded="true" />
+                <element signature="e#10395#10508#0#HTML" expanded="true" />
+                <element signature="e#10909#10933#0#HTML" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.769231">
+              <caret line="272" column="19" selection-start-line="272" selection-start-column="19" selection-end-line="272" selection-end-column="19" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -978,14 +987,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3814433">
-          <caret line="91" column="61" selection-start-line="91" selection-start-column="61" selection-end-line="91" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/user/profile.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.724234">
@@ -994,10 +995,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.769231">
+          <caret line="272" column="19" selection-start-line="272" selection-start-column="19" selection-end-line="272" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/tournament/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66573817">
-          <caret line="150" column="43" selection-start-line="150" selection-start-column="43" selection-end-line="150" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.44289693">
+          <caret line="164" column="24" selection-start-line="164" selection-start-column="24" selection-end-line="164" selection-end-column="24" />
           <folding>
             <element signature="e#2612#2645#0#HTML" expanded="true" />
             <element signature="e#2680#2735#0#HTML" expanded="true" />
@@ -1009,14 +1018,14 @@
             <element signature="e#6444#6499#0#HTML" expanded="true" />
             <element signature="e#6680#6713#0#HTML" expanded="true" />
             <element signature="e#6748#6803#0#HTML" expanded="true" />
-            <element signature="e#7092#7125#0#HTML" expanded="true" />
-            <element signature="e#7160#7215#0#HTML" expanded="true" />
-            <element signature="e#7484#7601#0#HTML" expanded="true" />
-            <element signature="e#7978#8002#0#HTML" expanded="true" />
-            <element signature="e#9841#9874#0#HTML" expanded="true" />
-            <element signature="e#9909#9964#0#HTML" expanded="true" />
-            <element signature="e#10225#10338#0#HTML" expanded="true" />
-            <element signature="e#10739#10763#0#HTML" expanded="true" />
+            <element signature="e#7262#7295#0#HTML" expanded="true" />
+            <element signature="e#7330#7385#0#HTML" expanded="true" />
+            <element signature="e#7654#7771#0#HTML" expanded="true" />
+            <element signature="e#8148#8172#0#HTML" expanded="true" />
+            <element signature="e#10011#10044#0#HTML" expanded="true" />
+            <element signature="e#10079#10134#0#HTML" expanded="true" />
+            <element signature="e#10395#10508#0#HTML" expanded="true" />
+            <element signature="e#10909#10933#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
