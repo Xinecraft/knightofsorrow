@@ -1,6 +1,14 @@
 @extends('layouts.main')
 @section('styles')
     <style>
+        .about-well img
+        {
+            width: 100% !important;
+        }
+        .about-well iframe
+        {
+            width:100% !important;
+        }
         .general-info
         {
             height: 189px !important;
