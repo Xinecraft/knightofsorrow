@@ -147,7 +147,10 @@
                 </div>
                 <div class="panel pad5" style="padding: 10px !important;">
                     <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">News</h4>
-                    <i>No News</i>
+                    <p>This this <b class="text-danger">beta</b> launch of Tournament System. This is launched by KoS team as a small initiative to not let of beloved game die. Please participate, contribute and help however you can.</p>
+                    <p>Now we only support 2v2 Team tournaments but soon we will also support 1v1, 3v3, 4v4 etc.</p>
+                    <p class=""><b>We invite all SWAT4 players who want to help us with the management and development of tournaments. </b><i>(Every contribution is appreciated)</i></p>
+                    <p class="text-center text-bold"><span class="text-green">SWAT4 IS NOT</span> <span class="text-danger">DEAD</span></p>
                 </div>
                 <div class="panel pad5" style="padding: 10px !important;">
                     <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Player of the Month</h4>
