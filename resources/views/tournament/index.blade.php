@@ -145,13 +145,6 @@
                         </div>
                     @endif
                 </div>
-            </div>
-
-            <div class="col-xs-4">
-                <div class="panel pad5" style="padding: 10px !important;">
-                    <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Videos</h4>
-                    <iframe id="kosTourVideo" width="100%" height="100%" src="http://youtube.com/embed/7lDxjRfKjVM" frameborder="0" allowfullscreen></iframe>
-                </div>
                 <div class="panel pad5" style="padding: 10px !important;">
                     <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">News</h4>
                     <i>No News</i>
@@ -159,6 +152,13 @@
                 <div class="panel pad5" style="padding: 10px !important;">
                     <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Player of the Month</h4>
                     <i>No Player</i>
+                </div>
+            </div>
+
+            <div class="col-xs-4">
+                <div class="panel pad5" style="padding: 10px !important;">
+                    <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Videos</h4>
+                    <iframe id="kosTourVideo" width="100%" height="100%" src="http://youtube.com/embed/7lDxjRfKjVM" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
 
