@@ -206,12 +206,6 @@
                     {!! Form::close() !!}
             </div>
 
-            <div class="col-xs-5 col-xs-offset-1 panel pad5">
-                <h5 class="info-title" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Profile Picture</h5>
-                <p>To update your profile picture you need to register/login at <a target="_blank" href="http://gravatar.com">gravatar</a> and setup a profile picture there.</p>
-
-            </div>
-
         </div>
 
     </div>

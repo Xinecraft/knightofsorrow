@@ -20,7 +20,7 @@
 @section('main-container')
     <div class="content col-xs-9">
 
-        @if(!Cookie::has('seen_donation_info'))
+        @if($show_donation == true)
         <div class="alert alert-info alert-dismissable text-center row">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <strong>Fellow Gamers!</strong> As we all know, we are frequently upgrading website and server & everything come at a cost. We always need your supports and feedbacks.

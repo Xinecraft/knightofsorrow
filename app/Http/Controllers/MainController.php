@@ -18,6 +18,16 @@ class MainController extends Controller
 {
     public function getIndex()
     {
+        if(!Cookie::has('seen_donation_info'))
+        {
+            $cookie = Cookie::make('seen_donation_info','true',43200);
+            Cookie::queue($cookie);
+            $show_donation = true;
+        }
+        else
+        {
+            $show_donation= false;
+        }
         /*
             $data1 = '{"0":"DUYFu8ao","1":"1.0.0","2":"10480","3":"1437386880","4":"11cc6f19","6":"1.0","7":"[c=FFFF00]WWW.KNIGHTofSORROW.TK (Antics)","11":"3","12":"12","13":"1","14":"5","15":"19371","16":"569","17":"900","19":"1","21":"1","22":"0","27":[{"0":"0","1":"182.185.80.115","2":"1","5":"YUG_X_Gmr","7":"67","38":"2"},{"0":"1","1":"182.185.83.84","2":"1","5":"YUG_X_Gmr","7":"139"},{"0":"2","1":"182.181.216.180","2":"1","5":"||KhaN||Namo(VIEW)","7":"247","11":"1","17":"1","38":"4"},{"0":"3","1":"182.181.184.161","5":"YUG_X_Gmr","7":"86","11":"1","17":"1","38":"4"},{"0":"4","1":"182.185.27.16","5":"RainBoW","6":"1","7":"71","8":"1","9":"1","15":"1","38":"2"},{"0":"5","1":"182.181.216.180","5":"||KhaN||_Namo","7":"66","38":"2"}]}';
 
@@ -76,7 +86,7 @@ class MainController extends Controller
             $topPlayers = \App\PlayerTotal::with(['country','rank'])->orderBy('position')->limit(10)->get();
         }
 
-        $latestGames = \App\Game::orderBy('created_at', 'desc')->limit(5)->get();
+        $latestGames = \App\Game::normal()->orderBy('created_at', 'desc')->limit(5)->get();
 
         //return (Carbon\Carbon::now()->subYears(100));
 
@@ -322,6 +332,7 @@ class MainController extends Controller
             'bans' => $bans,
             'notifications' => $notifications,
             'activeUsers' => $activeUsers,
+            'show_donation' => $show_donation,
         ];
 
         return view('home', $array);

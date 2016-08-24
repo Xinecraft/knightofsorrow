@@ -13,7 +13,7 @@
             <li class="list-group-item" style="padding: 5px 15px;">
                 <span class="small tooltipster" title="SWAT4 War Server">
                     <img class="img img20" src="/images/swat.png" alt=""> -
-                    <span class="text-danger text-bold">31.186.250.32:10080</span>
+                    <span class="text-danger text-bold">5.9.53.214:17480</span>
                 </span>
             </li>
             <li class="list-group-item" style="padding: 5px 15px;">
