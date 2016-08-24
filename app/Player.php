@@ -65,4 +65,18 @@ class Player extends Model
         return $pt->first();
     }
 
+
+    /**
+     * Find a PlayerTotal using its name.
+     * PlayerTotal::findOrFailByName($name);
+     *
+     * @param $name
+     * @return Collection
+     */
+    public static function findOrFailByNameWithNull($name)
+    {
+        $player = self::whereName($name)->take(1)->first();
+        return $player;
+    }
+
 }

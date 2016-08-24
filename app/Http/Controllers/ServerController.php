@@ -218,6 +218,9 @@ class ServerController extends Controller
             return;
         }
 
+        if($request->user()->muted)
+            return;
+
         if($request->user()->isAdmin())
         {
             $explode = explode(" ",$Msg);

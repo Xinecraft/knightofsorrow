@@ -2,27 +2,26 @@
 @section('title',$tournament->name)
 @section('styles')
     <style>
-        .tab-pane
-        {
+        .tab-pane {
             padding: 10px;
         }
-        .form.form-inline
-        {
+
+        .form.form-inline {
             display: inline-block;
         }
-        .vs:before
-        {
+
+        .vs:before {
             content: 'vs';
             font-size: 25px;
             float: right;
             color: #03A9F4;
         }
-        .team-name
-        {
+
+        .team-name {
             padding: 10px !important;
         }
-        .team-name.small
-        {
+
+        .team-name.small {
             padding: 5px !important;
         }
     </style>
@@ -69,12 +68,18 @@
             <div id="tabs-id">
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active"><a href="#overview" aria-controls="overview" role="tab" data-toggle="tab">Overview</a></li>
-                    <li role="presentation"><a href="#description" aria-controls="description" role="tab" data-toggle="tab">Description</a></li>
-                    <li role="presentation"><a href="#rules" aria-controls="rules" role="tab" data-toggle="tab">Rules</a></li>
-                    <li role="presentation"><a href="#bracket" aria-controls="bracket" role="tab" data-toggle="tab">Bracket</a></li>
-                    <li role="presentation"><a href="#teams" aria-controls="teams" role="tab" data-toggle="tab">Teams</a></li>
-                    <li role="presentation"><a href="#pastchamps" aria-controls="pastchamps" role="tab" data-toggle="tab">History</a></li>
+                    <li role="presentation" class="active"><a href="#overview" aria-controls="overview" role="tab"
+                                                              data-toggle="tab">Overview</a></li>
+                    <li role="presentation"><a href="#description" aria-controls="description" role="tab"
+                                               data-toggle="tab">Description</a></li>
+                    <li role="presentation"><a href="#rules" aria-controls="rules" role="tab"
+                                               data-toggle="tab">Rules</a></li>
+                    <li role="presentation"><a href="#bracket" aria-controls="bracket" role="tab" data-toggle="tab">Bracket</a>
+                    </li>
+                    <li role="presentation"><a href="#teams" aria-controls="teams" role="tab"
+                                               data-toggle="tab">Teams</a></li>
+                    <li role="presentation"><a href="#pastchamps" aria-controls="pastchamps" role="tab"
+                                               data-toggle="tab">History</a></li>
                 </ul>
 
                 <!-- Tab panes -->
@@ -135,7 +140,8 @@
                                     <b>{{ $tournament->teams()->where('team_status','1')->count() }}</b>
                                 </td>
                             </tr>
-                            </tbody></table>
+                            </tbody>
+                        </table>
 
                     </div>
                     <div role="tabpanel" class="tab-pane" id="description">
@@ -146,96 +152,111 @@
                     </div>
                     <div role="tabpanel" class="tab-pane" id="bracket">
                         @if($tournament->canShowBrackets())
-                            <a class="btn btn-sm col-xs-offset-5 btn-info" href="{{ route('tournament.bracket.show',$tournament->slug) }}">View Full Bracket</a>
+                            <a class="btn btn-sm col-xs-offset-5 btn-info"
+                               href="{{ route('tournament.bracket.show',$tournament->slug) }}">View Full Bracket</a>
                             @foreach($tournament->rounds as $round)
-                                <h4 style="padding: 10px;background-color: #e2e2e2;">Round {{ $round->round_index }}</h4>
+                                <h4 style="padding: 10px;background-color: #e2e2e2;">
+                                    Round {{ $round->round_index }}</h4>
 
-                            @foreach($round->matches as $match)
-                                <div class="media">
-                                    <div class="media-body" style="font-size: 80%">
-                                        {{--<h4 class="">
-                                            <a href="{{ route('tournament.show',$tournament->slug) }}">{{ $tournament->name }}</a>
-                                        </h4>--}}
-                                        <div class="col-xs-12 no-padding media-heading text-center">
-                                            <div class="col-xs-3 no-padding vs">
-                                                <div class="team-name text-bold">
-                                                    {!! link_to_route('tournament.team.show',$match->team1->name,[$tournament->slug,$match->team1->id])  !!}
+                                @foreach($round->matches as $match)
+                                    <div class="media">
+                                        <div class="media-body" style="font-size: 80%">
+                                            {{--<h4 class="">
+                                                <a href="{{ route('tournament.show',$tournament->slug) }}">{{ $tournament->name }}</a>
+                                            </h4>--}}
+                                            <div class="col-xs-12 no-padding media-heading text-center">
+                                                <div class="col-xs-3 no-padding vs">
+                                                    <div class="team-name text-bold">
+                                                        {!! link_to_route('tournament.team.show',$match->team1->name,[$tournament->slug,$match->team1->id])  !!}
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-xs-3" style="border-right: 5px solid dodgerblue">
-                                                <div class="team-name text-bold">
-                                                    {!! link_to_route('tournament.team.show',$match->team2->name,[$tournament->slug,$match->team2->id])  !!}
+                                                <div class="col-xs-3" style="border-right: 5px solid dodgerblue">
+                                                    <div class="team-name text-bold">
+                                                        {!! link_to_route('tournament.team.show',$match->team2->name,[$tournament->slug,$match->team2->id])  !!}
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-xs-2">
-                                                <img src="/images/flags/20_shiny/{{ $match->team1->country->countryCode.".png" }}" alt="" class="img tooltipster" title="{{ $match->team1->country->countryName }}">
-                                                <img src="/images/flags/20_shiny/{{ $match->team2->country->countryCode.".png" }}" alt="" class="img tooltipster" title="{{ $match->team2->country->countryName }}">
+                                                <div class="col-xs-2">
+                                                    <img src="/images/flags/20_shiny/{{ $match->team1->country->countryCode.".png" }}"
+                                                         alt="" class="img tooltipster"
+                                                         title="{{ $match->team1->country->countryName }}">
+                                                    <img src="/images/flags/20_shiny/{{ $match->team2->country->countryCode.".png" }}"
+                                                         alt="" class="img tooltipster"
+                                                         title="{{ $match->team2->country->countryName }}">
 
-                                                <div class="team-name small">{{ $match->starts_at->toDayDateTimeString() }}</div>
-                                            </div>
-                                            @if($match->has_been_played)
-                                                <div class="col-xs-4">
-                                                    {!! $match->getWinningTextForHumans() !!}
-                                                    <br>
+                                                    <div class="team-name small">{{ $match->starts_at->toDayDateTimeString() }}</div>
                                                 </div>
-                                            @endif
+                                                @if($match->has_been_played)
+                                                    <div class="col-xs-4">
+                                                        {!! $match->getWinningTextForHumans() !!}
+                                                        <br>
+                                                    </div>
+                                                @endif
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
                                 @endforeach
 
                             @endforeach
                         @else
-                        <div class="text-center alert alert-danger text-bold">Bracket is not available at this time.</div>
+                            <div class="text-center alert alert-danger text-bold">Bracket is not available at this
+                                time.
+                            </div>
                         @endif
                     </div>
                     <div role="tabpanel" class="tab-pane" id="teams">
                         @if($tournament->teams()->where('team_status','1')->count() > 0)
-                            <h5 class="text-bold text-green" style="margin:0 0 0 0;border-bottom:1px dashed grey">Qualified Teams</h5>
+                            <h5 class="text-bold text-green" style="margin:0 0 0 0;border-bottom:1px dashed grey">
+                                Qualified Teams</h5>
                             <table id="" class="table table-striped table-hover no-margin">
-                            <thead>
-                            <tr>
-                                <th class="tooltipster" title="Rank">#</th>
-                                <th class="col-xs-1">Flag</th>
-                                <th class="col-xs-6">Name</th>
-                                <th class="tooltipster" title="Players"><i class="fa fa-users"></i></th>
-                                <th class="tooltipster" title="Joining Status">Status</th>
-                                <th class="col-xs-1 text-right">Win</th>
-                                <th class="col-xs-1 text-right">Lost</th>
-                                <th class="col-xs-1 text-right">Tie</th>
-                                <th class="col-xs-1 text-right">Points</th>
-                                @if(Auth::check() && Auth::user()->canManageTournament($tournament))
-                                    <th class="text-right ">
-                                        Action
-                                    </th>
-                                @endif
-                            </tr>
-                            </thead>
-                            <tbody id="">
-                            @foreach($tournament->teams()->where('team_status','1')->orderBy('points','desc')->get() as $team)
-                                <tr class="item">
-                                    <td>{{ $team->team_position }}</td>
-                                    <td class="text-muted"><img class="tooltipster" title="{{ $team->country->countryName }}" src="/images/flags/20_shiny/{{ $team->country->countryCode }}.png" alt="" height="22px"></td>
-                                    <td class="color-main text-bold"><a href="{{ route('tournament.team.show',[$tournament->slug,$team->id]) }}">{{ $team->name }}</a></td>
-                                    <td> {{ $team->playerselected()->count() ."/". $team->tournament->maxPlayersPerTeam() }} </td>
-                                    <td>{!! $team->getColorStatus() !!}</td>
-                                    <td class="text-right">{{ $team->total_wins }}</td>
-                                    <td class="text-right">{{ $team->total_lost }}</td>
-                                    <td class="text-right">{{ $team->total_tie }}</td>
-                                    <td class="text-right"><b>{{ $team->points or "0" }}</b></td>
+                                <thead>
+                                <tr>
+                                    <th class="tooltipster" title="Rank">#</th>
+                                    <th class="col-xs-1">Flag</th>
+                                    <th class="col-xs-6">Name</th>
+                                    <th class="tooltipster" title="Players"><i class="fa fa-users"></i></th>
+                                    <th class="tooltipster" title="Joining Status">Status</th>
+                                    <th class="col-xs-1 text-right">Win</th>
+                                    <th class="col-xs-1 text-right">Lost</th>
+                                    <th class="col-xs-1 text-right">Tie</th>
+                                    <th class="col-xs-1 text-right">Points</th>
                                     @if(Auth::check() && Auth::user()->canManageTournament($tournament))
-                                        <td class="text-right">
-                                            {!! Form::open(['route' => ['tournament.team.handleteams',$tournament->slug,$team->id], 'class' => 'form form-inline']) !!}
-                                            {!! Form::hidden('team_id',$team->id) !!}
-                                            {!! Form::hidden('action_id',0) !!}
-                                            <button title="Send to pending list" type="submit" class="tooltipster btn confirm btn-xs btn-primary">
-                                                <i class="fa fa-minus-circle"></i>
-                                            </button>
-                                        {!! Form::close() !!}
+                                        <th class="text-right ">
+                                            Action
+                                        </th>
                                     @endif
                                 </tr>
-                            @endforeach
-                            <!--<tr class="item">
+                                </thead>
+                                <tbody id="">
+                                @foreach($tournament->teams()->where('team_status','1')->orderBy('points','desc')->get() as $team)
+                                    <tr class="item">
+                                        <td>{{ $team->team_position }}</td>
+                                        <td class="text-muted"><img class="tooltipster"
+                                                                    title="{{ $team->country->countryName }}"
+                                                                    src="/images/flags/20_shiny/{{ $team->country->countryCode }}.png"
+                                                                    alt="" height="22px"></td>
+                                        <td class="color-main text-bold"><a
+                                                    href="{{ route('tournament.team.show',[$tournament->slug,$team->id]) }}">{{ $team->name }}</a>
+                                        </td>
+                                        <td> {{ $team->playerselected()->count() ."/". $team->tournament->maxPlayersPerTeam() }} </td>
+                                        <td>{!! $team->getColorStatus() !!}</td>
+                                        <td class="text-right">{{ $team->total_wins }}</td>
+                                        <td class="text-right">{{ $team->total_lost }}</td>
+                                        <td class="text-right">{{ $team->total_tie }}</td>
+                                        <td class="text-right"><b>{{ $team->points or "0" }}</b></td>
+                                        @if(Auth::check() && Auth::user()->canManageTournament($tournament))
+                                            <td class="text-right">
+                                                {!! Form::open(['route' => ['tournament.team.handleteams',$tournament->slug,$team->id], 'class' => 'form form-inline']) !!}
+                                                {!! Form::hidden('team_id',$team->id) !!}
+                                                {!! Form::hidden('action_id',0) !!}
+                                                <button title="Send to pending list" type="submit"
+                                                        class="tooltipster btn confirm btn-xs btn-primary">
+                                                    <i class="fa fa-minus-circle"></i>
+                                                </button>
+                                            {!! Form::close() !!}
+                                        @endif
+                                    </tr>
+                                    @endforeach
+                                            <!--<tr class="item">
                                 <td class="text-muted"><img class="tooltipster" title="United States" src="/images/flags/20_shiny/US.png" alt="" height="22px"></td>
                                 <td class="color-main text-bold"><a href="http://kos.dev/banlist/13">~ManualIPBan</a></td>
                                 <td>11.11.xx.xx</td>
@@ -243,73 +264,84 @@
                                 <td><b><span class="text-green">Unbanned</span></b></td>
                                 <td class="text-right">2 days ago</td>
                             </tr>-->
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
                         @else
-                            <div class="text-center alert alert-danger text-bold">No Participants yet! Be the first to join this tournament.</div>
+                            <div class="text-center alert alert-danger text-bold">No Participants yet! Be the first to
+                                join this tournament.
+                            </div>
                         @endif
 
 
-                            <hr>
+                        <hr>
 
-                         @if($tournament->teams()->where('team_status','!=','1')->count() > 0)
-                                <h5 class="text-bold text-danger" style="margin:0 0 0 0;border-bottom:1px dashed grey">Pending Teams</h5>
-                                <table id="" class="table table-striped table-hover no-margin">
-                                    <thead>
-                                    <tr>
-                                        {{--<th class="tooltipster" title="Rank">#</th>--}}
-                                        <th class="">Flag</th>
-                                        <th class="">Name</th>
-                                        <th class="tooltipster" title="Players"><i class="fa fa-users"></i></th>
-                                        <th class="col-xs-2 tooltipster" title="Joining Status">Join Status</th>
-                                        <th class="col-xs-3 text-right">Team Status</th>
+                        @if($tournament->teams()->where('team_status','!=','1')->count() > 0)
+                            <h5 class="text-bold text-danger" style="margin:0 0 0 0;border-bottom:1px dashed grey">
+                                Pending Teams</h5>
+                            <table id="" class="table table-striped table-hover no-margin">
+                                <thead>
+                                <tr>
+                                    {{--<th class="tooltipster" title="Rank">#</th>--}}
+                                    <th class="">Flag</th>
+                                    <th class="">Name</th>
+                                    <th class="tooltipster" title="Players"><i class="fa fa-users"></i></th>
+                                    <th class="col-xs-2 tooltipster" title="Joining Status">Join Status</th>
+                                    <th class="col-xs-3 text-right">Team Status</th>
+                                    @if(Auth::check() && Auth::user()->canManageTournament($tournament))
+                                        <th class="text-right ">
+                                            Action
+                                        </th>
+                                    @endif
+
+                                </tr>
+                                </thead>
+                                <tbody id="">
+                                @foreach($tournament->teams()->where('team_status','!=','1')->orderBy('total_score','desc')->get() as $team)
+                                    <tr class="item">
+                                        {{--<td>{{ $team->team_position }}</td>--}}
+                                        <td class="text-muted"><img class="tooltipster"
+                                                                    title="{{ $team->country->countryName }}"
+                                                                    src="/images/flags/20_shiny/{{ $team->country->countryCode }}.png"
+                                                                    alt="" height="22px"></td>
+                                        <td class="color-main text-bold"><a
+                                                    href="{{ route('tournament.team.show',[$tournament->slug,$team->id]) }}">{{ $team->name }}</a>
+                                        </td>
+                                        <td> {{ $team->playerselected()->count() ."/". $team->tournament->maxPlayersPerTeam() }} </td>
+                                        <td>{!! $team->getColorStatus() !!}</td>
+                                        <td class="text-bold text-right">{!! $team->getColorAppr()  !!}</td>
+
                                         @if(Auth::check() && Auth::user()->canManageTournament($tournament))
-                                            <th class="text-right ">
-                                                Action
-                                            </th>
+                                            <td class="text-right">
+                                                {!! Form::open(['route' => ['tournament.team.handleteams',$tournament->slug,$team->id], 'class' => 'form form-inline']) !!}
+                                                {!! Form::hidden('team_id',$team->id) !!}
+                                                {!! Form::hidden('action_id',1) !!}
+                                                <button title="Approve team for tournament" type="submit"
+                                                        class="tooltipster btn confirm btn-xs btn-success">
+                                                    <i class="fa fa-check-circle"></i>
+                                                </button>
+                                                {!! Form::close() !!}
+                                                {!! Form::open(['route' => ['tournament.team.handleteams',$tournament->slug,$team->id], 'class' => 'form form-inline']) !!}
+                                                {!! Form::hidden('team_id',$team->id) !!}
+                                                {!! Form::hidden('action_id',3) !!}
+                                                <button title="Set as Not Eligible" type="submit"
+                                                        class="tooltipster btn confirm btn-xs btn-warning">
+                                                    <i class="fa fa-exclamation-triangle"></i>
+                                                </button>
+                                                {!! Form::close() !!}
+                                                {!! Form::open(['route' => ['tournament.team.handleteams',$tournament->slug,$team->id], 'class' => 'form form-inline']) !!}
+                                                {!! Form::hidden('team_id',$team->id) !!}
+                                                {!! Form::hidden('action_id',2) !!}
+                                                <button title="Disqualify team" type="submit"
+                                                        class="tooltipster btn confirm btn-xs btn-danger">
+                                                    <i class="fa fa-times"></i>
+                                                </button>
+                                                {!! Form::close() !!}
+                                            </td>
                                         @endif
 
                                     </tr>
-                                    </thead>
-                                    <tbody id="">
-                                    @foreach($tournament->teams()->where('team_status','!=','1')->orderBy('total_score','desc')->get() as $team)
-                                        <tr class="item">
-                                            {{--<td>{{ $team->team_position }}</td>--}}
-                                            <td class="text-muted"><img class="tooltipster" title="{{ $team->country->countryName }}" src="/images/flags/20_shiny/{{ $team->country->countryCode }}.png" alt="" height="22px"></td>
-                                            <td class="color-main text-bold"><a href="{{ route('tournament.team.show',[$tournament->slug,$team->id]) }}">{{ $team->name }}</a></td>
-                                            <td> {{ $team->playerselected()->count() ."/". $team->tournament->maxPlayersPerTeam() }} </td>
-                                            <td>{!! $team->getColorStatus() !!}</td>
-                                            <td class="text-bold text-right">{!! $team->getColorAppr()  !!}</td>
-
-                                            @if(Auth::check() && Auth::user()->canManageTournament($tournament))
-                                                <td class="text-right">
-                                                    {!! Form::open(['route' => ['tournament.team.handleteams',$tournament->slug,$team->id], 'class' => 'form form-inline']) !!}
-                                                    {!! Form::hidden('team_id',$team->id) !!}
-                                                    {!! Form::hidden('action_id',1) !!}
-                                                    <button title="Approve team for tournament" type="submit" class="tooltipster btn confirm btn-xs btn-success">
-                                                        <i class="fa fa-check-circle"></i>
-                                                    </button>
-                                                    {!! Form::close() !!}
-                                                    {!! Form::open(['route' => ['tournament.team.handleteams',$tournament->slug,$team->id], 'class' => 'form form-inline']) !!}
-                                                    {!! Form::hidden('team_id',$team->id) !!}
-                                                    {!! Form::hidden('action_id',3) !!}
-                                                    <button title="Set as Not Eligible" type="submit" class="tooltipster btn confirm btn-xs btn-warning">
-                                                        <i class="fa fa-exclamation-triangle"></i>
-                                                    </button>
-                                                    {!! Form::close() !!}
-                                                    {!! Form::open(['route' => ['tournament.team.handleteams',$tournament->slug,$team->id], 'class' => 'form form-inline']) !!}
-                                                    {!! Form::hidden('team_id',$team->id) !!}
-                                                    {!! Form::hidden('action_id',2) !!}
-                                                    <button title="Disqualify team" type="submit" class="tooltipster btn confirm btn-xs btn-danger">
-                                                        <i class="fa fa-times"></i>
-                                                    </button>
-                                                    {!! Form::close() !!}
-                                                </td>
-                                            @endif
-
-                                        </tr>
-                                        @endforeach
-                                                <!--<tr class="item">
+                                    @endforeach
+                                            <!--<tr class="item">
                                 <td class="text-muted"><img class="tooltipster" title="United States" src="/images/flags/20_shiny/US.png" alt="" height="22px"></td>
                                 <td class="color-main text-bold"><a href="http://kos.dev/banlist/13">~ManualIPBan</a></td>
                                 <td>11.11.xx.xx</td>
@@ -317,14 +349,15 @@
                                 <td><b><span class="text-green">Unbanned</span></b></td>
                                 <td class="text-right">2 days ago</td>
                             </tr>-->
-                                    </tbody>
-                                </table>
-                            @else
+                                </tbody>
+                            </table>
+                        @else
 
-                            @endif
+                        @endif
                     </div>
                     <div role="tabpanel" class="tab-pane" id="pastchamps">
-                        <div class="text-center alert alert-warning text-bold"><i>No History for this tournament!</i></div>
+                        <div class="text-center alert alert-warning text-bold"><i>No History for this tournament!</i>
+                        </div>
                     </div>
                 </div>
 
@@ -336,25 +369,30 @@
 
             <hr>
             @if(Auth::check() && $tournament->isRegistrationOpen()==1)
-            @if(Auth::user()->isAppliedForTournament($tournament))
-                <p>Your Team : <b>{!! link_to_route('tournament.team.show',Auth::user()->getTeamOfUserForTournament($tournament)->name,[$tournament->slug,Auth::user()->getTeamOfUserForTournament($tournament)->id])  !!}</b>
-                <br>
+                @if(Auth::user()->isAppliedForTournament($tournament))
+                    <p>Your Team :
+                        <b>{!! link_to_route('tournament.team.show',Auth::user()->getTeamOfUserForTournament($tournament)->name,[$tournament->slug,Auth::user()->getTeamOfUserForTournament($tournament)->id])  !!}</b>
+                        <br>
                     <span class="small">Your Status &nbsp;&nbsp;: <b>{!! Auth::user()->getAppliedTeamStatusWithColor($tournament,Auth::user()->getTeamOfUserForTournament($tournament))  !!}</b>
                 </span>
-                </p>
-                    <a class="btn btn-danger confirm btn-block" href="{{ route('tournament.leave',$tournament->id) }}">Leave this Tournament</a>
+                    </p>
+                    <a class="btn btn-danger confirm btn-block" href="{{ route('tournament.leave',$tournament->id) }}">Leave
+                        this Tournament</a>
                 @else
-            <a class="btn btn-info btn-block" href="{{ route('tournament.apply',$tournament->slug) }}">Join this Tournament</a>
+                    <a class="btn btn-info btn-block" href="{{ route('tournament.apply',$tournament->slug) }}">Join this
+                        Tournament</a>
                     <br>
-                <span class="small text-info">Please read the rules & eligibility criteria before applying.</span>
-            @endif
+                    <span class="small text-info">Please read the rules & eligibility criteria before applying.</span>
+                @endif
 
             @elseif(Auth::check() && $tournament->isRegistrationOpen()==2)
                 <span class="text-info">Registrations will begin <b>{{ $tournament->registration_starts_at->diffForHumans() }}</b></span>
             @elseif(Auth::check() && $tournament->isRegistrationOpen()==3)
-                <p class="text-danger">Registration ended <b>{{ $tournament->registration_ends_at->diffForHumans() }}</b></p>
+                <p class="text-danger">Registration ended
+                    <b>{{ $tournament->registration_ends_at->diffForHumans() }}</b></p>
                 @if(Auth::user()->isAppliedForTournament($tournament))
-                    <p>Your Team : <b>{!! link_to_route('tournament.team.show',Auth::user()->getTeamOfUserForTournament($tournament)->name,[$tournament->slug,Auth::user()->getTeamOfUserForTournament($tournament)->id])  !!}</b>
+                    <p>Your Team :
+                        <b>{!! link_to_route('tournament.team.show',Auth::user()->getTeamOfUserForTournament($tournament)->name,[$tournament->slug,Auth::user()->getTeamOfUserForTournament($tournament)->id])  !!}</b>
                         <br>
                     <span class="small">Your Status &nbsp;&nbsp;: <b>{!! Auth::user()->getAppliedTeamStatusWithColor($tournament,Auth::user()->getTeamOfUserForTournament($tournament))  !!}</b>
                 </span>
@@ -366,20 +404,24 @@
                 @if($tournament->minimum_participants > $tournament->teams()->qualified()->count())
                     <p class="text-warning">Tournament has been <b>Postponed</b>.</p>
                 @else
-                <p class="text-green">Tournament has begun <b>{{ $tournament->tournament_starts_at->diffForHumans() }}</b></p>
+                    <p class="text-green">Tournament has begun
+                        <b>{{ $tournament->tournament_starts_at->diffForHumans() }}</b></p>
                 @endif
 
                 @if(Auth::user()->isAppliedForTournament($tournament))
-                    <p>Your Team : <b>{!! link_to_route('tournament.team.show',Auth::user()->getTeamOfUserForTournament($tournament)->name,[$tournament->slug,Auth::user()->getTeamOfUserForTournament($tournament)->id])  !!}</b>
+                    <p>Your Team :
+                        <b>{!! link_to_route('tournament.team.show',Auth::user()->getTeamOfUserForTournament($tournament)->name,[$tournament->slug,Auth::user()->getTeamOfUserForTournament($tournament)->id])  !!}</b>
                         <br>
                     <span class="small">Your Status &nbsp;&nbsp;: <b>{!! Auth::user()->getAppliedTeamStatusWithColor($tournament,Auth::user()->getTeamOfUserForTournament($tournament))  !!}</b>
                 </span>
                     </p>
                 @endif
             @elseif(Auth::check() && $tournament->isRegistrationOpen()==6)
-                <p class="text-warning">Tournament has ended <b>{{ $tournament->tournament_ends_at->diffForHumans() }}</b></p>
+                <p class="text-warning">Tournament has ended
+                    <b>{{ $tournament->tournament_ends_at->diffForHumans() }}</b></p>
                 @if(Auth::user()->isAppliedForTournament($tournament))
-                    <p>Your Team : <b>{!! link_to_route('tournament.team.show',Auth::user()->getTeamOfUserForTournament($tournament)->name,[$tournament->slug,Auth::user()->getTeamOfUserForTournament($tournament)->id])  !!}</b>
+                    <p>Your Team :
+                        <b>{!! link_to_route('tournament.team.show',Auth::user()->getTeamOfUserForTournament($tournament)->name,[$tournament->slug,Auth::user()->getTeamOfUserForTournament($tournament)->id])  !!}</b>
                         <br>
                     <span class="small">Your Status &nbsp;&nbsp;: <b>{!! Auth::user()->getAppliedTeamStatusWithColor($tournament,Auth::user()->getTeamOfUserForTournament($tournament))  !!}</b>
                 </span>
@@ -401,17 +443,19 @@
                     </thead>
                     <tbody id="">
                     @foreach($tournament->managers as $user)
-                    <tr class="item">
-                        <td class="text-muted"><img class="tooltipster" title="{{ $user->country->countryName }}" src="/images/flags/20_shiny/{{ $user->country->countryCode }}.png" alt="" height="22px"></td>
-                        <td class="color-main text-bold">
-                            <a class="" style="margin-right:1em" href="{{ route('user.show',$user->username) }}">
-                                <strong class="">{{ $user->displayName() }}</strong>
-                            </a>
-                        </td>
-                        <td class="text-right" style="font-size: 12px">
-                            {{ $user->updated_at->diffForHumans() }}
-                        </td>
-                    </tr>
+                        <tr class="item">
+                            <td class="text-muted"><img class="tooltipster" title="{{ $user->country->countryName }}"
+                                                        src="/images/flags/20_shiny/{{ $user->country->countryCode }}.png"
+                                                        alt="" height="22px"></td>
+                            <td class="color-main text-bold">
+                                <a class="" style="margin-right:1em" href="{{ route('user.show',$user->username) }}">
+                                    <strong class="">{{ $user->displayName() }}</strong>
+                                </a>
+                            </td>
+                            <td class="text-right" style="font-size: 12px">
+                                {{ $user->updated_at->diffForHumans() }}
+                            </td>
+                        </tr>
                     @endforeach
                     </tbody>
                 </table>
@@ -428,10 +472,17 @@
                 {!! Html::image(Auth::user()->getGravatarLink(40),'',array('class'=>'img media-oject inprofile-thumbs','width'=>'40','height'=>'40')) !!}
             </div>
 
-            {!! Form::open(['route' => ['tournament.comment',$tournament->id], 'class'=>'comment-create-form media-body']) !!}
-            {!! Form::textarea('body', null, ['placeholder' => 'Your comment here', 'class' => 'form-control comment-textarea no-margin', 'rows' => 2, 'cols' => 5]) !!}
-            {!! Form::submit('Comment',['class' => 'btn btn-xs btn-default right comment-create-form-submit']) !!}
-            {!! Form::close() !!}
+            @if(Auth::user()->muted)
+                <form class="comment-create-form media-body">
+                    <textarea name="" id="muted" cols="5" rows="2" class="form-control comment-textarea no-margin"
+                              placeholder="You are muted because of your behaviors" disabled></textarea>
+                </form>
+            @else
+                {!! Form::open(['route' => ['tournament.comment',$tournament->id], 'class'=>'comment-create-form media-body']) !!}
+                {!! Form::textarea('body', null, ['placeholder' => 'Your comment here', 'class' => 'form-control comment-textarea no-margin', 'rows' => 2, 'cols' => 5]) !!}
+                {!! Form::submit('Comment',['class' => 'btn btn-xs btn-default right comment-create-form-submit']) !!}
+                {!! Form::close() !!}
+            @endif
         </div>
     @endif
 

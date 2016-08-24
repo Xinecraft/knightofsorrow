@@ -5,6 +5,11 @@
 @section('main-container')
     <div class="col-xs-9">
         @include('partials._statistics-navbar')
+
+        @if(Request::route()->uri() == 'statistics/war-round-reports')
+            <div style="background: #090b0a" class="text-center alert text-bold"><span style="color: deeppink">*UnLimited Gaming*</span> <span style="color: red">(Antics)</span></div>
+        @endif
+
         <div class="rounds panel panel-default">
             <div class="panel-heading"><strong>Total <em>{{ App\Game::count() }}</em> Rounds Reports</strong></div>
             <div class="panel-body">
@@ -22,7 +27,11 @@
                     <tbody id="data-items" class="roundstabledata">
                     @foreach($rounds as $round)
                         <tr class="item pointer-cursor" data-id="{{ $round->id }}">
-                            <td class="color-main text-bold">{!! link_to_route('round-detail',$round->index,[$round->id]) !!}</td>
+                            @if($round->server_id == null)
+                                <td class="color-main text-bold">{!! link_to_route('round-detail',$round->index,[$round->id]) !!}</td>
+                            @else
+                                <td class="color-main text-bold">{!! link_to_route('war-round-detail',$round->index,[$round->id]) !!}</td>
+                            @endif
                             <td class="text-muted">{{ $round->time }}</td>
                             <td>{!! $round->swatScoreWithColor !!}</td>
                             <td>{!! $round->suspectsScoreWithColor !!}</td>

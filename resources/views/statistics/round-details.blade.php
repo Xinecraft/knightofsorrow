@@ -6,6 +6,10 @@
     <div class="col-xs-9">
         @include('partials._statistics-navbar')
 
+        @if($round->server_id != null)
+            <div style="background: #090b0a" class="text-center alert text-bold"><span style="color: deeppink">*UnLimited Gaming*</span> <span style="color: red">(Antics)</span></div>
+        @endif
+
         <div class="well round-detail-summary text-center">
             {{ $round->timeAgo }} &nbsp;&squarf;&nbsp; {{ $round->mapName }}  &nbsp;&squarf;&nbsp; Round time: {{ $round->time }} &nbsp;&squarf;&nbsp; Round: {{ $round->index }}
         </div>

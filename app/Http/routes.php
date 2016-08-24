@@ -63,12 +63,14 @@ Route::group(['prefix' => 'api'],function(){
 Route::group(['prefix' => 'statistics'],function(){
     Route::get('/',['as' => 'statistics-home', 'uses' => 'StatisticsController@getTopPlayers']);
     Route::get('round-reports',['as' => 'round-reports', 'uses' => 'StatisticsController@getRoundReports']);
+    Route::get('war-round-reports',['as' => 'war-round-reports', 'uses' => 'StatisticsController@getWarRoundReports']);
     Route::get('top-players',['as' => 'top-players', 'uses' => 'StatisticsController@getTopPlayers']);
     Route::get('countries',['as' => 'countries-list', 'uses' => 'StatisticsController@getAllCountries']);
     Route::get('country/{id}/{name}/players',['as' => 'country-detail', 'uses' => 'StatisticsController@getCountryDetails']);
     Route::get('charts',['as' => 'chart-reports', 'uses' => 'StatisticsController@getChartReports']);
     Route::get('player/{name}/',['as' => 'player-detail', 'uses' => 'StatisticsController@getPlayerDetails']);
     Route::get('round-reports/detail/{id}',['as' => 'round-detail', 'uses' => 'StatisticsController@getRoundDetails']);
+    Route::get('war-round-reports/detail/{id}',['as' => 'war-round-detail', 'uses' => 'StatisticsController@getRoundDetails']);
 
     Route::get('top-10',['as' => 'top10', 'uses' => 'StatisticsController@getTop10']);
 
@@ -99,6 +101,7 @@ Route::post('feeds/{id}/comments',['middleware' => 'auth', 'as' => 'status-comme
 Route::get('/user/ping',['as' => 'user.ping', 'uses' => 'UserController@sendPing']);
 Route::post('profile/edit2', ['middleware' => 'auth', 'as' => 'user.setting2.post', 'uses' => 'UserController@updateProfile2']);
 Route::patch('/toggleban/@{username}',['middleware' => 'auth', 'as' => 'user.toggleban', 'uses' => 'UserController@toggleBanUser']);
+Route::patch('/togglemute/@{username}',['middleware' => 'auth', 'as' => 'user.togglemute', 'uses' => 'UserController@toggleMuteUser']);
 Route::post('/changerole/@{username}',['middleware' => ['auth','admin'], 'as' => 'user.changerole', 'uses' => 'UserController@changeRole']);
 Route::get('/viewserverkeys',['middleware' => 'auth','as' => 'user.viewkeys', 'uses' => 'UserController@viewServerCredentials']);
 Route::post('/viewserverkeys',['middleware' => 'auth','as' => 'user.viewkeys.post', 'uses' => 'UserController@postServerCredentials']);
@@ -143,6 +146,19 @@ Route::group(['prefix' => 'servertracker'], function(){
         }
         else {
             $game = new App\Server\ServerTracker($_POST);
+            $game->track();
+        }
+    }]);
+
+    /**
+     * WAR SERVER TRACKER FOR WARS AND TOURNAMENTS
+     */
+    Route::post('wars/{key}/',['as' => 'server-tracker', function($key){
+        if($key != env('SERVER_QUERY_KEY')) {
+            Log::error("Error! Server key invalid. Can't save round record to Database.");
+        }
+        else {
+            $game = new App\Server\WarServerTracker($_POST);
             $game->track();
         }
     }]);
@@ -272,3 +288,111 @@ Route::get('global-notifications',['as' => 'notifications.index', 'uses' => 'Not
 Route::get('notifications',['middleware' => 'auth', 'as' => 'notifications.userindex', 'uses' => 'NotificationController@indexUser']);
 Route::get('getlatestnotifications',['middleware' => 'auth', 'as' => 'notifications.getlatest', 'uses' => 'NotificationController@getLatest']);
 
+Route::get('/image/{url}/thumbnail/{width?}', ['as' => 'make.thumbnail', 'uses' => 'PhotosController@thumbnail']);
+
+
+Route::get('xxx',function(){
+
+    $tour = \App\KTournament::find(4);
+    $competitors = $teams = $tour->teams()->qualified()->get(['name'])->lists('name')->toArray();
+
+    //dd($competitors);
+
+    $rounds = log( count( $competitors ), 2 ) + 1;
+
+// round one
+    for( $i = 0; $i < log( count( $competitors ), 2 ); $i++ )
+    {
+        $seeded = array( );
+        foreach( $competitors as $competitor )
+        {
+            $splice = pow( 2, $i );
+
+            $seeded = array_merge( $seeded, array_splice( $competitors, 0, $splice ) );
+            $seeded = array_merge( $seeded, array_splice( $competitors, -$splice ) );
+        }
+        $competitors = $seeded;
+    }
+    $events = array_chunk( $seeded, 2 );
+
+
+    if( $rounds > 2 )
+    {
+        $round_index = count( $events );
+
+        // second round
+        for( $i = 0; $i < count( $competitors ) / 2; $i++ )
+        {
+            array_push( $events, array(
+                array( 'from_event_index' => $i, 'from_event_rank' => 1 ), // rank 1 = winner
+                array( 'from_event_index' => ++$i, 'from_event_rank' => 1 )
+            ) );
+        }
+
+        $round_matchups = array( );
+        for( $i = 0; $i < count( $competitors ) / 2; $i++ )
+        {
+            array_push( $round_matchups, array(
+                array( 'from_event_index' => $i, 'from_event_rank' => 2 ), // rank 2 = loser
+                array( 'from_event_index' => ++$i, 'from_event_rank' => 2 )
+            ) );
+        }
+        $events = array_merge( $events, $round_matchups );
+
+        for( $i = 0; $i < count( $round_matchups ); $i++ )
+        {
+            array_push( $events, array(
+                array( 'from_event_index' => $i + count( $competitors ) / 2, 'from_event_rank' => 2 ),
+                array( 'from_event_index' => $i + count( $competitors ) / 2 + count( $competitors ) / 2 / 2, 'from_event_rank' => 1 )
+            ) );
+        }
+    }
+
+    if( $rounds > 3 )
+    {
+        // subsequent rounds
+        for( $i = 0; $i < $rounds - 3; $i++ )
+        {
+            $round_events = pow( 2, $rounds - 3 - $i );
+            $total_events = count( $events );
+
+            for( $j = 0; $j < $round_events; $j++ )
+            {
+                array_push( $events, array(
+                    array( 'from_event_index' => $j + $round_index, 'from_event_rank' => 1 ),
+                    array( 'from_event_index' => ++$j + $round_index, 'from_event_rank' => 1 )
+                ) );
+            }
+
+            for( $j = 0; $j < $round_events; $j++ )
+            {
+                array_push( $events, array(
+                    array( 'from_event_index' => $j + $round_index + $round_events * 2, 'from_event_rank' => 1 ),
+                    array( 'from_event_index' => ++$j + $round_index + $round_events * 2, 'from_event_rank' => 1 )
+                ) );
+            }
+
+            for( $j = 0; $j < $round_events / 2; $j++ )
+            {
+                array_push( $events, array(
+                    array( 'from_event_index' => $j + $total_events, 'from_event_rank' => 2 ),
+                    array( 'from_event_index' => $j + $total_events + $round_events / 2, 'from_event_rank' => 1 )
+                ) );
+            }
+
+            $round_index = $total_events;
+        }
+
+    }
+
+    if( $rounds > 1 )
+    {
+        // finals
+        array_push( $events, array(
+            array( 'from_event_index' => count( $events ) - 3, 'from_event_rank' => 1 ),
+            array( 'from_event_index' => count( $events ) - 1, 'from_event_rank' => 1 )
+        ) );
+    }
+
+    dd($events);
+});

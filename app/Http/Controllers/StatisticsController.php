@@ -24,7 +24,24 @@ class StatisticsController extends Controller
         $orderBy = Request::has('orderBy') && in_array(Request::get('orderBy'),$sortableColumns) ? Request::get('orderBy')  : 'created_at';
         $sortDir = Request::has('direction') ? Request::get('direction') : 'desc';
 
-        $rounds = Game::orderBy($orderBy,$sortDir)->paginate(35);
+        $rounds = Game::normal()->orderBy($orderBy,$sortDir)->paginate(35);
+
+        return view('statistics.round-reports')->with('rounds', $rounds);
+    }
+
+    /**
+     * For handling the Round Reports list table.
+     *
+     * @return view
+     */
+    public function getWarRoundReports()
+    {
+        $sortableColumns = ['created_at','id','round_time','swat_score','suspects_score','map_id'];
+
+        $orderBy = Request::has('orderBy') && in_array(Request::get('orderBy'),$sortableColumns) ? Request::get('orderBy')  : 'created_at';
+        $sortDir = Request::has('direction') ? Request::get('direction') : 'desc';
+
+        $rounds = Game::war()->orderBy($orderBy,$sortDir)->paginate(35);
 
         return view('statistics.round-reports')->with('rounds', $rounds);
     }

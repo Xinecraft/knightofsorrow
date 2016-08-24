@@ -19,6 +19,19 @@
 @endsection
 @section('main-container')
     <div class="content col-xs-9">
+
+        @if(!Cookie::has('seen_donation_info'))
+        <div class="alert alert-info alert-dismissable text-center row">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>Fellow Gamers!</strong> As we all know, we are frequently upgrading website and server & everything come at a cost. We always need your supports and feedbacks.
+            If are are capable then please donate & help us keep this server online. <br>
+            <br>
+            <a target="_blank" class="btn btn-sm btn-primary" href="https://www.nfoservers.com/donate.pl?force_recipient=1&recipient=kinnngg786%40gmail.com">
+                <i class="fa fa-cc"></i>
+                Donate</a>
+        </div>
+        @endif
+
         <div style="display: none" id="server-viewer">
             <div class="row panel text-center live-server-summary">
                 <div class="col-xs-2 ls-swat4-summary">

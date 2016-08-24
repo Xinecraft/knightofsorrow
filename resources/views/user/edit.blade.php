@@ -64,7 +64,7 @@
         <div class="row">
             <div class="col-xs-6 panel pad5">
                 <h5 class="info-title" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Edit Profile</h5>
-                    {!! Form::model($user,['route' => 'user.setting2.post','class' => 'form-horizontal']) !!}
+                    {!! Form::model($user,['route' => 'user.setting2.post','class' => 'form-horizontal','files' => 'true']) !!}
                     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                         {!! Form::label('name', 'Full Name:', ['class' => 'col-xs-4 control-label'])  !!}
                         <div class="col-xs-7">
@@ -183,7 +183,21 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                <div class="form-group{{ $errors->has('photo') ? ' has-error' : '' }}">
+                    {!! Form::label('photo', 'Profile Picture', ['class' => 'col-md-4 control-label'])  !!}
+                    <div class="col-md-6">
+                        <img style="margin-bottom:5px;border: 1px solid grey" class="img" src="{!! $user->getGravatarLink(100)  !!}" alt="" width="100" height="100">
+                        {!! Form::file('photo',null,['class' => 'form-control'])  !!}
+                        <i class="small text-info">Leave empty if you don't want to change.</i>
+                        @if ($errors->has('photo'))
+                            <span class="help-block">
+                            <strong>{{ $errors->first('photo') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
+
+                <div class="form-group">
                         <div class="col-xs-6 col-xs-offset-4">
                             {!! Form::submit('Update Profile', ['class' => 'btn btn-primary']) !!}
                         </div>

@@ -79,11 +79,16 @@
                 <div class="pull-left">
                     {!! Html::image(Auth::user()->getGravatarLink(40),'',array('class'=>'img media-oject inprofile-thumbs','width'=>'40','height'=>'40')) !!}
                 </div>
-
+                @if(Auth::user()->muted)
+                    <form class="comment-create-form media-body">
+                    <textarea name="" id="muted" cols="5" rows="2" class="form-control comment-textarea no-margin" placeholder="You are muted because of your behaviors" disabled></textarea>
+                    </form>
+                @else
                 {!! Form::open(['route' => ['ban-comment',$ban->id], 'class'=>'comment-create-form media-body']) !!}
                 {!! Form::textarea('body', null, ['placeholder' => 'Your comment here', 'class' => 'form-control comment-textarea no-margin', 'rows' => 2, 'cols' => 5]) !!}
                 {!! Form::submit('Comment',['class' => 'btn btn-xs btn-default right comment-create-form-submit']) !!}
                 {!! Form::close() !!}
+                @endif
             </div>
         @endif
 

@@ -15,7 +15,7 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="{{ set_active(['statistics*']) }}">{!! link_to_route('statistics-home','Statistics') !!}</li>
-                <li class="{{ set_active(['tournament*']) }}"><a href="{{ route('tournament.index') }}">Tournaments</a></li>
+                <li class="{{ set_active(['tournament*']) }}"><a href="{{ route('tournament.index') }}"><span class="tourny-after">Tournaments</span></a></li>
 
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

@@ -43,6 +43,7 @@ class StatusController extends Controller
     /**
      * Store a newly created resource in storage.
      *
+     * @param Request $request
      * @return Response
      */
     public function store(Request $request)
@@ -50,6 +51,9 @@ class StatusController extends Controller
         $this->validate($request, [
             'body' => 'required|min:5'
         ]);
+
+        if($request->user()->muted)
+            return \Redirect::back()->with('error','You are muted.');
 
         $status = [
             'body' => $request->body

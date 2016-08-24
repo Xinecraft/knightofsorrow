@@ -27,7 +27,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password','username','country_id','confirmation_token','last_ipaddress', 'dob', 'about', 'gender', 'gr_id', 'evolve_id', 'facebook_url', 'website_url'];
+    protected $fillable = ['name', 'email','photo_id', 'password','username','country_id','confirmation_token','last_ipaddress', 'dob', 'about', 'gender', 'gr_id', 'evolve_id', 'facebook_url', 'website_url'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -60,18 +60,39 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     }
 
     /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function photo()
+    {
+        return $this->belongsTo('App\Photo');
+    }
+
+    /**
      * Returns gravatar ID
      */
     public function getGravatarLink($size=40)
     {
-        //return url('img/profile.png');
-         //gravatar.com/avatar/{id}?d=mm&s=20
+        if($this->photo_id == null || $this->photo_id == "")
+        {
+            if($this->gender == "Male")
+                return route('make.thumbnail',["Male.jpg",$size]);
+            elseif($this->gender == "Female")
+                return route('make.thumbnail',["Female.jpg",$size]);
+            else
+                return route('make.thumbnail',["vip.jpg",$size]);
+        }
+        else
+        {
+            return route('make.thumbnail',[$this->photo->url,$size]);
+        }
+        /*
         $email = $this->email;
         $email = trim($email);
         $email = strtolower($email);
         $id = md5($email);
         $link = "//gravatar.com/avatar/$id/?d=monsterid&s=$size";
         return $link;
+        */
     }
 
     public function country()
@@ -463,6 +484,19 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
             }
         }
         return false;
+    }
+
+    /**********************************************************
+     * CLANS FUNCTIONS
+     **********************************************************
+     */
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function clans()
+    {
+        return $this->hasMany('App\Clan','submitter_id','id');
     }
 
 }

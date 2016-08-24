@@ -107,6 +107,11 @@
                                         Banned account
                                     </p>
                                 @endif
+                                @if($user->muted)
+                                    <p class="text-banned padding10 text-center"><i class="fa fa-microphone"></i>
+                                        Muted
+                                    </p>
+                                @endif
                             </div>
                             <div class="col-xs-5">
                                 <h3 class="no-margin hero-name {{ $user->banned ? 'linethru' : '' }}">{{ $user->name }}</h3>
@@ -296,6 +301,19 @@
                                         </button>
                                 @endif
                                 {!! Form::close()  !!}
+
+                                    {!! Form::open(['method' => 'patch', 'route' => ['user.togglemute',$user->username], 'class' => 'form col-xs-2 col-xs-4'])  !!}
+                                    {!! Form::hidden('username',$user->username)  !!}
+                                    @if($user->muted == 1)
+                                        <button type="submit" class="btn btn-success btn-sm tooltipster" title="Unmute {{ $user->displayname() }}">
+                                            <i class="fa fa-btn fa-ban"></i> Unmute
+                                        </button>
+                                    @else
+                                        <button type="submit" class="btn btn-warning confirm btn-sm tooltipster" title="Mute {{ $user->displayName() }}">
+                                            <i class="fa fa-btn fa-microphone"></i> Mute
+                                        </button>
+                                    @endif
+                                    {!! Form::close()  !!}
                             @endif
                             @if(Auth::check() && $user->id != Auth::user()->id)
                                 <div class="col-xs-2 absrz">

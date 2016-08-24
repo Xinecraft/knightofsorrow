@@ -16,44 +16,51 @@
                     {!! Form::submit('D',['class'=>'btn btn-danger btn-xs submit tooltipster', 'title' => 'Delete Status']) !!}
                     {!! Form::close() !!}
                 @endif
-                </div>
+            </div>
         </div>
 
     </div>
     <div class="panel-body convert-emoji">{!! $status->statusBody !!}</div>
     <div class="panel-footer">
-            <div class="comment-sentence small text-muted">
-                <b>{{ $statusCommentCount = $status->comments->count() }} {{ str_plural("comment", $statusCommentCount) }}</b>
-            </div>
+        <div class="comment-sentence small text-muted">
+            <b>{{ $statusCommentCount = $status->comments->count() }} {{ str_plural("comment", $statusCommentCount) }}</b>
+        </div>
 
         <div class="comments-container">
-        @foreach($status->comments()->latest()->limit(5)->get()->reverse() as $comment)
+            @foreach($status->comments()->latest()->limit(5)->get()->reverse() as $comment)
+                <div class="media comment-media">
+                    <div class="pull-left">
+                        {!! Html::image($comment->user->getGravatarLink(30),'',array('class'=>'img media-oject inprofile-thumbs','width'=>'30','height'=>'30')) !!}
+                    </div>
+                    <div class="media-body small">
+                        <p class="no-margin convert-emoji">
+                            <b>{!! link_to_route('user.show',$comment->user->displayName(),[$comment->user->username]) !!}</b>
+                            {!! $comment->showBody() !!}
+                        </p>
+                        <p class="no-margin text-muted small">{{ $comment->created_at->diffForHumans() }}</p>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+
+        @if(Auth::check())
             <div class="media comment-media">
                 <div class="pull-left">
-                    {!! Html::image($comment->user->getGravatarLink(30),'',array('class'=>'img media-oject inprofile-thumbs','width'=>'30','height'=>'30')) !!}
+                    {!! Html::image(Auth::user()->getGravatarLink(40),'',array('class'=>'img media-oject inprofile-thumbs','width'=>'40','height'=>'40')) !!}
                 </div>
-                <div class="media-body small">
-                    <p class="no-margin convert-emoji">
-                        <b>{!! link_to_route('user.show',$comment->user->displayName(),[$comment->user->username]) !!}</b>
-                        {!! $comment->showBody() !!}
-                    </p>
-                    <p class="no-margin text-muted small">{{ $comment->created_at->diffForHumans() }}</p>
-                </div>
-            </div>
-        @endforeach
-        </div>
-        
-        @if(Auth::check())
-        <div class="media comment-media">
-            <div class="pull-left">
-                {!! Html::image(Auth::user()->getGravatarLink(40),'',array('class'=>'img media-oject inprofile-thumbs','width'=>'40','height'=>'40')) !!}
-            </div>
 
-        {!! Form::open(['route' => ['status-comment',$status->id], 'class'=>'comment-create-form media-body']) !!}
-        {!! Form::textarea('body', null, ['placeholder' => 'Your comment here', 'class' => 'form-control comment-textarea no-margin', 'rows' => 1, 'cols' => 5]) !!}
-        {!! Form::submit('Comment',['class' => 'btn btn-xs btn-default right comment-create-form-submit']) !!}
-        {!! Form::close() !!}
-        </div>
+                @if(Auth::user()->muted)
+                    <form class="comment-create-form media-body">
+                        <textarea name="" id="muted" cols="5" rows="1" class="form-control comment-textarea no-margin"
+                                  placeholder="You are muted because of your behaviors" disabled></textarea>
+                    </form>
+                @else
+                    {!! Form::open(['route' => ['status-comment',$status->id], 'class'=>'comment-create-form media-body']) !!}
+                    {!! Form::textarea('body', null, ['placeholder' => 'Your comment here', 'class' => 'form-control comment-textarea no-margin', 'rows' => 1, 'cols' => 5]) !!}
+                    {!! Form::submit('Comment',['class' => 'btn btn-xs btn-default right comment-create-form-submit']) !!}
+                    {!! Form::close() !!}
+                @endif
+            </div>
         @endif
 
 

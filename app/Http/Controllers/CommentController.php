@@ -21,6 +21,9 @@ class CommentController extends Controller
         if($comment == '')
             return \Redirect::back()->with('error','Comment Empty.');
 
+        if($request->user()->muted)
+            return \Redirect::back()->with('error','You are muted.');
+
         $com = $status->comments()->create([
             'body' => $comment,
             'user_id' => Auth::user()->id
@@ -71,6 +74,9 @@ class CommentController extends Controller
         if($comment == '')
             return \Redirect::back();
 
+        if($request->user()->muted)
+            return \Redirect::back()->with('error','You are muted.');
+
         $ban->comments()->create([
             'body' => $comment,
             'user_id' => Auth::user()->id
@@ -97,6 +103,9 @@ class CommentController extends Controller
 
         if($comment == '')
             return \Redirect::back();
+
+        if($request->user()->muted)
+            return \Redirect::back()->with('error','You are muted.');
 
         $t->comments()->create([
             'body' => $comment,

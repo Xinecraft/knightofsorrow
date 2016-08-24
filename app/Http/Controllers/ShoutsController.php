@@ -52,6 +52,12 @@ class ShoutsController extends Controller
             return response($validator->messages(), 422);
         }
 
+        /**
+         * Muted user cant shout
+         */
+        if($request->user()->muted)
+            return false;
+
         $shout = $request->user()->shouts()->create([
             'shout' => $request->shout
         ]);

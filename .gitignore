@@ -8,3 +8,6 @@ _ide_helper.php
 tests/_output/*
 npm-debug.log
 /public/uploaded_images/*
+!public/uploaded_images/Male.jpg
+!public/uploaded_images/Female.jpg
+!public/uploaded_images/vip.jpg

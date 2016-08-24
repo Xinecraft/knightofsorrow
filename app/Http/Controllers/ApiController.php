@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Chat;
+use App\Player;
 use App\PlayerTotal;
 use App\User;
 use Illuminate\Http\Request;
@@ -117,7 +118,7 @@ class ApiController extends Controller
                 if(\Auth::check() && \Auth::user()->isAdmin())
                     $showRadioIfAdmin = "<input class='pull-left' type='radio' name='selected_player' value='$playerNameStripped'> &nbsp;";
 
-                if($playerTotal = PlayerTotal::findOrFailByNameWithNull($playerNameStripped))
+                if($playerTotal = Player::findOrFailByNameWithNull($playerNameStripped))
                 {
                     $playerTableData .= "<td>{$showRadioIfAdmin}<b><a class='team-{$player['team']}' href='".route('player-detail',$playerNameStripped)."'>".$player['name']."</b></a></td>";
                 }

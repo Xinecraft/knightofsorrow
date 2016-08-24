@@ -3,13 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Notification;
+use App\Photo;
 use App\Role;
 use App\User;
 use Auth;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Server\Repositories\UserRepository;
+use Image;
+use File;
 
 class UserController extends Controller
 {
@@ -265,6 +269,7 @@ class UserController extends Controller
             'gr_id' => 'numeric',
             'facebook_url' => 'url',
             'website_url' => 'url',
+            'photo' => 'image|max:500',
         ], [
             'dob.required' => 'Please specify your Date of Birth.',
             'dob.date' => 'Invalid Date of Birth format',
@@ -273,6 +278,8 @@ class UserController extends Controller
             'gr_id.numeric' => 'Please enter a valid GameRanger account Id',
             'faccebook_url.url' => 'Facebook URL is not valid. Please prefix "http://"',
             'website_url.url' => 'Website URL is not valid. Please prefix "http://"',
+            'photo.image' => "Profile picture must be image type",
+            'photo.max' => "Profile picture must not be greater than 500kb in size",
         ]);
 
         $dob = $request->dob ? $request->dob : null;
@@ -284,6 +291,56 @@ class UserController extends Controller
         $gender = $request->gender ? $request->gender : null;
         $gender = $gender == 'unspecified' ? null : $gender;
 
+
+        /**
+         * If Request has Photo Uploaded Then
+         * 1> Delete prev Image
+         * 2> Store Photo in storage and link in DB
+         * 3> Pass new PhotoId
+         */
+        if ($request->hasFile('photo') && $request->file('photo')->isValid()) {
+            // Create name for new Image
+            $photoName = md5(Carbon::now()) . "." . $request->file('photo')->getClientOriginalExtension();
+
+            // Move image to storage
+            $image = Image::make($request->file('photo'));
+            $image->fit(300)->save(public_path('uploaded_images/') . $photoName);
+            $photo = Photo::create([
+                'url' => $photoName
+            ]);
+
+            /*
+             * Delete previous Profile pic if any
+             * Delete only if this Photo is not referenced by any Alumini profile.
+             */
+            if ($prevPic = $request->user()->photo) {
+                // If any alumini references then ignore deletion else delete
+                    $file = public_path('uploaded_images/') . $prevPic->url;
+                    if (File::exists($file)) {
+                        // Delete from Storage
+                        File::delete($file);
+                        // Delete link from DB
+                        $user->photo_id = null;
+                        $user->save();
+                        $prevPic->delete();
+                    }
+            }
+            $photoId = $photo->id;
+        }
+        /**
+         * If No Upload Then
+         * 1> Check if already has a profile Pic
+         *  Yes? : Pass old profile pic Id.
+         *  No?  : Pass null as Profile pic Id
+         */
+        else {
+            if ($prevPic = $request->user()->photo) {
+                $photoId = $prevPic->id;
+            } else {
+                $photoId = null;
+            }
+        }
+
         $user->update([
             'dob' => $dob,
             'name' => $request->name,
@@ -293,6 +350,7 @@ class UserController extends Controller
             'evolve_id' => $evolveid,
             'facebook_url' => $fburl,
             'website_url' => $weburl,
+            'photo_id' => $photoId
         ]);
 
         return \Redirect::back()->with('message',"Profile has been updated!");
@@ -374,6 +432,52 @@ class UserController extends Controller
             return \Redirect::back()->with('message',"Success! You have banned this User");
         }
 
+        return \Redirect::back()->with('error',"Error! Something not well.");
+    }
+
+
+    /**
+     * @param Request $request
+     * @param $username
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function toggleMuteUser(Request $request, $username)
+    {
+        if(!$request->user()->isAdmin())
+        {
+            return \Redirect::back()->with('error',"Aw! You are not any Admin ;)");
+        }
+
+        if ($request->username != $username) {
+            return \Redirect::back()->with('error',"Aw! Please don't try to mess up the code ;)");
+        }
+
+        $user = User::whereUsername($request->username)->first();
+
+        if (is_null($user)) {
+            return \Redirect::back()->with('error',"User not Found");
+        }
+
+        if ($user->isSuperAdmin()) {
+            return \Redirect::back()->with('error',"You don't have rights to mute this User");
+        }
+
+        if($request->user()->roles()->first()->id == $user->roles()->first()->id)
+        {
+            return \Redirect::back()->with('error',"You don't have rights to mute this User");
+        }
+
+        if ($user->muted == 1) {
+            $user->muted = 0;
+            $user->save();
+
+            return \Redirect::back()->with('message',"Success! You have successfully Unmuted this User");
+        }
+        elseif ($user->muted == 0) {
+            $user->muted = 1;
+            $user->save();
+            return \Redirect::back()->with('message',"Success! You have muted this User");
+        }
         return \Redirect::back()->with('error',"Error! Something not well.");
     }
 

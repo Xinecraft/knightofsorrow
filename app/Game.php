@@ -82,4 +82,24 @@ class Game extends Model implements HasPresenter
     {
         return $this->id." ".$this->created_at->diffForHumans();
     }
+
+    /**
+     * @param $query
+     * @return mixed
+     */
+    public function scopeNormal($query)
+    {
+        return $query->where('server_id', null);
+    }
+
+    /**
+     * @param $query
+     * @return mixed
+     */
+    public function scopeWar($query)
+    {
+        return $query->where('server_id', 19);
+    }
+
+
 }

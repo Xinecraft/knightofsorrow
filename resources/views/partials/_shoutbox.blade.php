@@ -81,6 +81,11 @@
             </div>
             <div class="panel-footer">
                 @if(Auth::check())
+                    @if(Auth::user()->muted)
+                        <form class="comment-create-form media-body">
+                            <input type="text" placeholder="You are muted" class="form-control text-center comment-textarea no-margin" disabled>
+                        </form>
+                    @else
                 {!!  Form::open(['route' => 'shouts.store','id' => 'shoutbox-form']) !!}
                 <div id="shout-input-group" class="input-group">
                     <input name="shout" id="btn-input" type="text" class="textarea form-control input-sm"
@@ -94,6 +99,7 @@
                     <div id="shout-input-group-error" class="help-block"></div>
 
                 {!! Form::close() !!}
+                    @endif
                  @else
                     <div class='panel nomargin padding10 text-muted'><b>{!!  link_to('/auth/login','Login') !!}
                             or {!! link_to('/auth/register', 'Register') !!} to shout.</b></div>
