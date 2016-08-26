@@ -121,7 +121,7 @@
                 </tr>
                 </tbody></table>
         </div>
-        <div class="panel col-md-5 col-xs-offset-1 padding10">
+        <div class="panel col-xs-5 col-xs-offset-1 padding10">
             <h5 class="info-title" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Selected Players</h5>
             @if($team->playerselected()->get()->isEmpty())
                 <span class="small">No Players</span>
@@ -175,7 +175,7 @@
             @endif
         </div>
 
-            <div class="panel col-md-5 col-xs-offset-1 padding10">
+            <div class="panel col-xs-5 col-xs-offset-1 padding10">
                 <h5 class="info-title" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Pending Players</h5>
                 @if($team->playerpending()->get()->isEmpty())
                     <span class="small">No pending players</span>

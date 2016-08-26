@@ -143,6 +143,18 @@
                     </div>
                 </div>
 
+                <div class="form-group{{ $errors->has('steam_nickname') ? ' has-error' : '' }}">
+                    {!! Form::label('steam_nickname', 'Steam Username', ['class' => 'col-xs-4 control-label']) !!}
+                    <div class="col-xs-7">
+                    {!! Form::text('steam_nickname',null,['class' => 'form-control']) !!}
+                    @if ($errors->has('steam_nickname'))
+                    <span class="help-block">
+                    <strong>{{ $errors->first('steam_nickname') }}</strong>
+                    </span>
+                    @endif
+                    </div>
+                </div>
+
                 <div class="form-group{{ $errors->has('facebook_url') ? ' has-error' : '' }}">
                     {!! Form::label('facebook_url', 'FB profile Url:', ['class' => 'col-xs-4 control-label'])  !!}
                     <div class="col-xs-7">

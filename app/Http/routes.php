@@ -32,6 +32,7 @@ Route::controllers([
  */
 Route::get('/',['as' => 'home', 'uses' => 'MainController@getIndex']);
 Route::get('home',['as' => 'home2', 'uses' => 'MainController@getIndex']);
+Route::get('redirects',['as' => 'redirector', 'uses' => 'MainController@redirects']);
 
 
 

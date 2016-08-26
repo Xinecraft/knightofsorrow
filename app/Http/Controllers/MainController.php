@@ -343,34 +343,30 @@ class MainController extends Controller
     {
         return view('rules');
     }
+
+    /**
+     * Redirectors
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function redirects(Request $request)
+    {
+        if($request->has('to'))
+        {
+            if(substr($request->to,0,4) == "http")
+            {
+                return redirect()->away($request->to);
+            }
+            else
+            {
+                $redirect = "http://".$request->to;
+                return redirect()->away($redirect);
+            }
+        }
+        else
+        {
+            return redirect()->home();
+        }
+    }
 }
-
-
-/**
- * // Ban List
-$banlist = "IPPolicies=DENY,24.188.165.77,newname,|SRV|»DeadlyViPer!,197.33.13.247,[13/2/2014 2:58:19]";
-
-$banlist = substr($banlist,11);
-
-$banlistarr = explode(",",$banlist);
-
-if($banlistarr[0] == "DENY")
-{
-$bannedUserName = $banlistarr[2];
-$bannedUserIP = $banlistarr[1];
-$adminName = $banlistarr[3];
-$date = $banlistarr[5];
-$date = trim($date,"[");
-$date = trim($date,"]");
-$date = Carbon::createFromFormat("d/m/Y h:i:s",$date);
-$date = $date->diffForHumans();
-
-}
-
-$banUser = new \StdClass;
-$banUser->name = ($bannedUserName);
-$banUser->ip = $bannedUserIP;
-$banUser->admin = ($adminName);
-$banUser->date = $date;
-dd($banUser);
- */

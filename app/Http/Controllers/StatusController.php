@@ -66,7 +66,7 @@ class StatusController extends Controller
         $not->from($request->user())
             ->withType('UserStatusUpdate')
             ->withSubject('A status is posted')
-            ->withBody(link_to_route('user.show',$request->user()->displayName(),$request->user()->username)." published a post in his feedline")
+            ->withBody(link_to_route('user.show',$request->user()->displayName(),$request->user()->username)." published a post in his feedline ".link_to_route('show-status',"#".$st->id,$st->id))
             ->withStream(true)
             ->regarding($st)
             ->deliver();

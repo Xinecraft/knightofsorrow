@@ -189,6 +189,15 @@ class UserPresenter extends BasePresenter
         return "<b>".htmlentities($this->wrappedObject->evolve_id)."</b>";
     }
 
+    public function steamId()
+    {
+        if($this->wrappedObject->steam_nickname == null || $this->wrappedObject->steam_nickname == "")
+        {
+            return "<i class='small'>Unknown</i>";
+        }
+        return "<b>".htmlentities($this->wrappedObject->steam_nickname)."</b>";
+    }
+
     public function grId()
     {
         if($this->wrappedObject->gr_id == null || $this->wrappedObject->gr_id == "")

@@ -37,7 +37,7 @@ class CommentController extends Controller
             $not->from($request->user())
                 ->withType('UserCommentOnStatus')
                 ->withSubject('A comment is done on status')
-                ->withBody(link_to_route('user.show',$request->user()->displayName(),$request->user()->username)." has commented on his own status")
+                ->withBody(link_to_route('user.show',$request->user()->displayName(),$request->user()->username)." has commented on his own status ".link_to_route('show-status',"#".$status->id,$status->id))
                 ->withStream(true)
                 ->regarding($com)
                 ->deliver();
@@ -49,7 +49,7 @@ class CommentController extends Controller
             $not->from($request->user())
                 ->withType('UserCommentOnStatus')
                 ->withSubject('A comment is done on status')
-                ->withBody(link_to_route('user.show',$request->user()->displayName(),$request->user()->username)." has commented on ".link_to_route('user.show',$status->user->displayName(),$status->user->username)."'s status")
+                ->withBody(link_to_route('user.show',$request->user()->displayName(),$request->user()->username)." has commented on ".link_to_route('user.show',$status->user->displayName(),$status->user->username)."'s status ".link_to_route('show-status',"#".$status->id,$status->id))
                 ->withStream(true)
                 ->regarding($com)
                 ->deliver();
@@ -57,7 +57,7 @@ class CommentController extends Controller
                 ->from($request->user())
                 ->withType('UserCommentOnStatus')
                 ->withSubject('A comment is done on status.')
-                ->withBody(link_to_route('user.show',$request->user()->displayName(),$request->user()->username)." has commented on  your status")
+                ->withBody(link_to_route('user.show',$request->user()->displayName(),$request->user()->username)." has commented on  your status ".link_to_route('show-status',"#".$status->id,$status->id))
                 ->regarding($com)
                 ->deliver();
         }

@@ -26,7 +26,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('calculate:player-total')->everyTenMinutes();
-        $schedule->command('bake:roundrobin')->everyMinute();
+        $schedule->command('calculate:player-total')->everyThirtyMinutes();
+        //$schedule->command('bake:roundrobin')->everyTenMinutes();
     }
 }

@@ -228,14 +228,20 @@
                             </table>
                         </div>
 
-                        <div class="col-xs-6 panel general-info pad5">
+                        <div class="col-xs-6 panel general-info pad5" style="height: auto !important;">
                             <h5 class="info-title" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Other
                                 Info</h5>
                             <table style="font-size: large" class="table table-striped table-hover table-bordered">
                                 <tr>
-                                    <td class="tooltipster" title="EvolveHQ Username">Evolve username</td>
+                                    <td class="tooltipster" title="EvolveHQ Username">Evolve Username</td>
                                     <td>
                                         {!! $user->evolveId !!}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tooltipster" title="Steam Username">Steam Username</td>
+                                    <td>
+                                        {!! $user->steamId !!}
                                     </td>
                                 </tr>
                                 <tr>
@@ -261,7 +267,7 @@
                             </table>
                         </div>
 
-                        <div class="col-xs-6 panel stats-tracker pad5" style="height: 187px">
+                        <div class="col-xs-6 panel stats-tracker pad5" style="height: 224px !important;">
                             <h5 class="info-title" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Trophies & Achievements</h5>
                             <h3 class="text-center text-green" style="font-family: 'Passion One',cursive">
                                 <i class="fa fa-trophy fa-3x" style="color:#FF9800"></i><br>

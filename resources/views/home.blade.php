@@ -920,11 +920,8 @@
                     <div class="panel-body font-13">
                         @forelse($activeUsers as $user)
                             <a class="{{ $user->isAdmin() ? "text-green" : "" }}" style="margin-right:1em"
-                               href="{{ route('user.show',$user->username) }}">
-                                <strong class="">{{ $user->displayName() }}{!! $user->isOnline ? "<sup class='text-green'>&#x25cf;</sup>" : "" !!}</strong>
-                            </a>
+                               href="{{ route('user.show',$user->username) }}"><strong class="">{{ $user->displayName() }}{!! $user->isOnline ? "<sup class='text-green'>&#x25cf;</sup>" : "" !!}</strong></a>
                         @empty
-
                         @endforelse
                     </div>
                 </div>

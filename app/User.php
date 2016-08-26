@@ -27,7 +27,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      *
      * @var array
      */
-    protected $fillable = ['name', 'email','photo_id', 'password','username','country_id','confirmation_token','last_ipaddress', 'dob', 'about', 'gender', 'gr_id', 'evolve_id', 'facebook_url', 'website_url'];
+    protected $fillable = ['name', 'email','photo_id', 'password','username','country_id','confirmation_token','last_ipaddress', 'dob', 'about', 'gender', 'gr_id', 'evolve_id', 'facebook_url', 'website_url', 'steam_nickname'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -271,14 +271,13 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     public function displayName()
     {
-        $playerTotal = $this->playerTotal();
-        if($playerTotal == NULL)
+        if($this->player_totals_name == "" || $this->player_totals_name == NULL)
         {
             return $this->username;
         }
         else
         {
-            return $playerTotal->name;
+            return $this->player_totals_name;
         }
     }
 

@@ -287,6 +287,7 @@ class UserController extends Controller
         $fburl = $request->facebook_url ? $request->facebook_url : null;
         $weburl = $request->website_url ? $request->website_url : null;
         $evolveid = $request->evolve_id ? $request->evolve_id : null;
+        $steam_nickname = $request->steam_nickname ? $request->steam_nickname : null;
         $about = $request->about ? $request->about : null;
         $gender = $request->gender ? $request->gender : null;
         $gender = $gender == 'unspecified' ? null : $gender;
@@ -350,7 +351,8 @@ class UserController extends Controller
             'evolve_id' => $evolveid,
             'facebook_url' => $fburl,
             'website_url' => $weburl,
-            'photo_id' => $photoId
+            'photo_id' => $photoId,
+            'steam_nickname' => $steam_nickname,
         ]);
 
         return \Redirect::back()->with('message',"Profile has been updated!");
