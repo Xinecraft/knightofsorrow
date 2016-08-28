@@ -178,23 +178,23 @@
                                 <a class="ainorange" href="{{ route('user.show',"6million") }}">Keyser Soze</a>
                             </td>
                             <td>
-                                Idea and Management
+                                Idea,Design and Management
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <a class="ainorange" href="{{ route('user.show',"zaki") }}">Zaki(uS)</a>
+                                <a class="ainorange" href="http://knightofsorrow.tk/statistics/player/%C2%AB%7CSoH%7C%C2%BBeLectron%3CGST%3E">eLectron</a>
                             </td>
                             <td>
-                                Promotions
+                                Server & Support
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <a class="ainorange" href="{{ route('user.show',"bummmy") }}">eLe|Bummmy</a>
+                                <a class="ainorange" href="{{ route('user.show',"ZAKI") }}">Zaki(uS)</a>
                             </td>
                             <td>
-                                Promotions
+                                Promotions & Supports
                             </td>
                         </tr>
                     </table>
