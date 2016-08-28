@@ -1,5 +1,5 @@
 body {
-  background: url("/images/bg.png") #f9f6f6;
+  background: url("/images/bg.png") #f9f6f6 fixed;
   font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
 }
 td,
@@ -579,6 +579,13 @@ a.status-timeago:active {
   font-size: 10px !important;
   color: yellow !important;
   margin-left: 4px !important;
+}
+li.picker-switch.accordion-toggle:hover {
+  cursor: pointer !important;
+  background: #8bbbeb;
+}
+.bootstrap-datetimepicker-widget > ul {
+  padding: 0 !important;
 }
 
 /*# sourceMappingURL=app.css.map */

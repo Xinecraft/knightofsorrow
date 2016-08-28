@@ -216,7 +216,7 @@ class PlayerTotal extends Model implements HasPresenter
             }
         }
 
-        $weaponTotal->push($weaponTotal->primary)->push($weaponTotal->secondary)->push($weaponTotal->tactical)->push($weaponTotal->others);
+        $weaponTotal->push($weaponTotal->primary->sortByDesc('kills'))->push($weaponTotal->secondary->sortByDesc('kills'))->push($weaponTotal->tactical->sortByDesc('shots_fired'))->push($weaponTotal->others->sortByDesc('kills'));
 
         return $weaponTotal;
     }

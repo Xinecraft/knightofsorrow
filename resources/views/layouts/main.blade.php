@@ -6,8 +6,16 @@
     {{--<meta name="viewport" content="width=device-width, initial-scale=1">--}}
     <meta name="description" content="@yield('meta-desc','Swat4 Servers and Community with ranking and more fun')">
     <meta name="author" content="Zishan Ansari">
+
+    <!--Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#C60D00">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#C60D00">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#C60D00">
+
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <title>KNIGHT of SORROW - @yield('title','SWAT 4 Servers & Community')</title>
+    <title>@yield('title','SWAT 4 Servers & Community') &squf; KNIGHT of SORROW</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ elixir('css/all.css') }}">

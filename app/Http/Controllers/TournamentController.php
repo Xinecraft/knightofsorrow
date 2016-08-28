@@ -39,9 +39,10 @@ class TournamentController extends Controller
 
     public function getCalendar()
     {
-        $months = KTournament::where('disabled','false')->get()->groupBy(function($val){
-            return Carbon::parse($val->tournament_starts_at)->format('m');
+        $months = KTournament::where('disabled','false')->orderBy('tournament_starts_at')->get()->groupBy(function($val){
+            return Carbon::parse($val->tournament_starts_at)->format('m-Y');
         });
+
         return view('tournament.calendar')->with('months',$months);
     }
 

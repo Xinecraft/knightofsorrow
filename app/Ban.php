@@ -8,8 +8,9 @@ use App\Server\Presenters\BanPresenter;
 
 class Ban extends Model implements HasPresenter
 {
-    protected $fillable = ['name', 'ip_address', 'server_id', 'country_id', 'reason', 'admin_name', 'admin_ip', 'status', 'created_by_site', 'updated_by_site'];
+    protected $fillable = ['name', 'ip_address', 'server_id', 'country_id', 'reason', 'admin_name', 'admin_ip', 'status', 'created_by_site', 'updated_by_site','banned_till'];
 
+    protected $dates = ['banned_till'];
     /**
      * @return BanPresenter
      */

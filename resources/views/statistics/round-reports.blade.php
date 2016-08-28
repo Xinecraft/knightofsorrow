@@ -11,7 +11,11 @@
         @endif
 
         <div class="rounds panel panel-default">
-            <div class="panel-heading"><strong>Total <em>{{ App\Game::count() }}</em> Rounds Reports</strong></div>
+            @if(Request::route()->uri() == 'statistics/war-round-reports')
+                <div class="panel-heading"><strong>Total <em>{{ App\Game::whereNotNull('server_id')->count() }}</em> Rounds Reports</strong></div>
+            @else
+                <div class="panel-heading"><strong>Total <em>{{ App\Game::whereNull('server_id')->count() }}</em> Rounds Reports</strong></div>
+            @endif
             <div class="panel-body">
                 <table id="" class="table table-striped table-hover no-margin">
                     <thead>

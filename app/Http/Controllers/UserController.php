@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Notification;
 use App\Photo;
+use App\PlayerTotal;
 use App\Role;
 use App\User;
 use Auth;
@@ -119,8 +120,15 @@ class UserController extends Controller
     {
         $currentIp = \Request::getClientIp();
 
-        $playerTotals = \App\PlayerTotal::where('last_ip_address','LIKE',$currentIp)->latest()->get();
+        $playerTotals = PlayerTotal::where('last_ip_address','LIKE',$currentIp)->latest()->get();
         $user = Auth::user();
+
+        // Push already linked player account too..
+        if($user->playerTotal())
+        {
+            $playerTotals->push($user->playerTotal());
+        }
+
         $array = [
             'players' => $playerTotals,
             'user' => $user
@@ -162,6 +170,10 @@ class UserController extends Controller
                 $inGamePlayerName = $request->ingameplayer;
                 $playerTotal = \App\PlayerTotal::where('last_ip_address','LIKE',$playerIP)->where('name','LIKE',$inGamePlayerName)->get();
 
+                if($inGamePlayerName == $request->user()->player_totals_name)
+                {
+                    return \Redirect::back()->with('message', 'This player is already linked to your account. ;)');
+                }
                 $playerAlreadyClaimed = \App\PlayerTotal::isClaimed($inGamePlayerName);
 
                 if($playerTotal->isEmpty())

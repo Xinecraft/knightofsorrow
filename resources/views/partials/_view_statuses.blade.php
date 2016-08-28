@@ -13,7 +13,7 @@
                     {!! Form::open(['name'=>'deleteStatus','method'=>'DELETE','action'=>'StatusController@destroy','class'=>'form-inline pull-right deleteStatus']) !!}
                     {!! Html::link(action('StatusController@edit',['id' => $status->id]),'E',['class'=>'btn btn-warning btn-xs tooltipster', 'title' => 'Edit Status']) !!}
                     {!! Form::hidden('id',$status->id) !!}
-                    {!! Form::submit('D',['class'=>'btn btn-danger btn-xs submit tooltipster', 'title' => 'Delete Status']) !!}
+                    {!! Form::submit('D',['class'=>'btn btn-danger btn-xs submit tooltipster confirm', 'title' => 'Delete Status']) !!}
                     {!! Form::close() !!}
                 @endif
             </div>

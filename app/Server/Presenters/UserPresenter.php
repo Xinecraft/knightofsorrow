@@ -245,4 +245,9 @@ class UserPresenter extends BasePresenter
         return 0;
     }
 
+    public function dob()
+    {
+        return $this->wrappedObject->dob->toDateString();
+    }
+
 }

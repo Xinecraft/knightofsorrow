@@ -3,7 +3,10 @@
 namespace App\Exceptions;
 
 use Exception;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Session\TokenMismatchException;
+use Illuminate\Http\Response;
 
 class Handler extends ExceptionHandler
 {
@@ -38,6 +41,17 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
+        if(app()->environment() == 'production')
+        {
+            if($e instanceof ModelNotFoundException)
+            {
+                abort(Response::HTTP_NOT_FOUND);
+            }
+            else if($e instanceof TokenMismatchException)
+            {
+                abort(Response::HTTP_NOT_ACCEPTABLE);
+            }
+        }
         return parent::render($request, $e);
     }
 }

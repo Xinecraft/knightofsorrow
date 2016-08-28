@@ -38,7 +38,7 @@
                 {!! Form::open(['class' => 'form-horizontal h203px']) !!}
                 {!! Form::hidden('type','LinkPlayer') !!}
                 <div class="form-group"><label for="ingameplayer" class="col-sm-4 control-label">Player Name:</label>
-                    <div class="col-sm-8">
+                    <div class="col-sm-7">
                         <select class="form-control" name="ingameplayer" id="ingameplayer">
                             <option value="">Choose one</option>
                             @foreach($players as $player)

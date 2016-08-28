@@ -6,6 +6,7 @@ use App\Ban;
 use App\Country;
 use App\Http\Requests\BanRequest;
 use App\Notification;
+use Carbon\Carbon;
 use Illuminate\Http\Request as InputRequest;
 use Request;
 
@@ -59,10 +60,17 @@ class BanController extends Controller
         $reason = $request->reason;
         $reason = $reason == "" ? null : $reason;
 
+        $banned_till = $request->banned_till;
+        $banned_till = $banned_till == "" ? null : Carbon::parse($banned_till);
+
         $present = Ban::findOrNullByIP($ip_addr);
         if($present)
         {
             return redirect()->route('bans.show',$present->id)->with('error','IP Address already in banlist. We have redirected you there. Have a look.');
+        }
+        if($banned_till <= Carbon::now())
+        {
+            return redirect()->back()->with('error','Ban Till cannot me in past else its will be automatically un-banned by Server.')->withInput();
         }
 
         $player_country_id = 0;
@@ -107,6 +115,7 @@ class BanController extends Controller
         $newBan = Ban::create([
             'name' => '~ManualIPBan',
             'ip_address' => $ip_addr,
+            'banned_till' => $banned_till,
             'server_id' => 1,
             'country_id' => $player_country_id,
             'reason' => $reason,
@@ -186,8 +195,28 @@ class BanController extends Controller
         $status = $request->status;
         $reason = $request->reason == "" ? null : $request->reason;
 
+        $banned_till = $request->banned_till;
+        $banned_till = $banned_till == "" ? null : Carbon::parse($banned_till);
+
+        // If its a unban work then banned till will be set to now.
+        if($status == 0 && $prev_status == 1)
+        {
+            $banned_till = Carbon::now();
+        }
+        else if($status == 1 && $prev_status == 0 && $banned_till != null && $banned_till <= Carbon::now())
+        {
+            $banned_till = null;
+        }
+        else if($status == 0 && $prev_status == 0)
+        {
+            if($banned_till <= Carbon::now())
+            {
+                return redirect()->back()->with('error','Ban Till cannot me in past if status is "Unbanned".')->withInput();
+            }
+        }
         $ban->reason = $reason;
         $ban->status = $status;
+        $ban->banned_till = $banned_till;
         $ban->updated_by = $request->user()->username;
         $ban->updated_by_site = true;
         $ban->save();
@@ -316,6 +345,7 @@ class BanController extends Controller
                 {
                     $banQ->name = $name;
                     $banQ->status = true;
+                    $banQ->banned_till = null;
                     $banQ->reason = $ban[5] == "" ? $banQ->reason : $ban[5];
                     $banQ->updated_by = $admin;
                     $banQ->updated_by_site = false;
@@ -339,6 +369,7 @@ class BanController extends Controller
                 if($banQ && $banQ->status)
                 {
                     $banQ->status = false;
+                    $banQ->banned_till = Carbon::now();
                     $banQ->updated_by = $admin;
                     $banQ->updated_by_site = false;
                     $banQ->save();

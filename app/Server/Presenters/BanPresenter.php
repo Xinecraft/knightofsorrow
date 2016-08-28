@@ -57,6 +57,11 @@ class BanPresenter extends BasePresenter
 
     public function ipAddrWithMask()
     {
+        if(\Auth::check() && \Auth::user()->isAdmin())
+        {
+            return $this->wrappedObject->ip_address;
+        }
+
         $ip = $this->wrappedObject->ip_address;
         $ip = explode('.',$ip);
 
@@ -199,5 +204,29 @@ class BanPresenter extends BasePresenter
     public function reason()
     {
         return $this->wrappedObject->reason == null || $this->wrappedObject->reason == "" ? "-" : $this->wrappedObject->reason;
+    }
+
+    public function bannedTill()
+    {
+        if($this->wrappedObject->banned_till)
+        {
+            return $this->wrappedObject->banned_till->diffForHumans();
+        }
+        else
+        {
+            return "Permanent Ban";
+        }
+    }
+
+    public function bannedTillDateTime()
+    {
+        if($this->wrappedObject->banned_till)
+        {
+            return $this->wrappedObject->banned_till->toDayDateTimeString();
+        }
+        else
+        {
+            return "Life-time Ban";
+        }
     }
 }

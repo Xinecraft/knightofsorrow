@@ -30,6 +30,12 @@
                     </td>
                 </tr>
                 <tr>
+                    <td>Banned Till</td>
+                    <td>
+                        <span class="tooltipster" title="{{ $ban->bannedTillDateTime }}">{{ $ban->bannedTill }}</span>
+                    </td>
+                </tr>
+                <tr>
                     <td>
                         Country
                     </td>
