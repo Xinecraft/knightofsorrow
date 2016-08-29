@@ -266,9 +266,9 @@ class ServerController extends Controller
         {
             $explode = explode(" ",$Msg);
             // If server command then run it
-            if($explode[0] == "!translate")
+            if($explode[0] == "!translate" || $explode[0] == "!tr" || $explode[0] == "!t")
             {
-                array_forget($explode,["0"] || $explode[0] == "!tr" || $explode[0] == "!t");
+                array_forget($explode,["0"]);
                 $Msg = implode(" ",$explode);
 
                 $tr = new TranslateClient();
