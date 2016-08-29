@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use App\Chat;
 use App\Player;
 use App\PlayerTotal;
+use App\Server\Utils;
 use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Kinnngg\Swat4query\Server as Swat4Server;
+use Stichoza\GoogleTranslate\TranslateClient;
 
 class ApiController extends Controller
 {
@@ -655,5 +657,45 @@ class ApiController extends Controller
             }
         }
         printf("%s",$playerCountryCode);
+    }
+
+    /**
+     * Translate from one langage to other via google translate api
+     * @param Request $request
+     */
+    public function translateText(Request $request)
+    {
+        \Log::info(\Input::all());
+        if(env('TRANSLATE_KEY') != $request->key)
+        {
+            print("KnightofSorrow.tk: Invalid Usage Key");
+            exit();
+        }
+
+        $from_lang = $request->from_lang;
+        if($from_lang == "detect")
+            $from_lang = null;
+
+        $to_lang = $request->to_lang;
+        $text = $request->text;
+        $player = $request->player;
+
+        $tr = new TranslateClient();
+
+        $translated_text = $tr->setSource($from_lang)->setTarget($to_lang)->translate($text);
+
+        $language = $tr->getLastDetectedSource();
+
+        if($language == false || $language == null || $language == "")
+        {
+            $language = "Unknown";
+        }
+        else
+        {
+            $language = Utils::languageByCode1($language);
+        }
+
+        printf("[c=00ff00][b]%s[\\b] [c=ffff00](in %s)[c=00ff00]: %s[\\c]",$player,$language,$translated_text);
+        exit();
     }
 }
