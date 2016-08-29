@@ -234,6 +234,18 @@ class ServerController extends Controller
             }
             else
             {
+                $explode = explode(" ",$Msg);
+                // If server command then run it
+                if($explode[0] == "!translate" || $explode[0] == "!tr" || $explode[0] == "!t")
+                {
+                    array_forget($explode,["0"]);
+                    $Msg = implode(" ",$explode);
+
+                    $tr = new TranslateClient();
+
+                    $Msg = $tr->setSource(null)->setTarget("en")->translate($Msg);
+                }
+
                 $userLvl = $request->user()->roles()->first()->display_name;
                 if($userLvl == "Super Administrator")
                 {
@@ -256,7 +268,7 @@ class ServerController extends Controller
             // If server command then run it
             if($explode[0] == "!translate")
             {
-                array_forget($explode,["0"]);
+                array_forget($explode,["0"] || $explode[0] == "!tr" || $explode[0] == "!t");
                 $Msg = implode(" ",$explode);
 
                 $tr = new TranslateClient();

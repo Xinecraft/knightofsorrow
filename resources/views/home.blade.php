@@ -156,15 +156,17 @@
                         </span>
                             </div>
 
-                            @if(Auth::user()->isAdmin())
                                 <div id="serverchat-input-group-error" class="help-block"></div>
                                 <div class="admin-info small">
+                                    <b>Translate:</b><code>!t or !tr or !translate</code> followed by text to translate from any language to english. eg: <code>!tr salut les gars</code><br>
+                                @if(Auth::user()->isAdmin())
                                     <b>Note: You can run any commands using this chat too.</b> <br>
                                     Type <code>kosc</code> preceding with command you want to run. <br>
                                     Example: <code>kosc kick Name</code>, <code>kosc restart</code>, <code>kosc setmap
                                         0</code>
+                                    @endif
                                 </div>
-                            @endif
+
 
                             {!! Form::close() !!}
                         @else
