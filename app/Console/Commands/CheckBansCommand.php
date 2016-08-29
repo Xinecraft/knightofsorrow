@@ -49,10 +49,10 @@ class CheckBansCommand extends Command
             {
                 $count++;
                 $ban->status = false;
-                $ban->updated_by = "Bans Manager";
+                $ban->updated_by = "Bans-Manager";
                 $ban->updated_by_site = true;
                 $ban->save();
-                $ban->tellServerToRemove();
+                $ban->tellServerToRemove("Bans-Manager");
             }
         }
 

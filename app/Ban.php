@@ -80,10 +80,19 @@ class Ban extends Model implements HasPresenter
 
     /**
      * When Ban is Added then do a admin command to post at SWAT4 Server
+     * @param null $admin_name
      */
-    public function tellServerToAdd()
+    public function tellServerToAdd($admin_name=null)
     {
-        $admin = \Auth::user()->displayName();
+        if($admin_name == null)
+        {
+            $admin = \Auth::user()->displayName();
+        }
+        else
+        {
+            $admin = $admin_name;
+        }
+
         $playerip = trim($this->ip_address);
         $action = 'addban';
 
@@ -107,10 +116,19 @@ class Ban extends Model implements HasPresenter
 
     /**
      * When ban removed from website do a admin command to remove at SWAT4
+     * @param null $admin_name
      */
-    public function tellServerToRemove()
+    public function tellServerToRemove($admin_name=null)
     {
-        $admin = \Auth::user()->displayName();
+        if($admin_name == null)
+        {
+            $admin = \Auth::user()->displayName();
+        }
+        else
+        {
+            $admin = $admin_name;
+        }
+
         $playerip = trim($this->ip_address);
         $action = 'removeban';
 

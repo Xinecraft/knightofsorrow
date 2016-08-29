@@ -34,8 +34,8 @@
       <file leaf-file-name="ServerController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ServerController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.36578947">
-              <caret line="273" column="44" selection-start-line="273" selection-start-column="44" selection-end-line="273" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.73421055">
+              <caret line="275" column="78" selection-start-line="275" selection-start-column="78" selection-end-line="275" selection-end-column="78" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
               </folding>
@@ -117,8 +117,8 @@
         <option value="$PROJECT_DIR$/storage/logs/laravel-2016-08-29.log" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" />
         <option value="$PROJECT_DIR$/app/Server/Utils.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ServerController.php" />
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ServerController.php" />
       </list>
     </option>
   </component>
@@ -752,8 +752,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ServerController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36578947">
-          <caret line="273" column="44" selection-start-line="273" selection-start-column="44" selection-end-line="273" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.73421055">
+          <caret line="275" column="78" selection-start-line="275" selection-start-column="78" selection-end-line="275" selection-end-column="78" />
           <folding>
             <element signature="e#40#68#0#PHP" expanded="true" />
           </folding>
