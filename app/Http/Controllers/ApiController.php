@@ -694,8 +694,7 @@ class ApiController extends Controller
         {
             $language = Utils::languageByCode1($language);
         }
-
-        printf("[c=00ff00][b]%s[\\b] [c=ffff00](in %s)[c=00ff00]: %s[\\c]",$player,$language,$translated_text);
+        printf("[c=00ff00][b]%s[\\b][c=ffff00] (in %s)[c=00ff00]: %s[\\c]",$player,$language,$translated_text);
         exit();
     }
 }

@@ -27,7 +27,7 @@ abstract class Utils
         array('bn', 'ben', 'ben', 'ben', 'Bengali, Bangla', 'বাংলা'),
         array('bh', 'bih', 'bih', '', 'Bihari', 'भोजपुरी'),
         array('bi', 'bis', 'bis', 'bis', 'Bislama', 'Bislama'),
-        array('bs', 'bos', 'bos', 'bos', 'Bosnian', 'bosanski jezik'),
+        array('bs', 'bos', 'bos', 'bos', 'Serbian', 'bosanski jezik'),          // Bosnian actually -> Serbian
         array('br', 'bre', 'bre', 'bre', 'Breton', 'brezhoneg'),
         array('bg', 'bul', 'bul', 'bul', 'Bulgarian', 'български език'),
         array('my', 'mya', 'bur', 'mya', 'Burmese', 'ဗမာစာ'),
@@ -40,7 +40,7 @@ abstract class Utils
         array('kw', 'cor', 'cor', 'cor', 'Cornish', 'Kernewek'),
         array('co', 'cos', 'cos', 'cos', 'Corsican', 'corsu, lingua corsa'),
         array('cr', 'cre', 'cre', 'cre', 'Cree', 'ᓀᐦᐃᔭᐍᐏᐣ'),
-        array('hr', 'hrv', 'hrv', 'hrv', 'Croatian', 'hrvatski jezik'),
+        array('hr', 'hrv', 'hrv', 'hrv', 'Serbian', 'hrvatski jezik'),             //Croatian actually -> to Serbian
         array('cs', 'ces', 'cze', 'ces', 'Czech', 'čeština, český jazyk'),
         array('da', 'dan', 'dan', 'dan', 'Danish', 'dansk'),
         array('dv', 'div', 'div', 'div', 'Divehi, Dhivehi, Maldivian', 'ދިވެހި'),

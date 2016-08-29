@@ -10,6 +10,7 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Kinnngg\Swat4query\Server as Swat4Server;
 use App\Server;
+use Stichoza\GoogleTranslate\TranslateClient;
 
 class ServerController extends Controller
 {
@@ -251,6 +252,18 @@ class ServerController extends Controller
         }
         else
         {
+            $explode = explode(" ",$Msg);
+            // If server command then run it
+            if($explode[0] == "!translate")
+            {
+                array_forget($explode,["0"]);
+                $Msg = implode(" ",$explode);
+
+                $tr = new TranslateClient();
+
+                $Msg = $tr->setSource(null)->setTarget("en")->translate($Msg);
+            }
+
             $userLvl = $request->user()->roles()->first()->display_name;
             if($userLvl == "Super Administrator")
             {
