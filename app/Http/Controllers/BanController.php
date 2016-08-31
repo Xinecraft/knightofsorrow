@@ -68,7 +68,7 @@ class BanController extends Controller
         {
             return redirect()->route('bans.show',$present->id)->with('error','IP Address already in banlist. We have redirected you there. Have a look.');
         }
-        if($banned_till <= Carbon::now())
+        if($banned_till != null && $banned_till <= Carbon::now())
         {
             return redirect()->back()->with('error','Ban Till cannot me in past else its will be automatically un-banned by Server.')->withInput();
         }
@@ -209,9 +209,13 @@ class BanController extends Controller
         }
         else if($status == 0 && $prev_status == 0)
         {
-            if($banned_till <= Carbon::now())
+            if($banned_till >= Carbon::now())
             {
-                return redirect()->back()->with('error','Ban Till cannot me in past if status is "Unbanned".')->withInput();
+                return redirect()->back()->with('error','Ban Till cannot me in future if status is "Unbanned".')->withInput();
+            }
+            else if($banned_till == "" || $banned_till == null)
+            {
+                $banned_till = $ban->banned_till;
             }
         }
         $ban->reason = $reason;
