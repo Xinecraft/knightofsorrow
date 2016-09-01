@@ -1068,7 +1068,7 @@
                                     type : 'over'
                                 }
                             },
-                            href: 'images/koS_tourny.jpg',
+                            href: 'images/kos_tourny.jpg',
                             title: '<a class="text-bold" href="./tournament">Click here<a/> to visit tournaments page for more information.'
                         });
                     @endif
