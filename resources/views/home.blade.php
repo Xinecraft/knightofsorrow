@@ -15,6 +15,10 @@
             margin-bottom: 10px;
             margin-right: 5px;
         }
+        .ls-chats
+        {
+            word-wrap: break-word !important;
+        }
     </style>
 @endsection
 @section('main-container')
