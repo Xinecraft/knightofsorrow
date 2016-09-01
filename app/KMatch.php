@@ -19,6 +19,10 @@ class KMatch extends Model
         'k_team2_total_score',
         'winner_team_id',
         'starts_at',
+        'team1_from_match_rank',
+        'team1_from_match_index',
+        'team2_from_match_rank',
+        'team2_from_match_index'
     ];
 
     protected $dates = ['starts_at'];

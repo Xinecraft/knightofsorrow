@@ -160,7 +160,8 @@ class KTeam extends Model
         {
             $player_rank = $this->tournamentspivot()->wherePivot('user_id',$user->id)->first()->pivot->user_status;
 
-            if($player_rank > 3)
+            // If is a admin of team (team leader) || already in pending list.
+            if($player_rank > 3 || $player_rank == 0)
                 return false;
 
             $tournament = $this->tournamentspivot()->wherePivot('user_id',$user->id)->first();
@@ -185,7 +186,9 @@ class KTeam extends Model
         {
             $player_rank = $this->tournamentspivot()->wherePivot('user_id',$user->id)->first()->pivot->user_status;
 
-            if($player_rank == 2 || $player_rank == 1)
+            // If a Disqualified or already Member or Leader
+            // @Note Not eligible status can be changed
+            if($player_rank == 2 || $player_rank == 3 || $player_rank == 4)
                 return false;
 
             $tournament = $this->tournamentspivot()->wherePivot('user_id',$user->id)->first();

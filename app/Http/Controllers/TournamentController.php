@@ -117,6 +117,7 @@ class TournamentController extends Controller
                     'tournament_starts_at' => $request->tournament_starts_at,
                     'photo_id' => $photo->id,
                     'slug' => $slug,
+                    'bracket_type' => $request->bracket_type
                 ]);
 
                 if($request->managers)
@@ -680,12 +681,13 @@ class TournamentController extends Controller
             return redirect()->back()->with('error','Error! Tournament already have maximum qualified participants.');
         }
 
+        $old_action_id = $team->team_status;
         $team->team_status = $request->action_id;
         $team->save();
 
         // Stream Notifications.
         // Approved
-        if($request->action_id == 1)
+        if($request->action_id == 1 && $request->action_id != $old_action_id)
         {
             $not = new Notification();
             $not->from($request->user())
@@ -697,7 +699,7 @@ class TournamentController extends Controller
                 ->deliver();
         }
         //Disqualifed
-        elseif($request->action_id == 2)
+        elseif($request->action_id == 2 && $request->action_id != $old_action_id)
         {
             $not = new Notification();
             $not->from($request->user())
@@ -709,7 +711,7 @@ class TournamentController extends Controller
                 ->deliver();
         }
         // Not Eligible
-        elseif($request->action_id == 3)
+        elseif($request->action_id == 3 && $request->action_id != $old_action_id)
         {
             $not = new Notification();
             $not->from($request->user())
@@ -721,7 +723,7 @@ class TournamentController extends Controller
                 ->deliver();
         }
         //Pending
-        elseif($request->action_id == 0)
+        elseif($request->action_id == 0 && $request->action_id != $old_action_id)
         {
             $not = new Notification();
             $not->from($request->user())

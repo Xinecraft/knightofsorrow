@@ -370,7 +370,14 @@ $(document).ready(function ()
     $("body").on("click",".roundstabledata tr", function(){
     var id;
     id = $(this).data('id');
-    window.location= "/statistics/round-reports/detail/"+id;
+        if(window.location.pathname == "/statistics/war-round-reports")
+        {
+            window.location= "/statistics/war-round-reports/detail/"+id;
+        }
+        else
+        {
+            window.location= "/statistics/round-reports/detail/"+id;
+        }
     });
 
 

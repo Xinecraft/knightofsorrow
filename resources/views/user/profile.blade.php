@@ -58,7 +58,7 @@
         }
         .user-flag
         {
-            margin: -8px 0px 2px 15px;
+            margin: -8px 0px 2px 0px;
         }
         .about-well
         {

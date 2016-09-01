@@ -61,12 +61,17 @@
             <div class="form-group{{ $errors->has('bracket_type') ? ' has-error' : '' }}">
                 {!! Form::label('bracket_type', 'Bracket Type', ['class' => 'col-xs-4 control-label']) !!}
                 <div class="col-xs-6">
-                {!! Form::text('bracket_type',"Round Robin",['class' => 'form-control', 'disabled']) !!}
-                @if ($errors->has('bracket_type'))
-                <span class="help-block">
+                    {!! Form::select('bracket_type',
+                    [
+                                        '0' => 'Round Robin',
+                                        '1' => 'Double Elimination',
+                    ]
+                    ,null,['class' => 'form-control']) !!}
+                    @if ($errors->has('bracket_type'))
+                        <span class="help-block">
                 <strong>{{ $errors->first('bracket_type') }}</strong>
                 </span>
-                @endif
+                    @endif
                 </div>
             </div>
 

@@ -20,7 +20,7 @@ class CreateKTournamentsTable extends Migration
             $table->string('game_name')->default('SWAT4 1.0');
             $table->string('game_type')->default('Barricaded Suspects');
             $table->integer('photo_id')->unsigned()->nullable();
-            $table->integer('bracket_type')->default(0);     // RR, Single Elimination , Double Elimination etc
+            $table->integer('bracket_type')->default(0);     // 0 -> RR, 2-> Single Elimination , 1-> Double Elimination etc
             $table->integer('tournament_type')->default(0);     // 1v1 , 2v2 etc
             $table->integer('minimum_participants');
             $table->integer('maximum_participants');

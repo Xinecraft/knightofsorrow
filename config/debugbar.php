@@ -86,8 +86,8 @@ return array(
         'symfony_request' => true,  // Only one can be enabled..
         'mail'            => true,  // Catch mail messages
         'logs'            => true, // Add the latest log messages
-        'files'           => true, // Show the included files
-        'config'          => true, // Display config settings
+        'files'           => false, // Show the included files
+        'config'          => false, // Display config settings
         'auth'            => true, // Display Laravel authentication status
         'session'         => true,  // Display session data
     ),

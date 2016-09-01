@@ -80,6 +80,22 @@ class KTournament extends Model
     }
 
     /**
+     * @return string
+     */
+    public function getHumanReadableBType()
+    {
+        switch($this->bracket_type)
+        {
+            case 0:
+                return "Round Robin";
+            case 1:
+                return "Double Elimination";
+            default:
+                return "Double Elimination";
+        }
+    }
+
+    /**
      * Returns all comments of this T.
      *
      * @return \Illuminate\Database\Eloquent\Relations\MorphMany

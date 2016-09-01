@@ -118,7 +118,8 @@ class ApiController extends Controller
 
                 $showRadioIfAdmin="";
                 if(\Auth::check() && \Auth::user()->isAdmin())
-                    $showRadioIfAdmin = "<input class='pull-left' type='radio' name='selected_player' value='$playerNameStripped'> &nbsp;";
+                    //$showRadioIfAdmin = "<input class='pull-left' type='radio' name='selected_player' value='$playerNameStripped'> &nbsp;";
+                    $showRadioIfAdmin = $showRadioIfAdmin. "<a style='color:purple' class='fancybox livepfancy fancybox.ajax' href='./liveplayeraction?player={$playerNameStripped}' title='{$player['name']}'><i class='fa fa-cog'></i></a> &nbsp;";
 
                 if($playerTotal = Player::findOrFailByNameWithNull($playerNameStripped))
                 {

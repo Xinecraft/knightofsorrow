@@ -57,9 +57,6 @@
             </div> {{--Live Server Summary Ends --}}
             <div class="row">
                 <div class="ls-players-and-top-player no-left-padding col-xs-5">
-                    @if(Auth::check() && Auth::user()->isAdmin())
-                        {!! Form::open(['route' => 'kosadmin.commands','id' => 'admincommandform']) !!}
-                    @endif
                     <div class="col-xs-12 panel panel-default no-padding">
                         <div class="panel-heading"><span class="info-title">Online Players <span
                                         id="ls-player-online"></span></span></div>
@@ -72,37 +69,8 @@
                         </div>
                         @if(Auth::check() && Auth::user()->isAdmin())
                             <div class="panel-footer">
-                                <button id="playerMutebtn" data-type="forcemute"
-                                        class="admincommandbtn btn btn-default btn-xs">Mute
-                                </button>
-                                <button id="playerKickbtn" data-type="kick"
-                                        class="admincommandbtn btn btn-warning btn-xs">Kick
-                                </button>
-                                <button id="playerBanbtn" data-type="kickban"
-                                        class="admincommandbtn btn btn-danger btn-xs">Ban
-                                </button>
-                                <button id="playerViewbtn" data-type="forceview"
-                                        class="admincommandbtn btn btn-info btn-xs">View
-                                </button>
-                                <button id="playerSpecbtn" data-type="forcespec"
-                                        class="admincommandbtn btn btn-info btn-xs">Spec
-                                </button>
-                                <button id="playerJoinbtn" data-type="forcejoin"
-                                        class="admincommandbtn btn btn-info btn-xs">Join
-                                </button>
-                                <button id="playerSTbtn" data-type="switchteam"
-                                        class="admincommandbtn btn btn-primary btn-xs">Switch Team
-                                </button>
-                                <button id="playerLLbtn" data-type="forcelesslethal"
-                                        class="admincommandbtn btn btn-primary btn-xs">Less Lethal
-                                </button>
-                                <button id="playerNWbtn" data-type="forcenoweapons"
-                                        class="admincommandbtn btn btn-primary btn-xs">No Weapons
-                                </button>
-
                                 <div id="admincommand-input-group-error" class="help-block"></div>
                             </div>
-                            {!! Form::close() !!}
                         @endif
                     </div>
                     <div class="col-xs-12 panel panel-default no-padding">
@@ -929,7 +897,6 @@
                 </div>
             </div>
 
-
         </div> {{--Main Content Ends--}}
         @endsection
 
@@ -1037,7 +1004,7 @@
                     sv.init({url: '/api/server-query'});
 
                     //Admin commands ajax
-                    $('.admincommandbtn').click(function (e) {
+                    $('body').on('click','.admincommandbtn',function(e) {
 
                         $('#admincommand-input-group-error').html('');
 
@@ -1053,10 +1020,12 @@
                             },
                             success: function (data) {
                                 $(this).show();
+                                $.fancybox.close();
                                 $('#admincommand-input-group-error').html('');
                             },
                             error: function (data) {
 
+                                $.fancybox.close();
                                 var errors = data.responseJSON;
                                 var message = "Unknown error! reload page.";
                                 switch (data.status) {
@@ -1078,6 +1047,31 @@
                         });
                         e.preventDefault();
                     });
+
+
+                    $('.fancybox').fancybox();
+
+                    @if($show_add)
+                        $.fancybox.open({
+                            padding: 0,
+
+                            openEffect: 'elastic',
+                            openSpeed: 150,
+
+                            closeEffect: 'elastic',
+                            closeSpeed: 150,
+
+                            closeClick: true,
+
+                            helpers: {
+                                title : {
+                                    type : 'over'
+                                }
+                            },
+                            href: 'images/koS_tourny.jpg',
+                            title: '<a class="text-bold" href="./tournament">Click here<a/> to visit tournaments page for more information.'
+                        });
+                    @endif
                 });
             </script>
 @endsection

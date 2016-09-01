@@ -347,4 +347,17 @@ class ServerController extends Controller
         $data = ['success' => '<option class="text-center small text-danger">Success! Command executed.</option>'];
         return response($data,200);
     }
+
+    /**
+     * Show form and btn of kick,ban,etc
+     *
+     * @param Request $request
+     * @return $this
+     */
+    public function liveplayeraction(Request $request)
+    {
+        $player = $request->player;
+
+        return view('partials.liveplayeraction')->with('player',$player);
+    }
 }

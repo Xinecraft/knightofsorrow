@@ -107,6 +107,12 @@
                                 </td>
                             </tr>
                             <tr>
+                                <td>Bracket Type</td>
+                                <td>
+                                    <b>{{ $tournament->getHumanReadableBType() }}</b>
+                                </td>
+                            </tr>
+                            <tr>
                                 <td>Rounds per match</td>
                                 <td>
                                     <b>{{ $tournament->rounds_per_match }}</b>

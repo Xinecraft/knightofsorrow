@@ -34,6 +34,7 @@ class KTournamentRequest extends Request
             'registration_starts_at' => 'required|date',
             'registration_ends_at' => 'required|date',
             'tournament_starts_at' => 'required|date',
+            'bracket_type' => 'in:0,1',
         ];
     }
 }

@@ -43,6 +43,6 @@ class BakeBracketCommand extends Command
      */
     public function handle()
     {
-        $this->info($this->roaster->checkRoastRobinAll());
+        $this->info($this->roaster->checkRoastBracketsAll());
     }
 }
