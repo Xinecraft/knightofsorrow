@@ -2,6 +2,11 @@
     .subscriber_email_input {
         font-size: 14px;
     }
+    .copyright
+    {
+        font-family: 'Passion One', cursive;
+        font-size: 17px;
+    }
 
     @media (max-width: 767px) {
         .subscriber_email_input {
@@ -33,12 +38,11 @@
 
             <div class="col-xs-3 col-xs-offset-3">
                 <p class="copyright">
-                    <i class="fa fa-copyright"></i> {{ date('Y') }} KnightofSorrow
+                    <i class="fa fa-copyright"></i> {{ date('Y') }} KNIGHTofSORROW
                 </p>
                 <i><small class="text-muted">Time: {{ \Carbon\Carbon::now()->toDayDateTimeString() }}</small></i>
                 </div>
                 <div class="col-xs-3 col-xs-offset-1">
-                    {{--in  round((microtime(true) - LARAVEL_START),3)  seconds--}}
                     <i><small class="muted">Page generated with {{Session::get('query_no')}} queries</small></i>
                 </div>
             </div>

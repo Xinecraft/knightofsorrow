@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'url' => 'http://knightofsorrow.tk',
+    'url' => 'http://knightofsorrow.com',
 
     /*
     |--------------------------------------------------------------------------

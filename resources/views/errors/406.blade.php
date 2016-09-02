@@ -24,5 +24,6 @@
     <div class="content col-xs-9 panel text-center">
         <h1 class="red">406 Not Acceptable!</h1>
         <p class="large">Either a token mismatch occurred or request is not acceptable.</p>
+        <p class="large">Please close the page and reload it before submitting the form to fix this error.</p>
     </div>
 @endsection

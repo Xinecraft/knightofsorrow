@@ -17,7 +17,7 @@
         }
         .ls-chats
         {
-            word-wrap: break-word !important;
+            word-break: break-all;
         }
     </style>
 @endsection
@@ -205,7 +205,7 @@
                             <div role="tabpanel">
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs" role="tablist">
-                                    <li role="presentation" class=""><a class="ainorange" href="#pastweek"
+                                    <li role="presentation" class="active"><a class="ainorange" href="#pastweek"
                                                                         aria-controls="pastweek" role="tab"
                                                                         data-toggle="tab">Past Week</a></li>
                                     <li role="presentation"><a class="ainorange" href="#pastmonth"
@@ -214,14 +214,14 @@
                                     <li role="presentation"><a class="ainorange" href="#pastyear"
                                                                aria-controls="pastyear" role="tab" data-toggle="tab">Past
                                             Year</a></li>
-                                    <li role="presentation" class="active"><a class="ainorange" href="#alltime"
+                                    <li role="presentation"><a class="ainorange" href="#alltime"
                                                                               aria-controls="alltime" role="tab"
                                                                               data-toggle="tab">All Time</a></li>
                                 </ul>
                                 <!-- Tab panes -->
                                 <div class="tab-content"
                                      style="background-color: #ffffff;border-left: 1px solid #ddd;border-bottom: 1px solid #ddd;border-right: 1px solid #ddd;">
-                                    <div role="tabpanel" class="tab-pane" id="pastweek">
+                                    <div role="tabpanel" class="tab-pane active" id="pastweek">
                                         <table class="table borderless playerrecordtable">
                                             <tbody>
                                             <tr>
@@ -661,7 +661,7 @@
                                             </tbody>
                                         </table>
                                     </div>
-                                    <div role="tabpanel" class="tab-pane active" id="alltime">
+                                    <div role="tabpanel" class="tab-pane" id="alltime">
                                         <table class="table borderless playerrecordtable">
                                             <tbody>
                                             <tr>
