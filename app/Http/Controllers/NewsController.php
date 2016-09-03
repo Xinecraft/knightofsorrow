@@ -76,7 +76,7 @@ class NewsController extends Controller
         $not->from($request->user())
             ->withType('NewsCreated')
             ->withSubject('A news is created')
-            ->withBody(link_to_route('user.show',$request->user()->displayName(),$request->user()->username)." has created a news ".link_to_route('news.show',str_limit($news->title,20),$news->summary))
+            ->withBody(link_to_route('user.show',$request->user()->displayName(),$request->user()->username)." has created a news ".link_to_route('news.show',str_limit($news->title,100),$news->summary))
             ->withStream(true)
             ->regarding($news)
             ->deliver();

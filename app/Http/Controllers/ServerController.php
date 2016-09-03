@@ -10,7 +10,8 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Kinnngg\Swat4query\Server as Swat4Server;
 use App\Server;
-use Stichoza\GoogleTranslate\TranslateClient;
+use Yandex\Translate\Translator;
+use Yandex\Translate\Exception;
 
 class ServerController extends Controller
 {
@@ -241,9 +242,15 @@ class ServerController extends Controller
                     array_forget($explode,["0"]);
                     $Msg = implode(" ",$explode);
 
-                    $tr = new TranslateClient();
+                    try {
+                        $translator = new Translator(env('YANDEX_API_KEY'));
+                        $translation = $translator->translate($Msg, 'en');
 
-                    $Msg = $tr->setSource(null)->setTarget("en")->translate($Msg);
+                        $Msg = $translation;
+
+                    } catch (Exception $e) {
+                        $Msg = implode(" ",$explode);
+                    }
                 }
 
                 $userLvl = $request->user()->roles()->first()->display_name;
@@ -271,9 +278,15 @@ class ServerController extends Controller
                 array_forget($explode,["0"]);
                 $Msg = implode(" ",$explode);
 
-                $tr = new TranslateClient();
+                try {
+                    $translator = new Translator(env('YANDEX_API_KEY'));
+                    $translation = $translator->translate($Msg, 'en');
 
-                $Msg = $tr->setSource(null)->setTarget("en")->translate($Msg);
+                    $Msg = $translation;
+
+                } catch (Exception $e) {
+                    $Msg = implode(" ",$explode);
+                }
             }
 
             $userLvl = $request->user()->roles()->first()->display_name;

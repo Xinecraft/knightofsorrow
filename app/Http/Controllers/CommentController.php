@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Ban;
+use App\Comment;
 use App\KTournament;
 use App\Notification;
 use App\Status;
@@ -124,6 +125,22 @@ class CommentController extends Controller
 
         return \Redirect::back()->with('success','Success!');
 
+    }
+
+    /**
+     * @param $id
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function destroy($id, Request $request)
+    {
+        $comment = Comment::findOrFail($id);
+        if(!$request->user()->isAdmin() || $comment->user_id != $request->user()->id)
+        {
+            return redirect()->home();
+        }
+        $comment->delete();
+        return redirect()->back()->with('success','Comment Deleted!');
     }
 
 }

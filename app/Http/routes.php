@@ -293,3 +293,5 @@ Route::get('notifications',['middleware' => 'auth', 'as' => 'notifications.useri
 Route::get('getlatestnotifications',['middleware' => 'auth', 'as' => 'notifications.getlatest', 'uses' => 'NotificationController@getLatest']);
 
 Route::get('/image/{url}/thumbnail/{width?}', ['as' => 'make.thumbnail', 'uses' => 'PhotosController@thumbnail']);
+
+Route::delete('/comment/{id}',['as' => 'comment.destroy', 'uses' => 'CommentController@destroy']);

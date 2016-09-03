@@ -12,7 +12,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Kinnngg\Swat4query\Server as Swat4Server;
-use Stichoza\GoogleTranslate\TranslateClient;
+use Yandex\Translate\Translator;
+use Yandex\Translate\Exception;
 
 class ApiController extends Controller
 {
@@ -681,11 +682,17 @@ class ApiController extends Controller
         $text = $request->text;
         $player = $request->player;
 
-        $tr = new TranslateClient();
+        try {
+            $translator = new Translator(env('YANDEX_API_KEY'));
+            $translation = $translator->translate($text, 'en');
 
-        $translated_text = $tr->setSource($from_lang)->setTarget($to_lang)->translate($text);
+            $translated_text =  $translation;
 
-        $language = $tr->getLastDetectedSource();
+            $language = $translation->getSourceLanguage();
+        } catch (Exception $e) {
+            $language = "Unknown";
+            $translated_text = $text;
+        }
 
         if($language == false || $language == null || $language == "")
         {

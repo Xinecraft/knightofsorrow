@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "18e57f7bc9492864b2e5667a2d188093",
-    "content-hash": "0d6516b9b56644f0cf765a170c22d86e",
+    "hash": "6f96474af60d3ef48552d89e62573508",
+    "content-hash": "3b702b207666746fc05d3e98827b11c2",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -4813,6 +4813,43 @@
             ],
             "description": "Rapidly generate resources, migrations, models, and much more.",
             "time": "2015-02-26 04:35:31"
+        },
+        {
+            "name": "yandex/translate-api",
+            "version": "1.5.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yandex-php/translate-api.git",
+                "reference": "c99e69cde3e688fc0f99c4d8a21585226a8e1938"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yandex-php/translate-api/zipball/c99e69cde3e688fc0f99c4d8a21585226a8e1938",
+                "reference": "c99e69cde3e688fc0f99c4d8a21585226a8e1938",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Yandex\\Translate\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nikita Gusakov",
+                    "email": "dev@nkt.me"
+                }
+            ],
+            "description": "Client for Yandex.Translate API",
+            "time": "2015-07-27 15:00:45"
         },
         {
             "name": "zizaco/entrust",
