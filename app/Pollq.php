@@ -12,6 +12,8 @@ class Pollq extends Model
 
     protected $dates = ['closed_at'];
 
+    protected $with = ['pollos'];
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */

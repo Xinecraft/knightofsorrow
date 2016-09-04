@@ -8,6 +8,8 @@ class Pollo extends Model
 {
     protected $fillable = ['option'];
 
+    protected $with = ['users'];
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

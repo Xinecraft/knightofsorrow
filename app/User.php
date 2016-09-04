@@ -40,7 +40,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     protected $with = ['roles'];
 
-
     /**
      * @return GamePresenter
      */

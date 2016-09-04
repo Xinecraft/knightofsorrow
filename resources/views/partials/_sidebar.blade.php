@@ -25,8 +25,7 @@
         </ul>
     </div>
 
-    @include('partials._shoutbox',['shouts' => App\Shout::limit(20)->latest()->get()->sortBy('created_at')])
-
+    @include('partials._shoutbox',['shouts' => App\Shout::limit(20)->with('user')->latest()->get()->sortBy('created_at')])
             <!-- <div class="panel pad5" style="padding: 10px !important;">
         <h5 class="info-title" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Donate</h5>
         <a href="donate">Donate for KoS</a>
@@ -50,7 +49,6 @@
                     </div>
                     <span class="small">Total Votes: <b>{{ $poll->users()->count() }}</b></span>
                 </div>
-
             @else
                 <div class="panel pad10">
                     <small class="pull-right"><i><b><a href="{{ route('poll.index') }}">» view all</a></b></i></small>
@@ -60,10 +58,10 @@
                         @foreach($poll->pollos as $pollo)
                             {{ $pollo->option }}<br>
                             <div class="progress">
-                                <div class="progress-bar progress-bar-striped active" role="progressbar"
-                                     aria-valuenow="{{ $percent = round($poll->users()->count() == 0 ? 0 : ( $pollo->users()->count() / $poll->users()->count())*100) }}"
+                                <div class="progress-bar progress-bar-striped active {{ $polluserscount = $poll->users()->count() }}" role="progressbar"
+                                     aria-valuenow="{{ $percent = round($polluserscount == 0 ? 0 : ( $pollo->users->count() / $polluserscount)*100) }}"
                                      aria-valuemin="0" aria-valuemax="100" style="width: {{ $percent }}%;">
-                                    {{ $percent }}% ({{ $pollo->users()->count() }})
+                                    {{ $percent }}% ({{ $pollo->users->count() }})
                                 </div>
                             </div>
                         @endforeach
@@ -100,14 +98,6 @@
                 <i class="fa fa-cc"></i>
                 Donate</a>
         </div>
-
-        @if(\App\Didyouknow::count() > 99)
-            <div class="panel pad5" style="padding: 10px !important;">
-                <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Did You Know</h4>
-                <p class="small convert-emoji"
-                   style="color:rgb({{ rand(0,200) }},{{ rand(0,200) }},{{ rand(0,200) }});">{!!  BBCode::parseCaseInsensitive((htmlentities(\App\Didyouknow::get()->random()->body))) !!}</p>
-            </div>
-        @endif
 
     @endif
 
