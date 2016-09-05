@@ -57,15 +57,14 @@
                 <div class="panel-heading"><b> <i class="fa fa-envelope"></i> Messages</b></div>
                 <div class="panel-body text-center stats">
                     <p>You have <kbd class="">{{ Auth::user()->receivedMessagesUnseen()->count() }}</kbd> new {{ str_plural('message', Auth::user()->receivedMessagesUnseen()->count()) }} <i class="fa fa-envelope-o"></i></p>
-                    {{-- <a href="{{ route('questions.user.unanswered') }}">You have {{ Auth::user()->notAnsweredQuestions()->approved()->count().str_plural(' question', Auth::user()->notAnsweredQuestions()->count()) }} to answer.</a>--}}
                     <br>
 
                     @forelse($messages as $message)
                         <a href="{{ route('messages.show',$message->sender->username) }}">
                             <div class="col-xs-4" style="">
                                 <p class="padding10" style="border: 1px solid #bababa">
-                                    <kbd>{{ $message->reciever->messagesUnseenBy($message->sender->username)->count() }}</kbd>
-                                    new {{ str_plural("message",$message->reciever->messagesUnseenBy($message->sender->username)->count()) }}
+                                    <kbd>{{ $mrm = $message->reciever->messagesUnseenBy($message->sender->username)->count() }}</kbd>
+                                    new {{ str_plural("message",$mrm) }}
                                     from {{ $message->sender->displayName() }}</p>
                             </div>
                         </a>

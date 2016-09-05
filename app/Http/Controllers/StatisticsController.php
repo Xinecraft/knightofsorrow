@@ -58,7 +58,7 @@ class StatisticsController extends Controller
         $orderBy = Request::has('orderBy') && in_array(Request::get('orderBy'),$sortableColumns) ? Request::get('orderBy')  : 'position';
         $sortDir = Request::has('direction') ? Request::get('direction') : 'asc';
 
-        $players = PlayerTotal::orderBy($orderBy,$sortDir)->paginate(35);
+        $players = PlayerTotal::orderBy($orderBy,$sortDir)->with('country','rank','lastGame')->paginate(35);
 
         return view('statistics.top-players')->with('players',$players);
     }
@@ -150,7 +150,7 @@ class StatisticsController extends Controller
         //$players = PlayerTotal::orderBy($orderBy,$sortDir)->paginate(10);
         $country = Country::findOrFail($id);
 
-        $players = $country->playerTotals()->orderBy($orderBy,$sortDir)->paginate(35);
+        $players = $country->playerTotals()->orderBy($orderBy,$sortDir)->with('country','rank','lastGame')->paginate(35);
 
         $array = [
             'players' => $players,
@@ -173,14 +173,14 @@ class StatisticsController extends Controller
 
     public function getTop10()
     {
-        $top10KD = PlayerTotal::where('total_kills', '>', '99')->orderBy('killdeath_ratio','DESC')->limit(10)->get();
-        $top10AAR = PlayerTotal::where('total_arrests', '>', '49')->orderBy('arr_ratio','DESC')->limit(10)->get();
-        $top10Score = PlayerTotal::orderBy('total_score','DESC')->limit(10)->get();
-        $top10Round = PlayerTotal::orderBy('total_round_played','DESC')->limit(10)->get();
-        $top10HighestScore = PlayerTotal::orderBy('highest_score','DESC')->limit(10)->get();
-        $top10Winners = PlayerTotal::orderBy('game_won','DESC')->limit(10)->get();
-        $top10KillStreak = PlayerTotal::orderBy('best_killstreak','DESC')->limit(10)->get();
-        $top10ArrestStreak = PlayerTotal::orderBy('best_arreststreak','DESC')->limit(10)->get();
+        $top10KD = PlayerTotal::where('total_kills', '>', '99')->with('country','rank','lastGame')->orderBy('killdeath_ratio','DESC')->limit(10)->get();
+        $top10AAR = PlayerTotal::where('total_arrests', '>', '49')->with('country','rank','lastGame')->orderBy('arr_ratio','DESC')->limit(10)->get();
+        $top10Score = PlayerTotal::orderBy('total_score','DESC')->with('country','rank','lastGame')->limit(10)->get();
+        $top10Round = PlayerTotal::orderBy('total_round_played','DESC')->with('country','rank','lastGame')->limit(10)->get();
+        $top10HighestScore = PlayerTotal::orderBy('highest_score','DESC')->with('country','rank','lastGame')->limit(10)->get();
+        $top10Winners = PlayerTotal::orderBy('game_won','DESC')->with('country','rank','lastGame')->limit(10)->get();
+        $top10KillStreak = PlayerTotal::orderBy('best_killstreak','DESC')->with('country','rank','lastGame')->limit(10)->get();
+        $top10ArrestStreak = PlayerTotal::orderBy('best_arreststreak','DESC')->with('country','rank','lastGame')->limit(10)->get();
 
         $array = [
             'top10KD' => $top10KD,

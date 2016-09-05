@@ -334,7 +334,7 @@
 
         <div class="row">
             <div id="data-items">
-                @forelse($pagin = $user->statuses()->paginate(5) as $status)
+                @forelse($pagin = $user->statuses()->with('comments','user')->paginate(5) as $status)
                     @include('partials._view_statuses')
                 @empty
                     <div class="panel padding10 text-center">

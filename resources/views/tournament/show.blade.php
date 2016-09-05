@@ -24,6 +24,23 @@
         .team-name.small {
             padding: 5px !important;
         }
+
+        .label {
+            display: inline;
+            font-size: 100%;
+            font-weight: normal;
+            line-height: 1;
+            text-align:start;
+            color:black;
+            white-space: nowrap;
+            vertical-align: baseline;
+            border-radius: .25em;
+        }
+        .dd-bracket
+        {
+            padding: 20px;
+        }
+
     </style>
 @endsection
 
@@ -41,7 +58,7 @@
 
     <div class="col-xs-12 panel padding10">
 
-
+<div class="row">
         <div class="col-xs-8">
             <div class="wizard row">
                 <div class="col-lg-12">
@@ -74,8 +91,6 @@
                                                data-toggle="tab">Description</a></li>
                     <li role="presentation"><a href="#rules" aria-controls="rules" role="tab"
                                                data-toggle="tab">Rules</a></li>
-                    <li role="presentation"><a href="#bracket" aria-controls="bracket" role="tab" data-toggle="tab">Bracket</a>
-                    </li>
                     <li role="presentation"><a href="#teams" aria-controls="teams" role="tab"
                                                data-toggle="tab">Teams</a></li>
                     <li role="presentation"><a href="#pastchamps" aria-controls="pastchamps" role="tab"
@@ -155,59 +170,6 @@
                     </div>
                     <div role="tabpanel" class="tab-pane" id="rules">
                         <p class="convert-emoji">{!! BBCode::parseCaseInsensitive((htmlentities($tournament->rules))) !!}</p>
-                    </div>
-                    <div role="tabpanel" class="tab-pane" id="bracket">
-                        @if($tournament->canShowBrackets())
-                            <a class="btn btn-sm col-xs-offset-5 btn-info"
-                               href="{{ route('tournament.bracket.show',$tournament->slug) }}">View Full Bracket</a>
-                            @foreach($tournament->rounds as $round)
-                                <h4 style="padding: 10px;background-color: #e2e2e2;">
-                                    Round {{ $round->round_index }}</h4>
-
-                                @foreach($round->matches as $match)
-                                    <div class="media">
-                                        <div class="media-body" style="font-size: 80%">
-                                            {{--<h4 class="">
-                                                <a href="{{ route('tournament.show',$tournament->slug) }}">{{ $tournament->name }}</a>
-                                            </h4>--}}
-                                            <div class="col-xs-12 no-padding media-heading text-center">
-                                                <div class="col-xs-3 no-padding vs">
-                                                    <div class="team-name text-bold">
-                                                        {!! link_to_route('tournament.team.show',$match->team1->name,[$tournament->slug,$match->team1->id])  !!}
-                                                    </div>
-                                                </div>
-                                                <div class="col-xs-3" style="border-right: 5px solid dodgerblue">
-                                                    <div class="team-name text-bold">
-                                                        {!! link_to_route('tournament.team.show',$match->team2->name,[$tournament->slug,$match->team2->id])  !!}
-                                                    </div>
-                                                </div>
-                                                <div class="col-xs-2">
-                                                    <img src="/images/flags/20_shiny/{{ $match->team1->country->countryCode.".png" }}"
-                                                         alt="" class="img tooltipster"
-                                                         title="{{ $match->team1->country->countryName }}">
-                                                    <img src="/images/flags/20_shiny/{{ $match->team2->country->countryCode.".png" }}"
-                                                         alt="" class="img tooltipster"
-                                                         title="{{ $match->team2->country->countryName }}">
-
-                                                    <div class="team-name small">{{ $match->starts_at->toDayDateTimeString() }}</div>
-                                                </div>
-                                                @if($match->has_been_played)
-                                                    <div class="col-xs-4">
-                                                        {!! $match->getWinningTextForHumans() !!}
-                                                        <br>
-                                                    </div>
-                                                @endif
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach
-
-                            @endforeach
-                        @else
-                            <div class="text-center alert alert-danger text-bold">Bracket is not available at this
-                                time.
-                            </div>
-                        @endif
                     </div>
                     <div role="tabpanel" class="tab-pane" id="teams">
                         @if($tournament->teams()->where('team_status','1')->count() > 0)
@@ -467,7 +429,66 @@
                 </table>
             @endif
 
+        </div>
+</div>
 
+        <div class="col-xs-12" style="border: 2px solid lightgrey;margin-top: 15px;">
+            <div role="tabpanel" class="" id="bracket">
+                <h3 style="border-bottom: 2px dashed lightgrey">Brackets</h3>
+                @if($tournament->canShowBrackets())
+                    <a class="btn btn-sm btn-info pull-right"
+                       href="{{ route('tournament.bracket.show',$tournament->slug) }}">View Full Bracket</a>
+                    @if($tournament->bracket_type == 0)
+                        @foreach($tournament->rounds as $round)
+                            <h4 style="padding: 10px;background-color: #e2e2e2;">
+                                Round {{ $round->round_index }}</h4>
+                            @foreach($round->matches as $match)
+                                <div class="media">
+                                    <div class="media-body" style="font-size: 80%">
+                                        {{--<h4 class="">
+                                            <a href="{{ route('tournament.show',$tournament->slug) }}">{{ $tournament->name }}</a>
+                                        </h4>--}}
+                                        <div class="col-xs-12 no-padding media-heading text-center">
+                                            <div class="col-xs-3 no-padding vs">
+                                                <div class="team-name text-bold">
+                                                    {!! link_to_route('tournament.team.show',$match->team1->name,[$tournament->slug,$match->team1->id])  !!}
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-3" style="border-right: 5px solid dodgerblue">
+                                                <div class="team-name text-bold">
+                                                    {!! link_to_route('tournament.team.show',$match->team2->name,[$tournament->slug,$match->team2->id])  !!}
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-2">
+                                                <img src="/images/flags/20_shiny/{{ $match->team1->country->countryCode.".png" }}"
+                                                     alt="" class="img tooltipster"
+                                                     title="{{ $match->team1->country->countryName }}">
+                                                <img src="/images/flags/20_shiny/{{ $match->team2->country->countryCode.".png" }}"
+                                                     alt="" class="img tooltipster"
+                                                     title="{{ $match->team2->country->countryName }}">
+
+                                                <div class="team-name small">{{ $match->starts_at->toDayDateTimeString() }}</div>
+                                            </div>
+                                            @if($match->has_been_played)
+                                                <div class="col-xs-4">
+                                                    {!! $match->getWinningTextForHumans() !!}
+                                                    <br>
+                                                </div>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        @endforeach
+                    @elseif($tournament->bracket_type == 1)
+                        <div class="dd-bracket col-xs-10 col-xs-offset-2"></div>
+                    @endif
+                @else
+                    <div class="text-center alert alert-danger text-bold">Bracket is not available at this
+                        time.
+                    </div>
+                @endif
+            </div>
         </div>
 
     </div>
@@ -516,4 +537,42 @@
             </div>
         @endforeach
     </div>
+@endsection
+
+
+@section('scripts')
+    @if($tournament->bracket_type ==1)
+        <script>
+            var doubleEliminationData = {
+                teams : [
+                        @foreach($tournament->matches()->where('k_team1_id','!=','null')->where('k_team2_id','!=','null')->take(4)->get() as $match)
+                    [{name:"{{ $match->team1->name }}", flag: "{{ $match->team1->country->countryCode }}" },{ name:"{{ $match->team2->name }}",  flag: "{{ $match->team2->country->countryCode }}" }],
+                    @endforeach
+                ],
+                results : [[[[]]], [], []]
+            };
+
+            /* Render function is called for each team label when data is changed, data
+             * contains the data object given in init and belonging to this slot. */
+            function render_fn(container, data, score) {
+                if (!data.flag || !data.name)
+                    return;
+                container.append('<img src="/images/flags_new/flags-iso/shiny/16/'+data.flag+'.png" /> ').append(data.name)
+            }
+            /* Edit function is called when team label is clicked */
+            function edit_fn(container, data, doneCb) {
+
+            }
+
+            $(function() {
+                $('.dd-bracket').bracket({
+                    skipConsolationRound: true,
+                    init: doubleEliminationData,
+                    /* without save() labels are disabled */
+                    decorator: {edit: edit_fn,
+                        render: render_fn}
+                })
+            })
+        </script>
+    @endif
 @endsection

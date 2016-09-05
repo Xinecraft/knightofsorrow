@@ -13,6 +13,8 @@ class Comment extends Model
      */
     protected $fillable = ['user_id','body'];
 
+    protected $with = ['user'];
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\MorphTo
      */

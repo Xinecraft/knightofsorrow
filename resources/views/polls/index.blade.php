@@ -14,13 +14,20 @@
             font-size: 12px;
             line-height: 15px;
         }
+        .pagination
+        {
+            display: block !important;
+            visibility: visible !important;
+        }
     </style>
 @endsection
 @section('main-container')
     <div class="content col-xs-9" id="app" xmlns:v-on="http://www.w3.org/1999/xhtml">
         @include('partials._errors')
 
+        <div class="page-data-items">
         @forelse($polls as $poll)
+            <div class="page-item">
             @if(!$poll->isExpired() && !$poll->isVoted())
                 <div class="panel pad10">
                     {!! Form::open(['route' => ['poll.vote',$poll->id]]) !!}
@@ -44,14 +51,16 @@
                 <div class="panel pad10">
                     <h4 class=""><b>{{ $poll->question }}</b></h4>
                     <div class="panel pad10">
-                    @foreach($poll->pollos as $pollo)
-                        {{ $pollo->option }}<br>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="{{ $percent = round($poll->users()->count() == 0 ? 0 : ( $pollo->users()->count() / $poll->users()->count())*100) }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ $percent }}%;">
-                                {{ $percent }}% ({{ $pollo->users()->count() }})
+                        @foreach($poll->pollos as $pollo)
+                            {{ $pollo->option }}<br>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped active {{ $polluserscount = $poll->users()->count() }}" role="progressbar"
+                                     aria-valuenow="{{ $percent = round($polluserscount == 0 ? 0 : ( $pollo->users->count() / $polluserscount)*100) }}"
+                                     aria-valuemin="0" aria-valuemax="100" style="width: {{ $percent }}%;">
+                                    {{ $percent }}% ({{ $pollo->users->count() }})
+                                </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
                     </div>
 
                     <span class="small">Total Votes: <b>{{ $poll->users()->count() }}</b></span>
@@ -62,13 +71,14 @@
                     </p>
                 </div>
             @endif
+            </div>
         @empty
             None Poll Now
         @endforelse
+        </div>
 
+        <div class="col-xs-12 no-padding" style="margin-bottom: 20px;">
+            {!! $polls->appends(Request::except('page'))->render() !!}
+        </div>
     </div>
-@endsection
-
-@section('scripts')
-    <script src="{{ url('/') }}/js/vue.min.js"></script>
 @endsection

@@ -19,7 +19,7 @@ class PollController extends Controller
      */
     public function index()
     {
-        $polls = Pollq::with('pollos')->where('disabled','!=','1')->latest()->get();
+        $polls = Pollq::where('disabled','!=','1')->latest()->paginate(4);
         return view('polls.index')->with('polls',$polls);
     }
 

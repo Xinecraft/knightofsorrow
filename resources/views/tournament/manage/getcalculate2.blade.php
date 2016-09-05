@@ -238,12 +238,19 @@
             <div class="form-group{{ $errors->has('overall_winner_id') ? ' has-error' : '' }}">
                 {!! Form::label('overall_winner_id', 'Overall Winner of Match', ['class' => 'col-xs-3 control-label']) !!}
                 <div class="col-md-6">
+                    @if($tournament->bracket_type == 0)
                     {!! Form::select('overall_winner_id',[
                     "0" => "A Tie",
                     $match->team1->id => $match->team1->name,
                     $match->team2->id => $match->team2->name,
                      "-1" => "Cancelled",
                     ],null,['class' => 'form-control']) !!}
+                    @else
+                        {!! Form::select('overall_winner_id',[
+                        $match->team1->id => $match->team1->name,
+                        $match->team2->id => $match->team2->name,
+                        ],null,['class' => 'form-control']) !!}
+                    @endif
                     @if ($errors->has('overall_winner_id'))
                         <span class="help-block">
                             <strong>{{ $errors->first('overall_winner_id') }}</strong>

@@ -27,7 +27,7 @@ class BanController extends Controller
         $orderBy = Request::has('orderBy') && in_array(Request::get('orderBy'),$sortableColumns) ? Request::get('orderBy')  : 'updated_at';
         $sortDir = Request::has('direction') ? Request::get('direction') : 'desc';
 
-        $bans = Ban::orderBy($orderBy,$sortDir)->paginate(35);
+        $bans = Ban::orderBy($orderBy,$sortDir)->with('country')->paginate(35);
 
         return view('ban.index')->with('bans',$bans);
     }

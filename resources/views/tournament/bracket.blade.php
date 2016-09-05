@@ -29,6 +29,23 @@
         {
             font-size:125% !important;
         }
+
+        .label {
+            display: inline;
+            font-size: 100%;
+            font-weight: normal;
+            line-height: 1;
+            text-align:start;
+            color:black;
+            white-space: nowrap;
+            vertical-align: baseline;
+            border-radius: .25em;
+        }
+        .dd-bracket
+        {
+            padding: 20px;
+            border: 2px grey dashed;
+        }
     </style>
 @endsection
 
@@ -54,7 +71,6 @@
                         <th class="col-xs-1">Flag</th>
                         <th class="col-xs-6">Name</th>
                         <th class="tooltipster" title="Players"><i class="fa fa-users"></i></th>
-                        <th class="tooltipster" title="Joining Status">Status</th>
                         <th class="col-xs-1 text-right">Win</th>
                         <th class="col-xs-1 text-right">Lost</th>
                         <th class="col-xs-1 text-right">Tie</th>
@@ -73,7 +89,6 @@
                             <td class="text-muted"><img class="tooltipster" title="{{ $team->country->countryName }}" src="/images/flags/20_shiny/{{ $team->country->countryCode }}.png" alt="" height="22px"></td>
                             <td class="color-main text-bold"><a href="{{ route('tournament.team.show',[$tournament->slug,$team->id]) }}">{{ $team->name }}</a></td>
                             <td> {{ $team->playerselected()->count() ."/". $team->tournament->maxPlayersPerTeam() }} </td>
-                            <td>{!! $team->getColorStatus() !!}</td>
                             <td class="text-right">{{ $team->total_wins }}</td>
                             <td class="text-right">{{ $team->total_lost }}</td>
                             <td class="text-right">{{ $team->total_tie }}</td>
@@ -107,7 +122,7 @@
 
             <hr>
 
-            @if($tournament->teams()->where('team_status','!=','1')->count() > 0 && Auth::user()->canManageTournament($tournament))
+            @if($tournament->teams()->where('team_status','!=','1')->count() > 0 && Auth::check() && Auth::user()->canManageTournament($tournament))
                 <h5 class="text-bold text-danger" style="margin:0 0 0 0;border-bottom:1px dashed grey">Pending Teams</h5>
                 <table id="" class="table table-striped table-hover no-margin">
                     <thead>
@@ -181,9 +196,9 @@
 
         <div class="tab-pane" id="bracket">
             @if($tournament->canShowBrackets())
+                @if($tournament->bracket_type == 0)
                 @foreach($tournament->rounds as $round)
                     <h4 style="padding: 10px;background-color: #e2e2e2;">Round {{ $round->round_index }}</h4>
-
                     @foreach($round->matches as $match)
                         <div class="media">
                             <div class="media-body">
@@ -238,12 +253,124 @@
                         </div>
                         <hr class="no-margin">
                     @endforeach
-
                 @endforeach
+                @elseif($tournament->bracket_type == 1)
+                    <div class="dd-bracket col-xs-8 col-xs-offset-2"></div>
+                    <div class="col-xs-12">
+                        <h4 style="padding: 10px;background-color: #e2e2e2;">Matches:</h4>
+                    @foreach($tournament->matches()->get() as $match)
+                        <div class="media">
+                            <div class="media-body">
+                                {{--<h4 class="">
+                                    <a href="{{ route('tournament.show',$tournament->slug) }}">{{ $tournament->name }}</a>
+                                </h4>--}}
+                                <div class="col-xs-12 no-padding media-heading text-center">
+                                    <div class="col-xs-1" style="font-size: 3em;color: lightgray;">
+                                        {{ ++$match->match_index }}
+                                    </div>
+
+                                    <div class="col-xs-1">
+                                        @if($match->team1 != null)
+                                            <img src="/images/flags/20_shiny/{{ $match->team1->country->countryCode.".png" }}" alt="" class="img tooltipster" title="{{ $match->team1->country->countryName }}">
+                                        @else
+                                            <img src="/images/flags/20_shiny/_unknown.png" alt="" class="img tooltipster" title="To be Announced">
+                                        @endif
+                                        <br>vs<br>
+                                        @if($match->team2 != null)
+                                            <img src="/images/flags/20_shiny/{{ $match->team2->country->countryCode.".png" }}" alt="" class="img tooltipster" title="{{ $match->team2->country->countryName }}">
+                                        @else
+                                            <img src="/images/flags/20_shiny/_unknown.png" alt="" class="img tooltipster" title="To be Announced">
+                                        @endif
+                                    </div>
+
+                                    <div class="col-xs-4">
+                                        <div class="text-bold">
+                                            @if($match->team1 != null)
+                                            {!! link_to_route('tournament.team.show',$match->team1->name,[$tournament->slug,$match->team1->id])  !!}
+                                            @else
+                                                <i>TBA</i>
+                                            @endif
+                                        </div>
+                                        vs
+                                        <div class="text-bold">
+                                            @if($match->team2 != null)
+                                            {!! link_to_route('tournament.team.show',$match->team2->name,[$tournament->slug,$match->team2->id]) !!}
+                                            @else
+                                                <i>TBA</i>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-3" style="border-left: 5px solid dodgerblue;border-right: 5px solid dodgerblue">
+                                        <div class="">
+                                            <p>Venue: <b>KoS War Server</b><br>
+                                                {{ $match->starts_at->toDayDateTimeString() }}<br>
+                                                <small>({{ $match->starts_at->diffForHumans() }})</small>
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    @if(Auth::check() && Auth::user()->canManageTournament($tournament) && !$match->has_been_played && $match->team1 != null && $match->team2 != null)
+                                        <div class="col-xs-3">
+                                            <a class="btn btn-warning confirm" href="{{ route('tournament.match.getcalculate',[$tournament->slug,$match->id]) }}">Calculate</a>
+                                        </div>
+                                    @endif
+
+                                    @if($match->has_been_played)
+                                        <div class="col-xs-3">
+                                            {!! $match->getWinningTextForHumans() !!}
+                                            <br>
+                                            <a class="btn btn-xs btn-info" href="{{ route('tournament.match.show',[$tournament->slug,$match->id]) }}">View Details</a>
+                                        </div>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="no-margin">
+                    @endforeach
+                    </div>
+                @endif
             @else
                 <div class="text-center alert alert-danger text-bold">Bracket is not available at this time.</div>
             @endif
         </div>
 
     </div>
+@endsection
+
+@section('scripts')
+    @if($tournament->bracket_type ==1)
+    <script>
+        var doubleEliminationData = {
+            teams : [
+                @foreach($tournament->matches()->where('k_team1_id','!=','null')->where('k_team2_id','!=','null')->take(4)->get() as $match)
+                [{name:"{{ $match->team1->name }}", flag: "{{ $match->team1->country->countryCode }}" },{ name:"{{ $match->team2->name }}",  flag: "{{ $match->team2->country->countryCode }}" }],
+                @endforeach
+            ],
+            results : [[[[]]], [], []]
+        };
+
+        /* Render function is called for each team label when data is changed, data
+         * contains the data object given in init and belonging to this slot. */
+        function render_fn(container, data, score) {
+            if (!data.flag || !data.name)
+                return;
+            container.append('<img src="/images/flags_new/flags-iso/shiny/16/'+data.flag+'.png" /> ').append(data.name)
+        }
+        /* Edit function is called when team label is clicked */
+        function edit_fn(container, data, doneCb) {
+
+        }
+
+        $(function() {
+            $('.dd-bracket').bracket({
+                skipConsolationRound: true,
+                init: doubleEliminationData,
+                 /* without save() labels are disabled */
+                decorator: {edit: edit_fn,
+                    render: render_fn}
+            })
+        })
+    </script>
+    @endif
 @endsection

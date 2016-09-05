@@ -106,6 +106,11 @@ class TManagerController extends Controller
             return redirect()->route('tournament.bracket.show',[$tournament->slug])->with('error',"Error! Already calculated, Plz contact admin for support");
         }
 
+        if($request->overall_winner_id == "0" && $tournament->bracket_type > 0)
+        {
+            return redirect()->route('tournament.bracket.show',[$tournament->slug])->with('error',"Error! Tie only supported in Round Robin Tournament");
+        }
+
 
         // Check is On. Turn off only for testing
         if(true)
@@ -292,6 +297,43 @@ class TManagerController extends Controller
         $match->team1->givescoretouser($team1_p2,$team1_p2_score_sum);
         $match->team2->givescoretouser($team2_p1,$team2_p1_score_sum);
         $match->team2->givescoretouser($team2_p2,$team2_p2_score_sum);
+
+
+        //FOR DE/SW ONLY
+        if($tournament->bracket_type > 0)
+        {
+            // Check for all matches with has this match index for team 1...
+            $team1_from_match_indexes = KMatch::where('team1_from_match_index',$match->match_index)->get();
+            foreach($team1_from_match_indexes as $team1_from_match_index)
+            {
+                if($team1_from_match_index->team1_from_match_rank == 1) //Get winner of this round
+                {
+                    $team1_from_match_index->k_team1_id = $match->winner_team_id;
+                    $team1_from_match_index->save();
+                }
+                elseif($team1_from_match_index->team1_from_match_rank == 2) //Get the loser of this round
+                {
+                    $team1_from_match_index->k_team1_id = $team1->id == $match->winner_team_id ? $team2->id : $team1->id;
+                    $team1_from_match_index->save();
+                }
+            }
+
+            // Check for all matches with has this match index for team 2...
+            $team2_from_match_indexes = KMatch::where('team2_from_match_index',$match->match_index)->get();
+            foreach($team2_from_match_indexes as $team2_from_match_index)
+            {
+                if($team2_from_match_index->team2_from_match_rank == 1) //Get winner of this round
+                {
+                    $team2_from_match_index->k_team2_id = $match->winner_team_id;
+                    $team2_from_match_index->save();
+                }
+                elseif($team2_from_match_index->team2_from_match_rank == 2) //Get the loser of this round
+                {
+                    $team2_from_match_index->k_team2_id = $team1->id == $match->winner_team_id ? $team2->id : $team1->id;
+                    $team2_from_match_index->save();
+                }
+            }
+        }
 
         //Dispatch Notifications
         //If match is cancelled

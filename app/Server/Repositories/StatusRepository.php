@@ -38,7 +38,7 @@ class StatusRepository {
         $userIds = $user->following()->lists('followed_id');
         $userIds[] = $user->id;
 
-        return Status::whereIn('user_id', $userIds)->latest();
+        return Status::whereIn('user_id', $userIds)->with('comments','user')->latest();
     }
 
     public function publish($status)

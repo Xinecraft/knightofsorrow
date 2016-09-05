@@ -22,7 +22,8 @@ class KMatch extends Model
         'team1_from_match_rank',
         'team1_from_match_index',
         'team2_from_match_rank',
-        'team2_from_match_index'
+        'team2_from_match_index',
+        'match_index'
     ];
 
     protected $dates = ['starts_at'];

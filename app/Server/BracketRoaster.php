@@ -46,6 +46,17 @@ class BracketRoaster
             $tour->rounds()->delete();
         }
 
+        // Turn to not eligible all teams having less than minimum required players.
+        foreach($tour->teams()->qualified()->get() as $teamx)
+        {
+            if($teamx->isFull())
+            {
+                continue;
+            }
+            $teamx->team_status = 3; //Not Eligible
+            $teamx->save();
+        }
+
         $teams = $tour->teams()->qualified()->get(['id'])->lists('id')->toArray();
         // No of matches played per round.
         $no_of_match_per_round = count($teams)/2;
@@ -94,11 +105,11 @@ class BracketRoaster
                     'k_team2_id' => $play["Away"],
                     'starts_at' => $starts_at_local,
                 ]);
-                $starts_at_local = $starts_at_local->addHour();
+                $starts_at_local = $starts_at_local->addHour(2);
             }
 
             // Add 1 day for each next rounds
-            $starts_at_localx = $starts_at_localx->subHour($no_of_match_per_round);
+            $starts_at_localx = $starts_at_localx->subHour($no_of_match_per_round*2);
             $starts_at = $starts_at->addDay();
         }
         return "New RR tournaments roasted!\n";
@@ -149,6 +160,17 @@ class BracketRoaster
         if($forced == true)
         {
             $tour->matches()->delete();
+        }
+
+        // Turn to not eligible all teams having less than minimum required players.
+        foreach($tour->teams()->qualified()->get() as $teamx)
+        {
+            if($teamx->isFull())
+            {
+                continue;
+            }
+            $teamx->team_status = 3; //Not Eligible
+            $teamx->save();
         }
 
         // Team taking PART (only their respected IDs)
@@ -255,6 +277,8 @@ class BracketRoaster
         // Now save this to DB
         $starts_at_glob = $tournament->tournament_starts_at->addHour(1);
 
+        $i = 0;
+
         foreach(array_chunk($events,2) as $eventx)
         {
             foreach($eventx as $event)
@@ -295,6 +319,7 @@ class BracketRoaster
                     $match->team2_from_match_rank = $team2['from_event_rank'];
                     $match->team2_from_match_index = $team2['from_event_index'];
                 }
+                $match->match_index = $i++;
                 $tournament->matches()->create($match->toArray());
             }
 

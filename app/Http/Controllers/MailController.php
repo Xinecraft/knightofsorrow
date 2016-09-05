@@ -35,7 +35,7 @@ class MailController extends Controller
      */
     public function index(Request $request)
     {
-        $messages = $request->user()->receivedMessages()->with('sender')->with('reciever')->latest()->groupBy('sender_id')->get();
+        $messages = $request->user()->receivedMessages()->with('reciever','sender')->latest()->groupBy('sender_id')->get();
 
         return view('messages.index')->withMessages($messages);
     }
@@ -105,7 +105,7 @@ class MailController extends Controller
     {
         $user = $this->user->findOrFailByUsername($username);
 
-        $messages = Mail::conversation($user,$request->user())->where('deleted_at',null)->latest()->paginate(10);
+        $messages = Mail::conversation($user,$request->user())->where('deleted_at',null)->with('sender')->latest()->paginate(10);
 
         return view('messages.show')->withMessages($messages)->withRecuser($user);
     }
