@@ -19,7 +19,7 @@
             <li class="list-group-item" style="padding: 5px 15px;">
                 <span class="small tooltipster" title="Teamspeak 3 Server">
                     <img class="img img20" src="/images/Logo_ts3.png" alt=""> -
-                    <span class="text-danger text-bold">knightofsorrow.tk:9987</span>
+                    <span class="text-danger text-bold">knightofsorrow.com:9987</span>
                 </span>
             </li>
         </ul>
