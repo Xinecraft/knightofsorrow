@@ -122,7 +122,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Bracket Type</td>
+                                <td>Draw Type</td>
                                 <td>
                                     <b>{{ $tournament->getHumanReadableBType() }}</b>
                                 </td>
@@ -434,10 +434,10 @@
 
         <div class="col-xs-12" style="border: 2px solid lightgrey;margin-top: 15px;">
             <div role="tabpanel" class="" id="bracket">
-                <h3 style="border-bottom: 2px dashed lightgrey">Brackets</h3>
+                <h3 style="border-bottom: 2px dashed lightgrey">Draws</h3>
                 @if($tournament->canShowBrackets())
                     <a class="btn btn-sm btn-info pull-right"
-                       href="{{ route('tournament.bracket.show',$tournament->slug) }}">View Full Bracket</a>
+                       href="{{ route('tournament.bracket.show',$tournament->slug) }}">View Full Draw</a>
                     @if($tournament->bracket_type == 0)
                         @foreach($tournament->rounds as $round)
                             <h4 style="padding: 10px;background-color: #e2e2e2;">
@@ -481,10 +481,12 @@
                             @endforeach
                         @endforeach
                     @elseif($tournament->bracket_type == 1)
-                        <div class="dd-bracket col-xs-10 col-xs-offset-2"></div>
+                        <div class="dd-bracket col-xs-12">
+                            <iframe src="http://knightofsorrow.challonge.com/kosalpha/module?match_width_multiplier=1.1" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+                        </div>
                     @endif
                 @else
-                    <div class="text-center alert alert-danger text-bold">Bracket is not available at this
+                    <div class="text-center alert alert-danger text-bold">Draw is not available at this
                         time.
                     </div>
                 @endif
@@ -537,42 +539,4 @@
             </div>
         @endforeach
     </div>
-@endsection
-
-
-@section('scripts')
-    @if($tournament->bracket_type ==1)
-        <script>
-            var doubleEliminationData = {
-                teams : [
-                        @foreach($tournament->matches()->where('k_team1_id','!=','null')->where('k_team2_id','!=','null')->take(4)->get() as $match)
-                    [{name:"{{ $match->team1->name }}", flag: "{{ $match->team1->country->countryCode }}" },{ name:"{{ $match->team2->name }}",  flag: "{{ $match->team2->country->countryCode }}" }],
-                    @endforeach
-                ],
-                results : [[[[]]], [], []]
-            };
-
-            /* Render function is called for each team label when data is changed, data
-             * contains the data object given in init and belonging to this slot. */
-            function render_fn(container, data, score) {
-                if (!data.flag || !data.name)
-                    return;
-                container.append('<img src="/images/flags_new/flags-iso/shiny/16/'+data.flag+'.png" /> ').append(data.name)
-            }
-            /* Edit function is called when team label is clicked */
-            function edit_fn(container, data, doneCb) {
-
-            }
-
-            $(function() {
-                $('.dd-bracket').bracket({
-                    skipConsolationRound: true,
-                    init: doubleEliminationData,
-                    /* without save() labels are disabled */
-                    decorator: {edit: edit_fn,
-                        render: render_fn}
-                })
-            })
-        </script>
-    @endif
 @endsection
