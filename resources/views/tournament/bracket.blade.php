@@ -83,7 +83,7 @@
                     </tr>
                     </thead>
                     <tbody id="">
-                    @foreach($tournament->teams()->where('team_status','1')->orderBy('points','desc')->get() as $team)
+                    @foreach($tournament->teams()->where('team_status','1')->orderby('team_position')->orderBy('points','desc')->get() as $team)
                         <tr class="item">
                             <td>{{ $team->team_position }}</td>
                             <td class="text-muted"><img class="tooltipster" title="{{ $team->country->countryName }}" src="/images/flags/20_shiny/{{ $team->country->countryCode }}.png" alt="" height="22px"></td>
@@ -320,7 +320,6 @@
                                         <div class="col-xs-3">
                                             {!! $match->getWinningTextForHumans() !!}
                                             <br>
-                                            <a class="btn btn-xs btn-info" href="{{ route('tournament.match.show',[$tournament->slug,$match->id]) }}">View Details</a>
                                         </div>
                                     @endif
                                 </div>

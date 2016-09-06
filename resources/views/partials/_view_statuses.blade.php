@@ -33,15 +33,15 @@
                         {!! Html::image($comment->user->getGravatarLink(30),'',array('class'=>'img media-oject inprofile-thumbs','width'=>'30','height'=>'30')) !!}
                     </div>
                     <div class="media-body small">
-                        <p class="no-margin convert-emoji">
-                            @if(Auth::check() && (Auth::user()->isAdmin() || Auth::user()->id == $comment->user_id))
-                                <span class="pull-right">
+                        @if(Auth::check() && (Auth::user()->isAdmin() || Auth::user()->id == $comment->user_id))
+                            <span class="pull-right">
                                     {!! Form::open(['method' => 'delete','route' => ['comment.destroy',$comment->id],'class' => 'pull-right']) !!}
-                                    <button type="submit" class="tooltipster confirm submit btn-link"
-                                            title="Delete Comment"><i class="fa fa-times"></i></button>
-                                    {!! Form::close() !!}
+                                <button type="submit" class="tooltipster confirm submit btn-link"
+                                        title="Delete Comment"><i class="fa fa-times"></i></button>
+                                {!! Form::close() !!}
                                 </span>
-                            @endif
+                        @endif
+                        <p class="no-margin convert-emoji">
                             <b>{!! link_to_route('user.show',$comment->user->displayName(),[$comment->user->username]) !!}</b>
                             {!! $comment->showBody() !!}
                         </p>

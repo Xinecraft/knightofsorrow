@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', $team->name)
+@section('title', $team->name." - Team")
 @section('styles')
     <style>
         form
@@ -30,7 +30,7 @@
                 <tr>
                     <td>Team Position</td>
                     <td>
-                        {!! $team->position or "<i class='small text-muted'>Not available</i>"  !!}
+                        {!! $team->team_position or "<i class='small text-muted'>Not available</i>"  !!}
                     </td>
                 </tr>
                 <tr>
@@ -78,26 +78,26 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Round Played</td>
+                    <td>Match Played</td>
                     <td>
-                        <b>{{ "0" }}</b>
+                        <b>{{ $team->total_wins+$team->total_lost+$team->total_tie }}</b>
                     </td>
                 </tr>
                 <tr>
-                    <td>Round Won</td>
+                    <td>Match Won</td>
                     <td>
                         <b>{{ $team->total_wins }}</b>
                     </td>
                 </tr>
                 <tr>
-                    <td>Round Lost</td>
+                    <td>Match Lost</td>
                     <td>
                         <b>{{ $team->total_lost }}</b>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        Round Tie
+                        Match Tied
                     </td>
                     <td>
                         <b>{{ $team->total_tie }}</b>

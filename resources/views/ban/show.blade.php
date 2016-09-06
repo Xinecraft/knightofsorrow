@@ -105,15 +105,15 @@
                         {!! Html::image($comment->user->getGravatarLink(50),'',array('class'=>'img media-oject inprofile-thumbs','width'=>'50','height'=>'50')) !!}
                     </div>
                     <div class="media-body" style="font-size: 14px;word-break: break-all;">
-                        <p class="no-margin convert-emoji">
-                            @if(Auth::check() && (Auth::user()->isAdmin() || Auth::user()->id == $comment->user_id))
-                                <span class="pull-right">
+                        @if(Auth::check() && (Auth::user()->isAdmin() || Auth::user()->id == $comment->user_id))
+                            <span class="pull-right">
                                     {!! Form::open(['method' => 'delete','route' => ['comment.destroy',$comment->id],'class' => 'pull-right']) !!}
-                                    <button type="submit" class="tooltipster confirm submit btn-link"
-                                            title="Delete Comment"><i class="fa fa-times"></i></button>
-                                    {!! Form::close() !!}
+                                <button type="submit" class="tooltipster confirm submit btn-link"
+                                        title="Delete Comment"><i class="fa fa-times"></i></button>
+                                {!! Form::close() !!}
                                 </span>
-                            @endif
+                        @endif
+                        <p class="no-margin convert-emoji">
                             <b>{!! link_to_route('user.show',$comment->user->displayName(),[$comment->user->username]) !!}</b>
                         </p>
                         <p class="no-margin text-muted small">{{ $comment->created_at->diffForHumans() }}</p>

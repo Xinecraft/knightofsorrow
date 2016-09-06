@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Game;
 use App\KMatch;
+use App\KTeam;
 use App\KTournament;
 use App\Notification;
 use Illuminate\Http\Request;
@@ -371,6 +372,17 @@ class TManagerController extends Controller
                 ->regarding($tournament)
                 ->deliver();
         }
+
+        //RANK THE TEAMS
+        //@TODO: Its TEMP CHANGE IT
+        $teams = KTeam::where('team_status',1)->orderBy('points','desc')->orderBy('total_wins','desc')->orderBy('total_lost','asc')->orderBy('total_tie','desc')->orderBy('total_score','desc')->get();
+        $i=0;
+        foreach($teams as $team)
+        {
+            $team->team_position = ++$i;
+            $team->save();
+        }
+
         return redirect()->route('tournament.show',[$tournament->slug])->with('message',"Success! Match data has been recorded.");
     }
 }

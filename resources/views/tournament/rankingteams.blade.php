@@ -40,7 +40,7 @@
                 <tbody id="data-items">
                 @foreach($teams as $team)
                     <tr class="item">
-                        <td class="color-main text-bold">{{ $team->ranking }}</td>
+                        <td class="color-main text-bold">{{ $team->team_position or "TBA" }}</td>
                         <td class="text-muted"><img class="tooltipster" title="{{ $team->country->countryName }}" src="/images/flags/20_shiny/{{ $team->country->countryCode }}.png" alt="" height="22px"/></td>
                         <td class="color-main text-bold">{{ $team->name }}</td>
                         <td>{!! $team->points !!}</td>

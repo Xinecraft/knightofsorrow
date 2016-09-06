@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\KTeamRequest;
 use App\Http\Requests\KTournamentRequest;
+use App\KMatch;
 use App\KTeam;
 use App\KTournament;
 use App\Notification;
@@ -54,7 +55,7 @@ class TournamentController extends Controller
 
     public function getRatingTeams()
     {
-        $teams = KTeam::groupBy('name')->paginate();
+        $teams = KTeam::where('team_status',1)->groupBy('name')->orderby('team_position')->paginate();
         return view('tournament.rankingteams')->with('teams',$teams);
     }
 
@@ -736,6 +737,19 @@ class TournamentController extends Controller
         }
 
         return redirect()->back()->with('message','Success! Team status changed');
+    }
+
+    /**
+     * Return match details.
+     *
+     * @param $slug
+     * @param $id
+     * @param Request $request
+     * @return $this
+     */
+    public function getTournamentMatch($slug,$id,Request $request)
+    {
+        abort(404);
     }
 
 }
