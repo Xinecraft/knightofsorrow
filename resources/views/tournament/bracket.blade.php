@@ -75,7 +75,7 @@
                         <th class="col-xs-1 text-right">Lost</th>
                         <th class="col-xs-1 text-right">Tie</th>
                         <th class="col-xs-1 text-right">Points</th>
-                        @if(Auth::check() && Auth::user()->canManageTournament($tournament))
+                        @if(Auth::check() && Auth::user()->canManageTournament($tournament) && $tournament->canAlterTeams())
                             <th class="text-right ">
                                 Action
                             </th>
@@ -93,7 +93,7 @@
                             <td class="text-right">{{ $team->total_lost }}</td>
                             <td class="text-right">{{ $team->total_tie }}</td>
                             <td class="text-right"><b>{{ $team->points or "0" }}</b></td>
-                            @if(Auth::check() && Auth::user()->canManageTournament($tournament))
+                            @if(Auth::check() && Auth::user()->canManageTournament($tournament) && $tournament->canAlterTeams())
                                 <td class="text-right">
                                     {!! Form::open(['route' => ['tournament.team.handleteams',$tournament->slug,$team->id], 'class' => 'form form-inline']) !!}
                                     {!! Form::hidden('team_id',$team->id) !!}
@@ -133,7 +133,7 @@
                         <th class="tooltipster" title="Players"><i class="fa fa-users"></i></th>
                         <th class="col-xs-2 tooltipster" title="Joining Status">Join Status</th>
                         <th class="col-xs-3 text-right">Team Status</th>
-                        @if(Auth::check() && Auth::user()->canManageTournament($tournament))
+                        @if(Auth::check() && Auth::user()->canManageTournament($tournament) && $tournament->canAlterTeams())
                             <th class="text-right ">
                                 Action
                             </th>
@@ -151,7 +151,7 @@
                             <td>{!! $team->getColorStatus() !!}</td>
                             <td class="text-bold text-right">{!! $team->getColorAppr()  !!}</td>
 
-                            @if(Auth::check() && Auth::user()->canManageTournament($tournament))
+                            @if(Auth::check() && Auth::user()->canManageTournament($tournament) && $tournament->canAlterTeams())
                                 <td class="text-right">
                                     {!! Form::open(['route' => ['tournament.team.handleteams',$tournament->slug,$team->id], 'class' => 'form form-inline']) !!}
                                     {!! Form::hidden('team_id',$team->id) !!}

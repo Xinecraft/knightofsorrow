@@ -178,6 +178,30 @@ class KTournament extends Model
         }
     }
 
+    /**
+     * Approve and pending a team.
+     *
+     * @return bool
+     */
+    public function canAlterTeams()
+    {
+        if($this->isRegistrationOpen() == 1)
+            return true;
+        return false;
+    }
+
+    /**
+     * Approve and pending a player
+     *
+     * @return bool
+     */
+    public function canAlterPlayersInTeam()
+    {
+        if($this->isRegistrationOpen() == 1 || $this->isRegistrationOpen() == 3)
+            return true;
+        return false;
+    }
+
 
     /**
      * @return string

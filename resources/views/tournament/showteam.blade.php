@@ -14,8 +14,7 @@
         <div class="container">
             <h1 class="ng-binding text-center"><a href="{{ route('tournament.show',$tournament->slug) }}">{{ $tournament->name }}</a></h1>
             <h1 class="text-green">{{ $team->name }}</h1>
-            <!-- ngIf: ctrl.tournament.twitch --><!--end .tournament-twitch-->
-        </div><!--end .container-->
+        </div>
     </div>
 @endsection
 
@@ -57,7 +56,7 @@
                     <td>
                         <b>{!! $team->getColorStatus() !!} for joining</b>
 
-                    @if(Auth::check() && Auth::user()->canHandleTeam($team))
+                    @if(Auth::check() && Auth::user()->canHandleTeam($team) && $tournament->canAlterTeams())
                         @if($team->isClosed())
                             {!! Form::open(['route' => ['tournament.team.makeopen',$tournament->slug,$team->id], 'class' => 'form pull-right form-inline']) !!}
                             {!! Form::hidden('team_id',$team->id) !!}
@@ -134,7 +133,7 @@
                         <th class="col-xs-5">Name</th>
                         <th class="col-xs-1 text-right">Score</th>
                         <th class="col-xs-3 text-right">Seen</th>
-                        @if(Auth::check() && Auth::user()->canHandleTeam($team))
+                        @if(Auth::check() && Auth::user()->canHandleTeam($team) && $tournament->canAlterPlayersInTeam())
                             <th class="text-right">
                                 Action
                             </th>
@@ -157,7 +156,7 @@
                             <td class="text-right" style="font-size: 12px">
                                 {{ $user->updated_at->diffForHumans() }}
                             </td>
-                            @if(Auth::check() && Auth::user()->canHandleTeam($team))
+                            @if(Auth::check() && Auth::user()->canHandleTeam($team) && $tournament->canAlterPlayersInTeam())
                                 <td class="text-right">
                                     {!! Form::open(['route' => ['tournament.team.player.pending',$tournament->slug,$team->id,$user->id], 'class' => 'form form-inline']) !!}
                                     {!! Form::hidden('team_id',$team->id) !!}
@@ -186,7 +185,7 @@
                             <th class="">Flag</th>
                             <th class="col-xs-6">Name</th>
                             <th class="col-xs-3 text-right">Seen</th>
-                            @if(Auth::check() && Auth::user()->canHandleTeam($team))
+                            @if(Auth::check() && Auth::user()->canHandleTeam($team) && $tournament->canAlterPlayersInTeam())
                                 <th class="col-xs-3 text-right">Action</th>
                             @endif
                         </tr>
@@ -204,7 +203,7 @@
                                     {{ $user->updated_at->diffForHumans() }}
                                 </td>
 
-                                @if(Auth::check() && Auth::user()->canHandleTeam($team))
+                                @if(Auth::check() && Auth::user()->canHandleTeam($team)  && $tournament->canAlterPlayersInTeam())
                                     <td class="text-right">
                                         {!! Form::open(['route' => ['tournament.team.player.approve',$tournament->slug,$team->id,$user->id], 'class' => 'form form-inline']) !!}
                                         {!! Form::hidden('team_id',$team->id) !!}
