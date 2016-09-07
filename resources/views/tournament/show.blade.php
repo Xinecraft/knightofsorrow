@@ -180,12 +180,13 @@
                                 <tr>
                                     <th class="tooltipster" title="Rank">#</th>
                                     <th class="col-xs-1">Flag</th>
-                                    <th class="col-xs-6">Name</th>
+                                    <th class="col-xs-5">Name</th>
                                     <th class="tooltipster" title="Players"><i class="fa fa-users"></i></th>
                                     <th class="tooltipster" title="Joining Status">Status</th>
                                     <th class="col-xs-1 text-right">Win</th>
                                     <th class="col-xs-1 text-right">Lost</th>
                                     <th class="col-xs-1 text-right">Tie</th>
+                                    <th class="col-xs-1 text-right">Score</th>
                                     <th class="col-xs-1 text-right">Points</th>
                                     @if(Auth::check() && Auth::user()->canManageTournament($tournament) && $tournament->canAlterTeams())
                                         <th class="text-right ">
@@ -210,6 +211,7 @@
                                         <td class="text-right">{{ $team->total_wins }}</td>
                                         <td class="text-right">{{ $team->total_lost }}</td>
                                         <td class="text-right">{{ $team->total_tie }}</td>
+                                        <td class="text-right"><b>{{ $team->total_score or "0" }}</b></td>
                                         <td class="text-right"><b>{{ $team->points or "0" }}</b></td>
                                         @if(Auth::check() && Auth::user()->canManageTournament($tournament) && $tournament->canAlterTeams())
                                             <td class="text-right">
