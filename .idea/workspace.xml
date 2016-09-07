@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e189236c-c3e7-488f-b221-e9fb727e1c1d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/KMatch.php" afterPath="$PROJECT_DIR$/app/KMatch.php" />
     </list>
     <ignored path="kos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,21 +42,41 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="TManagerController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TManagerController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.0769231">
+              <caret line="368" column="45" selection-start-line="368" selection-start-column="45" selection-end-line="368" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KMatch.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/KMatch.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7326203">
+              <caret line="168" column="401" selection-start-line="168" selection-start-column="401" selection-end-line="168" selection-end-column="401" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="KTournament.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/KTournament.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.807693">
+            <state vertical-scroll-proportion="0.0">
               <caret line="185" column="33" selection-start-line="185" selection-start-column="20" selection-end-line="185" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bracket.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bracket.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/tournament/bracket.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.53475934">
-              <caret line="175" column="57" selection-start-line="175" selection-start-column="57" selection-end-line="175" selection-end-column="57" />
+            <state vertical-scroll-proportion="-11.192307">
+              <caret line="174" column="45" selection-start-line="174" selection-start-column="45" selection-end-line="174" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -92,7 +113,6 @@
         <option value="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
         <option value="$PROJECT_DIR$/resources/views/tournament/manage/getcalculate2.blade.php" />
-        <option value="$PROJECT_DIR$/app/KMatch.php" />
         <option value="$PROJECT_DIR$/app/Shout.php" />
         <option value="$PROJECT_DIR$/resources/views/statistics/top-players.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/StatisticsController.php" />
@@ -127,6 +147,7 @@
         <option value="$PROJECT_DIR$/resources/views/tournament/showteam.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/tournament/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/tournament/bracket.blade.php" />
+        <option value="$PROJECT_DIR$/app/KMatch.php" />
       </list>
     </option>
   </component>
@@ -175,8 +196,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -345,13 +364,15 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="ter&#9;ACTION&#9;ActivateTerminalToolWindow&#10;rout&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/routes.php&#10;side&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;helper.php&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/helpers.php&#10;KTe&#9;null&#9;null&#10;USer&#9;FILE&#9;file://C:/wamp/www/kos/app/User.php&#10;UserC&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/UserController.php&#10;Comme&#9;null&#9;null&#10;User&#9;FILE&#9;file://C:/wamp/www/kos/app/User.php&#10;PollQ&#9;FILE&#9;file://C:/wamp/www/kos/app/Pollq.php&#10;Ban&#9;null&#9;null&#10;Matc&#9;FILE&#9;file://C:/wamp/www/kos/app/KMatch.php&#10;KTOur&#9;FILE&#9;file://C:/wamp/www/kos/app/KTournament.php&#10;MainC&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/MainController.php&#10;home&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/home.blade.php&#10;Shout&#9;null&#9;null&#10;_side&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;term&#9;ACTION&#9;ActivateTerminalToolWindow&#10;app.less&#9;FILE&#9;file://C:/wamp/www/kos/resources/assets/less/app.less&#10;font-a&#9;FILE&#9;file://C:/wamp/www/kos/public/font-awesome/css/font-awesome.css&#10;Api&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/ApiController.php&#10;ServerC&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/ServerController.php&#10;route&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/routes.php&#10;ApiC&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/ApiController.php&#10;main&#9;FILE&#9;file://C:/wamp/www/kos/public/js/main.js&#10;main.js&#9;FILE&#9;file://C:/wamp/www/kos/public/js/main.js&#10;app.js&#9;FILE&#9;file://C:/wamp/www/kos/public/js/app.js&#10;Tourn&#9;FILE&#9;file://C:/wamp/www/kos/app/KTournament.php&#10;KTO&#9;FILE&#9;file://C:/wamp/www/kos/app/KTournament.php&#10;KM&#9;null&#9;null&#10;Man&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/TManagerController.php&#10;KTo&#9;null&#9;null&#10;index&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/index.blade.php&#10;main.bl&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/layouts/main.blade.php&#10;UserPre&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Presenters/UserPresenter.php&#10;edit&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/user/edit.blade.php&#10;BanPres&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Presenters/BanPresenter.php&#10;navba&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;BanC&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/BanController.php&#10;banCo&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/BanController.php&#10;footer.bl&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_footer.blade.php&#10;BanP&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Presenters/BanPresenter.php&#10;BanPre&#9;null&#9;null&#10;show&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/ban/show.blade.php&#10;BanCon&#9;null&#9;null&#10;edi&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/ban/edit.blade.php&#10;app.&#9;FILE&#9;file://C:/wamp/www/kos/resources/assets/less/app.less&#10;create.bla&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/polls/create.blade.php&#10;StatusPre&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Presenters/StatusPresenter.php&#10;helper&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/helpers.php" />
+    <property name="SearchEverywhereHistoryKey" value="Matc&#9;FILE&#9;file://C:/wamp/www/kos/app/KMatch.php&#10;ter&#9;ACTION&#9;ActivateTerminalToolWindow&#10;rout&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/routes.php&#10;side&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;helper.php&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/helpers.php&#10;KTe&#9;null&#9;null&#10;USer&#9;FILE&#9;file://C:/wamp/www/kos/app/User.php&#10;UserC&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/UserController.php&#10;Comme&#9;null&#9;null&#10;User&#9;FILE&#9;file://C:/wamp/www/kos/app/User.php&#10;PollQ&#9;FILE&#9;file://C:/wamp/www/kos/app/Pollq.php&#10;Ban&#9;null&#9;null&#10;KTOur&#9;FILE&#9;file://C:/wamp/www/kos/app/KTournament.php&#10;MainC&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/MainController.php&#10;home&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/home.blade.php&#10;Shout&#9;null&#9;null&#10;_side&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;term&#9;ACTION&#9;ActivateTerminalToolWindow&#10;app.less&#9;FILE&#9;file://C:/wamp/www/kos/resources/assets/less/app.less&#10;font-a&#9;FILE&#9;file://C:/wamp/www/kos/public/font-awesome/css/font-awesome.css&#10;Api&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/ApiController.php&#10;ServerC&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/ServerController.php&#10;route&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/routes.php&#10;ApiC&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/ApiController.php&#10;main&#9;FILE&#9;file://C:/wamp/www/kos/public/js/main.js&#10;main.js&#9;FILE&#9;file://C:/wamp/www/kos/public/js/main.js&#10;app.js&#9;FILE&#9;file://C:/wamp/www/kos/public/js/app.js&#10;Tourn&#9;FILE&#9;file://C:/wamp/www/kos/app/KTournament.php&#10;KTO&#9;FILE&#9;file://C:/wamp/www/kos/app/KTournament.php&#10;KM&#9;null&#9;null&#10;Man&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/TManagerController.php&#10;KTo&#9;null&#9;null&#10;index&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/index.blade.php&#10;main.bl&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/layouts/main.blade.php&#10;UserPre&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Presenters/UserPresenter.php&#10;edit&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/user/edit.blade.php&#10;BanPres&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Presenters/BanPresenter.php&#10;navba&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;BanC&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/BanController.php&#10;banCo&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/BanController.php&#10;footer.bl&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_footer.blade.php&#10;BanP&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Presenters/BanPresenter.php&#10;BanPre&#9;null&#9;null&#10;show&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/ban/show.blade.php&#10;BanCon&#9;null&#9;null&#10;edi&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/ban/edit.blade.php&#10;app.&#9;FILE&#9;file://C:/wamp/www/kos/resources/assets/less/app.less&#10;create.bla&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/polls/create.blade.php&#10;StatusPre&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Presenters/StatusPresenter.php&#10;helper&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/helpers.php" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../twitter" />
   </component>
@@ -567,7 +588,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.31034482">
           <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -704,25 +724,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/KMatch.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.69251335">
-          <caret line="41" column="27" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/tournament/showmatch.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.19518717">
           <caret line="67" column="46" selection-start-line="67" selection-start-column="46" selection-end-line="67" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TManagerController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.923077">
-          <caret line="377" column="182" selection-start-line="377" selection-start-column="182" selection-end-line="377" selection-end-column="182" />
         </state>
       </provider>
     </entry>
@@ -765,12 +770,29 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22413793">
           <caret line="195" column="50" selection-start-line="195" selection-start-column="50" selection-end-line="195" selection-end-column="50" />
-          <folding>
-            <element signature="e#8361#8416#0#HTML" expanded="true" />
-            <element signature="e#9699#9723#0#HTML" expanded="true" />
-            <element signature="e#10000#10023#0#HTML" expanded="true" />
-            <element signature="e#12091#12146#0#HTML" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/tournament/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9310345">
+          <caret line="352" column="118" selection-start-line="352" selection-start-column="118" selection-end-line="352" selection-end-column="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/KTournament.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="185" column="33" selection-start-line="185" selection-start-column="20" selection-end-line="185" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/tournament/bracket.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.192307">
+          <caret line="174" column="45" selection-start-line="174" selection-start-column="45" selection-end-line="174" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -782,26 +804,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/tournament/show.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TManagerController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9310345">
-          <caret line="352" column="118" selection-start-line="352" selection-start-column="118" selection-end-line="352" selection-end-column="118" />
+        <state vertical-scroll-proportion="-3.0769231">
+          <caret line="368" column="45" selection-start-line="368" selection-start-column="45" selection-end-line="368" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/KTournament.php">
+    <entry file="file://$PROJECT_DIR$/app/KMatch.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.807693">
-          <caret line="185" column="33" selection-start-line="185" selection-start-column="20" selection-end-line="185" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/tournament/bracket.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53475934">
-          <caret line="175" column="57" selection-start-line="175" selection-start-column="57" selection-end-line="175" selection-end-column="57" />
+        <state vertical-scroll-proportion="0.7326203">
+          <caret line="168" column="401" selection-start-line="168" selection-start-column="401" selection-end-line="168" selection-end-column="401" />
           <folding />
         </state>
       </provider>
