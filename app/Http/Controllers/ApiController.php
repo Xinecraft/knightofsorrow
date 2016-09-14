@@ -128,7 +128,7 @@ class ApiController extends Controller
                 }
                 else
                 {
-                    $playerTableData .= "<td>{$showRadioIfAdmin}<span class='team-{$player['team']}'>".$player['name']."</span></td>";
+                    $playerTableData .= "<td>{$showRadioIfAdmin}<span title='{$IP}' class='tooltipster team-{$player['team']}'>".$player['name']."</span></td>";
                 }
 
                 $playerTableData .= "<td class='text-bold'>{$player['score']}</td>";
