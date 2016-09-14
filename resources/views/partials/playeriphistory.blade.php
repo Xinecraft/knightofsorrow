@@ -1,6 +1,6 @@
 <table class="table table-striped table-bordered table-hover no-margin">
     <thead><tr>
-        <th class="">Time</th>
+        <th class="">First Seen</th>
         <th class="text-right">IP Address</th>
         <th class="text-right">Country</th>
     </tr></thead>
