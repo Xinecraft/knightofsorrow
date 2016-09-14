@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e189236c-c3e7-488f-b221-e9fb727e1c1d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TournamentController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TournamentController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tournament/bracket.blade.php" afterPath="$PROJECT_DIR$/resources/views/tournament/bracket.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tournament/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/tournament/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tournament/showmatch.blade.php" afterPath="$PROJECT_DIR$/resources/views/tournament/showmatch.blade.php" />
     </list>
     <ignored path="kos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,11 +34,11 @@
       <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/tournament/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="597" column="11" selection-start-line="597" selection-start-column="11" selection-end-line="597" selection-end-column="11" />
+            <state relative-caret-position="178">
+              <caret line="203" column="72" selection-start-line="203" selection-start-column="72" selection-end-line="203" selection-end-column="72" />
               <folding>
-                <element signature="e#7736#19690#0#HTML" expanded="false" />
-                <element signature="e#35477#36863#0#HTML" expanded="false" />
+                <element signature="e#7936#7988#0#HTML" expanded="true" />
+                <element signature="e#35515#36901#0#HTML" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -499,16 +496,16 @@
       <workItem from="1473599591860" duration="360000" />
       <workItem from="1473599974104" duration="145000" />
       <workItem from="1473600160415" duration="97000" />
-      <workItem from="1473834255531" duration="5408000" />
+      <workItem from="1473834255531" duration="5690000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6245000" />
+    <option name="totallyTimeSpent" value="6527000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1378" height="744" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20484582" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -920,11 +917,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/tournament/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="597" column="11" selection-start-line="597" selection-start-column="11" selection-end-line="597" selection-end-column="11" />
+        <state relative-caret-position="178">
+          <caret line="203" column="72" selection-start-line="203" selection-start-column="72" selection-end-line="203" selection-end-column="72" />
           <folding>
-            <element signature="e#7736#19690#0#HTML" expanded="false" />
-            <element signature="e#35477#36863#0#HTML" expanded="false" />
+            <element signature="e#7936#7988#0#HTML" expanded="true" />
+            <element signature="e#35515#36901#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
