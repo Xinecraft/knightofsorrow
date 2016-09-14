@@ -118,17 +118,21 @@ class ApiController extends Controller
                 $playerNameStripped = htmlspecialchars_decode(html_entity_decode(html_entity_decode($playerNameStripped)));
 
                 $showRadioIfAdmin="";
+                $IPorNull = "";
                 if(\Auth::check() && \Auth::user()->isAdmin())
+                {
                     //$showRadioIfAdmin = "<input class='pull-left' type='radio' name='selected_player' value='$playerNameStripped'> &nbsp;";
-                    $showRadioIfAdmin = $showRadioIfAdmin. "<a style='color:purple' class='fancybox livepfancy fancybox.ajax' href='./liveplayeraction?player={$playerNameStripped}' title='{$player['name']}'><i class='fa fa-cog'></i></a> &nbsp;";
+                    $showRadioIfAdmin = $showRadioIfAdmin . "<a style='color:purple' class='fancybox livepfancy fancybox.ajax' href='./liveplayeraction?player={$playerNameStripped}' title='{$player['name']}'><i class='fa fa-cog'></i></a> &nbsp;";
+                    $IPorNull = $IP;
+                }
 
                 if($playerTotal = Player::findOrFailByNameWithNull($playerNameStripped))
                 {
-                    $playerTableData .= "<td>{$showRadioIfAdmin}<b><a title='{$IP}' class='tooltipster team-{$player['team']}' href='".route('player-detail',$playerNameStripped)."'>".$player['name']."</b></a></td>";
+                    $playerTableData .= "<td>{$showRadioIfAdmin}<b><a title='{$IPorNull}' class='tooltipster team-{$player['team']}' href='".route('player-detail',$playerNameStripped)."'>".$player['name']."</b></a></td>";
                 }
                 else
                 {
-                    $playerTableData .= "<td>{$showRadioIfAdmin}<span title='{$IP}' class='tooltipster team-{$player['team']}'>".$player['name']."</span></td>";
+                    $playerTableData .= "<td>{$showRadioIfAdmin}<span title='{$IPorNull}' class='tooltipster team-{$player['team']}'>".$player['name']."</span></td>";
                 }
 
                 $playerTableData .= "<td class='text-bold'>{$player['score']}</td>";
