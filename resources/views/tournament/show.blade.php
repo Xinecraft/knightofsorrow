@@ -189,7 +189,7 @@
                                     <th class="col-xs-1 text-right">Lost</th>
                                     <th class="col-xs-1 text-right">Tie</th>
                                     <th class="col-xs-1 text-right">Score</th>
-                                    <th class="col-xs-1 text-right tooltipster" title="Win/Lost Index">W/L Index</th>
+                                    <th class="col-xs-1 text-right tooltipster" title="Win/Lost Index">WLI</th>
                                     @if(Auth::check() && Auth::user()->canManageTournament($tournament) && $tournament->canAlterTeams())
                                         <th class="text-right ">
                                             Action

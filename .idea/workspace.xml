@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e189236c-c3e7-488f-b221-e9fb727e1c1d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tournament/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/tournament/show.blade.php" />
     </list>
     <ignored path="kos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,7 +30,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/tournament/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="178">
@@ -54,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bracket.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="bracket.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/tournament/bracket.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="323" column="81" selection-start-line="323" selection-start-column="48" selection-end-line="323" selection-end-column="81" />
+            <state relative-caret-position="157">
+              <caret line="79" column="52" selection-start-line="79" selection-start-column="52" selection-end-line="79" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -183,10 +182,10 @@
         <option value="$PROJECT_DIR$/app/KTournament.php" />
         <option value="$PROJECT_DIR$/resources/views/tournament/showteam.blade.php" />
         <option value="$PROJECT_DIR$/app/KMatch.php" />
-        <option value="$PROJECT_DIR$/resources/views/tournament/bracket.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/tournament/showmatch.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TournamentController.php" />
         <option value="$PROJECT_DIR$/resources/views/tournament/show.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/tournament/bracket.blade.php" />
       </list>
     </option>
   </component>
@@ -496,15 +495,15 @@
       <workItem from="1473599591860" duration="360000" />
       <workItem from="1473599974104" duration="145000" />
       <workItem from="1473600160415" duration="97000" />
-      <workItem from="1473834255531" duration="5690000" />
+      <workItem from="1473834255531" duration="5803000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6527000" />
+    <option name="totallyTimeSpent" value="6640000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1378" height="744" extended-state="0" />
+    <frame x="-8" y="0" width="1378" height="744" extended-state="1" />
     <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -899,14 +898,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/tournament/bracket.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="323" column="81" selection-start-line="323" selection-start-column="48" selection-end-line="323" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/statistics/top-players.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
@@ -923,6 +914,14 @@
             <element signature="e#7936#7988#0#HTML" expanded="true" />
             <element signature="e#35515#36901#0#HTML" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/tournament/bracket.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="79" column="52" selection-start-line="79" selection-start-column="52" selection-end-line="79" selection-end-column="52" />
+          <folding />
         </state>
       </provider>
     </entry>
