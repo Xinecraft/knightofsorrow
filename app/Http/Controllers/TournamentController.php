@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Game;
 use App\Http\Requests\KTeamRequest;
 use App\Http\Requests\KTournamentRequest;
 use App\KMatch;
@@ -151,13 +152,14 @@ class TournamentController extends Controller
      */
     public function show($slug)
     {
-
         $tournament = KTournament::enabled()->whereSlug($slug)->first();
+
+        $players = $tournament->players()->wherePivot('user_status','>=','3')->orderBy('pivot_total_score','desc')->get();
 
         if(!$tournament)
             abort(404);
         //dd($tournament->managers->isEmpty());
-        return view('tournament.show')->with('tournament',$tournament);
+        return view('tournament.show')->with('tournament',$tournament)->with('players',$players);
     }
 
     /**
@@ -749,7 +751,21 @@ class TournamentController extends Controller
      */
     public function getTournamentMatch($slug,$id,Request $request)
     {
-        abort(404);
+        $tournament = KTournament::whereSlug($slug)->firstOrFail();
+        $match = KMatch::findOrFail($id);
+
+        $games = [];
+        for($i=1; $i<=6; $i++)
+        {
+            if($match->{"game".$i."_id"} != null)
+            {
+                $game = Game::findOrFail($match->{"game".$i."_id"});
+                $game->game_index = $i;
+                array_push($games,$game);
+            }
+        }
+
+        return view('tournament.showmatch')->with('tournament',$tournament)->with('match',$match)->with('games',$games);
     }
 
 }

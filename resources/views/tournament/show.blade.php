@@ -93,6 +93,8 @@
                                                data-toggle="tab">Rules</a></li>
                     <li role="presentation"><a href="#teams" aria-controls="teams" role="tab"
                                                data-toggle="tab">Teams</a></li>
+                    <li role="presentation"><a href="#players" aria-controls="players" role="tab"
+                                               data-toggle="tab">Top Players</a></li>
                     <li role="presentation"><a href="#pastchamps" aria-controls="pastchamps" role="tab"
                                                data-toggle="tab">History</a></li>
                 </ul>
@@ -325,6 +327,56 @@
 
                         @endif
                     </div>
+                    <div role="tabpanel" class="tab-pane" id="players">
+                        @if($players != null && !$players->isEmpty())
+                            <h5 class="text-bold text-green" style="margin:0 0 0 0;border-bottom:1px dashed grey">
+                                Top Players</h5>
+                            <table id="" class="table table-striped table-hover no-margin">
+                                <thead>
+                                <tr>
+                                    <th class="tooltipster" title="Rank">#</th>
+                                    <th class="col-xs-1">Flag</th>
+                                    <th class="col-xs-4">Name</th>
+                                    <th class="tooltipster">Team</th>
+                                    <th class="col-xs-1 text-right">Score</th>
+                                </tr>
+                                </thead>
+                                <tbody id="{{ $i = 1 }}">
+                                @foreach($players as $player)
+                                    <tr class="item">
+                                        <td>{{ $i++ }}</td>
+                                        <td class="text-muted"><img class="tooltipster" title="{{ $player->country->countryName }}" src="/images/flags/20_shiny/{{ $player->country->countryCode }}.png" alt="" height="22px"></td>
+                                        <td class="color-main text-bold">
+                                            <a class="" style="margin-right:1em" href="{{ route('user.show',$player->username) }}">
+                                                <strong class="">{{ $player->displayName() }}</strong>
+                                            </a>
+                                        </td>
+                                        <span id="{{ $team = $player->getTeamOfUserForTournament($tournament) }}"></span>
+                                        <td class="text-muted"><img class="tooltipster"
+                                                                    title="{{ $team->country->countryName }}"
+                                                                    src="/images/flags/20_shiny/{{ $team->country->countryCode }}.png"
+                                                                    alt="" height="22px">
+                                            <a class="ainorange" href="{{ route('tournament.team.show',[$tournament->slug,$team->id]) }}">{{ $team->name }}</a>
+                                        </td>
+                                        <td class="text-right"><b>{{ $player->pivot->total_score }}</b></td>
+                                    </tr>
+                                @endforeach
+                                <!--<tr class="item">
+                                <td class="text-muted"><img class="tooltipster" title="United States" src="/images/flags/20_shiny/US.png" alt="" height="22px"></td>
+                                <td class="color-main text-bold"><a href="http://kos.dev/banlist/13">~ManualIPBan</a></td>
+                                <td>11.11.xx.xx</td>
+                                <td><a href="http://kos.dev/statistics/player/Kinnngg" class="ainorange">Kinnngg</a></td>
+                                <td><b><span class="text-green">Unbanned</span></b></td>
+                                <td class="text-right">2 days ago</td>
+                            </tr>-->
+                                </tbody>
+                            </table>
+                        @else
+                            <div class="text-center alert alert-warning text-bold">No Player to Show
+                            </div>
+                        @endif
+                    </div>
+
                     <div role="tabpanel" class="tab-pane" id="pastchamps">
                         <div class="text-center alert alert-warning text-bold"><i>No History for this tournament!</i>
                         </div>
@@ -517,9 +569,9 @@
         </div>
     @endif
 
-    <div class="comments-container">
-        @foreach($tournament->comments->reverse() as $comment)
-            <div class="media comment-media panel padding10">
+    <div class="comments-container" id="data-items">
+        @foreach($render = $tournament->comments()->latest()->paginate() as $comment)
+            <div class="media comment-media panel padding10 item">
                 <div class="pull-left">
                     {!! Html::image($comment->user->getGravatarLink(50),'',array('class'=>'img media-oject inprofile-thumbs','width'=>'50','height'=>'50')) !!}
                 </div>
@@ -541,4 +593,6 @@
             </div>
         @endforeach
     </div>
+    {!! $render->appends(Request::except('page'))->render() !!}
+    <div id="loading" class="text-center"></div>
 @endsection

@@ -318,10 +318,12 @@
                                         </div>
                                     @endif
 
+
                                     @if($match->has_been_played)
                                         <div class="col-xs-3">
                                             {!! $match->getWinningTextForHumans() !!}
                                             <br>
+                                            <a class="btn btn-xs btn-info" href="{{ route('tournament.match.show',[$tournament->slug,$match->id]) }}">View Details</a>
                                         </div>
                                     @endif
                                 </div>
