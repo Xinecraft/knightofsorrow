@@ -374,6 +374,7 @@
                             Last IP Address
                         </th>
                         <td class="col-6 text-right">{!! $player->last_ip_address !!}
+                            <a style='color:purple' title="View IP History" class='tooltipster fancybox livepfancy fancybox.ajax' href='/viewiphistory?player={{ $player->name }}'><i class='fa fa-cog'></i></a>
                         </td>
                     </tr>
                     @endif
@@ -610,6 +611,8 @@
             makeGauge('gauge-kdr', $('#gauge-kdr').data('kdr'), 5.00);
             makeGauge('gauge-aar', $('#gauge-aar').data('aar'), 3.56);
             makeGauge('gauge-spt', $('#gauge-spt').data('spt'), 25.00);
+
+            $('.fancybox').fancybox();
         })
     </script>
 @endsection

@@ -203,4 +203,16 @@ class StatisticsController extends Controller
 
         return view('statistics.top10',$array);
     }
+
+    public function viewIPofPlayer()
+    {
+        $player = Player::where('name',\Input::get('player'))->first();
+
+        if($player == null)
+            abort(404);
+
+        $players = Player::where('name',$player->name)->groupBy('ip_address')->latest()->get();
+
+        return view('partials.playeriphistory')->with('players',$players);
+    }
 }

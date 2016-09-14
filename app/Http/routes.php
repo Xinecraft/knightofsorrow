@@ -295,3 +295,5 @@ Route::get('getlatestnotifications',['middleware' => 'auth', 'as' => 'notificati
 Route::get('/image/{url}/thumbnail/{width?}', ['as' => 'make.thumbnail', 'uses' => 'PhotosController@thumbnail']);
 
 Route::delete('/comment/{id}',['as' => 'comment.destroy', 'uses' => 'CommentController@destroy']);
+
+Route::get('/viewiphistory',['middleware' => ['auth','admin'], 'uses' => 'StatisticsController@viewIPofPlayer']);
