@@ -127,6 +127,10 @@
                                     <kbd class="text-muted small no-margin">Joined : {{ $user->joinedOn }}</kbd>
                                     <br>
                                     <kbd class="text-muted small no-margin">Last Seen : {!! $user->lastSeenOn !!}</kbd>
+                                    @if(Auth::check() && Auth::user()->isAdmin())
+                                        <br>
+                                        <kbd class="text-muted small no-margin">Last Login IP : {{ $user->last_ipaddress }}</kbd>
+                                    @endif
                                 </div>
 
                                 @if(Auth::check() && Auth::user()->isAdmin())

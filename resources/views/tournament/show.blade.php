@@ -361,14 +361,6 @@
                                         <td class="text-right"><b>{{ $player->pivot->total_score }}</b></td>
                                     </tr>
                                 @endforeach
-                                <!--<tr class="item">
-                                <td class="text-muted"><img class="tooltipster" title="United States" src="/images/flags/20_shiny/US.png" alt="" height="22px"></td>
-                                <td class="color-main text-bold"><a href="http://kos.dev/banlist/13">~ManualIPBan</a></td>
-                                <td>11.11.xx.xx</td>
-                                <td><a href="http://kos.dev/statistics/player/Kinnngg" class="ainorange">Kinnngg</a></td>
-                                <td><b><span class="text-green">Unbanned</span></b></td>
-                                <td class="text-right">2 days ago</td>
-                            </tr>-->
                                 </tbody>
                             </table>
                         @else

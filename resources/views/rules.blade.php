@@ -10,6 +10,7 @@
                 <ul class="ruleslist" style="list-style-type: square;font-family: 'Ubuntu', Helvetica, Arial, sans-serif;">
                     <li>Using hacks is not allowed.</li>
                     <li>Be <b>polite</b>. Insulting others will not be tolerated.</li>
+                    <li><b>Racism</b>, Hatred, etc are strictly prohibited. This may lead to permanent ban.</li>
                     <li>Using bugs/glitches of any kind is not allowed.</li>
                     <li>Do not start kick/map/ask/taser votes without reason.</li>
                     <li>Do not team -kill, -nade, -tase, etc. on purpose.</li>
@@ -18,7 +19,6 @@
                     <li>Tactical camping is only a short wait of 15-20 seconds.</li>
                     <li>Do not spam/flood/attack the server.</li>
                     <li>Do not use another player's name. <b>Impersonation</b> will get you banned.</li>
-                    <li>No <b>admin</b> should change map or lock/unlock teams without <b>majority</b> support.</li>
                     <li>If you find any admin/superadmin <b>misusing his powers</b>, plz <b>shout</b> at shoutbox.</li>
                     <li>Respect KnightofSorrow ;)</li>
                 </ul>

@@ -32,10 +32,9 @@
                     {{ $player->name }}
                 </div>
                 <p class="small pad5">
-                    @forelse($player->aliases()->limit(5)->get() as $alias)
+                    @forelse($player->aliases()->whereNotIn('name',\App\DeletedPlayer::lists('player_name'))->limit(5)->get() as $alias)
                         @unless($player->name == $alias->name)
                             <a href="{{  route('player-detail',$alias->name) }}">{{ $alias->name }}</a>
-
                         @endunless
                     @empty
 
@@ -377,6 +376,16 @@
                             <a style='color:purple' title="View IP History" class='tooltipster fancybox livepfancy fancybox.ajax' href='/viewiphistory?player={{ $player->name }}'><i class='fa fa-cog'></i></a>
                         </td>
                     </tr>
+                        <tr>
+                            <td class="col-4">
+                            </td>
+                            <th class="col-5 text-danger">
+                                Delete Player
+                            </th>
+                            <td class="col-6 text-right">
+                                <a class="btn btn-xs btn-danger" href="{{ route('player-delete',$player->name) }}">Delete</a>
+                            </td>
+                        </tr>
                     @endif
 
                     </tbody>

@@ -72,6 +72,10 @@ Route::group(['prefix' => 'statistics'],function(){
     Route::get('country/{id}/{name}/players',['as' => 'country-detail', 'uses' => 'StatisticsController@getCountryDetails']);
     Route::get('charts',['as' => 'chart-reports', 'uses' => 'StatisticsController@getChartReports']);
     Route::get('player/{name}/',['as' => 'player-detail', 'uses' => 'StatisticsController@getPlayerDetails']);
+    Route::get('player/{name}/delete',['as' => 'player-delete', 'uses' => 'StatisticsController@getPlayerDelete']);
+    Route::post('player/{name}/delete',['as' => 'player-delete-post', 'uses' => 'StatisticsController@postPlayerDelete']);
+    Route::post('player/{name}/undelete',['as' => 'undelete-player', 'uses' => 'StatisticsController@postPlayerUndelete']);
+
     Route::get('round-reports/detail/{id}',['as' => 'round-detail', 'uses' => 'StatisticsController@getRoundDetails']);
     Route::get('war-round-reports/detail/{id}',['as' => 'war-round-detail', 'uses' => 'StatisticsController@getRoundDetails']);
 
@@ -297,3 +301,5 @@ Route::get('/image/{url}/thumbnail/{width?}', ['as' => 'make.thumbnail', 'uses' 
 Route::delete('/comment/{id}',['as' => 'comment.destroy', 'uses' => 'CommentController@destroy']);
 
 Route::get('/viewiphistory',['middleware' => ['auth','admin'], 'uses' => 'StatisticsController@viewIPofPlayer']);
+
+Route::get('deleted-players',['as' => 'deleted-players', 'uses' => 'StatisticsController@getDeletedPlayersForView']);

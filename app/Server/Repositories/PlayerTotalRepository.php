@@ -27,6 +27,7 @@
 
 namespace App\Server\Repositories;
 
+use App\DeletedPlayer;
 use App\Game;
 use App\Server\Interfaces\PlayerTotalRepositoryInterface;
 use App\PlayerTotal;
@@ -51,7 +52,7 @@ class PlayerTotalRepository implements PlayerTotalRepositoryInterface
     {
         \DB::table('player_totals')->truncate();
 
-        $aliases = Alias::with('players')->get();
+        $aliases = Alias::with('players')->whereNotIn('name',DeletedPlayer::lists('player_name'))->get();
         $totalServerScore = Player::sum('score');
 
         foreach($aliases as $alias):
@@ -64,7 +65,7 @@ class PlayerTotalRepository implements PlayerTotalRepositoryInterface
             //$playerTotal->first_game_id = $alias->profile->game_first;
             //$playerTotal->last_game_id = $alias->profile->game_last;
 
-            $playerTotal->country_id = $alias->profile->country_id;
+            $playerTotal->country_id = $alias->players->last()->country_id;
 
             $playersCollection = $alias->players;
 

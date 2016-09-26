@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\DeletedPlayer;
 use Request;
 use App\Http\Controllers\Controller;
 use App\Country;
@@ -214,5 +215,77 @@ class StatisticsController extends Controller
         $players = Player::where('name',$player->name)->groupBy('ip_address')->latest()->get();
 
         return view('partials.playeriphistory')->with('players',$players);
+    }
+
+    /**
+     * @param $name
+     * @return \Illuminate\View\View
+     */
+    public function getPlayerDelete($name)
+    {
+        $player = Player::where('name',$name)->first();
+
+        if($player == null || !\Auth::user()->isAdmin())
+            abort(404);
+
+        return view('statistics.delete_player')->with('player',$player);
+    }
+
+    /**
+     * @param $name
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function postPlayerDelete($name)
+    {
+        $player = Player::where('name',$name)->first();
+
+        if($player == null || !\Auth::user()->isAdmin())
+            abort(404);
+
+        if(DeletedPlayer::where('player_name',$name)->first())
+        {
+            return back()->with('error','Player is already Deleted');
+        }
+
+        $reason = \Input::get('reason') == "" ? null : \Input::get('reason');
+
+        \Auth::user()->deletedPlayers()->create([
+            'player_name' => $name,
+            'reason' => $reason,
+        ]);
+
+        return redirect()->route('deleted-players')->with('success','Success! Player will be deleted within an hour.');
+    }
+
+    /**
+     * @param $name
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function postPlayerUndelete($name)
+    {
+        $player = Player::where('name',$name)->first();
+
+        if($player == null || !\Auth::user()->isAdmin())
+            abort(404);
+
+        if(!DeletedPlayer::where('player_name',$name)->first())
+        {
+            return back()->with('error','Player no longer in deleted list');
+        }
+
+        $delplayer = DeletedPlayer::where('player_name',$name)->first();
+        $delplayer->delete();
+
+        return redirect()->back()->with('success','Success! Player will be removed from deleted-list within an hour.');
+    }
+
+    /**
+     * @return $this
+     */
+    public function getDeletedPlayersForView()
+    {
+        $players = DeletedPlayer::paginate();
+
+        return view('statistics.view_deleted_players')->with('players',$players);
     }
 }

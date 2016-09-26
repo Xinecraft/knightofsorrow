@@ -11,6 +11,7 @@ use App\KTournament;
 use App\Notification;
 use App\Photo;
 use App\User;
+use Cache;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -154,11 +155,17 @@ class TournamentController extends Controller
     {
         $tournament = KTournament::enabled()->whereSlug($slug)->first();
 
-        $players = $tournament->players()->wherePivot('user_status','>=','3')->orderBy('pivot_total_score','desc')->get();
+        if(Cache::has('tourny_'.$tournament->id."_players")) {
+            $players = Cache::get('tourny_'.$tournament->id."_players");
+        }
+        else {
+            $players = $tournament->players()->wherePivot('user_status','>=','3')->orderBy('pivot_total_score','desc')->get();
+            Cache::put('tourny_'.$tournament->id."_players",$players,720);
+        }
 
         if(!$tournament)
             abort(404);
-        //dd($tournament->managers->isEmpty());
+
         return view('tournament.show')->with('tournament',$tournament)->with('players',$players);
     }
 

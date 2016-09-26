@@ -151,6 +151,12 @@ class AuthController extends Controller
         $credentials = $this->getCredentials($request);
 
         if (Auth::attempt($credentials, $request->has('remember'))) {
+
+            $user_ip = \Input::getClientIp();
+            $user = Auth::user();
+            $user->last_ipaddress = $user_ip;
+            $user->save();
+
             return redirect()->intended($this->redirectPath());
         }
 

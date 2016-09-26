@@ -8,8 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            {{--<a class="navbar-brand" href="#"><img src="{{ public_path('images').DIRECTORY_SEPARATOR.'mailogo.png' }}" alt="" height="34" style="height: 34px;"></a>--}}
-            <a class="navbar-brand" href="{{ route('home') }}"><img src="{{ url('images/mainlogo.png') }}" alt=""
+           <a class="navbar-brand" href="{{ route('home') }}"><img src="{{ url('images/mainlogo.png') }}" alt=""
                                                                     height="34" style="height: 34px;"></a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
@@ -29,17 +28,12 @@
                         <li class="{{ set_active(['downloads*']) }}"><a href="{{ route('download') }}">Downloads</a></li>
                         <li class="{{ set_active(['servers*']) }}">{!! link_to_route('servers.list','Servers') !!}</li>
                         <li><a href="">Clans</a></li>
-                        <li><a target="_blank" href="http://forums.knightofsorrow.tk">Forums</a></li>
+                        <li><a target="_blank" href="http://knightofsorrow.forumclan.com">Forums</a></li>
                         <li class="{{ set_active(['global-notifications*']) }}"><a href="{{ route('notifications.index') }}">G Notifications</a></li>
                         <li class="{{ set_active(['rules*']) }}"><a href="{{ route('rules') }}">Rules</a></li>
+                        <li class="{{ set_active(['deleted-players*']) }}"><a href="{{ route('deleted-players') }}">Deleted Players</a></li>
                     </ul>
                 </li>
-
-
-
-                {{--@if(Auth::check() && Auth::user()->receivedMessagesUnseen()->count() > 0)
-                    <li style="text-decoration: overline;" class="text-bold {{ set_active(['messages*']) }}">{!! link_to_route('messages.index',Auth::user()->receivedMessagesUnseen()->count()." new messages") !!} </li>
-                @endif--}}
 
             </ul>
 
@@ -59,7 +53,6 @@
 
                             <div class="dropdown-toolbar">
                                 <div class="dropdown-toolbar-actions">
-                                    {{--<a href="#">Mark all as read</a>--}}
                                 </div>
                                 <h3 class="dropdown-toolbar-title text-bold">Notifications ({{ Auth::user()->notifications()->count() < 15 ? Auth::user()->notifications()->count() : "15" }}/{{ Auth::user()->notifications()->count() }})</h3>
                             </div><!-- /dropdown-toolbar -->
@@ -92,7 +85,7 @@
                                 @if(Auth::user()->isAdmin())
                                     <li><a href="{{ route('bans.create') }}">Add Ban</a></li>
                                     <li><a href="{{ route('news.create') }}">Create News</a></li>
-                                    {{--<li><a href="{{ route('servers.new') }}">Add Server</a></li>--}}
+
                                     <li><a href="{{ route('poll.create') }}">Create Poll</a></li>
                                     <li class="{{ set_active(['webadmin*']) }}"><a href="{{ route('webadmin') }}">Web Admin</a></li>
                                 @endif
@@ -110,7 +103,7 @@
                     <input type="text" id="navsearch" name='q' class="form-control" placeholder="Search Users"
                            autocomplete="off">
                 </div>
-                {{--<button type="submit" class="btn btn-default">Search</button>--}}
+
             </form>
         </div><!--/.nav-collapse -->
 
