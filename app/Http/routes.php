@@ -292,6 +292,9 @@ Route::post('/tournament/{slug}/match/{id}/calculatefinal', ['middleware' => 'au
 
 Route::post('tournament/{id}/comments',['middleware' => 'auth', 'as' => 'tournament.comment', 'uses' => 'CommentController@storeForTournament']);
 
+Route::get('/tournament/{slug}/end',['middleware' => 'auth', 'as' => 'tournament.end', 'uses' => 'TManagerController@shoeEndPage']);
+
+
 Route::get('global-notifications',['as' => 'notifications.index', 'uses' => 'NotificationController@indexGlobal']);
 Route::get('notifications',['middleware' => 'auth', 'as' => 'notifications.userindex', 'uses' => 'NotificationController@indexUser']);
 Route::get('getlatestnotifications',['middleware' => 'auth', 'as' => 'notifications.getlatest', 'uses' => 'NotificationController@getLatest']);

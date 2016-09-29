@@ -314,4 +314,43 @@ class KTournament extends Model
         return $query->where('disabled', false);
     }
 
+    /**
+     * Is all matches done
+     *
+     * @return bool
+     */
+    public function allMatchesDone()
+    {
+        foreach ($this->matches as $match) {
+            if(!$match->has_been_played)
+                return false;
+        }
+        return true;
+    }
+
+    /**
+     * Is tourny Ended
+     *
+     * @return bool
+     */
+    public function isTournamentEnded()
+    {
+        return $this->isRegistrationOpen() == 6;
+    }
+
+    public function winnerteam()
+    {
+        return $this->belongsTo('App\KTeam','first_team_id','id');
+    }
+
+    public function secondteam()
+    {
+        return $this->belongsTo('App\KTeam','second_team_id','id');
+    }
+
+    public function thirdteam()
+    {
+        return $this->belongsTo('App\KTeam','third_team_id','id');
+    }
+
 }

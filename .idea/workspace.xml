@@ -2,21 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e189236c-c3e7-488f-b221-e9fb727e1c1d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/statistics/delete_player.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/statistics/view_deleted_players.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/StatisticsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/StatisticsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TournamentController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TournamentController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Player.php" afterPath="$PROJECT_DIR$/app/Player.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Server/Repositories/PlayerTotalRepository.php" afterPath="$PROJECT_DIR$/app/Server/Repositories/PlayerTotalRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/User.php" afterPath="$PROJECT_DIR$/app/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/_navbar.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/_navbar.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/rules.blade.php" afterPath="$PROJECT_DIR$/resources/views/rules.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/statistics/player-details.blade.php" afterPath="$PROJECT_DIR$/resources/views/statistics/player-details.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/KTournament.php" afterPath="$PROJECT_DIR$/app/KTournament.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tournament/bracket.blade.php" afterPath="$PROJECT_DIR$/resources/views/tournament/bracket.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tournament/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/tournament/index.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tournament/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/tournament/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/user/profile.blade.php" afterPath="$PROJECT_DIR$/resources/views/user/profile.blade.php" />
     </list>
     <ignored path="kos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,34 +35,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="player-details.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/statistics/player-details.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-              <folding>
-                <marker date="1474914745751" expanded="true" signature="33514:34004" ph="..." />
-                <marker date="1474914745751" expanded="true" signature="33525:34003" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="view_deleted_players.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/statistics/view_deleted_players.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="43" column="46" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="StatisticsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StatisticsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1131">
-              <caret line="261" column="48" selection-start-line="261" selection-start-column="48" selection-end-line="261" selection-end-column="48" />
+            <state relative-caret-position="63">
+              <caret line="263" column="26" selection-start-line="263" selection-start-column="26" selection-end-line="263" selection-end-column="26" />
               <folding>
                 <element signature="e#40#62#0#PHP" expanded="true" />
               </folding>
@@ -82,9 +50,49 @@
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="76" column="36" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="36" />
+            <state relative-caret-position="503">
+              <caret line="295" column="0" selection-start-line="295" selection-start-column="0" selection-end-line="295" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/tournament/show.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="291">
+              <caret line="52" column="18" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
+              <folding>
+                <element signature="e#1142#1162#0#HTML" expanded="true" />
+                <element signature="e#27849#27872#0#HTML" expanded="true" />
+                <element signature="e#27882#27903#0#HTML" expanded="true" />
+                <element signature="e#28023#28046#0#HTML" expanded="true" />
+                <element signature="e#28056#28080#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bracket.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/tournament/bracket.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="333">
+              <caret line="73" column="22" selection-start-line="73" selection-start-column="22" selection-end-line="73" selection-end-column="22" />
+              <folding>
+                <element signature="e#1331#1351#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/tournament/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="131">
+              <caret line="285" column="45" selection-start-line="285" selection-start-column="45" selection-end-line="285" selection-end-column="45" />
+              <folding>
+                <element signature="e#6770#6794#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -104,7 +112,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/gulpfile.js" />
         <option value="$PROJECT_DIR$/resources/views/tournament/manage/getcalculate2.blade.php" />
         <option value="$PROJECT_DIR$/app/Shout.php" />
         <option value="$PROJECT_DIR$/resources/views/statistics/top-players.blade.php" />
@@ -129,18 +136,15 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/TManagerController.php" />
         <option value="$PROJECT_DIR$/resources/views/tournament/rankingteams.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/_tournavbar.blade.php" />
-        <option value="$PROJECT_DIR$/app/KTournament.php" />
         <option value="$PROJECT_DIR$/resources/views/tournament/showteam.blade.php" />
         <option value="$PROJECT_DIR$/app/KMatch.php" />
         <option value="$PROJECT_DIR$/resources/views/tournament/showmatch.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/tournament/bracket.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/playeriphistory.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" />
         <option value="$PROJECT_DIR$/resources/views/user/profile.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TournamentController.php" />
-        <option value="$PROJECT_DIR$/resources/views/tournament/show.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_09_26_174348_create_deleted_players_table.php" />
         <option value="$PROJECT_DIR$/app/Exceptions/Handler.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
@@ -152,9 +156,13 @@
         <option value="$PROJECT_DIR$/app/Player.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/_navbar.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/rules.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/StatisticsController.php" />
         <option value="$PROJECT_DIR$/resources/views/statistics/view_deleted_players.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/app/KTournament.php" />
+        <option value="$PROJECT_DIR$/resources/views/tournament/show.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/tournament/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/tournament/bracket.blade.php" />
       </list>
     </option>
   </component>
@@ -236,20 +244,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="storage" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kos" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -276,7 +270,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="statistics" />
+              <option name="myItemId" value="tournament" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -291,6 +285,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kos" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -301,9 +309,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="_na&#9;FILE&#9;file://C:/wamp64/www/kos/resources/views/partials/_navbar.blade.php&#10;Sta&#9;FILE&#9;file://C:/wamp64/www/kos/app/Http/Controllers/StatisticsController.php&#10;Player.php&#9;FILE&#9;file://C:/wamp64/www/kos/app/Player.php&#10;MainC&#9;FILE&#9;file://C:/wamp64/www/kos/app/Http/Controllers/MainController.php&#10;term&#9;ACTION&#9;ActivateTerminalToolWindow&#10;rout&#9;FILE&#9;file://C:/wamp64/www/kos/app/Http/routes.php&#10;User&#9;FILE&#9;file://C:/wamp64/www/kos/app/User.php&#10;termi&#9;ACTION&#9;ActivateTerminalToolWindow&#10;home&#9;FILE&#9;file://C:/wamp64/www/kos/resources/views/home.blade.php&#10;route&#9;FILE&#9;file://C:/wamp64/www/kos/app/Http/routes.php&#10;Matc&#9;FILE&#9;file://C:/wamp/www/kos/app/KMatch.php&#10;ter&#9;ACTION&#9;ActivateTerminalToolWindow&#10;side&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;helper.php&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/helpers.php&#10;KTe&#9;null&#9;null&#10;USer&#9;FILE&#9;file://C:/wamp/www/kos/app/User.php&#10;UserC&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/UserController.php&#10;Comme&#9;null&#9;null&#10;PollQ&#9;FILE&#9;file://C:/wamp/www/kos/app/Pollq.php&#10;Ban&#9;null&#9;null&#10;KTOur&#9;FILE&#9;file://C:/wamp/www/kos/app/KTournament.php&#10;Shout&#9;null&#9;null&#10;_side&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;app.less&#9;FILE&#9;file://C:/wamp/www/kos/resources/assets/less/app.less&#10;font-a&#9;FILE&#9;file://C:/wamp/www/kos/public/font-awesome/css/font-awesome.css&#10;Api&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/ApiController.php&#10;ServerC&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/ServerController.php&#10;ApiC&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/ApiController.php&#10;main&#9;FILE&#9;file://C:/wamp/www/kos/public/js/main.js&#10;main.js&#9;FILE&#9;file://C:/wamp/www/kos/public/js/main.js&#10;app.js&#9;FILE&#9;file://C:/wamp/www/kos/public/js/app.js&#10;Tourn&#9;FILE&#9;file://C:/wamp/www/kos/app/KTournament.php&#10;KTO&#9;FILE&#9;file://C:/wamp/www/kos/app/KTournament.php&#10;KM&#9;null&#9;null&#10;Man&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/TManagerController.php&#10;KTo&#9;null&#9;null&#10;index&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/index.blade.php&#10;main.bl&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/layouts/main.blade.php&#10;UserPre&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Presenters/UserPresenter.php&#10;edit&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/user/edit.blade.php&#10;BanPres&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Presenters/BanPresenter.php&#10;navba&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;BanC&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/BanController.php&#10;banCo&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/BanController.php&#10;footer.bl&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_footer.blade.php&#10;BanP&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Presenters/BanPresenter.php&#10;BanPre&#9;null&#9;null&#10;show&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/ban/show.blade.php&#10;BanCon&#9;null&#9;null&#10;edi&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/ban/edit.blade.php" />
+    <property name="SearchEverywhereHistoryKey" value="term&#9;ACTION&#9;ActivateTerminalToolWindow&#10;Tour&#9;FILE&#9;file://C:/wamp/www/kos/app/KTournament.php&#10;_na&#9;FILE&#9;file://C:/wamp64/www/kos/resources/views/partials/_navbar.blade.php&#10;Sta&#9;FILE&#9;file://C:/wamp64/www/kos/app/Http/Controllers/StatisticsController.php&#10;Player.php&#9;FILE&#9;file://C:/wamp64/www/kos/app/Player.php&#10;MainC&#9;FILE&#9;file://C:/wamp64/www/kos/app/Http/Controllers/MainController.php&#10;rout&#9;FILE&#9;file://C:/wamp64/www/kos/app/Http/routes.php&#10;User&#9;FILE&#9;file://C:/wamp64/www/kos/app/User.php&#10;termi&#9;ACTION&#9;ActivateTerminalToolWindow&#10;home&#9;FILE&#9;file://C:/wamp64/www/kos/resources/views/home.blade.php&#10;route&#9;FILE&#9;file://C:/wamp64/www/kos/app/Http/routes.php&#10;Matc&#9;FILE&#9;file://C:/wamp/www/kos/app/KMatch.php&#10;ter&#9;ACTION&#9;ActivateTerminalToolWindow&#10;side&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;helper.php&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/helpers.php&#10;KTe&#9;null&#9;null&#10;USer&#9;FILE&#9;file://C:/wamp/www/kos/app/User.php&#10;UserC&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/UserController.php&#10;Comme&#9;null&#9;null&#10;PollQ&#9;FILE&#9;file://C:/wamp/www/kos/app/Pollq.php&#10;Ban&#9;null&#9;null&#10;KTOur&#9;FILE&#9;file://C:/wamp/www/kos/app/KTournament.php&#10;Shout&#9;null&#9;null&#10;_side&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;app.less&#9;FILE&#9;file://C:/wamp/www/kos/resources/assets/less/app.less&#10;font-a&#9;FILE&#9;file://C:/wamp/www/kos/public/font-awesome/css/font-awesome.css&#10;Api&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/ApiController.php&#10;ServerC&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/ServerController.php&#10;ApiC&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/ApiController.php&#10;main&#9;FILE&#9;file://C:/wamp/www/kos/public/js/main.js&#10;main.js&#9;FILE&#9;file://C:/wamp/www/kos/public/js/main.js&#10;app.js&#9;FILE&#9;file://C:/wamp/www/kos/public/js/app.js&#10;Tourn&#9;FILE&#9;file://C:/wamp/www/kos/app/KTournament.php&#10;KTO&#9;FILE&#9;file://C:/wamp/www/kos/app/KTournament.php&#10;KM&#9;null&#9;null&#10;Man&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/TManagerController.php&#10;KTo&#9;null&#9;null&#10;index&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/index.blade.php&#10;main.bl&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/layouts/main.blade.php&#10;UserPre&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Presenters/UserPresenter.php&#10;edit&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/user/edit.blade.php&#10;BanPres&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Presenters/BanPresenter.php&#10;navba&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;BanC&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/BanController.php&#10;banCo&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/BanController.php&#10;footer.bl&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_footer.blade.php&#10;BanP&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Presenters/BanPresenter.php&#10;BanPre&#9;null&#9;null&#10;show&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/ban/show.blade.php&#10;BanCon&#9;null&#9;null" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
@@ -380,25 +388,27 @@
       <workItem from="1473834255531" duration="6480000" />
       <workItem from="1473846458426" duration="4441000" />
       <workItem from="1474388103101" duration="589000" />
-      <workItem from="1474901644931" duration="10908000" />
+      <workItem from="1474901644931" duration="10981000" />
+      <workItem from="1475149902877" duration="395000" />
+      <workItem from="1475150325370" duration="4979000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23255000" />
+    <option name="totallyTimeSpent" value="28702000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20424597" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20204978" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30441642" sideWeight="0.5058565" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32440946" sideWeight="0.4941435" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32334384" sideWeight="0.4941435" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -427,13 +437,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gulpfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.bowerrc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -515,7 +518,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="82" column="5" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -530,13 +532,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4872">
           <caret line="232" column="19" selection-start-line="232" selection-start-column="19" selection-end-line="232" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/KTournament.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2604">
-          <caret line="125" column="5" selection-start-line="125" selection-start-column="5" selection-end-line="125" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -558,13 +553,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="466">
           <caret line="200" column="37" selection-start-line="200" selection-start-column="37" selection-end-line="200" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/tournament/bracket.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1617">
-          <caret line="77" column="92" selection-start-line="77" selection-start-column="92" selection-end-line="77" selection-end-column="92" />
         </state>
       </provider>
     </entry>
@@ -614,17 +602,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
           <caret line="132" column="42" selection-start-line="132" selection-start-column="42" selection-end-line="132" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/tournament/show.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="363" column="40" selection-start-line="363" selection-start-column="40" selection-end-line="363" selection-end-column="40" />
-          <folding>
-            <element signature="e#21232#21256#0#HTML" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -632,7 +609,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="441">
           <caret line="142" column="1" selection-start-line="142" selection-start-column="1" selection-end-line="142" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -640,14 +616,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-          <folding>
-            <marker date="1472031442811" expanded="true" signature="7403:7609" ph="..." />
-            <marker date="1472031442811" expanded="true" signature="7416:7607" ph="..." />
-            <marker date="1472031442811" expanded="true" signature="9256:9471" ph="..." />
-            <marker date="1472031442811" expanded="true" signature="9269:9469" ph="..." />
-            <marker date="1472031442811" expanded="true" signature="10477:10682" ph="..." />
-            <marker date="1472031442811" expanded="true" signature="10490:10680" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -655,7 +623,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="163" column="9" selection-start-line="163" selection-start-column="9" selection-end-line="163" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -663,7 +630,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="434">
           <caret line="154" column="45" selection-start-line="154" selection-start-column="45" selection-end-line="154" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -671,7 +637,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
           <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -679,9 +644,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="29" column="27" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
-          <folding>
-            <element signature="e#34#48#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -697,7 +659,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
           <caret line="15" column="57" selection-start-line="15" selection-start-column="57" selection-end-line="15" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -705,7 +666,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-126">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -713,7 +673,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
           <caret line="30" column="60" selection-start-line="30" selection-start-column="60" selection-end-line="30" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -721,7 +680,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="333">
           <caret line="21" column="56" selection-start-line="21" selection-start-column="56" selection-end-line="21" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -729,9 +687,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="55" column="49" selection-start-line="55" selection-start-column="49" selection-end-line="55" selection-end-column="49" />
-          <folding>
-            <element signature="e#1204#1226#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -739,7 +694,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -747,7 +701,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="212">
           <caret line="127" column="55" selection-start-line="127" selection-start-column="55" selection-end-line="127" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -755,7 +708,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
           <caret line="32" column="66" selection-start-line="0" selection-start-column="0" selection-end-line="47" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -763,7 +715,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="74" column="45" selection-start-line="74" selection-start-column="45" selection-end-line="74" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -771,15 +722,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="15" column="51" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="76" column="36" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -787,17 +729,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="30" column="79" selection-start-line="30" selection-start-column="79" selection-end-line="30" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StatisticsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1131">
-          <caret line="261" column="48" selection-start-line="261" selection-start-column="48" selection-end-line="261" selection-end-column="48" />
-          <folding>
-            <element signature="e#40#62#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -805,13 +736,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/statistics/player-details.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
+        <state relative-caret-position="0">
           <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
             <marker date="1474914745751" expanded="true" signature="33514:34004" ph="..." />
@@ -822,9 +752,69 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/statistics/view_deleted_players.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="43" column="46" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
+        <state relative-caret-position="84">
+          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StatisticsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="263" column="26" selection-start-line="263" selection-start-column="26" selection-end-line="263" selection-end-column="26" />
+          <folding>
+            <element signature="e#40#62#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/KTournament.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="517">
+          <caret line="352" column="51" selection-start-line="352" selection-start-column="51" selection-end-line="352" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="295" column="0" selection-start-line="295" selection-start-column="0" selection-end-line="295" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/tournament/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="285" column="45" selection-start-line="285" selection-start-column="45" selection-end-line="285" selection-end-column="45" />
+          <folding>
+            <element signature="e#6770#6794#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/tournament/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="52" column="18" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
+          <folding>
+            <element signature="e#1142#1162#0#HTML" expanded="true" />
+            <element signature="e#27849#27872#0#HTML" expanded="true" />
+            <element signature="e#27882#27903#0#HTML" expanded="true" />
+            <element signature="e#28023#28046#0#HTML" expanded="true" />
+            <element signature="e#28056#28080#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/tournament/bracket.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="73" column="22" selection-start-line="73" selection-start-column="22" selection-end-line="73" selection-end-column="22" />
+          <folding>
+            <element signature="e#1331#1351#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

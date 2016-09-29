@@ -155,8 +155,9 @@
                 </div>
                 <div class="panel pad5" style="padding: 10px !important;">
                     <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Player of the Month</h4>
-                    <i>No Player</i>
+                    <a style="font-size: 17px;" class="ainorange" href="/@BUMMYYY"><b>eLe|Bummyyy</b></a>
                 </div>
+                <iframe src="https://discordapp.com/widget?id=228644609054474250&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
             </div>
 
             <div class="col-xs-4">
@@ -292,6 +293,16 @@
                                             <b>{!! $last->teams()->where('team_status','1')->count() . " / " . $last->maximum_participants  !!}</b>
                                         </td>
                                     </tr>
+                                    @if($last->isTournamentEnded())
+                                        <tr>
+                                            <td>
+                                                Winner
+                                            </td>
+                                            <td>
+                                                <b>{!! link_to_route('tournament.team.show',$last->winnerteam->name,[$last->slug,$last->winnerteam->id]) !!}</b>
+                                            </td>
+                                        </tr>
+                                    @endif
                                     </tbody></table>
                             </div>
 
@@ -316,7 +327,6 @@
                             @endforeach
                         </ul>
                     </div>
-
             </div>
 
         </div>

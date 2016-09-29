@@ -53,6 +53,7 @@
     <div class="header wg-primary">
         <div class="container">
             <h1 class="ng-binding text-center"><a href="{{ route('tournament.show',$tournament->slug) }}">{{ $tournament->name }}</a> Bracket</h1>
+            <h3 style="color:yellow" class="text-center"><a href="kos-alpha-tournament/team/4">{{ $tournament->winnerteam->name }}</a> has won {{ $tournament->name }}</h3>
             <!-- ngIf: ctrl.tournament.twitch --><!--end .tournament-twitch-->
         </div><!--end .container-->
     </div>

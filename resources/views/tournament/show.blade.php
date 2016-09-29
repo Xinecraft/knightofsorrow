@@ -48,6 +48,9 @@
     <div class="header wg-primary">
         <div class="container">
             <h1 class="ng-binding">{{ $tournament->name }}</h1>
+            @if($tournament->isRegistrationOpen()==6)
+            <h3 style="color:yellow" class="text-center"><a href="kos-alpha-tournament/team/4">{{ $tournament->winnerteam->name }}</a> has won {{ $tournament->name }}</h3>
+            @endif
             <!-- ngIf: ctrl.tournament.twitch --><!--end .tournament-twitch-->
         </div><!--end .container-->
     </div>
@@ -441,6 +444,10 @@
                 </span>
                     </p>
                 @endif
+            <div class="well text-center">
+                <p style="font-size: 20px"><b><span style="color: green;">Winner</span> <a href="kos-alpha-tournament/team/4">{{ $tournament->winnerteam->name }}</a></b></p>
+                <p style="font-size: 15px"><b><span style="color: lawngreen">Runner</span> <a href="kos-alpha-tournament/team/6">{{ $tournament->secondteam->name }}</a></b></p>
+            </div>
             @endif
 
             <hr>
