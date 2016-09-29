@@ -198,6 +198,14 @@
                                 Promotions & Supports
                             </td>
                         </tr>
+                        <tr>
+                            <td>
+                                <a class="ainorange" href="{{ route('user.show',"TommyHILFIGER") }}">qR|TommyHILFIGER</a>
+                            </td>
+                            <td>
+                                Support & Suggestions
+                            </td>
+                        </tr>
                     </table>
                     </div>
             </div>

@@ -113,7 +113,7 @@
                             </div>
                             <div class="col-xs-4">
                                 <br>
-                                <b class="text-green">Past Champion</b>: <i>None</i>
+                                <b class="text-green">Past Champion</b>: <b>{!! link_to_route('tournament.team.show',$tournament->winnerteam->name,[$tournament->slug,$tournament->winnerteam->id])  !!}</b>
                             </div>
                         </div>
                     </div>
