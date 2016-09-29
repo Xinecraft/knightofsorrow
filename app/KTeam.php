@@ -322,7 +322,7 @@ class KTeam extends Model
 
     public function getTourplayedAttribute()
     {
-        return 0;
+        return 1;
     }
 
 }
