@@ -206,6 +206,14 @@
                                 Support & Suggestions
                             </td>
                         </tr>
+                        <tr>
+                            <td>
+                                <a class="ainorange" href="{{ route('user.show',"BaDTimE") }}">|MyT|BaDTimE</a>
+                            </td>
+                            <td>
+                                Technical Support
+                            </td>
+                        </tr>
                     </table>
                     </div>
             </div>
