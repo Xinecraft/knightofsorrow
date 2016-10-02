@@ -73,7 +73,9 @@
         <h3 class="text-center">Tournament Rules</h3>
         <hr style="margin-top: 10px;margin-bottom: 10px">
         <ul class="ruleslist" style="line-height:25px; list-style-type: square;font-family: 'Ubuntu', Helvetica, Arial, sans-serif;">
-            <li>It will be <b>2v2 Team</b> matches with strict rules and guidelines.</li>
+            <li>It will be <b>1v1 Solo</b> or <b>2v2, 3v3 Team</b> matches with strict rules and guidelines.</li>
+            <li>On the beginning all registered players will have 0 pts on our tournament ranking.</li>
+            <li>A player is eligible to apply for tournies if not banned.</li>
             <li>All player applying should have a account at this website. <i>(Player linked account is recommended)</i></li>
             <li>All team should have minimum players criteria met before registration ends to join the tournament.</li>
             <li>All teams should report 15 minutes before match schedule time at Venue server.</li>
@@ -83,6 +85,11 @@
             <li>If both team fail to report, no points will be awarded and match will be cancelled.</li>
             <li>If drop during game occurs then its all in manager's hand to take any action.</li>
             <li>All matches will be either in no spectator mode or with 1-2 spectators<i>(only managers)</i>.</li>
+            <li>Every tournament carry certain number of points. Example: Winners will won 1000 pts, finalist 600 pts, semifinalists 300 pts etc.</li>
+            <li>Every players who won points on one of the tournies he need to defend for it in next upcoming sequel of that tournament. Example: If u won KoS alpha tournament in 2016 u need to defend it in KoS Alpha Tournament 2017.</li>
+            <li><b>All star tournament</b>: Only top 8 players on the rankings can play this tourny. In 1v1 8 player, in 2v2 4 teams.</li>
+            <li>Number of competetors on every tournament will be choosen by organizators.</li>
+            <li>Changing of IP in the middle of the game is not allowed.</li>
         </ul>
         <div class="col-xs-6">
             <h5 class="col-xs-offset-2"><i class="fa fa-star-o"></i> Outcome of Match according to no. of player reported:</h5>

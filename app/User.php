@@ -502,6 +502,14 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     public function deletedPlayers()
     {
-        return $this->hasMany('App\DeletedPlayer','admin_id','id');
+        return $this->hasMany('App\DeletedPlayer','admin_id', 'id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function createdPlayerPoints()
+    {
+        return $this->hasMany('App\PlayerPoint', 'admin_id', 'id');
     }
 }

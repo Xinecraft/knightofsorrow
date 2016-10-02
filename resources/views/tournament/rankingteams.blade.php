@@ -34,18 +34,18 @@
                     <th class="col-xs-3">Name</th>
                     <th class="col-xs-1">Points</th>
                     <th class="col-xs-2">Tourns Played</th>
-                    <th class="col-xs-1 text-right">Rating</th>
+                    <th class="col-xs-1 text-right tooltipster" title="Win/Lost Index">W/L Index</th>
                 </tr>
                 </thead>
                 <tbody id="data-items">
                 @foreach($teams as $team)
                     <tr class="item">
-                        <td class="color-main text-bold">{{ $team->team_position or "TBA" }}</td>
+                        <td class="color-main text-bold">{{ $ranking++ }}</td>
                         <td class="text-muted"><img class="tooltipster" title="{{ $team->country->countryName }}" src="/images/flags/20_shiny/{{ $team->country->countryCode }}.png" alt="" height="22px"/></td>
                         <td class="color-main text-bold">{{ $team->name }}</td>
-                        <td>{!! $team->points !!}</td>
-                        <td>{{ $team->tourplayed }}</td>
-                        <td class="text-right">{{ $team->rating or 0 }}</td>
+                        <td>{!! $team->total_score !!}</td>
+                        <td>{{ $team->tourny_played }}</td>
+                        <td class="text-right">{{ $team->points or 0 }}</td>
                     </tr>
                 @endforeach
                 </tbody>

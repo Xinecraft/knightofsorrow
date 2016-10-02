@@ -17,6 +17,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Collection;
 
 class TournamentController extends Controller
 {
@@ -51,14 +52,28 @@ class TournamentController extends Controller
 
     public function getRatingSingle()
     {
-        $user = User::paginate();
-        return view('tournament.rankingsingle')->with('players',$user);
+
+        $users = \DB::select("select user_id,count(*) as tourny_played, max(user_position) as best_pos,sum(total_score) as total_score,avg(user_position) as user_position from k_tournament_user where user_status > 2 group by user_id order by total_score DESC;");
+        $us = new Collection();
+        foreach ($users as $user)
+        {
+            $u = User::find($user->user_id);
+            $u->points = $user->total_score;
+            $u->tourny_played = $user->tourny_played;
+            $u->user_position = $user->user_position;
+            $u->best_pos = $user->best_pos;
+            $us->push($u);
+        }
+        return view('tournament.rankingsingle')->with('players',$us)->with('ranking',1);
     }
 
     public function getRatingTeams()
     {
-        $teams = KTeam::where('team_status',1)->groupBy('name')->orderby('team_position')->paginate();
-        return view('tournament.rankingteams')->with('teams',$teams);
+        $teams = KTeam::where('team_status',1)->groupBy('name')
+            ->selectRaw('*,sum(total_score) as score,count(*) as tourny_played,avg(rating) as rating,avg(team_position) as team_position,sum(points) as points')
+            ->orderby('team_position')->paginate();
+
+        return view('tournament.rankingteams')->with('teams',$teams)->with('ranking',1);
     }
 
     public function getGuideline()

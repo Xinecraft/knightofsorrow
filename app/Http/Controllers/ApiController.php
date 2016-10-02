@@ -374,7 +374,9 @@ class ApiController extends Controller
             $playerCountryName = "[c=d3d3d3]Unknown Territory[\\c]";
             try {
                 if ($player_geoip = $geoip->city($playerIp)) {
-                    $playerCountryName = $player_geoip->country->names['en'];
+                    //$playerCountryName = $player_geoip->country->names['en'];
+                    $playerCountryName = $player_geoip->city->names['en'] == "" ? "" : $player_geoip->city->names['en'].",";
+                    $playerCountryName = $playerCountryName.$player_geoip->country->names['en'];
                 }
             }
             catch(\Exception $e)
@@ -434,7 +436,9 @@ class ApiController extends Controller
             $playerCountryName = "[c=d3d3d3]Unknown Territory[\\c]";
             try {
                 if ($player_geoip = $geoip->city($playerIp)) {
-                    $playerCountryName = $player_geoip->country->names['en'];
+                    //$playerCountryName = $player_geoip->country->names['en'];
+                    $playerCountryName = $player_geoip->city->names['en'] == "" ? "" : $player_geoip->city->names['en'].",";
+                    $playerCountryName = $playerCountryName.$player_geoip->country->names['en'];
                 }
             }
             catch(\Exception $e)
@@ -578,7 +582,8 @@ class ApiController extends Controller
             $playerCountryName = "[c=d3d3d3]Unknown Territory[\\c]";
             try {
                 if ($player_geoip = $geoip->city($playerIp)) {
-                    $playerCountryName = $player_geoip->country->names['en'];
+                    $playerCountryName = $player_geoip->city->names['en'] == "" ? "" : $player_geoip->city->names['en'].",";
+                    $playerCountryName = $playerCountryName.$player_geoip->country->names['en'];
                 }
             }
             catch(\Exception $e)
@@ -614,7 +619,8 @@ class ApiController extends Controller
             $playerCountryName = "[c=d3d3d3]Unknown Territory[\\c]";
             try {
                 if ($player_geoip = $geoip->city($playerIp)) {
-                    $playerCountryName = $player_geoip->country->names['en'];
+                    $playerCountryName = $player_geoip->city->names['en'] == "" ? "" : $player_geoip->city->names['en'].",";
+                    $playerCountryName = $playerCountryName.$player_geoip->country->names['en'];
                 }
             }
             catch(\Exception $e)

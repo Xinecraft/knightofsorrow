@@ -157,7 +157,7 @@
                     <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Player of the Month</h4>
                     <a style="font-size: 17px;" class="ainorange" href="/@BUMMYYY"><b>eLe|Bummyyy</b></a>
                 </div>
-                <iframe src="https://discordapp.com/widget?id=228644609054474250&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+                    <iframe src="https://discordapp.com/widget?id=228644609054474250&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
             </div>
 
             <div class="col-xs-4">

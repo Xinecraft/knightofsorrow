@@ -253,4 +253,11 @@ class PlayerTotal extends Model implements HasPresenter
         return \App\User::where('player_totals_name','LIKE',$name)->first();
     }
 
+    /**
+     * Awarded points
+     */
+    public function playerPoints()
+    {
+        return $this->hasMany('App\PlayerPoint', 'player_total_id', 'id');
+    }
 }

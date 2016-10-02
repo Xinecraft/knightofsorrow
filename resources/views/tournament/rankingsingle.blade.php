@@ -33,25 +33,25 @@
                     <th class="col-xs-1">Flag</th>
                     <th class="col-xs-3">Name</th>
                     <th class="col-xs-1">Points</th>
-                    <th class="col-xs-2">Tourns Played</th>
-                    <th class="col-xs-1 text-right">Rating</th>
+                    <th class="col-xs-2">Tourny Played</th>
+                    <th class="col-xs-1 text-right">Best Position</th>
                 </tr>
                 </thead>
                 <tbody id="data-items">
                 @foreach($players as $player)
                     <tr class="item">
-                        <td class="color-main text-bold">{{ $player->ranking }}</td>
+                        <td class="color-main text-bold">{{ $ranking++ }}</td>
                         <td class="text-muted"><img class="tooltipster" title="{{ $player->country->countryName }}" src="/images/flags/20_shiny/{{ $player->country->countryCode }}.png" alt="" height="22px"/></td>
                         <td class="color-main text-bold">{!! link_to_route('user.show', $player->displayName(), [$player->username]) !!}</td>
-                        <td>{!! $player->points !!}</td>
-                        <td>{{ $player->tourplayed }}</td>
-                        <td class="text-right">{{ $player->rating }}</td>
+                        <td>{!! $player->points or "None" !!}</td>
+                        <td>{{ $player->tourny_played or "None" }}</td>
+                        <td class="text-right">{{ $player->best_pos or "None" }}</td>
                     </tr>
                 @endforeach
                 </tbody>
             </table>
         </div>
-        {!! $players->appends(Request::except('page'))->render() !!}
+        {{-- $players->appends(Request::except('page'))->render() --}}
         <div id="loading" class="text-center"></div>
     </div>
 

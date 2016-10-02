@@ -83,6 +83,18 @@
         {
             color: #df0000;
         }
+        .superadmin
+        {
+            color:	#FFD700;
+        }
+        .admin
+        {
+            color:  #4285f4;
+        }
+        .elder
+        {
+            color: greenyellow;
+        }
     </style>
 @endsection
 @section('title', $user->displayName()."'s profile")
@@ -114,7 +126,7 @@
                                 @endif
                             </div>
                             <div class="col-xs-5">
-                                <h3 class="no-margin hero-name {{ $user->banned ? 'linethru' : '' }}">{{ $user->name }}</h3>
+                                <h3 class="no-margin hero-name {{ $user->roles->first()->name }} {{ $user->banned ? 'linethru' : '' }}">{{ $user->name }}</h3>
                                 <h4 class="">{!! link_to_route('user.show',"@".$user->username,$user->username,['class' =>'username']) !!}</h4>
 
 
