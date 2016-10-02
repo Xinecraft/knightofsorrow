@@ -70,7 +70,7 @@ class TournamentController extends Controller
     public function getRatingTeams()
     {
         $teams = KTeam::where('team_status',1)->groupBy('name')
-            ->selectRaw('*,sum(total_score) as score,count(*) as tourny_played,avg(rating) as rating,avg(team_position) as team_position,sum(points) as points')
+            ->selectRaw('*,sum(total_score) as score,count(*) as tourny_played,avg(rating) as rating,avg(team_position) as team_position,sum(points) as points,sum(rating) as rating')
             ->orderby('team_position')->paginate();
 
         return view('tournament.rankingteams')->with('teams',$teams)->with('ranking',1);

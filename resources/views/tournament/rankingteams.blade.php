@@ -32,8 +32,9 @@
                     <th class="col-xs-1">Ranking</th>
                     <th class="col-xs-1">Flag</th>
                     <th class="col-xs-3">Name</th>
-                    <th class="col-xs-1">Score</th>
+                    <th class="col-xs-1 tooltipster" title="Points awarded to team for reaching phase">Points</th>
                     <th class="col-xs-2">Tourns Played</th>
+                    <th class="col-xs-1">Score</th>
                     <th class="col-xs-1 text-right tooltipster" title="Win/Lost Index">W/L Index</th>
                 </tr>
                 </thead>
@@ -43,8 +44,9 @@
                         <td class="color-main text-bold">{{ $ranking++ }}</td>
                         <td class="text-muted"><img class="tooltipster" title="{{ $team->country->countryName }}" src="/images/flags/20_shiny/{{ $team->country->countryCode }}.png" alt="" height="22px"/></td>
                         <td class="color-main text-bold">{{ $team->name }}</td>
-                        <td>{!! $team->total_score !!}</td>
+                        <td>{{ $team->rating or "None" }}</td>
                         <td>{{ $team->tourny_played }}</td>
+                        <td>{!! $team->total_score !!}</td>
                         <td class="text-right">{{ $team->points or 0 }}</td>
                     </tr>
                 @endforeach
