@@ -32,9 +32,9 @@
                     <th class="col-xs-1">Ranking</th>
                     <th class="col-xs-1">Flag</th>
                     <th class="col-xs-3">Name</th>
-                    <th class="col-xs-1">Score</th>
+                    <th class="col-xs-1">Points</th>
                     <th class="col-xs-2">Tourny Played</th>
-                    <th class="col-xs-1 text-right">Best Position</th>
+                    <th class="col-xs-1">Score</th>
                 </tr>
                 </thead>
                 <tbody id="data-items">
@@ -45,7 +45,7 @@
                         <td class="color-main text-bold">{!! link_to_route('user.show', $player->displayName(), [$player->username]) !!}</td>
                         <td>{!! $player->points or "None" !!}</td>
                         <td>{{ $player->tourny_played or "None" }}</td>
-                        <td class="text-right">{{ $player->best_pos or "None" }}</td>
+                        <td>{!! $player->total_score or "None" !!}</td>
                     </tr>
                 @endforeach
                 </tbody>
