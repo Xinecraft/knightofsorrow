@@ -32,7 +32,7 @@
                     <th class="col-xs-1">Ranking</th>
                     <th class="col-xs-1">Flag</th>
                     <th class="col-xs-3">Name</th>
-                    <th class="col-xs-1">Points</th>
+                    <th class="col-xs-1">Score</th>
                     <th class="col-xs-2">Tourny Played</th>
                     <th class="col-xs-1 text-right">Best Position</th>
                 </tr>

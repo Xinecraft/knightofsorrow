@@ -32,7 +32,7 @@
                     <th class="col-xs-1">Ranking</th>
                     <th class="col-xs-1">Flag</th>
                     <th class="col-xs-3">Name</th>
-                    <th class="col-xs-1">Points</th>
+                    <th class="col-xs-1">Score</th>
                     <th class="col-xs-2">Tourns Played</th>
                     <th class="col-xs-1 text-right tooltipster" title="Win/Lost Index">W/L Index</th>
                 </tr>
