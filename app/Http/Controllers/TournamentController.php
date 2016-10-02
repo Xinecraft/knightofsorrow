@@ -53,7 +53,7 @@ class TournamentController extends Controller
     public function getRatingSingle()
     {
 
-        $users = \DB::select("select user_id,count(*) as tourny_played,sum(total_score) as total_score,sum(user_position) as points from k_tournament_user where user_status > 2 group by user_id order by points DESC;");
+        $users = \DB::select("select user_id,count(*) as tourny_played,sum(total_score) as total_score,sum(user_position) as points from k_tournament_user where user_status > 2 group by user_id order by points DESC, total_score DESC;");
         $us = new Collection();
         foreach ($users as $user)
         {
