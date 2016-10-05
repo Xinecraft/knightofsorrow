@@ -147,7 +147,7 @@ class PlayerTotalRepository implements PlayerTotalRepositoryInterface
             if(!$playerPoints->isEmpty())
             {
                 $pointsToGive = $playerPoints->sum('points');
-                $playerPoints->total_points += $pointsToGive;
+                $playerTotal->total_points += $pointsToGive;
             }
 
             /**
