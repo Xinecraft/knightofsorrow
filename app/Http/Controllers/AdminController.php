@@ -39,7 +39,7 @@ class AdminController extends Controller
             'reason' => $reason
         ]);
 
-        return back()->with('success',"Added Successfully");
+        return redirect()->route('extrapoints')->with('success',"Added Successfully! It may take 1 hour to refect changes.");
     }
 
     /**

@@ -288,14 +288,17 @@ class StatisticsController extends Controller
      */
     public function getDeletedPlayersForView()
     {
-        $players = DeletedPlayer::paginate();
+        $players = DeletedPlayer::latest()->paginate();
 
         return view('statistics.view_deleted_players')->with('players',$players);
     }
 
+    /**
+     * @return $this
+     */
     public function showExtrapoints()
     {
-        $players = PlayerPoint::paginate();
+        $players = PlayerPoint::latest()->paginate();
 
         return view('playerpoints.index')->with('players',$players);
     }
