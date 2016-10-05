@@ -3,6 +3,11 @@
 @section('title',$player->name)
 @section('styles')
     <style>
+        .text-points
+        {
+            font-weight:normal !important;
+            font-style:italic !important;
+        }
         .alert-inactive
         {
             padding: 5px;
@@ -138,6 +143,9 @@
                             <span class="tooltipster" title="<b>Points are calculated by a secret Algorithm</b><br><br>Kills,Deaths,Arrests,Team Kills all affect points calculation.<br><br>Player ranks are allocated according to points.">Total Points</span>
                         </td>
                         <td class="col-6 text-right"><strong>{{ $player->total_points }}</strong>
+                            @unless($playerPoints->isEmpty())
+                                {!! $playerPoints->sum('points') < 0 ?  "<span class='text-danger text-points small'>( -".$playerPoints->sum('points')." )</span>" : "<span class='text-green text-points small'>( +".$playerPoints->sum('points')." )</span>" !!}
+                            @endunless
                         </td>
                     </tr>
 
@@ -607,6 +615,53 @@
                 </div>
             </div>
         </div>
+
+        @unless($playerPoints->isEmpty())
+            <div class="row no-margin player-round-reports" style="margin-bottom: 10px !important;">
+                <div class="col-xs-12 panel panel-default no-padding no-margin no-left-padding">
+                    <div class="panel-heading"><span class="info-title">Points Awarded {!! $playerPoints->sum('points') < 0 ?  "<span class='text-danger'>( -".$playerPoints->sum('points')." )</span>" : "<span class='text-green'>( +".$playerPoints->sum('points')." )</span>" !!}</span></div>
+                    <div class="panel-body">
+                        <table class="table table-striped table-hover no-margin">
+                            <thead>
+                            <tr>
+                                <th class="col-xs-2">Points</th>
+                                <th class="col-xs-5">Reason</th>
+                                <th class="col-xs-2">Awarded By</th>
+                                <th class="col-xs-2 text-right">Awarded At</th>
+                                @if(Auth::check() && Auth::user()->isAdmin())
+                                    <th class="col-xs-1"></th>
+                                @endif
+                            </tr>
+                            </thead>
+                            <tbody id="data-items" class="roundstabledata">
+                            @forelse($playerPoints as $player)
+                                <tr class="item">
+                                    <td class="text-bold">{!! $player->points < 0 ?  "<span class='text-danger'>".$player->points."</span>" : "<span class='text-green'>".$player->points."</span>" !!}</td>
+                                    <td class="tooltipster" title="{{ $player->reason }}">{{ str_limit($player->reason,25) }}</td>
+                                    <td class="color-main text-bold">
+                                        <a class="" style="margin-right:1em" href="{{ route('user.show',$player->admin->username) }}">
+                                            <strong class="">{{ $player->admin->displayName() }}</strong>
+                                        </a>
+                                    </td>
+                                    <td class="text-right">{{ $player->created_at->diffForHumans() }}</td>
+                                    @if(Auth::check() && Auth::user()->isAdmin())
+                                        <td>
+                                            {!! Form::open(['route' => ['delete-playerpoints',urlencode($player->id)]]) !!}
+                                            {!! Form::hidden('p_id',$player->id) !!}
+                                            <button class="btn btn-xs btn-danger confirm tooltipster" title="Delete" type="submit">Delete</button>
+                                            {!! Form::close() !!}
+                                        </td>
+                                    @endif
+                                </tr>
+                            @empty
+                                <h1>Nothing in here :(</h1>
+                            @endforelse
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        @endunless
 
     </div>
 @endsection

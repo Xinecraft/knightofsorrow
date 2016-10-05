@@ -29,6 +29,7 @@ namespace App\Server\Repositories;
 
 use App\DeletedPlayer;
 use App\Game;
+use App\PlayerPoint;
 use App\Server\Interfaces\PlayerTotalRepositoryInterface;
 use App\PlayerTotal;
 use App\Alias;
@@ -138,6 +139,16 @@ class PlayerTotalRepository implements PlayerTotalRepositoryInterface
             $playerTotal->game_lost = $lost;
             $playerTotal->game_draw = $draw;
             $playerTotal->total_points = max(($playerTotal->total_kills * 4) + ($playerTotal->total_arrests * 13) - ($playerTotal->total_deaths) - ($playerTotal->total_arrested * 3) - ($playerTotal->total_team_kills * 2),0);
+
+            /**
+             * This give extra points to the player from PlayerPoints Model
+             */
+            $playerPoints = PlayerPoint::where('name',$playerTotal->name)->get();
+            if(!$playerPoints->isEmpty())
+            {
+                $pointsToGive = $playerPoints->sum('points');
+                $playerPoints->total_points += $pointsToGive;
+            }
 
             /**
              * Calculation of player_rating

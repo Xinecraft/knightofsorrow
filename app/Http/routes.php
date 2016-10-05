@@ -306,3 +306,10 @@ Route::delete('/comment/{id}',['as' => 'comment.destroy', 'uses' => 'CommentCont
 Route::get('/viewiphistory',['middleware' => ['auth','admin'], 'uses' => 'StatisticsController@viewIPofPlayer']);
 
 Route::get('deleted-players',['as' => 'deleted-players', 'uses' => 'StatisticsController@getDeletedPlayersForView']);
+
+// Points to players
+Route::get('/statistics/awardedpoints/create',['as' => 'addpoints.create', 'middleware' => ['auth','admin'], 'uses' => 'AdminController@createAddpoints']);
+Route::post('/statistics/awardedpoints/create',['middleware' => ['auth','admin'], 'uses' => 'AdminController@storeAddpoints']);
+Route::post('/statistics/awardedpoints/delete/{id}',['as' => 'delete-playerpoints','middleware' => ['auth','admin'], 'uses' => 'AdminController@destroyAddpoints']);
+
+Route::get('/statistics/awardedpoints',['as' => 'extrapoints', 'uses' => 'StatisticsController@showExtrapoints']);

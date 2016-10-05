@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\DeletedPlayer;
+use App\PlayerPoint;
 use Request;
 use App\Http\Controllers\Controller;
 use App\Country;
@@ -105,10 +106,13 @@ class StatisticsController extends Controller
 
         $latestRounds = Game::findOrFail($latestRounds)->sortByDesc('created_at');
 
+        $playerPoints = PlayerPoint::where('name',$name)->get();
+
         $array = [
             'player' => $player,
             'weaponFamilies' => $weapons,
-            'latestGames' => $latestRounds
+            'latestGames' => $latestRounds,
+            'playerPoints' => $playerPoints,
         ];
 
         return view('statistics.player-details',$array);
@@ -287,5 +291,12 @@ class StatisticsController extends Controller
         $players = DeletedPlayer::paginate();
 
         return view('statistics.view_deleted_players')->with('players',$players);
+    }
+
+    public function showExtrapoints()
+    {
+        $players = PlayerPoint::paginate();
+
+        return view('playerpoints.index')->with('players',$players);
     }
 }

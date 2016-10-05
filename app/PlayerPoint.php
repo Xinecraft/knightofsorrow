@@ -9,7 +9,7 @@ class PlayerPoint extends Model
     /**
      * @var array
      */
-    protected $fillable = ['name', 'points', 'reason', 'admin_id'];
+    protected $fillable = ['name', 'points', 'reason', 'admin_id', 'k_tournament_id', 'player_total_id'];
 
     /**
      * Creator of this point reward

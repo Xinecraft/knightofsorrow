@@ -32,6 +32,7 @@
                         <li class="{{ set_active(['global-notifications*']) }}"><a href="{{ route('notifications.index') }}">G Notifications</a></li>
                         <li class="{{ set_active(['rules*']) }}"><a href="{{ route('rules') }}">Rules</a></li>
                         <li class="{{ set_active(['deleted-players*']) }}"><a href="{{ route('deleted-players') }}">Deleted Players</a></li>
+                        <li class="{{ set_active(['extrapoints*']) }}"><a href="{{ route('extrapoints') }}">Awarded Points</a></li>
                     </ul>
                 </li>
 
@@ -87,6 +88,7 @@
                                     <li><a href="{{ route('news.create') }}">Create News</a></li>
 
                                     <li><a href="{{ route('poll.create') }}">Create Poll</a></li>
+                                    <li><a href="{{ route('addpoints.create') }}">Award Points</a></li>
                                     <li class="{{ set_active(['webadmin*']) }}"><a href="{{ route('webadmin') }}">Web Admin</a></li>
                                 @endif
                             @endif
