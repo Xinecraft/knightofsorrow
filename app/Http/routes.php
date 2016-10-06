@@ -313,3 +313,9 @@ Route::post('/statistics/awardedpoints/create',['middleware' => ['auth','admin']
 Route::post('/statistics/awardedpoints/delete/{id}',['as' => 'delete-playerpoints','middleware' => ['auth','admin'], 'uses' => 'AdminController@destroyAddpoints']);
 
 Route::get('/statistics/awardedpoints',['as' => 'extrapoints', 'uses' => 'StatisticsController@showExtrapoints']);
+
+//Trophy System
+Route::get('/trophy/create',['middleware' => ['auth','admin'], 'as' => 'trophy.create', 'uses' => 'TrophyController@create']);
+Route::post('/trophy/create',['middleware' => ['auth','admin'], 'as' => 'trophy.store', 'uses' => 'TrophyController@store']);
+Route::get('/trophy/give_to_user',['middleware' => ['auth','admin'], 'as' => 'trophy.grant', 'uses' => 'TrophyController@giveToUser']);
+Route::post('/trophy/give_to_user',['middleware' => ['auth','admin'], 'as' => 'trophy.postgrant', 'uses' => 'TrophyController@postGiveToUser']);

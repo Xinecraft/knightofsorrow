@@ -512,4 +512,24 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     {
         return $this->hasMany('App\PlayerPoint', 'admin_id', 'id');
     }
+
+    /**
+     * List of all trophy created by this user.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function createTrophy()
+    {
+        return $this->hasMany('App\Trophy');
+    }
+
+    /**
+     * All won trophies he have.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function trohpies()
+    {
+        return $this->belongsToMany('App\Trophy')->withTimestamps();
+    }
 }

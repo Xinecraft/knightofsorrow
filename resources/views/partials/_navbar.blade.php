@@ -89,6 +89,8 @@
 
                                     <li><a href="{{ route('poll.create') }}">Create Poll</a></li>
                                     <li><a href="{{ route('addpoints.create') }}">Award Points</a></li>
+                                    <li><a href="{{ route('trophy.create') }}">Create Trophy</a></li>
+                                    <li><a href="{{ route('trophy.grant') }}">Distribute Trophy</a></li>
                                     <li class="{{ set_active(['webadmin*']) }}"><a href="{{ route('webadmin') }}">Web Admin</a></li>
                                 @endif
                             @endif

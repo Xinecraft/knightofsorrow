@@ -284,11 +284,17 @@
                         </div>
 
                         <div class="col-xs-6 panel stats-tracker pad5" style="height: 224px !important;">
-                            <h5 class="info-title" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Trophies & Achievements</h5>
-                            <h3 class="text-center text-green" style="font-family: 'Passion One',cursive">
-                                <i class="fa fa-trophy fa-3x" style="color:#FF9800"></i><br>
-                                Coming Soon
-                            </h3>
+                            <h5 class="info-title" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Trophies</h5>
+                            <ul class="list-group" style="overflow: auto;height: 186px;">
+                            @forelse($user->trohpies as $trophy)
+                                    <li class="list-group-item text-center" style="color: {{ $trophy->color }}"><i class="fa fa-2x {{ $trophy->icon }}"></i> <b class="tooltipster" title="{{ $trophy->name }}">{{ $trophy->short_name }}</b></li>
+                            @empty
+                                <h3 class="text-center text-danger" style="font-family: 'Passion One',cursive">
+                                    <i class="fa fa-trophy fa-3x" style="color:#ffd92e"></i><br>
+                                    No Trophy Won!
+                                </h3>
+                            @endforelse
+                            </ul>
                         </div>
                     </div>
                     <div class="panel-footer">
