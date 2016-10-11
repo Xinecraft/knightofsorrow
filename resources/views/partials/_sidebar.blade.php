@@ -98,6 +98,7 @@
                 <i class="fa fa-cc"></i>
                 Donate</a>
         </div>
+        <script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=5te3v5nh7fy&amp;m=7&amp;s=255&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=0" async="async"></script>
 
     @endif
 
