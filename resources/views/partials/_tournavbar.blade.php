@@ -18,6 +18,7 @@
                 <li class="{{ set_active(['tournament/calendar']) }}">{!! link_to_route('tournament.calendar','Calendar') !!}</li>
                 <li class="{{ set_active(['tournament/ranking*']) }}">{!! link_to_route('tournament.ranking.teams','Ranking') !!}</li>
                 <li class="{{ set_active(['tournament/guidelines*']) }}">{!! link_to_route('tournament.guidelines','Rules') !!}</li>
+                <li class="{{ set_active(['tournament/livestream*']) }}">{!! link_to_route('tournament.stream','Stream') !!}</li>
                 {{--<li class="{{ set_active(['statistics/charts*']) }}">{!! link_to_route('chart-reports','Charts') !!}</li>--}}
                 {{--<li class="{{ set_active_or_disabled(['statistics/player/*']) }}"><a>Player Details</a></li>--}}
             </ul>

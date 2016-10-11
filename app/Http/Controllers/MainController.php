@@ -670,4 +670,14 @@ class MainController extends Controller
             return redirect()->home();
         }
     }
+
+    /**
+     * Return stream page
+     *
+     * @return \Illuminate\View\View
+     */
+    public function stream()
+    {
+        return view('stream');
+    }
 }

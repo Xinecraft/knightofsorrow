@@ -264,6 +264,7 @@ Route::post('/kost', ['as' => 'kost', 'uses' => 'KostController@kost']);
 /**
  * Tournament System Controllers
  */
+Route::get('/tournament/livestream', ['as' => 'tournament.stream', 'uses' => 'MainController@stream']);
 Route::get('/tournament/calendar', [ 'as' => 'tournament.calendar', 'uses' => 'TournamentController@getCalendar']);
 Route::get('/tournament/ranking/single', [ 'as' => 'tournament.ranking.single', 'uses' => 'TournamentController@getRatingSingle']);
 Route::get('/tournament/ranking/teams', [ 'as' => 'tournament.ranking.teams', 'uses' => 'TournamentController@getRatingTeams']);
@@ -294,7 +295,6 @@ Route::post('tournament/{id}/comments',['middleware' => 'auth', 'as' => 'tournam
 
 Route::get('/tournament/{slug}/end',['middleware' => 'auth', 'as' => 'tournament.end', 'uses' => 'TManagerController@shoeEndPage']);
 
-
 Route::get('global-notifications',['as' => 'notifications.index', 'uses' => 'NotificationController@indexGlobal']);
 Route::get('notifications',['middleware' => 'auth', 'as' => 'notifications.userindex', 'uses' => 'NotificationController@indexUser']);
 Route::get('getlatestnotifications',['middleware' => 'auth', 'as' => 'notifications.getlatest', 'uses' => 'NotificationController@getLatest']);
@@ -319,3 +319,5 @@ Route::get('/trophy/create',['middleware' => ['auth','admin'], 'as' => 'trophy.c
 Route::post('/trophy/create',['middleware' => ['auth','admin'], 'as' => 'trophy.store', 'uses' => 'TrophyController@store']);
 Route::get('/trophy/give_to_user',['middleware' => ['auth','admin'], 'as' => 'trophy.grant', 'uses' => 'TrophyController@giveToUser']);
 Route::post('/trophy/give_to_user',['middleware' => ['auth','admin'], 'as' => 'trophy.postgrant', 'uses' => 'TrophyController@postGiveToUser']);
+
+//Route::get('/stream', ['uses' => 'MainController@stream']);
