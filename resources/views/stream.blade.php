@@ -38,6 +38,10 @@
             background: url("/images/steamback.jpg") !important;
             background-size: cover !important;
         }
+        .text-yellow
+        {
+            color:red !important;
+        }
     </style>
 @endsection
 
@@ -45,14 +49,13 @@
     @if(Route::is('tournament.stream'))
     @include('partials._tournavbar')
     @endif
-    <div class="col-xs-12 panel row">
-        <h3 class="text-center">Live Stream</h3>
+    <div class="col-xs-12 row">
         <div class="col-xs-8"><iframe src="https://player.twitch.tv/?channel=knight0fsorrow" frameborder="0" scrolling="no" height="500" width="720"></iframe><a href="https://www.twitch.tv/knight0fsorrow?tt_medium=live_embed&tt_content=text_link" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px; text-decoration:underline;">Watch live video from knight0fsorrow on www.twitch.tv</a>
         </div>
         <div class="col-xs-4"><iframe src="https://www.twitch.tv/knight0fsorrow/chat?popout=" frameborder="0" scrolling="no" height="500" width="350"></iframe>
         </div>
         <div class="col-xs-12">
-            <a href="https://www.twitch.tv/knight0fsorrow" class="btn btn-link pull-right" target="_blank">Visit our Twitch Channel for more</a>
+            <a href="https://www.twitch.tv/knight0fsorrow" class="btn btn-link pull-right text-yellow text-bold" target="_blank">Visit our Twitch Channel for more</a>
         </div>
     </div>
 @endsection
