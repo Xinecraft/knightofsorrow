@@ -44,7 +44,7 @@
                         <td class="color-main text-bold">{{ $ranking++ }}</td>
                         <td class="text-muted"><img class="tooltipster" title="{{ $team->country->countryName }}" src="/images/flags/20_shiny/{{ $team->country->countryCode }}.png" alt="" height="22px"/></td>
                         <td class="color-main text-bold">{{ $team->name }}</td>
-                        <td>{{ $team->rating or "None" }}</td>
+                        <td>{{ round($team->rating) or "None" }}</td>
                         <td>{{ $team->tourny_played }}</td>
                         <td>{!! $team->total_score !!}</td>
                         <td class="text-right">{{ $team->points or 0 }}</td>

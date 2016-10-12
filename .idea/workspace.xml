@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e189236c-c3e7-488f-b221-e9fb727e1c1d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/stream.blade.php" afterPath="$PROJECT_DIR$/resources/views/stream.blade.php" />
     </list>
     <ignored path="kos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,10 +63,10 @@
       <file leaf-file-name="stream.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/stream.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="42" column="21" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
+            <state relative-caret-position="367">
+              <caret line="54" column="140" selection-start-line="54" selection-start-column="140" selection-end-line="54" selection-end-column="140" />
               <folding>
-                <element signature="e#1330#1449#0#HTML" expanded="true" />
+                <element signature="e#1310#1429#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -488,15 +487,15 @@
       <workItem from="1475798440900" duration="1346000" />
       <workItem from="1476166043124" duration="965000" />
       <workItem from="1476171618909" duration="98000" />
-      <workItem from="1476214778203" duration="2744000" />
+      <workItem from="1476214778203" duration="3972000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76089000" />
+    <option name="totallyTimeSpent" value="77317000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -902,10 +901,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/stream.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="42" column="21" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
+        <state relative-caret-position="367">
+          <caret line="54" column="140" selection-start-line="54" selection-start-column="140" selection-end-line="54" selection-end-column="140" />
           <folding>
-            <element signature="e#1330#1449#0#HTML" expanded="true" />
+            <element signature="e#1310#1429#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

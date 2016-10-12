@@ -195,7 +195,7 @@
                                 <a class="ainorange" href="{{ route('user.show',"ZAKI") }}">Zaki(uS)</a>
                             </td>
                             <td>
-                                Promotions & Supports
+                                Promotions & Support
                             </td>
                         </tr>
                         <tr>
@@ -209,6 +209,30 @@
                         <tr>
                             <td>
                                 <a class="ainorange" href="{{ route('user.show',"BaDTimE") }}">|MyT|BaDTimE</a>
+                            </td>
+                            <td>
+                                Technical Support
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="ainorange" href="{{ route('user.show',"TommiHILFIGER") }}">qR|Darkkp</a>
+                            </td>
+                            <td>
+                              Stream &amp; Commentating
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="ainorange" href="{{ route('user.show',"SUN") }}">SUN</a>
+                            </td>
+                            <td>
+                              Support &amp; Organization
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a class="ainorange" href="{{ route('user.show',"Serge") }}">|MyT|Serge</a>
                             </td>
                             <td>
                                 Technical Support
