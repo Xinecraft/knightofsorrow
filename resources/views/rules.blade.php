@@ -77,12 +77,11 @@
                 <ul class="ruleslist" style="list-style-type: square;font-family: 'Ubuntu', Helvetica, Arial, sans-serif;">
                   <li>
                     <b>Insults - RACISM - Nationalist talks - Religion Insult = <span class="text-danger">MUTE</span></b>, if player continue with his dirty talk by reconnecting or changing his nick to another insult = <b class="text-danger">KICK</b>, if that's not enough and he continue = <b class="text-danger">BAN</b> him on server and <b class="text-danger">MUTE</b> him on website.<br>
-                    As a last resort even <b class="text-danger">BAN</b> on website too. Same for dirty talk on <u>Website Shoutbox</u>. <small>(BAN time for this decided by admin)</small>
+                    As a last resort even <b class="text-danger">BAN</b> on website too. Same for dirty talk on <u>Website Shoutbox</u>. <small class="text-danger">(BAN time for this decided by admin)</small>
                   </li>
                   <li class="text-info"><b>KICK,BAN or any other admin action againts a player who is <span class="text-danger">ACCUSED FOR CAMP</span> is NOT ALLOWED, Because KOS SERVER already have <u class="text-success">ANTI-CAMP SYSTEM inbuilt.</u></b></li>
                   <li>You cannot <b>unban</b> the <b class="text-danger">BANNED PLAYERS</b> who are not banned by your hands. Rather you should speak to admin who banned that player and if he agree you can unban.</li>
                   <li><b>SERVER DEFAULT SETTING</b> should not be changed without <b>SUPER ADMINISTRATOR</b>'s support.</li>
-
                 </ul>
                 <p>
                   THIS RULES MUST BE RESPECTED, <b>PENALTIES FOR PLAYER</b> WHICH HAVE VOILATED SERVER FULES MUST NOT BE INCREASED, <b>MAY ONLY BE REDUCED,</b> DEPENDS ON ADMIN.
@@ -97,6 +96,7 @@
                   <li><b>No. of Rounds: </b>3</li>
                   <li><b>Friendly fire: </b>100%</li>
                   <li><b>Maps: </b>Food,Bomb,FF,WP</li>
+                  <li><b>Slots: </b>12</li>
                 </ul>
                 <p>
                   FAIR PLAY IS THE BEST PLAY!<br>
