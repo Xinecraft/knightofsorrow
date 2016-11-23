@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="49.350773mm"
+   height="49.423195mm"
+   viewBox="0 0 174.86494 175.12155"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="Discord.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.979899"
+     inkscape:cx="33.009154"
+     inkscape:cy="62.857489"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:snap-object-midpoints="false"
+     inkscape:snap-others="true"
+     inkscape:snap-to-guides="true"
+     showguides="true"
+     inkscape:snap-page="false"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-paths="false"
+     inkscape:bbox-nodes="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4193"
+       originx="-283.46284"
+       originy="-538.11441" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Background"
+     transform="translate(-0.4684983,0.16081395)"
+     style="display:inline">
+    <path
+       style="fill:#6e8acc;fill-opacity:1"
+       d="M 83.489491,174.87114 C 64.14825,173.21022 49.790043,168.07947 35.920475,157.87287 13.419472,141.3144 0.4684983,115.55599 0.4684983,87.361833 c 0,-43.416648 30.6211187,-79.355011 73.6601427,-86.4509601 17.56841,-2.8965454 37.024309,0.1437878 53.298659,8.3288681 39.56691,19.899925 57.65093,65.790406 42.67483,108.292719 -10.28193,29.18023 -37.27453,51.4209 -68.17131,56.17006 -6.078379,0.93431 -14.761949,1.48458 -18.441329,1.16862 z"
+       id="path4245"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ssssssss" />
+  </g>
+  <g
+     inkscape:label="Discord icon"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-283.46285,-339.12623)"
+     style="display:inline">
+    <path
+       style="fill:#fdfdfd;fill-opacity:1"
+       d="m 322.68376,471.13811 c -8.02219,-2.56666 -17.73749,-8.84592 -20.71328,-13.38755 -6.05226,-9.23692 8.23343,-68.35848 18.21595,-75.38699 8.41229,-5.92294 22.80573,-11.33359 30.11116,-11.31912 1.94372,0.004 -0.6551,1.55409 -6.875,4.10106 -10.09711,4.13463 -21.33914,10.56561 -20.29502,11.60973 0.3114,0.3114 3.31767,-0.62308 6.6806,-2.07662 24.47971,-10.58075 56.26001,-11.04326 81.08899,-1.18013 5.20603,2.06806 9.86269,3.7601 10.34814,3.7601 2.17448,0 -9.93566,-7.14994 -18.20434,-10.74801 -10.63823,-4.62917 -11.82141,-5.50199 -7.45837,-5.50199 4.9763,0 18.40832,4.58043 25.5892,8.72612 6.991,4.03608 8.78121,6.9375 14.92135,24.18328 7.67427,21.55469 11.37047,47.97365 7.53156,53.83257 -4.56685,6.96991 -22.3877,15.75803 -31.95461,15.75803 -3.28467,0 -10.12833,-5.54199 -10.11781,-8.1934 0.002,-0.64988 2.41226,-2.17141 5.35486,-3.38119 5.70486,-2.34541 14.64045,-9.0801 14.64045,-11.03441 0,-0.64734 -3.43489,0.55694 -7.63309,2.67619 -24.0675,12.14922 -56.90187,12.15652 -80.94817,0.018 -4.1786,-2.10936 -7.99998,-3.83519 -8.49196,-3.83519 -2.61266,0 7.46063,8.2989 13.70178,11.28825 l 7.25357,3.47427 -3.94556,4.49374 c -4.59848,5.23739 -7.90124,5.61039 -18.8004,2.12326 z m 37.61785,-41.97977 c -0.0491,-16.89639 -25.04907,-16.89639 -25.14298,0.41167 0.0939,17.69194 25.09391,17.69194 25.14298,-0.41167 z m 44.94207,0.18523 c 0.009,-18.08162 -24.99114,-18.08162 -24.85744,-0.021 -0.1337,17.93938 24.8663,17.93938 24.85744,0.021 z"
+       id="path4160"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ssscssssssssssscsssssscsscccccc" />
+  </g>
+</svg>

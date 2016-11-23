@@ -10,16 +10,16 @@
                     <span class="text-danger text-bold">31.186.250.32:10480</span>
                 </span>
             </li>
-            <li class="list-group-item" style="padding: 5px 15px;">
+            <!--<li class="list-group-item" style="padding: 5px 15px;">
                 <span class="small tooltipster" title="SWAT4 War Server">
                     <img class="img img20" src="/images/swat.png" alt=""> -
                     <span class="text-danger text-bold">31.186.251.227:10480</span>
                 </span>
-            </li>
+            </li> -->
             <li class="list-group-item" style="padding: 5px 15px;">
-                <span class="small tooltipster" title="Teamspeak 3 Server">
-                    <img class="img img20" src="/images/Logo_ts3.png" alt=""> -
-                    <span class="text-danger text-bold">knightofsorrow.com:9987</span>
+                <span class="small tooltipster" title="Discord Group">
+                    <img class="img img20" src="/images/logo_ds.png" alt=""> -
+                    <span class="text-danger text-bold">https://discord.gg/y4FKmV5</span>
                 </span>
             </li>
         </ul>
