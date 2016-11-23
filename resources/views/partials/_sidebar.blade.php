@@ -17,9 +17,9 @@
                 </span>
             </li> -->
             <li class="list-group-item" style="padding: 5px 15px;">
-                <span class="small tooltipster" title="Discord Group">
+                <span class="small tooltipster" title="SWAT4 Discord Group">
                     <img class="img img20" src="/images/logo_ds.png" alt=""> -
-                    <span class="text-danger text-bold">https://discord.gg/y4FKmV5</span>
+                    <span class="text-danger text-bold">discord.gg/y4FKmV5</span>
                 </span>
             </li>
         </ul>
