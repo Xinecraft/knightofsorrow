@@ -144,7 +144,7 @@
                 </div>
 
                 <div class="form-group{{ $errors->has('steam_nickname') ? ' has-error' : '' }}">
-                    {!! Form::label('steam_nickname', 'Steam Username', ['class' => 'col-xs-4 control-label']) !!}
+                    {!! Form::label('steam_nickname', 'Steam Username', ['class' => 'col-xs-4 padding10 control-label']) !!}
                     <div class="col-xs-7">
                     {!! Form::text('steam_nickname',null,['class' => 'form-control']) !!}
                     @if ($errors->has('steam_nickname'))
@@ -152,6 +152,19 @@
                     <strong>{{ $errors->first('steam_nickname') }}</strong>
                     </span>
                     @endif
+                    </div>
+                </div>
+
+                <div class="form-group{{ $errors->has('discord_username') ? ' has-error' : '' }}">
+                    {!! Form::label('discord_username', 'Discord Username', ['class' => 'col-xs-4 padding10 control-label']) !!}
+                    <div class="col-xs-7">
+                        {!! Form::text('discord_username',null,['class' => 'form-control']) !!}
+                        <i class="small text-info">Look something like this: Kinnngg#2139</i>
+                        @if ($errors->has('discord_username'))
+                            <span class="help-block">
+                    <strong>{{ $errors->first('discord_username') }}</strong>
+                    </span>
+                        @endif
                     </div>
                 </div>
 
@@ -205,6 +218,33 @@
                             <span class="help-block">
                             <strong>{{ $errors->first('photo') }}</strong>
                             </span>
+                        @endif
+                    </div>
+                </div>
+
+                @if(Auth::user()->isSubAdmin())
+                    <div class="form-group{{ $errors->has('back_img_url') ? ' has-error' : '' }}">
+                        {!! Form::label('back_img_url', 'Background Image:', ['class' => 'col-xs-4 control-label'])  !!}
+                        <div class="col-xs-7">
+                            {!! Form::text('back_img_url',null,['class' => 'form-control']) !!}
+                            <i class="small text-info">Enter full URL of image. Leave empty for default!</i>
+                            @if ($errors->has('back_img_url'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('back_img_url') }}</strong>
+                                    </span>
+                            @endif
+                        </div>
+                    </div>
+                @endif
+
+                <div class="form-group{{ $errors->has('email_notifications_new_message') ? ' has-error' : '' }}">
+                    {!! Form::label('email_notifications_new_message', 'Opt for email when get new message:', ['class' => 'col-xs-8 no-padding control-label'])  !!}
+                    <div class="col-xs-2">
+                        {!! Form::checkbox('email_notifications_new_message',null,['class' => 'form-control']) !!}
+                        @if ($errors->has('email_notifications_new_message'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('email_notifications_new_message') }}</strong>
+                                    </span>
                         @endif
                     </div>
                 </div>

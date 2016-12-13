@@ -1,6 +1,12 @@
 @extends('layouts.main')
 @section('styles')
     <style>
+        @if($user->back_img_url != null && $user->back_img_url != "")
+        body
+        {
+            background: url("{{ $user->back_img_url }}") fixed !important;
+        }
+        @endif
         .about-well img
         {
             max-width: 100% !important;

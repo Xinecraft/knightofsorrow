@@ -300,9 +300,28 @@ class UserController extends Controller
         $weburl = $request->website_url ? $request->website_url : null;
         $evolveid = $request->evolve_id ? $request->evolve_id : null;
         $steam_nickname = $request->steam_nickname ? $request->steam_nickname : null;
+        $discord_username = $request->discord_username ? $request->discord_username : null;
         $about = $request->about ? $request->about : null;
         $gender = $request->gender ? $request->gender : null;
         $gender = $gender == 'unspecified' ? null : $gender;
+        if($request->has('email_notifications_new_message'))
+        {
+            $email_notifications_new_message = true;
+        }
+        else
+        {
+            $email_notifications_new_message = false;
+        }
+
+        // Background image only available for Elders++
+        if($request->user()->isSubAdmin())
+        {
+            $back_img_url = $request->back_img_url ? $request->back_img_url : null;
+        }
+        else
+        {
+            $back_img_url = $request->user()->back_img_url;
+        }
 
 
         /**
@@ -365,6 +384,9 @@ class UserController extends Controller
             'website_url' => $weburl,
             'photo_id' => $photoId,
             'steam_nickname' => $steam_nickname,
+            'discord_username' => $discord_username,
+            'email_notifications_new_message' => $email_notifications_new_message,
+            'back_img_url' => $back_img_url,
         ]);
 
         return \Redirect::back()->with('message',"Profile has been updated!");

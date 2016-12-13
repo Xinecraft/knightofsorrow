@@ -77,8 +77,11 @@ class MailController extends Controller
                 ->regarding($m)
                 ->deliver();
 
-            // Sends email to reciever
-            $this->dispatch(new SendNewMessageEmail($m, $request->user(), $receiver));
+            // Sends email to reciever if activated notifications
+            if($receiver->email_notifications_new_message == true)
+            {
+                $this->dispatch(new SendNewMessageEmail($m, $request->user(), $receiver));
+            }
 
             return redirect()->route('messages.show',$receiver->username)->with('message', "Message Sent!");
         }
