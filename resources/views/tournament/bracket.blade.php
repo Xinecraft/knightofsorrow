@@ -57,7 +57,9 @@
             @if($tournament->isRegistrationOpen()==6)
                 <h3 style="color:#1aff0d" class="text-center"><a href="kos-alpha-tournament/team/{{ $tournament->winnerteam->id }}">{{ $tournament->winnerteam->name }}</a> has won {{ $tournament->name }}</h3>
                 <h4 style="color:#ff9600" class="text-center"><a href="kos-alpha-tournament/team/{{ $tournament->secondteam->id }}">{{ $tournament->secondteam->name }}</a> is runner of {{ $tournament->name }}</h4>
-                <h5 style="color:yellow" class="text-center"><a href="kos-alpha-tournament/team/{{ $tournament->thirdteam->id }}">{{ $tournament->thirdteam->name }}</a> came third in {{ $tournament->name }}</h5>
+                    @if($tournament->thirdteam != null)
+                        <h5 style="color:yellow" class="text-center"><a href="kos-alpha-tournament/team/{{ $tournament->thirdteam->id }}">{{ $tournament->thirdteam->name }}</a> came third in {{ $tournament->name }}</h5>
+                    @endif
             @endif
         </div>
     </div>
