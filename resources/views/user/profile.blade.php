@@ -267,6 +267,12 @@
                                     </td>
                                 </tr>
                                 <tr>
+                                    <td class="tooltipster" title="Steam Username">Discord</td>
+                                    <td>
+                                        {!! $user->discordUsername !!}
+                                    </td>
+                                </tr>
+                                <tr>
                                     <td class="tooltipster" title="GameRanger Account Id">GR Account Id</td>
                                     <td>
                                         {!! $user->grId !!}
@@ -289,7 +295,7 @@
                             </table>
                         </div>
 
-                        <div class="col-xs-6 panel stats-tracker pad5" style="height: 224px !important;">
+                        <div class="col-xs-6 panel stats-tracker pad5" style="height: 261px !important;">
                             <h5 class="info-title" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Trophies</h5>
                             <ul class="list-group" style="overflow: auto;height: 186px;">
                             @forelse($user->trohpies as $trophy)

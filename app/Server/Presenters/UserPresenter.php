@@ -198,6 +198,15 @@ class UserPresenter extends BasePresenter
         return "<b>".htmlentities($this->wrappedObject->steam_nickname)."</b>";
     }
 
+    public function discordUsername()
+    {
+        if($this->wrappedObject->discord_username == null || $this->wrappedObject->discord_username == "")
+        {
+            return "<i class='small'>Unknown</i>";
+        }
+        return "<b>".htmlentities($this->wrappedObject->discord_username)."</b>";
+    }
+
     public function grId()
     {
         if($this->wrappedObject->gr_id == null || $this->wrappedObject->gr_id == "")
