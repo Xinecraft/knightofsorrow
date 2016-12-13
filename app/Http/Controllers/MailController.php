@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\MailRequest;
+use App\Jobs\SendNewMessageEmail;
 use App\Mail;
 use App\Server\Repositories\UserRepository;
 use App\User;
@@ -75,6 +76,9 @@ class MailController extends Controller
                 ->withBody(link_to_route('user.show',$request->user()->displayName(),$request->user()->username)." has sent you ".link_to_route('messages.show',"new message",$request->user()->username))
                 ->regarding($m)
                 ->deliver();
+
+            // Sends email to reciever
+            $this->dispatch(new SendNewMessageEmail($m, $request->user(), $receiver));
 
             return redirect()->route('messages.show',$receiver->username)->with('message', "Message Sent!");
         }
