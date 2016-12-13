@@ -8,7 +8,9 @@
             <p class=""><i>
                 <small>{!! link_to_route('user.show', $news->user->displayName(), [$news->user->username]) !!}</small>
                  -
-                <small class="text-muted">{{ $news->created_at->toDayDateTimeString() }}</small>
+                <small class="text-muted">{{ $news->created_at->toDayDateTimeString() }}
+                &squarf; {{ $news->getHumanReadableNewsType() }}
+                </small>
                 </i>
 
                 @if(Auth::check() && Auth::user()->isAdmin())

@@ -35,6 +35,24 @@
                 </div>
             </div>
 
+            <div class="form-group{{ $errors->has('news_type') ? ' has-error' : '' }}">
+                {!! Form::label('news_type', 'News Type', ['class' => 'col-xs-3 control-label']) !!}
+                <div class="col-xs-7">
+                    {!! Form::select('news_type',
+                    [
+                                        '0' => 'Global News',
+                                        '1' => 'Tournament News',
+                    ]
+                    ,null,['class' => 'form-control']) !!}
+                    @if ($errors->has('news_type'))
+                        <span class="help-block">
+                <strong>{{ $errors->first('news_type') }}</strong>
+                </span>
+                    @endif
+                </div>
+            </div>
+
+
             <div class="form-group">
                 <div class="col-sm-offset-3 col-sm-3">
                     <button type="submit" class="btn btn-info confirm">Update News</button>

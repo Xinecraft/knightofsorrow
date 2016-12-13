@@ -10,18 +10,7 @@
                     <span class="text-danger text-bold">31.186.250.32:10480</span>
                 </span>
             </li>
-            <!--<li class="list-group-item" style="padding: 5px 15px;">
-                <span class="small tooltipster" title="SWAT4 War Server">
-                    <img class="img img20" src="/images/swat.png" alt=""> -
-                    <span class="text-danger text-bold">31.186.251.227:10480</span>
-                </span>
-            </li> -->
-            <li class="list-group-item" style="padding: 5px 15px;">
-                <span class="small tooltipster" title="SWAT4 Discord Group">
-                    <img class="img img20" src="/images/logo_ds.png" alt=""> -
-                    <span class="text-danger text-bold">discord.gg/y4FKmV5</span>
-                </span>
-            </li>
+            <li class="list-group-item" style="padding: 5px 15px;"> <span class="small tooltipster" title="SWAT4 Discord Group"> <img class="img img20" src="/images/logo_ds.png" alt=""> - <span class="text-danger text-bold">discord.gg/y4FKmV5</span> </span> </li>
         </ul>
     </div>
 
@@ -91,13 +80,6 @@
             </ul>
         </div>
 
-        <div class="panel pad5 text-center" style="padding: 10px !important;">
-            <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Donate</h4>
-            <p>If you are capable then please contribute in development of server.</p>
-            <a target="_blank" class="btn btn-sm btn-primary" href="https://www.nfoservers.com/donate.pl?force_recipient=1&recipient=kinnngg786%40gmail.com">
-                <i class="fa fa-cc"></i>
-                Donate</a>
-        </div>
         <script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=5te3v5nh7fy&amp;m=7&amp;s=255&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=0" async="async"></script>
 
     @endif

@@ -97,7 +97,7 @@
         <div class="row">
             <div class="col-xs-4">
                 <div class="panel pad5" style="padding: 10px !important;">
-                    <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">On Going Tourny</h4>
+                    <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">On Going Tournament</h4>
                     @if($ongoing == null)
                         <p class=""><i>No Ongoing Tournament</i></p>
                     @else
@@ -148,8 +148,8 @@
                 <div class="panel pad5" style="padding: 10px !important;">
                     <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Notice</h4>
                     <p>This this <b class="text-danger">beta</b> launch of Tournament System. This is launched by KoS team as a small initiative to not let of beloved game die. Please participate, contribute and help however you can.</p>
-                    <p>Now we only support 2v2 Team tournaments but soon we will also support 1v1, 3v3, 4v4 etc.</p>
-                    <p>Most of our tournament will be organised in our official war server, i.e, <br><b><span style="color: deeppink">*UnLimited Gaming*</span> <span style="color: red">(Antics)</span> 1.0 Server</b></p>
+                    <p>Now we only support 2v2 & 3v3 Team tournaments but soon we will also support 1v1 & 4v4 etc.</p>
+                    <p>Most of our tournament will be organised in our official war server, i.e, <br><b><span style="color: #ff9600">|KoS| War Server</span> <sup style="color: #57c718">(Antics)</sup> 1.0 Server</b></p>
                     <p class=""><b>We invite all SWAT4 players who want to help us with the management and development of tournaments. </b><i>(Every contribution is appreciated)</i></p>
                     <p class="text-center text-bold"><span class="text-green">SWAT4 IS NOT</span> <span class="text-danger">DEAD</span></p>
                 </div>
@@ -162,10 +162,10 @@
 
             <div class="col-xs-4">
                 <div class="panel pad5" style="padding: 10px !important;">
-                    <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Videos</h4>
-                    <iframe id="kosTourVideo" width="100%" height="250" src="http://youtube.com/embed/7lDxjRfKjVM" frameborder="0" allowfullscreen></iframe>
+                    <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Promo & Videos</h4>
+                    <a href="http://youtube.com/embed/7lDxjRfKjVM?autoplay=1" class="fancybox-link fancybox.iframe" target="_blank"><img src="http://img.youtube.com/vi/7lDxjRfKjVM/0.jpg" width="100%"></a>
                     <hr>
-                    <iframe width="100%" height="250" src="https://www.youtube.com/embed/HKGONlWc8Jw" frameborder="0" allowfullscreen></iframe>
+                    <a href="https://www.youtube.com/embed/HKGONlWc8Jw?autoplay=1" class="fancybox-link fancybox.iframe" target="_blank"><img src="http://img.youtube.com/vi/HKGONlWc8Jw/0.jpg" width="100%"></a>
                 </div>
                 <div class="panel pad5" style="padding: 10px !important;">
                     <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Contributors</h4>
@@ -176,7 +176,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <a class="ainorange" href="{{ route('user.show',"6million") }}">Keyser Soze</a>
+                                <a class="ainorange" href="{{ route('user.show',"Keyser_Soze") }}">Keyser Soze</a>
                             </td>
                             <td>
                                 Idea,Design and Management
@@ -184,7 +184,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <a class="ainorange" href="http://knightofsorrow.tk/statistics/player/%C2%AB%7CSoH%7C%C2%BBeLectron%3CGST%3E">eLectron</a>
+                                <a class="ainorange" href="http://knightofsorrow.in/statistics/player/%C2%AB%7CSoH%7C%C2%BBeLectron%3CGST%3E">eLectron</a>
                             </td>
                             <td>
                                 Server & Support
@@ -244,7 +244,7 @@
 
             <div class="col-xs-4">
                 <div class="panel pad5" style="padding: 10px !important;">
-                    <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Upcoming Tourny</h4>
+                    <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Upcoming Tournament</h4>
                     @if($upcoming == null)
                         <p class=""><i>No Upcoming Tournament</i></p>
                     @else
@@ -294,7 +294,7 @@
                 </div>
 
                 <div class="panel pad5" style="padding: 10px !important;">
-                    <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Last Tourny</h4>
+                    <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Last Tournament</h4>
                     @if($last == null)
                     <p class=""><i>No Past Tournament</i></p>
                     @else
@@ -355,16 +355,18 @@
 
                     <div class="panel pad5" style="padding: 10px !important;">
                         <small class="pull-right"><i><b><a href="{{ route('news.index') }}">» view all</a></b></i></small>
-                        <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Latest News</h4>
+                        <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Tournament News</h4>
 
                         <ul class="no-padding">
-                            @foreach(\App\News::forSidebar() as $news)
+                            @forelse(\App\News::forSidebarTournament() as $news)
                                 <li class="list-group-item pad5">
                                     <h4 class="side-news-title nomargin"><a
                                                 href="{{ route('news.show',$news->summary) }}">{{ $news->title }}</a></h4>
                                     <p class="side-news-body">{{ str_limit(BBCode::stripBBCodeTags($news->text)) }}</p>
                                 </li>
-                            @endforeach
+                                @empty
+                                <h4 class="text-danger"><i>No Tournament news published yet!</i></h4>
+                            @endforelse
                         </ul>
                     </div>
             </div>

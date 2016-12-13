@@ -21,7 +21,7 @@ class CreateKTournamentsTable extends Migration
             $table->string('game_type')->default('Barricaded Suspects');
             $table->integer('photo_id')->unsigned()->nullable();
             $table->integer('bracket_type')->default(0);     // 0 -> RR, 2-> Single Elimination , 1-> Double Elimination etc
-            $table->integer('tournament_type')->default(0);     // 1v1 , 2v2 etc
+            $table->integer('tournament_type')->default(0);     // 1-> 1v1 ,0 -> 2v2 etc, 2-> 3v3
             $table->integer('minimum_participants');
             $table->integer('maximum_participants');
             $table->integer('rounds_per_match')->default(3);

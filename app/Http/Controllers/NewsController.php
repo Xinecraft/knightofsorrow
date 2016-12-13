@@ -69,6 +69,7 @@ class NewsController extends Controller
             'text' => $request->text,
             'summary' => $slug,
             'is_published' => true,
+            'news_type' => $request->news_type,
         ]);
 
         // Create notification
@@ -130,6 +131,7 @@ class NewsController extends Controller
             'text' => $request->text,
             'summary' => $slug,
             'is_published' => true,
+            'news_type' => $request->news_type,
         ]);
 
         return redirect()->route('news.show',$slug)->with('message','News Updated');

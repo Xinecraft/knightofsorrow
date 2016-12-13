@@ -81,9 +81,9 @@
                 {!! Form::select('tournament_type',
                 [
                                     '0' => '2v2 Team',
-                                    '1' => '1v1 Solo',
+                                    '2' => '3v3 Team',
                 ]
-                ,null,['class' => 'form-control','disabled']) !!}
+                ,null,['class' => 'form-control']) !!}
                 @if ($errors->has('tournament_type'))
                 <span class="help-block">
                 <strong>{{ $errors->first('tournament_type') }}</strong>

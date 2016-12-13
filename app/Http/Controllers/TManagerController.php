@@ -124,7 +124,7 @@ class TManagerController extends Controller
                     return redirect()->route('tournament.match.getcalculate',[$tournament->slug,$match->id])->with('error',"Error! Something is not correct. Please retry.");
                 }
             }
-            //Check if all team1_p1_score is present
+            //Check if all team1_p2_score is present
             foreach($request->team1_p2_score as $x)
             {
                 if($x==null || $x=="")
@@ -132,7 +132,7 @@ class TManagerController extends Controller
                     return redirect()->route('tournament.match.getcalculate',[$tournament->slug,$match->id])->with('error',"Error! Something is not correct. Please retry.");
                 }
             }
-            //Check if all team1_p1_score is present
+            //Check if all team2_p1_score is present
             foreach($request->team2_p1_score as $x)
             {
                 if($x==null || $x=="")
@@ -140,7 +140,7 @@ class TManagerController extends Controller
                     return redirect()->route('tournament.match.getcalculate',[$tournament->slug,$match->id])->with('error',"Error! Something is not correct. Please retry.");
                 }
             }
-            //Check if all team1_p1_score is present
+            //Check if all team2_p2_score is present
             foreach($request->team2_p2_score as $x)
             {
                 if($x==null || $x=="")
@@ -148,6 +148,27 @@ class TManagerController extends Controller
                     return redirect()->route('tournament.match.getcalculate',[$tournament->slug,$match->id])->with('error',"Error! Something is not correct. Please retry.");
                 }
             }
+
+            if($tournament->tournament_type == 2) // if 3v3
+            {
+                //Check if all team1_p3_score is present
+                foreach($request->team1_p3_score as $x)
+                {
+                    if($x==null || $x=="")
+                    {
+                        return redirect()->route('tournament.match.getcalculate',[$tournament->slug,$match->id])->with('error',"Error! Something is not correct. Please retry.");
+                    }
+                }
+                //Check if all team2_p3_score is present
+                foreach($request->team2_p3_score as $x)
+                {
+                    if($x==null || $x=="")
+                    {
+                        return redirect()->route('tournament.match.getcalculate',[$tournament->slug,$match->id])->with('error',"Error! Something is not correct. Please retry.");
+                    }
+                }
+            }
+
             //Check if all team1_p1_score is present
             foreach($request->winner as $x)
             {
@@ -226,13 +247,32 @@ class TManagerController extends Controller
             dd($item->count());
         }*/
 
-        $team1_p1_score_sum = array_sum($request->team1_p1_score);
-        $team1_p2_score_sum = array_sum($request->team1_p2_score);
-        $team2_p1_score_sum = array_sum($request->team2_p1_score);
-        $team2_p2_score_sum = array_sum($request->team2_p2_score);
+        /**
+         * If tournament type is 3v3 then take 3 players else only 2
+         * @TODO: Change if 1v1 implemented
+         */
+        if($tournament->tournament_type == 2) //3v3
+        {
+            $team1_p1_score_sum = array_sum($request->team1_p1_score);
+            $team1_p2_score_sum = array_sum($request->team1_p2_score);
+            $team1_p3_score_sum = array_sum($request->team1_p3_score);
+            $team2_p1_score_sum = array_sum($request->team2_p1_score);
+            $team2_p2_score_sum = array_sum($request->team2_p2_score);
+            $team2_p3_score_sum = array_sum($request->team2_p3_score);
 
-        $team1_total_score = $team1_p1_score_sum + $team1_p2_score_sum;
-        $team2_total_score = $team2_p1_score_sum + $team2_p2_score_sum;
+            $team1_total_score = $team1_p1_score_sum + $team1_p2_score_sum + $team1_p3_score_sum;
+            $team2_total_score = $team2_p1_score_sum + $team2_p2_score_sum + $team2_p3_score_sum;
+        }
+        else
+        {
+            $team1_p1_score_sum = array_sum($request->team1_p1_score);
+            $team1_p2_score_sum = array_sum($request->team1_p2_score);
+            $team2_p1_score_sum = array_sum($request->team2_p1_score);
+            $team2_p2_score_sum = array_sum($request->team2_p2_score);
+
+            $team1_total_score = $team1_p1_score_sum + $team1_p2_score_sum;
+            $team2_total_score = $team2_p1_score_sum + $team2_p2_score_sum;
+        }
 
         $match->k_team1_total_score = $team1_total_score;
         $match->k_team2_total_score = $team2_total_score;
@@ -289,18 +329,41 @@ class TManagerController extends Controller
         $team2->save();
 
         //SAVE INDI PLAYER STATS
-        $team1_p1 = $match->team1->playerselected->first();
-        $team1_p2 = $match->team1->playerselected->last();
-        $team2_p1 = $match->team2->playerselected->first();
-        $team2_p2 = $match->team2->playerselected->last();
+        if($tournament->tournament_type == 0)   //OK for 2v2
+        {
+            $team1_p1 = $match->team1->playerselected->first();
+            $team1_p2 = $match->team1->playerselected->last();
+            $team2_p1 = $match->team2->playerselected->first();
+            $team2_p2 = $match->team2->playerselected->last();
 
-        $match->team1->givescoretouser($team1_p1,$team1_p1_score_sum);
-        $match->team1->givescoretouser($team1_p2,$team1_p2_score_sum);
-        $match->team2->givescoretouser($team2_p1,$team2_p1_score_sum);
-        $match->team2->givescoretouser($team2_p2,$team2_p2_score_sum);
+            $match->team1->givescoretouser($team1_p1,$team1_p1_score_sum);
+            $match->team1->givescoretouser($team1_p2,$team1_p2_score_sum);
+            $match->team2->givescoretouser($team2_p1,$team2_p1_score_sum);
+            $match->team2->givescoretouser($team2_p2,$team2_p2_score_sum);
+        }
+        else if($tournament->tournament_type == 2)
+        {
+            $i=1;
+            foreach ($match->team1->playerselected as $player)
+            {
+                //${'team1_p'.$i} = $player;
+                $match->team1->givescoretouser($player,${'team1_p'.$i.'_score_sum'});
+                $i++;
+            }
+
+            $y=1;
+            foreach ($match->team2->playerselected as $player)
+            {
+                //${'team2_p'.$i} = $player;
+                $match->team2->givescoretouser($player,${'team2_p'.$y.'_score_sum'});
+                $y++;
+            }
+        }
+        //@TODO: Add else here for 1v1
 
 
-        //FOR DE/SW ONLY
+        //FOR DE/SE ONLY
+        //Check all match id (TBA) and change to team id as per match schedule
         if($tournament->bracket_type > 0)
         {
             // Check for all matches with has this match index for team 1...

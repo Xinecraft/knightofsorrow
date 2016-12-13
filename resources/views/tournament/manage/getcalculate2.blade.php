@@ -41,11 +41,10 @@
         <div class="container">
             <h1 class="ng-binding text-center"><a
                         href="{{ route('tournament.show',$tournament->slug) }}">{{ $tournament->name }}</a></h1>
-            <h3 class="ng-binding text-center">Calculation System for match #{{ $match->id }}</h3>
+            <h3 class="ng-binding text-center">Calculation System for match #{{ $match->match_index+1 }}</h3>
             <h4 class="text-center">{{ $match->team1->name }} <span
                         class="text-danger">vs</span> {{ $match->team2->name }}</h4>
-            <!-- ngIf: ctrl.tournament.twitch --><!--end .tournament-twitch-->
-        </div><!--end .container-->
+        </div>
     </div>
 @endsection
 
@@ -69,55 +68,43 @@
                     </div>
                     <div class="col-xs-6">
                         {!! Form::hidden('game_id[]',$round->id)  !!}
-                        <div class="form-team-form">
+                        <div class="form-team-form {{ $i=1 }}">
                             <h4 style="padding: 10px;background-color: #e2e2e2;margin-top: 0">Team {{ $match->team1->name }}</h4>
-                            <div class="form-group{{ $errors->has('team1_p1_score[]') ? ' has-error' : '' }}">
-                                {!! Form::label('team1_p1_score[]', $match->team1->playerselected->first()->displayName().' score', ['class' => 'col-md-4 control-label']) !!}
-                                <div class="col-md-6">
-                                {!! Form::text('team1_p1_score[]',null,['class' => 'form-control']) !!}
-                                @if ($errors->has('team1_p1_score[]'))
-                                <span class="help-block">
-                                <strong>{{ $errors->first('team1_p1_score[]') }}</strong>
+
+                            @foreach($match->team1->playerselected as $player)
+                                <div class="form-group{{ $errors->has('team1_p'.$i.'_score[]') ? ' has-error' : '' }}">
+                                    {!! Form::label('team1_p'.$i.'_score[]', $player->displayName().' score', ['class' => 'col-md-4 control-label']) !!}
+                                    <div class="col-md-6">
+                                        {!! Form::text('team1_p'.$i.'_score[]',null,['class' => 'form-control']) !!}
+                                        @if ($errors->has('team1_p'.$i.'_score[]'))
+                                            <span class="help-block">
+                                <strong>{{ $errors->first('team1_p'.$i.'_score[]') }}</strong>
                                 </span>
-                                @endif
+                                        @endif
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group{{ $errors->has('team1_p2_score[]') ? ' has-error' : '' }}">
-                                {!! Form::label('team1_p2_score[]', $match->team1->playerselected->last()->displayName().' score', ['class' => 'col-md-4 control-label']) !!}
-                                <div class="col-md-6">
-                                    {!! Form::text('team1_p2_score[]',null,['class' => 'form-control']) !!}
-                                    @if ($errors->has('team1_p2_score[]'))
-                                        <span class="help-block">
-                            <strong>{{ $errors->first('team1_p2_score[]') }}</strong>
-                            </span>
-                                    @endif
-                                </div>
-                            </div>
+                                <span class="{{ $i++ }}"></span>
+                            @endforeach
+
                         </div>
-                        <div class="form-team-form">
+                        <div class="form-team-form {{ $i=1 }}">
                             <h4 style="padding: 10px;background-color: #e2e2e2;margin-top: 0">Team {{ $match->team2->name }}</h4>
-                            <div class="form-group{{ $errors->has('team2_p1_score[]') ? ' has-error' : '' }}">
-                                {!! Form::label('team2_p1_score[]', $match->team2->playerselected->first()->displayName().' score', ['class' => 'col-md-4 control-label']) !!}
-                                <div class="col-md-6">
-                                    {!! Form::text('team2_p1_score[]',null,['class' => 'form-control']) !!}
-                                    @if ($errors->has('team2_p1_score[]'))
-                                        <span class="help-block">
-                                <strong>{{ $errors->first('team2_p1_score[]') }}</strong>
+
+                            @foreach($match->team2->playerselected as $player)
+                                <div class="form-group{{ $errors->has('team2_p'.$i.'_score[]') ? ' has-error' : '' }}">
+                                    {!! Form::label('team2_p'.$i.'_score[]', $player->displayName().' score', ['class' => 'col-md-4 control-label']) !!}
+                                    <div class="col-md-6">
+                                        {!! Form::text('team2_p'.$i.'_score[]',null,['class' => 'form-control']) !!}
+                                        @if ($errors->has('team2_p'.$i.'_score[]'))
+                                            <span class="help-block">
+                                <strong>{{ $errors->first('team2_p'.$i.'_score[]') }}</strong>
                                 </span>
-                                    @endif
+                                        @endif
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group{{ $errors->has('team2_p2_score[]') ? ' has-error' : '' }}">
-                                {!! Form::label('team2_p2_score[]', $match->team2->playerselected->last()->displayName().' score', ['class' => 'col-md-4 control-label']) !!}
-                                <div class="col-md-6">
-                                    {!! Form::text('team2_p2_score[]',null,['class' => 'form-control']) !!}
-                                    @if ($errors->has('team2_p2_score[]'))
-                                        <span class="help-block">
-                            <strong>{{ $errors->first('team2_p2_score[]') }}</strong>
-                            </span>
-                                    @endif
-                                </div>
-                            </div>
+                                <span class="{{ $i++ }}"></span>
+                            @endforeach
+
                         </div>
                         <hr>
                         <div class="form-group{{ $errors->has('winner[]') ? ' has-error' : '' }}">

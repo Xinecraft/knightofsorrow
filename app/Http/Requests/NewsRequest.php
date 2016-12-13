@@ -27,6 +27,7 @@ class NewsRequest extends Request
         return [
             'title' => 'required|min:10|max:255',
             'text' => 'required|min:25|max:5000',
+            'news_type' => 'required|in:0,1',
         ];
     }
 
@@ -37,6 +38,8 @@ class NewsRequest extends Request
             'text.required' => 'Please enter news body',
             'text.min' => 'Body must be atleast :min characters in length',
             'text.max' => 'Body must be atmost :max characters in length',
+            'news_type.required' => 'Please provide a news type',
+            'news_type.in' => 'News should be either Global or Tournament news',
         ];
     }
 }

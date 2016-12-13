@@ -864,6 +864,13 @@ $('.composemailusername').typeahead({
             }
         });
     });
+
+    $(".fancybox-link").fancybox({
+        'openEffect': 'elastic',
+        'closeEffect': 'elastic',
+        'openSpeed': 350,
+        'closeSpeed': 350
+    });
 });
 
 function convertEmoji(text) {

@@ -72,8 +72,13 @@ class KTournament extends Model
         {
             case 0:
                 return "2v2 Team";
+                break;
             case 1:
                 return "1v1 Team";
+                break;
+            case 2:
+                return "3v3 Team";
+                break;
             default:
                 return "2v2 Team";
         }
@@ -269,7 +274,7 @@ class KTournament extends Model
     /**
      * @return int
      */
-    public function maxPlayersPerTeam()
+    public function maxPlayersPerTeam_Old()
     {
         switch($this->tournament_type)
         {
@@ -283,6 +288,28 @@ class KTournament extends Model
                 return 2;
         }
     }
+
+    /**
+     * @return int
+     */
+    public function maxPlayersPerTeam()
+    {
+        switch($this->tournament_type)
+        {
+            case 0:
+                return 2;
+                break;
+            case 1:
+                return 1;
+                break;
+            case 2:
+                return 3;
+                break;
+            default:
+                return 0;
+        }
+    }
+
 
     /**
      * @return bool
