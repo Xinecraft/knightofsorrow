@@ -79,7 +79,7 @@
     ga('create', 'UA-85509636-1', 'auto');
     ga('send', 'pageview');
 
-    $(document).snowfall({flakeCount : 300, maxSpeed : 5, maxSize : 5, round : true});
+    $(document).snowfall({flakeCount : 200, maxSpeed : 4, maxSize : 5, round : true});
 </script>
 </body>
 </html>
