@@ -148,6 +148,7 @@
                                     @if(Auth::check() && Auth::user()->isAdmin())
                                         <br>
                                         <kbd class="text-muted small no-margin">Last Login IP : {{ $user->last_ipaddress }}</kbd>
+                                        <kbd class="text-muted small no-margin">{{ $user->email }}</kbd>
                                     @endif
                                 </div>
 
@@ -267,7 +268,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="tooltipster" title="Steam Username">Discord</td>
+                                    <td class="tooltipster" title="Discord Username">Discord</td>
                                     <td>
                                         {!! $user->discordUsername !!}
                                     </td>

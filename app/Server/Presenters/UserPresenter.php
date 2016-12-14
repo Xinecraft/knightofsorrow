@@ -104,7 +104,7 @@ class UserPresenter extends BasePresenter
 
         $age = $age->age;
         $ages = str_plural("year", $age);
-        return "<b>$age $ages old</b>";
+        return "<b class='tooltipster' title='".$this->wrappedObject->dob->format('F jS, Y')."'>$age $ages old</b>";
     }
 
     public function role()

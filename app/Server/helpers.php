@@ -275,8 +275,9 @@ function generateVideoEmbeds($text) {
 function linkify($string)
 {
     //$new_string = preg_replace("~(?:http|https)?(?:\:\/\/)?(?:www.)?(([A-Za-z0-9-]+\.)*[A-Za-z0-9-]+\.[A-Za-z]+)(?:\/.*)?~","<a target='_blank' href='http://www.knightofsorrow.in/redirects?to=\\0'>\\0</a>", $string);
-    $new_string = preg_replace("~(?:(https?)://([^\s<].+)|(www\.[^\s<]+?\.[^\s<]+))(?<![\.,:])~i","<a target='_blank' href='http://www.knightofsorrow.in/redirects?to=\\0'>\\0</a>", $string);
-
+    //$new_string = preg_replace("~(?:(https?)://([^\s<].+)|(www\.[^\s<]+?\.[^\s<]+))(?<![\.,:])~i","<a target='_blank' href='http://www.knightofsorrow.in/redirects?to=\\0'>\\0</a>", $string);
+    $new_string = preg_replace("~(?:(https?)://([^\s<].+)|(www\.[^\s<]+?\.[^\s<]+))(?<![\.,:])~i","<a target='_blank' href='http://www.knightofsorrow.in/redirects?to=\\0'><sup class='tooltipster' title='\\0'> [link]</sup></a> ", $string);
+    //$new_string = "";
     $regex = "~(?:(https?)://([^\s<]+)|(www\.[^\s<]+?\.[^\s<]+))(?<![\.,:])~i";
     if(preg_match($regex, $string, $matches))
     {
