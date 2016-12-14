@@ -68,6 +68,7 @@
 
 <script src="//js.pusher.com/2.2/pusher.min.js"></script>
 <script src="{{ elixir('js/all.js') }}"></script>
+<script src="/js/snowfall.jquery.min.js"></script>
 @yield('scripts')
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -78,6 +79,7 @@
     ga('create', 'UA-85509636-1', 'auto');
     ga('send', 'pageview');
 
+    $(document).snowfall({flakeCount : 300, maxSpeed : 5, maxSize : 5, round : true});
 </script>
 </body>
 </html>
