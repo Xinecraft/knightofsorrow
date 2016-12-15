@@ -14,7 +14,8 @@
             background-clip: padding-box;
         }
         .card span.card-title {
-            color: #FF5722;
+            color: #00abff;
+            text-shadow: 1px 1px 1px #3498db;
             font-size: 24px;
             font-weight: 300;
             text-transform: uppercase;
@@ -163,9 +164,9 @@
             <div class="col-xs-4">
                 <div class="panel pad5" style="padding: 10px !important;">
                     <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Promo & Videos</h4>
-                    <a href="http://youtube.com/embed/7lDxjRfKjVM?autoplay=1" class="fancybox-link fancybox.iframe" target="_blank"><img src="http://img.youtube.com/vi/7lDxjRfKjVM/0.jpg" width="100%"></a>
+                    <a href="http://youtube.com/embed/ims9FRpRZ_c?autoplay=1" class="fancybox-link fancybox.iframe" target="_blank"><img src="http://img.youtube.com/vi/ims9FRpRZ_c/0.jpg" width="100%"></a>
                     <hr>
-                    <a href="https://www.youtube.com/embed/HKGONlWc8Jw?autoplay=1" class="fancybox-link fancybox.iframe" target="_blank"><img src="http://img.youtube.com/vi/HKGONlWc8Jw/0.jpg" width="100%"></a>
+                    <a href="http://youtube.com/embed/7lDxjRfKjVM?autoplay=1" class="fancybox-link fancybox.iframe" target="_blank"><img src="http://img.youtube.com/vi/7lDxjRfKjVM/0.jpg" width="100%"></a>
                 </div>
                 <div class="panel pad5" style="padding: 10px !important;">
                     <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Contributors</h4>
