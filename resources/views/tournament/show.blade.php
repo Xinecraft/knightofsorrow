@@ -144,13 +144,13 @@
                             <tr>
                                 <td>Minimum Participants</td>
                                 <td>
-                                    <b>{{ $tournament->minimum_participants }} participants</b>
+                                    <b>{{ $tournament->minimum_participants }} teams</b>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Maximum Participants</td>
                                 <td>
-                                    <b>{{ $tournament->maximum_participants }} participants</b>
+                                    <b>{{ $tournament->maximum_participants }} teams</b>
                                 </td>
                             </tr>
                             <tr>
@@ -158,7 +158,7 @@
                                     Applied Participants
                                 </td>
                                 <td>
-                                    <b>{{ $tournament->teams->count() }}</b>
+                                    <b>{{ $tournament->teams->count() }} teams</b>
                                 </td>
                             </tr>
                             <tr>
@@ -166,7 +166,7 @@
                                     Qualified Participants
                                 </td>
                                 <td>
-                                    <b>{{ $tournament->teams()->where('team_status','1')->count() }}</b>
+                                    <b>{{ $tournament->teams()->where('team_status','1')->count() }} teams</b>
                                 </td>
                             </tr>
                             </tbody>
