@@ -282,7 +282,7 @@ function linkify($string)
     if(preg_match($regex, $string, $matches))
     {
         $firstURL = $matches[0];
-        $new_string = $new_string."<a href='http://www.knightofsorrow.in/redirects?to=$firstURL' target='_blank'><img class='img' style='width:100%;border:1px solid #e1e1e1'  src='http://free.pagepeeker.com/v2/thumbs.php?size=s&url=$firstURL'></a>";
+        $new_string = $new_string."<a href='http://www.knightofsorrow.in/redirects?to=$firstURL' target='_blank'><img class='img' style='width:100%;border:1px solid #e1e1e1'  src='http://free.pagepeeker.com/v2/thumbs.php?size=m&url=$firstURL'></a>";
     }
     return $new_string;
 }
