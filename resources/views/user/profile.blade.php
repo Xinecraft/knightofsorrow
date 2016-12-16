@@ -5,6 +5,7 @@
         body
         {
             background: url("{{ $user->back_img_url }}") fixed !important;
+			background-size: cover !important;
         }
         @endif
         .about-well img
