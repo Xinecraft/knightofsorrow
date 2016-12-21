@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-           <a class="navbar-brand" href="{{ route('home') }}"><img src="{{ url('images/mainlogo.png') }}" alt=""
+           <a class="navbar-brand" href="{{ route('home') }}"><img src="{{ url('images/mainlogo_christmas.png') }}" alt=""
                                                                     height="34" style="height: 34px;"></a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
