@@ -29,7 +29,7 @@
                 <tr>
                     <td>Team Position</td>
                     <td>
-                        {!! $team->team_position or "<i class='small text-muted'>Not available</i>"  !!}
+                        {!! "<b>".$team->team_position."</b>" or "<i class='small text-muted'>Not available</i>"  !!}
                     </td>
                 </tr>
                 <tr>
@@ -143,7 +143,7 @@
                     <tbody id="">
                     @foreach($team->playerselected()->get() as $user)
                         <tr class="item">
-                            <td class="text-green"><b>{{ $user->pivot->user_position or "*" }}</b></td>
+                            <td class="text-green"><b>{{ "#" }}</b></td>
                             <td class="text-muted"><img class="tooltipster" title="{{ $user->country->countryName }}" src="/images/flags/20_shiny/{{ $user->country->countryCode }}.png" alt="" height="22px"></td>
                             <td class="color-main text-bold">
                                 <a class="" style="margin-right:1em" href="{{ route('user.show',$user->username) }}">

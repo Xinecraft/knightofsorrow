@@ -128,6 +128,15 @@
                                 </div>
                             </div>
                         </div>
+
+                        @if($match->{"game".$round->game_index."_screenshot"} != null && $match->{"game".$round->game_index."_screenshot"} != "")
+                        <div class="col-xs-12">
+                            <div class="" style="margin: 20px;">
+                            <img class="img img-responsive img-thumbnail" style="width: 100%;height: 500px;" src="{{ $match->{"game".$round->game_index."_screenshot"} }}" alt="">
+                            </div>
+                        </div>
+                        @endif
+
                     </div>
             </div>
         @empty
@@ -136,5 +145,25 @@
                 <h3></h3>
             </div>
         @endforelse
-    </div>
+</div>
+
+    @if(Auth::check() && Auth::user()->canManageTournament($tournament))
+        <div class="panel col-xs-12 padding10">
+            {!! Form::open(['class' => 'form-horizontal']) !!}
+
+            <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                {!! Form::label('name', 'Name', ['class' => 'col-xs-4 control-label']) !!}
+                <div class="col-xs-6">
+                    {!! Form::text('name',null,['class' => 'form-control']) !!}
+                    @if ($errors->has('name'))
+                        <span class="help-block">
+                <strong>{{ $errors->first('name') }}</strong>
+                </span>
+                    @endif
+                </div>
+            </div>
+
+            {!! Form::close() !!}
+        </div>
+    @endif
 @endsection

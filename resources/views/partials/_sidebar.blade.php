@@ -80,8 +80,13 @@
             </ul>
         </div>
 
-        <script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=5te3v5nh7fy&amp;m=7&amp;s=255&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=0" async="async"></script>
-
+        <div class="panel pad5 text-center" style="padding: 10px !important;">
+            <h4 class="" style="margin:0 0 10px 0;border-bottom:2px dashed grey">Donate</h4>
+            <p>If you are capable then please contribute in development of server.</p>
+            <a target="_blank" class="btn btn-sm btn-primary" href="https://www.nfoservers.com/donate.pl?force_recipient=1&recipient=kinnngg786%40gmail.com">
+                <i class="fa fa-cc"></i>
+                Donate</a>
+        </div>
     @endif
 
 </aside>

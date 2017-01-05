@@ -785,7 +785,7 @@ class TournamentController extends Controller
                 array_push($games,$game);
             }
         }
-
+        //dd($match);
         return view('tournament.showmatch')->with('tournament',$tournament)->with('match',$match)->with('games',$games);
     }
 
