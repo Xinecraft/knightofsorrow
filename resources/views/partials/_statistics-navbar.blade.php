@@ -20,7 +20,7 @@
                 {{--<li class="{{ set_active(['statistics/charts*']) }}">{!! link_to_route('chart-reports','Charts') !!}</li>--}}
                 <li class="{{ set_active(['statistics/top-10*']) }}">{!! link_to_route('top10','Top 10') !!}</li>
                 {{--<li class="{{ set_active_or_disabled(['statistics/player/*']) }}"><a>Player Details</a></li>--}}
-                <li class="{{ set_active(['statistics/war-round-reports*']) }}">{!! link_to_route('war-round-reports','2v2 Server') !!}</li>
+                <li class="{{ set_active(['statistics/war-round-reports*']) }}">{!! link_to_route('war-round-reports','War Server') !!}</li>
             </ul>
             <ul class="navbar-right nav navbar-nav">
                 <li class="{{ set_active_or_disabled(['statistics/player/*']) }}"><a>Player Details</a></li>

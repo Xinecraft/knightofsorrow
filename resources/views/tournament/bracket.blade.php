@@ -237,7 +237,7 @@
 
                                     <div class="col-xs-3" style="border-left: 5px solid dodgerblue;border-right: 5px solid dodgerblue">
                                         <div class="">
-                                            <p>Venue: <b>KoS War Server</b><br>
+                                            <p>Venue: <b>War Server</b><br>
                                                 {{ $match->starts_at->toDayDateTimeString() }}<br>
                                                 <small>({{ $match->starts_at->diffForHumans() }})</small>
                                             </p>
@@ -312,7 +312,7 @@
 
                                     <div class="col-xs-3" style="border-left: 5px solid dodgerblue;border-right: 5px solid dodgerblue">
                                         <div class="">
-                                            <p>Venue: <b>Unlimited Gaming</b><br>
+                                            <p>Venue: <b>War Server</b><br>
                                                 {{ $match->starts_at->toDayDateTimeString() }}<br>
                                                 <small>({{ $match->starts_at->diffForHumans() }})</small>
                                             </p>

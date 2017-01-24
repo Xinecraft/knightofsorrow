@@ -7,7 +7,7 @@
         @include('partials._statistics-navbar')
 
         @if(Request::route()->uri() == 'statistics/war-round-reports')
-            <div style="background: #090b0a" class="text-center alert text-bold"><span style="color: deeppink">*UnLimited Gaming*</span> <span style="color: red">(Antics)</span></div>
+            <div style="background: #090b0a" class="text-center alert text-bold"><span style="color: deeppink">War Server</span> <span style="color: red">(Antics)</span></div>
         @endif
 
         <div class="rounds panel panel-default">
