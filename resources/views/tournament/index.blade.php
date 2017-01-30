@@ -239,6 +239,14 @@
                                 Technical Support
                             </td>
                         </tr>
+                        <tr>
+                            <td>
+                                <a class="ainorange" href="{{ route('user.show',"wiimourad") }}">Mourad</a>
+                            </td>
+                            <td>
+                                Stream &amp; Commentating
+                            </td>
+                        </tr>
                     </table>
                     </div>
             </div>

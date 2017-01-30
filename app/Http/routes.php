@@ -286,6 +286,7 @@ Route::post('/tournament/{slug}/team/{id}/open', ['middleware' => 'auth', 'as' =
 Route::post('/tournament/{slug}/team/{id}/handleteams', ['middleware' => 'auth', 'as' => 'tournament.team.handleteams', 'uses' => 'TournamentController@handleTeamsForManager']);
 Route::get('/tournament', [ 'as' => 'tournament.index', 'uses' => 'TournamentController@index']);
 Route::get('/tournament/{slug}/match/{id}/', [ 'as' => 'tournament.match.show', 'uses' => 'TournamentController@getTournamentMatch']);
+Route::post('/tournament/{slug}/match/{id}/', [ 'as' => 'tournament.match.show.post', 'uses' => 'TManagerController@postUploadShots']);
 
 Route::get('/tournament/{slug}/match/{id}/calculate', ['middleware' => 'auth', 'as' => 'tournament.match.getcalculate', 'uses' => 'TManagerController@getCalculateMatch']);
 Route::any('/tournament/{slug}/match/{id}/calculatex', ['middleware' => 'auth', 'as' => 'tournament.match.postcalculate', 'uses' => 'TManagerController@postCalculateMatch']);

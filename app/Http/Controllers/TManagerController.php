@@ -448,4 +448,33 @@ class TManagerController extends Controller
 
         return redirect()->route('tournament.show',[$tournament->slug])->with('message',"Success! Match data has been recorded.");
     }
+
+    //update screenshots of match
+    public function postUploadShots($slug,$id,Request $request)
+    {
+        $tournament = KTournament::enabled()->whereSlug($slug)->first();
+        $match = KMatch::find($id);
+
+        if (!$tournament || !$match)
+            abort(404);
+
+        //If has enough permissions or not
+        if (!$request->user()->canManageTournament($tournament)) {
+            return redirect()->home();
+        }
+
+        $i1 = $request->game1_screenshot == "" ? null : $request->game1_screenshot;
+        $i2 = $request->game2_screenshot == "" ? null : $request->game2_screenshot;
+        $i3 = $request->game3_screenshot == "" ? null : $request->game3_screenshot;
+        $i4 = $request->game4_screenshot == "" ? null : $request->game4_screenshot;
+
+        $match->game1_screenshot = $i1;
+        $match->game2_screenshot = $i2;
+        $match->game3_screenshot = $i3;
+        $match->game4_screenshot = $i4;
+
+        $match->save();
+
+        return back()->with('message','Screenshots updated');
+    }
 }

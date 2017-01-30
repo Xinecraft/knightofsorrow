@@ -145,7 +145,74 @@
                 <h3></h3>
             </div>
         @endforelse
+
+    @if(Auth::check() && Auth::user()->canManageTournament($tournament))
+    <div class="col-xs-8 panel panel-default col-xs-offset-2 no-padding">
+        <div class="panel-heading">
+            <b>Screenshots Image URL</b>
+        </div>
+        <div class="panel-body">
+            {!! Form::model($match,['class' => 'form-horizontal']) !!}
+            <div class="form-group{{ $errors->has('game1_screenshot') ? ' has-error' : '' }}">
+                {!! Form::label('game1_screenshot', 'Round 1 Image URL', ['class' => 'col-xs-3 control-label']) !!}
+                <div class="col-xs-7">
+                    {!! Form::text('game1_screenshot',null,['class' => 'form-control']) !!}
+                    @if ($errors->has('game1_screenshot'))
+                        <span class="help-block">
+            <strong>{{ $errors->first('img1') }}</strong>
+            </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="form-group{{ $errors->has('game2_screenshot') ? ' has-error' : '' }}">
+                {!! Form::label('game2_screenshot', 'Round 2 Image URL', ['class' => 'col-xs-3 control-label']) !!}
+                <div class="col-xs-7">
+                    {!! Form::text('game2_screenshot',null,['class' => 'form-control']) !!}
+                    @if ($errors->has('game2_screenshot'))
+                        <span class="help-block">
+            <strong>{{ $errors->first('game2_screenshot') }}</strong>
+            </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="form-group{{ $errors->has('game3_screenshot') ? ' has-error' : '' }}">
+                {!! Form::label('game3_screenshot', 'Round 3 Image URL', ['class' => 'col-xs-3 control-label']) !!}
+                <div class="col-xs-7">
+                    {!! Form::text('game3_screenshot',null,['class' => 'form-control']) !!}
+                    @if ($errors->has('game3_screenshot'))
+                        <span class="help-block">
+            <strong>{{ $errors->first('game3_screenshot') }}</strong>
+            </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="form-group{{ $errors->has('game4_screenshot') ? ' has-error' : '' }}">
+                {!! Form::label('game4_screenshot', 'Round 4 Image URL', ['class' => 'col-xs-3 control-label']) !!}
+                <div class="col-xs-7">
+                    {!! Form::text('game4_screenshot',null,['class' => 'form-control']) !!}
+                    @if ($errors->has('game4_screenshot'))
+                        <span class="help-block">
+            <strong>{{ $errors->first('game4_screenshot') }}</strong>
+            </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-3">
+                    <button type="submit" class="btn btn-info confirm">Save</button>
+                </div>
+            </div>
+
+            {!! Form::close() !!}
+        </div>
+    </div>
+    @endif
+
 </div>
 
-    
+
 @endsection
