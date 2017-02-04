@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e189236c-c3e7-488f-b221-e9fb727e1c1d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tournament/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/tournament/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tournament/worldclock.blade.php" afterPath="$PROJECT_DIR$/resources/views/tournament/worldclock.blade.php" />
     </list>
     <ignored path="kos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -80,7 +78,7 @@
         <entry file="file://$PROJECT_DIR$/resources/views/tournament/worldclock.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="269">
-              <caret line="42" column="227" selection-start-line="42" selection-start-column="227" selection-end-line="42" selection-end-column="227" />
+              <caret line="42" column="205" selection-start-line="42" selection-start-column="205" selection-end-line="42" selection-end-column="205" />
               <folding>
                 <element signature="e#949#1025#0#HTML" expanded="true" />
                 <element signature="e#1511#1588#0#HTML" expanded="true" />
@@ -458,15 +456,15 @@
       <workItem from="1482652728076" duration="4797000" />
       <workItem from="1483099400673" duration="72000" />
       <workItem from="1485809661244" duration="3442000" />
-      <workItem from="1486205561238" duration="8529000" />
+      <workItem from="1486205561238" duration="9739000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130783000" />
+    <option name="totallyTimeSpent" value="131993000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -844,14 +842,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Comment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="40" column="82" selection-start-line="40" selection-start-column="82" selection-end-line="40" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/tournament/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="283">
@@ -919,10 +909,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Comment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="40" column="82" selection-start-line="40" selection-start-column="82" selection-end-line="40" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/tournament/worldclock.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="269">
-          <caret line="42" column="227" selection-start-line="42" selection-start-column="227" selection-end-line="42" selection-end-column="227" />
+          <caret line="42" column="205" selection-start-line="42" selection-start-column="205" selection-end-line="42" selection-end-column="205" />
           <folding>
             <element signature="e#949#1025#0#HTML" expanded="true" />
             <element signature="e#1511#1588#0#HTML" expanded="true" />
