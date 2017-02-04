@@ -269,6 +269,7 @@ Route::get('/tournament/calendar', [ 'as' => 'tournament.calendar', 'uses' => 'T
 Route::get('/tournament/ranking/single', [ 'as' => 'tournament.ranking.single', 'uses' => 'TournamentController@getRatingSingle']);
 Route::get('/tournament/ranking/teams', [ 'as' => 'tournament.ranking.teams', 'uses' => 'TournamentController@getRatingTeams']);
 Route::get('/tournament/guidelines', [ 'as' => 'tournament.guidelines', 'uses' => 'TournamentController@getGuideline']);
+Route::get('/tournament/worldclock', [ 'as' => 'tournament.wc', 'uses' => 'TournamentController@getWorldClock']);
 Route::get('/tournament/create', ['middleware' => ['auth','admin'], 'as' => 'tournament.create', 'uses' => 'TournamentController@create']);
 Route::post('/tournament/create', ['middleware' => ['auth','admin'], 'as' => 'tournament.store', 'uses' => 'TournamentController@store']);
 Route::get('/tournament/{slug}', ['as' => 'tournament.show', 'uses' => 'TournamentController@show']);

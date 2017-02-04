@@ -79,6 +79,11 @@ class TournamentController extends Controller
         return view('tournament.guidelines');
     }
 
+    public function getWorldClock()
+    {
+        return view('tournament.worldclock');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
