@@ -15,6 +15,7 @@
   "dependencies": {
     "tooltipster": "~3.3.0",
     "typeahead.js": "~0.11.1",
-    "dropzone": "~4.0.1"
+    "dropzone": "~4.0.1",
+    "embed-js": "^4.1.12"
   }
 }

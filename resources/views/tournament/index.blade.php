@@ -188,7 +188,7 @@
                                 <a class="ainorange" href="http://knightofsorrow.in/statistics/player/%C2%AB%7CSoH%7C%C2%BBeLectron%3CGST%3E">eLectron</a>
                             </td>
                             <td>
-                                Server & Support
+                                Support
                             </td>
                         </tr>
                         <tr>
@@ -205,14 +205,6 @@
                             </td>
                             <td>
                                 Support & Suggestions
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a class="ainorange" href="{{ route('user.show',"BaDTimE") }}">|MyT|BaDTimE</a>
-                            </td>
-                            <td>
-                                Technical Support
                             </td>
                         </tr>
                         <tr>

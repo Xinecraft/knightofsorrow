@@ -35,11 +35,11 @@ class Comment extends Model
 
     public function showBody()
     {
-        \Emojione\Emojione::$ascii = true; 
+        \Emojione\Emojione::$ascii = true;
         \Emojione\Emojione::$imagePathPNG = '/components/emojione/assets/png/';
         \Emojione\Emojione::$cacheBustParam = '';
         $data = \Emojione\Emojione::toImage(nl2br(htmlspecialchars($this->body)));
 
-        return embedYoutubeForComment($data);
+        return linkify_new($data);
     }
 }
