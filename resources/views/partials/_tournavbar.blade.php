@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+k<nav class="navbar navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -20,9 +20,10 @@
                 <li class="{{ set_active(['tournament/guidelines*']) }}">{!! link_to_route('tournament.guidelines','Rules') !!}</li>
                 <li class="{{ set_active(['tournament/livestream*']) }}">{!! link_to_route('tournament.stream','Stream') !!}</li>
                 <li class="{{ set_active(['tournament/worldclock*']) }}">{!! link_to_route('tournament.wc','World Clock') !!}</li>
+				<li class=""><a href="https://www.youtube.com/channel/UCWMOnI1wWm6FuNf45RG-JkA" target="_blank">Videos</a></li>
                 {{--<li class="{{ set_active(['statistics/charts*']) }}">{!! link_to_route('chart-reports','Charts') !!}</li>--}}
                 {{--<li class="{{ set_active_or_disabled(['statistics/player/*']) }}"><a>Player Details</a></li>--}}
-            </ul>
+			</ul>
 
             @if(Request::route()->getName() == "tournament.show")
             <ul class="navbar-right nav navbar-nav">
