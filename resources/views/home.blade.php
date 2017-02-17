@@ -19,6 +19,12 @@
         {
             word-break: break-all;
         }
+        .adminsrvcommandbtn
+        {
+            border-radius: 0px;
+            margin-bottom: 10px;
+            margin-right: 5px;
+        }
     </style>
 @endsection
 @section('main-container')
@@ -72,7 +78,31 @@
                         </div>
                         @if(Auth::check() && Auth::user()->isAdmin())
                             <div class="panel-footer">
+                                {!! Form::open(['route' => 'kossrvadmin.commands','id' => 'adminsrvcommandform']) !!}
+                                <button id="playerBTbtn" data-type="balanceteams" title="Balance Teams"
+                                        class="adminsrvcommandbtn tooltipster btn btn-primary btn-xs">BalanceTeams
+                                </button>
+                                <button id="playerLTbtn" data-type="lockteams" title="Toggle Lock Teams"
+                                        class="adminsrvcommandbtn tooltipster btn btn-primary btn-xs">LockTeams
+                                </button>
+                                <button id="playerSAbtn" data-type="switchall" title="Switch All"
+                                        class="adminsrvcommandbtn tooltipster btn btn-primary btn-xs">SwitchAll
+                                </button>
+                                <button id="playerPausebtn" data-type="pause" title="Toggle Pause Game"
+                                        class="adminsrvcommandbtn tooltipster btn btn-info btn-xs">Pause
+                                </button>
+                                <button id="playerTONbtn" data-type="taseronly true" title="Taseronly On"
+                                        class="adminsrvcommandbtn tooltipster btn btn-info btn-xs">Taser On
+                                </button>
+                                <button id="playerTOFFbtn" data-type="taseronly false" title="Taseronly Off"
+                                        class="adminsrvcommandbtn tooltipster btn btn-info btn-xs">Taser Off
+                                </button>
+                                <button id="playerRestartbtn" data-type="restart" title="Restart"
+                                        class="adminsrvcommandbtn tooltipster btn btn-danger btn-xs">Restart
+                                </button>
+
                                 <div id="admincommand-input-group-error" class="help-block"></div>
+                                {!! Form::close() !!}
                             </div>
                         @endif
                     </div>
@@ -1006,7 +1036,50 @@
                 $(document).ready(function () {
                     sv.init({url: '/api/server-query'});
 
-                    //Admin commands ajax
+                    //Admin server commands ajax
+                    $('body').on('click','.adminsrvcommandbtn',function(e) {
+
+                        $('#admincommand-input-group-error').html('');
+
+                        $.ajax({
+                            type: 'POST',
+                            url: '/kossrvadmin',
+                            data: $('#adminsrvcommandform').serialize() + "&action=" + $(this).data('type'),
+                            dataType: 'json',
+                            encode: true,
+                            beforeSend: function () {
+                                $(this).hide();
+                                $("#admincommand-input-group-error").html("<option class='text-center small'>Executing Command!  Plz wait...</option>");
+                            },
+                            success: function (data) {
+                                $(this).show();
+                                $('#admincommand-input-group-error').html('');
+                            },
+                            error: function (data) {
+
+                                var errors = data.responseJSON;
+                                var message = "Unknown error! reload page.";
+                                switch (data.status) {
+                                    case 422:
+                                        message = errors.error;
+                                        break;
+                                    case 500:
+                                        message = "Server error! please reload the page.";
+                                        break;
+                                    default:
+                                        message = data.statusText;
+                                        break;
+                                }
+
+                                $(this).show();
+                                $('#admincommand-input-group-error').html("");
+                                $('#admincommand-input-group-error').html(message);
+                            }
+                        });
+                        e.preventDefault();
+                    });
+
+                    //Admin players commands ajax
                     $('body').on('click','.admincommandbtn',function(e) {
 
                         $('#admincommand-input-group-error').html('');

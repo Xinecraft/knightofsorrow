@@ -330,9 +330,19 @@ class ServerController extends Controller
      */
     public function adminCommand(Request $request)
     {
-        if(!$request->has('selected_player') || !$request->has('action'))
+        if(!$request->has('action'))
+        {
+            $data = ['error' => '<option class="text-center small text-danger">Error! No action specified!.</option>'];
+            return response($data,422);
+        }
+        if(!$request->has('selected_player') && ($request->action=='forcemute' || $request->action=='kick' || $request->action=='kickban' || $request->action=='kick' || $request->action=='forceview' || $request->action=='forcespec' || $request->action=='forcejoin' || $request->action=='switchteam' || $request->action=='forcelesslethal' || $request->action=='forcenoweapons' || $request->action=='forcename'))
         {
             $data = ['error' => '<option class="text-center small text-danger">Error! No Player Selected.</option>'];
+            return response($data,422);
+        }
+        if($request->action == 'forcename' && (!$request->has('forcenametxt') || $request->forcenametxt == ""))
+        {
+            $data = ['error' => '<option class="text-center small text-danger">Error! New player name can\'t be Blank.</option>'];
             return response($data,422);
         }
 
@@ -340,7 +350,15 @@ class ServerController extends Controller
         $player = $request->get('selected_player');
         $action = $request->get('action');
 
-        $command = env("ADMIN_COMMAND_SECRET")." ".$admin." ".$action." ".$player;
+        if($action == 'forcename')
+        {
+            $newname = $request->get('forcenametxt');
+            $command = env("ADMIN_COMMAND_SECRET")." ".$admin." ".$action." ".$player." ".$newname;
+        }
+        else
+        {
+            $command = env("ADMIN_COMMAND_SECRET")." ".$admin." ".$action." ".$player;
+        }
 
         //dd($command);
 

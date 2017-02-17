@@ -257,6 +257,7 @@ Route::post('banlist/{id}/comments',['middleware' => 'auth', 'as' => 'ban-commen
 Route::get('/download/adminmoddata/masterbanlist.txt',['as' => 'bans.txt', 'uses' => 'BanController@masterbantxt']);
 
 Route::post('/kosadmin',['middleware' => ['auth', 'admin'],'as' => 'kosadmin.commands', 'uses' => 'ServerController@adminCommand']);
+Route::post('/kossrvadmin',['middleware' => ['auth', 'admin'],'as' => 'kossrvadmin.commands', 'uses' => 'ServerController@adminCommand']);
 Route::get('liveplayeraction',['middleware' => ['auth','admin'], 'as' => 'liveplayeraction', 'uses' => 'ServerController@liveplayeraction']);
 
 Route::post('/kost', ['as' => 'kost', 'uses' => 'KostController@kost']);

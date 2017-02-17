@@ -132,7 +132,7 @@
                         @if($match->{"game".$round->game_index."_screenshot"} != null && $match->{"game".$round->game_index."_screenshot"} != "")
                         <div class="col-xs-12">
                             <div class="" style="margin: 20px;">
-                            <img class="img img-responsive img-thumbnail" style="width: 100%;height: 500px;" src="{{ $match->{"game".$round->game_index."_screenshot"} }}" alt="">
+                            <img class="img img-responsive img-thumbnail" style="width: 100%;max-height: 700px;" src="{{ $match->{"game".$round->game_index."_screenshot"} }}" alt="">
                             </div>
                         </div>
                         @endif
