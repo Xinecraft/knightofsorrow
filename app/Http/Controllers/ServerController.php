@@ -305,7 +305,7 @@ class ServerController extends Controller
             $MsgFormated = "[c=ffff00][u][b]" . $Username . "[\\b][\\u][\\c] $userLvl: [c=FFFFFF]" . $Msg;
         }
 
-        $txtip = "127.0.0.1";
+        $txtip = "31.186.250.32";
         $txtportnum = "10485";
         $sock = fsockopen("udp://" . $txtip, $txtportnum, $errno, $errstr, 2);
         if (!$sock) {
@@ -362,7 +362,7 @@ class ServerController extends Controller
 
         //dd($command);
 
-        $txtip = "127.0.0.1";
+        $txtip = "31.186.250.32";
         $txtportnum = "10485";
         $sock = fsockopen("udp://" . $txtip, $txtportnum, $errno, $errstr, 2);
         if (!$sock) {
