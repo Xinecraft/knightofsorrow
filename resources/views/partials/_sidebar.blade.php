@@ -7,7 +7,13 @@
             <li class="list-group-item" style="padding: 5px 15px;">
                 <span class="small tooltipster" title="SWAT4 Normal Server">
                     <img class="img img20" src="/images/swat.png" alt=""> -
-                    <span class="text-danger text-bold">31.186.250.32:10480</span>
+                    <span class="text-danger text-bold">88.99.170.219:10480</span>
+                </span>
+            </li>
+            <li class="list-group-item" style="padding: 5px 15px;">
+                <span class="small tooltipster" title="SWAT4 War Server">
+                    <img class="img img20" src="/images/swat.png" alt=""> -
+                    <span class="text-danger text-bold">81.171.2.181:10480</span>
                 </span>
             </li>
             <li class="list-group-item" style="padding: 5px 15px;"> <span class="small tooltipster" title="SWAT4 Discord Group"> <img class="img img20" src="/images/logo_ds.png" alt=""> - <span class="text-danger text-bold">discord.gg/y4FKmV5</span> </span> </li>
