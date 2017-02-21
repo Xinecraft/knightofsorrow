@@ -306,7 +306,13 @@ class ApiController extends Controller
              * Else if only one found
              */
             elseif ($players->count() == 1) {
+                $al = "";
                 $player = $players->first();
+                $aliases = $player->aliases()->whereNotIn('name',\App\DeletedPlayer::lists('player_name'))->where('name','!=',$player->name)->limit(10)->get();
+                foreach ($aliases->random(3) as $alias)
+                {
+                    $al = $al . $alias->name." - ";
+                }
 
                 /*$data = [
                     'player' => $player,
@@ -316,7 +322,15 @@ class ApiController extends Controller
                 printf("[c=FFFF00][b][u]%s[\\u][\\b][\\c] is from [b][c=EBFFFF]%s[\\c][\\b]\n", $player->name, $player->country->countryName);
                 printf("[b][c=FFFF00][u]%s[\\u][\\c][\\b]'s Position: [c=FFFEEB][b][u]#%d[\\u][\\b][\\c] [c=00FF00]-[\\c] Score: [c=FFFEEB][b][u]%d[\\u][\\b][\\c] [c=00FF00]-[\\c] Rank: [c=FFFEEB][b][u]%s[\\u][\\b][\\c]\n", $player->name, $player->position, $player->total_score, $player->rank->name);
                 printf("Score Per Min: [c=FFFEEB][b][u]%.2f points[\\u][\\b][\\c] [c=00FF00]-[\\c] Highest Score: [c=FFFEEB][b][u]%d[\\u][\\b][\\c]\n", round($player->score_per_min,2), $player->highest_score);
-                printf("Time Played: [c=FFFEEB][b][u]%s[\\u][\\b][\\c] [c=00ff00]-[\\c] Last Seen: [c=00FF00][b][u]%s[\\u][\\b][\\c]", gmdate("H\\h i\\m", $player->total_time_played), $player->lastGame->created_at->diffForHumans());
+                printf("Time Played: [c=FFFEEB][b][u]%s[\\u][\\b][\\c] [c=00ff00]-[\\c] Last Seen: [c=00FF00][b][u]%s[\\u][\\b][\\c]\n", gmdate("H\\h i\\m", $player->total_time_played), $player->lastGame->created_at->diffForHumans());
+                if(!$aliases->isEmpty())
+                    printf("Aka: [c=f39c12]%s[\\c]", substr($al, 0, -3));
+
+                $user = $player->user();
+                if($user)
+                {
+                    printf("\nOwner's username: [c=0000FF][b]@%s[\\c]", $user->username);
+                }
                 exit();
 
                 //return view('api.whois.onefound', $data);
@@ -330,12 +344,26 @@ class ApiController extends Controller
 
                 // Display single one
                 if ($playerss->count() == 1) {
+                    $al = "";
                     $player = $playerss->first();
+                    $aliases = $player->aliases()->whereNotIn('name',\App\DeletedPlayer::lists('player_name'))->where('name','!=',$player->name)->limit(10)->get();
+                    foreach ($aliases->random(3) as $alias)
+                    {
+                        $al = $al . $alias->name." - ";
+                    }
 
                     printf("[c=FFFF00][b][u]%s[\\u][\\b][\\c] is from [b][c=EBFFFF]%s[\\c][\\b]\n", $player->name, $player->country->countryName);
                     printf("[b][c=FFFF00][u]%s[\\u][\\c][\\b]'s Position: [c=FFFEEB][b][u]#%d[\\u][\\b][\\c] [c=00FF00]-[\\c] Score: [c=FFFEEB][b][u]%d[\\u][\\b][\\c] [c=00FF00]-[\\c] Rank: [c=FFFEEB][b][u]%s[\\u][\\b][\\c]\n", $player->name, $player->position, $player->total_score, $player->rank->name);
                     printf("Score Per Min: [c=FFFEEB][b][u]%.2f points[\\u][\\b][\\c] [c=00FF00]-[\\c] Highest Score: [c=FFFEEB][b][u]%d[\\u][\\b][\\c]\n", round($player->score_per_min,2), $player->highest_score);
-                    printf("Time Played: [c=FFFEEB][b][u]%s[\\u][\\b][\\c] [c=00ff00]-[\\c] Last Seen: [c=00FF00][b][u]%s[\\u][\\b][\\c]", gmdate("H\\h i\\m", $player->total_time_played), $player->lastGame->created_at->diffForHumans());
+                    printf("Time Played: [c=FFFEEB][b][u]%s[\\u][\\b][\\c] [c=00ff00]-[\\c] Last Seen: [c=00FF00][b][u]%s[\\u][\\b][\\c]\n", gmdate("H\\h i\\m", $player->total_time_played), $player->lastGame->created_at->diffForHumans());
+                    if(!$aliases->isEmpty())
+                        printf("Aka: [c=f39c12]%s[\\c]", substr($al, 0, -3));
+
+                    $user = $player->user();
+                    if($user)
+                    {
+                        printf("\nOwner's username: [c=0000FF][b]@%s[\\c]", $user->username);
+                    }
                     exit();
 
                     /*$data = [
@@ -409,12 +437,26 @@ class ApiController extends Controller
              */
             else
             {
+                $al = "";
                 $player = $players->first();
+                $aliases = $player->aliases()->whereNotIn('name',\App\DeletedPlayer::lists('player_name'))->where('name','!=',$player->name)->limit(10)->get();
+                foreach ($aliases->random(3) as $alias)
+                {
+                    $al = $al . $alias->name." - ";
+                }
 
                 printf("[c=FFFF00][b][u]%s[\\u][\\b][\\c] is from [b][c=EBFFFF]%s[\\c][\\b]\n", $player->name, $playerCountryName);
                 printf("[b][c=FFFF00][u]%s[\\u][\\c][\\b]'s Position: [c=FFFEEB][b][u]#%d[\\u][\\b][\\c] [c=00FF00]-[\\c] Score: [c=FFFEEB][b][u]%d[\\u][\\b][\\c] [c=00FF00]-[\\c] Rank: [c=FFFEEB][b][u]%s[\\u][\\b][\\c]\n", $player->name, $player->position, $player->total_score, $player->rank->name);
                 printf("Score Per Min: [c=FFFEEB][b][u]%.2f points[\\u][\\b][\\c] [c=00FF00]-[\\c] Highest Score: [c=FFFEEB][b][u]%d[\\u][\\b][\\c]\n", round($player->score_per_min,2), $player->highest_score);
-                printf("Time Played: [c=FFFEEB][b][u]%s[\\u][\\b][\\c] [c=00ff00]-[\\c] Last Seen: [c=00FF00][b][u]%s[\\u][\\b][\\c]", gmdate("H\\h i\\m", $player->total_time_played), $player->lastGame->created_at->diffForHumans());
+                printf("Time Played: [c=FFFEEB][b][u]%s[\\u][\\b][\\c] [c=00ff00]-[\\c] Last Seen: [c=00FF00][b][u]%s[\\u][\\b][\\c]\n", gmdate("H\\h i\\m", $player->total_time_played), $player->lastGame->created_at->diffForHumans());
+                if(!$aliases->isEmpty())
+                    printf("Aka: [c=f39c12]%s[\\c]", substr($al, 0, -3));
+
+                $user = $player->user();
+                if($user)
+                {
+                    printf("\nOwner's username: [c=0000FF][b]@%s[\\c]", $user->username);
+                }
                 exit();
 
                 /*$data = [
@@ -472,11 +514,25 @@ class ApiController extends Controller
              */
             else
             {
+                $al = "";
                 $player = $players->first();
+                $aliases = $player->aliases()->whereNotIn('name',\App\DeletedPlayer::lists('player_name'))->where('name','!=',$player->name)->limit(10)->get();
+                foreach ($aliases->random(3) as $alias)
+                {
+                    $al = $al . $alias->name." - ";
+                }
                 printf("[c=FFFF00][b][u]%s[\\u][\\b][\\c] is coming from [b][c=EBFFFF]%s[\\c][\\b]\n", $player->name, $playerCountryName);
                 printf("[b][c=FFFF00][u]%s[\\u][\\c][\\b]'s Position: [c=FFFEEB][b][u]#%d[\\u][\\b][\\c] [c=00FF00]-[\\c] Score: [c=FFFEEB][b][u]%d[\\u][\\b][\\c] [c=00FF00]-[\\c] Rank: [c=FFFEEB][b][u]%s[\\u][\\b][\\c]\n", $player->name, $player->position, $player->total_score, $player->rank->name);
                 printf("Score Per Min: [c=FFFEEB][b][u]%.2f points[\\u][\\b][\\c] [c=00FF00]-[\\c] Highest Score: [c=FFFEEB][b][u]%d[\\u][\\b][\\c]\n", round($player->score_per_min,2), $player->highest_score);
-                printf("Time Played: [c=FFFEEB][b][u]%s[\\u][\\b][\\c] [c=00ff00]-[\\c] Last Seen: [c=00FF00][b][u]%s[\\u][\\b][\\c]", gmdate("H\\h i\\m", $player->total_time_played), $player->lastGame->created_at->diffForHumans());
+                printf("Time Played: [c=FFFEEB][b][u]%s[\\u][\\b][\\c] [c=00ff00]-[\\c] Last Seen: [c=00FF00][b][u]%s[\\u][\\b][\\c]\n", gmdate("H\\h i\\m", $player->total_time_played), $player->lastGame->created_at->diffForHumans());
+                if(!$aliases->isEmpty())
+                    printf("Aka: [c=f39c12]%s[\\c]", substr($al, 0, -3));
+
+                $user = $player->user();
+                if($user)
+                {
+                    printf("\nOwner's username: [c=0000FF][b]@%s[\\c]", $user->username);
+                }
                 exit();
                 /*$data = [
                     'player' => $player,
