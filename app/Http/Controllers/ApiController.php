@@ -309,9 +309,12 @@ class ApiController extends Controller
                 $al = "";
                 $player = $players->first();
                 $aliases = $player->aliases()->whereNotIn('name',\App\DeletedPlayer::lists('player_name'))->where('name','!=',$player->name)->limit(10)->get();
-                foreach ($aliases->random(3) as $alias)
+                if(!$aliases->isEmpty())
                 {
-                    $al = $al . $alias->name." - ";
+                    foreach ($aliases->random(3) as $alias)
+                    {
+                        $al = $al . $alias->name." - ";
+                    }
                 }
 
                 /*$data = [
@@ -347,9 +350,12 @@ class ApiController extends Controller
                     $al = "";
                     $player = $playerss->first();
                     $aliases = $player->aliases()->whereNotIn('name',\App\DeletedPlayer::lists('player_name'))->where('name','!=',$player->name)->limit(10)->get();
-                    foreach ($aliases->random(3) as $alias)
+                    if(!$aliases->isEmpty())
                     {
-                        $al = $al . $alias->name." - ";
+                        foreach ($aliases->random(3) as $alias)
+                        {
+                            $al = $al . $alias->name." - ";
+                        }
                     }
 
                     printf("[c=FFFF00][b][u]%s[\\u][\\b][\\c] is from [b][c=EBFFFF]%s[\\c][\\b]\n", $player->name, $player->country->countryName);
@@ -440,9 +446,12 @@ class ApiController extends Controller
                 $al = "";
                 $player = $players->first();
                 $aliases = $player->aliases()->whereNotIn('name',\App\DeletedPlayer::lists('player_name'))->where('name','!=',$player->name)->limit(10)->get();
-                foreach ($aliases->random(3) as $alias)
+                if(!$aliases->isEmpty())
                 {
-                    $al = $al . $alias->name." - ";
+                    foreach ($aliases->random(3) as $alias)
+                    {
+                        $al = $al . $alias->name." - ";
+                    }
                 }
 
                 printf("[c=FFFF00][b][u]%s[\\u][\\b][\\c] is from [b][c=EBFFFF]%s[\\c][\\b]\n", $player->name, $playerCountryName);
@@ -517,9 +526,12 @@ class ApiController extends Controller
                 $al = "";
                 $player = $players->first();
                 $aliases = $player->aliases()->whereNotIn('name',\App\DeletedPlayer::lists('player_name'))->where('name','!=',$player->name)->limit(10)->get();
-                foreach ($aliases->random(3) as $alias)
+                if(!$aliases->isEmpty())
                 {
-                    $al = $al . $alias->name." - ";
+                    foreach ($aliases->random(3) as $alias)
+                    {
+                        $al = $al . $alias->name." - ";
+                    }
                 }
                 printf("[c=FFFF00][b][u]%s[\\u][\\b][\\c] is coming from [b][c=EBFFFF]%s[\\c][\\b]\n", $player->name, $playerCountryName);
                 printf("[b][c=FFFF00][u]%s[\\u][\\c][\\b]'s Position: [c=FFFEEB][b][u]#%d[\\u][\\b][\\c] [c=00FF00]-[\\c] Score: [c=FFFEEB][b][u]%d[\\u][\\b][\\c] [c=00FF00]-[\\c] Rank: [c=FFFEEB][b][u]%s[\\u][\\b][\\c]\n", $player->name, $player->position, $player->total_score, $player->rank->name);
