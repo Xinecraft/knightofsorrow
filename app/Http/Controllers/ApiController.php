@@ -308,10 +308,10 @@ class ApiController extends Controller
             elseif ($players->count() == 1) {
                 $al = "";
                 $player = $players->first();
-                $aliases = $player->aliases()->whereNotIn('name',\App\DeletedPlayer::lists('player_name'))->where('name','!=',$player->name)->limit(10)->get();
+                $aliases = $player->aliases()->whereNotIn('name',\App\DeletedPlayer::lists('player_name'))->where('name','!=',$player->name)->limit(3)->get();
                 if(!$aliases->isEmpty())
                 {
-                    foreach ($aliases->random(3) as $alias)
+                    foreach ($aliases as $alias)
                     {
                         $al = $al . $alias->name." - ";
                     }
@@ -349,10 +349,10 @@ class ApiController extends Controller
                 if ($playerss->count() == 1) {
                     $al = "";
                     $player = $playerss->first();
-                    $aliases = $player->aliases()->whereNotIn('name',\App\DeletedPlayer::lists('player_name'))->where('name','!=',$player->name)->limit(10)->get();
+                    $aliases = $player->aliases()->whereNotIn('name',\App\DeletedPlayer::lists('player_name'))->where('name','!=',$player->name)->limit(3)->get();
                     if(!$aliases->isEmpty())
                     {
-                        foreach ($aliases->random(3) as $alias)
+                        foreach ($aliases as $alias)
                         {
                             $al = $al . $alias->name." - ";
                         }
@@ -445,10 +445,10 @@ class ApiController extends Controller
             {
                 $al = "";
                 $player = $players->first();
-                $aliases = $player->aliases()->whereNotIn('name',\App\DeletedPlayer::lists('player_name'))->where('name','!=',$player->name)->limit(10)->get();
+                $aliases = $player->aliases()->whereNotIn('name',\App\DeletedPlayer::lists('player_name'))->where('name','!=',$player->name)->limit(3)->get();
                 if(!$aliases->isEmpty())
                 {
-                    foreach ($aliases->random(3) as $alias)
+                    foreach ($aliases as $alias)
                     {
                         $al = $al . $alias->name." - ";
                     }
@@ -525,10 +525,10 @@ class ApiController extends Controller
             {
                 $al = "";
                 $player = $players->first();
-                $aliases = $player->aliases()->whereNotIn('name',\App\DeletedPlayer::lists('player_name'))->where('name','!=',$player->name)->limit(10)->get();
+                $aliases = $player->aliases()->whereNotIn('name',\App\DeletedPlayer::lists('player_name'))->where('name','!=',$player->name)->limit(3)->get();
                 if(!$aliases->isEmpty())
                 {
-                    foreach ($aliases->random(3) as $alias)
+                    foreach ($aliases as $alias)
                     {
                         $al = $al . $alias->name." - ";
                     }
