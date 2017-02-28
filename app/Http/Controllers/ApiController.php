@@ -327,7 +327,7 @@ class ApiController extends Controller
                 printf("Score Per Min: [c=FFFEEB][b][u]%.2f points[\\u][\\b][\\c] [c=00FF00]-[\\c] Highest Score: [c=FFFEEB][b][u]%d[\\u][\\b][\\c]\n", round($player->score_per_min,2), $player->highest_score);
                 printf("Time Played: [c=FFFEEB][b][u]%s[\\u][\\b][\\c] [c=00ff00]-[\\c] Last Seen: [c=00FF00][b][u]%s[\\u][\\b][\\c]\n", gmdate("H\\h i\\m", $player->total_time_played), $player->lastGame->created_at->diffForHumans());
                 if(!$aliases->isEmpty())
-                    printf("Aka: [c=f39c12]%s[\\c]", substr($al, 0, -3));
+                    printf("[b]Aka: [c=f39c12]%s[\\c]", substr($al, 0, -3));
 
                 $user = $player->user();
                 if($user)
@@ -363,7 +363,7 @@ class ApiController extends Controller
                     printf("Score Per Min: [c=FFFEEB][b][u]%.2f points[\\u][\\b][\\c] [c=00FF00]-[\\c] Highest Score: [c=FFFEEB][b][u]%d[\\u][\\b][\\c]\n", round($player->score_per_min,2), $player->highest_score);
                     printf("Time Played: [c=FFFEEB][b][u]%s[\\u][\\b][\\c] [c=00ff00]-[\\c] Last Seen: [c=00FF00][b][u]%s[\\u][\\b][\\c]\n", gmdate("H\\h i\\m", $player->total_time_played), $player->lastGame->created_at->diffForHumans());
                     if(!$aliases->isEmpty())
-                        printf("Aka: [c=f39c12]%s[\\c]", substr($al, 0, -3));
+                        printf("[b]Aka: [c=f39c12]%s[\\c]", substr($al, 0, -3));
 
                     $user = $player->user();
                     if($user)
@@ -459,7 +459,7 @@ class ApiController extends Controller
                 printf("Score Per Min: [c=FFFEEB][b][u]%.2f points[\\u][\\b][\\c] [c=00FF00]-[\\c] Highest Score: [c=FFFEEB][b][u]%d[\\u][\\b][\\c]\n", round($player->score_per_min,2), $player->highest_score);
                 printf("Time Played: [c=FFFEEB][b][u]%s[\\u][\\b][\\c] [c=00ff00]-[\\c] Last Seen: [c=00FF00][b][u]%s[\\u][\\b][\\c]\n", gmdate("H\\h i\\m", $player->total_time_played), $player->lastGame->created_at->diffForHumans());
                 if(!$aliases->isEmpty())
-                    printf("Aka: [c=f39c12]%s[\\c]", substr($al, 0, -3));
+                    printf("[b]Aka: [c=f39c12]%s[\\c]", substr($al, 0, -3));
 
                 $user = $player->user();
                 if($user)
@@ -538,7 +538,7 @@ class ApiController extends Controller
                 printf("Score Per Min: [c=FFFEEB][b][u]%.2f points[\\u][\\b][\\c] [c=00FF00]-[\\c] Highest Score: [c=FFFEEB][b][u]%d[\\u][\\b][\\c]\n", round($player->score_per_min,2), $player->highest_score);
                 printf("Time Played: [c=FFFEEB][b][u]%s[\\u][\\b][\\c] [c=00ff00]-[\\c] Last Seen: [c=00FF00][b][u]%s[\\u][\\b][\\c]\n", gmdate("H\\h i\\m", $player->total_time_played), $player->lastGame->created_at->diffForHumans());
                 if(!$aliases->isEmpty())
-                    printf("Aka: [c=f39c12]%s[\\c]", substr($al, 0, -3));
+                    printf("[b]Aka: [c=f39c12]%s[\\c]", substr($al, 0, -3));
 
                 $user = $player->user();
                 if($user)
