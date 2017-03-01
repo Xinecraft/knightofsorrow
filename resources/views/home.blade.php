@@ -69,7 +69,7 @@
                     <div class="col-xs-12 panel panel-default no-padding">
                         <div class="panel-heading">
                             <span class="pull-right">
-                            <a style='color:darkgreen' class='fancybox livepfancy fancybox.ajax tooltipster' href='./liveserveraction' title='Server Action'><i class='fa fa-cog'></i></a>
+                            <a style='color:red' class='fancybox livepfancy fancybox.ajax tooltipster' href='./liveserveraction' title='Server Action'><i class='fa fa-cog'></i></a>
                         </span>
                             <span class="info-title">Online Players <span
                                         id="ls-player-online"></span></span>

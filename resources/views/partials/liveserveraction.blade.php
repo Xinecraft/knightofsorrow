@@ -22,6 +22,19 @@
         class="adminsrvcommandbtn  btn btn-warning btn-sm">AntiCamp Off
 </button>
 <br>
+<button id="playerFWbtn" data-type="setmap 0" title="Set Map to FoodWall"
+        class="adminsrvcommandbtn  btn btn-success btn-sm">Map FW
+</button>
+<button id="playerABbtn" data-type="setmap 1" title="Set Map to A-Bomb Nightclub"
+        class="adminsrvcommandbtn  btn btn-success btn-sm">Map AB
+</button>
+<button id="playerFFbtn" data-type="setmap 2" title="Set Map to FairFax"
+        class="adminsrvcommandbtn  btn btn-success btn-sm">Map FF
+</button>
+<button id="playerFFbtn" data-type="setmap 3" title="Set Map to Wolcott Projects"
+        class="adminsrvcommandbtn  btn btn-success btn-sm">Map WP
+</button>
+<br>
 <button id="playerRestartbtn" data-type="restart" title="Restart"
         class="adminsrvcommandbtn  btn btn-danger btn-sm">Restart
 </button>
