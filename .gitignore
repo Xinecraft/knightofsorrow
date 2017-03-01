@@ -4,6 +4,9 @@
 _ide_helper.php
 /.idea/
 /public/components/
+/public/build/css/*
+/public/build/js/*
+/public/build/rev-manifest.json
 tests/_output/*
 npm-debug.log
 /public/uploaded_images/*
