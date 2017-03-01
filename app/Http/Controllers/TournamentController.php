@@ -71,7 +71,8 @@ class TournamentController extends Controller
             ->selectRaw('*,sum(total_score) as score,count(*) as tourny_played,avg(team_position) as team_position,sum(points) as points,sum(rating) as rating')
             ->orderby('rating','DESC')->paginate();
 
-        return view('tournament.rankingteams')->with('teams',$teams)->with('ranking',1);
+        $position = ($teams->currentPage()-1) * 15 + 1;
+        return view('tournament.rankingteams')->with('teams',$teams)->with('ranking',$position);
     }
 
     public function getGuideline()

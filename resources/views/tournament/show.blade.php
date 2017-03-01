@@ -587,7 +587,9 @@
                                 </span>
                     @endif
                     <p class="no-margin convert-emoji">
-                        <b>{!! link_to_route('user.show',$comment->user->displayName(),[$comment->user->username]) !!}</b>
+                        <b >
+                            <a class="{{ "color-".$comment->user->roles()->first()->name }}" href="{{ route('user.show',$comment->user->username) }}">{{ $comment->user->displayName() }}</a>
+                        </b>
                     </p>
                     <p class="no-margin text-muted small">{{ $comment->created_at->diffForHumans() }}</p>
                     <p>{!! $comment->showBody() !!}</p>

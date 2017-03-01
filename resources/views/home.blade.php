@@ -67,8 +67,13 @@
             <div class="row">
                 <div class="ls-players-and-top-player no-left-padding col-xs-5">
                     <div class="col-xs-12 panel panel-default no-padding">
-                        <div class="panel-heading"><span class="info-title">Online Players <span
-                                        id="ls-player-online"></span></span></div>
+                        <div class="panel-heading">
+                            <span class="pull-right">
+                            <a style='color:darkgreen' class='fancybox livepfancy fancybox.ajax tooltipster' href='./liveserveraction' title='Server Action'><i class='fa fa-cog'></i></a>
+                        </span>
+                            <span class="info-title">Online Players <span
+                                        id="ls-player-online"></span></span>
+                        </div>
                         <div class="panel-body no-padding" id="ls-player-total-div">
                             <table class="table table-striped table-hover no-margin" id="ls-player-table">
                                 <th class="loading-pt-info text-center" style="padding: 15px;font-size: 15px">Loading
@@ -76,35 +81,7 @@
                                 </th>
                             </table>
                         </div>
-                        @if(Auth::check() && Auth::user()->isAdmin())
-                            <div class="panel-footer">
-                                {!! Form::open(['route' => 'kossrvadmin.commands','id' => 'adminsrvcommandform']) !!}
-                                <button id="playerBTbtn" data-type="balanceteams" title="Balance Teams"
-                                        class="adminsrvcommandbtn tooltipster btn btn-primary btn-xs">BalanceTeams
-                                </button>
-                                <button id="playerLTbtn" data-type="lockteams" title="Toggle Lock Teams"
-                                        class="adminsrvcommandbtn tooltipster btn btn-primary btn-xs">LockTeams
-                                </button>
-                                <button id="playerSAbtn" data-type="switchall" title="Switch All"
-                                        class="adminsrvcommandbtn tooltipster btn btn-primary btn-xs">SwitchAll
-                                </button>
-                                <button id="playerPausebtn" data-type="pause" title="Toggle Pause Game"
-                                        class="adminsrvcommandbtn tooltipster btn btn-info btn-xs">Pause
-                                </button>
-                                <button id="playerTONbtn" data-type="taseronly true" title="Taseronly On"
-                                        class="adminsrvcommandbtn tooltipster btn btn-info btn-xs">Taser On
-                                </button>
-                                <button id="playerTOFFbtn" data-type="taseronly false" title="Taseronly Off"
-                                        class="adminsrvcommandbtn tooltipster btn btn-info btn-xs">Taser Off
-                                </button>
-                                <button id="playerRestartbtn" data-type="restart" title="Restart"
-                                        class="adminsrvcommandbtn tooltipster btn btn-danger btn-xs">Restart
-                                </button>
 
-                                <div id="admincommand-input-group-error" class="help-block"></div>
-                                {!! Form::close() !!}
-                            </div>
-                        @endif
                     </div>
                     <div class="col-xs-12 panel panel-default no-padding">
                         <div class="panel-heading"><span class="info-title">Top Players</span></div>
@@ -922,7 +899,7 @@
 
                     <div class="panel-body font-13">
                         @forelse($activeUsers as $user)
-                            <a class="{{ $user->isAdmin() ? "text-green" : "" }}" style="margin-right:1em"
+                            <a class="{{ "color-".$user->roles()->first()->name }}" style="margin-right:1em"
                                href="{{ route('user.show',$user->username) }}"><strong class="">{{ $user->displayName() }}{!! $user->isOnline ? "<sup class='text-green'>&#x25cf;</sup>" : "" !!}</strong></a>
                         @empty
                         @endforelse
@@ -1053,10 +1030,11 @@
                             },
                             success: function (data) {
                                 $(this).show();
+                                $.fancybox.close();
                                 $('#admincommand-input-group-error').html('');
                             },
                             error: function (data) {
-
+                                $.fancybox.close();
                                 var errors = data.responseJSON;
                                 var message = "Unknown error! reload page.";
                                 switch (data.status) {

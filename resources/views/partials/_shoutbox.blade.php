@@ -22,7 +22,7 @@
                                 </span>
                                 <div class="chat-body clearfix">
                                     <div class="header text-left">
-                                        <a class="{{ $shout->user->isAdmin() ? "text-green" : "" }}" href="{{ route('user.show',$shout->user->username) }}">
+                                        <a class="{{ "color-".$shout->user->roles()->first()->name }}" href="{{ route('user.show',$shout->user->username) }}">
                                             <strong class="">{{ $shout->user->displayName() }}</strong>
                                         </a>
                                         <br>
@@ -52,7 +52,7 @@
                         </span>
                                 <div class="chat-body clearfix">
                                     <div class="header text-right">
-                                        <a class="{{ $shout->user->isAdmin() ? "text-green" : "" }}" href="{{ route('user.show',$shout->user->username) }}">
+                                        <a class="{{ "color-".$shout->user->roles()->first()->name }}" href="{{ route('user.show',$shout->user->username) }}">
                                             <strong class="">{{ $shout->user->displayName() }}</strong>
                                         </a>
                                         <br>

@@ -391,4 +391,9 @@ class ServerController extends Controller
 
         return view('partials.liveplayeraction')->with('player',$player);
     }
+
+    public function liveserveraction(Request $request)
+    {
+        return view('partials.liveserveraction');
+    }
 }
