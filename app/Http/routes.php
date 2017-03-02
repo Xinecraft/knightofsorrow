@@ -325,3 +325,25 @@ Route::get('/trophy/give_to_user',['middleware' => ['auth','admin'], 'as' => 'tr
 Route::post('/trophy/give_to_user',['middleware' => ['auth','admin'], 'as' => 'trophy.postgrant', 'uses' => 'TrophyController@postGiveToUser']);
 
 //Route::get('/stream', ['uses' => 'MainController@stream']);
+
+Route::get('/ssh',['as' =>'restartserver',function(){
+
+    if(Auth::check() && Auth::user()->isAdmin()) {
+        $commands = array(
+            'cd SWAT4/Content',
+            'cp SwatGame.ini System/',
+            'cd System',
+            'sh server.sh'
+        );
+        SSH::run($commands, function ($line) {
+            //dd($line.PHP_EOL);
+        });
+
+        return redirect()->home()->with('message','Success! Server is restarting now');
+    }
+    else
+    {
+        abort(404);
+    }
+
+}]);

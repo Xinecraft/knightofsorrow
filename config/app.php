@@ -148,6 +148,7 @@ return [
         Laracasts\Utilities\JavaScript\JavascriptServiceProvider::class,
         Golonka\BBCode\BBCodeParserServiceProvider::class,
         GrahamCampbell\HTMLMin\HTMLMinServiceProvider::class,
+        Collective\Remote\RemoteServiceProvider::class,
 
 
         /*
@@ -214,6 +215,7 @@ return [
         'Html' 		=> Collective\Html\HtmlFacade::class,
         'Javascript'  => Laracasts\Utilities\JavaScript\JavaScriptFacade::class,
         'BBCode'    => Golonka\BBCode\Facades\BBCodeParser::class,
+        'SSH' => Collective\Remote\RemoteFacade::class,
 
     ],
 
