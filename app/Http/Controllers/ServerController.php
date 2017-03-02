@@ -313,6 +313,11 @@ class ServerController extends Controller
             exit;
         }
         $MsgFormated = htmlspecialchars_decode(html_entity_decode($MsgFormated));
+
+        $MsgFormated = trim($MsgFormated);
+
+        //\Log::info($MsgFormated);
+
         fputs($sock, $MsgFormated);
         $gotfinal = False;
         $data = "";
@@ -359,8 +364,9 @@ class ServerController extends Controller
         {
             $command = env("ADMIN_COMMAND_SECRET")." ".$admin." ".$action." ".$player;
         }
+        $command = trim($command);
 
-        //dd($command);
+        //\Log::info($command);
 
         $txtip = "31.186.250.32";
         $txtportnum = "10485";
