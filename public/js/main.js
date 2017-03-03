@@ -794,12 +794,14 @@ $('.composemailusername').typeahead({
                 $('input[name=serverchatmsg]').val('');
                 $('#serverchat-form').prop('disabled', false);
                 $("#serverchat-input-group-error").html("");
+                sv.update();
             },
             error: function(data) {
                 // Error...
                 $('input[name=serverchatmsg]').val('');
                 $('#serverchat-form').prop('disabled', false);
                 $("#serverchat-input-group-error").html("");
+                sv.update();
             }
         });
         // stop the form from submitting the normal way and refreshing the page
