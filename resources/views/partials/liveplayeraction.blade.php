@@ -37,7 +37,7 @@
         <div class="col-xs-8">
     {!! Form::text('forcenametxt',null,['class' => 'form-control col-xs-5 input-sm', 'placeholder' => 'Enter new Name']) !!}
         </div>
-        <button id="playerNWbtn" data-type="forcename"
+        <button id="playerNWbtn" data-type="forcename" type="submit"
                 class="admincommandbtn btn btn-success btn-sm">Change Name
         </button>
     </div>

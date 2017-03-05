@@ -39,5 +39,17 @@
         class="adminsrvcommandbtn  btn btn-danger btn-sm">Restart
 </button>
 
+<br>
+<br>
+<div class="col-xs-12" style="border: 2px dashed grey">
+    <h5 class="text-center text-bold">SERVER COMMAND</h5>
+    <div class="col-xs-8">
+        {!! Form::text('sccmd',null,['class' => 'form-control col-xs-5 input-sm', 'placeholder' => 'eg: set AMMod.KZMod KillCampers false']) !!}
+    </div>
+    <button id="playerNWbtn" data-type="sc" type="submit"
+            class="adminsrvcommandbtn btn btn-success btn-sm">Execute
+    </button>
+</div>
+
 <div id="admincommand-input-group-error" class="help-block"></div>
 {!! Form::close() !!}

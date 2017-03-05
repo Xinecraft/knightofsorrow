@@ -329,7 +329,7 @@ class ServerController extends Controller
     /**
      * Perform admin command from website
      *
-     * @format secretkey adminame command optional-name
+     * @format secretkey adminame command dival-name
      * @param Request $request
      * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
      */
@@ -337,17 +337,22 @@ class ServerController extends Controller
     {
         if(!$request->has('action'))
         {
-            $data = ['error' => '<option class="text-center small text-danger">Error! No action specified!.</option>'];
+            $data = ['error' => '<div class="text-center small text-danger">Error! No action specified!.</div>'];
             return response($data,422);
         }
         if(!$request->has('selected_player') && ($request->action=='forcemute' || $request->action=='kick' || $request->action=='kickban' || $request->action=='kick' || $request->action=='forceview' || $request->action=='forcespec' || $request->action=='forcejoin' || $request->action=='switchteam' || $request->action=='forcelesslethal' || $request->action=='forcenoweapons' || $request->action=='forcename'))
         {
-            $data = ['error' => '<option class="text-center small text-danger">Error! No Player Selected.</option>'];
+            $data = ['error' => '<div class="text-center small text-danger">Error! No Player Selected.</div>'];
             return response($data,422);
         }
         if($request->action == 'forcename' && (!$request->has('forcenametxt') || $request->forcenametxt == ""))
         {
-            $data = ['error' => '<option class="text-center small text-danger">Error! New player name can\'t be Blank.</option>'];
+            $data = ['error' => '<div class="text-center small text-danger">Error! New player name can\'t be Blank.</div>'];
+            return response($data,422);
+        }
+        if($request->action == 'sc' && (!$request->has('sccmd') || $request->sccmd == ""))
+        {
+            $data = ['error' => '<div class="text-center small text-danger">Error! Server Command can\'t be Blank.</div>'];
             return response($data,422);
         }
 
@@ -359,6 +364,11 @@ class ServerController extends Controller
         {
             $newname = $request->get('forcenametxt');
             $command = env("ADMIN_COMMAND_SECRET")." ".$admin." ".$action." ".$player." ".$newname;
+        }
+        else if($action == 'sc')
+        {
+            $sc = $request->get('sccmd');
+            $command = env("ADMIN_COMMAND_SECRET")." ".$admin." ".$action." ".$sc;
         }
         else
         {
@@ -381,7 +391,7 @@ class ServerController extends Controller
         socket_set_timeout($sock, 0, 1000);
         fclose($sock);
 
-        $data = ['success' => '<option class="text-center small text-danger">Success! Command executed.</option>'];
+        $data = ['success' => '<div class="text-center small text-danger">Success! Command executed.</div>'];
         return response($data,200);
     }
 

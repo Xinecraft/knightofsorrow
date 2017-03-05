@@ -1034,7 +1034,7 @@
                                 $('#admincommand-input-group-error').html('');
                             },
                             error: function (data) {
-                                $.fancybox.close();
+                                //$.fancybox.close();
                                 var errors = data.responseJSON;
                                 var message = "Unknown error! reload page.";
                                 switch (data.status) {
@@ -1079,7 +1079,7 @@
                             },
                             error: function (data) {
 
-                                $.fancybox.close();
+                                //$.fancybox.close();
                                 var errors = data.responseJSON;
                                 var message = "Unknown error! reload page.";
                                 switch (data.status) {
