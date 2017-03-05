@@ -41,10 +41,11 @@
                     <i class="fa fa-copyright"></i> {{ date('Y') }} KNIGHTofSORROW
                 </p>
                 <i><small class="muted">Page rendered in {{  round((microtime(true) - LARAVEL_START),3) }} seconds with {{Session::get('query_no')}} queries</small></i>
-                </div>
-                <div class="col-xs-3 col-xs-offset-1">
-                    <i><small class="text-muted">Time: {{ \Carbon\Carbon::now()->toDayDateTimeString() }}</small></i>
-
+				</div>
+                <div class="col-xs-3 col-xs-offset-1 text-center">
+                    <i><small class="text-muted">{{ \Carbon\Carbon::now()->toDayDateTimeString() }} GMT</small></i>
+					<br>
+					<span class="small" style="color:#cbcbcb;font-weight: 900;">Hosted with <i class="fa fa-heart text-danger"></i> by <a href="https://www.rinetech.com" class="text-green" target="_blank">RineTech.com</span>
                 </div>
             </div>
         </div>

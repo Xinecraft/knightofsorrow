@@ -2,11 +2,11 @@
 
         @if($shout->user_id % 2 == 0)
             <li class="clearfix left col-xs-12 no-padding"><span class="chat-img pull-left">
-                            <img src="{{ $shout->user->getGravatarLink(40) }}" width="40" height="40" alt="User Avatar" class="img-circle"/>
+                            <img src="{{ $shout->user->getGravatarLink(40) }}" width="40" height="40" alt="User Avatar" class="img img-shoutt"/>
                                 </span>
                 <div class="chat-body clearfix">
                     <div class="header text-left">
-                        <a class="{{ $shout->user->isAdmin() ? "text-green" : "" }}" href="{{ route('user.show',$shout->user->username) }}">
+                        <a class="{{ "color-".$shout->user->roles()->first()->name }}" href="{{ route('user.show',$shout->user->username) }}">
                             <strong class="">{{ $shout->user->displayName() }}</strong>
                         </a>
                         <br>
@@ -23,7 +23,7 @@
                             <span class="fa fa-clock-o"></span> {{ $shout->created_at->diffForHumans() }}
                         </small>
                     </div>
-                    <p class="convert-emoji">
+                    <p class="convert-emoji text-justify">
                         {!! Emojione\Emojione::toImage(nl2br(linkify(htmlentities($shout->shout)))) !!}
                     </p>
                 </div>
@@ -31,11 +31,11 @@
         @else
 
             <li class="right clearfix col-xs-12 no-padding"><span class="chat-img pull-right">
-                            <img src="{{ $shout->user->getGravatarLink(40) }}" width="40" height="40" alt="User Avatar" class="img-circle"/>
+                            <img src="{{ $shout->user->getGravatarLink(40) }}" width="40" height="40" alt="User Avatar" class="img img-shoutt"/>
                         </span>
                 <div class="chat-body clearfix">
                     <div class="header text-right">
-                        <a class="{{ $shout->user->isAdmin() ? "text-green" : "" }}" href="{{ route('user.show',$shout->user->username) }}">
+                        <a class="{{ "color-".$shout->user->roles()->first()->name }}" href="{{ route('user.show',$shout->user->username) }}">
                             <strong class="">{{ $shout->user->displayName() }}</strong>
                         </a>
                         <br>
