@@ -18,7 +18,7 @@
                     @foreach($shouts as $shout)
                         @if($shout->user_id % 2 == 0)
                             <li class="clearfix left col-xs-12 no-padding"><span class="chat-img pull-left">
-                            <img src="{{ $shout->user->getGravatarLink(40) }}" width="40" height="40" alt="User Avatar" class="img-circle"/>
+                            <img src="{{ $shout->user->getGravatarLink(40) }}" width="40" height="40" alt="User Avatar" class="img img-shoutt"/>
                                 </span>
                                 <div class="chat-body clearfix">
                                     <div class="header text-left">
@@ -40,7 +40,7 @@
                                             <span class="fa fa-clock-o"></span> {{ $shout->created_at->diffForHumans() }}
                                         </small>
                                     </div>
-                                    <p class="convert-emoji">
+                                    <p class="convert-emoji text-justify">
                                         {!! nl2br(linkify(htmlentities($shout->shout))) !!}
                                     </p>
                                 </div>
@@ -48,7 +48,7 @@
                         @else
 
                             <li class="right clearfix col-xs-12 no-padding"><span class="chat-img pull-right">
-                            <img src="{{ $shout->user->getGravatarLink(40) }}" width="40" height="40" alt="User Avatar" class="img-circle"/>
+                            <img src="{{ $shout->user->getGravatarLink(40) }}" width="40" height="40" alt="User Avatar" class="img img-shoutt"/>
                         </span>
                                 <div class="chat-body clearfix">
                                     <div class="header text-right">
@@ -124,16 +124,16 @@
     }
 
     .shoutbox-cont .chat li.left .chat-body {
-        margin-left: 48px;
+
     }
 
     .shoutbox-cont .chat li.right .chat-body {
-        margin-right: 48px;
+
     }
 
     .shoutbox-cont .chat li .chat-body p {
-        margin: 0;
-        color: #777777;
+        margin-top: 5px;
+        color: #272727;
     }
 
     .shoutbox-cont .panel .slidedown .fa, .chat .fa {
@@ -165,6 +165,27 @@
     {
         margin-bottom: 15px;
     }
+    li.left .chat-body .header a
+    {
+        margin-left:5px;
+    }
+    li.left .chat-body .header small
+    {
+        margin-left:5px;
+    }
+    li.right .chat-body .header a
+    {
+        margin-right:5px;
+    }
+    li.right .chat-body .header small
+    {
+        margin-right:5px;
+    }
+    .img-shoutt
+    {
+        border: 1px solid #b2b29d;
+    }
+
 </style>
 
 
