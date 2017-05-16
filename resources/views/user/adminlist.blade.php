@@ -54,7 +54,7 @@
 
             <div class="col-xs-10">
                 <div class="panel panel-default">
-                    <div class="panel-heading">|KoS| Official Members <small><i>(excluding admins)</i></small></div>
+                    <div class="panel-heading">uS| Official Members <small><i>(excluding admins)</i></small></div>
                     <div class="panel-body">
                         <table class="table table-hover table-striped">
                             <thead>
@@ -74,7 +74,7 @@
                                             </a>
                                         </td>
                                         <td>
-                                            |KoS| Member <small><i>({{ $user->roles()->first()->display_name }})</i></small>
+                                            uS| Member <small><i>({{ $user->roles()->first()->display_name }})</i></small>
                                         </td>
                                         <td>
                                             {{ $user->updated_at->diffForHumans() }}
