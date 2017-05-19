@@ -18,6 +18,7 @@
                         <table class="table table-hover table-striped">
                             <thead>
                             <tr>
+                                <td class="col-xs-1"></td>
                                 <td class="col-xs-4 col-xs-4">Name</td>
                                 <td class="col-xs-4 col-xs-4">Rank</td>
                                 <td class="col-xs-3 col-xs-3">Last Seen</td>
@@ -26,6 +27,7 @@
                             @foreach($roles as $role)
                                 @foreach($role->users as $user)
                                     <tr>
+                                        <td class="text-muted"><img class="tooltipster" title="{{ $user->country->countryName }}" src="/images/flags/20_shiny/{{ $user->country->countryCode }}.png" alt="" height="22px"></td>
 
                                         <td class="color-main text-bold">
                                             <a class="
@@ -59,6 +61,7 @@
                         <table class="table table-hover table-striped">
                             <thead>
                             <tr>
+                                <td class="col-xs-1"></td>
                                 <td class="col-xs-4 col-xs-4">Name</td>
                                 <td class="col-xs-4 col-xs-4">Rank</td>
                                 <td class="col-xs-3 col-xs-3">Last Seen</td>
@@ -67,6 +70,7 @@
                             @foreach($roless as $role)
                                 @foreach($role->users as $user)
                                     <tr>
+                                        <td class="text-muted"><img class="tooltipster" title="{{ $user->country->countryName }}" src="/images/flags/20_shiny/{{ $user->country->countryCode }}.png" alt="" height="22px"></td>
 
                                         <td class="color-main text-bold">
                                             <a class="" style="margin-right:1em" href="{{ route('user.show',$user->username) }}">

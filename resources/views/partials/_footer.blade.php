@@ -45,7 +45,7 @@
                 <div class="col-xs-3 col-xs-offset-1 text-center">
                     <i><small class="text-muted">{{ \Carbon\Carbon::now()->toDayDateTimeString() }} GMT</small></i>
 					<br>
-					<span class="small" style="color:#cbcbcb;font-weight: 900;">Hosted with <i class="fa fa-heart text-danger"></i> by <a href="https://www.rinetech.com" class="text-green" target="_blank">RineTech.com</span>
+					<span class="small" style="color:#cbcbcb;font-weight: 900;">Managed with <i class="fa fa-heart text-danger"></i> by <a href="https://www.rinetech.com" class="text-warning" target="_blank">uS| Clan</a></span>
                 </div>
             </div>
         </div>

@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'no-reply@knightofsorrow.tk', 'name' => 'KNIGHTofSORROW'],
+    'from' => ['address' => 'no-reply@knightofsorrow.in', 'name' => 'KNIGHTofSORROW.IN'],
 
     /*
     |--------------------------------------------------------------------------

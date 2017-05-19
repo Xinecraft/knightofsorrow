@@ -33,7 +33,7 @@ class MainController extends Controller
         {
             $cookie = Cookie::make('seen_add_info','true',4320);
             Cookie::queue($cookie);
-            $show_add = true;
+            $show_add = false;
         }
         else
         {
@@ -619,7 +619,7 @@ class MainController extends Controller
         //$feeds  = Status::with('user')->latest()->limit(5)->get();
         $notifications = Notification::stream()->latest()->limit(5)->get();
 
-        $activeUsers = User::orderBy('updated_at','DESC')->limit(50)->get();
+        $activeUsers = User::orderBy('updated_at','DESC')->limit(99)->get();
         $bans = Ban::orderBy('updated_at','desc')->limit(5)->get();
 
         $array = [

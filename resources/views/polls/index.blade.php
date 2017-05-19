@@ -60,6 +60,18 @@
                                     {{ $percent }}% ({{ $pollo->users->count() }})
                                 </div>
                             </div>
+
+                        @if(Auth::check() && Auth::user()->isAdmin())
+                            <table style="margin-bottom: 20px;border-bottom: 2px dashed #c3c3c3;" class="table table-hover table-striped table-bordered">
+                                <tbody><tr> <th class="col-xs-1"></th> <th>Name</th> <th>Voted On</th> </tr>
+                                @foreach($pollo->users as $user)
+                                <tr> <td class="text-muted"><img class="tooltipster" title="{{ $user->country->countryName }}" src="/images/flags/20_shiny/{{ $user->country->countryCode }}.png" alt="" height="22px"></td> <td class="color-main"><a class="" href="{{ route('user.show',$user->username) }}">
+                                            <strong class="">{{ $user->displayName() }}</strong></a></td> <td><span class="tooltipster" title="{{ $user->pivot->created_at->toDayDateTimeString() }}">{{ $user->pivot->created_at->diffForHumans() }}</span></td> </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        @endif
+
                         @endforeach
                     </div>
 

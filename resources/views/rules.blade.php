@@ -20,13 +20,15 @@
                     <li>Do not spam/flood/attack the server.</li>
                     <li>Do not use another player's name. <b>Impersonation</b> will get you banned.</li>
                     <li>If you find any admin/superadmin <b>misusing his powers</b>, plz <b>shout</b> at shoutbox.</li>
-                    <li>Respect KnightofSorrow ;)</li>
+                    <li>Respect KnightofSorrow & uS| Clan ;)</li>
                 </ul>
                 <p>
                   (<b class="text-danger">3 seconds rule:</b> Spawn nade/gas/etc. or killing is <b>NOT</b> allowed until <b>3 seconds</b> has elapsed after respawn.<br><u>But if the respawned player move out of</u> <b class="text-danger">RESPAWN AREA</b> during 3s after respawn, <b>he can be killed or naded</b>).
                 </p>
                 <br>
-                <p style="padding-bottom:20px">Respect these rules so everyone can have a fun gameplay experience or <span class="text-bold">risk getting kicked/banned</span>.</p>	</div>
+                <p style="padding-bottom:20px">Respect these rules so everyone can have a fun gameplay experience or <span class="text-bold">risk getting kicked/banned</span>.</p>
+                <p><i>Note: uS| Clan reserves the right to change the rules with or without any notice.</i></p>
+            </div>
         </div>
 
         @if(Auth::check() && Auth::user()->isAdmin())
