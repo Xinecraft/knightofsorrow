@@ -14,8 +14,8 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="{{ set_active(['statistics*']) }}">{!! link_to_route('statistics-home','Statistics') !!}</li>
+                <li><a target="_blank" href="http://knightofsorrow.forumclan.com">Forum</a></li>
                 <li class="{{ set_active(['rules*']) }}"><a href="{{ route('rules') }}">Rules</a></li>
-
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                         More <span class="caret"></span></a>
@@ -28,8 +28,6 @@
                         <li class="{{ set_active(['admins-list*']) }}"><a href="{{ route('admin.list') }}">Admins List</a></li>
                         <li class="{{ set_active(['downloads*']) }}"><a href="{{ route('download') }}">Downloads</a></li>
                         <li class=""><a href="https://swat4stats.com/servers/" target="_blank">Servers</a></li>
-                        <li><a href="">Clans</a></li>
-                        <li><a target="_blank" href="http://knightofsorrow.forumclan.com">Forums</a></li>
                         <li class="{{ set_active(['global-notifications*']) }}"><a href="{{ route('notifications.index') }}">G Notifications</a></li>
                         <li class="{{ set_active(['deleted-players*']) }}"><a href="{{ route('deleted-players') }}">Deleted Players</a></li>
                         <li class="{{ set_active(['extrapoints*']) }}"><a href="{{ route('extrapoints') }}">Awarded Points</a></li>
