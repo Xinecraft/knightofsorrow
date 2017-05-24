@@ -260,4 +260,19 @@ class PlayerTotal extends Model implements HasPresenter
     {
         return $this->hasMany('App\PlayerPoint', 'player_total_id', 'id');
     }
+
+    public static function todaycount()
+    {
+        $time24 = \Carbon\Carbon::parse('24 hour ago');
+        try
+        {
+            $game = \App\Game::where('created_at','>=', $time24)->first()->id;
+            return self::where('last_game_id','>=',$game)->count();
+        }
+        catch (\Exception $e)
+        {
+            return 0;
+        }
+
+    }
 }
