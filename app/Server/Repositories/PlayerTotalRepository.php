@@ -190,15 +190,15 @@ class PlayerTotalRepository implements PlayerTotalRepositoryInterface
             $pT->save();
         }
 
-        // Put to Top Player so that some bugs are fixed.
-        $topPlayers = PlayerTotal::with(['country','rank'])->orderBy('position')->limit(10)->get();
-        Cache::put('top_players',$topPlayers,61);
-
         // copy to the real playertotal the backup thing
         \DB::table('player_totals')->truncate();
         $ramdomTableName = "/var/lib/mysql-files/".'table'.str_random(10).".txt";
         $query = "SELECT * INTO OUTFILE '$ramdomTableName' FROM player_total_bs;LOAD DATA INFILE '$ramdomTableName' INTO TABLE player_totals;";
         \DB::connection()->getpdo()->exec($query);
+
+        // Put to Top Player so that some bugs are fixed.
+        $topPlayers = PlayerTotalReal::with(['country','rank'])->orderBy('position')->limit(10)->get();
+        Cache::put('top_players',$topPlayers,31);
 
         return "Players total has been logged into player_total table successfully!";
     }

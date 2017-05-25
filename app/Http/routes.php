@@ -349,11 +349,7 @@ Route::get('/ssh',['as' =>'restartserver',function(){
 }]);
 
 Route::get('/copy', function(){
-    //dd(App\PlayerTotal::latest()->limit(10)->get()->toArray());
     \DB::table('player_totals')->truncate();
-   //return App\PlayerTotal::insert(App\PlayerTotalB::all()->toArray());
-    //return DB::statement("SELECT * INTO OUTFILE 'table1.txt' FROM player_totals;");
-    //return DB::statement("LOAD DATA INFILE 'table1.txt' INTO TABLE player_total_bs");
     $ramdomTableName = "/var/lib/mysql-files/".'table'.str_random(10).".txt";
     $query = "SELECT * INTO OUTFILE '$ramdomTableName' FROM player_total_bs;LOAD DATA INFILE '$ramdomTableName' INTO TABLE player_totals;";
     \DB::connection()->getpdo()->exec($query);
