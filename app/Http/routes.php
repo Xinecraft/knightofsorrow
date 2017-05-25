@@ -347,3 +347,8 @@ Route::get('/ssh',['as' =>'restartserver',function(){
     }
 
 }]);
+
+Route::get('/copy', function(){
+    //dd(App\PlayerTotal::latest()->limit(10)->get()->toArray());
+   return App\PlayerTotalB::insert(App\PlayerTotal::all()->toArray());
+});

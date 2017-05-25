@@ -31,7 +31,8 @@ use App\DeletedPlayer;
 use App\Game;
 use App\PlayerPoint;
 use App\Server\Interfaces\PlayerTotalRepositoryInterface;
-use App\PlayerTotal;
+use App\PlayerTotalB as PlayerTotal;
+use App\PlayerTotal as PlayerTotalReal;
 use App\Alias;
 use App\Rank;
 use App\Player;
@@ -192,6 +193,9 @@ class PlayerTotalRepository implements PlayerTotalRepositoryInterface
         // Put to Top Player so that some bugs are fixed.
         $topPlayers = PlayerTotal::with(['country','rank'])->orderBy('position')->limit(10)->get();
         Cache::put('top_players',$topPlayers,61);
+
+        // copy to the real playertotal the backup thing
+        PlayerTotalReal::insert(PlayerTotal::all()->toArray());
 
         return "Players total has been logged into player_total table successfully!";
     }
