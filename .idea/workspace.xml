@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e189236c-c3e7-488f-b221-e9fb727e1c1d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Server/Repositories/PlayerTotalRepository.php" afterPath="$PROJECT_DIR$/app/Server/Repositories/PlayerTotalRepository.php" />
     </list>
     <ignored path="kos.iws" />
@@ -96,11 +95,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayerTotalRepository.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PlayerTotalRepository.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Server/Repositories/PlayerTotalRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="197" column="63" selection-start-line="197" selection-start-column="63" selection-end-line="197" selection-end-column="63" />
+            <state relative-caret-position="184">
+              <caret line="198" column="29" selection-start-line="198" selection-start-column="29" selection-end-line="198" selection-end-column="29" />
               <folding>
                 <element signature="e#1204#1226#0#PHP" expanded="true" />
               </folding>
@@ -108,7 +107,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="283">
@@ -569,12 +568,12 @@
       <workItem from="1489037208272" duration="36000" />
       <workItem from="1495202858965" duration="4085000" />
       <workItem from="1495477418099" duration="2008000" />
-      <workItem from="1495657312204" duration="7962000" />
+      <workItem from="1495657312204" duration="8512000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="180182000" />
+    <option name="totallyTimeSpent" value="180732000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -982,21 +981,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Server/Repositories/PlayerTotalRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="197" column="63" selection-start-line="197" selection-start-column="63" selection-end-line="197" selection-end-column="63" />
-          <folding>
-            <element signature="e#1204#1226#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="283">
           <caret line="353" column="3" selection-start-line="353" selection-start-column="3" selection-end-line="353" selection-end-column="3" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Server/Repositories/PlayerTotalRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="198" column="29" selection-start-line="198" selection-start-column="29" selection-end-line="198" selection-end-column="29" />
+          <folding>
+            <element signature="e#1204#1226#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -52,7 +52,7 @@ class PlayerTotalRepository implements PlayerTotalRepositoryInterface
      */
     public function calculate()
     {
-        \DB::table('player_totals')->truncate();
+        \DB::table('player_total_bs')->truncate();
 
         $aliases = Alias::with('players')->whereNotIn('name',DeletedPlayer::lists('player_name'))->get();
         $totalServerScore = Player::sum('score');
@@ -195,6 +195,7 @@ class PlayerTotalRepository implements PlayerTotalRepositoryInterface
         Cache::put('top_players',$topPlayers,61);
 
         // copy to the real playertotal the backup thing
+        \DB::table('player_totals')->truncate();
         PlayerTotalReal::insert(PlayerTotal::all()->toArray());
 
         return "Players total has been logged into player_total table successfully!";
