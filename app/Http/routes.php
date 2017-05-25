@@ -356,6 +356,5 @@ Route::get('/copy', function(){
     //return DB::statement("LOAD DATA INFILE 'table1.txt' INTO TABLE player_total_bs");
     $ramdomTableName = "/var/lib/mysql-files/".'table'.str_random(10).".txt";
     $query = "SELECT * INTO OUTFILE '$ramdomTableName' FROM player_total_bs;LOAD DATA INFILE '$ramdomTableName' INTO TABLE player_totals;";
-    dd($query);
     \DB::connection()->getpdo()->exec($query);
 });

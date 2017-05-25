@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e189236c-c3e7-488f-b221-e9fb727e1c1d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Console/Kernel.php" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Server/Repositories/PlayerTotalRepository.php" afterPath="$PROJECT_DIR$/app/Server/Repositories/PlayerTotalRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/database.php" afterPath="$PROJECT_DIR$/config/database.php" />
     </list>
     <ignored path="kos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -91,11 +87,11 @@
       <file leaf-file-name="PlayerTotalRepository.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Server/Repositories/PlayerTotalRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="197" column="48" selection-start-line="197" selection-start-column="48" selection-end-line="197" selection-end-column="48" />
+            <state relative-caret-position="184">
+              <caret line="198" column="81" selection-start-line="198" selection-start-column="81" selection-end-line="198" selection-end-column="81" />
               <folding>
                 <element signature="e#1204#1226#0#PHP" expanded="true" />
-                <marker date="1495679119709" expanded="true" signature="8805:8866" ph="SELECT * INT... " />
+                <marker date="1495679236178" expanded="true" signature="8836:8897" ph="SELECT * INT... " />
               </folding>
             </state>
           </provider>
@@ -104,11 +100,11 @@
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="356" column="47" selection-start-line="356" selection-start-column="47" selection-end-line="356" selection-end-column="47" />
+            <state relative-caret-position="270">
+              <caret line="360" column="3" selection-start-line="360" selection-start-column="3" selection-end-line="360" selection-end-column="3" />
               <folding>
-                <marker date="1495679164243" expanded="true" signature="20631:20684" ph="SELECT * INT... " />
-                <marker date="1495679164243" expanded="true" signature="20869:20930" ph="SELECT * INT... " />
+                <marker date="1495679236149" expanded="true" signature="20629:20682" ph="SELECT * INT... " />
+                <marker date="1495679236149" expanded="true" signature="20867:20928" ph="SELECT * INT... " />
               </folding>
             </state>
           </provider>
@@ -517,16 +513,16 @@
       <workItem from="1489037208272" duration="36000" />
       <workItem from="1495202858965" duration="4085000" />
       <workItem from="1495477418099" duration="2008000" />
-      <workItem from="1495657312204" duration="13164000" />
+      <workItem from="1495657312204" duration="13261000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="185384000" />
+    <option name="totallyTimeSpent" value="185481000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32796487" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -535,7 +531,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2681388" sideWeight="0.4941435" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2681388" sideWeight="0.4941435" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -934,22 +930,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Server/Repositories/PlayerTotalRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="197" column="48" selection-start-line="197" selection-start-column="48" selection-end-line="197" selection-end-column="48" />
+        <state relative-caret-position="184">
+          <caret line="198" column="81" selection-start-line="198" selection-start-column="81" selection-end-line="198" selection-end-column="81" />
           <folding>
             <element signature="e#1204#1226#0#PHP" expanded="true" />
-            <marker date="1495679119709" expanded="true" signature="8805:8866" ph="SELECT * INT... " />
+            <marker date="1495679236178" expanded="true" signature="8836:8897" ph="SELECT * INT... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="356" column="47" selection-start-line="356" selection-start-column="47" selection-end-line="356" selection-end-column="47" />
+        <state relative-caret-position="270">
+          <caret line="360" column="3" selection-start-line="360" selection-start-column="3" selection-end-line="360" selection-end-column="3" />
           <folding>
-            <marker date="1495679164243" expanded="true" signature="20631:20684" ph="SELECT * INT... " />
-            <marker date="1495679164243" expanded="true" signature="20869:20930" ph="SELECT * INT... " />
+            <marker date="1495679236149" expanded="true" signature="20629:20682" ph="SELECT * INT... " />
+            <marker date="1495679236149" expanded="true" signature="20867:20928" ph="SELECT * INT... " />
           </folding>
         </state>
       </provider>
