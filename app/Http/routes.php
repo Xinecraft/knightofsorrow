@@ -350,5 +350,6 @@ Route::get('/ssh',['as' =>'restartserver',function(){
 
 Route::get('/copy', function(){
     //dd(App\PlayerTotal::latest()->limit(10)->get()->toArray());
-   return App\PlayerTotalB::insert(App\PlayerTotal::all()->toArray());
+    \DB::table('player_totals')->truncate();
+   return App\PlayerTotal::insert(App\PlayerTotalB::all()->toArray());
 });
