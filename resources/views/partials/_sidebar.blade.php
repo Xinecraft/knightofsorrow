@@ -7,7 +7,7 @@
             <li class="list-group-item" style="padding: 5px 15px;">
                 <span class="small tooltipster" title="SWAT4 Normal Server">
                     <img class="img img20" src="/images/swat.png" alt=""> -
-                    <span class="text-danger text-bold">31.186.250.32:10480</span>
+                    <span class="text-danger text-bold"><a href="http://knightofsorrow.in/news/different-ways-to-join-server--author-Kinnngg">31.186.250.32:10480</a></span>
                 </span>
             </li>
             <li class="list-group-item" style="padding: 5px 15px;"> <span class="small tooltipster" title="KoS Discord Group"> <img class="img img20" src="/images/logo_ds.png" alt=""> - <span class="text-danger text-bold"><a
