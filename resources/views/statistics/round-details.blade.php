@@ -11,7 +11,7 @@
         @endif
 
         <div class="well round-detail-summary text-center">
-            {{ $round->timeAgo }} &nbsp;&squarf;&nbsp; {{ $round->mapName }}  &nbsp;&squarf;&nbsp; Round time: {{ $round->time }} &nbsp;&squarf;&nbsp; Round: {{ $round->index }}
+            <span class="tooltipster" title="{{ $round->timeDDTS }}">{{ $round->timeAgo }}</span> &nbsp;&squarf;&nbsp; {{ $round->mapName }}  &nbsp;&squarf;&nbsp; Round time: {{ $round->time }} &nbsp;&squarf;&nbsp; Round: {{ $round->index }}
         </div>
 
         <div class="round-detail-teamscores" style="background-image: url('/images/game/maps/background-small/{{ $round->map_id }}.jpg')">

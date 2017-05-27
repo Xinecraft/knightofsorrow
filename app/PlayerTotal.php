@@ -233,6 +233,16 @@ class PlayerTotal extends Model implements HasPresenter
     }
 
     /**
+     * Returns game ID of last 5 rounds played
+     *
+     * @return mixed
+     */
+    public function allRounds()
+    {
+        return $this->alias->players->sortByDesc('game_id')->unique('game_id')->pluck('game_id');
+    }
+
+    /**
      * A scope function for getCountry help.
      *
      * @return mixed

@@ -586,7 +586,10 @@
 
         <div class="row no-margin player-round-reports" style="margin-bottom: 10px !important;">
             <div class="col-xs-12 panel panel-default no-padding no-margin no-left-padding">
-                <div class="panel-heading"><span class="info-title">Last Rounds Played</span></div>
+                <div class="panel-heading">
+                    <small class="pull-right"><i><b><a href="{{ route('player-rounds',$player->name) }}">» view all</a></b></i></small>
+                    <span class="info-title">Last Rounds Played</span>
+                </div>
                 <div class="panel-body">
                     <table class="table table-striped table-hover no-margin">
                         <thead><tr>
@@ -605,7 +608,7 @@
                                 <td>{!! $round->swatScoreWithColor !!}</td>
                                 <td>{!! $round->suspectsScoreWithColor !!}</td>
                                 <td>{{ $round->mapName }}</td>
-                                <td class="text-right">{{ $round->timeAgo }}</td>
+                                <td class="text-right tooltipster" title="{{ $round->timeDDTS }}">{{ $round->timeAgo }}</td>
                             </tr>
                          @empty
                             <th>Its lone here.</th>

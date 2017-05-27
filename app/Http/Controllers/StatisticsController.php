@@ -118,6 +118,28 @@ class StatisticsController extends Controller
         return view('statistics.player-details',$array);
     }
 
+    /**
+     * To handle the Player Rounds view section.
+     *
+     * @param null $id
+     * @param $name
+     * @return \Illuminate\View\View
+     */
+    public function getPlayerRounds($name)
+    {
+        $player = PlayerTotal::findOrFailByName($name);
+        $latestRounds = $player->allRounds()->toArray();
+
+        $latestRounds = Game::whereIn('id',$latestRounds)->latest()->paginate(35);
+
+        $array = [
+            'player' => $player,
+            'rounds' => $latestRounds,
+        ];
+
+        return view('statistics.player-rounds',$array);
+    }
+
 
     /**
      * Returns a View with Country List for Statistics Page.

@@ -52,6 +52,11 @@ class GamePresenter extends BasePresenter
         return $this->wrappedObject->created_at->diffForHumans();
     }
 
+    public function timeDDTS()
+    {
+        return $this->wrappedObject->created_at->toDayDateTimeString();
+    }
+
     public function time($format="%dm %ds")
     {
         return \App\Server\Utils::getMSbyS($this->wrappedObject->round_time,$format);

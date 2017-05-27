@@ -40,7 +40,7 @@
                             <td>{!! $round->swatScoreWithColor !!}</td>
                             <td>{!! $round->suspectsScoreWithColor !!}</td>
                             <td>{{ $round->mapName }}</td>
-                            <td class="text-right">{{ $round->timeAgo }}</td>
+                            <td class="text-right tooltipster" title="{{ $round->timeDDTS }}">{{ $round->timeAgo }}</td>
                         </tr>
                     @endforeach
                     </tbody>

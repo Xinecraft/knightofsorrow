@@ -188,7 +188,7 @@
                                 <td>{!! $round->swatScoreWithColor !!}</td>
                                 <td>{!! $round->suspectsScoreWithColor !!}</td>
                                 <td>{{ $round->mapName }}</td>
-                                <td class="text-right">{{ $round->timeAgo }}</td>
+                                <td class="text-right tooltipster" title="{{ $round->timeDDTS }}">{{ $round->timeAgo }}</td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -849,7 +849,7 @@
                                 <td>{!! $ban->ipAddrWithMask !!}</td>
                                 <td>{!! $ban->bannedByAdminURL !!}</td>
                                 <td><b>{!! $ban->statusWithColor !!}</b></td>
-                                <td class="text-right">{!! $ban->updated_at->diffForHumans() !!}</td>
+                                <td class="text-right tooltipster" title="{{ $ban->updated_at->toDayDateTimeString() }}">{!! $ban->updated_at->diffForHumans() !!}</td>
                             </tr>
                         @endforeach
                         </tbody>

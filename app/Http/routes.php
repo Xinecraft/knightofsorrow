@@ -72,6 +72,7 @@ Route::group(['prefix' => 'statistics'],function(){
     Route::get('country/{id}/{name}/players',['as' => 'country-detail', 'uses' => 'StatisticsController@getCountryDetails']);
     Route::get('charts',['as' => 'chart-reports', 'uses' => 'StatisticsController@getChartReports']);
     Route::get('player/{name}/',['as' => 'player-detail', 'uses' => 'StatisticsController@getPlayerDetails']);
+    Route::get('player/{name}/rounds',['as' => 'player-rounds', 'uses' => 'StatisticsController@getPlayerRounds']);
     Route::get('player/{name}/delete',['as' => 'player-delete', 'uses' => 'StatisticsController@getPlayerDelete']);
     Route::post('player/{name}/delete',['as' => 'player-delete-post', 'uses' => 'StatisticsController@postPlayerDelete']);
     Route::post('player/{name}/undelete',['as' => 'undelete-player', 'uses' => 'StatisticsController@postPlayerUndelete']);
@@ -347,10 +348,10 @@ Route::get('/ssh',['as' =>'restartserver',function(){
     }
 
 }]);
-
+/*
 Route::get('/copy', function(){
     \DB::table('player_totals')->truncate();
     $ramdomTableName = "/var/lib/mysql-files/".'table'.str_random(10).".txt";
     $query = "SELECT * INTO OUTFILE '$ramdomTableName' FROM player_total_bs;LOAD DATA INFILE '$ramdomTableName' INTO TABLE player_totals;";
     \DB::connection()->getpdo()->exec($query);
-});
+});*/
