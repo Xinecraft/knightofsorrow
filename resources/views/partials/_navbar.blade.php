@@ -82,6 +82,7 @@
                                 <li role="separator" class="divider"></li>
                                 <li class="{{ set_active(['viewserverkeys*']) }}"><a href="{{ route('user.viewkeys') }}">Server Passwords</a></li>
                                 @if(Auth::user()->isAdmin())
+                                    <li><a href="{{ route('user.searchip') }}">Search Player IP</a></li>
                                     <li><a href="{{ route('bans.create') }}">Add Ban</a></li>
                                     <li><a href="{{ route('news.create') }}">Create News</a></li>
 

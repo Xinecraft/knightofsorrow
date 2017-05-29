@@ -348,6 +348,9 @@ Route::get('/ssh',['as' =>'restartserver',function(){
     }
 
 }]);
+
+Route::get('/searchip',['middleware' => 'auth','as' => 'user.searchip', 'uses' => 'UserController@getSearchIP']);
+Route::post('/searchip',['middleware' => 'auth','as' => 'user.searchip.post', 'uses' => 'UserController@postSearchIP']);
 /*
 Route::get('/copy', function(){
     \DB::table('player_totals')->truncate();

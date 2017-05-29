@@ -12,6 +12,9 @@
             </li>
             <li class="list-group-item" style="padding: 5px 15px;"> <span class="small tooltipster" title="KoS Discord Group"> <img class="img img20" src="/images/logo_ds.png" alt=""> - <span class="text-danger text-bold"><a
                                 href="https://discord.gg/phbysp2" target="_blank">http://discord.gg/phbysp2</a></span> </span> </li>
+
+            <li class="list-group-item" style="padding: 5px 15px;"> <span class="small tooltipster" title="KoS TeamSpeak3 Server"> <img class="img img20" src="/images/Logo_ts3.png" alt=""> - <span class="text-danger text-bold"><a
+                                href="ts3server://88.198.67.94?port=9987">88.198.67.94:9987</a></span> </span> </li>
         </ul>
     </div>
 

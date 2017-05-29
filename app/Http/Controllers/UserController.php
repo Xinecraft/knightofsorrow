@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Notification;
 use App\Photo;
+use App\Player;
 use App\PlayerTotal;
 use App\Role;
 use App\User;
@@ -689,6 +690,42 @@ class UserController extends Controller
     public function getWebAdmin()
     {
         return view('user.webadmin');
+    }
+
+    /**
+     * Send view
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     */
+    public function getSearchIP(Request $request)
+    {
+        if($request->user()->isAdmin())
+            return view('user.searchip');
+        return \Redirect::home()->with('error', "Whoops! Not Authorized");
+    }
+
+    /**
+     * Handle Viewer
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function postSearchIP(Request $request)
+    {
+        $this->validate($request, [
+            'ipaddr' => 'required'
+        ]);
+
+        if(!$request->user()->isAdmin())
+            return \Redirect::home()->with('error', "Whoops! Not Authorized");
+
+        $players = Player::where('ip_address','LIKE','%'.$request->ipaddr."%")->orWhere('name','LIKE','%'.$request->ipaddr."%")->latest()->get();
+
+        //dd($players);
+
+        \Session::flash('post-back','yes');
+        return view('user.searchip')->with('players',$players);
     }
 
 }
