@@ -200,6 +200,7 @@ Route::post('/server/chat',['middleware' => 'auth', 'as' => 'server.chat', 'uses
 
 // Rules Page
 Route::get('/rules', ['as' => 'rules', 'uses' => 'MainController@getRulesOfServer']);
+Route::get('/rules-of-usclan', ['as' => 'us.rules', 'uses' => 'MainController@getRulesOfClan']);
 
 /**
  * News Controller

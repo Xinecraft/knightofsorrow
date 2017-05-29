@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', 'Server Credentials')
+@section('title', 'Search Player with IP for admins')
 @section('main-container')
     <div class="content col-xs-9">
         <div class="row">

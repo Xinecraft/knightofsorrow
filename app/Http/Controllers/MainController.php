@@ -680,4 +680,9 @@ class MainController extends Controller
     {
         return view('stream');
     }
+
+    public function getRulesOfClan()
+    {
+        return view('rulesofclan');
+    }
 }

@@ -126,7 +126,7 @@ class ApiController extends Controller
                     $IPorNull = $IP;
                 }
 
-                if($playerTotal = Player::findOrFailByNameWithNull($playerNameStripped))
+                if($playerTotal = PlayerTotal::findOrFailByNameWithNull($playerNameStripped))
                 {
                     $playerTableData .= "<td>{$showRadioIfAdmin}<b><a title='{$IPorNull}' class='tooltipster team-{$player['team']}' href='".route('player-detail',$playerNameStripped)."'>".$player['name']."</b></a></td>";
                 }

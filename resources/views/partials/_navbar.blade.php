@@ -15,11 +15,11 @@
             <ul class="nav navbar-nav">
                 <li class="{{ set_active(['statistics*']) }}">{!! link_to_route('statistics-home','Statistics') !!}</li>
                 <li><a target="_blank" href="http://knightofsorrow.forumclan.com">Forum</a></li>
-                <li class="{{ set_active(['rules*']) }}"><a href="{{ route('rules') }}">Rules</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                         More <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
+                        <li class="{{ set_active(['rules']) }}"><a href="{{ route('rules') }}">Rules</a></li>
                         <li class="{{ set_active(['tournament*']) }}"><a href="{{ route('tournament.index') }}">Tournaments</a></li>
                         <li class="{{ set_active(['banlist*']) }}"><a href="{{ route('bans.index') }}">Banlist</a></li>
                         <li class="{{ set_active(['news*']) }}"><a href="{{ route('news.index') }}">News</a></li>
@@ -31,6 +31,9 @@
                         <li class="{{ set_active(['global-notifications*']) }}"><a href="{{ route('notifications.index') }}">G Notifications</a></li>
                         <li class="{{ set_active(['deleted-players*']) }}"><a href="{{ route('deleted-players') }}">Deleted Players</a></li>
                         <li class="{{ set_active(['extrapoints*']) }}"><a href="{{ route('extrapoints') }}">Awarded Points</a></li>
+                        @if(Auth::check() && Auth::user()->isSubAdmin())
+                        <li class="{{ set_active(['rules-of-usclan*']) }}"><a href="{{ route('us.rules') }}">uS| Clan Rules</a></li>
+                        @endif
                     </ul>
                 </li>
 
