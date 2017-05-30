@@ -532,4 +532,12 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     {
         return $this->belongsToMany('App\Trophy')->withTimestamps();
     }
+
+    /**
+     * The clan roles that belong to the user.
+     */
+    public function clanroles()
+    {
+        return $this->belongsToMany('App\Clanrole');
+    }
 }

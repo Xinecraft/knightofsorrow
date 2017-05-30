@@ -131,6 +131,12 @@
                                         Muted
                                     </p>
                                 @endif
+                                <div class="padding10 text-center">
+                                @forelse($user->clanroles()->orderBy('weight')->get() as $clanrole)
+                                    <img class="tooltipster image" src="/images/ranks/{{ $clanrole->img_url }}" alt="{{ $clanrole->display_name }}" title="{{ $clanrole->display_name }}">
+                                @empty
+                                @endforelse
+                                </div>
                             </div>
                             <div class="col-xs-5">
                                 <h3 class="no-margin hero-name {{ $user->roles->first()->name }} {{ $user->banned ? 'linethru' : '' }}">{{ $user->name }}</h3>
