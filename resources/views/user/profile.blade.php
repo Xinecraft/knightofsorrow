@@ -156,6 +156,7 @@
                                         <br>
                                         <kbd class="text-muted small no-margin">Last Login IP : {{ $user->last_ipaddress }}</kbd>
                                         <kbd class="text-muted small no-margin">{{ $user->email }}</kbd>
+                                        <kbd class="text-muted small no-margin">User Id:{{ $user->id }}</kbd>
                                     @endif
                                 </div>
 
