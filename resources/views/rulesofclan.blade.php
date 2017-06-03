@@ -1,11 +1,11 @@
 @extends('layouts.main')
-@section('title','Rules & Regulations of uS| Clan')
+@section('title','Rules & Regulations of uS| Team')
 @section('main-container')
     <div class="content col-xs-9">
 
         <div class="panel" style="padding: 20px;">
             <div style="padding-left:10px">
-                <h1 class="text-center"><b>Rules of uS| Clan</b></h1>
+                <h1 class="text-center"><b>Rules of uS| Team</b></h1>
                 <hr style="margin-top: 10px;margin-bottom: 10px">
                 <p><i>THESE RULES ARE TO BE MET BY ALL US| MEMBERS INCLUDING LEADER ANY CO-LEADERS.</i></p>
                 <h5><b><u>GENERAL RULES FOR US MEMBERS:</u></b></h5>
@@ -92,7 +92,7 @@
                 <h5><u><b>WHAT IS AN OFFICIAL POLL AND WHO CAN ORGANISE IT?</b></u></h5>
                 <p>
                     Official Poll is made to get the opinion of all members of uS| on a cause.
-                    It can be anything asking for something new at us|clan or approval/denial of a member to removal of a admin or superadmin.
+                    It can be anything asking for something new at uS|team or approval/denial of a member to removal of a admin or superadmin.
                 </p>
                 It can be started by one of these:
                 <ul>
@@ -101,7 +101,7 @@
                     <li>CO-LEADERS can start offical poll if both Co-Leaders agreed to start it.</li>
                 </ul>
                 <br>
-                <p><i>Note: uS| Clan reserves the right to change the rules with or without any notice.</i></p>
+                <p><i>Note: uS| Team reserves the right to change the rules with or without any notice.</i></p>
             </div>
         </div>
     </div>

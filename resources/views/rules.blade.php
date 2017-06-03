@@ -27,7 +27,7 @@
                 </p>
                 <br>
                 <p style="padding-bottom:20px">Respect these rules so everyone can have a fun gameplay experience or <span class="text-bold">risk getting kicked/banned</span>.</p>
-                <p><i>Note: uS| Clan reserves the right to change the rules with or without any notice.</i></p>
+                <p><i>Note: uS|Team reserves the right to change the rules with or without any notice.</i></p>
             </div>
         </div>
 

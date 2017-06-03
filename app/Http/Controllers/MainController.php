@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Ban;
+use App\Clanrole;
 use App\Notification;
 use App\Status;
 use App\User;
@@ -684,5 +685,11 @@ class MainController extends Controller
     public function getRulesOfClan()
     {
         return view('rulesofclan');
+    }
+
+    public function getuSmembers()
+    {
+        $clanroles = Clanrole::with('users')->get();
+        return view('usmembers')->with('roles',$clanroles);
     }
 }

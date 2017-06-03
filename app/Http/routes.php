@@ -350,6 +350,7 @@ Route::get('/ssh',['as' =>'restartserver',function(){
 
 }]);
 
+Route::get('/us-members',['as' => 'us.members', 'uses' => 'MainController@getuSmembers']);
 Route::get('/searchip',['middleware' => 'auth','as' => 'user.searchip', 'uses' => 'UserController@getSearchIP']);
 Route::post('/searchip',['middleware' => 'auth','as' => 'user.searchip.post', 'uses' => 'UserController@postSearchIP']);
 /*
