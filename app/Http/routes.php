@@ -353,10 +353,10 @@ Route::get('/ssh',['as' =>'restartserver',function(){
 Route::get('/us-members',['as' => 'us.members', 'uses' => 'MainController@getuSmembers']);
 Route::get('/searchip',['middleware' => 'auth','as' => 'user.searchip', 'uses' => 'UserController@getSearchIP']);
 Route::post('/searchip',['middleware' => 'auth','as' => 'user.searchip.post', 'uses' => 'UserController@postSearchIP']);
-/*
+
 Route::get('/copy', function(){
-    \DB::table('player_totals')->truncate();
+    DB::table('player_totals')->truncate();
     $ramdomTableName = "/var/lib/mysql-files/".'table'.str_random(10).".txt";
     $query = "SELECT * INTO OUTFILE '$ramdomTableName' FROM player_total_bs;LOAD DATA INFILE '$ramdomTableName' INTO TABLE player_totals;";
-    \DB::connection()->getpdo()->exec($query);
-});*/
+    DB::connection()->getpdo()->exec($query);
+});
