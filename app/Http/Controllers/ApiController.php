@@ -236,10 +236,10 @@ class ApiController extends Controller
      */
     public function getQueryPlayer($query)
     {
-        $player = PlayerTotal::with(['country','rank'])->where('name', 'like',  $query )->get(['id', 'name', 'position', 'country_id', 'rank_id', 'total_score', 'total_points']);
+        $player = PlayerTotal::with(['country','rank'])->where('name', 'like',  $query )->orderBy('position')->get(['id', 'name', 'position', 'country_id', 'rank_id', 'total_score', 'total_points']);
         if(!$player->isEmpty())
             return $player;
-        return (PlayerTotal::with(['country','rank'])->where('name', 'like', '%' . $query . '%')->get(['id', 'name', 'position', 'country_id', 'rank_id', 'total_score', 'total_points']));
+        return (PlayerTotal::with(['country','rank'])->where('name', 'like', '%' . $query . '%')->orderBy('position')->get(['id', 'name', 'position', 'country_id', 'rank_id', 'total_score', 'total_points']));
     }
 
     /**
