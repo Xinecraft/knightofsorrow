@@ -226,7 +226,7 @@ class ApiController extends Controller
      */
     public function getQueryUser($query)
     {
-        return (User::with(['country','photo'])->where('username', 'like', '%' . $query . '%')->orWhere('name', 'like', '%' . $query . '%')->orWhere('email', 'like', '%' . $query . '%')->get(['id', 'name', 'username', 'country_id', 'created_at', 'player_totals_name', 'dob', 'gr_id', 'facebook_url', 'website_url', 'steam_nickname', 'discord_username']));
+        return (User::with(['country','photo'])->where('username', 'like', '%' . $query . '%')->orWhere('name', 'like', '%' . $query . '%')->orWhere('email', 'like', '%' . $query . '%')->get(['id', 'name', 'username', 'country_id', 'created_at', 'player_totals_name', 'dob', 'gr_id', 'facebook_url', 'website_url', 'steam_nickname', 'discord_username', 'photo_id']));
     }
 
     /**

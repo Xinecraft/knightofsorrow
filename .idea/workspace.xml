@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e189236c-c3e7-488f-b221-e9fb727e1c1d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" />
-    </list>
+    <list default="true" id="e189236c-c3e7-488f-b221-e9fb727e1c1d" name="Default" comment="" />
     <ignored path="kos.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -34,7 +32,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="273">
-              <caret line="228" column="341" selection-start-line="228" selection-start-column="341" selection-end-line="228" selection-end-column="341" />
+              <caret line="228" column="33" selection-start-line="228" selection-start-column="33" selection-end-line="228" selection-end-column="33" />
               <folding>
                 <element signature="e#464#536#0#PHP" expanded="false" />
                 <element signature="e#634#822#0#PHP" expanded="false" />
@@ -588,12 +586,12 @@
       <workItem from="1496243530205" duration="1893000" />
       <workItem from="1496450092788" duration="9541000" />
       <workItem from="1496620046045" duration="3369000" />
-      <workItem from="1496703583485" duration="4770000" />
+      <workItem from="1496703583485" duration="4861000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="226928000" />
+    <option name="totallyTimeSpent" value="227019000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -990,7 +988,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
-          <caret line="228" column="341" selection-start-line="228" selection-start-column="341" selection-end-line="228" selection-end-column="341" />
+          <caret line="228" column="33" selection-start-line="228" selection-start-column="33" selection-end-line="228" selection-end-column="33" />
           <folding>
             <element signature="e#464#536#0#PHP" expanded="false" />
             <element signature="e#634#822#0#PHP" expanded="false" />
