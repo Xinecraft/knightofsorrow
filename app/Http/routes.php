@@ -57,6 +57,11 @@ Route::group(['prefix' => 'api'],function(){
     Route::get('ip2cc/{IP}', ['as' => 'api-ip-country', 'uses' => 'ApiController@getCountryCodeFromIP']);
 
     Route::any('translate', ['as' => 'api-translate', 'uses' => 'ApiController@translateText']);
+
+    Route::get('joke', ['as' => 'api-joke', 'uses' => 'ApiController@getRandomJoke']);
+    Route::get('insult', ['as' => 'api-insult', 'uses' => 'ApiController@getRandomInsult']);
+    Route::get('nsfw-boobs', ['as' => 'api-bo', 'uses' => 'ApiController@getRandomBoobs']);
+    Route::get('nsfw-ass', ['as' => 'api-as', 'uses' => 'ApiController@getRandomAss']);
 });
 
 

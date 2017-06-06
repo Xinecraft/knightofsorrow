@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Collection;
 use Kinnngg\Swat4query\Server as Swat4Server;
 use Yandex\Translate\Translator;
 use Yandex\Translate\Exception;
@@ -780,5 +781,126 @@ class ApiController extends Controller
         }
         printf("[c=00ff00][b]%s[\\b][c=ffff00] (in %s)[c=00ff00]: %s[\\c]",$player,$language,$translated_text);
         exit();
+    }
+
+    public function getRandomJoke()
+    {
+        $joke = Collection::make([
+            'I m so bored like Schumacher in taxi.',
+            'I m bored like black man in solarium.',
+            'Bro you are lying like brothers Grimm together!',
+            'Didnt I tell you that you can speak only when chickens piss!',
+            'Can a kangaroo jump higher than a house? Of course, a house doesn’t jump at all.',
+            'Doctor: "I\'m sorry but you suffer from a terminal illness and have only 10 to live."
+Patient: "What do you mean, 10? 10 what? Months? Weeks?!"
+Doctor: "Nine. Eight, Seven..."',
+            'Dentist: "You need a crown."
+Patient: "Finally someone who understands me"',
+            'It is so cold outside I saw a politician with his hands in his own pockets.',
+            'Patient: Oh doctor, I’m just so nervous. This is my first operation.
+Doctor: Don\'t worry. Mine too.',
+            'Men 1845: I just killed a buffalo.
+Men 1952: I just fixed the roof.
+Men 2017: I just shaved my leg',
+            'I can’t believe I forgot to go to the gym today. That’s 7 years in a row now.',
+            'A naked women robbed a bank. Nobody could remember her face.',
+            'Naked women always have right!',
+            'I’m selling my talking parrot. Why? Because yesterday, the bastard tried to sell me.',
+            'Doctor says to his patient: "You have cancer and Alzheimer."
+Patient: "At least I don\'t have cancer."',
+            'What is risky?
+Sneezing while having diarrhea!',
+            'A wife is like a hand grenade. Take off the ring and say good bye to your house.',
+            'Never trust to a woman that lying!',
+            'I told my girlfriend she drew her eyebrows too high. She seemed surprised.',
+            'My friend says to me: "What rhymes with orange" I said: "no it doesn\'t"',
+            'What is faster or rabbit?',
+            'I want to die peacefully in my sleep like my grandfather did, not screaming in terror like the passengers in his car.',
+            'Why is six afraid of sever? because sever ate nine.',
+            'Q: Did you hear about the guy who ran infront of the bus? A: He got tired ',
+            'Q: What do u call a bunny with a bent dick? A: FUCKS FUNNY ',
+            'Q: Why did Hitler commit suicide? A: He got the gas bill. ',
+            'Q: Why did the Mafia cross the road? A: Forget about it. ',
+            'Q: What do you call an Italian hooker? A: A Pasta-tute',
+            'People say nothing is impossible, but I do nothing every day.',
+            'If you can\'t beat them, arrange to have them beaten.',
+            'To all you virgins, thanks for nothing.',
+            'Error. No keyboard. Press F1 to continue.',
+            'This sentence is a lie.',
+            'There are 7 days in a week, but no fun at all.'
+        ])->random();
+
+        return \Response::json(['joke' => $joke],200);
+    }
+
+    public function getRandomInsult()
+    {
+        $joke = Collection::make([
+            'I just stepped in something that was smarter than you… and smelled better too.',
+            'Your parents hated you so much your bath toys were an iron and a toaster',
+            'Even if you were twice as smart, you\'d still be stupid!',
+            'Am I getting smart with you? How would you know?',
+            'The only way you\'ll ever get laid is if you crawl up a chicken\'s ass and wait.',
+            'You\'re a person of rare intelligence. It\'s rare when you show any.',
+            'The only way you\'ll ever get laid is if you crawl up a chicken\'s ass and wait.',
+            'If you were any less intelligent we\'d have to water you three times a week.',
+            'If you spoke your mind, you\'d be speechless.',
+            'You\'re so fat you show up on radar.',
+            'You\'re so fat I\'d have to grease the door frame and hold a Twinkie on the other side just to get you through',
+            '(if you try to insult bot) How original. No one else had thought of trying to get the bot to insult itself. I applaud your creativity. 
+Yawn. Perhaps this is why you don\'t have friends. You don\'t add anything new to any conversation. 
+You are more of a bot than me, predictable answers, and absolutely dull to have an actual conversation with.',
+            'Yo Mama so fat she\'s on both sides of the family.',
+            'I hear the only place you\'re ever invited is outside.',
+            'I can explain it to you, but I can\'t understand it for you.',
+            'I heard your parents took you to a dog show and you won.',
+            'You\'re so ugly, when you popped out the doctor said "Aww what a treasure" and your mom said "Yeah, lets bury it."',
+            'If you really want to know about mistakes, you should ask your parents.',
+            'You\'re so ugly you make blind kids cry.',
+            'Yo Mama so dumb she bought tickets to Xbox Live.',
+            'You\'re so fat when you turn around, people throw you a welcome back party.',
+            'You\'re not pretty enough to be this stupid.',
+            'You\'re so ugly, when you popped out the doctor said "Aww what a treasure" and your mom said "Yeah, lets bury it',
+            'The only way you\'ll ever get laid is if you crawl up a chicken\'s ass and wait.',
+            'Did your parents ever ask you to run away from home?',
+            'You\'re so ugly, when you got robbed, the robbers made you wear their masks.',
+            'Hey, your village called – they want their idiot back',
+            'You couldn\'t pour water out of a boot if the instructions were on the heel.',
+            'Don\'t you need a license to be that ugly?',
+            'Ordinarily people live and learn. You just live.',
+            'You\'re so fat that when you fell from your bed you fell from both sides.',
+            'I don\'t exactly hate you, but if you were on fire and I had water, I\'d drink it.',
+            'You\'re so fat when you get on the scale it says "To be continued."',
+            'You\'re so fat that at the zoo the elephants started throwing you peanuts.',
+            'You \'re ugly like ass from inside.',
+            'You\'re so fat every time you turn around, it\'s your birthday.',
+            'You\'re so ugly, when you got robbed, the robbers made you wear their masks.',
+            'You\'re so fat you got arrested at the airport for ten pounds of crack.',
+            'You \'re so bad luck that when black cat sees you, she spits 3 times.',
+            'You\'re so fat you fell in love and broke it.',
+            'What\'s the difference between you and eggs? Eggs get laid and you don\'t',
+            'You\'re so fat you can\'t fit in any timeline.',
+            'You\'re so fat when you go swimming the whales start singing "We Are Family".',
+            'You\'re so ugly, you scared the crap out of the toilet.',
+            'If you were any less intelligent we\'d have to water you three times a week.',
+            'The only way you\'ll ever get laid is if you crawl up a chicken\'s ass and wait.',
+            'You\'re a person of rare intelligence. It\'s rare when you show any.'
+        ])->random();
+
+        return \Response::json(['insult' => $joke],200);
+    }
+
+    public function getRandomAss()
+    {
+        $images = glob('images/nsfw/ass/*');
+        $image = url()."/".$images[rand(0, count($images) - 1)];
+        return \Response::json(['image' => $image],200);
+    }
+
+    public function getRandomBoobs()
+    {
+        $images = glob('images/nsfw/boobs/*');
+        $image = url()."/".$images[rand(0, count($images) - 1)];
+        return \Response::json(['image' => $image],200);
     }
 }
