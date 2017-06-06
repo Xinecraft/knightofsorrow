@@ -226,8 +226,7 @@ class ApiController extends Controller
      */
     public function getQueryUser($query)
     {
-        return (User::where('username', 'like', '%' . $query . '%')->orWhere('name', 'like', '%' . $query . '%')->orWhere('email', 'like', '%' . $query . '%')->get(['id', 'name', 'username', 'country_id']));
-
+        return (User::with('country')->where('username', 'like', '%' . $query . '%')->orWhere('name', 'like', '%' . $query . '%')->orWhere('email', 'like', '%' . $query . '%')->get(['id', 'name', 'username', 'country_id', 'created_at', 'player_totals_name', 'dob']));
     }
 
     /**
@@ -236,11 +235,10 @@ class ApiController extends Controller
      */
     public function getQueryPlayer($query)
     {
-        $player = PlayerTotal::with('country')->where('name', 'like',  $query )->get(['id', 'name', 'position', 'country_id']);
+        $player = PlayerTotal::with(['country','rank'])->where('name', 'like',  $query )->get(['id', 'name', 'position', 'country_id', 'rank_id', 'total_score', 'total_points']);
         if(!$player->isEmpty())
             return $player;
-        return (PlayerTotal::with('country')->where('name', 'like', '%' . $query . '%')->get(['id', 'name', 'position', 'country_id']));
-
+        return (PlayerTotal::with(['country','rank'])->where('name', 'like', '%' . $query . '%')->get(['id', 'name', 'position', 'country_id', 'rank_id', 'total_score', 'total_points']));
     }
 
     /**

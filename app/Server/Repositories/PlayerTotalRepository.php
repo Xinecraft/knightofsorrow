@@ -191,9 +191,9 @@ class PlayerTotalRepository implements PlayerTotalRepositoryInterface
         }
 
         // copy to the real playertotal the backup thing
-        \DB::table('player_totals')->truncate();
         $ramdomTableName = "/var/lib/mysql-files/".'table'.str_random(10).".txt";
         $query = "SELECT * INTO OUTFILE '$ramdomTableName' FROM player_total_bs;LOAD DATA INFILE '$ramdomTableName' INTO TABLE player_totals;";
+        \DB::table('player_totals')->truncate();
         \DB::connection()->getpdo()->exec($query);
 
         // Put to Top Player so that some bugs are fixed.
