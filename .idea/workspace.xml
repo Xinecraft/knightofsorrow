@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e189236c-c3e7-488f-b221-e9fb727e1c1d" name="Default" comment="" />
+    <list default="true" id="e189236c-c3e7-488f-b221-e9fb727e1c1d" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" />
+    </list>
     <ignored path="kos.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -31,8 +33,8 @@
       <file leaf-file-name="ApiController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="228" column="33" selection-start-line="228" selection-start-column="33" selection-end-line="228" selection-end-column="33" />
+            <state relative-caret-position="252">
+              <caret line="229" column="5" selection-start-line="229" selection-start-column="5" selection-end-line="229" selection-end-column="5" />
               <folding>
                 <element signature="e#464#536#0#PHP" expanded="false" />
                 <element signature="e#634#822#0#PHP" expanded="false" />
@@ -452,7 +454,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="MainC&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/MainController.php&#10;Api&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/ApiController.php&#10;side&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;prof&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/user/profile.blade.php&#10;r&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/rulesofclan.blade.php&#10;rules&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/rulesofclan.blade.php&#10;na&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;Main&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/MainController.php&#10;route&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/routes.php&#10;admin&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/user/adminlist.blade.php&#10;foot&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_footer.blade.php&#10;rul&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/rulesofclan.blade.php&#10;UserP&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Presenters/UserPresenter.php&#10;User&#9;null&#9;null&#10;nav&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;Pla&#9;FILE&#9;file://C:/wamp/www/kos/app/PlayerTotal.php&#10;PlayerTotalPre&#9;null&#9;null&#10;PlayerTo&#9;FILE&#9;file://C:/wamp/www/kos/app/PlayerTotal.php&#10;GamePr&#9;null&#9;null&#10;rou&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/routes.php&#10;sidebar&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;term&#9;ACTION&#9;ActivateTerminalToolWindow&#10;ter&#9;ACTION&#9;ActivateTerminalToolWindow&#10;app.&#9;FILE&#9;file://C:/wamp/www/kos/resources/assets/less/app.less&#10;terminal&#9;ACTION&#9;ActivateTerminalToolWindow&#10;help&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/helpers.php&#10;Comment&#9;null&#9;null&#10;routes&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/routes.php&#10;Live Te&#9;ACTION&#9;InsertLiveTemplate&#10;main.bl&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/layouts/main.blade.php&#10;TOur&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/TournamentController.php&#10;app.c&#9;FILE&#9;file://C:/wamp/www/kos/public/css/app.css&#10;main&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/layouts/main.blade.php&#10;KTou&#9;FILE&#9;file://C:/wamp/www/kos/app/KTournament.php&#10;UserPre&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Presenters/UserPresenter.php&#10;edit.&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/user/edit.blade.php&#10;UserCo&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/UserController.php&#10;MailCo&#9;null&#9;null&#10;profi&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/user/profile.blade.php&#10;brac&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/bracket.blade.php&#10;main.js&#9;FILE&#9;file://C:/wamp/www/kos/public/js/main.js&#10;News&#9;FILE&#9;file://C:/wamp/www/kos/app/News.php&#10;NewsC&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/NewsController.php&#10;News.php&#9;FILE&#9;file://C:/wamp/www/kos/app/News.php&#10;show&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/show.blade.php&#10;termi&#9;ACTION&#9;ActivateTerminalToolWindow&#10;KTeam&#9;FILE&#9;file://C:/wamp/www/kos/app/KTeam.php&#10;KTo&#9;FILE&#9;file://C:/wamp/www/kos/app/KTournament.php&#10;KTea&#9;FILE&#9;file://C:/wamp/www/kos/app/KTeam.php&#10;Tournament.php&#9;FILE&#9;file://C:/wamp/www/kos/app/KTournament.php" />
+    <property name="SearchEverywhereHistoryKey" value="User&#9;FILE&#9;file://C:/wamp/www/kos/app/User.php&#10;MainC&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/MainController.php&#10;Api&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/ApiController.php&#10;side&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;prof&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/user/profile.blade.php&#10;r&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/rulesofclan.blade.php&#10;rules&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/rulesofclan.blade.php&#10;na&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;Main&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/MainController.php&#10;route&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/routes.php&#10;admin&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/user/adminlist.blade.php&#10;foot&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_footer.blade.php&#10;rul&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/rulesofclan.blade.php&#10;UserP&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Presenters/UserPresenter.php&#10;nav&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_navbar.blade.php&#10;Pla&#9;FILE&#9;file://C:/wamp/www/kos/app/PlayerTotal.php&#10;PlayerTotalPre&#9;null&#9;null&#10;PlayerTo&#9;FILE&#9;file://C:/wamp/www/kos/app/PlayerTotal.php&#10;GamePr&#9;null&#9;null&#10;rou&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/routes.php&#10;sidebar&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/partials/_sidebar.blade.php&#10;term&#9;ACTION&#9;ActivateTerminalToolWindow&#10;ter&#9;ACTION&#9;ActivateTerminalToolWindow&#10;app.&#9;FILE&#9;file://C:/wamp/www/kos/resources/assets/less/app.less&#10;terminal&#9;ACTION&#9;ActivateTerminalToolWindow&#10;help&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/helpers.php&#10;Comment&#9;null&#9;null&#10;routes&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/routes.php&#10;Live Te&#9;ACTION&#9;InsertLiveTemplate&#10;main.bl&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/layouts/main.blade.php&#10;TOur&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/TournamentController.php&#10;app.c&#9;FILE&#9;file://C:/wamp/www/kos/public/css/app.css&#10;main&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/layouts/main.blade.php&#10;KTou&#9;FILE&#9;file://C:/wamp/www/kos/app/KTournament.php&#10;UserPre&#9;FILE&#9;file://C:/wamp/www/kos/app/Server/Presenters/UserPresenter.php&#10;edit.&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/user/edit.blade.php&#10;UserCo&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/UserController.php&#10;MailCo&#9;null&#9;null&#10;profi&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/user/profile.blade.php&#10;brac&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/bracket.blade.php&#10;main.js&#9;FILE&#9;file://C:/wamp/www/kos/public/js/main.js&#10;News&#9;FILE&#9;file://C:/wamp/www/kos/app/News.php&#10;NewsC&#9;FILE&#9;file://C:/wamp/www/kos/app/Http/Controllers/NewsController.php&#10;News.php&#9;FILE&#9;file://C:/wamp/www/kos/app/News.php&#10;show&#9;FILE&#9;file://C:/wamp/www/kos/resources/views/tournament/show.blade.php&#10;termi&#9;ACTION&#9;ActivateTerminalToolWindow&#10;KTeam&#9;FILE&#9;file://C:/wamp/www/kos/app/KTeam.php&#10;KTo&#9;FILE&#9;file://C:/wamp/www/kos/app/KTournament.php&#10;KTea&#9;FILE&#9;file://C:/wamp/www/kos/app/KTeam.php&#10;Tournament.php&#9;FILE&#9;file://C:/wamp/www/kos/app/KTournament.php" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
@@ -586,16 +588,16 @@
       <workItem from="1496243530205" duration="1893000" />
       <workItem from="1496450092788" duration="9541000" />
       <workItem from="1496620046045" duration="3369000" />
-      <workItem from="1496703583485" duration="4861000" />
+      <workItem from="1496703583485" duration="5093000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="227019000" />
+    <option name="totallyTimeSpent" value="227251000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19838946" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -604,7 +606,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25867507" sideWeight="0.4941435" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25867507" sideWeight="0.4941435" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -822,13 +824,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="538" column="31" selection-start-line="538" selection-start-column="31" selection-end-line="538" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Clanrole.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
@@ -918,6 +913,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
           <caret line="83" column="8" selection-start-line="83" selection-start-column="8" selection-end-line="83" selection-end-column="8" />
+          <folding>
+            <marker date="1481738301967" expanded="true" signature="4838:4846" ph="..." />
+            <marker date="1481738301967" expanded="true" signature="4854:4862" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -941,6 +940,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="218" column="0" selection-start-line="218" selection-start-column="0" selection-end-line="218" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -948,6 +948,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="690" column="5" selection-start-line="690" selection-start-column="5" selection-end-line="690" selection-end-column="5" />
+          <folding>
+            <element signature="e#40#52#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -985,10 +988,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="65" column="25" selection-start-line="65" selection-start-column="25" selection-end-line="65" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="228" column="33" selection-start-line="228" selection-start-column="33" selection-end-line="228" selection-end-column="33" />
+        <state relative-caret-position="252">
+          <caret line="229" column="5" selection-start-line="229" selection-start-column="5" selection-end-line="229" selection-end-column="5" />
           <folding>
             <element signature="e#464#536#0#PHP" expanded="false" />
             <element signature="e#634#822#0#PHP" expanded="false" />
