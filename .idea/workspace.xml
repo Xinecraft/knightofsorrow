@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e189236c-c3e7-488f-b221-e9fb727e1c1d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" />
     </list>
     <ignored path="kos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,8 +33,8 @@
       <file leaf-file-name="ApiController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="241" column="117" selection-start-line="241" selection-start-column="117" selection-end-line="241" selection-end-column="117" />
+            <state relative-caret-position="116">
+              <caret line="236" column="42" selection-start-line="236" selection-start-column="42" selection-end-line="236" selection-end-column="42" />
               <folding>
                 <element signature="e#499#571#0#PHP" expanded="false" />
                 <element signature="e#669#857#0#PHP" expanded="false" />
@@ -359,12 +358,12 @@
       <workItem from="1496620046045" duration="3369000" />
       <workItem from="1496703583485" duration="5875000" />
       <workItem from="1496730129783" duration="351000" />
-      <workItem from="1496730572758" duration="5820000" />
+      <workItem from="1496730572758" duration="6794000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="234204000" />
+    <option name="totallyTimeSpent" value="235178000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -761,8 +760,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="241" column="117" selection-start-line="241" selection-start-column="117" selection-end-line="241" selection-end-column="117" />
+        <state relative-caret-position="116">
+          <caret line="236" column="42" selection-start-line="236" selection-start-column="42" selection-end-line="236" selection-end-column="42" />
           <folding>
             <element signature="e#499#571#0#PHP" expanded="false" />
             <element signature="e#669#857#0#PHP" expanded="false" />
