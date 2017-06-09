@@ -47,6 +47,7 @@ Route::group(['prefix' => 'api'],function(){
     Route::get('server-query/get3',['as' => 'api-server-query', 'uses' => 'ApiController@getServerQueryv3']);
 
     Route::get('users/{query}',['as' => 'api-user-query', 'uses' => 'ApiController@getQueryUser']);
+    Route::get('users2/{query}',['as' => 'api-user-query2', 'uses' => 'ApiController@getQueryUser2']);
 
     Route::get('players/{query}',['as' => 'api-players-query', 'uses' => 'ApiController@getQueryPlayer']);
 
@@ -60,6 +61,7 @@ Route::group(['prefix' => 'api'],function(){
 
     Route::get('joke', ['as' => 'api-joke', 'uses' => 'ApiController@getRandomJoke']);
     Route::get('insult', ['as' => 'api-insult', 'uses' => 'ApiController@getRandomInsult']);
+    Route::get('swathint', ['as' => 'api-hint', 'uses' => 'ApiController@getRandomSwathint']);
     Route::get('nsfw-boobs', ['as' => 'api-bo', 'uses' => 'ApiController@getRandomBoobs']);
     Route::get('nsfw-ass', ['as' => 'api-as', 'uses' => 'ApiController@getRandomAss']);
 });

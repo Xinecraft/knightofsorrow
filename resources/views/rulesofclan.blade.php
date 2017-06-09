@@ -29,13 +29,15 @@
                     <h5><b><u>CLAN RANKS AND DESIGNATIONS</u></b></h5>
                     <pre>
 0. FOUNDER                  - Fixed for uS|Razi
-1. LEADER                   - Max 1 Leader
-2. CO-LEADER                - Max 2 Co-Leaders
-3. SUPER ADMINISTRATOR
-4. ADMINISTRATOR
-6. SENIOR MEMBER
-7. MEMBER
-8. TRIALS
+1. VETO MEMBER              - Reserved for 3.
+2. LEADER                   - Max 1 Leader
+3. CO-LEADER                - Max 2 Co-Leaders
+4. BLUE ADMINISTRATOR       - Admin of KoS Server
+5. SUPER ADMINISTRATOR      - SA of GR & War Servers
+6. RED ADMINISTRATOR        - Admin of GR Servers
+7. SENIOR MEMBER
+8. MEMBER
+9. TRIALS
                 </pre>
                 </p>
                 <br>

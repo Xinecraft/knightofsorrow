@@ -11,7 +11,7 @@
            <a class="navbar-brand" href="{{ route('home') }}"><img src="{{ url('images/mainlogo.png') }}" alt=""
                                                                     height="34" style="height: 34px;"></a>
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
+        <div id="navbar" class="collapse navbar-collapse" style="font-weight: bold">
             <ul class="nav navbar-nav">
                 <li class="{{ set_active(['statistics*']) }}">{!! link_to_route('statistics-home','Statistics') !!}</li>
                 <li><a target="_blank" href="http://knightofsorrow.forumclan.com">Forum</a></li>

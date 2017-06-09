@@ -232,6 +232,18 @@ class ApiController extends Controller
 
     /**
      * @param $query
+     * @return mixed
+     */
+    public function getQueryUser2($query)
+    {
+        $user = (User::with(['country','photo'])->where('username', 'like',  $query )->orWhere('name', $query )->orWhere('email', 'like', $query )->get(['id', 'name', 'username', 'country_id', 'created_at', 'player_totals_name', 'dob', 'gr_id', 'facebook_url', 'website_url', 'steam_nickname', 'discord_username', 'photo_id', 'gender']));
+        if(!$user->isEmpty())
+            return $user;
+        return (User::with(['country','photo'])->where('username', 'like', '%' . $query . '%')->orWhere('name', 'like', '%' . $query . '%')->orWhere('email', 'like', '%' . $query . '%')->get(['id', 'name', 'username', 'country_id', 'created_at', 'player_totals_name', 'dob', 'gr_id', 'facebook_url', 'website_url', 'steam_nickname', 'discord_username', 'photo_id', 'gender']));
+    }
+
+    /**
+     * @param $query
      * @return \Illuminate\Database\Eloquent\Collection|static[]
      */
     public function getQueryPlayer($query)
@@ -789,7 +801,7 @@ class ApiController extends Controller
             'I m so bored like Schumacher in taxi.',
             'I m bored like black man in solarium.',
             'Bro you are lying like brothers Grimm together!',
-            'Didnt I tell you that you can speak only when chickens piss!',
+            'Didn\'t I tell you that you can speak only when chickens piss!',
             'Can a kangaroo jump higher than a house? Of course, a house doesn’t jump at all.',
             'Doctor: "I\'m sorry but you suffer from a terminal illness and have only 10 to live."
 Patient: "What do you mean, 10? 10 what? Months? Weeks?!"
@@ -810,14 +822,14 @@ Men 2017: I just shaved my leg',
 Patient: "At least I don\'t have cancer."',
             'What is risky?
 Sneezing while having diarrhea!',
-            'A wife is like a hand grenade. Take off the ring and say good bye to your house.',
-            'Never trust to a woman that lying!',
+            'A wife is like a hand grenade. Take off the ring and say goodbye to your house.',
+            'Never trust a woman that lying!',
             'I told my girlfriend she drew her eyebrows too high. She seemed surprised.',
             'My friend says to me: "What rhymes with orange" I said: "no it doesn\'t"',
             'What is faster or rabbit?',
             'I want to die peacefully in my sleep like my grandfather did, not screaming in terror like the passengers in his car.',
-            'Why is six afraid of sever? because sever ate nine.',
-            'Q: Did you hear about the guy who ran infront of the bus? A: He got tired ',
+            'Why is six afraid of seven? because seven ate nine.',
+            'Q: Did you hear about the guy who ran in front of the bus? A: He got tired ',
             'Q: What do u call a bunny with a bent dick? A: FUCKS FUNNY ',
             'Q: Why did Hitler commit suicide? A: He got the gas bill. ',
             'Q: Why did the Mafia cross the road? A: Forget about it. ',
@@ -888,6 +900,71 @@ You are more of a bot than me, predictable answers, and absolutely dull to have 
         ])->random();
 
         return \Response::json(['insult' => $joke],200);
+    }
+
+    public function getRandomSwathint()
+    {
+        $joke = Collection::make([
+            'BS : Opponent\'s legs sometimes do not block stings!',
+            'BS: Dont run with open sting !',
+            'BS:  You are not pro if you have highest score, you are pro if your score is deeply positive (+)!',
+            'BS: Use cams! (default button is \'Page Down\')',
+            'BS: Arresting through closed door bug is Allowed !',
+            'BS-VIP-COOP: Press "~" to open console and type "shot" to Take a screenshot and save it in the System directory with a consecutive name like Shot0001.bmp.',
+            'BS-VIP-COOP: Press "~" to open console and type "flush" to Flush all caches. Regenerates all lighting, 3D hardware textures, etc. Can be useful to reduce lag or to clear texture corruption due to 3D hardware driver bugs. (Admins)',
+            'BS-VIP-COOP: Press "~" to open console and type "handsdown" to remove weapon visiblility.',
+            'BS-VIP-COOP: Keep an eye out for the oxygen tanks - you can make those explode.',
+            'BS-VIP-COOP: Crouching, moving slowly, and firing in short bursts keeps the targeting reticule tight and will make your shots more accurate.',
+            'VIP: don\'t prefire too much on vip, unless you know where is VIP !(mostly as suspect)',
+            'VIP: dont exit camp at the beginning of the round, go help your team !',
+            'VIP: as the vip, try standing behind an officer and you might have luck by a suspect accidently killing you.',
+            'COOP: make sure you check under the door carefully using the optiwand before entering a room !',
+            'COOP: Similarly, you can kill a baddie standing next to a door with a breaching charge, and everything will be hunky dory!',
+            'Funny:  !Equipslot6 "Noobs Spray n pray"',
+            'Funny: No Spray, No Points!',
+            'Funny: "I am happy i have me in team"',
+            'BS: A-bomb - Suspects start spawn, first who exit always breach door inside of the room - toward billard table!',
+            'BS: Never enter in same room where is your mate (ofc except when you need to help him) this will reduce chance that both of you can be hit with one sting. Distance! (Wars tip)',
+            'BS: If you are unable to kill opponent who is arresting your mate, then perform team kill (TK), because -3 pts is always better then -5! (war tip)',
+            'BS: If you sting your opponent near doors which he can close, always go towards him with breaching shotgun (Not with H), he will have less time to recover, in case that he close door.',
+            'BS: Spawn sting, gas, flash or kill within 3 seconds after opponenet respawned isnt allowed ! (war rule, few public servers respect this too)
+        Important: If opponenet exit from spawn area within 3 sec and he get stinged, killed etc, spawn rule isnt violated! 3 sec pass then you can throw (sting, gas etc)',
+            'Funny: "Put your hands in the air or Swat 4 is dead "',
+            'VIP: Dont hurry to arrest vip before clearing area around',
+            'VIP: Use your gun to cover your mate who is arresting the VIP!',
+            'VIP: Dont sting much around vip because he might be hurted!',
+            'VIP: Careful, swat maybe team prehurted VIP ! (Public servers)',
+            'VIP: instead of aiming at the vip from close range to take out the toolkit (while trying to release him) press 8 to take out the toolkit to prevent accidental vip kills.',
+            'COOP: Make sure you always take a pepper spray or a taser with you, some civilians do not always cooporate!',
+            'COOP: if a suspect doesn\'t give up, shoot the hand that is holding the gun until he drops the gun, then shout at him to comply, on the stetchkov expansion you can melee them using B (default key) instead.',
+            'VIP: Use semi fire to shoot suspect who is arresting vip if you are in long range, or use pepper spray in you are in close range.',
+            'VIP: Dont throw stingers around arrested vip, high chance that suspects hurted his legs!',
+            'BS-VIP-COOP: when you are moving, it is better to hold your crosshair high on the head level of the player model  to improve reaction time.',
+            'BS-VIP-COOP: You need to move your crosshair to the opposite side you\'re leaning to, because when you lean to right, your crosshair moves to right, and if you do that there is possibility of miss or overshoot.',
+            'Funny: Vip, Wash your white jacket after u finish mission!',
+            'BS: Dont stay for long on open places where you can be stinged easily, always be near something where you can hide !',
+            'BS: Skill to avoid/dodge stings is very important!',
+            'BS: When you are stinged or tazed call for help the closest teammate, players usually call help with "I need back up" right click command.',
+            'BS: Remember that teamwork is the most important strategy in game! It\'s team points that counts, not yours!',
+            'BS: When opponent is arresting one of your mates, try to cover with semi fire to avoid killing your teammate!',
+            'BS: Always wear every kind of "tactical" in your equipment, you never know what will you need!',
+            'BS-VIP: Dont accuse opponent of cheating just because he is better than you!',
+            'Funny: if you are losing match, that doesnt mean that opponents are pro, maybe you are too much noob!',
+            'VIP: Use hotkeys in teamchat to be faster with reports.',
+            'BS: Focus on A-bomb and The wolcott projects maps, it\'s the main war maps.',
+            'BS: Double switch in wars is not allowed!',
+            'BS: If you are hurted badly (leg) in wars, to avoid being arrested easy or asking mate for tamkill and risk losing 3 pts, you can try to sting youself and commit suicide.',
+            'BS: In wars you do not count rounds win, what are you look are pts, who ahve more pts from all 4 rounds is a winner of the match!',
+            'BS: In wars, try to get as many points as you can, your team can win only 1 round and still win all match !',
+            'BS: Dont be afraid of losing wars, every match can teach you something you didnt know !',
+            'BS-VIP: If you are gassed, try to get ouf of gas radius as fast as you can, longer you are in gas longer you will be gassed!',
+            'BS: Dropping during the war is one of the worst habits ever, try to avoid it at all costs, have a respect to your opponents!',
+            'BS: During gameplay, try to control spawns places, if you control spawns - you control all game !',
+            'BS: Shotguns are useless during bs wars, try to pick 9mm machine gun or colt m4a1.',
+            'Funny: If you wedge door in BS you need to realize it\'s not VIP mode. If you still didnt realize that, you need to visit your doctor!',
+            'Funny: If you use optiwand in BS, you probably confused your desktop icons and you clicked on swat 4 instead on sims 4!'
+        ])->random();
+        return \Response::json(['hint' => $joke],200);
     }
 
     public function getRandomAss()
