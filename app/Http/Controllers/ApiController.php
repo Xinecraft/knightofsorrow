@@ -980,4 +980,11 @@ You are more of a bot than me, predictable answers, and absolutely dull to have 
         $image = url()."/".$images[rand(0, count($images) - 1)];
         return \Response::json(['image' => $image],200);
     }
+
+    public function getRandomMeme()
+    {
+        $images = glob('images/nsfw/memes/*');
+        $image = url()."/".$images[rand(0, count($images) - 1)];
+        return \Response::json(['image' => $image],200);
+    }
 }
