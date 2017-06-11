@@ -28,10 +28,7 @@
 <button id="playerABbtn" data-type="setmap 1" title="Set Map to A-Bomb Nightclub"
         class="adminsrvcommandbtn  btn btn-success btn-sm">Map AB
 </button>
-<button id="playerFFbtn" data-type="setmap 2" title="Set Map to FairFax"
-        class="adminsrvcommandbtn  btn btn-success btn-sm">Map FF
-</button>
-<button id="playerFFbtn" data-type="setmap 3" title="Set Map to Wolcott Projects"
+<button id="playerFFbtn" data-type="setmap 2" title="Set Map to Wolcott Projects"
         class="adminsrvcommandbtn  btn btn-success btn-sm">Map WP
 </button>
 <br>

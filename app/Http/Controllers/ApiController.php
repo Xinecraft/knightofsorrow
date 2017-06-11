@@ -798,6 +798,7 @@ class ApiController extends Controller
     public function getRandomJoke()
     {
         $joke = Collection::make([
+			'Do you want your joke to be listed? Suggest one at https://discord.gg/Y8DzuUU',
             'I m so bored like Schumacher in taxi.',
             'I m bored like black man in solarium.',
             'Bro you are lying like brothers Grimm together!',
@@ -962,8 +963,9 @@ You are more of a bot than me, predictable answers, and absolutely dull to have 
             'BS: During gameplay, try to control spawns places, if you control spawns - you control all game !',
             'BS: Shotguns are useless during bs wars, try to pick 9mm machine gun or colt m4a1.',
             'Funny: If you wedge door in BS you need to realize it\'s not VIP mode. If you still didnt realize that, you need to visit your doctor!',
-            'Funny: If you use optiwand in BS, you probably confused your desktop icons and you clicked on swat 4 instead on sims 4!'
-        ])->random();
+            'Funny: If you use optiwand in BS, you probably confused your desktop icons and you clicked on swat 4 instead on sims 4!',
+			'Suggest: Got a hint for others? Suggest us at https://discord.gg/Y8DzuUU'
+		])->random();
         return \Response::json(['hint' => $joke],200);
     }
 
