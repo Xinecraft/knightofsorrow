@@ -860,9 +860,6 @@ Sneezing while having diarrhea!',
             'If you spoke your mind, you\'d be speechless.',
             'You\'re so fat you show up on radar.',
             'You\'re so fat I\'d have to grease the door frame and hold a Twinkie on the other side just to get you through',
-            '(if you try to insult bot) How original. No one else had thought of trying to get the bot to insult itself. I applaud your creativity. 
-Yawn. Perhaps this is why you don\'t have friends. You don\'t add anything new to any conversation. 
-You are more of a bot than me, predictable answers, and absolutely dull to have an actual conversation with.',
             'Yo Mama so fat she\'s on both sides of the family.',
             'I hear the only place you\'re ever invited is outside.',
             'I can explain it to you, but I can\'t understand it for you.',
