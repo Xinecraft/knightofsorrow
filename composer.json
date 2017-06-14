@@ -30,7 +30,8 @@
         "graham-campbell/htmlmin": "^4.3",
         "stichoza/google-translate-php": "^3.2",
         "yandex/translate-api": "^1.5",
-        "laravelcollective/remote": "5.1.*"
+        "laravelcollective/remote": "5.1.*",
+        "pragmarx/firewall": "^1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

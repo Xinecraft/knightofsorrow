@@ -894,7 +894,25 @@ Sneezing while having diarrhea!',
             'You\'re so ugly, you scared the crap out of the toilet.',
             'If you were any less intelligent we\'d have to water you three times a week.',
             'The only way you\'ll ever get laid is if you crawl up a chicken\'s ass and wait.',
-            'You\'re a person of rare intelligence. It\'s rare when you show any.'
+            'You\'re a person of rare intelligence. It\'s rare when you show any.',
+            'You\'re a failed abortion whose birth certificate is an apology from the condom factory.',
+            'You must have been born on a highway, because that\'s where most accidents happen.',
+            'You\'re so ugly Hello Kitty said goodbye to you.',
+            'It looks like your face caught on fire and someone tried to put it out with a fork.',
+            'You are so ugly that when your mama dropped you off at school she got a fine for littering.',
+            'If you were twice as smart, you\'d still be stupid.',
+            'Your so ugly when you popped out the doctor said aww what a treasure and your mom said yeah lets bury it',
+            'Out of 100,000 sperm, you were the fastest? Are you kidding me?',
+            'If you really want to know about mistakes, you should ask your parents.',
+            'I could eat a bowl of alphabet soup and crap out a smarter comeback than what you just said.',
+            'I\'m jealous of all the people that haven\'t met you!',
+            'You are so ugly when you looked in the mirror your reflection walked away.',
+            'Calling you an idiot would be an insult to all stupid people.',
+            'How many times do I have to flush before you go away?',
+            'We all sprang from apes, but you didn\'t spring far enough.',
+            'If bullshit could float...you\'d be the Admiral of the fleet!',
+            'I\'d like to see things from your point of view, but I can\'t seem to get my head that far up your ass.',
+            'Karma takes too long, I\'d rather beat the shit out of you just now.'
         ])->random();
 
         return \Response::json(['insult' => $joke],200);

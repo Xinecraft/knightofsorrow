@@ -149,6 +149,7 @@ return [
         Golonka\BBCode\BBCodeParserServiceProvider::class,
         GrahamCampbell\HTMLMin\HTMLMinServiceProvider::class,
         Collective\Remote\RemoteServiceProvider::class,
+        PragmaRX\Firewall\Vendor\Laravel\ServiceProvider::class,
 
 
         /*
@@ -216,6 +217,7 @@ return [
         'Javascript'  => Laracasts\Utilities\JavaScript\JavaScriptFacade::class,
         'BBCode'    => Golonka\BBCode\Facades\BBCodeParser::class,
         'SSH' => Collective\Remote\RemoteFacade::class,
+        'Firewall' => PragmaRX\Firewall\Vendor\Laravel\Facade::class,
 
     ],
 

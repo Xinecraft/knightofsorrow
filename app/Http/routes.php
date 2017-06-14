@@ -369,3 +369,22 @@ Route::get('/copy', function(){
     $query = "SELECT * INTO OUTFILE '$ramdomTableName' FROM player_total_bs;LOAD DATA INFILE '$ramdomTableName' INTO TABLE player_totals;";
     DB::connection()->getpdo()->exec($query);
 });
+
+
+/**
+ * Firewall Controller
+ */
+Route::get('/admin/firewall', ['middleware' => ['auth', 'admin'], 'as' => 'firewall.index', 'uses' => 'FirewallController@index']);
+Route::post('/admin/firewall', ['middleware' => ['auth', 'admin'], 'as' => 'firewall.store', 'uses' => 'FirewallController@store']);
+Route::delete('/admin/firewall/{ip}', ['middleware' => ['auth', 'admin'], 'as' => 'firewall.destroy', 'uses' => 'FirewallController@destroy']);
+
+
+/**
+ * TinyURL
+ */
+Route::get('/discord',function(){
+    return Redirect::to("https://discord.gg/Y8DzuUU");
+});
+Route::get('/Swat4eveR',function(){
+    return Redirect::to("https://discordapp.com/oauth2/authorize?&client_id=321798131354304515&scope=bot&permissions=470019135");
+});
