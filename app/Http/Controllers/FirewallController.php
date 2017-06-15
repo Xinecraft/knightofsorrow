@@ -29,7 +29,9 @@ class FirewallController extends Controller
      */
     public function store(FirewallRequest $request)
     {
-        Firewall::blacklist($request->ip_address, true);
+        FirewallModel::create(
+            ['ip_address' => $request->ip_address]
+        );
         return back()->with('message',"Success! IP: $request->ip_address has been blocked");
     }
     /**
