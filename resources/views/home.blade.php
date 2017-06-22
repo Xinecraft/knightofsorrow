@@ -29,6 +29,12 @@
 @endsection
 @section('main-container')
     <div class="content col-xs-9">
+        @if(Auth::check() && !Auth::user()->confirmed)
+            <div class="alert alert-warning text-center row">
+                <strong>You account is Muted! Verify your Email Address to unmute it!</strong><br> Dear Gamer, Please check your email ({{ Auth::user()->email }}) where we have sent a mail to verify your account. Just visit the link provided and follow the instructions to get your account verified. Once verified your account will get unmuted.
+            </div>
+        @endif
+
         @if($show_donation == "Hell")
         <div class="alert alert-info alert-dismissable text-center row">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -69,8 +75,10 @@
                     <div class="col-xs-12 panel panel-default no-padding">
                         <div class="panel-heading">
                             <span class="pull-right">
+                                @if(Auth::check() && Auth::user()->isAdmin())
                             <a style='color:red' class='fancybox livepfancy fancybox.ajax tooltipster' href='./liveserveraction' title='Server Action'><i class='fa fa-cog'></i></a>
-                        </span>
+                                @endif
+                            </span>
                             <span class="info-title">Online Players <span
                                         id="ls-player-online"></span></span>
                         </div>

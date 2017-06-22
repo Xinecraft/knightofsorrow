@@ -27,6 +27,8 @@ Route::controllers([
     'password' => 'Auth\PasswordController',
 ]);
 
+Route::any('/confirmtion/user/{user}/{confirmation_token}',['as' => 'user.email.confirmation', 'uses' => 'UserController@confirmEmail']);
+
 /**
  * General and Home Controllers.
  */
@@ -56,6 +58,7 @@ Route::group(['prefix' => 'api'],function(){
     Route::get('whoisforserver',['as' => 'api-server-whoisforserver', 'uses' => 'ApiController@whoisforserver']);
 
     Route::get('ip2cc/{IP}', ['as' => 'api-ip-country', 'uses' => 'ApiController@getCountryCodeFromIP']);
+    Route::get('whois-ip/{IP}', ['as' => 'api.ip.country', 'uses' => 'ApiController@getCountryFromIP']);
 
     Route::any('translate', ['as' => 'api-translate', 'uses' => 'ApiController@translateText']);
 
@@ -124,17 +127,6 @@ Route::get('/viewserverkeys',['middleware' => 'auth','as' => 'user.viewkeys', 'u
 Route::post('/viewserverkeys',['middleware' => 'auth','as' => 'user.viewkeys.post', 'uses' => 'UserController@postServerCredentials']);
 Route::get('/admins-list',['as' => 'admin.list', 'uses' => 'UserController@adminList']);
 Route::get('/webadmin',['as' => 'webadmin', 'middleware' => ['auth','admin'], 'uses' => 'UserController@getWebAdmin']);
-/*
- * Removed because new messaging system has be developed!
- *
-Route::group(['prefix' => 'mail'],function(){
-    Route::get('inbox',['middleware' => 'auth', 'as' => 'user.inbox', 'uses' => 'UserController@getInbox']);
-    Route::get('outbox',['middleware' => 'auth', 'as' => 'user.outbox', 'uses' => 'UserController@getOutbox']);
-    Route::get('compose',['middleware' => 'auth', 'as' => 'user.compose', 'uses' => 'UserController@getComposeMail']);
-    Route::post('compose',['middleware' => 'auth', 'as' => 'user.compose.post', 'uses' => 'UserController@postComposeMail']);
-    Route::get('{id}',['middleware' => 'auth', 'as' => 'user.inbox.show', 'uses' => 'UserController@getShowMail']);
-});
-*/
 
 /**
  * Servers Controllers.
@@ -319,6 +311,7 @@ Route::get('/image/{url}/thumbnail/{width?}', ['as' => 'make.thumbnail', 'uses' 
 Route::delete('/comment/{id}',['as' => 'comment.destroy', 'uses' => 'CommentController@destroy']);
 
 Route::get('/viewiphistory',['middleware' => ['auth','admin'], 'uses' => 'StatisticsController@viewIPofPlayer']);
+Route::get('/viewiphistoryuser',['middleware' => ['auth','admin'], 'uses' => 'UserController@viewIPofUser']);
 
 Route::get('deleted-players',['as' => 'deleted-players', 'uses' => 'StatisticsController@getDeletedPlayersForView']);
 

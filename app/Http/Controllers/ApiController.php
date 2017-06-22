@@ -750,6 +750,35 @@ class ApiController extends Controller
         printf("%s",$playerCountryCode);
     }
 
+    public function getCountryFromIP($IP)
+    {
+        $geoip = \App::make('geoip');
+        $playerCountryName = "Unknown Territory";
+        try {
+            if ($player_geoip = $geoip->city($IP)) {
+
+                $playerCountryName = $player_geoip->city->names['en'] == "" ? "" : $player_geoip->city->names['en'].",";
+                $playerCountryName = $playerCountryName.$player_geoip->country->names['en'];
+            }
+        }
+        catch(\Exception $e)
+        {
+            switch($e)
+            {
+                case $e instanceof \InvalidArgumentException:
+                    $playerCountryCode = "_unknown";
+                    break;
+                case $e instanceof \GeoIp2\Exception\AddressNotFoundException:
+                    $playerCountryCode = "_unknown";
+                    break;
+                default:
+                    $playerCountryCode = "_unknown";
+                    break;
+            }
+        }
+        printf("<b>%s</b> belongs to <b>%s</b>",$IP,$playerCountryName);
+    }
+
     /**
      * Translate from one langage to other via google translate api
      * @param Request $request

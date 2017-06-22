@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Iphistory;
 use App\Notification;
 use App\Photo;
 use App\Player;
@@ -266,6 +267,18 @@ class UserController extends Controller
         if(Auth::check())
         {
             $request->user()->touch();
+            $user = $request->user();
+            $user_ip = \Input::getClientIp();
+
+            //Update IP History
+            if($iphistory = Iphistory::whereIp($user_ip)->first())
+            {
+                $iphistory->touch();
+            }
+            else
+            {
+                $user->iphistory()->create(['ip' => $user_ip]);
+            }
         }
     }
 
@@ -726,6 +739,34 @@ class UserController extends Controller
 
         \Session::flash('post-back','yes');
         return view('user.searchip')->with('players',$players);
+    }
+
+    public function confirmEmail($user, $confirmation_token)
+    {
+        $user =User::findOrFail($user);
+        if(!$user->confirmed)
+        {
+            if($user->confirmation_token == $confirmation_token)
+            {
+                $user->confirmed = true;
+                $user->muted = false;
+                $user->save();
+            }
+        }
+
+        return \Redirect::home()->with('success','Email has been verified! Your account is unmuted.');;
+    }
+
+    public function viewIPofUser()
+    {
+        $user = User::where('username',\Input::get('user'))->first();
+
+        if($user == null)
+            abort(404);
+
+        $useriphistory = $user->iphistory()->get();
+
+        return view('partials.useriphistory')->with('useriphistory',$useriphistory);
     }
 
 }

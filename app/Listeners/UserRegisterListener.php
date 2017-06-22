@@ -51,7 +51,7 @@ class UserRegisterListener implements ShouldQueue
      */
     public function welcome($user)
     {
-        $this->mailer->sendTo($user,"Welcome to Knight of Sorrow",'emails.welcome',['user' => $user]);
+        $this->mailer->sendTo($user,"Confirm your Email KnightofSorrow.in Swat4 Community & Servers",'emails.welcome',['user' => $user]);
     }
 
     public function notifyAll($user)

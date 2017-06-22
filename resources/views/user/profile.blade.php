@@ -117,18 +117,18 @@
                             <div class="col-xs-5">
                                 {!! Html::image($user->getGravatarLink(250),null,['class' => 'img img-thumbnail profile-cover-img']) !!}
 
-                                @if($user->confirmed && !$user->banned)
-                                <p class="text-verified padding10 text-center"><i class="fa fa-check-circle"></i>
-                                    Verified account
+                                @if(!$user->confirmed && !$user->banned)
+                                <p class="text-warning padding10 text-center"><i class="fa fa-envelope"></i>
+                                    Email not verified
                                 </p>
                                 @elseif($user->banned)
                                     <p class="text-banned padding10 text-center"><i class="fa fa-times-circle"></i>
-                                        Banned account
+                                        Banned Account
                                     </p>
                                 @endif
                                 @if($user->muted)
                                     <p class="text-banned padding10 text-center"><i class="fa fa-microphone"></i>
-                                        Muted
+                                        Muted Account
                                     </p>
                                 @endif
                                 <div class="padding10 text-center">
@@ -155,8 +155,9 @@
                                     @if(Auth::check() && Auth::user()->isAdmin())
                                         <br>
                                         <kbd class="text-muted small no-margin">Last Login IP : {{ $user->last_ipaddress }}</kbd>
-                                        <kbd class="text-muted small no-margin">{{ $user->email }}</kbd>
-                                        <kbd class="text-muted small no-margin">User Id:{{ $user->id }}</kbd>
+                                        <kbd class="text-muted small no-margin">{{ $user->email }}</kbd> <br>
+                                        <kbd class="text-muted small no-margin">User Id:{{ $user->id }}</kbd> <br>
+                                        <kbd class="text-muted small no-margin">View IP History:</kbd> <a style='color:yellow' title="View IP History" class='tooltipster fancybox livepfancy fancybox.ajax' href='/viewiphistoryuser?user={{ $user->username }}'><i class='fa fa-cog'></i></a>
                                     @endif
                                 </div>
 
@@ -390,4 +391,12 @@
         </div>
 
     </div>
+@endsection
+
+@section('scripts')
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.fancybox').fancybox();
+        })
+    </script>
 @endsection

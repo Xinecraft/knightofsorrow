@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Iphistory;
 use Event;
 use App\Events\UserRegistered;
 use App\User;
@@ -115,8 +116,11 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
             'country_id' => $user_country_id,
             'last_ipaddress' => $user_ip,
-            'confirmation_token' => $confirmation_token
+            'confirmation_token' => $confirmation_token,
+            'muted' => true
         ]);
+
+        $user->iphistory()->create(['ip' => $user_ip]);
 
         // Attach a role of Member to it.
         // Make sure your table named roles has Members row with Id of 5
@@ -156,6 +160,16 @@ class AuthController extends Controller
             $user = Auth::user();
             $user->last_ipaddress = $user_ip;
             $user->save();
+
+            // Ipdate IP history
+            if($iphistory = Iphistory::whereIp($user_ip)->first())
+            {
+                $iphistory->touch();
+            }
+            else
+            {
+                $user->iphistory()->create(['ip' => $user_ip]);
+            }
 
             return redirect()->intended($this->redirectPath());
         }
