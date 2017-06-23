@@ -32,6 +32,8 @@
         @if(Auth::check() && !Auth::user()->confirmed)
             <div class="alert alert-warning text-center row">
                 <strong>You account is Muted! Verify your Email Address to unmute it!</strong><br> Dear Gamer, Please check your email ({{ Auth::user()->email }}) where we have sent a mail to verify your account. Just visit the link provided and follow the instructions to get your account verified. Once verified your account will get unmuted.
+                <br>
+                <b>{!! link_to_route('user.email.confirmation.resend','Resend Confirmation Email') !!}</b>
             </div>
         @endif
 
