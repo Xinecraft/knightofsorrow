@@ -28,6 +28,7 @@ Route::controllers([
 ]);
 
 Route::any('/confirmtion/user/{user}/{confirmation_token}',['as' => 'user.email.confirmation', 'uses' => 'UserController@confirmEmail']);
+Route::any('/resend-email-confirmation',['middleware' => 'auth', 'as' => 'user.email.confirmation.resend', 'uses' => 'UserController@resendConfirmEmail']);
 
 /**
  * General and Home Controllers.

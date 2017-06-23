@@ -17,15 +17,18 @@ use App\Http\Controllers\Controller;
 use App\Server\Repositories\UserRepository;
 use Image;
 use File;
+use App\Server\Mailers\Mailer;
 
 class UserController extends Controller
 {
 
     protected $user;
+    protected $mailer;
 
-    public function __construct(UserRepository $user)
+    public function __construct(UserRepository $user,Mailer $mailer)
     {
         $this->user = $user;
+        $this->mailer = $mailer;
     }
     
     /**
@@ -769,4 +772,10 @@ class UserController extends Controller
         return view('partials.useriphistory')->with('useriphistory',$useriphistory);
     }
 
+    public function resendConfirmEmail(Request $request)
+    {
+        $user = $request->user();
+        $this->mailer->sendTo($user,"Confirm your Email KnightofSorrow.in Swat4 Community & Servers",'emails.welcome',['user' => $user]);
+        return back()->with('success','Email sent successfully');
+    }
 }
