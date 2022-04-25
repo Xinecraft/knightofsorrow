@@ -3,6 +3,9 @@
 [![Build Status](https://travis-ci.org/kinnngg/knightofsorrow.svg)](https://travis-ci.org/kinnngg/knightofsorrow)
 [![License](https://poser.pugx.org/laravel/framework/license.svg)](https://github.com/kinnngg/knightofsorrow)
 
+![image](https://user-images.githubusercontent.com/3089863/165183145-078153f5-b662-48c5-b8ad-f2916487abfd.png)
+
+
 KnightofSorrow is a website for SWAT4 Servers. This website is used to rank players of a SWAT4 servers.
 Website is developed with Laravel 5.1 LTS framework for backend and Bootstrap 3 for frontend.
 Server tracking is implemented with the help of `julia/tracker` that can be found at my repo list.
